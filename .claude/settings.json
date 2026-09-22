@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs grep -l \"CollectionConfig\")",
+      "Bash(npm install *)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:payloadcms.com)",
+      "Bash(awk 'NR==635,NR==1010' node_modules/payload/dist/config/types.d.ts)"
+    ]
+  }
+}
