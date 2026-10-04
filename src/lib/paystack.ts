@@ -48,6 +48,15 @@ export async function verifyTransaction(reference: string): Promise<PaystackVeri
   )
 }
 
+export async function verifyPlanConfiguration(code: string, amountNgn: number, interval: 'monthly' | 'annually'): Promise<void> {
+  const response = await paystackRequest<{ data: { plan_code: string; amount: number; currency: string; interval: string } }>(
+    `/plan/${encodeURIComponent(code)}`, { method: 'GET' },
+  )
+  if (response.data.plan_code !== code || response.data.amount !== Math.round(amountNgn * 100) || response.data.currency !== 'NGN' || response.data.interval !== interval) {
+    throw new AppError('VALIDATION_ERROR', 'Paystack plan does not match the SkillsAir price and billing interval')
+  }
+}
+
 export async function disableSubscription(subscriptionCode: string, emailToken: string): Promise<void> {
   await paystackRequest<{ status: boolean; message: string }>('/subscription/disable', {
     method: 'POST',

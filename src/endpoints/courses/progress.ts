@@ -4,6 +4,7 @@ import { parseBody, sendSuccess, asyncHandler, getParam, readJsonBody } from '..
 import { requireAuth } from '../../middleware/authenticate.js'
 import { isValidPayloadId } from '../../utils/sanitize.js'
 import { AppError } from '../../types/index.js'
+import { getLessonCourse, refreshEnrollmentProgress, requireCourseAccess } from '../../lib/course-access.js'
 
 const progressSchema = z.object({
   watchedSeconds: z.number().min(0),
@@ -26,6 +27,9 @@ async function handler(req: PayloadRequest): Promise<Response> {
   const body = parseBody(progressSchema, await readJsonBody(req))
 
   const payload = req.payload
+  const { courseId: actualCourseId, lesson } = await getLessonCourse(payload, lessonId)
+  if (String(actualCourseId) !== String(courseId)) throw new AppError('VALIDATION_ERROR', 'Lesson does not belong to this course')
+  await requireCourseAccess(payload, user.id, courseId)
 
   const enrollments = await payload.find({
     collection: 'enrollments',
@@ -50,8 +54,14 @@ async function handler(req: PayloadRequest): Promise<Response> {
   })
 
   const now = new Date().toISOString()
+  const previousSeconds = Number(existingProgress.docs[0]?.watchedSeconds ?? 0)
+  const watchedSeconds = Math.max(previousSeconds, body.watchedSeconds)
+  const duration = Number(lesson.duration ?? 0)
+  if (body.isCompleted && duration > 0 && watchedSeconds < Math.max(0, duration - 5)) {
+    throw new AppError('VALIDATION_ERROR', 'Lesson viewing requirement has not been met')
+  }
   const progressData = {
-    watchedSeconds: body.watchedSeconds,
+    watchedSeconds,
     lastWatchedAt: now,
     ...(body.isCompleted ? { isCompleted: true, completedAt: now } : {}),
   }
@@ -78,48 +88,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
     })
   }
 
-  const sections = await payload.find({
-    collection: 'sections',
-    where: { course: { equals: courseId } },
-    limit: 1000,
-    depth: 0,
-  })
-  const sectionIds = sections.docs.map((doc) => doc.id)
-  const totalLessons = await payload.find({
-    collection: 'lessons',
-    where: { section: { in: sectionIds } },
-    limit: 0,
-    depth: 0,
-  })
-  const completedLessons = await payload.find({
-    collection: 'lesson-progress',
-    where: {
-      and: [
-        { student: { equals: user.id } },
-        { course: { equals: courseId } },
-        { isCompleted: { equals: true } },
-      ],
-    },
-    limit: 0,
-    depth: 0,
-  })
-
-  const progressPercent =
-    totalLessons.totalDocs > 0
-      ? Math.min(100, Math.round((completedLessons.totalDocs / totalLessons.totalDocs) * 100))
-      : 0
-
-  const enrollmentUpdate: Record<string, unknown> = { progressPercent }
-  if (progressPercent >= 100 && enrollment.status !== 'completed') {
-    enrollmentUpdate.status = 'completed'
-    enrollmentUpdate.completedAt = now
-  }
-  const updatedEnrollment = await payload.update({
-    collection: 'enrollments',
-    id: enrollment.id,
-    data: enrollmentUpdate,
-    overrideAccess: true,
-  })
+  const updatedEnrollment = await refreshEnrollmentProgress(payload, enrollment.id, user.id, courseId)
 
   return sendSuccess({ progress: progressDoc, enrollment: updatedEnrollment })
 }

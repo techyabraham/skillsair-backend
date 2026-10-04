@@ -4,9 +4,11 @@ import { parseBody, sendSuccess, asyncHandler, readJsonBody } from '../../middle
 import { requireAuth } from '../../middleware/authenticate.js'
 import { paymentRateLimiter } from '../../lib/rate-limiter.js'
 import { isValidPayloadId } from '../../utils/sanitize.js'
-import { initializeTransaction } from '../../lib/paystack.js'
+import { initializeTransaction, verifyPlanConfiguration } from '../../lib/paystack.js'
 import { generatePaystackReference } from '../../utils/generate-code.js'
 import { AppError } from '../../types/index.js'
+import { relationId } from '../../lib/course-access.js'
+import { requirePrerequisites } from '../../lib/prerequisites.js'
 
 const subscribeSchema = z.object({
   planId: z.string().min(1),
@@ -18,6 +20,8 @@ interface PlanDoc {
   price: number
   isActive: boolean
   paystackPlanCode: string
+  course: number | { id: number }
+  interval: 'monthly' | 'annually'
 }
 
 interface UserDoc {
@@ -47,10 +51,17 @@ async function handler(req: PayloadRequest): Promise<Response> {
   if (!plan || !plan.isActive) {
     throw new AppError('NOT_FOUND', 'Plan not found')
   }
+  if (!plan.paystackPlanCode) throw new AppError('VALIDATION_ERROR', 'Subscription plan is not configured for billing')
+  await verifyPlanConfiguration(plan.paystackPlanCode, plan.price, plan.interval)
+  const courseId = relationId(plan.course)
+  if (courseId === undefined) throw new AppError('VALIDATION_ERROR', 'Subscription plan has no course')
+  const subscribedCourse = await payload.findByID({ collection: 'courses', id: courseId, depth: 0, overrideAccess: true }).catch(() => null)
+  if (!subscribedCourse || subscribedCourse.status !== 'published') throw new AppError('NOT_FOUND', 'Subscription course is unavailable')
+  await requirePrerequisites(payload, user.id, courseId)
 
   const activeSubscriptions = await payload.find({
     collection: 'subscriptions',
-    where: { and: [{ user: { equals: user.id } }, { status: { equals: 'active' } }] },
+    where: { and: [{ user: { equals: user.id } }, { course: { equals: courseId } }, { status: { equals: 'active' } }, { currentPeriodEnd: { greater_than: new Date().toISOString() } }] },
     limit: 1,
   })
   if (activeSubscriptions.totalDocs > 0) {
@@ -59,6 +70,8 @@ async function handler(req: PayloadRequest): Promise<Response> {
       throw new AppError('ALREADY_EXISTS', 'You already have an active subscription')
     }
   }
+  const existingEnrollment = await payload.find({ collection: 'enrollments', where: { and: [{ student: { equals: user.id } }, { course: { equals: courseId } }] }, limit: 1, overrideAccess: true })
+  if (existingEnrollment.docs[0] && !existingEnrollment.docs[0].subscription) throw new AppError('ALREADY_EXISTS', 'You already own this course')
 
   const userDoc = (await payload.findByID({
     collection: 'users',
@@ -73,6 +86,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
       user: user.id,
       type: 'subscription',
       plan: plan.id,
+      course: courseId,
       amount: plan.price,
       currency: 'NGN',
       status: 'pending',

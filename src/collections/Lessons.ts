@@ -1,6 +1,8 @@
 import type { CollectionConfig, PayloadRequest, Where } from 'payload'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { slugify } from '../utils/slugify.js'
+import { resolveAuthUser } from '../middleware/authenticate.js'
+import { requireCourseAccess } from '../lib/course-access.js'
 
 interface SectionWithCourse {
   course: number | string | { id: number | string }
@@ -92,27 +94,32 @@ export const Lessons: CollectionConfig = {
   },
   access: {
     read: async ({ req }): Promise<boolean | Where> => {
-      if (req.user?.role === 'admin' || req.user?.role === 'instructor') return true
-      if (!req.user) {
+      const currentUser = req.user ?? await resolveAuthUser(req)
+      if (currentUser?.role === 'admin' || currentUser?.role === 'instructor') return true
+      if (!currentUser) {
         return { and: [{ isFree: { equals: true } }, { isPublished: { equals: true } }] } as Where
       }
       const enrollments = await req.payload.find({
         collection: 'enrollments',
-        where: { student: { equals: req.user.id }, status: { not_equals: 'refunded' } },
+        where: { student: { equals: currentUser.id }, status: { not_equals: 'refunded' } },
         limit: 1000,
         depth: 0,
       })
       const courseIds = enrollments.docs
         .map((doc) => relationId((doc as unknown as { course: unknown }).course))
         .filter((id): id is number | string => id !== undefined)
+      const accessibleCourseIds = (await Promise.all(courseIds.map(async (id) => {
+        try { await requireCourseAccess(req.payload, currentUser.id, id); return id }
+        catch { return undefined }
+      }))).filter((id): id is number | string => id !== undefined)
       return {
         and: [
           { isPublished: { equals: true } },
           {
             or: [
               { isFree: { equals: true } },
-              courseIds.length > 0
-                ? { 'section.course': { in: courseIds } }
+              accessibleCourseIds.length > 0
+                ? { 'section.course': { in: accessibleCourseIds } }
                 : { isFree: { equals: true } },
             ],
           },

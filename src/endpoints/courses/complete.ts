@@ -3,6 +3,7 @@ import { sendSuccess, asyncHandler, getParam } from '../../middleware/validate.j
 import { requireAuth } from '../../middleware/authenticate.js'
 import { isValidPayloadId } from '../../utils/sanitize.js'
 import { AppError } from '../../types/index.js'
+import { courseCompletion, requireCourseAccess } from '../../lib/course-access.js'
 
 interface EnrollmentDoc {
   id: number
@@ -17,6 +18,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
   }
 
   const payload = req.payload
+  await requireCourseAccess(payload, user.id, courseId)
 
   const enrollments = await payload.find({
     collection: 'enrollments',
@@ -36,6 +38,10 @@ async function handler(req: PayloadRequest): Promise<Response> {
 
   if (enrollment.status === 'completed') {
     return sendSuccess(enrollment)
+  }
+  const completion = await courseCompletion(payload, user.id, courseId)
+  if ((!completion.total && !completion.totalQuizzes) || completion.completed !== completion.total || completion.passedQuizzes !== completion.totalQuizzes) {
+    throw new AppError('VALIDATION_ERROR', 'Complete all published lessons and pass all quizzes before finishing the course')
   }
 
   const updated = await payload.update({

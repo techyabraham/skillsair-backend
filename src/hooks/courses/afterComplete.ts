@@ -104,6 +104,7 @@ export const afterComplete: CollectionAfterChangeHook = async ({ doc, previousDo
   if (operation !== 'update') return doc
   if (doc.status !== 'completed' || previousDoc?.status === 'completed') return doc
 
+  if (Number(process.env.CERTIFICATE_PRICE_NGN ?? '5000') > 0) return doc
   try {
     const studentId = relationId(doc.student)
     const courseId = relationId(doc.course)

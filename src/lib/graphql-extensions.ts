@@ -168,13 +168,16 @@ export const graphQLQueries: GraphQLExtension = (graphQL) => {
       resolve: async (
         _source: unknown,
         args: { token: string },
+        context: GraphQLResolverContext,
       ): Promise<{ valid: boolean; userId: number | null; role: UserRole | null }> => {
         try {
           if (await isTokenBlacklisted(args.token)) {
             return { valid: false, userId: null, role: null }
           }
           const payload = verifyAccessToken(args.token)
-          return { valid: true, userId: payload.userId, role: payload.role }
+          const user = await context.req.payload.findByID({ collection: 'users', id: payload.userId, depth: 0, overrideAccess: true }).catch(() => null)
+          if (!user || !user.isActive) return { valid: false, userId: null, role: null }
+          return { valid: true, userId: Number(user.id), role: user.role }
         } catch {
           return { valid: false, userId: null, role: null }
         }

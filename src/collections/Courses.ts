@@ -92,6 +92,7 @@ export const Courses: CollectionConfig = {
       fields: [{ name: 'objective', type: 'text', required: true }],
     },
     { name: 'sections', type: 'relationship', relationTo: 'sections', hasMany: true },
+    { name: 'prerequisites', type: 'relationship', relationTo: 'courses', hasMany: true },
     {
       name: 'certificateTemplate',
       type: 'select',

@@ -21,6 +21,7 @@ export const Media: CollectionConfig = {
     adminThumbnail: 'thumbnail',
   },
   fields: [
+    { name: 'sourceUrl', type: 'text', unique: true, admin: { readOnly: true } },
     {
       name: 'alt',
       type: 'text',

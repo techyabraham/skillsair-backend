@@ -19,12 +19,8 @@ export const LessonProgress: CollectionConfig = {
       if (req.user) return { student: { equals: req.user.id } }
       return false
     },
-    create: ({ req }) => Boolean(req.user),
-    update: ({ req }) => {
-      if (req.user?.role === 'admin') return true
-      if (req.user) return { student: { equals: req.user.id } }
-      return false
-    },
+    create: ({ req }) => req.user?.role === 'admin',
+    update: ({ req }) => req.user?.role === 'admin',
     delete: ({ req }) => req.user?.role === 'admin',
   },
   fields: [

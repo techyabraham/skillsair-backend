@@ -17,7 +17,9 @@ export async function resolveAuthUser(req: PayloadRequest): Promise<AuthUser | n
   try {
     if (await isTokenBlacklisted(token)) return null
     const payload = verifyAccessToken(token)
-    return { id: payload.userId, email: '', role: payload.role }
+    const user = await req.payload.findByID({ collection: 'users', id: payload.userId, depth: 0, overrideAccess: true }).catch(() => null)
+    if (!user || !user.isActive) return null
+    return { id: Number(user.id), email: user.email, role: user.role }
   } catch {
     logSecurityEvent('invalid_token', { path: req.url })
     return null

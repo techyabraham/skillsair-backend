@@ -5,6 +5,11 @@ import { disableSubscription } from '../../lib/paystack.js'
 import { subscriptionCancelledEmail, sendEmail } from '../../lib/resend.js'
 import { AppError } from '../../types/index.js'
 import { logger } from '../../lib/logger.js'
+import { z } from 'zod'
+import { parseBody, readJsonBody } from '../../middleware/validate.js'
+import { isValidPayloadId } from '../../utils/sanitize.js'
+
+const cancelSchema = z.object({ subscriptionId: z.string().min(1) })
 
 interface SubscriptionDoc {
   id: number
@@ -23,11 +28,13 @@ const FRONTEND_URL = process.env.FRONTEND_URL ?? 'https://skillsair.com'
 
 async function handler(req: PayloadRequest): Promise<Response> {
   const user = await requireAuth(req)
+  const body = parseBody(cancelSchema, await readJsonBody(req))
+  if (!isValidPayloadId(body.subscriptionId)) throw new AppError('VALIDATION_ERROR', 'Invalid subscription id')
   const payload = req.payload
 
   const subscriptions = await payload.find({
     collection: 'subscriptions',
-    where: { and: [{ user: { equals: user.id } }, { status: { equals: 'active' } }] },
+    where: { and: [{ id: { equals: body.subscriptionId } }, { user: { equals: user.id } }, { status: { equals: 'active' } }] },
     limit: 1,
   })
   const subscription = subscriptions.docs[0] as unknown as SubscriptionDoc | undefined
@@ -36,11 +43,9 @@ async function handler(req: PayloadRequest): Promise<Response> {
   }
 
   if (subscription.paystackSubscriptionCode && subscription.paystackEmailToken) {
-    try {
-      await disableSubscription(subscription.paystackSubscriptionCode, subscription.paystackEmailToken)
-    } catch (err) {
-      logger.error({ err, subscriptionId: subscription.id }, 'paystack_disable_subscription_failed')
-    }
+    await disableSubscription(subscription.paystackSubscriptionCode, subscription.paystackEmailToken)
+  } else {
+    throw new AppError('VALIDATION_ERROR', 'Subscription is awaiting Paystack confirmation')
   }
 
   const updated = await payload.update({

@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload'
+import { resolveAuthUser } from '../middleware/authenticate.js'
 
 export const Certificates: CollectionConfig = {
   slug: 'certificates',
@@ -6,9 +7,10 @@ export const Certificates: CollectionConfig = {
     useAsTitle: 'certificateCode',
   },
   access: {
-    read: ({ req }) => {
-      if (req.user?.role === 'admin') return true
-      if (req.user) return { student: { equals: req.user.id } }
+    read: async ({ req }) => {
+      const user = req.user ?? await resolveAuthUser(req)
+      if (user?.role === 'admin') return true
+      if (user) return { student: { equals: user.id } }
       return false
     },
     create: () => false,

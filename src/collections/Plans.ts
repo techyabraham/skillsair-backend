@@ -14,6 +14,7 @@ export const Plans: CollectionConfig = {
   fields: [
     { name: 'name', type: 'text', required: true },
     { name: 'description', type: 'textarea' },
+    { name: 'course', type: 'relationship', relationTo: 'courses', required: true },
     { name: 'price', type: 'number', required: true, min: 0 },
     {
       name: 'interval',

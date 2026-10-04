@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload'
 import { afterEnroll } from '../hooks/courses/afterEnroll.js'
 import { afterComplete } from '../hooks/courses/afterComplete.js'
+import { resolveAuthUser } from '../middleware/authenticate.js'
 
 function relationId(value: unknown): number | string | undefined {
   if (value === null || value === undefined) return undefined
@@ -16,9 +17,10 @@ export const Enrollments: CollectionConfig = {
     useAsTitle: 'id',
   },
   access: {
-    read: ({ req }) => {
-      if (req.user?.role === 'admin') return true
-      if (req.user) return { student: { equals: req.user.id } }
+    read: async ({ req }) => {
+      const user = req.user ?? await resolveAuthUser(req)
+      if (user?.role === 'admin') return true
+      if (user) return { student: { equals: user.id } }
       return false
     },
     create: () => false,
@@ -43,6 +45,7 @@ export const Enrollments: CollectionConfig = {
     { name: 'completedAt', type: 'date' },
     { name: 'progressPercent', type: 'number', defaultValue: 0, min: 0, max: 100 },
     { name: 'orderId', type: 'text' },
+    { name: 'subscription', type: 'relationship', relationTo: 'subscriptions' },
   ],
   hooks: {
     afterChange: [afterEnroll, afterComplete],

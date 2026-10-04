@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload'
+import { resolveAuthUser } from '../middleware/authenticate.js'
 
 export const Subscriptions: CollectionConfig = {
   slug: 'subscriptions',
@@ -6,9 +7,10 @@ export const Subscriptions: CollectionConfig = {
     useAsTitle: 'id',
   },
   access: {
-    read: ({ req }) => {
-      if (req.user?.role === 'admin') return true
-      if (req.user) return { user: { equals: req.user.id } }
+    read: async ({ req }) => {
+      const user = req.user ?? await resolveAuthUser(req)
+      if (user?.role === 'admin') return true
+      if (user) return { user: { equals: user.id } }
       return false
     },
     create: () => false,
@@ -18,6 +20,7 @@ export const Subscriptions: CollectionConfig = {
   fields: [
     { name: 'user', type: 'relationship', relationTo: 'users', required: true },
     { name: 'plan', type: 'relationship', relationTo: 'plans', required: true },
+    { name: 'course', type: 'relationship', relationTo: 'courses', required: true },
     {
       name: 'status',
       type: 'select',
@@ -31,6 +34,8 @@ export const Subscriptions: CollectionConfig = {
     },
     { name: 'paystackSubscriptionCode', type: 'text' },
     { name: 'paystackEmailToken', type: 'text' },
+    { name: 'initialOrderReference', type: 'text', unique: true },
+    { name: 'lastInvoiceCode', type: 'text' },
     { name: 'currentPeriodStart', type: 'date' },
     { name: 'currentPeriodEnd', type: 'date' },
     { name: 'cancelledAt', type: 'date' },

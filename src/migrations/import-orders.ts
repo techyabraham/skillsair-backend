@@ -1,10 +1,8 @@
 /**
  * Imports historical payment records from a WordPress/TutorLMS CSV export into `orders`.
  *
- * Note: orders created here are inserted directly via `payload.create` (operation "create"),
- * so the `afterPayment` hook (which only acts on update transitions into status "success")
- * does not fire — these are historical records only. Enrollments must be imported separately
- * via import-enrollments.ts.
+ * Historical successful orders are marked fulfilled so the live fulfillment job does not
+ * grant access again. Enrollments must be imported separately via import-enrollments.ts.
  *
  * Expected CSV columns:
  *   student_email, type (course|subscription|certificate), course_slug (for course/certificate),
@@ -171,6 +169,7 @@ async function run(): Promise<void> {
           reference,
           ...(row.paystack_transaction_id ? { paystackTransactionId: row.paystack_transaction_id.trim() } : {}),
           ...(row.paid_at ? { paidAt: new Date(row.paid_at).toISOString() } : {}),
+          ...(status === 'success' ? { fulfilledAt: row.paid_at ? new Date(row.paid_at).toISOString() : new Date().toISOString() } : {}),
         },
         overrideAccess: true,
       })

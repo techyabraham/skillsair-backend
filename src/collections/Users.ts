@@ -2,6 +2,7 @@ import type { CollectionConfig, FieldAccess } from 'payload'
 import { isValidE164Phone, encryptField, decryptField } from '../utils/sanitize.js'
 import { usersBeforeCreate } from '../hooks/users/beforeCreate.js'
 import { usersAfterCreate } from '../hooks/users/afterCreate.js'
+import { resolveAuthUser } from '../middleware/authenticate.js'
 
 const isAdmin: FieldAccess = ({ req }) => {
   const user = req.user as unknown as { role?: string } | null | undefined
@@ -20,13 +21,14 @@ export const Users: CollectionConfig = {
     useAsTitle: 'email',
   },
   access: {
-    read: ({ req, id }) => {
-      if (req.user?.role === 'admin') return true
-      if (req.user && String(req.user.id) === String(id)) return true
-      if (req.user) return { id: { equals: req.user.id } }
+    read: async ({ req, id }) => {
+      const user = req.user ?? await resolveAuthUser(req)
+      if (user?.role === 'admin') return true
+      if (user && String(user.id) === String(id)) return true
+      if (user) return { id: { equals: user.id } }
       return false
     },
-    create: () => true,
+    create: ({ req }) => req.user?.role === 'admin',
     update: ({ req, id }) => {
       if (req.user?.role === 'admin') return true
       if (req.user && String(req.user.id) === String(id)) return true
@@ -89,6 +91,7 @@ export const Users: CollectionConfig = {
         { label: 'Student', value: 'student' },
       ],
       access: {
+        create: isAdmin,
         update: isAdmin,
       },
     },
@@ -96,31 +99,37 @@ export const Users: CollectionConfig = {
       name: 'isVerified',
       type: 'checkbox',
       defaultValue: false,
+      access: { create: isAdmin, update: isAdmin },
     },
     {
       name: 'isActive',
       type: 'checkbox',
       defaultValue: true,
+      access: { create: isAdmin, update: isAdmin },
     },
     {
       name: 'referralCode',
       type: 'text',
       unique: true,
       admin: { readOnly: true },
+      access: { create: isAdmin, update: isAdmin },
     },
     {
       name: 'referredBy',
       type: 'relationship',
       relationTo: 'users',
+      access: { update: isAdmin },
     },
     {
       name: 'accessExpiresAt',
       type: 'date',
+      access: { create: isAdmin, update: isAdmin },
     },
     {
       name: 'accessExtensions',
       type: 'array',
       admin: { readOnly: true },
+      access: { create: isAdmin, update: isAdmin },
       fields: [
         { name: 'extendedAt', type: 'date', required: true },
         { name: 'extendedBy', type: 'relationship', relationTo: 'users', required: true },
@@ -132,6 +141,7 @@ export const Users: CollectionConfig = {
     {
       name: 'lastLoginAt',
       type: 'date',
+      access: { create: isAdmin, update: isAdmin },
     },
   ],
   timestamps: true,

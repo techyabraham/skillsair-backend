@@ -43,7 +43,16 @@ async function handler(req: PayloadRequest): Promise<Response> {
     throw new AppError('NOT_FOUND', 'Student not found')
   }
 
-  const previousExpiryDate = student.accessExpiresAt ?? null
+  let previousExpiryDate = student.accessExpiresAt ?? null
+  if (body.courseId) {
+    const prior = await payload.find({ collection: 'access-extensions', where: { and: [{ student: { equals: student.id } }, { course: { equals: body.courseId } }] }, sort: '-newExpiryDate', limit: 1, overrideAccess: true })
+    const enrollments = await payload.find({ collection: 'enrollments', where: { and: [{ student: { equals: student.id } }, { course: { equals: body.courseId } }] }, limit: 1, overrideAccess: true })
+    if (!enrollments.totalDocs) throw new AppError('NOT_FOUND', 'Student is not enrolled in this course')
+    const subscriptionValue = enrollments.docs[0]?.subscription
+    const subscriptionId = typeof subscriptionValue === 'object' && subscriptionValue ? subscriptionValue.id : subscriptionValue
+    const subscription = subscriptionId ? await payload.findByID({ collection: 'subscriptions', id: subscriptionId, depth: 0, overrideAccess: true }).catch(() => null) : null
+    previousExpiryDate = prior.docs[0]?.newExpiryDate ?? subscription?.currentPeriodEnd ?? student.accessExpiresAt ?? null
+  }
   const baseDate = resolveExtensionBaseDate(previousExpiryDate)
   const newExpiryDate = addDays(baseDate, body.daysAdded)
 
@@ -55,15 +64,13 @@ async function handler(req: PayloadRequest): Promise<Response> {
     newExpiryDate: newExpiryDate.toISOString(),
   }
 
-  await payload.update({
-    collection: 'users',
-    id: student.id,
-    data: {
-      accessExpiresAt: newExpiryDate.toISOString(),
-      accessExtensions: [...(student.accessExtensions ?? []), extensionRecord],
-    },
-    overrideAccess: true,
-  })
+  if (!body.courseId) {
+    await payload.update({
+      collection: 'users', id: student.id,
+      data: { accessExpiresAt: newExpiryDate.toISOString(), accessExtensions: [...(student.accessExtensions ?? []), extensionRecord] },
+      overrideAccess: true,
+    })
+  }
 
   const logEntry = await payload.create({
     collection: 'access-extensions',

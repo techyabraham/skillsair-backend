@@ -15,9 +15,11 @@
     "migrate": "payload migrate",
     "generate:types": "payload generate:types",
     "migrate:import:users": "node --loader ts-node/esm src/migrations/import-users.ts",
+    "migrate:import:media": "node --loader ts-node/esm src/migrations/import-media.ts",
     "migrate:import:courses": "node --loader ts-node/esm src/migrations/import-courses.ts",
     "migrate:import:enrollments": "node --loader ts-node/esm src/migrations/import-enrollments.ts",
     "migrate:import:orders": "node --loader ts-node/esm src/migrations/import-orders.ts",
+    "migrate:import:learning": "node --loader ts-node/esm src/migrations/import-learning-data.ts",
     "lint": "eslint src --ext .ts",
     "typecheck": "tsc --noEmit"
   },

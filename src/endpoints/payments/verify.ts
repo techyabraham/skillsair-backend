@@ -3,11 +3,14 @@ import { sendSuccess, asyncHandler, getParam } from '../../middleware/validate.j
 import { requireAuth } from '../../middleware/authenticate.js'
 import { verifyTransaction } from '../../lib/paystack.js'
 import { AppError } from '../../types/index.js'
+import { fulfillOrder } from '../../lib/order-fulfillment.js'
 
 interface OrderDoc {
   id: number
   status: 'pending' | 'success' | 'failed' | 'refunded'
   user: number | string | { id: number | string }
+  amount: number
+  currency: string
 }
 
 function relationId(value: unknown): number | string | undefined {
@@ -37,11 +40,15 @@ async function handler(req: PayloadRequest): Promise<Response> {
   }
 
   if (order.status === 'success') {
+    await fulfillOrder(payload, order.id)
     return sendSuccess({ status: 'success', order })
   }
 
   const verification = await verifyTransaction(reference)
   if (verification.data.status === 'success') {
+    if (verification.data.reference !== reference || verification.data.amount !== Math.round(order.amount * 100) || verification.data.currency !== order.currency) {
+      throw new AppError('VALIDATION_ERROR', 'Payment details do not match the order')
+    }
     const updated = await payload.update({
       collection: 'orders',
       id: order.id,
@@ -52,6 +59,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
       },
       overrideAccess: true,
     })
+    await fulfillOrder(payload, order.id)
     return sendSuccess({ status: 'success', order: updated })
   }
 

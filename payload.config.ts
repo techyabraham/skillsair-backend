@@ -24,6 +24,11 @@ import { Referrals } from './src/collections/Referrals.js'
 import { AccessExtensions } from './src/collections/AccessExtensions.js'
 import { Pages } from './src/collections/Pages.js'
 import { Posts } from './src/collections/Posts.js'
+import { Quizzes } from './src/collections/Quizzes.js'
+import { QuizQuestions } from './src/collections/QuizQuestions.js'
+import { QuizAttempts } from './src/collections/QuizAttempts.js'
+import { Reviews } from './src/collections/Reviews.js'
+import { Discussions } from './src/collections/Discussions.js'
 
 import { registerEndpoint } from './src/endpoints/auth/register.js'
 import { loginEndpoint } from './src/endpoints/auth/login.js'
@@ -34,6 +39,9 @@ import { resetPasswordEndpoint } from './src/endpoints/auth/reset-password.js'
 import { enrollEndpoint } from './src/endpoints/courses/enroll.js'
 import { progressEndpoint } from './src/endpoints/courses/progress.js'
 import { completeEndpoint } from './src/endpoints/courses/complete.js'
+import { quizSubmitEndpoint } from './src/endpoints/courses/quiz-submit.js'
+import { reviewEndpoint } from './src/endpoints/courses/review.js'
+import { discussEndpoint } from './src/endpoints/courses/discuss.js'
 import { videoStreamEndpoint } from './src/endpoints/stream/video.js'
 import { initiatePaymentEndpoint } from './src/endpoints/payments/initiate.js'
 import { paystackWebhookEndpoint } from './src/endpoints/payments/webhook.js'
@@ -63,7 +71,7 @@ function corsOrigins(): string[] {
 }
 
 export default buildConfig({
-  serverURL: process.env.FRONTEND_URL,
+  serverURL: process.env.BACKEND_URL ?? 'http://localhost:3001',
   secret: process.env.PAYLOAD_SECRET ?? '',
   cors: corsOrigins(),
   csrf: corsOrigins(),
@@ -96,6 +104,11 @@ export default buildConfig({
     AccessExtensions,
     Pages,
     Posts,
+    Quizzes,
+    QuizQuestions,
+    QuizAttempts,
+    Reviews,
+    Discussions,
   ],
   endpoints: [
     registerEndpoint,
@@ -107,6 +120,9 @@ export default buildConfig({
     enrollEndpoint,
     progressEndpoint,
     completeEndpoint,
+    quizSubmitEndpoint,
+    reviewEndpoint,
+    discussEndpoint,
     videoStreamEndpoint,
     initiatePaymentEndpoint,
     paystackWebhookEndpoint,

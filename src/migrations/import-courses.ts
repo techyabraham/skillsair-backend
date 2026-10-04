@@ -8,6 +8,9 @@
  *   section_title, section_order,
  *   lesson_title, lesson_order, lesson_duration (optional seconds), lesson_drive_file_id (optional),
  *   is_free (optional: true|false, default false)
+ *   is_published (optional: true|false, defaults to course status)
+ *   course_short_description, course_description_json, course_thumbnail_source_url,
+ *   course_preview_video, lesson_content_json, lesson_attachment_source_urls_json (optional)
  *
  * Courses/sections are created once and reused across rows that share the same course/section.
  *
@@ -37,6 +40,13 @@ interface CourseCsvRow {
   lesson_duration?: string
   lesson_drive_file_id?: string
   is_free?: string
+  is_published?: string
+  course_short_description?: string
+  course_description_json?: string
+  course_thumbnail_source_url?: string
+  course_preview_video?: string
+  lesson_content_json?: string
+  lesson_attachment_source_urls_json?: string
 }
 
 const VALID_LEVELS = new Set(['beginner', 'intermediate', 'advanced'])
@@ -83,6 +93,16 @@ async function run(): Promise<void> {
   const courseIdBySlug = new Map<string, number | string>()
   const sectionIdByKey = new Map<string, number | string>()
   const categoryIdByName = new Map<string, number | string>()
+  const mediaIdByUrl = new Map<string, number | string>()
+
+  async function mediaId(url: string): Promise<number | string> {
+    const cached = mediaIdByUrl.get(url)
+    if (cached !== undefined) return cached
+    const media = await payload.find({ collection: 'media', where: { sourceUrl: { equals: url } }, limit: 1, depth: 0, overrideAccess: true })
+    if (!media.docs[0]) throw new Error(`media not imported: ${url}`)
+    mediaIdByUrl.set(url, media.docs[0].id)
+    return media.docs[0].id
+  }
 
   for (const [index, row] of rows.entries()) {
     const rowLabel = `row ${index + 2}`
@@ -108,7 +128,13 @@ async function run(): Promise<void> {
       const price = row.price ? Number(row.price) : 0
       if (!Number.isFinite(price) || price < 0) throw new Error(`invalid price: "${row.price ?? ''}"`)
       const isFree = row.is_free?.trim().toLowerCase() === 'true'
+      const isPublished = row.is_published ? row.is_published.trim().toLowerCase() === 'true' : status === 'published'
       const duration = row.lesson_duration ? Number(row.lesson_duration) : 0
+      if (!Number.isFinite(duration) || duration < 0) throw new Error('invalid lesson_duration')
+      const courseDescription = row.course_description_json ? JSON.parse(row.course_description_json) : undefined
+      const lessonContent = row.lesson_content_json ? JSON.parse(row.lesson_content_json) : undefined
+      const attachmentUrls = row.lesson_attachment_source_urls_json ? JSON.parse(row.lesson_attachment_source_urls_json) as string[] : []
+      if (!Array.isArray(attachmentUrls) || attachmentUrls.some((url) => typeof url !== 'string')) throw new Error('invalid lesson_attachment_source_urls_json')
 
       let courseId = courseIdBySlug.get(courseSlug)
       if (courseId === undefined) {
@@ -169,6 +195,10 @@ async function run(): Promise<void> {
               price,
               level: level as 'beginner' | 'intermediate' | 'advanced',
               status: status as 'draft' | 'published',
+              ...(row.course_short_description ? { shortDescription: sanitizeText(row.course_short_description) } : {}),
+              ...(courseDescription ? { description: courseDescription } : {}),
+              ...(row.course_thumbnail_source_url ? { thumbnail: await mediaId(row.course_thumbnail_source_url) } : {}),
+              ...(row.course_preview_video ? { previewVideo: row.course_preview_video.trim() } : {}),
               ...(instructorId !== undefined ? { instructor: instructorId } : {}),
               ...(categoryIds.length > 0 ? { categories: categoryIds } : {}),
             },
@@ -241,8 +271,11 @@ async function run(): Promise<void> {
           order: lessonOrder,
           duration,
           isFree,
+          isPublished,
           section: sectionId,
           ...(row.lesson_drive_file_id ? { driveFileId: row.lesson_drive_file_id.trim() } : {}),
+          ...(lessonContent ? { content: lessonContent } : {}),
+          ...(attachmentUrls.length ? { attachments: await Promise.all(attachmentUrls.map(mediaId)) } : {}),
         },
         overrideAccess: true,
       })

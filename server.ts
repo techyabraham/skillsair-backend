@@ -17,6 +17,7 @@ const { default: config } = await import('./payload.config.js')
 const { registerSubscriptionRenewalJob } = await import('./src/jobs/subscription-renewal.js')
 const { registerAccessExpiryJob } = await import('./src/jobs/access-expiry.js')
 const { registerCertificateCleanupJob } = await import('./src/jobs/certificate-cleanup.js')
+const { registerOrderFulfillmentJob } = await import('./src/jobs/order-fulfillment.js')
 
 const app = express()
 const PORT = Number(process.env.PORT ?? 3001)
@@ -115,6 +116,7 @@ app.listen(PORT, () => {
     registerSubscriptionRenewalJob(config)
     registerAccessExpiryJob(config)
     registerCertificateCleanupJob(config)
+    registerOrderFulfillmentJob(config)
     logger.info({}, 'background_jobs_registered')
   }
 })

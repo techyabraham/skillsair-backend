@@ -1,18 +1,16 @@
 import type { CollectionConfig } from 'payload'
-import { afterPayment } from '../hooks/orders/afterPayment.js'
+import { resolveAuthUser } from '../middleware/authenticate.js'
 
 export const Orders: CollectionConfig = {
   slug: 'orders',
   admin: {
     useAsTitle: 'reference',
   },
-  hooks: {
-    afterChange: [afterPayment],
-  },
   access: {
-    read: ({ req }) => {
-      if (req.user?.role === 'admin') return true
-      if (req.user) return { user: { equals: req.user.id } }
+    read: async ({ req }) => {
+      const user = req.user ?? await resolveAuthUser(req)
+      if (user?.role === 'admin') return true
+      if (user) return { user: { equals: user.id } }
       return false
     },
     create: () => false,
@@ -50,6 +48,7 @@ export const Orders: CollectionConfig = {
     { name: 'reference', type: 'text', required: true, unique: true },
     { name: 'paystackTransactionId', type: 'text' },
     { name: 'paidAt', type: 'date' },
+    { name: 'fulfilledAt', type: 'date', admin: { readOnly: true } },
     { name: 'metadata', type: 'json' },
   ],
   timestamps: true,

@@ -3,6 +3,7 @@ import { sendSuccess, asyncHandler, getParam } from '../../middleware/validate.j
 import { requireAuth } from '../../middleware/authenticate.js'
 import { isValidPayloadId } from '../../utils/sanitize.js'
 import { AppError } from '../../types/index.js'
+import { requirePrerequisites } from '../../lib/prerequisites.js'
 
 interface CourseDoc {
   id: number
@@ -28,6 +29,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
   if (course.price > 0) {
     throw new AppError('PAYMENT_REQUIRED', 'This course requires payment before enrollment')
   }
+  await requirePrerequisites(payload, user.id, course.id)
 
   const existing = await payload.find({
     collection: 'enrollments',

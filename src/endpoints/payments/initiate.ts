@@ -4,9 +4,11 @@ import { parseBody, sendSuccess, asyncHandler, readJsonBody } from '../../middle
 import { requireAuth } from '../../middleware/authenticate.js'
 import { paymentRateLimiter } from '../../lib/rate-limiter.js'
 import { isValidPayloadId } from '../../utils/sanitize.js'
-import { initializeTransaction } from '../../lib/paystack.js'
+import { initializeTransaction, verifyPlanConfiguration } from '../../lib/paystack.js'
 import { generatePaystackReference } from '../../utils/generate-code.js'
 import { AppError } from '../../types/index.js'
+import { requirePrerequisites } from '../../lib/prerequisites.js'
+import { relationId } from '../../lib/course-access.js'
 
 const initiateSchema = z.object({
   type: z.enum(['course', 'subscription']),
@@ -26,6 +28,9 @@ interface PlanDoc {
   name: string
   price: number
   isActive: boolean
+  paystackPlanCode: string
+  course: number | { id: number }
+  interval: 'monthly' | 'annually'
 }
 
 interface UserDoc {
@@ -45,6 +50,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
   let courseId: number | undefined
   let planId: number | undefined
   let description = ''
+  let paystackPlanCode: string | undefined
 
   if (body.type === 'course') {
     if (!body.courseId || !isValidPayloadId(body.courseId)) {
@@ -61,6 +67,9 @@ async function handler(req: PayloadRequest): Promise<Response> {
     }
     amount = course.price
     courseId = course.id
+    await requirePrerequisites(payload, user.id, course.id)
+    const existingEnrollment = await payload.find({ collection: 'enrollments', where: { and: [{ student: { equals: user.id } }, { course: { equals: course.id } }] }, limit: 1, overrideAccess: true })
+    if (existingEnrollment.docs[0] && !existingEnrollment.docs[0].subscription) throw new AppError('ALREADY_EXISTS', 'You already own this course')
     description = course.title
   } else {
     if (!body.planId || !isValidPayloadId(body.planId)) {
@@ -72,9 +81,22 @@ async function handler(req: PayloadRequest): Promise<Response> {
     if (!plan || !plan.isActive) {
       throw new AppError('NOT_FOUND', 'Plan not found')
     }
+    if (!plan.paystackPlanCode) throw new AppError('VALIDATION_ERROR', 'Subscription plan is not configured for billing')
+    await verifyPlanConfiguration(plan.paystackPlanCode, plan.price, plan.interval)
+    const subscribedCourseId = relationId(plan.course)
+    if (subscribedCourseId === undefined) throw new AppError('VALIDATION_ERROR', 'Subscription plan has no course')
+    const subscribedCourse = await payload.findByID({ collection: 'courses', id: subscribedCourseId, depth: 0, overrideAccess: true }).catch(() => null)
+    if (!subscribedCourse || subscribedCourse.status !== 'published') throw new AppError('NOT_FOUND', 'Subscription course is unavailable')
+    await requirePrerequisites(payload, user.id, subscribedCourseId)
+    const existingEnrollment = await payload.find({ collection: 'enrollments', where: { and: [{ student: { equals: user.id } }, { course: { equals: subscribedCourseId } }] }, limit: 1, overrideAccess: true })
+    if (existingEnrollment.docs[0] && !existingEnrollment.docs[0].subscription) throw new AppError('ALREADY_EXISTS', 'You already own this course')
+    const active = await payload.find({ collection: 'subscriptions', where: { and: [{ user: { equals: user.id } }, { course: { equals: subscribedCourseId } }, { status: { equals: 'active' } }, { currentPeriodEnd: { greater_than: new Date().toISOString() } }] }, limit: 1, overrideAccess: true })
+    if (active.totalDocs) throw new AppError('ALREADY_EXISTS', 'You already subscribe to this course')
     amount = plan.price
     planId = plan.id
+    courseId = subscribedCourseId as number
     description = plan.name
+    paystackPlanCode = plan.paystackPlanCode
   }
 
   const userDoc = (await payload.findByID({
@@ -106,6 +128,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
     reference,
     callback_url: `${FRONTEND_URL}/payments/callback`,
     currency: 'NGN',
+    ...(paystackPlanCode ? { plan: paystackPlanCode } : {}),
     metadata: {
       userId: user.id,
       type: body.type,

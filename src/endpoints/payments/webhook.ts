@@ -1,19 +1,23 @@
 import type { Endpoint, Payload, PayloadRequest } from 'payload'
 import { asyncHandler, sendSuccess } from '../../middleware/validate.js'
 import { verifyWebhookSignature } from '../../lib/paystack.js'
-import { claimIdempotencyKey } from '../../lib/redis.js'
+import { fulfillOrder } from '../../lib/order-fulfillment.js'
 import type { PaystackWebhookEvent, PaystackChargeSuccessEvent, PaystackSubscriptionDisableEvent } from '../../types/paystack.js'
 import { AppError } from '../../types/index.js'
 import { logger } from '../../lib/logger.js'
 import { subscriptionCancelledEmail, sendEmail } from '../../lib/resend.js'
+import { linkSubscription, applyPaidInvoice } from '../../lib/subscription-events.js'
 
 interface OrderDoc {
   id: number
   status: 'pending' | 'success' | 'failed' | 'refunded'
+  amount: number
+  currency: string
 }
 
 interface SubscriptionDoc {
   id: number
+  status: 'active' | 'cancelled' | 'expired'
   user: number | string | { id: number | string; email?: string; firstName?: string }
   currentPeriodEnd: string | null
 }
@@ -40,9 +44,12 @@ async function handleChargeSuccess(event: PaystackChargeSuccessEvent, payload: P
     limit: 1,
   })
   const order = orders.docs[0] as unknown as OrderDoc | undefined
-  if (!order || order.status === 'success') return
+  if (!order || order.status === 'refunded') return
+  if (event.data.status !== 'success' || event.data.amount !== Math.round(order.amount * 100) || event.data.currency !== order.currency) {
+    throw new AppError('VALIDATION_ERROR', 'Payment details do not match the order')
+  }
 
-  await payload.update({
+  if (order.status !== 'success') await payload.update({
     collection: 'orders',
     id: order.id,
     data: {
@@ -52,6 +59,7 @@ async function handleChargeSuccess(event: PaystackChargeSuccessEvent, payload: P
     },
     overrideAccess: true,
   })
+  await fulfillOrder(payload, order.id)
 }
 
 async function handleSubscriptionDisable(
@@ -64,12 +72,14 @@ async function handleSubscriptionDisable(
     limit: 1,
   })
   const subscription = subscriptions.docs[0] as unknown as SubscriptionDoc | undefined
-  if (!subscription) return
+  if (!subscription) throw new AppError('NOT_FOUND', 'Subscription has not been linked yet')
+  const status = subscription.currentPeriodEnd && new Date(subscription.currentPeriodEnd).getTime() <= Date.now() ? 'expired' : 'cancelled'
+  if (subscription.status === status) return
 
   await payload.update({
     collection: 'subscriptions',
     id: subscription.id,
-    data: { status: 'cancelled', cancelledAt: new Date().toISOString() },
+    data: { status, cancelledAt: new Date().toISOString() },
     overrideAccess: true,
   })
 
@@ -101,24 +111,18 @@ export async function handlePaystackWebhook(req: PayloadRequest): Promise<Respon
   }
 
   const event = JSON.parse(rawBody) as PaystackWebhookEvent
-  const idempotencyKey = `paystack:${event.event}:${JSON.stringify((event.data as { id?: unknown }).id ?? event.data)}`
-  const isFirstDelivery = await claimIdempotencyKey(idempotencyKey)
-  if (!isFirstDelivery) {
-    return sendSuccess({ received: true, duplicate: true })
-  }
-
   const payload = req.payload
 
-  try {
-    if (event.event === 'charge.success') {
+  if (event.event === 'charge.success') {
       await handleChargeSuccess(event as PaystackChargeSuccessEvent, payload)
-    } else if (event.event === 'subscription.disable') {
+  } else if (event.event === 'subscription.disable' || event.event === 'subscription.not_renew') {
       await handleSubscriptionDisable(event as PaystackSubscriptionDisableEvent, payload)
-    } else {
+  } else if (event.event === 'subscription.create') {
+      await linkSubscription(payload, event.data as Parameters<typeof linkSubscription>[1])
+  } else if (event.event === 'invoice.update') {
+      await applyPaidInvoice(payload, event.data as Parameters<typeof applyPaidInvoice>[1])
+  } else {
       logger.info({ event: event.event }, 'paystack_webhook_unhandled_event')
-    }
-  } catch (err) {
-    logger.error({ err, event: event.event }, 'paystack_webhook_processing_failed')
   }
 
   return sendSuccess({ received: true })

@@ -15,7 +15,10 @@ interface EnrollmentDoc {
 }
 
 async function handler(req: PayloadRequest): Promise<Response> {
-  await requireInstructorOrAdmin(req)
+  const issuer = await requireInstructorOrAdmin(req)
+  if (Number(process.env.CERTIFICATE_PRICE_NGN ?? '5000') > 0 && issuer.role !== 'admin') {
+    throw new AppError('INSUFFICIENT_PERMISSION', 'Only an admin can issue a paid certificate without purchase')
+  }
   const body = parseBody(generateSchema, await readJsonBody(req))
   const payload = req.payload
 
