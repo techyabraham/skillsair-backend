@@ -10,6 +10,7 @@ import { AppError } from '../../types/index.js'
 
 const purchaseSchema = z.object({
   courseId: z.string().min(1),
+  paymentMethod: z.enum(['paystack', 'bank_transfer']).optional(),
 })
 
 interface EnrollmentDoc {
@@ -70,7 +71,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
     depth: 0,
   })) as unknown as UserDoc
 
-  const amount = Number(process.env.CERTIFICATE_PRICE_NGN ?? '5000')
+  const amount = Number(process.env.CERTIFICATE_PRICE_NGN ?? '10000')
   const reference = generatePaystackReference('certificate', user.id)
 
   const order = await payload.create({
@@ -93,6 +94,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
     reference,
     callback_url: `${FRONTEND_URL}/payments/callback`,
     currency: 'NGN',
+    ...(body.paymentMethod === 'bank_transfer' ? { channels: ['bank_transfer'] } : {}),
     metadata: {
       userId: user.id,
       type: 'certificate',

@@ -56,6 +56,9 @@ import { affiliateDashboardEndpoint } from './src/endpoints/affiliates/dashboard
 import { trackAffiliateEndpoint } from './src/endpoints/affiliates/track.js'
 import { extendAccessEndpoint } from './src/endpoints/admin/extend-access.js'
 import { graphqlGetEndpoint, graphqlPostEndpoint } from './src/endpoints/graphql/handler.js'
+import { updateProfileEndpoint } from './src/endpoints/profile/update.js'
+import { changePasswordEndpoint } from './src/endpoints/profile/password.js'
+import { uploadAvatarEndpoint } from './src/endpoints/profile/avatar.js'
 
 import { graphQLQueries } from './src/lib/graphql-extensions.js'
 
@@ -138,6 +141,9 @@ export default buildConfig({
     extendAccessEndpoint,
     graphqlGetEndpoint,
     graphqlPostEndpoint,
+    updateProfileEndpoint,
+    changePasswordEndpoint,
+    uploadAvatarEndpoint,
   ],
   graphQL: {
     queries: graphQLQueries,

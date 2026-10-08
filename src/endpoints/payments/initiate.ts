@@ -14,6 +14,7 @@ const initiateSchema = z.object({
   type: z.enum(['course', 'subscription']),
   courseId: z.string().optional(),
   planId: z.string().optional(),
+  paymentMethod: z.enum(['paystack', 'bank_transfer']).optional(),
 })
 
 interface CourseDoc {
@@ -129,6 +130,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
     callback_url: `${FRONTEND_URL}/payments/callback`,
     currency: 'NGN',
     ...(paystackPlanCode ? { plan: paystackPlanCode } : {}),
+    ...(body.paymentMethod === 'bank_transfer' ? { channels: ['bank_transfer'] } : {}),
     metadata: {
       userId: user.id,
       type: body.type,

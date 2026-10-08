@@ -6,6 +6,7 @@ export interface PaystackInitializeRequest {
   metadata: Record<string, unknown>
   currency?: string
   plan?: string
+  channels?: string[]
 }
 
 export interface PaystackInitializeData {

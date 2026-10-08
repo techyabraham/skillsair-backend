@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload'
+import { resolveAuthUser } from '../middleware/authenticate.js'
 
 function relationId(value: unknown): number | string | undefined {
   if (value === null || value === undefined) return undefined
@@ -14,9 +15,10 @@ export const LessonProgress: CollectionConfig = {
     useAsTitle: 'id',
   },
   access: {
-    read: ({ req }) => {
-      if (req.user?.role === 'admin') return true
-      if (req.user) return { student: { equals: req.user.id } }
+    read: async ({ req }) => {
+      const user = req.user ?? await resolveAuthUser(req)
+      if (user?.role === 'admin') return true
+      if (user) return { student: { equals: user.id } }
       return false
     },
     create: ({ req }) => req.user?.role === 'admin',
