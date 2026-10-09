@@ -22,8 +22,8 @@ function relationId(value: unknown): number | string | undefined {
 
 const FRONTEND_URL = process.env.FRONTEND_URL ?? 'https://skillsair.com'
 
-export const afterEnroll: CollectionAfterChangeHook = async ({ doc, operation, req }) => {
-  if (operation !== 'create') return doc
+export const afterEnroll: CollectionAfterChangeHook = async ({ context, doc, operation, req }) => {
+  if (operation !== 'create' || context?.skipEnrollmentEmail === true) return doc
   try {
     const studentId = relationId(doc.student)
     const courseId = relationId(doc.course)

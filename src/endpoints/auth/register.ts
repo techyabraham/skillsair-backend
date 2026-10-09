@@ -67,6 +67,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
       lastName: sanitizeText(body.lastName),
       phone: body.phone,
       role: 'student',
+      isStudent: true,
       referredBy,
     },
     overrideAccess: true,

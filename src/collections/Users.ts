@@ -108,6 +108,52 @@ export const Users: CollectionConfig = {
       access: { create: isAdmin, update: isAdmin },
     },
     {
+      name: 'isStudent',
+      type: 'checkbox',
+      defaultValue: false,
+      admin: {
+        description: 'Audience flag for people identified as SkillsAir students; separate from backend role permissions.',
+      },
+      access: { create: isAdmin, update: isAdmin },
+    },
+    {
+      name: 'wordpressUserId',
+      type: 'text',
+      unique: true,
+      admin: { description: 'Original WordPress user ID, retained for migration reconciliation.' },
+      access: { create: isAdmin, update: isAdmin },
+    },
+    {
+      name: 'wordpressRoles',
+      type: 'array',
+      admin: { description: 'Original WordPress roles; these do not grant permissions in SkillsAir.' },
+      access: { create: isAdmin, update: isAdmin },
+      fields: [{ name: 'role', type: 'text', required: true }],
+    },
+    {
+      name: 'marketingConsent',
+      type: 'select',
+      required: true,
+      defaultValue: 'unknown',
+      options: [
+        { label: 'Unknown', value: 'unknown' },
+        { label: 'Opted in', value: 'opted_in' },
+        { label: 'Opted out', value: 'opted_out' },
+      ],
+      admin: { description: 'Imported preference only. Unknown is not permission to send marketing email.' },
+      access: { create: isAdmin, update: isAdmin },
+    },
+    {
+      name: 'marketingConsentAt',
+      type: 'date',
+      access: { create: isAdmin, update: isAdmin },
+    },
+    {
+      name: 'marketingConsentSource',
+      type: 'text',
+      access: { create: isAdmin, update: isAdmin },
+    },
+    {
       name: 'referralCode',
       type: 'text',
       unique: true,

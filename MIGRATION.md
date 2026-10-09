@@ -1,10 +1,51 @@
 # Tutor LMS replacement data import
 
-These importers consume normalized CSV files. Map the existing WordPress/Tutor LMS export to these columns before running them. They do not connect to WordPress directly. Run each command without `--execute` first; that mode reports planned changes and row failures without writing records.
+These importers consume normalized CSV files. Map/export the existing WordPress and Tutor LMS data to these columns before running them. They do not connect to WordPress directly. Run each command without `--execute` first; that mode reports planned changes and row failures without writing records.
+
+The user collection now includes student audience, WordPress source-role, and communication-consent fields. Generate and apply a Payload/PostgreSQL schema migration containing these fields before running the importers; the data import scripts do not create database columns.
+
+## Import every WordPress user and identify students
+
+Export the complete WordPress user directory, not only users with the `student` or `subscriber` role. WordPress roles are not a reliable Tutor LMS enrollment list: keep them as source metadata and use the enrollment export to identify historical students.
+
+The user CSV requires `email`; `first_name` and `last_name` are recommended. Optional columns are:
+
+| Column | Meaning |
+| --- | --- |
+| `wp_user_id` | Original WordPress user ID, used for reconciliation. |
+| `phone` | Optional E.164 phone number, for example `+2348012345678`. An invalid phone is omitted with a warning; the user record still imports. |
+| `wp_roles` | Original WordPress roles, separated by `|`, `,`, or `;`. |
+| `is_student` | Explicit student audience flag (`true`/`false`, `yes`/`no`, or `1`/`0`). Defaults to false when omitted. |
+| `is_active` | Set false only when the source account should be disabled in SkillsAir. Defaults to true. |
+| `marketing_consent` | `opted_in`, `opted_out`, or `unknown`; common yes/no equivalents are accepted. Blank defaults to `unknown`. |
+| `marketing_consent_at` | ISO date/time for the recorded consent decision. |
+| `marketing_consent_source` | Where/how that decision was recorded, if available. |
+
+Example header and row:
+
+```csv
+wp_user_id,email,first_name,last_name,phone,wp_roles,is_student,is_active,marketing_consent,marketing_consent_at,marketing_consent_source
+123,alex@example.com,Alex,Example,+2348012345678,subscriber,false,true,unknown,,
+```
+
+`import-users` creates every valid contact as a lowest-privilege SkillsAir account and retains WordPress roles in `wordpressRoles`. A WordPress administrator is **not** made a SkillsAir administrator. The SkillsAir `isStudent` flag is separate from the backend account role and does not grant course access by itself. A person who has any imported Tutor enrollment is automatically marked as a student, including completed or refunded historical enrollments. Set `is_student=true` in the user CSV for students who have no enrollment row. During a merge, the importer does not clear an existing true student flag; this preserves historical student membership when a later export omits or contradicts it. Reconcile false positives manually.
+
+Marketing consent is not inferred from having a WordPress account, purchasing a course, or being a student. Blank consent imports as `unknown`; use `opted_in` for marketing only when the source export contains an affirmative record. Keep transactional notices separate from marketing lists and honor opt-outs in the sending system.
+
+All rows need a valid, unique email. Resolve shared or invalid emails before importing. WordPress password hashes are not reused: imported users receive random inaccessible passwords and should use the password reset flow. User and enrollment imports suppress the normal welcome and enrollment-confirmation emails, so the migration does not automatically send messages to the directory. If an email already exists in SkillsAir, the user importer updates migration metadata only; it does not overwrite the existing name, phone, password, or SkillsAir role. Existing known marketing consent is preserved rather than overwritten from a potentially older export. Conflicting WordPress IDs and duplicate export rows are reported as failures for manual reconciliation.
+
+After import, create a consent-filtered audience CSV without sending email:
+
+```sh
+node --loader ts-node/esm src/migrations/export-communications.ts students-opted-in.csv --segment=students --consent=opted_in
+node --loader ts-node/esm src/migrations/export-communications.ts all-opted-in.csv --segment=all --consent=opted_in
+```
+
+By default, exports include active accounts only. Add `--include-inactive` to include deactivated accounts. Choose `--consent=unknown`, `--consent=opted_out`, or `--consent=all` only when you have a specific purpose and have checked the applicable communication rules. The export contains email, name, active/student flags, original WordPress roles, and consent fields; it omits phone numbers. It refuses to overwrite a file unless `--force` is supplied.
 
 ## Order
 
-1. `npm run migrate:import:users -- users.csv --execute`
+1. Export all WordPress users to `users.csv`, then run `npm run migrate:import:users -- users.csv` and review the dry-run output. Execute with `--execute` after resolving failures. This imports non-students too; enrollment rows mark students automatically.
 2. `npm run migrate:import:media -- media.csv --execute`
 3. `npm run migrate:import:courses -- courses.csv --execute`
 4. Create subscription plans in Payload, then `npm run migrate:import:enrollments -- enrollments.csv --execute`

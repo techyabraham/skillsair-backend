@@ -33,6 +33,7 @@ interface Summary {
   total: number
   created: number
   skipped: number
+  studentsMarked: number
   failed: number
 }
 
@@ -56,9 +57,10 @@ async function run(): Promise<void> {
   const { default: config } = await import('../../payload.config.js')
   const payload = await getPayload({ config })
 
-  const summary: Summary = { total: rows.length, created: 0, skipped: 0, failed: 0 }
+  const summary: Summary = { total: rows.length, created: 0, skipped: 0, studentsMarked: 0, failed: 0 }
 
   const userIdByEmail = new Map<string, number | string>()
+  const studentFlagByEmail = new Map<string, boolean>()
   const courseIdBySlug = new Map<string, number | string>()
 
   for (const [index, row] of rows.entries()) {
@@ -88,6 +90,7 @@ async function run(): Promise<void> {
         if (user.docs.length === 0) throw new Error(`no user found for email "${email}"`)
         studentId = user.docs[0]!.id as number | string
         userIdByEmail.set(email, studentId)
+        studentFlagByEmail.set(email, Boolean((user.docs[0] as { isStudent?: boolean }).isStudent))
       }
 
       let courseId = courseIdBySlug.get(courseSlug)
@@ -102,6 +105,22 @@ async function run(): Promise<void> {
         if (course.docs.length === 0) throw new Error(`no course found for slug "${courseSlug}"`)
         courseId = course.docs[0]!.id as number | string
         courseIdBySlug.set(courseSlug, courseId)
+      }
+
+      if (!studentFlagByEmail.get(email)) {
+        if (!execute) {
+          console.log(`WOULD MARK STUDENT  ${email} (has a Tutor LMS enrollment)`)
+        } else {
+          await payload.update({
+            collection: 'users',
+            id: studentId,
+            data: { isStudent: true },
+            overrideAccess: true,
+          })
+          console.log(`MARKED STUDENT  ${email}`)
+        }
+        studentFlagByEmail.set(email, true)
+        summary.studentsMarked += 1
       }
 
       const existing = await payload.find({
@@ -134,6 +153,7 @@ async function run(): Promise<void> {
           ...(row.completed_at ? { completedAt: new Date(row.completed_at).toISOString() } : {}),
           ...(row.order_id ? { orderId: row.order_id.trim() } : {}),
         },
+        context: { skipEnrollmentEmail: true },
         overrideAccess: true,
       })
       console.log(`CREATED  ${email} / ${courseSlug}`)
@@ -150,6 +170,7 @@ async function run(): Promise<void> {
   console.log(`Total rows: ${summary.total}`)
   console.log(`Created: ${summary.created}`)
   console.log(`Skipped (existing): ${summary.skipped}`)
+  console.log(`Students marked: ${summary.studentsMarked}`)
   console.log(`Failed: ${summary.failed}`)
 }
 

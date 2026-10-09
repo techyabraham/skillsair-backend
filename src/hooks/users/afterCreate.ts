@@ -7,8 +7,8 @@ interface UserDoc {
   firstName: string
 }
 
-export const usersAfterCreate: CollectionAfterChangeHook = async ({ doc, operation }) => {
-  if (operation !== 'create') return doc
+export const usersAfterCreate: CollectionAfterChangeHook = async ({ context, doc, operation }) => {
+  if (operation !== 'create' || context?.skipWelcomeEmail === true) return doc
 
   const user = doc as UserDoc
   try {
