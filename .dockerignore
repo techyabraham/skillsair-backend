@@ -1,0 +1,15 @@
+.git
+.gitignore
+.claude
+node_modules
+dist
+build
+.next
+media
+.local-dev
+.env
+.env.*
+!.env.example
+*.log
+*.csv
+*.tsv

@@ -4,6 +4,22 @@ These importers consume normalized CSV files. Map/export the existing WordPress 
 
 The user collection now includes student audience, WordPress source-role, and communication-consent fields. Generate and apply a Payload/PostgreSQL schema migration containing these fields before running the importers; the data import scripts do not create database columns.
 
+## Database schema migrations
+
+Payload schema migrations live in `src/payload-migrations/`. Keep them separate from `src/migrations/`, which contains one-off CSV import/export scripts. The production application image must include the generated migration files and `payload.config.ts` must keep `migrationDir` pointed at `src/payload-migrations`.
+
+The initial schema migration is checked in with this importer setup. For future schema changes, use a disposable local PostgreSQL database on the development machine and follow the normal Payload workflow:
+
+1. Update the Payload collections/configuration.
+2. Start the development app against the disposable development database so Payload can push the changed schema there.
+3. Generate a named migration with `npm run migrate:create -- add_a_short_change_name`.
+4. Review both the generated `.ts` and `.json` snapshot. Confirm the `up` SQL adds or changes only the intended objects and that the `down` SQL is an acceptable rollback.
+5. Commit the migration files with the application changes. Do not point the generator at staging or production.
+
+For a new Coolify staging or production database, run the committed migrations before deploying the application version that depends on them. Build `Dockerfile.migrate` as a one-off runner using the same commit and the same `DATABASE_URI`, `PAYLOAD_SECRET`, and other required application environment values as the backend. The image runs `npm run migrate` and exits after applying pending migrations. In Coolify, run this image once as a one-off task (or temporarily override the backend image command with `npm run migrate`), wait for a successful exit, then deploy/restart the backend image. Do not leave the migration runner running as a permanent service. Run `npm run migrate:status` to inspect the applied migration state.
+
+Take a database backup before running migrations against a populated environment. The initial migration creates the empty Payload schema; it does not import WordPress/Tutor LMS records or transfer existing backend data.
+
 ## Import every WordPress user and identify students
 
 Export the complete WordPress user directory, not only users with the `student` or `subscriber` role. WordPress roles are not a reliable Tutor LMS enrollment list: keep them as source metadata and use the enrollment export to identify historical students.

@@ -82,6 +82,7 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URI,
     },
+    migrationDir: path.resolve(dirname, 'src/payload-migrations'),
   }),
   editor: lexicalEditor({}),
   email: resendAdapter({

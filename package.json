@@ -13,6 +13,8 @@
     "build": "payload build && tsc",
     "start": "node dist/server.js",
     "migrate": "payload migrate",
+    "migrate:create": "payload migrate:create",
+    "migrate:status": "payload migrate:status",
     "generate:types": "payload generate:types",
     "migrate:import:users": "node --loader ts-node/esm src/migrations/import-users.ts",
     "migrate:import:media": "node --loader ts-node/esm src/migrations/import-media.ts",
