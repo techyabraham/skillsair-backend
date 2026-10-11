@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "node --loader ts-node/esm server.ts",
-    "build": "payload build && tsc",
+    "build": "tsc",
     "start": "node dist/server.js",
     "migrate": "payload migrate",
     "migrate:create": "payload migrate:create",
