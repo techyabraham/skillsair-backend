@@ -3,7 +3,10 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci --include=dev --no-audit
 COPY . .
+# Coolify may set PAYLOAD_CONFIG_PATH to /app/dist/payload.config.js, as it
+# does for the API service. Compile that config before generating the admin UI.
 ENV NODE_ENV=production
+RUN npm run build
 RUN npm run admin:build
 
 FROM node:20-alpine AS production
