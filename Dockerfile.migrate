@@ -13,4 +13,4 @@ ENV NODE_ENV=production \
 USER node
 
 # Apply committed migrations and exit; this image is intended for one-off jobs.
-CMD ["npm", "run", "migrate"]
+CMD ["sleep", "infinity"]
