@@ -1,7 +1,7 @@
 /**
  * Imports courses, sections, and lessons from a WordPress/TutorLMS CSV export.
  *
- * Expected CSV columns (one row per lesson):
+ * Expected CSV columns (one row per lesson, or one course-only row for an empty course):
  *   course_title, course_slug (optional), instructor_email (optional),
  *   price (optional, default 0), level (optional: beginner|intermediate|advanced, default beginner),
  *   status (optional: draft|published, default draft), category (optional),
@@ -113,13 +113,13 @@ async function run(): Promise<void> {
 
       const sectionTitle = sanitizeText(row.section_title)
       const sectionOrder = Number(row.section_order)
-      if (!sectionTitle) throw new Error('missing section_title')
-      if (!Number.isFinite(sectionOrder)) throw new Error('invalid section_order')
-
       const lessonTitle = sanitizeText(row.lesson_title)
       const lessonOrder = Number(row.lesson_order)
-      if (!lessonTitle) throw new Error('missing lesson_title')
-      if (!Number.isFinite(lessonOrder)) throw new Error('invalid lesson_order')
+      const hasLesson = Boolean(lessonTitle)
+      if (hasLesson && !sectionTitle) throw new Error('missing section_title')
+      if (hasLesson && !Number.isFinite(sectionOrder)) throw new Error('invalid section_order')
+      if (hasLesson && !Number.isFinite(lessonOrder)) throw new Error('invalid lesson_order')
+      if (!hasLesson && sectionTitle) throw new Error('section_title requires lesson_title')
 
       const level = row.level?.trim().toLowerCase() || 'beginner'
       if (!VALID_LEVELS.has(level)) throw new Error(`invalid level: "${row.level ?? ''}"`)
@@ -212,6 +212,9 @@ async function run(): Promise<void> {
         }
         if (courseId !== undefined) courseIdBySlug.set(courseSlug, courseId)
       }
+
+      // A course with no lessons still needs a row so its metadata can be imported.
+      if (!hasLesson) continue
 
       const sectionKey = `${courseSlug}::${sectionTitle}`
       let sectionId = sectionIdByKey.get(sectionKey)

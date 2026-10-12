@@ -7,5 +7,6 @@ dist/
 payload-types.ts
 media/
 .local-dev/
+.migration-output/
 build/
 .next/

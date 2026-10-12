@@ -2,6 +2,14 @@
 
 These importers consume normalized CSV files. Map/export the existing WordPress and Tutor LMS data to these columns before running them. They do not connect to WordPress directly. Run each command without `--execute` first; that mode reports planned changes and row failures without writing records.
 
+For the SkillsAir Tutor LMS JSON ZIP export and user CSV, prepare import files locally with Python 3 (standard library only):
+
+```sh
+python src/migrations/prepare-tutor-export.py users.csv tutor-lms-data.zip .migration-output
+```
+
+This creates `users.csv`, `courses.csv`, `active-enrollments.csv`, an unmatched-enrollment report, a media reference list, and an audit. It includes every user in the source CSV. Tutor enrollment rows with `post_status=completed` are mapped to SkillsAir `active` access; other source statuses are excluded from the active-enrollment CSV. The script joins by email and does not require WordPress user IDs. It does not write to Payload. Import users and courses first, then run the enrollment importer. No consent is inferred; absent consent remains `unknown`.
+
 The user collection now includes student audience, WordPress source-role, and communication-consent fields. Generate and apply a Payload/PostgreSQL schema migration containing these fields before running the importers; the data import scripts do not create database columns.
 
 ## Database schema migrations
@@ -75,7 +83,7 @@ By default, exports include active accounts only. Add `--include-inactive` to in
 12. `npm run migrate:import:learning -- discussions discussions.csv --execute`
 13. `npm run migrate:import:learning -- certificates certificates.csv --execute`
 
-For a dry run, remove `--execute`. Existing import scripts document their primary columns. `media.csv` requires `source_url`, `local_path`, and `alt`; files must already exist locally. Course rows now accept `is_published` (defaults to the course status), `course_short_description`, `course_description_json`, `course_thumbnail_source_url`, `course_preview_video`, `lesson_content_json`, and `lesson_attachment_source_urls_json`. Rich text JSON must be in Payload Lexical format. Each course row describes one lesson.
+For a dry run, remove `--execute`. Existing import scripts document their primary columns. `media.csv` requires `source_url`, `local_path`, and `alt`; files must already exist locally. Course rows now accept `is_published` (defaults to the course status), `course_short_description`, `course_description_json`, `course_thumbnail_source_url`, `course_preview_video`, `lesson_content_json`, and `lesson_attachment_source_urls_json`. Rich text JSON must be in Payload Lexical format. Each course row describes one lesson; a row with course metadata and blank section/lesson fields imports a course with no lessons.
 
 ## Additional CSV columns
 
