@@ -1,6 +1,7 @@
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { buildConfig } from 'payload'
+import sharp from 'sharp'
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { s3Storage } from '@payloadcms/storage-s3'
@@ -76,6 +77,7 @@ function corsOrigins(): string[] {
 export default buildConfig({
   serverURL: process.env.BACKEND_URL ?? 'http://localhost:3001',
   secret: process.env.PAYLOAD_SECRET ?? '',
+  sharp,
   cors: corsOrigins(),
   csrf: corsOrigins(),
   db: postgresAdapter({

@@ -2,6 +2,8 @@
 
 Payload CMS provides content and admin editing; the custom endpoints handle student actions and Paystack payments. See [MIGRATION.md](MIGRATION.md) for the Tutor LMS import sequence.
 
+The Payload admin panel is a separate Next.js service. See [ADMIN-DEPLOYMENT.md](ADMIN-DEPLOYMENT.md) for its Coolify setup.
+
 ## Learning flow
 
 - A course has ordered sections and lessons, optional prerequisite courses, and published quizzes. A prerequisite is satisfied by a completed enrollment.

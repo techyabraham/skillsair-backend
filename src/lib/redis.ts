@@ -5,7 +5,9 @@ const REDIS_URL = process.env.REDIS_URL ?? 'redis://localhost:6379'
 
 export const redis = new Redis(REDIS_URL, {
   maxRetriesPerRequest: 3,
-  lazyConnect: false,
+  // Avoid opening sockets just by importing the Payload config (e.g. during
+  // builds and import-map generation). ioredis connects on the first command.
+  lazyConnect: true,
 })
 
 redis.on('error', (err: Error) => {

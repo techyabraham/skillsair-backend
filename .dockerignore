@@ -3,8 +3,9 @@
 .claude
 node_modules
 dist
-build
 .next
+.next-admin
+build
 media
 .local-dev
 .env
