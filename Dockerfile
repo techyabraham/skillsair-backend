@@ -10,6 +10,8 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci --omit=dev && npm cache clean --force
 COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/tsconfig.json ./tsconfig.json
+ENV PAYLOAD_CONFIG_PATH=/app/dist/payload.config.js
 ENV NODE_ENV=production
 EXPOSE 3001
 USER node
