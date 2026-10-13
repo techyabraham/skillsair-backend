@@ -77,6 +77,21 @@ async function run(): Promise<void> {
     trim: true,
   }) as CourseCsvRow[]
 
+  // Lessons use slugs that are unique across a whole course, not only within
+  // a section. Tutor exports often repeat generic titles such as "Introduction"
+  // in multiple sections, so count collisions before importing and give only
+  // those repeated titles a stable section/order/row suffix.
+  const lessonSlugCounts = new Map<string, number>()
+  for (const row of rows) {
+    const courseTitle = sanitizeText(row.course_title)
+    const lessonTitle = sanitizeText(row.lesson_title)
+    if (!courseTitle || !lessonTitle) continue
+    const courseSlug = row.course_slug?.trim() || slugify(courseTitle)
+    const lessonSlug = slugify(lessonTitle) || 'lesson'
+    const key = `${courseSlug}::${lessonSlug}`
+    lessonSlugCounts.set(key, (lessonSlugCounts.get(key) ?? 0) + 1)
+  }
+
   await loadEnv()
   const { default: config } = await import('../../payload.config.js')
   const payload = await getPayload({ config })
@@ -267,10 +282,17 @@ async function run(): Promise<void> {
         continue
       }
 
+      const baseLessonSlug = slugify(lessonTitle) || 'lesson'
+      const lessonSlugKey = `${courseSlug}::${baseLessonSlug}`
+      const lessonSlug = (lessonSlugCounts.get(lessonSlugKey) ?? 0) > 1
+        ? slugify(`${baseLessonSlug}-${sectionOrder}-${lessonOrder}-${index + 2}`)
+        : baseLessonSlug
+
       await payload.create({
         collection: 'lessons',
         data: {
           title: lessonTitle,
+          slug: lessonSlug,
           order: lessonOrder,
           duration,
           isFree,
