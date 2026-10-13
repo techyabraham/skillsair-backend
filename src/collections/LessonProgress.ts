@@ -12,7 +12,9 @@ function relationId(value: unknown): number | string | undefined {
 export const LessonProgress: CollectionConfig = {
   slug: 'lesson-progress',
   admin: {
+    group: 'People',
     useAsTitle: 'id',
+    defaultColumns: ['student', 'course', 'lesson', 'isCompleted', 'lastWatchedAt'],
   },
   access: {
     read: async ({ req }) => {

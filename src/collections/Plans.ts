@@ -3,7 +3,9 @@ import type { CollectionConfig } from 'payload'
 export const Plans: CollectionConfig = {
   slug: 'plans',
   admin: {
+    group: 'Commerce',
     useAsTitle: 'name',
+    defaultColumns: ['name', 'course', 'price', 'interval', 'isActive'],
   },
   access: {
     read: () => true,

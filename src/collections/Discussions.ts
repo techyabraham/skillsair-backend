@@ -1,7 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
 export const Discussions: CollectionConfig = {
-  slug: 'discussions', admin: { useAsTitle: 'id' },
+  slug: 'discussions', admin: { group: 'Learning', useAsTitle: 'id', defaultColumns: ['course', 'lesson', 'author', 'parent', 'createdAt'] },
   access: {
     read: () => true, create: () => false,
     update: ({ req }) => req.user?.role === 'admin', delete: ({ req }) => req.user?.role === 'admin',

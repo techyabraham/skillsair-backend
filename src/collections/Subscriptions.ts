@@ -4,7 +4,9 @@ import { resolveAuthUser } from '../middleware/authenticate.js'
 export const Subscriptions: CollectionConfig = {
   slug: 'subscriptions',
   admin: {
+    group: 'Commerce',
     useAsTitle: 'id',
+    defaultColumns: ['user', 'course', 'plan', 'status', 'currentPeriodEnd'],
   },
   access: {
     read: async ({ req }) => {

@@ -3,7 +3,9 @@ import type { CollectionConfig } from 'payload'
 export const AccessExtensions: CollectionConfig = {
   slug: 'access-extensions',
   admin: {
+    group: 'People',
     useAsTitle: 'id',
+    defaultColumns: ['student', 'course', 'daysAdded', 'newExpiryDate', 'extendedBy'],
   },
   access: {
     read: ({ req }) => {

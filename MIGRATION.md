@@ -56,7 +56,14 @@ wp_user_id,email,first_name,last_name,phone,wp_roles,is_student,is_active,market
 
 Marketing consent is not inferred from having a WordPress account, purchasing a course, or being a student. Blank consent imports as `unknown`; use `opted_in` for marketing only when the source export contains an affirmative record. Keep transactional notices separate from marketing lists and honor opt-outs in the sending system.
 
-All rows need a valid, unique email. Resolve shared or invalid emails before importing. WordPress password hashes are not reused: imported users receive random inaccessible passwords and should use the password reset flow. User and enrollment imports suppress the normal welcome and enrollment-confirmation emails, so the migration does not automatically send messages to the directory. If an email already exists in SkillsAir, the user importer updates migration metadata only; it does not overwrite the existing name, phone, password, or SkillsAir role. Existing known marketing consent is preserved rather than overwritten from a potentially older export. Conflicting WordPress IDs and duplicate export rows are reported as failures for manual reconciliation.
+All rows need a valid, unique email. Resolve shared or invalid emails before importing. WordPress password hashes are not reused: imported users receive random inaccessible passwords and should use the password reset flow. User and enrollment imports suppress the normal welcome and enrollment-confirmation emails, so the migration does not automatically send messages to the directory. If an email already exists in SkillsAir, the normal user importer updates migration metadata only; it does not overwrite the existing name, phone, password, or SkillsAir role. Existing known marketing consent is preserved rather than overwritten from a potentially older export. Conflicting WordPress IDs and duplicate export rows are reported as failures for manual reconciliation.
+
+To backfill phone numbers after users have already been imported, provide a refreshed CSV with matching `email` and E.164 `phone` values, then use `--phones-only`. This mode only updates existing users whose phone is blank; it leaves names, account status, roles, consent, and existing phone numbers untouched. Dry-run first, then add `--execute`:
+
+```sh
+npm run migrate:import:users -- users-with-phones.csv --phones-only
+npm run migrate:import:users -- users-with-phones.csv --phones-only --execute
+```
 
 After import, create a consent-filtered audience CSV without sending email:
 

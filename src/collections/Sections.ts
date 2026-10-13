@@ -3,7 +3,9 @@ import type { CollectionConfig } from 'payload'
 export const Sections: CollectionConfig = {
   slug: 'sections',
   admin: {
+    group: 'Learning',
     useAsTitle: 'title',
+    defaultColumns: ['title', 'course', 'order', 'updatedAt'],
   },
   access: {
     read: () => true,
@@ -15,7 +17,14 @@ export const Sections: CollectionConfig = {
     { name: 'title', type: 'text', required: true },
     { name: 'order', type: 'number', required: true },
     { name: 'course', type: 'relationship', relationTo: 'courses', required: true },
-    { name: 'lessons', type: 'relationship', relationTo: 'lessons', hasMany: true },
+    {
+      name: 'lessons',
+      type: 'join',
+      collection: 'lessons',
+      on: 'section',
+      defaultSort: 'order',
+      admin: { allowCreate: true, defaultColumns: ['title', 'order', 'duration', 'isPublished'] },
+    },
   ],
   timestamps: true,
 }

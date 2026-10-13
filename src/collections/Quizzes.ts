@@ -1,7 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
 export const Quizzes: CollectionConfig = {
-  slug: 'quizzes', admin: { useAsTitle: 'title' },
+  slug: 'quizzes', admin: { group: 'Learning', useAsTitle: 'title', defaultColumns: ['title', 'course', 'passingScore', 'isPublished', 'updatedAt'] },
   access: {
     read: ({ req }) => req.user?.role === 'admin' || req.user?.role === 'instructor' ? true : { isPublished: { equals: true } },
     create: ({ req }) => req.user?.role === 'admin' || req.user?.role === 'instructor',

@@ -4,7 +4,9 @@ import { encryptField, decryptField } from '../utils/sanitize.js'
 export const Affiliates: CollectionConfig = {
   slug: 'affiliates',
   admin: {
+    group: 'Commerce',
     useAsTitle: 'id',
+    defaultColumns: ['user', 'affiliateCode', 'isApproved', 'createdAt'],
   },
   access: {
     read: ({ req }) => {

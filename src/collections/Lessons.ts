@@ -90,7 +90,9 @@ async function syncCourseStatsForLesson(
 export const Lessons: CollectionConfig = {
   slug: 'lessons',
   admin: {
+    group: 'Learning',
     useAsTitle: 'title',
+    defaultColumns: ['title', 'section', 'order', 'duration', 'isPublished', 'updatedAt'],
   },
   access: {
     read: async ({ req }): Promise<boolean | Where> => {

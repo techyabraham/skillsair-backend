@@ -5,7 +5,9 @@ import { slugify } from '../utils/slugify.js'
 export const Posts: CollectionConfig = {
   slug: 'posts',
   admin: {
+    group: 'Content',
     useAsTitle: 'title',
+    defaultColumns: ['title', 'slug', 'status', 'author', 'updatedAt'],
   },
   access: {
     read: ({ req }) => {

@@ -11,7 +11,7 @@
  * the backend role; enrollment imports also mark linked users as students.
  *
  * Usage:
- *   node --loader ts-node/esm src/migrations/import-users.ts <csv-path> [--execute]
+ *   node --loader ts-node/esm src/migrations/import-users.ts <csv-path> [--execute] [--phones-only]
  *
  * Without --execute this is a dry run.
  */
@@ -100,6 +100,7 @@ function sourceRolesData(roles: string[] | undefined): { role: string }[] | unde
 async function run(): Promise<void> {
   const csvPath = process.argv[2]
   const execute = process.argv.includes('--execute')
+  const phonesOnly = process.argv.includes('--phones-only')
 
   if (!csvPath) {
     console.error('Usage: import-users.ts <csv-path> [--execute]')
@@ -185,6 +186,38 @@ async function run(): Promise<void> {
       }
       const existing = existingBySourceId ?? existingByEmail
 
+      if (phonesOnly) {
+        if (!existing) {
+          console.error(`FAILED  ${rowLabel} ${email}: no matching SkillsAir user for phone-only update`)
+          summary.failed += 1
+          continue
+        }
+        if (!phone) {
+          console.log(`SKIP  ${email} (no valid phone in CSV)`)
+          summary.skipped += 1
+          continue
+        }
+        if ((existing as { phone?: string }).phone?.trim()) {
+          console.log(`SKIP  ${email} (phone already exists; left unchanged)`)
+          summary.skipped += 1
+          continue
+        }
+        if (!execute) {
+          console.log(`WOULD ADD PHONE  ${email}`)
+          summary.updated += 1
+          continue
+        }
+        await payload.update({
+          collection: 'users',
+          id: existing.id,
+          data: { phone },
+          overrideAccess: true,
+        })
+        console.log(`ADDED PHONE  ${email}`)
+        summary.updated += 1
+        continue
+      }
+
       if (existing) {
         const existingWordPressId = (existing as { wordpressUserId?: string }).wordpressUserId
         const existingConsent = (existing as { marketingConsent?: Consent }).marketingConsent ?? 'unknown'
@@ -266,10 +299,10 @@ async function run(): Promise<void> {
   }
 
   console.log('\n--- Summary ---')
-  console.log(`Mode: ${execute ? 'EXECUTE' : 'DRY RUN'}`)
+  console.log(`Mode: ${execute ? 'EXECUTE' : 'DRY RUN'}${phonesOnly ? ' (phones only)' : ''}`)
   console.log(`Total rows: ${summary.total}`)
   console.log(`Created: ${summary.created}`)
-  console.log(`Updated (metadata only): ${summary.updated}`)
+  console.log(`Updated: ${summary.updated}`)
   console.log(`Skipped (no migration data): ${summary.skipped}`)
   console.log(`Failed: ${summary.failed}`)
   console.log(`Warnings (optional phone omitted): ${summary.warnings}`)

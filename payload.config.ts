@@ -75,6 +75,21 @@ function corsOrigins(): string[] {
 }
 
 export default buildConfig({
+  admin: {
+    user: 'users',
+    meta: {
+      titleSuffix: '· SkillsAir Studio',
+      defaultOGImageType: 'dynamic',
+    },
+    components: {
+      views: {
+        dashboard: {
+          Component: '/src/admin/SkillsAirDashboard#SkillsAirDashboard',
+          meta: { title: 'Overview · SkillsAir Studio' },
+        },
+      },
+    },
+  },
   serverURL: process.env.BACKEND_URL ?? 'http://localhost:3001',
   secret: process.env.PAYLOAD_SECRET ?? '',
   sharp,

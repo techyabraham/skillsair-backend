@@ -1,7 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
 export const Reviews: CollectionConfig = {
-  slug: 'reviews', admin: { useAsTitle: 'id' },
+  slug: 'reviews', admin: { group: 'Learning', useAsTitle: 'id', defaultColumns: ['course', 'student', 'rating', 'createdAt'] },
   access: {
     read: () => true, create: () => false,
     update: ({ req }) => req.user?.role === 'admin', delete: ({ req }) => req.user?.role === 'admin',

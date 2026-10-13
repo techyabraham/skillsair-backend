@@ -14,7 +14,9 @@ function relationId(value: unknown): number | string | undefined {
 export const Enrollments: CollectionConfig = {
   slug: 'enrollments',
   admin: {
+    group: 'People',
     useAsTitle: 'id',
+    defaultColumns: ['student', 'course', 'status', 'progressPercent', 'enrolledAt'],
   },
   access: {
     read: async ({ req }) => {

@@ -18,7 +18,9 @@ export const Users: CollectionConfig = {
     cookies: { secure: process.env.NODE_ENV === 'production', sameSite: 'Lax' },
   },
   admin: {
+    group: 'People',
     useAsTitle: 'email',
+    defaultColumns: ['email', 'firstName', 'lastName', 'role', 'isActive', 'createdAt'],
   },
   access: {
     read: async ({ req, id }) => {

@@ -2,7 +2,7 @@ import type { CollectionConfig } from 'payload'
 import { resolveAuthUser } from '../middleware/authenticate.js'
 
 export const QuizAttempts: CollectionConfig = {
-  slug: 'quiz-attempts', admin: { useAsTitle: 'id' },
+  slug: 'quiz-attempts', admin: { group: 'People', useAsTitle: 'id', defaultColumns: ['student', 'quiz', 'score', 'passed', 'createdAt'] },
   access: {
     read: async ({ req }) => {
       const user = req.user ?? await resolveAuthUser(req)

@@ -4,7 +4,9 @@ import { resolveAuthUser } from '../middleware/authenticate.js'
 export const Certificates: CollectionConfig = {
   slug: 'certificates',
   admin: {
+    group: 'Learning',
     useAsTitle: 'certificateCode',
+    defaultColumns: ['certificateCode', 'student', 'course', 'issuedAt'],
   },
   access: {
     read: async ({ req }) => {

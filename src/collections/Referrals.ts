@@ -3,7 +3,9 @@ import type { CollectionConfig } from 'payload'
 export const Referrals: CollectionConfig = {
   slug: 'referrals',
   admin: {
+    group: 'Commerce',
     useAsTitle: 'id',
+    defaultColumns: ['referrer', 'referredUser', 'order', 'status', 'createdAt'],
   },
   access: {
     read: ({ req }) => {

@@ -4,7 +4,9 @@ import { slugify } from '../utils/slugify.js'
 export const Categories: CollectionConfig = {
   slug: 'categories',
   admin: {
+    group: 'Content',
     useAsTitle: 'name',
+    defaultColumns: ['name', 'slug', 'parent', 'updatedAt'],
   },
   access: {
     read: () => true,

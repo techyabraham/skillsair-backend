@@ -5,7 +5,9 @@ import { slugify } from '../utils/slugify.js'
 export const Courses: CollectionConfig = {
   slug: 'courses',
   admin: {
+    group: 'Learning',
     useAsTitle: 'title',
+    defaultColumns: ['title', 'status', 'level', 'price', 'totalLessons', 'updatedAt'],
   },
   access: {
     read: ({ req }) => {
@@ -91,7 +93,14 @@ export const Courses: CollectionConfig = {
       type: 'array',
       fields: [{ name: 'objective', type: 'text', required: true }],
     },
-    { name: 'sections', type: 'relationship', relationTo: 'sections', hasMany: true },
+    {
+      name: 'sections',
+      type: 'join',
+      collection: 'sections',
+      on: 'course',
+      defaultSort: 'order',
+      admin: { allowCreate: true, defaultColumns: ['title', 'order', 'updatedAt'] },
+    },
     { name: 'prerequisites', type: 'relationship', relationTo: 'courses', hasMany: true },
     {
       name: 'certificateTemplate',
