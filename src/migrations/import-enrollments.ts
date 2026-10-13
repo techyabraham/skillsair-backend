@@ -172,6 +172,8 @@ async function run(): Promise<void> {
   console.log(`Skipped (existing): ${summary.skipped}`)
   console.log(`Students marked: ${summary.studentsMarked}`)
   console.log(`Failed: ${summary.failed}`)
+
+  await payload.destroy()
 }
 
 run().catch((err: unknown) => {

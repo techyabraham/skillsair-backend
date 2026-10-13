@@ -273,6 +273,8 @@ async function run(): Promise<void> {
   console.log(`Skipped (no migration data): ${summary.skipped}`)
   console.log(`Failed: ${summary.failed}`)
   console.log(`Warnings (optional phone omitted): ${summary.warnings}`)
+
+  await payload.destroy()
 }
 
 run().catch((err: unknown) => {
