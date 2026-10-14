@@ -107,6 +107,12 @@ def video_info(lesson: dict) -> tuple[str, str, str]:
     if "google" in source and not drive_url:
         drive_url = video_id
     file_id = drive_id(drive_url) or (drive_url if re.fullmatch(r"[A-Za-z0-9_-]{10,}", drive_url) else "")
+    if not file_id and html5_url:
+        parsed_html5 = urlparse(html5_url)
+        if parsed_html5.hostname == "api.skillsair.com" and parsed_html5.path == "/wp-admin/admin-ajax.php" and parse_qs(parsed_html5.query).get("action") == ["igd_stream"]:
+            candidate = parse_qs(parsed_html5.query).get("id", [""])[0]
+            if re.fullmatch(r"[A-Za-z0-9_-]{10,}", candidate):
+                file_id = candidate
     duration = first(video.get("duration_sec"))
     try:
         seconds = str(max(0, int(float(duration)))) if duration not in (None, "") else ""

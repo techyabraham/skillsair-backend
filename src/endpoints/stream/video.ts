@@ -9,6 +9,7 @@ import { getFileMetadata, streamFileRange, parseRangeHeader } from '../../lib/go
 import { getLessonCourse, requireCourseAccess } from '../../lib/course-access.js'
 import { AppError } from '../../types/index.js'
 import { logger } from '../../lib/logger.js'
+import { legacyDriveFileId } from '../../lib/legacy-video.js'
 
 async function handler(req: PayloadRequest): Promise<Response> {
   const user = await resolveAuthUser(req)
@@ -21,7 +22,10 @@ async function handler(req: PayloadRequest): Promise<Response> {
   const payload = req.payload
 
   const { lesson, courseId } = await getLessonCourse(payload, lessonId)
-  if (!lesson.driveFileId) {
+  const driveFileId = typeof lesson.driveFileId === 'string' && lesson.driveFileId
+    ? lesson.driveFileId
+    : legacyDriveFileId(lesson.content)
+  if (!driveFileId) {
     throw new AppError('NOT_FOUND', 'Lesson video not found')
   }
 
@@ -30,7 +34,6 @@ async function handler(req: PayloadRequest): Promise<Response> {
     await requireCourseAccess(payload, user.id, courseId)
   }
 
-  const driveFileId = lesson.driveFileId
   const metadata = await getFileMetadata(driveFileId)
   const totalSize = Number(metadata.size)
   const range = parseRangeHeader(req.headers.get('range') ?? undefined, totalSize)

@@ -30,6 +30,7 @@ import { QuizQuestions } from './src/collections/QuizQuestions.js'
 import { QuizAttempts } from './src/collections/QuizAttempts.js'
 import { Reviews } from './src/collections/Reviews.js'
 import { Discussions } from './src/collections/Discussions.js'
+import { NewsletterSubscribers } from './src/collections/NewsletterSubscribers.js'
 
 import { registerEndpoint } from './src/endpoints/auth/register.js'
 import { loginEndpoint } from './src/endpoints/auth/login.js'
@@ -42,6 +43,7 @@ import { progressEndpoint } from './src/endpoints/courses/progress.js'
 import { completeEndpoint } from './src/endpoints/courses/complete.js'
 import { quizSubmitEndpoint } from './src/endpoints/courses/quiz-submit.js'
 import { reviewEndpoint } from './src/endpoints/courses/review.js'
+import { courseCurriculumEndpoint } from './src/endpoints/courses/curriculum.js'
 import { discussEndpoint } from './src/endpoints/courses/discuss.js'
 import { videoStreamEndpoint } from './src/endpoints/stream/video.js'
 import { initiatePaymentEndpoint } from './src/endpoints/payments/initiate.js'
@@ -60,6 +62,7 @@ import { graphqlGetEndpoint, graphqlPostEndpoint } from './src/endpoints/graphql
 import { updateProfileEndpoint } from './src/endpoints/profile/update.js'
 import { changePasswordEndpoint } from './src/endpoints/profile/password.js'
 import { uploadAvatarEndpoint } from './src/endpoints/profile/avatar.js'
+import { newsletterSubscribeEndpoint } from './src/endpoints/newsletter/subscribe.js'
 
 import { graphQLQueries } from './src/lib/graphql-extensions.js'
 
@@ -130,6 +133,7 @@ export default buildConfig({
     QuizAttempts,
     Reviews,
     Discussions,
+    NewsletterSubscribers,
   ],
   endpoints: [
     registerEndpoint,
@@ -143,6 +147,7 @@ export default buildConfig({
     completeEndpoint,
     quizSubmitEndpoint,
     reviewEndpoint,
+    courseCurriculumEndpoint,
     discussEndpoint,
     videoStreamEndpoint,
     initiatePaymentEndpoint,
@@ -162,6 +167,7 @@ export default buildConfig({
     updateProfileEndpoint,
     changePasswordEndpoint,
     uploadAvatarEndpoint,
+    newsletterSubscribeEndpoint,
   ],
   graphQL: {
     queries: graphQLQueries,
