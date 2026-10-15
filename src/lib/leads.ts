@@ -246,3 +246,24 @@ export function formatLagosDate(iso: string | null | undefined): string {
     timeZone: 'Africa/Lagos',
   }).format(new Date(iso))
 }
+
+function unsubscribeSecret(): string {
+  const secret = process.env.JWT_SECRET
+  if (!secret || secret.length < 32) throw new Error('JWT_SECRET must be set and at least 32 characters long')
+  return secret
+}
+
+/** Signed, non-expiring unsubscribe token for marketing emails: "<leadId>.<signature>". */
+export function unsubscribeToken(leadId: number): string {
+  const signature = crypto.createHmac('sha256', unsubscribeSecret()).update(`unsubscribe:${leadId}`).digest('base64url').slice(0, 32)
+  return `${leadId}.${signature}`
+}
+
+export function verifyUnsubscribeToken(token: string): number | null {
+  const [id, signature] = token.split('.')
+  const leadId = Number(id)
+  if (!Number.isInteger(leadId) || leadId <= 0 || !signature) return null
+  const expected = unsubscribeToken(leadId).split('.')[1] ?? ''
+  if (expected.length !== signature.length) return null
+  return crypto.timingSafeEqual(Buffer.from(expected), Buffer.from(signature)) ? leadId : null
+}

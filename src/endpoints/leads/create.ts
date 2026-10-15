@@ -3,7 +3,7 @@ import { z } from 'zod'
 import { asyncHandler, parseBody, readJsonBody, sendSuccess } from '../../middleware/validate.js'
 import { leadRateLimiter } from '../../lib/rate-limiter.js'
 import { signLeadToken } from '../../lib/jwt.js'
-import { findLeadByEmail, LEAD_SOURCES, normalizePhone, relationId, type LeadDoc } from '../../lib/leads.js'
+import { findLeadByEmail, findLeadByPhone, hashPhone, LEAD_SOURCES, normalizePhone, relationId, type LeadDoc } from '../../lib/leads.js'
 import { queueOfferMessages } from '../../lib/lead-messaging.js'
 import { sanitizeText } from '../../utils/sanitize.js'
 import { AppError } from '../../types/index.js'
@@ -12,7 +12,8 @@ const optionalText = (max: number) => z.string().trim().max(max).optional()
 
 const leadSchema = z.object({
   firstName: z.string().trim().min(1).max(100),
-  email: z.string().trim().email().max(254),
+  // Optional only for the programme-page "curriculum on WhatsApp" request (name + WhatsApp).
+  email: z.string().trim().email().max(254).optional(),
   phone: z.string().trim().min(7).max(25),
   school: optionalText(150),
   programme: optionalText(200),
@@ -76,7 +77,12 @@ async function handler(req: PayloadRequest): Promise<Response> {
   }
 
   const payload = req.payload
-  const email = body.email.toLowerCase()
+  if (!body.email && body.source !== 'curriculum_request') {
+    throw new AppError('VALIDATION_ERROR', "That email doesn't look right. Check for a typo?", { email: 'Required' })
+  }
+  // Without an email, the WhatsApp number identifies the lead (reserved .invalid placeholder, never emailed).
+  const existingByPhone = body.email ? null : await findLeadByPhone(payload, phone)
+  const email = body.email?.toLowerCase() ?? existingByPhone?.email ?? `wa-${hashPhone(phone).slice(0, 16)}@whatsapp.invalid`
   const course = body.programme ? await findIdBySlug(req, 'courses', body.programme) : null
   const school = body.school ? await findIdBySlug(req, 'categories', body.school) : null
   const schoolId = school?.id ?? relationId(course?.categories?.[0])

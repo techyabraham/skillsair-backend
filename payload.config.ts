@@ -32,6 +32,7 @@ import { Reviews } from './src/collections/Reviews.js'
 import { Discussions } from './src/collections/Discussions.js'
 import { NewsletterSubscribers } from './src/collections/NewsletterSubscribers.js'
 import { Leads } from './src/collections/Leads.js'
+import { LaptopApplications } from './src/collections/LaptopApplications.js'
 import { ScholarshipWindow } from './src/globals/ScholarshipWindow.js'
 
 import { registerEndpoint } from './src/endpoints/auth/register.js'
@@ -138,6 +139,7 @@ export default buildConfig({
     Discussions,
     NewsletterSubscribers,
     Leads,
+    LaptopApplications,
   ],
   globals: [ScholarshipWindow],
   endpoints: [

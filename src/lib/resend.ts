@@ -357,3 +357,97 @@ export function leadDailySummaryEmail(input: LeadSummaryInput): EmailContent {
   ].join('\n')
   return { subject, html, text }
 }
+
+function marketingFooter(unsubscribeUrl: string): string {
+  return `You're receiving this because you applied at skillsair.com and asked for updates.
+              <a href="${unsubscribeUrl}" style="color:#a1a1aa;">Unsubscribe</a> ·
+              SKILLS AIR LIMITED · RC 9272398 · Osifila Street, Anifowose, Ikeja, Lagos.`
+}
+
+export interface FollowUpEmailInput {
+  firstName: string
+  programme: string
+  offerUrl: string
+  unsubscribeUrl: string
+  price: number
+  standardPrice: number
+  certificatePrice: number
+  closesOn: string
+}
+
+const signOff = `<p style="margin-top:24px;">Questions? Reply here or WhatsApp me on +234 818 212 6524.</p><p>Imisi, SkillsAir</p>`
+const signOffText = 'Questions? Reply here or WhatsApp me on +234 818 212 6524.\nImisi, SkillsAir'
+
+/** Email B (1 hour, no account; consent only). */
+export function followUpQuickQuestionEmail(input: FollowUpEmailInput): EmailContent {
+  const subject = `Quick question, ${input.firstName}`
+  const html = wrapHtml(`
+    <p>Hi ${escapeHtml(input.firstName)},</p>
+    <p>Most people ask two things: "Why only ${naira(input.price)}?" and "Can I do it on my phone?"</p>
+    <p><strong>Why only ${naira(input.price)}?</strong> Because talent isn't the problem. Access is. During this scholarship window, the Access Scholarship covers most of the ${naira(input.standardPrice)} standard fee. The certificate is ${naira(input.certificatePrice)}, paid only when you finish and want it.</p>
+    <p><strong>Can I do it on my phone?</strong> It depends on the programme. Your offer lists exactly what ${escapeHtml(input.programme)} needs, and which programmes work fully on a phone.</p>
+    ${button('See my offer', input.offerUrl)}
+    ${signOff}
+  `, marketingFooter(input.unsubscribeUrl))
+  return {
+    subject,
+    html,
+    text: `Hi ${input.firstName},\n\nMost people ask two things: "Why only ${naira(input.price)}?" and "Can I do it on my phone?"\n\nWhy only ${naira(input.price)}? During this scholarship window, the Access Scholarship covers most of the ${naira(input.standardPrice)} standard fee. The certificate is ${naira(input.certificatePrice)}, paid only when you finish.\n\nCan I do it on my phone? It depends on the programme. Your offer lists exactly what ${input.programme} needs.\n\nSee my offer: ${input.offerUrl}\n\n${signOffText}\n\nUnsubscribe: ${input.unsubscribeUrl}`,
+  }
+}
+
+/** Email C (24 hours; consent only): an honest look at the career path. */
+export function followUpCareerEmail(input: FollowUpEmailInput & { role: string; explainer: string }): EmailContent {
+  const subject = `What a ${input.role} actually does all day`
+  const html = wrapHtml(`
+    <p>Hi ${escapeHtml(input.firstName)},</p>
+    <p>${escapeHtml(input.explainer)}</p>
+    <p>${escapeHtml(input.programme)} is self-paced: about 8 hours a week, 3 months to finish. Your Access Scholarship price is ${naira(input.price)} to start (the certificate is ${naira(input.certificatePrice)} when you finish). The window closes on ${escapeHtml(input.closesOn)}.</p>
+    ${button('See my offer', input.offerUrl)}
+    ${signOff}
+  `, marketingFooter(input.unsubscribeUrl))
+  return {
+    subject,
+    html,
+    text: `Hi ${input.firstName},\n\n${input.explainer}\n\n${input.programme} is self-paced: about 8 hours a week, 3 months to finish. Your Access Scholarship price is ${naira(input.price)} to start (certificate ${naira(input.certificatePrice)} when you finish). The window closes on ${input.closesOn}.\n\nSee my offer: ${input.offerUrl}\n\n${signOffText}\n\nUnsubscribe: ${input.unsubscribeUrl}`,
+  }
+}
+
+/** Email D (48 hours before the window closes; consent only, not yet paid). */
+export function followUpClosingEmail(input: FollowUpEmailInput): EmailContent {
+  const subject = `Your ${naira(input.price)} scholarship closes on ${input.closesOn}`
+  const html = wrapHtml(`
+    <p>Hi ${escapeHtml(input.firstName)},</p>
+    <p>After ${escapeHtml(input.closesOn)}, ${escapeHtml(input.programme)} is ${naira(input.standardPrice)} until the next window. If you want in at ${naira(input.price)} (plus ${naira(input.certificatePrice)} for your certificate when you finish), now's the time.</p>
+    ${button('Secure my seat', input.offerUrl)}
+    ${signOff}
+  `, marketingFooter(input.unsubscribeUrl))
+  return {
+    subject,
+    html,
+    text: `Hi ${input.firstName},\n\nAfter ${input.closesOn}, ${input.programme} is ${naira(input.standardPrice)} until the next window. If you want in at ${naira(input.price)} (plus ${naira(input.certificatePrice)} for your certificate when you finish), now's the time.\n\nSecure my seat: ${input.offerUrl}\n\n${signOffText}\n\nUnsubscribe: ${input.unsubscribeUrl}`,
+  }
+}
+
+/** Email E: welcome after payment (transactional). */
+export function welcomeAfterPaymentEmail(firstName: string, programme: string, finishBy: string): EmailContent {
+  const subject = `Welcome to SkillsAir, ${firstName}! Your seat in ${programme} is confirmed`
+  const html = wrapHtml(`
+    <p>Hi ${escapeHtml(firstName)},</p>
+    <p>Your seat in <strong>${escapeHtml(programme)}</strong> is confirmed. Here's how to start strong:</p>
+    <ol>
+      <li>Watch your first lesson today.</li>
+      <li>Aim for about 8 hours a week.</li>
+      <li>Finish by <strong>${escapeHtml(finishBy)}</strong>.</li>
+    </ol>
+    <p>Your free CV &amp; LinkedIn and Freelancing courses are waiting in your dashboard.</p>
+    ${button('Start learning', `${FRONTEND_URL}/dashboard/welcome`)}
+    <p style="margin-top:24px;">Questions? Reply here or WhatsApp me on +234 818 212 6524, Monday to Saturday, 9am–6pm.</p>
+    <p>Imisi, SkillsAir</p>
+  `)
+  return {
+    subject,
+    html,
+    text: `Hi ${firstName},\n\nYour seat in ${programme} is confirmed.\n1. Watch your first lesson today\n2. Aim for about 8 hours a week\n3. Finish by ${finishBy}\n\nYour free CV & LinkedIn and Freelancing courses are waiting in your dashboard: ${FRONTEND_URL}/dashboard/welcome\n\nQuestions? WhatsApp +234 818 212 6524, Monday to Saturday, 9am–6pm.\nImisi, SkillsAir`,
+  }
+}

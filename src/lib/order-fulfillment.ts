@@ -7,6 +7,7 @@ import { relationId } from './course-access.js'
 import { redis } from './redis.js'
 import { randomUUID } from 'node:crypto'
 import { applyLeadEvent, findLeadForUser } from './leads.js'
+import { sendWelcomeMessages } from './lead-followups.js'
 
 /** A paid learner leaves the follow-up funnel: no more reminders, and out of Imisi's queue. */
 async function markLeadPaid(payload: Payload, userId: number, email: string): Promise<void> {
@@ -79,7 +80,13 @@ async function fulfillLockedOrder(payload: Payload, orderId: number | string): P
   }
 
   await payload.update({ collection: 'orders', id: doc.id, data: { fulfilledAt: new Date().toISOString() }, overrideAccess: true })
-  if (doc.type === 'course' || doc.type === 'subscription') await markLeadPaid(payload, Number(userId), user.email)
+  if (doc.type === 'course' || doc.type === 'subscription') {
+    await markLeadPaid(payload, Number(userId), user.email)
+    const courseId = relationId(doc.course)
+    if (courseId !== undefined) {
+      await sendWelcomeMessages(payload, Number(userId), Number(courseId)).catch((err: unknown) => logger.error({ err, orderId }, 'welcome_messages_failed'))
+    }
+  }
   try {
     await sendEmail(user.email, paymentConfirmationEmail(user.firstName, doc.reference, `₦${doc.amount.toLocaleString('en-NG')}`, itemDescription))
   } catch (err) {

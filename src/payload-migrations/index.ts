@@ -2,6 +2,7 @@ import * as migration_20261010_224035_initial_schema from './20261010_224035_ini
 import * as migration_20261013_120000_course_tree_joins from './20261013_120000_course_tree_joins.js';
 import * as migration_20261014_080000_newsletter_subscribers from './20261014_080000_newsletter_subscribers.js';
 import * as migration_20261015_120000_rebuild_leads_pricing from './20261015_120000_rebuild_leads_pricing.js';
+import * as migration_20261016_090000_laptop_applications from './20261016_090000_laptop_applications.js';
 
 export const migrations = [
   {
@@ -23,5 +24,10 @@ export const migrations = [
     up: migration_20261015_120000_rebuild_leads_pricing.up,
     down: migration_20261015_120000_rebuild_leads_pricing.down,
     name: '20261015_120000_rebuild_leads_pricing'
+  },
+  {
+    up: migration_20261016_090000_laptop_applications.up,
+    down: migration_20261016_090000_laptop_applications.down,
+    name: '20261016_090000_laptop_applications'
   },
 ];

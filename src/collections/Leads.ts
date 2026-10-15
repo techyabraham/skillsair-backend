@@ -4,6 +4,7 @@ import { generateResumeCode, hashPhone } from '../lib/leads.js'
 import { createLeadEndpoint } from '../endpoints/leads/create.js'
 import { getMyLeadEndpoint, updateMyLeadEndpoint } from '../endpoints/leads/me.js'
 import { resumeLeadEndpoint } from '../endpoints/leads/resume.js'
+import { leadDoneEndpoint, leadUnsubscribeEndpoint, leadWhatsAppReplyEndpoint } from '../endpoints/leads/admin-actions.js'
 
 const isAdmin = ({ req }: { req: { user?: unknown } }) =>
   (req.user as { role?: string } | null | undefined)?.role === 'admin'
@@ -30,7 +31,15 @@ export const Leads: CollectionConfig = {
   defaultSort: '-score',
   // Public lead endpoints (POST /api/leads, GET/PATCH /api/leads/me, GET /api/leads/resume/:code).
   // Collection endpoints are matched before Payload's default REST routes for this slug.
-  endpoints: [createLeadEndpoint, getMyLeadEndpoint, updateMyLeadEndpoint, resumeLeadEndpoint],
+  endpoints: [
+    createLeadEndpoint,
+    getMyLeadEndpoint,
+    updateMyLeadEndpoint,
+    resumeLeadEndpoint,
+    leadUnsubscribeEndpoint,
+    leadWhatsAppReplyEndpoint,
+    leadDoneEndpoint,
+  ],
   access: {
     // Leads are only created through the validated public endpoint (which uses overrideAccess).
     read: isAdmin,
@@ -42,6 +51,11 @@ export const Leads: CollectionConfig = {
     beforeValidate: [prepareLead],
   },
   fields: [
+    {
+      name: 'queueActions',
+      type: 'ui',
+      admin: { components: { Field: '/src/admin/LeadQueueActions#LeadQueueActions' } },
+    },
     {
       type: 'row',
       fields: [

@@ -4,6 +4,8 @@ import { requireAuth } from '../../middleware/authenticate.js'
 import { verifyTransaction } from '../../lib/paystack.js'
 import { AppError } from '../../types/index.js'
 import { fulfillOrder } from '../../lib/order-fulfillment.js'
+import { sendPaymentHelp } from '../../lib/lead-followups.js'
+import { logger } from '../../lib/logger.js'
 
 interface OrderDoc {
   id: number
@@ -61,6 +63,11 @@ async function handler(req: PayloadRequest): Promise<Response> {
     })
     await fulfillOrder(payload, order.id)
     return sendSuccess({ status: 'success', order: updated })
+  }
+
+  if (verification.data.status === 'failed' || verification.data.status === 'abandoned') {
+    // Paystack rarely sends webhooks for failed charges; help the learner straight away (once per order).
+    void sendPaymentHelp(payload, Number(order.id)).catch((err: unknown) => logger.error({ err, orderId: order.id }, 'payment_help_failed'))
   }
 
   if (verification.data.status === 'failed' && order.status !== 'failed') {
