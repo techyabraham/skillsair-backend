@@ -25,6 +25,7 @@ export const Leads: CollectionConfig = {
     useAsTitle: 'firstName',
     defaultColumns: ['firstName', 'course', 'score', 'needsHuman', 'status', 'createdAt'],
     listSearchableFields: ['firstName', 'email'],
+    components: { beforeListTable: ['/src/admin/LeadQueueLinks#LeadQueueLinks'] },
     description:
       "Applicants captured by the Apply flow. Imisi's queue: filter Needs human = true and sort by Score (highest first).",
   },

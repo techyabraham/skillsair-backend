@@ -16,6 +16,7 @@ import {
   type LeadLogEntry,
 } from '../../lib/leads.js'
 import { resumeUrl } from '../../lib/lead-messaging.js'
+import { assistantEnabled, assistantReply } from '../../lib/ai-assistant.js'
 import { buildOffer, type OfferCourseDoc } from '../../lib/offers.js'
 import {
   howItWorksReply,
@@ -77,6 +78,11 @@ function messageIntent(message: InboundMessage): { payload: string; text: string
   const text = message.text?.body ?? message.button?.text ?? message.interactive?.button_reply?.title ?? ''
   return { payload: payload.trim().toUpperCase(), text: text.trim() }
 }
+
+/** Free text asking for a person goes straight to Imisi's queue, never to the assistant. */
+const WANTS_HUMAN = /\b(talk to (imisi|someone|a person|a human)|real person|human|agent|customer care)\b/i
+const AI_DAILY_CAP = 10
+const AI_WINDOW_MS = 24 * 60 * 60 * 1000
 
 const BUTTON_TEXT: Record<string, string> = {
   'HOW DOES IT WORK?': QUICK_REPLY_PAYLOADS.howItWorks,
@@ -184,13 +190,32 @@ async function handleMessage(payload: Payload, message: InboundMessage, profileN
         offer.phoneFriendlyAlternatives.map((course) => course.title).join(', '),
       )
     }
-  } else if (intent === QUICK_REPLY_PAYLOADS.talk) {
+  } else if (intent === QUICK_REPLY_PAYLOADS.talk || WANTS_HUMAN.test(text)) {
     Object.assign(data, scoreLeadEvent(lead, { type: 'talk' }))
     reply = isAdvisorHours(now) ? TALK_IN_HOURS : talkOutOfHours(resumeUrl(lead))
   } else {
     Object.assign(data, scoreLeadEvent(lead, { type: 'free_text' }))
-    // Acknowledge free text at most once every 12 hours.
-    if (now.getTime() - lastFollowUpAt(lead, 'wa_ack') > ACK_INTERVAL_MS) {
+    // Optional assistant (off by default): answers from the FAQ facts, capped per lead per day.
+    const aiRepliesToday = followUps.filter((item) => item.key === 'ai_reply' && now.getTime() - new Date(item.sentAt).getTime() < AI_WINDOW_MS).length
+    if (assistantEnabled() && text && aiRepliesToday < AI_DAILY_CAP) {
+      const offer = await loadOfferForLead(payload, lead)
+      const answer = await assistantReply(text, {
+        firstName: lead.firstName,
+        programme: offer?.programme,
+        windowOpen: offer?.windowOpen,
+        price: offer?.price,
+        standardPrice: offer?.standardPrice,
+        closesOn: formatLagosDate(offer?.closesAt),
+        requirements: offer?.requirements,
+        phoneFriendly: offer?.phoneFriendly,
+      })
+      if (answer) {
+        reply = answer
+        followUps.push({ key: 'ai_reply', sentAt: nowIso })
+      }
+    }
+    // Otherwise acknowledge free text at most once every 12 hours.
+    if (!reply && now.getTime() - lastFollowUpAt(lead, 'wa_ack') > ACK_INTERVAL_MS) {
       reply = isAdvisorHours(now) ? TALK_IN_HOURS : talkOutOfHours(resumeUrl(lead))
       followUps.push({ key: 'wa_ack', sentAt: nowIso })
     }

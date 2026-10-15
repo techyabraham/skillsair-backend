@@ -18,15 +18,40 @@ The owner submits these templates in **WhatsApp Manager → Message templates**.
 
 | Template | Category | Trigger | Phase |
 |---|---|---|---|
-| `skillsair_offer_ready` | Utility | Lead created (Apply step 2) | **Live in phase 1** |
-| `skillsair_payment_help` | Utility | Paystack charge failed or still pending after 2 hours | Phase 2 |
-| `skillsair_welcome` | Utility | Payment success | Phase 2 |
-| `skillsair_course_complete` | Utility | Learner completes a programme | Phase 2 |
-| `skillsair_offer_reminder` | Marketing | 24 hours after the offer, no account, consent | Phase 2 |
-| `skillsair_window_closing` | Marketing | 48 hours before the window closes, consent | Phase 2 |
-| `skillsair_window_open` | Marketing | A new window opens, waitlist + consent | Phase 2 |
+| `skillsair_offer_ready` | Utility | Lead created (Apply step 2) | Built |
+| `skillsair_curriculum` | Utility | "Want this curriculum on WhatsApp?" on a programme page | Built |
+| `skillsair_payment_help` | Utility | Paystack charge failed or still pending after 2 hours | Built |
+| `skillsair_welcome` | Utility | Payment success | Built |
+| `skillsair_course_complete` | Utility | Learner completes a programme | Built |
+| `skillsair_offer_reminder` | Marketing | 24 hours after the offer, no account, consent | Built |
+| `skillsair_window_closing` | Marketing | 48 hours before the window closes, consent | Built |
+| `skillsair_window_open` | Marketing | A new window opens, waitlist + consent | Built |
 
-Submit all seven now so Meta's review finishes before phase 2.
+Submit all eight before switching on `WHATSAPP_ENABLED`. Until a template is approved, sends of it fail harmlessly and are recorded in the lead's WhatsApp log.
+
+## 0. `skillsair_curriculum` (Utility)
+
+Sent when someone asks for a programme's curriculum on WhatsApp from the programme page. They asked for it, so it is utility; Meta decides the final category.
+
+**Body:**
+
+```
+Hi {{1}}, this is Imisi from SkillsAir 👋
+
+Here's the curriculum you asked for: {{2}}. It shows every module, the free preview lesson and what you'll need to start.
+
+Tap "View the curriculum" to see it, or ask me anything here.
+```
+
+**Buttons (in this order):**
+
+| Index | Type | Text | Value |
+|---|---|---|---|
+| 0 | URL (dynamic) | `View the curriculum` | `https://skillsair.com/programmes/{{1}}` |
+| 1 | Quick reply | `How does it work?` | payload `HOW_IT_WORKS` |
+| 2 | Quick reply | `Talk to Imisi` | payload `TALK` |
+
+**Samples:** `{{1}}` Tobi · `{{2}}` Data Analysis · URL `{{1}}` `data-analysis`
 
 ---
 

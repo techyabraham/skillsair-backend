@@ -36,7 +36,26 @@ export async function sendOfferMessages(payload: Payload, leadId: number): Promi
   const followUps = [...(lead.followUpsSent ?? [])]
   let log = lead.whatsappLog ?? []
 
-  if (!hasFollowUp(lead, 'wa_offer_ready')) {
+  if (lead.source === 'curriculum_request') {
+    // "Want this curriculum on WhatsApp?" from a programme page: utility template linking to the curriculum.
+    if (!hasFollowUp(lead, 'wa_curriculum')) {
+      const result: WhatsAppSendResult = await sendTemplate(lead.phone, 'skillsair_curriculum', 'en', [
+        bodyParams(lead.firstName, offer.programme),
+        urlButton(0, offer.slug),
+        quickReplyButton(1, QUICK_REPLY_PAYLOADS.howItWorks),
+        quickReplyButton(2, QUICK_REPLY_PAYLOADS.talk),
+      ]).catch((err: unknown) => {
+        logger.error({ err, leadId }, 'lead_curriculum_whatsapp_failed')
+        return { sent: false, error: 'exception' } as WhatsAppSendResult
+      })
+      if (result.sent) {
+        followUps.push({ key: 'wa_curriculum', sentAt: now })
+        log = appendLog({ whatsappLog: log }, { direction: 'out', type: 'template', template: 'skillsair_curriculum', body: result.messageId ?? '', at: now })
+      } else if (!result.skipped) {
+        log = appendLog({ whatsappLog: log }, { direction: 'out', type: 'error', template: 'skillsair_curriculum', body: result.error ?? 'failed', at: now })
+      }
+    }
+  } else if (!hasFollowUp(lead, 'wa_offer_ready')) {
     // Template variables cannot be empty; with no open window the date reads as "the next window".
     const result: WhatsAppSendResult = await sendTemplate(lead.phone, 'skillsair_offer_ready', 'en', [
       bodyParams(lead.firstName, offer.programme, closesOn || 'the next scholarship window'),

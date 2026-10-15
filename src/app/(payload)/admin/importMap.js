@@ -26,6 +26,7 @@ import { MetaTitleComponent as MetaTitleComponent_a8a977ebc872c5d5ea7ee689724c08
 import { MetaDescriptionComponent as MetaDescriptionComponent_a8a977ebc872c5d5ea7ee689724c0860 } from '@payloadcms/plugin-seo/client'
 import { PreviewComponent as PreviewComponent_a8a977ebc872c5d5ea7ee689724c0860 } from '@payloadcms/plugin-seo/client'
 import { LeadQueueActions as LeadQueueActions_f2886d308bcfa61243caf7fff8870b53 } from '../../../../src/admin/LeadQueueActions'
+import { LeadQueueLinks as LeadQueueLinks_d9d6aca1878ea58cc77884ab64cc2a31 } from '../../../../src/admin/LeadQueueLinks'
 import { S3ClientUploadHandler as S3ClientUploadHandler_f97aa6c64367fa259c5bc0567239ef24 } from '@payloadcms/storage-s3/client'
 import { SkillsAirDashboard as SkillsAirDashboard_0585c5b60f62f795e2fe29b49719daca } from '../../../../src/admin/SkillsAirDashboard'
 import { CollectionCards as CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1 } from '@payloadcms/next/rsc'
@@ -60,6 +61,7 @@ export const importMap = {
   "@payloadcms/plugin-seo/client#MetaDescriptionComponent": MetaDescriptionComponent_a8a977ebc872c5d5ea7ee689724c0860,
   "@payloadcms/plugin-seo/client#PreviewComponent": PreviewComponent_a8a977ebc872c5d5ea7ee689724c0860,
   "/src/admin/LeadQueueActions#LeadQueueActions": LeadQueueActions_f2886d308bcfa61243caf7fff8870b53,
+  "/src/admin/LeadQueueLinks#LeadQueueLinks": LeadQueueLinks_d9d6aca1878ea58cc77884ab64cc2a31,
   "@payloadcms/storage-s3/client#S3ClientUploadHandler": S3ClientUploadHandler_f97aa6c64367fa259c5bc0567239ef24,
   "/src/admin/SkillsAirDashboard#SkillsAirDashboard": SkillsAirDashboard_0585c5b60f62f795e2fe29b49719daca,
   "@payloadcms/next/rsc#CollectionCards": CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1

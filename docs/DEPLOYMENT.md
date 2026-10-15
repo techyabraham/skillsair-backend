@@ -39,7 +39,7 @@ Rollback tags were already on the remotes before this work: `pre-rebuild-backend
    openssl rand -hex 32
    ```
    You need one value for `BFF_SHARED_SECRET` (the **same** value on both services) and one for `WHATSAPP_VERIFY_TOKEN`.
-3. **Submit the WhatsApp templates now.** Meta's review can take a few days. The exact names, copy, buttons and sample values are in `skillsair-backend/docs/whatsapp-templates.md`. You can deploy safely before approval: nothing is sent while `WHATSAPP_ENABLED` is not `true`.
+3. **Submit the 8 WhatsApp templates now.** Meta's review can take a few days. The exact names, copy, buttons and sample values are in `skillsair-backend/docs/whatsapp-templates.md`. You can deploy safely before approval: nothing is sent while `WHATSAPP_ENABLED` is not `true`.
 4. **Resend:** make sure the domain used by `EMAIL_FROM` is verified in Resend, because the offer and follow-up emails are sent from it.
 5. **Build check.** The frontend has not been built locally, because AGENTS.md asks agents not to run `npm run build`. TypeScript, lint and runtime checks against a local backend all pass. The production Docker build runs `npm run build`, so do the first deploy to a **staging** application if you have one, or watch the first production build log closely.
 
@@ -64,6 +64,9 @@ Keep all existing variables. Add:
 | `WHATSAPP_VERIFY_TOKEN` | Random string | Also entered in the Meta webhook settings |
 | `WHATSAPP_API_VERSION` | `21.0` (or current) | |
 | `CERTIFICATE_PRICE_NGN` | `10000` | Already present; now also the default when unset |
+| `WHATSAPP_AI_ASSISTANT` | `false` | Optional FAQ assistant on WhatsApp. Leave off until WhatsApp is live and you've tested it. |
+| `ANTHROPIC_API_KEY` | Anthropic API key | Only needed when the assistant is on |
+| `WHATSAPP_AI_MODEL` | `claude-opus-5-5` | Model the assistant uses |
 
 Check that `FRONTEND_URL=https://skillsair.com`: the personal resume links (`/r/<code>`) and email buttons use it. Also check that `CORS_ORIGINS` includes the frontend origin.
 
@@ -200,7 +203,8 @@ Optional extra checks:
    - Tap **Talk to Imisi** → the lead shows "Needs human", with score +40.
    - Reply **STOP** → you get the confirmation, `optedOutAt` is set, and no marketing templates follow.
    - Reply **START** → consent is restored.
-6. Imisi's queue: admin → Leads → filter **Needs human = true**, sorted by **Score**. Click **Mark done** after handling a lead.
+6. Imisi's queue: admin → Leads → click **Imisi's queue** above the list (needs a human, highest score first). Open a lead to reply on WhatsApp (within 24 hours of their last message) or click **Mark done**.
+7. Optional FAQ assistant: set `WHATSAPP_AI_ASSISTANT=true` and `ANTHROPIC_API_KEY` on the API. It answers free-text questions from the FAQ facts in `src/content/assistant-knowledge.ts`, introduces itself as "SkillsAir's assistant" (never as Imisi), stops at 10 replies per lead per day, and the lead still goes into Imisi's queue. Messages asking for a person ("talk to Imisi", "human", "agent") skip the assistant. Test it with your own number first, and keep `assistant-knowledge.ts` in step with the site's FAQ.
 
 ---
 

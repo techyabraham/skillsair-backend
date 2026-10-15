@@ -33,3 +33,14 @@ test('nothing is sent unless WHATSAPP_ENABLED is exactly "true"', async () => {
     delete process.env.WHATSAPP_ENABLED
   }
 })
+
+test('the AI assistant stays off unless WHATSAPP_AI_ASSISTANT is exactly "true"', async () => {
+  const { assistantEnabled, assistantReply } = await import('./ai-assistant.js')
+  for (const value of [undefined, 'false', 'TRUE', '1']) {
+    if (value === undefined) delete process.env.WHATSAPP_AI_ASSISTANT
+    else process.env.WHATSAPP_AI_ASSISTANT = value
+    assert.equal(assistantEnabled(), false)
+    assert.equal(await assistantReply('How much is it?', { firstName: 'Tobi' }), null)
+  }
+  delete process.env.WHATSAPP_AI_ASSISTANT
+})
