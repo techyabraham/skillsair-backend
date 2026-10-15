@@ -3,6 +3,7 @@ import { generateCertificatePdf, uploadCertificatePdf } from '../../lib/pdf-cert
 import { generateCertificateCode } from '../../utils/generate-code.js'
 import { courseCompletionEmail, certificateUnlockedEmail, sendEmail } from '../../lib/resend.js'
 import { logger } from '../../lib/logger.js'
+import { certificatePrice } from '../../lib/pricing.js'
 
 interface UserDoc {
   email: string
@@ -104,7 +105,7 @@ export const afterComplete: CollectionAfterChangeHook = async ({ doc, previousDo
   if (operation !== 'update') return doc
   if (doc.status !== 'completed' || previousDoc?.status === 'completed') return doc
 
-  if (Number(process.env.CERTIFICATE_PRICE_NGN ?? '5000') > 0) return doc
+  if (certificatePrice() > 0) return doc
   try {
     const studentId = relationId(doc.student)
     const courseId = relationId(doc.course)

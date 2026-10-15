@@ -45,7 +45,40 @@ export const Courses: CollectionConfig = {
     { name: 'shortDescription', type: 'text', maxLength: 300 },
     { name: 'thumbnail', type: 'relationship', relationTo: 'media' },
     { name: 'previewVideo', type: 'text' },
-    { name: 'price', type: 'number', required: true, min: 0, defaultValue: 0 },
+    {
+      name: 'price',
+      type: 'number',
+      required: true,
+      min: 0,
+      defaultValue: 0,
+      admin: { description: 'Access Scholarship price (NGN), charged while a scholarship window is open.' },
+    },
+    {
+      name: 'standardPrice',
+      type: 'number',
+      min: 0,
+      admin: { description: 'Standard fee (NGN), charged whenever no scholarship window is open.' },
+      validate: (value: unknown, { siblingData }: { siblingData: Record<string, unknown> }) => {
+        if (value === null || value === undefined || value === '') return true
+        const price = Number(siblingData?.price ?? 0)
+        if (Number(value) < price) return 'The standard fee must be at least the scholarship price'
+        return true
+      },
+    },
+    {
+      name: 'standardMonthlyPrice',
+      type: 'number',
+      min: 0,
+      admin: { description: 'Display only: the monthly equivalent of the standard fee.' },
+    },
+    { name: 'durationMonths', type: 'number', defaultValue: 3, min: 1 },
+    { name: 'weeklyHours', type: 'number', defaultValue: 8, min: 1 },
+    {
+      name: 'phoneFriendly',
+      type: 'checkbox',
+      defaultValue: false,
+      admin: { description: 'Tick only if the whole programme can be completed on a phone.' },
+    },
     {
       name: 'level',
       type: 'select',

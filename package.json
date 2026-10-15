@@ -26,6 +26,8 @@
     "migrate:import:enrollments": "node --loader ts-node/esm src/migrations/import-enrollments.ts",
     "migrate:import:orders": "node --loader ts-node/esm src/migrations/import-orders.ts",
     "migrate:import:learning": "node --loader ts-node/esm src/migrations/import-learning-data.ts",
+    "seed:rebuild-pricing": "node --loader ts-node/esm src/migrations/seed-rebuild-pricing.ts",
+    "test": "node --loader ts-node/esm src/lib/pricing.test.ts && node --loader ts-node/esm src/lib/leads.test.ts && node --loader ts-node/esm src/lib/whatsapp.test.ts",
     "lint": "eslint src --ext .ts",
     "typecheck": "tsc --noEmit"
   },

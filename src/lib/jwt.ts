@@ -55,3 +55,25 @@ export function generateAuthTokenPair(userId: number, role: UserRole): {
     refreshToken: signRefreshToken(userId, role),
   }
 }
+
+export interface LeadTokenPayload {
+  leadId: number
+  type: 'lead'
+  scope: 'lead'
+}
+
+const LEAD_EXPIRY = '30d' as unknown as SignOptions['expiresIn']
+
+/** Lead tokens identify an applicant before they have an account. They are never accepted as user tokens. */
+export function signLeadToken(leadId: number): string {
+  const payload: LeadTokenPayload = { leadId, type: 'lead', scope: 'lead' }
+  return jwt.sign(payload, getSecret(), { expiresIn: LEAD_EXPIRY, algorithm: 'HS256' })
+}
+
+export function verifyLeadToken(token: string): LeadTokenPayload {
+  const decoded = jwt.verify(token, getSecret(), { algorithms: ['HS256'] })
+  if (typeof decoded === 'string' || decoded.type !== 'lead' || decoded.scope !== 'lead') {
+    throw new jwt.JsonWebTokenError('Not a lead token')
+  }
+  return decoded as unknown as LeadTokenPayload
+}

@@ -3,7 +3,9 @@ import { z } from 'zod'
 import { parseBody, sendSuccess, asyncHandler, readJsonBody } from '../../middleware/validate.js'
 import { authRateLimiter } from '../../lib/rate-limiter.js'
 import { sanitizeText, isStrongPassword, isValidE164Phone } from '../../utils/sanitize.js'
-import { generateAuthTokenPair } from '../../lib/jwt.js'
+import { generateAuthTokenPair, verifyLeadToken } from '../../lib/jwt.js'
+import { findLeadByEmail, normalizePhone, scoreLeadEvent, type LeadDoc } from '../../lib/leads.js'
+import { logger } from '../../lib/logger.js'
 import { AppError } from '../../types/index.js'
 
 const registerSchema = z.object({
@@ -13,8 +15,11 @@ const registerSchema = z.object({
   }),
   firstName: z.string().min(1).max(100),
   lastName: z.string().min(1).max(100),
-  phone: z.string().optional(),
+  phone: z.string().min(7).max(25),
   referralCode: z.string().optional(),
+  marketingConsent: z.boolean().optional(),
+  marketingConsentText: z.string().max(1000).optional(),
+  leadToken: z.string().max(2000).optional(),
 })
 
 interface UserDoc {
@@ -29,13 +34,33 @@ async function handler(req: PayloadRequest): Promise<Response> {
   await authRateLimiter.check(req)
   const body = parseBody(registerSchema, await readJsonBody(req))
 
-  if (body.phone && !isValidE164Phone(body.phone)) {
-    throw new AppError('VALIDATION_ERROR', 'Phone number must be in E.164 format', {
+  const phone = normalizePhone(body.phone)
+  if (!phone || !isValidE164Phone(phone)) {
+    throw new AppError('VALIDATION_ERROR', 'Enter a valid WhatsApp number, like 0818 000 0000', {
       phone: 'Invalid phone format',
     })
   }
 
   const payload = req.payload
+
+  // A lead token links this account to the application that started it.
+  let lead: LeadDoc | null = null
+  if (body.leadToken) {
+    try {
+      const { leadId } = verifyLeadToken(body.leadToken)
+      lead = (await payload
+        .findByID({ collection: 'leads', id: leadId, depth: 0, overrideAccess: true })
+        .catch(() => null)) as unknown as LeadDoc | null
+    } catch {
+      lead = null
+    }
+  }
+  if (!lead) lead = await findLeadByEmail(payload, body.email)
+
+  const now = new Date().toISOString()
+  const consentFromForm = body.marketingConsent === true
+  const consentFromLead = !consentFromForm && Boolean(lead?.marketingConsent) && !lead?.optedOutAt
+  const consent = consentFromForm || consentFromLead
 
   const existing = await payload.find({
     collection: 'users',
@@ -65,10 +90,17 @@ async function handler(req: PayloadRequest): Promise<Response> {
       password: body.password,
       firstName: sanitizeText(body.firstName),
       lastName: sanitizeText(body.lastName),
-      phone: body.phone,
+      phone,
       role: 'student',
       isStudent: true,
       referredBy,
+      ...(consent
+        ? {
+            marketingConsent: 'opted_in',
+            marketingConsentAt: consentFromLead ? lead?.marketingConsentAt ?? now : now,
+            marketingConsentSource: consentFromLead ? 'lead' : 'web_register',
+          }
+        : {}),
     },
     overrideAccess: true,
   })) as unknown as UserDoc
@@ -84,6 +116,31 @@ async function handler(req: PayloadRequest): Promise<Response> {
       },
       overrideAccess: true,
     })
+  }
+
+  if (lead) {
+    try {
+      await payload.update({
+        collection: 'leads',
+        id: lead.id,
+        data: {
+          user: created.id,
+          ...scoreLeadEvent(lead, { type: 'account_created' }),
+          ...(consentFromForm
+            ? {
+                marketingConsent: true,
+                marketingConsentAt: now,
+                marketingConsentText: body.marketingConsentText ? sanitizeText(body.marketingConsentText) : lead.marketingConsentText,
+                optedOutAt: null,
+              }
+            : {}),
+        },
+        depth: 0,
+        overrideAccess: true,
+      })
+    } catch (err) {
+      logger.error({ err, leadId: lead.id }, 'register_lead_link_failed')
+    }
   }
 
   const tokens = generateAuthTokenPair(created.id, created.role)

@@ -4,6 +4,7 @@ import { parseBody, sendSuccess, asyncHandler, readJsonBody } from '../../middle
 import { requireInstructorOrAdmin } from '../../middleware/authorize.js'
 import { issueCertificate } from '../../hooks/courses/afterComplete.js'
 import { AppError } from '../../types/index.js'
+import { certificatePrice } from '../../lib/pricing.js'
 
 const generateSchema = z.object({
   studentId: z.string().min(1),
@@ -16,7 +17,7 @@ interface EnrollmentDoc {
 
 async function handler(req: PayloadRequest): Promise<Response> {
   const issuer = await requireInstructorOrAdmin(req)
-  if (Number(process.env.CERTIFICATE_PRICE_NGN ?? '5000') > 0 && issuer.role !== 'admin') {
+  if (certificatePrice() > 0 && issuer.role !== 'admin') {
     throw new AppError('INSUFFICIENT_PERMISSION', 'Only an admin can issue a paid certificate without purchase')
   }
   const body = parseBody(generateSchema, await readJsonBody(req))

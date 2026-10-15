@@ -9,6 +9,7 @@ import { generatePaystackReference } from '../../utils/generate-code.js'
 import { AppError } from '../../types/index.js'
 import { requirePrerequisites } from '../../lib/prerequisites.js'
 import { relationId } from '../../lib/course-access.js'
+import { effectiveCoursePrice, getScholarshipWindow, windowIsOpen } from '../../lib/pricing.js'
 
 const initiateSchema = z.object({
   type: z.enum(['course', 'subscription']),
@@ -21,6 +22,7 @@ interface CourseDoc {
   id: number
   title: string
   price: number
+  standardPrice?: number | null
   status: 'draft' | 'published'
 }
 
@@ -63,10 +65,12 @@ async function handler(req: PayloadRequest): Promise<Response> {
     if (!course || course.status !== 'published') {
       throw new AppError('NOT_FOUND', 'Course not found')
     }
-    if (course.price <= 0) {
+    // Between scholarship windows the standard fee is charged; this is what makes the deadline real.
+    const coursePrice = effectiveCoursePrice(course, windowIsOpen(await getScholarshipWindow(payload)))
+    if (coursePrice <= 0) {
       throw new AppError('VALIDATION_ERROR', 'This course is free and does not require payment')
     }
-    amount = course.price
+    amount = coursePrice
     courseId = course.id
     await requirePrerequisites(payload, user.id, course.id)
     const existingEnrollment = await payload.find({ collection: 'enrollments', where: { and: [{ student: { equals: user.id } }, { course: { equals: course.id } }] }, limit: 1, overrideAccess: true })

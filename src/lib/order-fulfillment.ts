@@ -6,6 +6,18 @@ import { issueCertificate } from '../hooks/courses/afterComplete.js'
 import { relationId } from './course-access.js'
 import { redis } from './redis.js'
 import { randomUUID } from 'node:crypto'
+import { applyLeadEvent, findLeadForUser } from './leads.js'
+
+/** A paid learner leaves the follow-up funnel: no more reminders, and out of Imisi's queue. */
+async function markLeadPaid(payload: Payload, userId: number, email: string): Promise<void> {
+  try {
+    const lead = await findLeadForUser(payload, { id: userId, email, role: 'student' })
+    if (!lead || lead.status === 'paid') return
+    await applyLeadEvent(payload, lead, { type: 'paid' })
+  } catch (err) {
+    logger.error({ err, userId }, 'lead_mark_paid_failed')
+  }
+}
 
 /** Can be retried safely after an order is marked paid. */
 export async function fulfillOrder(payload: Payload, orderId: number | string): Promise<void> {
@@ -67,6 +79,7 @@ async function fulfillLockedOrder(payload: Payload, orderId: number | string): P
   }
 
   await payload.update({ collection: 'orders', id: doc.id, data: { fulfilledAt: new Date().toISOString() }, overrideAccess: true })
+  if (doc.type === 'course' || doc.type === 'subscription') await markLeadPaid(payload, Number(userId), user.email)
   try {
     await sendEmail(user.email, paymentConfirmationEmail(user.firstName, doc.reference, `₦${doc.amount.toLocaleString('en-NG')}`, itemDescription))
   } catch (err) {

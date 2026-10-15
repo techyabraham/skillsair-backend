@@ -1,3 +1,4 @@
+import crypto from 'node:crypto'
 import type { PayloadRequest } from 'payload'
 import type { ZodSchema, ZodError } from 'zod'
 import { AppError } from '../types/index.js'
@@ -70,8 +71,25 @@ export function getParam(req: PayloadRequest, name: string): string {
   return value
 }
 
+/**
+ * The SkillsAir frontend calls this API server-to-server on behalf of browsers. When it
+ * presents the shared BFF key, its X-SkillsAir-Client-IP header names the real visitor, so
+ * per-IP limits apply per visitor instead of to the whole frontend server.
+ */
+export function trustedBffClientIp(headers: { get(name: string): string | null }): string | null {
+  const secret = process.env.BFF_SHARED_SECRET
+  if (!secret || secret.length < 32) return null
+  const presented = headers.get('x-skillsair-bff-key')
+  if (!presented || presented.length !== secret.length) return null
+  if (!crypto.timingSafeEqual(Buffer.from(presented), Buffer.from(secret))) return null
+  const ip = headers.get('x-skillsair-client-ip')?.trim()
+  return ip && ip.length <= 64 ? ip : null
+}
+
 /** Best-effort client IP, trusting X-Forwarded-For/X-Real-IP set by the upstream Express layer. */
 export function getClientIp(req: PayloadRequest): string {
+  const bffClientIp = trustedBffClientIp(req.headers)
+  if (bffClientIp) return bffClientIp
   const forwarded = req.headers.get('x-forwarded-for')
   if (forwarded) {
     return forwarded.split(',')[0]?.trim() ?? 'unknown'

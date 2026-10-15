@@ -1,5 +1,5 @@
 import type { CollectionConfig, FieldAccess } from 'payload'
-import { isValidE164Phone, encryptField, decryptField } from '../utils/sanitize.js'
+import { encryptField, decryptField, validateEncryptedE164 } from '../utils/sanitize.js'
 import { usersBeforeCreate } from '../hooks/users/beforeCreate.js'
 import { usersAfterCreate } from '../hooks/users/afterCreate.js'
 import { resolveAuthUser } from '../middleware/authenticate.js'
@@ -58,13 +58,7 @@ export const Users: CollectionConfig = {
     {
       name: 'phone',
       type: 'text',
-      validate: (value: unknown) => {
-        if (!value) return true
-        if (typeof value !== 'string' || !isValidE164Phone(value)) {
-          return 'Phone number must be in E.164 format (e.g. +2348012345678)'
-        }
-        return true
-      },
+      validate: (value: unknown) => validateEncryptedE164(value),
       hooks: {
         beforeChange: [({ value }) => (value ? encryptField(String(value)) : value)],
         afterRead: [({ value }) => {

@@ -31,6 +31,8 @@ import { QuizAttempts } from './src/collections/QuizAttempts.js'
 import { Reviews } from './src/collections/Reviews.js'
 import { Discussions } from './src/collections/Discussions.js'
 import { NewsletterSubscribers } from './src/collections/NewsletterSubscribers.js'
+import { Leads } from './src/collections/Leads.js'
+import { ScholarshipWindow } from './src/globals/ScholarshipWindow.js'
 
 import { registerEndpoint } from './src/endpoints/auth/register.js'
 import { loginEndpoint } from './src/endpoints/auth/login.js'
@@ -62,6 +64,8 @@ import { updateProfileEndpoint } from './src/endpoints/profile/update.js'
 import { changePasswordEndpoint } from './src/endpoints/profile/password.js'
 import { uploadAvatarEndpoint } from './src/endpoints/profile/avatar.js'
 import { newsletterSubscribeEndpoint } from './src/endpoints/newsletter/subscribe.js'
+import { getOfferEndpoint } from './src/endpoints/offers/get.js'
+import { whatsappVerifyEndpoint, whatsappWebhookEndpoint } from './src/endpoints/whatsapp/webhook.js'
 
 import { graphQLQueries } from './src/lib/graphql-extensions.js'
 
@@ -133,7 +137,9 @@ export default buildConfig({
     Reviews,
     Discussions,
     NewsletterSubscribers,
+    Leads,
   ],
+  globals: [ScholarshipWindow],
   endpoints: [
     registerEndpoint,
     loginEndpoint,
@@ -166,6 +172,9 @@ export default buildConfig({
     changePasswordEndpoint,
     uploadAvatarEndpoint,
     newsletterSubscribeEndpoint,
+    getOfferEndpoint,
+    whatsappVerifyEndpoint,
+    whatsappWebhookEndpoint,
   ],
   graphQL: {
     queries: graphQLQueries,

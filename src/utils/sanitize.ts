@@ -72,3 +72,21 @@ const PASSWORD_STRENGTH_PATTERN =
 export function isStrongPassword(password: string): boolean {
   return PASSWORD_STRENGTH_PATTERN.test(password)
 }
+
+/**
+ * Payload runs field beforeChange hooks (which encrypt phones) before field validation,
+ * so validators may receive ciphertext. Decrypt first, then check the E.164 format.
+ */
+export function validateEncryptedE164(value: unknown, { required = false } = {}): true | string {
+  if (value === null || value === undefined || value === '') {
+    return required ? 'A phone number is required' : true
+  }
+  if (typeof value !== 'string') return 'Phone number must be in E.164 format (e.g. +2348012345678)'
+  let plain = value
+  try {
+    plain = decryptField(value)
+  } catch {
+    return 'Phone number could not be read'
+  }
+  return isValidE164Phone(plain) ? true : 'Phone number must be in E.164 format (e.g. +2348012345678)'
+}

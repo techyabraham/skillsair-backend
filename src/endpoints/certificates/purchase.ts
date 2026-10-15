@@ -7,6 +7,7 @@ import { isValidPayloadId } from '../../utils/sanitize.js'
 import { initializeTransaction } from '../../lib/paystack.js'
 import { generatePaystackReference } from '../../utils/generate-code.js'
 import { AppError } from '../../types/index.js'
+import { certificatePrice } from '../../lib/pricing.js'
 
 const purchaseSchema = z.object({
   courseId: z.string().min(1),
@@ -71,7 +72,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
     depth: 0,
   })) as unknown as UserDoc
 
-  const amount = Number(process.env.CERTIFICATE_PRICE_NGN ?? '10000')
+  const amount = certificatePrice()
   const reference = generatePaystackReference('certificate', user.id)
 
   const order = await payload.create({

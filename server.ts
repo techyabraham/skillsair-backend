@@ -18,6 +18,7 @@ const { registerSubscriptionRenewalJob } = await import('./src/jobs/subscription
 const { registerAccessExpiryJob } = await import('./src/jobs/access-expiry.js')
 const { registerCertificateCleanupJob } = await import('./src/jobs/certificate-cleanup.js')
 const { registerOrderFulfillmentJob } = await import('./src/jobs/order-fulfillment.js')
+const { registerLeadDailySummaryJob } = await import('./src/jobs/lead-daily-summary.js')
 
 const app = express()
 const PORT = Number(process.env.PORT ?? 3001)
@@ -33,7 +34,12 @@ app.use(
     credentials: true,
   }),
 )
-app.use(generalApiRateLimiter)
+// Signed provider webhooks (Meta sends every delivery status) must not share the per-IP budget.
+const SIGNED_WEBHOOK_PATHS = new Set(['/api/whatsapp/webhook'])
+app.use((req: ExpressRequest, res: ExpressResponse, next: NextFunction) => {
+  if (SIGNED_WEBHOOK_PATHS.has(req.path)) return next()
+  return generalApiRateLimiter(req, res, next)
+})
 app.use(securityHeaders)
 app.use((req: ExpressRequest, _res: ExpressResponse, next: NextFunction) => {
   logger.info({ method: req.method, url: req.originalUrl }, 'incoming_request')
@@ -117,6 +123,7 @@ app.listen(PORT, () => {
     registerAccessExpiryJob(config)
     registerCertificateCleanupJob(config)
     registerOrderFulfillmentJob(config)
+    registerLeadDailySummaryJob(config)
     logger.info({}, 'background_jobs_registered')
   }
 })

@@ -3,9 +3,11 @@ import type { PayloadRequest } from 'payload'
 import { checkRateLimit } from './redis.js'
 import { logSecurityEvent } from './logger.js'
 import { AppError } from '../types/index.js'
-import { getClientIp } from '../middleware/validate.js'
+import { getClientIp, trustedBffClientIp } from '../middleware/validate.js'
 
 function clientIpExpress(req: Request): string {
+  const bffClientIp = trustedBffClientIp({ get: (name) => req.get(name) ?? null })
+  if (bffClientIp) return bffClientIp
   return req.ip ?? req.socket.remoteAddress ?? 'unknown'
 }
 
@@ -58,3 +60,6 @@ export const authRateLimiter = createPayloadRateLimiter('auth', 10, 15 * 60)
 export const paymentRateLimiter = createPayloadRateLimiter('payment', 20, 60 * 60)
 export const streamRateLimiter = createPayloadRateLimiter('stream', 100, 60 * 60)
 export const adminRateLimiter = createPayloadRateLimiter('admin', 60, 15 * 60)
+export const leadRateLimiter = createPayloadRateLimiter('lead', 10, 15 * 60)
+export const leadResumeRateLimiter = createPayloadRateLimiter('lead-resume', 30, 15 * 60)
+export const leadUpdateRateLimiter = createPayloadRateLimiter('lead-update', 60, 15 * 60)
