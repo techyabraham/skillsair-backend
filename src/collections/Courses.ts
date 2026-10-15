@@ -1,9 +1,11 @@
 import type { CollectionConfig, PayloadRequest } from 'payload'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { slugify } from '../utils/slugify.js'
+import { courseCurriculumEndpoint } from '../endpoints/courses/curriculum.js'
 
 export const Courses: CollectionConfig = {
   slug: 'courses',
+  endpoints: [courseCurriculumEndpoint],
   admin: {
     group: 'Learning',
     useAsTitle: 'title',

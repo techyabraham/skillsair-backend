@@ -43,7 +43,6 @@ import { progressEndpoint } from './src/endpoints/courses/progress.js'
 import { completeEndpoint } from './src/endpoints/courses/complete.js'
 import { quizSubmitEndpoint } from './src/endpoints/courses/quiz-submit.js'
 import { reviewEndpoint } from './src/endpoints/courses/review.js'
-import { courseCurriculumEndpoint } from './src/endpoints/courses/curriculum.js'
 import { discussEndpoint } from './src/endpoints/courses/discuss.js'
 import { videoStreamEndpoint } from './src/endpoints/stream/video.js'
 import { initiatePaymentEndpoint } from './src/endpoints/payments/initiate.js'
@@ -147,7 +146,6 @@ export default buildConfig({
     completeEndpoint,
     quizSubmitEndpoint,
     reviewEndpoint,
-    courseCurriculumEndpoint,
     discussEndpoint,
     videoStreamEndpoint,
     initiatePaymentEndpoint,

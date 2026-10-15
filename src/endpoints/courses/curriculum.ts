@@ -69,7 +69,9 @@ async function handler(req: PayloadRequest): Promise<Response> {
 }
 
 export const courseCurriculumEndpoint: Endpoint = {
-  path: '/courses/:courseId/curriculum',
+  // This is registered on the Courses collection, so Payload mounts it at
+  // /api/courses/:courseId/curriculum.
+  path: '/:courseId/curriculum',
   method: 'get',
   handler: asyncHandler(handler),
 }
