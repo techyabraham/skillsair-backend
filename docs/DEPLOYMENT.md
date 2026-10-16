@@ -23,6 +23,8 @@ Rollback tags were already on the remotes before this work: `pre-rebuild-backend
 - New background jobs: daily lead summary (08:30 WAT), hourly follow-ups, and a 15-minute scholarship-window check.
 - Three schema migrations: `20261015_120000_rebuild_leads_pricing` (which also seeds the October 2026 window), `20261016_090000_laptop_applications` and `20261016_150000_plan_kind`.
 - All ten schools always appear on the site; schools without published programmes show "Programmes coming soon" and take waitlist sign-ups.
+- Each school lists the owner's programme line-up (frontend `src/content/site.ts`, backend `src/lib/school-lineup.ts`; keep them in sync). Published courses appear as programmes and the rest as "Coming soon". A course can be in more than one school (UI/UX: Design and Products; Smartphone Videography: Content Creation and Smartphone Creators).
+- "School of Smart Phone" is renamed "School of Smartphone Creators" (slug `/schools/school-of-smartphone-creators`).
 
 **Frontend**
 - The new public site: home, schools, programmes, Apply flow, offer, account step, legal pages, quiz, FAQ, contact, about, scholarship and outcomes.
@@ -131,7 +133,7 @@ Both migrations were verified against a fresh database built from all existing m
 
 ### Step 4: schools, monthly plans, course prices and phone-friendly flags
 
-First make sure all ten schools exist in the backend with the exact names (existing ones are left alone):
+First set up the ten schools and put each course in the right ones. The script creates missing schools, renames "School of Smart Phone" to "School of Smartphone Creators", assigns courses to schools by title (home school first; other categories are kept), and lists line-up programmes that have no course yet. Read the dry run before executing, and create any missing courses in the admin (then run it again):
 
 ```bash
 npm run seed:schools
@@ -157,7 +159,7 @@ npm run seed:rebuild-pricing -- --execute
 Then check admin → Plans: each paid programme should have an active **scholarship** plan (₦2,000, monthly) and a **standard** plan (₦40,000, monthly), both with a Paystack plan code. A programme without a scholarship plan shows "monthly billing is being set up" on its offer instead of a pay button.
 
 Then, in the admin → Courses:
-- Confirm the phone-friendly matches (Canva Design, Smartphone Videography, Data Analysis, Product Management) and tick any others that genuinely work fully on a phone.
+- Confirm the phone-friendly matches (Canva Design, Smartphone Videography, Mobile Graphics Design, Mobile Streaming, Data Analysis, Product Management) and tick any others that genuinely work fully on a phone.
 - Check that every programme has **Requirements** and **Objectives**: the offer page and the "What do I need?" WhatsApp reply use them.
 - Add "who it's for / not for" sentences to course descriptions where possible. Until then, that section is hidden in production.
 
@@ -187,7 +189,7 @@ When the window closes, every programme is charged its standard fee automaticall
 Use a real phone on mobile data for at least the Apply flow.
 
 1. `GET https://skillsair.com/api/health` reports the backend as reachable.
-2. Home, `/schools` (all ten schools), a school page and a programme page load. No page shows a price, except the FAQ answer "Why is it only ₦2,000 a month?", which comes from the brief and shows the ₦10,000 certificate beside it.
+2. Home, `/schools` (all ten schools), a school page (programmes plus "Coming soon" line-up) and a programme page load. No page shows a price, except the FAQ answer "Why is it only ₦2,000 a month?", which comes from the brief and shows the ₦10,000 certificate beside it.
 3. `curl -s https://skillsair.com/api/courses | grep -c '"price"'` prints `0`.
 4. `/courses` redirects to `/schools`.
 5. **Apply flow:** apply with a test email → offer page shows the standard fee struck through → **₦2,000 a month**, "closes Saturday 31 October, 11:59pm", and the ₦10,000 certificate line. Choose "Phone only" and confirm the laptop warning and phone-friendly alternatives appear.

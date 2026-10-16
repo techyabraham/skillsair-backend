@@ -16,7 +16,7 @@ Facts:
 - Free bonus courses: CV & LinkedIn, and Freelancing (while enrolled, or after enrolment ends if enrolled at least two months).
 - Certified graduates get access to internship openings from SkillsAir partner firms, and sometimes direct job opportunities. The partner network is new and growing. SkillsAir does not promise jobs.
 - Laptop support: 2 laptops per cohort for certified graduates who need one most, chosen by application; FCCPC-approved. It comes after certification, not before.
-- Phone learning depends on the programme. Phone-friendly examples: Canva Design, Smartphone Videography, Data Analysis, Product Management. Others need a laptop for some work.
+- Phone learning depends on the programme. Phone-friendly examples: Smartphone Videography, Mobile Graphics Design, Mobile Streaming, Data Analysis, Product Management. Others need a laptop for some work.
 - Payments go through Paystack. The monthly Access Scholarship is paid by card (Paystack renews it each month from the card). Someone else can pay: they enter their own card on the Paystack page. One-off standard-fee payments can also use bank transfer.
 - Refunds: request within 24 hours of paying, after completing at least one chapter or 5 lessons.
 - If debited but the payment failed: banks usually reverse it automatically; if not, send the payment reference here and it's resolved within 24 hours.

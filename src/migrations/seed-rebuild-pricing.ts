@@ -10,7 +10,7 @@
  *   - "Access Scholarship" plan: ₦2,000 a month (kind scholarship; only sold while a window is open)
  *   - "Standard monthly" plan:   ₦40,000 a month (kind standard)
  * Creating plans calls the Paystack API, so it needs PAYSTACK_SECRET_KEY and --execute.
- * and ticks `phoneFriendly` for titles matching Canva Design, Smartphone Videography,
+ * and ticks `phoneFriendly` for titles matching Canva Design, Smartphone Videography, Mobile Graphics Design, Mobile Streaming,
  * Data Analysis or Product Management (the owner confirms or adjusts these in the admin).
  *
  * Free courses (price 0, e.g. bonus courses) are left untouched and listed.
@@ -27,7 +27,7 @@ import { createPlan } from '../lib/paystack.js'
 const STANDARD_PRICE = 100000
 const STANDARD_MONTHLY_PRICE = 40000
 const SCHOLARSHIP_PRICE = 2000
-const PHONE_FRIENDLY_PATTERNS = [/canva/i, /smart\s?-?phone\s+videograph/i, /data\s+analy/i, /product\s+manag/i]
+const PHONE_FRIENDLY_PATTERNS = [/canva/i, /smart\s?-?phone\s+videograph/i, /mobile\s+graphic/i, /mobile\s+stream/i, /data\s+analy/i, /product\s+manag/i]
 
 interface CourseRow {
   id: number

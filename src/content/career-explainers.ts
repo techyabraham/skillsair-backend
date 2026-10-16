@@ -18,7 +18,7 @@ const EXPLAINERS: Record<string, Explainer> = {
   products: { role: 'product manager', body: 'Product managers talk to users, decide what to build next, write clear plans and keep designers and engineers moving in the same direction. It suits organised people who like solving problems with others.' },
   salesandmarketing: { role: 'digital marketer', body: 'A typical day: plan campaigns, write ads, look at what is converting and adjust the budget. Businesses pay for people who can show that their marketing brought in customers.' },
   security: { role: 'security analyst', body: 'Security analysts watch for unusual activity, investigate alerts, fix weak settings and teach colleagues to avoid scams. It suits careful people who enjoy puzzles.' },
-  smartphone: { role: 'smartphone creator', body: 'Phone-first creators shoot, edit and publish videos and photos for brands and events using only a smartphone. It is one of the quickest skills to turn into paid gigs.' },
+  smartphonecreators: { role: 'smartphone creator', body: 'Phone-first creators shoot, edit, design and live-stream for brands and events using only a smartphone. It is one of the quickest skills to turn into paid gigs.' },
 }
 
 export function careerExplainer(schoolName: string): Explainer {

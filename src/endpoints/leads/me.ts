@@ -34,7 +34,10 @@ async function handler(req: PayloadRequest): Promise<Response> {
     const course = courses.docs[0] as unknown as { id: number; categories?: unknown[] } | undefined
     if (!course) throw new AppError('NOT_FOUND', 'Programme not found')
     data.course = course.id
-    const schoolId = relationId(course.categories?.[0])
+    // A course can be in several schools; keep the one the applicant chose if it's one of them.
+    const courseSchools = (course.categories ?? []).map(relationId).filter(Boolean)
+    const chosenSchool = relationId(lead.school)
+    const schoolId = chosenSchool && courseSchools.includes(chosenSchool) ? chosenSchool : courseSchools[0]
     if (schoolId) data.school = schoolId
   }
   if (body.event === 'offer_viewed') Object.assign(data, scoreLeadEvent(lead, { type: 'offer_viewed' }))

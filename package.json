@@ -29,7 +29,7 @@
     "seed:rebuild-pricing": "node --loader ts-node/esm src/migrations/seed-rebuild-pricing.ts",
     "seed:legal-pages": "node --loader ts-node/esm src/migrations/seed-legal-pages.ts",
     "seed:schools": "node --loader ts-node/esm src/migrations/seed-schools.ts",
-    "test": "node --loader ts-node/esm src/lib/pricing.test.ts && node --loader ts-node/esm src/lib/leads.test.ts && node --loader ts-node/esm src/lib/whatsapp.test.ts",
+    "test": "node --loader ts-node/esm src/lib/pricing.test.ts && node --loader ts-node/esm src/lib/leads.test.ts && node --loader ts-node/esm src/lib/whatsapp.test.ts && node --loader ts-node/esm src/lib/school-lineup.test.ts",
     "lint": "eslint src --ext .ts",
     "typecheck": "tsc --noEmit"
   },
