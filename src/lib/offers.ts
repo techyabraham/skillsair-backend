@@ -1,5 +1,5 @@
 import type { Payload } from 'payload'
-import { certificatePrice, effectiveCoursePrice, getScholarshipWindow, windowIsOpen } from './pricing.js'
+import { certificatePrice, getScholarshipWindow, oneOffCoursePrice, windowIsOpen } from './pricing.js'
 
 export interface OfferCourseDoc {
   id: number
@@ -23,10 +23,19 @@ export interface Offer {
   programme: string
   school: string
   schoolSlug: string
+  /** Access Scholarship price per month (charged monthly while subscribed). */
   price: number
+  /** Standard fee, paid once. */
   standardPrice: number
   standardMonthlyPrice: number | null
+  /** What a new learner pays now: the monthly scholarship price, or the one-off standard fee. */
   effectivePrice: number
+  /** "monthly" while a window is open (scholarship plan), otherwise "once". */
+  billing: 'monthly' | 'once'
+  /** Plan to subscribe to for the ₦2,000/month scholarship (null if not set up yet). */
+  scholarshipPlanId: number | null
+  /** Standard monthly plan (₦40,000/month), offered when no window is open. */
+  standardPlanId: number | null
   windowOpen: boolean
   closesAt: string | null
   cohortLabel: string
@@ -69,23 +78,50 @@ export async function phoneFriendlyAlternatives(payload: Payload, excludeId?: nu
   return (result.docs as unknown as OfferCourseDoc[]).map((course) => ({ title: course.title, slug: course.slug }))
 }
 
+interface PlanRow {
+  id: number
+  price: number
+  interval: 'monthly' | 'annually'
+  kind?: 'scholarship' | 'standard' | null
+  paystackPlanCode?: string | null
+}
+
+async function coursePlans(payload: Payload, courseId: number): Promise<PlanRow[]> {
+  const result = await payload.find({
+    collection: 'plans',
+    where: { and: [{ course: { equals: courseId } }, { isActive: { equals: true } }, { interval: { equals: 'monthly' } }] },
+    limit: 20,
+    depth: 0,
+    overrideAccess: true,
+  })
+  return (result.docs as unknown as PlanRow[]).filter((plan) => Boolean(plan.paystackPlanCode))
+}
+
 export async function buildOffer(payload: Payload, course: OfferCourseDoc): Promise<Offer> {
   const window = await getScholarshipWindow(payload)
   const open = windowIsOpen(window)
+  const plans = await coursePlans(payload, course.id)
+  const scholarshipPlan = plans.find((plan) => plan.kind === 'scholarship')
+  const standardPlan = plans.find((plan) => plan.kind !== 'scholarship')
+  const monthlyScholarship = scholarshipPlan?.price ?? course.price
   const school = (course.categories ?? []).find(
     (category): category is { id: number; name?: string; slug?: string } => typeof category === 'object' && category !== null,
   )
-  const standardPrice = course.standardPrice ?? course.price
+  const standardPrice = oneOffCoursePrice(course)
+  const scholarshipOn = open && Boolean(scholarshipPlan)
   return {
     courseId: course.id,
     slug: course.slug,
     programme: course.title,
     school: school?.name ?? '',
     schoolSlug: school?.slug ?? '',
-    price: course.price,
+    price: monthlyScholarship,
     standardPrice,
-    standardMonthlyPrice: course.standardMonthlyPrice ?? null,
-    effectivePrice: effectiveCoursePrice(course, open),
+    standardMonthlyPrice: standardPlan?.price ?? course.standardMonthlyPrice ?? null,
+    effectivePrice: scholarshipOn ? monthlyScholarship : standardPrice,
+    billing: scholarshipOn ? 'monthly' : 'once',
+    scholarshipPlanId: scholarshipPlan?.id ?? null,
+    standardPlanId: standardPlan?.id ?? null,
     windowOpen: open,
     closesAt: open ? window.closesAt ?? null : null,
     cohortLabel: window.cohortLabel ?? '',

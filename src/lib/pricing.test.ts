@@ -43,3 +43,17 @@ test('certificate price defaults to ₦10,000 and respects the env var', () => {
   if (original === undefined) delete process.env.CERTIFICATE_PRICE_NGN
   else process.env.CERTIFICATE_PRICE_NGN = original
 })
+
+test('a one-off programme payment is always the standard fee (the scholarship is monthly only)', async () => {
+  const { oneOffCoursePrice } = await import('./pricing.js')
+  assert.equal(oneOffCoursePrice({ price: 2000, standardPrice: 100000 }), 100000)
+  assert.equal(oneOffCoursePrice({ price: 15000 }), 15000)
+})
+
+test('the ₦2,000/month scholarship plan can only be started while a window is open', async () => {
+  const { assertPlanPurchasable } = await import('./pricing.js')
+  assert.doesNotThrow(() => assertPlanPurchasable({ kind: 'scholarship' }, true))
+  assert.throws(() => assertPlanPurchasable({ kind: 'scholarship' }, false), /window has closed/)
+  assert.doesNotThrow(() => assertPlanPurchasable({ kind: 'standard' }, false))
+  assert.doesNotThrow(() => assertPlanPurchasable({}, false))
+})

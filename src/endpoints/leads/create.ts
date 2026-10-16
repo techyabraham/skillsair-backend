@@ -86,6 +86,8 @@ async function handler(req: PayloadRequest): Promise<Response> {
   const course = body.programme ? await findIdBySlug(req, 'courses', body.programme) : null
   const school = body.school ? await findIdBySlug(req, 'categories', body.school) : null
   const schoolId = school?.id ?? relationId(course?.categories?.[0])
+  // A school the backend doesn't have yet is kept on the lead so Imisi can follow up.
+  const schoolNote = body.school && !schoolId ? `Interested in school: ${sanitizeText(body.school)}` : ''
   const now = new Date().toISOString()
 
   // Attribution is first-touch: UTMs, referrer and landing path are only stored on creation.
@@ -128,6 +130,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
         ...(body.referrer ? { referrer: sanitizeText(body.referrer) } : {}),
         ...(body.landingPath ? { landingPath: sanitizeText(body.landingPath) } : {}),
         ...(body.message ? { message: sanitizeText(body.message) } : {}),
+        ...(schoolNote ? { notes: schoolNote } : {}),
         marketingConsent: consentGiven,
         ...(consentGiven
           ? { marketingConsentAt: now, marketingConsentText: sanitizeText(body.marketingConsentText ?? '') }

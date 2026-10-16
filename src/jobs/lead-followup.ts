@@ -36,7 +36,7 @@ export async function runLeadFollowUps(payload: Payload): Promise<void> {
   const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()
   const pending = await payload.find({
     collection: 'orders',
-    where: { and: [{ status: { equals: 'pending' } }, { type: { equals: 'course' } }, { createdAt: { less_than: twoHoursAgo } }, { createdAt: { greater_than: weekAgo } }] },
+    where: { and: [{ status: { equals: 'pending' } }, { type: { in: ['course', 'subscription'] } }, { createdAt: { less_than: twoHoursAgo } }, { createdAt: { greater_than: weekAgo } }] },
     limit: 500,
     depth: 0,
     overrideAccess: true,

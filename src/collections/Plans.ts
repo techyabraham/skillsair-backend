@@ -5,7 +5,7 @@ export const Plans: CollectionConfig = {
   admin: {
     group: 'Commerce',
     useAsTitle: 'name',
-    defaultColumns: ['name', 'course', 'price', 'interval', 'isActive'],
+    defaultColumns: ['name', 'course', 'kind', 'price', 'interval', 'isActive'],
   },
   access: {
     read: () => true,
@@ -26,6 +26,20 @@ export const Plans: CollectionConfig = {
         { label: 'Monthly', value: 'monthly' },
         { label: 'Annually', value: 'annually' },
       ],
+    },
+    {
+      name: 'kind',
+      type: 'select',
+      required: true,
+      defaultValue: 'standard',
+      options: [
+        { label: 'Access Scholarship (only while a window is open)', value: 'scholarship' },
+        { label: 'Standard', value: 'standard' },
+      ],
+      admin: {
+        description:
+          'Scholarship plans (₦2,000 a month) can only be started while a scholarship window is open. Learners who subscribed keep their rate.',
+      },
     },
     { name: 'paystackPlanCode', type: 'text' },
     {

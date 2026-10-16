@@ -47,7 +47,7 @@ export async function sendLeadDailySummary(payload: Payload): Promise<void> {
     payload
       .count({
         collection: 'orders',
-        where: { and: [{ status: { equals: 'success' } }, { paidAt: { greater_than_equal: since } }, { type: { equals: 'course' } }] },
+        where: { and: [{ status: { equals: 'success' } }, { paidAt: { greater_than_equal: since } }, { type: { in: ['course', 'subscription'] } }] },
         overrideAccess: true,
       })
       .then((result) => result.totalDocs),

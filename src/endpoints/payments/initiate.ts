@@ -9,7 +9,7 @@ import { generatePaystackReference } from '../../utils/generate-code.js'
 import { AppError } from '../../types/index.js'
 import { requirePrerequisites } from '../../lib/prerequisites.js'
 import { relationId } from '../../lib/course-access.js'
-import { effectiveCoursePrice, getScholarshipWindow, windowIsOpen } from '../../lib/pricing.js'
+import { assertPlanPurchasable, getScholarshipWindow, oneOffCoursePrice, windowIsOpen } from '../../lib/pricing.js'
 
 const initiateSchema = z.object({
   type: z.enum(['course', 'subscription']),
@@ -34,6 +34,7 @@ interface PlanDoc {
   paystackPlanCode: string
   course: number | { id: number }
   interval: 'monthly' | 'annually'
+  kind?: 'scholarship' | 'standard' | null
 }
 
 interface UserDoc {
@@ -65,8 +66,9 @@ async function handler(req: PayloadRequest): Promise<Response> {
     if (!course || course.status !== 'published') {
       throw new AppError('NOT_FOUND', 'Course not found')
     }
-    // Between scholarship windows the standard fee is charged; this is what makes the deadline real.
-    const coursePrice = effectiveCoursePrice(course, windowIsOpen(await getScholarshipWindow(payload)))
+    // The Access Scholarship is billed monthly through the course's scholarship plan, so a one-off
+    // course payment is always the standard fee (when the course has one).
+    const coursePrice = oneOffCoursePrice(course)
     if (coursePrice <= 0) {
       throw new AppError('VALIDATION_ERROR', 'This course is free and does not require payment')
     }
@@ -86,6 +88,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
     if (!plan || !plan.isActive) {
       throw new AppError('NOT_FOUND', 'Plan not found')
     }
+    assertPlanPurchasable(plan, windowIsOpen(await getScholarshipWindow(payload)))
     if (!plan.paystackPlanCode) throw new AppError('VALIDATION_ERROR', 'Subscription plan is not configured for billing')
     await verifyPlanConfiguration(plan.paystackPlanCode, plan.price, plan.interval)
     const subscribedCourseId = relationId(plan.course)
@@ -134,7 +137,8 @@ async function handler(req: PayloadRequest): Promise<Response> {
     callback_url: `${FRONTEND_URL}/payments/callback`,
     currency: 'NGN',
     ...(paystackPlanCode ? { plan: paystackPlanCode } : {}),
-    ...(body.paymentMethod === 'bank_transfer' ? { channels: ['bank_transfer'] } : {}),
+    // Paystack renews subscriptions from a saved card, so monthly plans are card-only.
+    ...(paystackPlanCode ? { channels: ['card'] } : body.paymentMethod === 'bank_transfer' ? { channels: ['bank_transfer'] } : {}),
     metadata: {
       userId: user.id,
       type: body.type,

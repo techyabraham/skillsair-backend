@@ -35,7 +35,7 @@ function contextBlock(context: AssistantContext): string {
   if (context.programme) {
     lines.push(`Programme applied for: ${context.programme}`)
     if (context.windowOpen && context.price !== undefined) {
-      lines.push(`Access Scholarship price: ${naira(context.price)} (standard fee ${naira(context.standardPrice ?? 100000)}), window closes ${context.closesOn}.`)
+      lines.push(`Access Scholarship price: ${naira(context.price)} a month (standard fee ${naira(context.standardPrice ?? 100000)} once), window closes ${context.closesOn}.`)
     } else if (context.standardPrice !== undefined) {
       lines.push(`No scholarship window is open now; the standard fee ${naira(context.standardPrice)} applies.`)
     }

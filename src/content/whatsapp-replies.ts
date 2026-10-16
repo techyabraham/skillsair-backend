@@ -26,7 +26,7 @@ export interface HowItWorksFacts {
 
 export function howItWorksReply({ date, offerLink, windowOpen, price, standardPrice, certificatePrice }: HowItWorksFacts): string {
   const priceLine = windowOpen
-    ? `💳 ${naira(price)} to start with your Access Scholarship (standard fee ${naira(standardPrice)})`
+    ? `💳 ${naira(price)} a month with your Access Scholarship (standard fee ${naira(standardPrice)}). Cancel anytime`
     : `💳 Standard fee ${naira(standardPrice)}. We'll message you when the next Access Scholarship window opens`
   return [
     "Here's how SkillsAir works 👇",

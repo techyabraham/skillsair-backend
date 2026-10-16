@@ -9,6 +9,7 @@ import { generatePaystackReference } from '../../utils/generate-code.js'
 import { AppError } from '../../types/index.js'
 import { relationId } from '../../lib/course-access.js'
 import { requirePrerequisites } from '../../lib/prerequisites.js'
+import { assertPlanPurchasable, getScholarshipWindow, windowIsOpen } from '../../lib/pricing.js'
 
 const subscribeSchema = z.object({
   planId: z.string().min(1),
@@ -22,6 +23,7 @@ interface PlanDoc {
   paystackPlanCode: string
   course: number | { id: number }
   interval: 'monthly' | 'annually'
+  kind?: 'scholarship' | 'standard' | null
 }
 
 interface UserDoc {
@@ -51,6 +53,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
   if (!plan || !plan.isActive) {
     throw new AppError('NOT_FOUND', 'Plan not found')
   }
+  assertPlanPurchasable(plan, windowIsOpen(await getScholarshipWindow(payload)))
   if (!plan.paystackPlanCode) throw new AppError('VALIDATION_ERROR', 'Subscription plan is not configured for billing')
   await verifyPlanConfiguration(plan.paystackPlanCode, plan.price, plan.interval)
   const courseId = relationId(plan.course)

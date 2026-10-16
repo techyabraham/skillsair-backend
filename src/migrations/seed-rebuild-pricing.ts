@@ -3,9 +3,13 @@
  * 20261015_120000_rebuild_leads_pricing schema migration).
  *
  * For every published, paid programme that has no standard fee yet:
- *   - standardPrice        = 100000 (charged whenever no scholarship window is open)
- *   - standardMonthlyPrice = 40000  (display only)
- *   - price                = 2000   (the Access Scholarship price)
+ *   - standardPrice        = 100000 (one-off standard fee)
+ *   - standardMonthlyPrice = 40000  (standard monthly fee)
+ *   - price                = 2000   (Access Scholarship price per month)
+ * and, for every paid programme, the two monthly Paystack plans if they don't exist yet:
+ *   - "Access Scholarship" plan: ₦2,000 a month (kind scholarship; only sold while a window is open)
+ *   - "Standard monthly" plan:   ₦40,000 a month (kind standard)
+ * Creating plans calls the Paystack API, so it needs PAYSTACK_SECRET_KEY and --execute.
  * and ticks `phoneFriendly` for titles matching Canva Design, Smartphone Videography,
  * Data Analysis or Product Management (the owner confirms or adjusts these in the admin).
  *
@@ -17,6 +21,8 @@
  */
 import { loadEnv } from 'payload/node'
 import { getPayload } from 'payload'
+import type { Payload } from 'payload'
+import { createPlan } from '../lib/paystack.js'
 
 const STANDARD_PRICE = 100000
 const STANDARD_MONTHLY_PRICE = 40000
@@ -30,6 +36,49 @@ interface CourseRow {
   price: number
   standardPrice?: number | null
   phoneFriendly?: boolean | null
+}
+
+interface PlanSpec {
+  kind: 'scholarship' | 'standard'
+  name: string
+  price: number
+}
+
+/** Ensures the course has an active monthly plan of each kind with a Paystack plan code. */
+async function ensurePlans(payload: Payload, course: CourseRow, execute: boolean, report: string[]): Promise<void> {
+  const specs: PlanSpec[] = [
+    { kind: 'scholarship', name: `${course.title}: Access Scholarship (monthly)`, price: SCHOLARSHIP_PRICE },
+    { kind: 'standard', name: `${course.title}: Standard (monthly)`, price: STANDARD_MONTHLY_PRICE },
+  ]
+  const existing = await payload.find({
+    collection: 'plans',
+    where: { and: [{ course: { equals: course.id } }, { interval: { equals: 'monthly' } }, { isActive: { equals: true } }] },
+    limit: 20,
+    depth: 0,
+    overrideAccess: true,
+  })
+  for (const spec of specs) {
+    const found = existing.docs.find((plan) => (plan.kind ?? 'standard') === spec.kind && plan.paystackPlanCode)
+    if (found) {
+      report.push(`${course.title}: ${spec.kind} plan exists (₦${found.price}/month, ${found.paystackPlanCode})`)
+      continue
+    }
+    if (!execute) {
+      report.push(`${course.title}: would create ${spec.kind} plan ₦${spec.price}/month on Paystack`)
+      continue
+    }
+    if (!process.env.PAYSTACK_SECRET_KEY) {
+      report.push(`${course.title}: SKIPPED ${spec.kind} plan (PAYSTACK_SECRET_KEY not set)`)
+      continue
+    }
+    const code = await createPlan(spec.name, spec.price, 'monthly')
+    await payload.create({
+      collection: 'plans',
+      data: { name: spec.name, course: course.id, price: spec.price, interval: 'monthly', kind: spec.kind, paystackPlanCode: code, isActive: true },
+      overrideAccess: true,
+    })
+    report.push(`${course.title}: created ${spec.kind} plan ₦${spec.price}/month (${code})`)
+  }
 }
 
 async function run(): Promise<void> {
@@ -51,6 +100,7 @@ async function run(): Promise<void> {
   const alreadyPriced: string[] = []
   const free: string[] = []
   const phoneFriendly: string[] = []
+  const plans: string[] = []
   let failed = 0
 
   for (const course of courses) {
@@ -65,9 +115,9 @@ async function run(): Promise<void> {
       data.phoneFriendly = true
       phoneFriendly.push(course.title)
     }
-    if (!execute || Object.keys(data).length === 0) continue
     try {
-      await payload.update({ collection: 'courses', id: course.id, data, overrideAccess: true })
+      if (execute && Object.keys(data).length) await payload.update({ collection: 'courses', id: course.id, data, overrideAccess: true })
+      if (course.price > 0) await ensurePlans(payload, course, execute, plans)
     } catch (err) {
       failed++
       console.error(`Failed to update ${course.slug}:`, err instanceof Error ? err.message : err)
@@ -80,6 +130,7 @@ async function run(): Promise<void> {
   section('Already priced (unchanged)', alreadyPriced)
   section('Free courses (unchanged)', free)
   section('Phone-friendly matches (owner to confirm)', phoneFriendly)
+  section('Monthly plans', plans)
   if (failed) console.log(`\nFailed updates: ${failed}`)
   process.exit(failed ? 1 : 0)
 }

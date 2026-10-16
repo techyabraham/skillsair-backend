@@ -254,15 +254,16 @@ export function offerEmail(input: OfferEmailInput): EmailContent {
       text: `Hi ${input.firstName}, thanks for applying for ${input.programme}. The Access Scholarship window is closed right now, so the standard fee of ${naira(input.standardPrice)}${monthly} applies. We'll message you on WhatsApp when the next window opens. Certificate: ${cert}, paid only when you finish and want it. Your offer: ${input.offerUrl}\n\nImisi, SkillsAir`,
     }
   }
-  const discount = Math.max(input.standardPrice - input.price, 0)
-  const subject = `${input.firstName}, your ${naira(input.price)} SkillsAir scholarship offer (closes ${input.closesOn})`
+  const monthlyStandard = input.standardMonthlyPrice ? `${naira(input.standardMonthlyPrice)} a month` : ''
+  const standardLine = monthlyStandard ? `${monthlyStandard} (or ${naira(input.standardPrice)} once)` : naira(input.standardPrice)
+  const subject = `${input.firstName}, your ${naira(input.price)}/month SkillsAir scholarship offer (closes ${input.closesOn})`
   const html = wrapHtml(`
     <p>Hi ${name},</p>
     <p>You qualify for the Access Scholarship on <strong>${programme}</strong>.</p>
     <table role="presentation" width="100%" cellpadding="6" cellspacing="0" style="border:1px solid #e4e4e7;border-radius:8px;margin:16px 0;">
-      <tr><td>Standard fee</td><td align="right"><s>${naira(input.standardPrice)}</s></td></tr>
-      <tr><td>Access Scholarship</td><td align="right">−${naira(discount)}</td></tr>
-      <tr><td><strong>You pay to start</strong></td><td align="right"><strong>${naira(input.price)}, one time</strong></td></tr>
+      <tr><td>Standard fee</td><td align="right"><s>${standardLine}</s></td></tr>
+      <tr><td><strong>With your Access Scholarship</strong></td><td align="right"><strong>${naira(input.price)} a month</strong></td></tr>
+      <tr><td colspan="2" style="color:#52525b;font-size:13px;">Billed monthly by Paystack while you study. Most learners finish in 3 months. Cancel anytime from your dashboard.</td></tr>
       <tr><td>Certificate (when you finish)</td><td align="right">${cert}, optional; needed for internship access</td></tr>
     </table>
     <p>The scholarship closes on <strong>${escapeHtml(input.closesOn)}, 11:59pm</strong>.</p>
@@ -286,9 +287,8 @@ export function offerEmail(input: OfferEmailInput): EmailContent {
       '',
       `You qualify for the Access Scholarship on ${input.programme}.`,
       '',
-      `Standard fee: ${naira(input.standardPrice)}`,
-      `Access Scholarship: -${naira(discount)}`,
-      `You pay to start: ${naira(input.price)}, one time`,
+      `Standard fee: ${standardLine}`,
+      `With your Access Scholarship: ${naira(input.price)} a month (billed monthly while you study; most learners finish in 3 months; cancel anytime)`,
       `Certificate (when you finish): ${cert}, optional; needed for internship access`,
       '',
       `The scholarship closes on ${input.closesOn}, 11:59pm.`,
@@ -383,8 +383,8 @@ export function followUpQuickQuestionEmail(input: FollowUpEmailInput): EmailCont
   const subject = `Quick question, ${input.firstName}`
   const html = wrapHtml(`
     <p>Hi ${escapeHtml(input.firstName)},</p>
-    <p>Most people ask two things: "Why only ${naira(input.price)}?" and "Can I do it on my phone?"</p>
-    <p><strong>Why only ${naira(input.price)}?</strong> Because talent isn't the problem. Access is. During this scholarship window, the Access Scholarship covers most of the ${naira(input.standardPrice)} standard fee. The certificate is ${naira(input.certificatePrice)}, paid only when you finish and want it.</p>
+    <p>Most people ask two things: "Why only ${naira(input.price)} a month?" and "Can I do it on my phone?"</p>
+    <p><strong>Why only ${naira(input.price)} a month?</strong> Because talent isn't the problem. Access is. During this scholarship window, the Access Scholarship replaces the standard fee (${naira(input.standardPrice)}) with ${naira(input.price)} a month while you study. The certificate is ${naira(input.certificatePrice)}, paid only when you finish and want it.</p>
     <p><strong>Can I do it on my phone?</strong> It depends on the programme. Your offer lists exactly what ${escapeHtml(input.programme)} needs, and which programmes work fully on a phone.</p>
     ${button('See my offer', input.offerUrl)}
     ${signOff}
@@ -392,7 +392,7 @@ export function followUpQuickQuestionEmail(input: FollowUpEmailInput): EmailCont
   return {
     subject,
     html,
-    text: `Hi ${input.firstName},\n\nMost people ask two things: "Why only ${naira(input.price)}?" and "Can I do it on my phone?"\n\nWhy only ${naira(input.price)}? During this scholarship window, the Access Scholarship covers most of the ${naira(input.standardPrice)} standard fee. The certificate is ${naira(input.certificatePrice)}, paid only when you finish.\n\nCan I do it on my phone? It depends on the programme. Your offer lists exactly what ${input.programme} needs.\n\nSee my offer: ${input.offerUrl}\n\n${signOffText}\n\nUnsubscribe: ${input.unsubscribeUrl}`,
+    text: `Hi ${input.firstName},\n\nMost people ask two things: "Why only ${naira(input.price)} a month?" and "Can I do it on my phone?"\n\nWhy only ${naira(input.price)} a month? During this scholarship window, the Access Scholarship replaces the ${naira(input.standardPrice)} standard fee with ${naira(input.price)} a month while you study. The certificate is ${naira(input.certificatePrice)}, paid only when you finish.\n\nCan I do it on my phone? It depends on the programme. Your offer lists exactly what ${input.programme} needs.\n\nSee my offer: ${input.offerUrl}\n\n${signOffText}\n\nUnsubscribe: ${input.unsubscribeUrl}`,
   }
 }
 
@@ -402,30 +402,30 @@ export function followUpCareerEmail(input: FollowUpEmailInput & { role: string; 
   const html = wrapHtml(`
     <p>Hi ${escapeHtml(input.firstName)},</p>
     <p>${escapeHtml(input.explainer)}</p>
-    <p>${escapeHtml(input.programme)} is self-paced: about 8 hours a week, 3 months to finish. Your Access Scholarship price is ${naira(input.price)} to start (the certificate is ${naira(input.certificatePrice)} when you finish). The window closes on ${escapeHtml(input.closesOn)}.</p>
+    <p>${escapeHtml(input.programme)} is self-paced: about 8 hours a week, 3 months to finish. Your Access Scholarship price is ${naira(input.price)} a month (the certificate is ${naira(input.certificatePrice)} when you finish). The window closes on ${escapeHtml(input.closesOn)}.</p>
     ${button('See my offer', input.offerUrl)}
     ${signOff}
   `, marketingFooter(input.unsubscribeUrl))
   return {
     subject,
     html,
-    text: `Hi ${input.firstName},\n\n${input.explainer}\n\n${input.programme} is self-paced: about 8 hours a week, 3 months to finish. Your Access Scholarship price is ${naira(input.price)} to start (certificate ${naira(input.certificatePrice)} when you finish). The window closes on ${input.closesOn}.\n\nSee my offer: ${input.offerUrl}\n\n${signOffText}\n\nUnsubscribe: ${input.unsubscribeUrl}`,
+    text: `Hi ${input.firstName},\n\n${input.explainer}\n\n${input.programme} is self-paced: about 8 hours a week, 3 months to finish. Your Access Scholarship price is ${naira(input.price)} a month (certificate ${naira(input.certificatePrice)} when you finish). The window closes on ${input.closesOn}.\n\nSee my offer: ${input.offerUrl}\n\n${signOffText}\n\nUnsubscribe: ${input.unsubscribeUrl}`,
   }
 }
 
 /** Email D (48 hours before the window closes; consent only, not yet paid). */
 export function followUpClosingEmail(input: FollowUpEmailInput): EmailContent {
-  const subject = `Your ${naira(input.price)} scholarship closes on ${input.closesOn}`
+  const subject = `Your ${naira(input.price)}/month scholarship closes on ${input.closesOn}`
   const html = wrapHtml(`
     <p>Hi ${escapeHtml(input.firstName)},</p>
-    <p>After ${escapeHtml(input.closesOn)}, ${escapeHtml(input.programme)} is ${naira(input.standardPrice)} until the next window. If you want in at ${naira(input.price)} (plus ${naira(input.certificatePrice)} for your certificate when you finish), now's the time.</p>
+    <p>After ${escapeHtml(input.closesOn)}, ${escapeHtml(input.programme)} is ${naira(input.standardPrice)} until the next window. If you want in at ${naira(input.price)} a month (plus ${naira(input.certificatePrice)} for your certificate when you finish), now's the time.</p>
     ${button('Secure my seat', input.offerUrl)}
     ${signOff}
   `, marketingFooter(input.unsubscribeUrl))
   return {
     subject,
     html,
-    text: `Hi ${input.firstName},\n\nAfter ${input.closesOn}, ${input.programme} is ${naira(input.standardPrice)} until the next window. If you want in at ${naira(input.price)} (plus ${naira(input.certificatePrice)} for your certificate when you finish), now's the time.\n\nSecure my seat: ${input.offerUrl}\n\n${signOffText}\n\nUnsubscribe: ${input.unsubscribeUrl}`,
+    text: `Hi ${input.firstName},\n\nAfter ${input.closesOn}, ${input.programme} is ${naira(input.standardPrice)} until the next window. If you want in at ${naira(input.price)} a month (plus ${naira(input.certificatePrice)} for your certificate when you finish), now's the time.\n\nSecure my seat: ${input.offerUrl}\n\n${signOffText}\n\nUnsubscribe: ${input.unsubscribeUrl}`,
   }
 }
 

@@ -81,7 +81,7 @@ async function recordOnLead(payload: Payload, lead: LeadDoc | null, entry: LeadL
  */
 export async function sendPaymentHelp(payload: Payload, orderId: number): Promise<void> {
   const order = await payload.findByID({ collection: 'orders', id: orderId, depth: 0, overrideAccess: true }).catch(() => null)
-  if (!order || order.type !== 'course' || order.status === 'success' || order.status === 'refunded') return
+  if (!order || (order.type !== 'course' && order.type !== 'subscription') || order.status === 'success' || order.status === 'refunded') return
   if (!(await claimIdempotencyKey(`payment-help:${orderId}`, 60 * 24 * 60 * 60))) return
   const userId = relationId(order.user)
   const courseId = relationId(order.course)

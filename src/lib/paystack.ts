@@ -57,6 +57,15 @@ export async function verifyPlanConfiguration(code: string, amountNgn: number, i
   }
 }
 
+/** Creates a Paystack plan (used by the one-off pricing seed). Amount in naira. */
+export async function createPlan(name: string, amountNgn: number, interval: 'monthly' | 'annually'): Promise<string> {
+  const response = await paystackRequest<{ data: { plan_code: string } }>('/plan', {
+    method: 'POST',
+    body: JSON.stringify({ name, amount: Math.round(amountNgn * 100), interval, currency: 'NGN' }),
+  })
+  return response.data.plan_code
+}
+
 export async function disableSubscription(subscriptionCode: string, emailToken: string): Promise<void> {
   await paystackRequest<{ status: boolean; message: string }>('/subscription/disable', {
     method: 'POST',

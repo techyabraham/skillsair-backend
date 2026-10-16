@@ -16,11 +16,13 @@ Rollback tags were already on the remotes before this work: `pre-rebuild-backend
 **Backend**
 - New `leads` collection, `laptop-applications` collection and `scholarship-window` global.
 - New course fields: `standardPrice`, `standardMonthlyPrice`, `durationMonths`, `weeklyHours`, `phoneFriendly`.
-- Payments charge the course's `price` (the Access Scholarship price) while a scholarship window is open, and `standardPrice` when it is closed.
+- The **Access Scholarship is ₦2,000 a month**, billed by Paystack through each programme's scholarship plan (card only, renews monthly, cancel anytime). Scholarship plans can only be started while a window is open; learners who joined keep their rate. Outside a window: ₦40,000 a month (standard plan) or ₦100,000 once. A one-off programme payment is always the standard fee.
+- Plans gain a `kind` (`scholarship` or `standard`); the public plans list never shows the scholarship plan.
 - `POST /api/auth/register` now **requires a phone number**.
 - New endpoints: `/api/leads` (and `/me`, `/resume/:code`, `/unsubscribe`, `/:id/whatsapp-reply`, `/:id/done`), `/api/offers/:courseSlug`, `/api/whatsapp/webhook`, `/api/laptop-applications/mine` and `/apply`.
 - New background jobs: daily lead summary (08:30 WAT), hourly follow-ups, and a 15-minute scholarship-window check.
-- Two schema migrations: `20261015_120000_rebuild_leads_pricing` (which also seeds the October 2026 window) and `20261016_090000_laptop_applications`.
+- Three schema migrations: `20261015_120000_rebuild_leads_pricing` (which also seeds the October 2026 window), `20261016_090000_laptop_applications` and `20261016_150000_plan_kind`.
+- All ten schools always appear on the site; schools without published programmes show "Programmes coming soon" and take waitlist sign-ups.
 
 **Frontend**
 - The new public site: home, schools, programmes, Apply flow, offer, account step, legal pages, quiz, FAQ, contact, about, scholarship and outcomes.
@@ -111,6 +113,7 @@ You can remove the old WordPress and WooCommerce variables from the frontend (`W
 1. Run the one-off migration task (`Dockerfile.migrate`) from the same commit. It applies:
    - `20261015_120000_rebuild_leads_pricing`
    - `20261016_090000_laptop_applications`
+   - `20261016_150000_plan_kind`
 2. Check the result:
    ```bash
    npm run migrate:status
@@ -126,9 +129,18 @@ Both migrations were verified against a fresh database built from all existing m
 3. Deploy. Coolify should route HTTPS traffic to container port **3000**.
 4. The Dockerfile now copies `public/` into the runtime image (the old Dockerfile didn't), and it binds to `0.0.0.0`.
 
-### Step 4: course prices and phone-friendly flags
+### Step 4: schools, monthly plans, course prices and phone-friendly flags
 
-Run these only after the new frontend is live. While the old frontend is up, it shows course prices publicly, and this seed changes them to ₦2,000.
+First make sure all ten schools exist in the backend with the exact names (existing ones are left alone):
+
+```bash
+npm run seed:schools
+npm run seed:schools -- --execute
+```
+
+Then the prices. Run these only after the new frontend is live: the old frontend shows course prices publicly and sells one-off, and this seed changes the listed price to ₦2,000 (a month).
+
+The seed also creates **two monthly Paystack plans per paid programme** (₦2,000/month "Access Scholarship" and ₦40,000/month "Standard"), so it needs `PAYSTACK_SECRET_KEY` on the machine you run it from. It only creates plans that don't exist yet. Use the **live** key in production; plans created with a test key don't exist in live mode.
 
 From the API container (Coolify → API → Terminal), or locally against production with care:
 
@@ -136,11 +148,13 @@ From the API container (Coolify → API → Terminal), or locally against produc
 npm run seed:rebuild-pricing
 ```
 
-Read the dry-run report: which programmes get ₦2,000 (scholarship) / ₦100,000 (standard) / ₦40,000 (monthly display), which free courses are left alone, and which titles were matched as phone-friendly. Then apply it:
+Read the dry-run report: which programmes get ₦2,000 a month (scholarship) / ₦100,000 once / ₦40,000 a month (standard), which plans would be created on Paystack, which free courses are left alone, and which titles were matched as phone-friendly. Then apply it:
 
 ```bash
 npm run seed:rebuild-pricing -- --execute
 ```
+
+Then check admin → Plans: each paid programme should have an active **scholarship** plan (₦2,000, monthly) and a **standard** plan (₦40,000, monthly), both with a Paystack plan code. A programme without a scholarship plan shows "monthly billing is being set up" on its offer instead of a pay button.
 
 Then, in the admin → Courses:
 - Confirm the phone-friendly matches (Canva Design, Smartphone Videography, Data Analysis, Product Management) and tick any others that genuinely work fully on a phone.
@@ -173,12 +187,12 @@ When the window closes, every programme is charged its standard fee automaticall
 Use a real phone on mobile data for at least the Apply flow.
 
 1. `GET https://skillsair.com/api/health` reports the backend as reachable.
-2. Home, `/schools`, a school page and a programme page load. No page shows a price, except the FAQ answer "Why is it only ₦2,000?", which comes from the brief and shows the ₦10,000 certificate beside it.
+2. Home, `/schools` (all ten schools), a school page and a programme page load. No page shows a price, except the FAQ answer "Why is it only ₦2,000 a month?", which comes from the brief and shows the ₦10,000 certificate beside it.
 3. `curl -s https://skillsair.com/api/courses | grep -c '"price"'` prints `0`.
 4. `/courses` redirects to `/schools`.
-5. **Apply flow:** apply with a test email → offer page shows ~~₦100,000~~ → ₦2,000, "closes Saturday 31 October, 11:59pm", and the ₦10,000 certificate line. Choose "Phone only" and confirm the laptop warning and phone-friendly alternatives appear.
+5. **Apply flow:** apply with a test email → offer page shows the standard fee struck through → **₦2,000 a month**, "closes Saturday 31 October, 11:59pm", and the ₦10,000 certificate line. Choose "Phone only" and confirm the laptop warning and phone-friendly alternatives appear.
 6. Offer email A arrives, and its button opens `/r/<code>` → your offer on another device.
-7. Create the account → checkout shows ₦2,000 → pay with a **small real test** or Paystack test mode if available. Don't make large real charges. After paying you should land on `/dashboard/welcome`, and the lead should show **Paid** in the admin.
+7. Create the account → checkout shows "₦2,000 today, then ₦2,000 each month", card only → pay with a **small real test** or Paystack test mode if available, then cancel the test subscription from the dashboard. Don't make large real charges. After paying you should land on `/dashboard/welcome`, and the lead should show **Paid** in the admin.
 8. Admin → Leads: the test lead shows source, UTM, consent and score. Opening it shows the **Imisi's queue** panel.
 9. `/privacy` etc. show either the published text or the holding message.
 10. The next morning, the daily summary arrives at `hello@mail.skillsair.com` at 08:30 WAT.

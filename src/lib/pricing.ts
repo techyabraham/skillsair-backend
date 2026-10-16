@@ -1,3 +1,4 @@
+import { AppError } from '../types/index.js'
 import type { Payload } from 'payload'
 
 export interface ScholarshipWindowState {
@@ -26,6 +27,21 @@ export function effectiveCoursePrice(
   open: boolean,
 ): number {
   return open || !c.standardPrice ? c.price : c.standardPrice
+}
+
+/** One-off programme payment: the standard fee when set (the scholarship is monthly only). */
+export function oneOffCoursePrice(c: { price: number; standardPrice?: number | null }): number {
+  return c.standardPrice || c.price
+}
+
+/**
+ * The ₦2,000/month Access Scholarship plan can only be started while a window is open.
+ * Existing subscribers keep their rate; renewals are handled by Paystack, not here.
+ */
+export function assertPlanPurchasable(plan: { kind?: string | null }, open: boolean): void {
+  if (plan.kind === 'scholarship' && !open) {
+    throw new AppError('VALIDATION_ERROR', 'The Access Scholarship window has closed. The standard fee applies until the next window opens.')
+  }
 }
 
 /** Single source for the certificate fee (NGN). Defaults to ₦10,000 when the env var is unset. */

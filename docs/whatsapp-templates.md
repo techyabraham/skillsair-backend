@@ -89,7 +89,7 @@ Your offer is valid until {{3}}. Tap "View my offer" to see it, or tap a button 
 ```
 Hi {{1}}, it's Imisi from SkillsAir.
 
-Your Access Scholarship seat for {{2}} is still waiting for you. You start for just ₦2,000, learn at your own pace and have 3 months to finish. When you're done, your verifiable certificate is ₦10,000.
+Your Access Scholarship seat for {{2}} is still waiting for you. You start for just ₦2,000 a month, learn at your own pace and most people finish in 3 months. When you're done, your verifiable certificate is ₦10,000.
 
 Not sure yet? Watch a free lesson first. The scholarship price closes on {{3}}, so don't leave it too late.
 ```
@@ -109,9 +109,9 @@ Not sure yet? Watch a free lesson first. The scholarship price closes on {{3}}, 
 ```
 Hi {{1}}, a quick heads-up from Imisi at SkillsAir.
 
-The Access Scholarship closes on {{2}}. After that, {{3}} goes back to the standard fee of ₦100,000 until the next window opens.
+The Access Scholarship closes on {{2}}. After that, {{3}} goes back to the standard fee (₦40,000 a month, or ₦100,000 once) until the next window opens.
 
-Today you can still start for ₦2,000 (plus ₦10,000 for your certificate when you finish). If you've been waiting for the right time, this is it.
+Today you can still start for ₦2,000 a month (plus ₦10,000 for your certificate when you finish). If you've been waiting for the right time, this is it.
 ```
 
 **Footer:** `Reply STOP to opt out`
@@ -127,7 +127,7 @@ Today you can still start for ₦2,000 (plus ₦10,000 for your certificate when
 ```
 Hi {{1}}, good news from SkillsAir 🎉
 
-You asked us to tell you when the Access Scholarship reopened. It's open now: start {{2}} for ₦2,000 instead of ₦100,000, learn at your own pace, and take up to 3 months to finish. Your certificate is ₦10,000 when you're done.
+You asked us to tell you when the Access Scholarship reopened. It's open now: start {{2}} for ₦2,000 a month instead of ₦40,000 a month, learn at your own pace, and finish in about 3 months. Your certificate is ₦10,000 when you're done.
 
 This window closes on {{3}}, so grab your seat while it's open.
 ```
