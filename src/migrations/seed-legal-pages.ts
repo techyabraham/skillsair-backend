@@ -61,7 +61,7 @@ const PAGES: Array<{ slug: string; title: string; content: ReturnType<typeof doc
   {
     slug: 'terms',
     title: 'Terms',
-    content: doc(DRAFT_NOTE, p('Paste the existing SkillsAir terms of service here for the lawyer to review. Include programme access (3 months), the certificate fee, the refund policy, acceptable use and the governing law (Nigeria).')),
+    content: doc(DRAFT_NOTE, p('Paste the existing SkillsAir terms of service here for the lawyer to review. Include programme access (monthly plans keep access while the subscription is active), the certificate fee, the refund policy, acceptable use and the governing law (Nigeria).')),
   },
   {
     slug: 'refunds',

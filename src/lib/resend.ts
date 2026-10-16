@@ -263,13 +263,13 @@ export function offerEmail(input: OfferEmailInput): EmailContent {
     <table role="presentation" width="100%" cellpadding="6" cellspacing="0" style="border:1px solid #e4e4e7;border-radius:8px;margin:16px 0;">
       <tr><td>Standard fee</td><td align="right"><s>${standardLine}</s></td></tr>
       <tr><td><strong>With your Access Scholarship</strong></td><td align="right"><strong>${naira(input.price)} a month</strong></td></tr>
-      <tr><td colspan="2" style="color:#52525b;font-size:13px;">Billed monthly by Paystack while you study. Most learners finish in 3 months. Cancel anytime from your dashboard.</td></tr>
+      <tr><td colspan="2" style="color:#52525b;font-size:13px;">Billed monthly by Paystack while you study. Keep it until you finish (most learners take about 3 months). Cancel anytime from your dashboard.</td></tr>
       <tr><td>Certificate (when you finish)</td><td align="right">${cert}, optional; needed for internship access</td></tr>
     </table>
     <p>The scholarship closes on <strong>${escapeHtml(input.closesOn)}, 11:59pm</strong>.</p>
     <p><strong>What you get:</strong></p>
     <ul>
-      <li>The full ${programme} programme, with 3 months to finish at your own pace</li>
+      <li>The full ${programme} programme at your own pace, for as long as you study</li>
       <li>When you finish: a verifiable certificate employers can check online (${cert})</li>
       <li>Free bonus courses: CV &amp; LinkedIn, and Freelancing</li>
       <li>Access to internship openings from SkillsAir partner firms once you're certified</li>
@@ -288,7 +288,7 @@ export function offerEmail(input: OfferEmailInput): EmailContent {
       `You qualify for the Access Scholarship on ${input.programme}.`,
       '',
       `Standard fee: ${standardLine}`,
-      `With your Access Scholarship: ${naira(input.price)} a month (billed monthly while you study; most learners finish in 3 months; cancel anytime)`,
+      `With your Access Scholarship: ${naira(input.price)} a month (billed monthly until you finish; most learners take about 3 months; cancel anytime)`,
       `Certificate (when you finish): ${cert}, optional; needed for internship access`,
       '',
       `The scholarship closes on ${input.closesOn}, 11:59pm.`,
@@ -402,14 +402,14 @@ export function followUpCareerEmail(input: FollowUpEmailInput & { role: string; 
   const html = wrapHtml(`
     <p>Hi ${escapeHtml(input.firstName)},</p>
     <p>${escapeHtml(input.explainer)}</p>
-    <p>${escapeHtml(input.programme)} is self-paced: about 8 hours a week, 3 months to finish. Your Access Scholarship price is ${naira(input.price)} a month (the certificate is ${naira(input.certificatePrice)} when you finish). The window closes on ${escapeHtml(input.closesOn)}.</p>
+    <p>${escapeHtml(input.programme)} is self-paced: about 8 hours a week, and most learners finish in about 3 months. Your Access Scholarship price is ${naira(input.price)} a month (the certificate is ${naira(input.certificatePrice)} when you finish). The window closes on ${escapeHtml(input.closesOn)}.</p>
     ${button('See my offer', input.offerUrl)}
     ${signOff}
   `, marketingFooter(input.unsubscribeUrl))
   return {
     subject,
     html,
-    text: `Hi ${input.firstName},\n\n${input.explainer}\n\n${input.programme} is self-paced: about 8 hours a week, 3 months to finish. Your Access Scholarship price is ${naira(input.price)} a month (certificate ${naira(input.certificatePrice)} when you finish). The window closes on ${input.closesOn}.\n\nSee my offer: ${input.offerUrl}\n\n${signOffText}\n\nUnsubscribe: ${input.unsubscribeUrl}`,
+    text: `Hi ${input.firstName},\n\n${input.explainer}\n\n${input.programme} is self-paced: about 8 hours a week, and most learners finish in about 3 months. Your Access Scholarship price is ${naira(input.price)} a month (certificate ${naira(input.certificatePrice)} when you finish). The window closes on ${input.closesOn}.\n\nSee my offer: ${input.offerUrl}\n\n${signOffText}\n\nUnsubscribe: ${input.unsubscribeUrl}`,
   }
 }
 
