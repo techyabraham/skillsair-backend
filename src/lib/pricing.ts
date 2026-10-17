@@ -35,11 +35,11 @@ export function oneOffCoursePrice(c: { price: number; standardPrice?: number | n
 }
 
 /**
- * The ₦2,000/month Access Scholarship plan can only be started while a window is open.
- * Existing subscribers keep their rate; renewals are handled by Paystack, not here.
+ * The ₦2,000/month Access Scholarship plan can be started while a window is open, or at any
+ * time by someone with a price lock (see price-lock.ts). Renewals are charged by Paystack.
  */
-export function assertPlanPurchasable(plan: { kind?: string | null }, open: boolean): void {
-  if (plan.kind === 'scholarship' && !open) {
+export function assertPlanPurchasable(plan: { kind?: string | null }, open: boolean, options: { priceLocked?: boolean } = {}): void {
+  if (plan.kind === 'scholarship' && !open && !options.priceLocked) {
     throw new AppError('VALIDATION_ERROR', 'The Access Scholarship window has closed. The standard fee applies until the next window opens.')
   }
 }

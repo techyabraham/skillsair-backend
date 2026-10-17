@@ -83,3 +83,9 @@ export function verifyWebhookSignature(rawBody: string, signatureHeader: string 
   if (expected.length !== actual.length) return false
   return crypto.timingSafeEqual(expected, actual)
 }
+
+/** A Paystack-hosted page where the subscriber can change the card on their subscription (or cancel). */
+export async function subscriptionManageLink(subscriptionCode: string): Promise<string> {
+  const response = await paystackRequest<{ data: { link: string } }>(`/subscription/${encodeURIComponent(subscriptionCode)}/manage/link`, { method: 'GET' })
+  return response.data.link
+}

@@ -9,7 +9,7 @@ import { generatePaystackReference } from '../../utils/generate-code.js'
 import { AppError } from '../../types/index.js'
 import { relationId } from '../../lib/course-access.js'
 import { requirePrerequisites } from '../../lib/prerequisites.js'
-import { assertPlanPurchasable, getScholarshipWindow, windowIsOpen } from '../../lib/pricing.js'
+import { assertCanStartPlan, assertNoCurrentSubscription } from '../../lib/subscription-guards.js'
 
 const subscribeSchema = z.object({
   planId: z.string().min(1),
@@ -53,7 +53,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
   if (!plan || !plan.isActive) {
     throw new AppError('NOT_FOUND', 'Plan not found')
   }
-  assertPlanPurchasable(plan, windowIsOpen(await getScholarshipWindow(payload)))
+  await assertCanStartPlan(payload, plan, user.id)
   if (!plan.paystackPlanCode) throw new AppError('VALIDATION_ERROR', 'Subscription plan is not configured for billing')
   await verifyPlanConfiguration(plan.paystackPlanCode, plan.price, plan.interval)
   const courseId = relationId(plan.course)
@@ -62,17 +62,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
   if (!subscribedCourse || subscribedCourse.status !== 'published') throw new AppError('NOT_FOUND', 'Subscription course is unavailable')
   await requirePrerequisites(payload, user.id, courseId)
 
-  const activeSubscriptions = await payload.find({
-    collection: 'subscriptions',
-    where: { and: [{ user: { equals: user.id } }, { course: { equals: courseId } }, { status: { equals: 'active' } }, { currentPeriodEnd: { greater_than: new Date().toISOString() } }] },
-    limit: 1,
-  })
-  if (activeSubscriptions.totalDocs > 0) {
-    const existing = activeSubscriptions.docs[0] as unknown as SubscriptionDoc
-    if (existing.status === 'active') {
-      throw new AppError('ALREADY_EXISTS', 'You already have an active subscription')
-    }
-  }
+  await assertNoCurrentSubscription(payload, user.id, Number(courseId))
   const existingEnrollment = await payload.find({ collection: 'enrollments', where: { and: [{ student: { equals: user.id } }, { course: { equals: courseId } }] }, limit: 1, overrideAccess: true })
   if (existingEnrollment.docs[0] && !existingEnrollment.docs[0].subscription) throw new AppError('ALREADY_EXISTS', 'You already own this course')
 
@@ -105,6 +95,8 @@ async function handler(req: PayloadRequest): Promise<Response> {
     callback_url: `${FRONTEND_URL}/subscriptions/callback`,
     currency: 'NGN',
     plan: plan.paystackPlanCode,
+    // Paystack renews subscriptions from a saved card, so monthly plans are card-only.
+    channels: ['card'],
     metadata: {
       userId: user.id,
       type: 'subscription',

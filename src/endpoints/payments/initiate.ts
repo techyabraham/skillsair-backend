@@ -9,7 +9,8 @@ import { generatePaystackReference } from '../../utils/generate-code.js'
 import { AppError } from '../../types/index.js'
 import { requirePrerequisites } from '../../lib/prerequisites.js'
 import { relationId } from '../../lib/course-access.js'
-import { assertPlanPurchasable, getScholarshipWindow, oneOffCoursePrice, windowIsOpen } from '../../lib/pricing.js'
+import { oneOffCoursePrice } from '../../lib/pricing.js'
+import { assertCanStartPlan, assertNoCurrentSubscription } from '../../lib/subscription-guards.js'
 
 const initiateSchema = z.object({
   type: z.enum(['course', 'subscription']),
@@ -88,7 +89,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
     if (!plan || !plan.isActive) {
       throw new AppError('NOT_FOUND', 'Plan not found')
     }
-    assertPlanPurchasable(plan, windowIsOpen(await getScholarshipWindow(payload)))
+    await assertCanStartPlan(payload, plan, user.id)
     if (!plan.paystackPlanCode) throw new AppError('VALIDATION_ERROR', 'Subscription plan is not configured for billing')
     await verifyPlanConfiguration(plan.paystackPlanCode, plan.price, plan.interval)
     const subscribedCourseId = relationId(plan.course)
@@ -98,8 +99,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
     await requirePrerequisites(payload, user.id, subscribedCourseId)
     const existingEnrollment = await payload.find({ collection: 'enrollments', where: { and: [{ student: { equals: user.id } }, { course: { equals: subscribedCourseId } }] }, limit: 1, overrideAccess: true })
     if (existingEnrollment.docs[0] && !existingEnrollment.docs[0].subscription) throw new AppError('ALREADY_EXISTS', 'You already own this course')
-    const active = await payload.find({ collection: 'subscriptions', where: { and: [{ user: { equals: user.id } }, { course: { equals: subscribedCourseId } }, { status: { equals: 'active' } }, { currentPeriodEnd: { greater_than: new Date().toISOString() } }] }, limit: 1, overrideAccess: true })
-    if (active.totalDocs) throw new AppError('ALREADY_EXISTS', 'You already subscribe to this course')
+    await assertNoCurrentSubscription(payload, user.id, Number(subscribedCourseId))
     amount = plan.price
     planId = plan.id
     courseId = subscribedCourseId as number

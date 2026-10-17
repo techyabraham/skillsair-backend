@@ -5,6 +5,7 @@ import { disableSubscription } from '../../lib/paystack.js'
 import { subscriptionCancelledEmail, sendEmail } from '../../lib/resend.js'
 import { AppError } from '../../types/index.js'
 import { logger } from '../../lib/logger.js'
+import { onLifecycleEvent } from '../../lib/lifecycle/events.js'
 import { z } from 'zod'
 import { parseBody, readJsonBody } from '../../middleware/validate.js'
 import { isValidPayloadId } from '../../utils/sanitize.js'
@@ -34,7 +35,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
 
   const subscriptions = await payload.find({
     collection: 'subscriptions',
-    where: { and: [{ id: { equals: body.subscriptionId } }, { user: { equals: user.id } }, { status: { equals: 'active' } }] },
+    where: { and: [{ id: { equals: body.subscriptionId } }, { user: { equals: user.id } }, { status: { in: ['active', 'past_due'] } }] },
     limit: 1,
   })
   const subscription = subscriptions.docs[0] as unknown as SubscriptionDoc | undefined
@@ -54,6 +55,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
     data: { status: 'cancelled', cancelledAt: new Date().toISOString() },
     overrideAccess: true,
   })
+  await onLifecycleEvent(payload, { type: 'subscription_cancelled', subscriptionId: Number(subscription.id), source: 'learner' })
 
   const userDoc = (await payload.findByID({
     collection: 'users',
@@ -66,7 +68,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
   try {
     await sendEmail(
       userDoc.email,
-      subscriptionCancelledEmail(userDoc.firstName, accessEndDate, `${FRONTEND_URL}/subscriptions`),
+      subscriptionCancelledEmail(userDoc.firstName, accessEndDate, `${FRONTEND_URL}/dashboard/subscription`),
     )
   } catch (err) {
     logger.error({ err, subscriptionId: subscription.id }, 'subscription_cancelled_email_failed')

@@ -70,6 +70,7 @@ import { getOfferEndpoint } from './src/endpoints/offers/get.js'
 import { getEmailPreferencesEndpoint, saveEmailPreferencesEndpoint, oneClickUnsubscribeEndpoint, unsubscribeLandingEndpoint } from './src/endpoints/email/preferences.js'
 import { resendWebhookEndpoint } from './src/endpoints/email/webhook.js'
 import { emailPreviewEndpoint } from './src/endpoints/email/preview.js'
+import { updateCardEndpoint } from './src/endpoints/billing/update-card.js'
 import { whatsappVerifyEndpoint, whatsappWebhookEndpoint } from './src/endpoints/whatsapp/webhook.js'
 
 import { graphQLQueries } from './src/lib/graphql-extensions.js'
@@ -188,6 +189,7 @@ export default buildConfig({
     unsubscribeLandingEndpoint,
     resendWebhookEndpoint,
     emailPreviewEndpoint,
+    updateCardEndpoint,
   ],
   graphQL: {
     queries: graphQLQueries,

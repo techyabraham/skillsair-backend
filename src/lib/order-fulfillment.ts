@@ -8,6 +8,31 @@ import { redis } from './redis.js'
 import { randomUUID } from 'node:crypto'
 import { applyLeadEvent, findLeadForUser } from './leads.js'
 import { sendWelcomeMessages } from './lead-followups.js'
+import { disableAtPaystack } from './billing.js'
+import { onLifecycleEvent } from './lifecycle/events.js'
+
+/**
+ * A learner whose renewal failed (or whose plan lapsed) restarts by paying again, which creates
+ * a new subscription. The old one is switched off at Paystack so it can never charge as well.
+ */
+async function replaceOlderSubscriptions(payload: Payload, userId: number | string, courseId: number | string, keepId: number | string): Promise<number[]> {
+  const older = await payload.find({
+    collection: 'subscriptions',
+    where: { and: [{ user: { equals: userId } }, { course: { equals: courseId } }, { id: { not_equals: keepId } }, { status: { in: ['past_due', 'expired'] } }] },
+    limit: 20,
+    depth: 0,
+    overrideAccess: true,
+  })
+  const replaced: number[] = []
+  for (const doc of older.docs as unknown as Array<{ id: number; status: string; paystackSubscriptionCode?: string | null; paystackEmailToken?: string | null }>) {
+    if (doc.status === 'past_due') {
+      await disableAtPaystack(doc, 'replaced_by_new_subscription')
+      await payload.update({ collection: 'subscriptions', id: doc.id, data: { status: 'expired' }, overrideAccess: true })
+    }
+    replaced.push(doc.id)
+  }
+  return replaced
+}
 
 /** A paid learner leaves the follow-up funnel: no more reminders, and out of Imisi's queue. */
 async function markLeadPaid(payload: Payload, userId: number, email: string): Promise<void> {
@@ -39,6 +64,8 @@ async function fulfillLockedOrder(payload: Payload, orderId: number | string): P
   if (userId === undefined) throw new Error('Paid order has no user')
   const user = await payload.findByID({ collection: 'users', id: userId, depth: 0, overrideAccess: true })
   let itemDescription = 'your purchase'
+  let replacedSubscriptionIds: number[] = []
+  let paidSubscriptionId: number | undefined
 
   if (doc.type === 'course') {
     const courseId = relationId(doc.course)
@@ -62,9 +89,13 @@ async function fulfillLockedOrder(payload: Payload, orderId: number | string): P
       const subscription = await payload.create({ collection: 'subscriptions', data: {
         user: userId, plan: planId, course: courseId, status: 'active', initialOrderReference: doc.reference,
         currentPeriodStart: now.toISOString(), currentPeriodEnd: addDays(now, plan.interval === 'annually' ? 365 : 30).toISOString(),
+        // Joining on the Access Scholarship plan locks the ₦2,000-a-month rate (see price-lock.ts).
+        priceLocked: plan.kind === 'scholarship',
       }, overrideAccess: true })
       subscriptionId = subscription.id
     }
+    if (subscriptionId !== undefined) replacedSubscriptionIds = await replaceOlderSubscriptions(payload, userId, courseId, subscriptionId)
+    paidSubscriptionId = subscriptionId === undefined ? undefined : Number(subscriptionId)
     const enrollments = await payload.find({ collection: 'enrollments', where: { and: [{ student: { equals: userId } }, { course: { equals: courseId } }] }, limit: 1, overrideAccess: true })
     const enrollment = enrollments.docs[0]
     if (!enrollment) await payload.create({ collection: 'enrollments', data: { student: userId, course: courseId, status: 'active', orderId: doc.reference, subscription: subscriptionId }, overrideAccess: true })
@@ -81,6 +112,15 @@ async function fulfillLockedOrder(payload: Payload, orderId: number | string): P
 
   await payload.update({ collection: 'orders', id: doc.id, data: { fulfilledAt: new Date().toISOString() }, overrideAccess: true })
   if (doc.type === 'course' || doc.type === 'subscription') {
+    const paidCourseId = relationId(doc.course)
+    if (paidCourseId !== undefined) {
+      await onLifecycleEvent(
+        payload,
+        replacedSubscriptionIds.length && paidSubscriptionId !== undefined
+          ? { type: 'resubscribed', userId: Number(userId), courseId: Number(paidCourseId), subscriptionId: paidSubscriptionId, replacedSubscriptionIds }
+          : { type: 'first_payment_success', userId: Number(userId), courseId: Number(paidCourseId), orderId: Number(doc.id), subscriptionId: paidSubscriptionId },
+      )
+    }
     await markLeadPaid(payload, Number(userId), user.email)
     const courseId = relationId(doc.course)
     if (courseId !== undefined) {

@@ -1,5 +1,6 @@
 import type { Payload } from 'payload'
 import { AppError } from '../types/index.js'
+import { inGrace } from './billing.js'
 
 export function relationId(value: unknown): number | string | undefined {
   if (value == null) return undefined
@@ -36,7 +37,9 @@ export async function requireCourseAccess(payload: Payload, studentId: number | 
   const subscriptionId = relationId(enrollments.docs[0]?.subscription)
   if (subscriptionId !== undefined) {
     const subscription = await payload.findByID({ collection: 'subscriptions', id: subscriptionId, depth: 0, overrideAccess: true }).catch(() => null)
-    if (!subscription || !subscription.currentPeriodEnd || new Date(subscription.currentPeriodEnd).getTime() <= Date.now() || !['active', 'cancelled'].includes(subscription.status)) {
+    // Paid-up (active, or cancelled but running to the end of its month), or a failed renewal still in its grace days.
+    const paidUp = Boolean(subscription?.currentPeriodEnd) && new Date(subscription?.currentPeriodEnd ?? 0).getTime() > Date.now() && ['active', 'cancelled', 'past_due'].includes(String(subscription?.status))
+    if (!subscription || !(paidUp || inGrace(subscription as { status?: string | null; lastFailedAt?: string | null }))) {
       if (extended) return
       throw new AppError('ACCESS_EXPIRED', 'Your course subscription has expired')
     }
