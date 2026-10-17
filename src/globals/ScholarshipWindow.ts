@@ -48,5 +48,16 @@ export const ScholarshipWindow: GlobalConfig = {
         { name: 'cohortEndsAt', type: 'date' },
       ],
     },
+    {
+      type: 'row',
+      fields: [
+        { name: 'laptopApplicationsOpen', type: 'checkbox', defaultValue: false, label: 'Laptop applications are open', admin: { description: 'Shown in the certificate email (T9).' } },
+        {
+          name: 'laptopApplicationDeadline',
+          type: 'date',
+          admin: { date: { pickerAppearance: 'dayAndTime' }, description: 'Real deadline for this cohort’s laptop applications. Within 10 days, certificate email C2 is replaced by its deadline version.' },
+        },
+      ],
+    },
   ],
 }

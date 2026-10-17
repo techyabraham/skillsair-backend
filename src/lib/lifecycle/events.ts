@@ -1,7 +1,7 @@
 import type { Payload } from 'payload'
 import { logger } from '../logger.js'
 import { relationId } from '../leads.js'
-import { loadPerson, loadWindow, type LoadedPerson } from './context.js'
+import { loadPerson, loadWindow, type EventData, type LoadedPerson } from './context.js'
 import { executeStep } from './send.js'
 import { stepById } from './sequences.js'
 import { idempotencyKey, type PlannedStep } from './plan.js'
@@ -24,7 +24,7 @@ export type LifecycleEvent =
   | { type: 'subscription_cancelled'; subscriptionId: number; source: 'learner' | 'paystack' }
   | { type: 'access_ended'; userId: number; courseId?: number; subscriptionId?: number; reason: 'lapsed' | 'grace_expired' | 'legacy_access_expired' }
   | { type: 'enrollment_completed'; userId: number; courseId: number; enrollmentId: number; billingStopped: boolean }
-  | { type: 'certificate_issued'; userId: number; courseId: number }
+  | { type: 'certificate_issued'; userId: number; courseId: number; receipt?: { reference: string; amount: number; paidAt: string } }
 
 /** Bumps the cycle on unfinished enrolments, so a learner who lapses again gets the win-back emails again. */
 async function bumpLapseCycle(payload: Payload, userId: number, courseId?: number): Promise<number> {
@@ -55,10 +55,20 @@ interface SubscriptionRow {
   failedAttempts?: number | null
 }
 
-async function subscriptionOwner(payload: Payload, subscriptionId: number): Promise<{ userId: number; courseId: number; failedAttempts: number } | null> {
-  const subscription = (await payload.findByID({ collection: 'subscriptions', id: subscriptionId, depth: 0, overrideAccess: true }).catch(() => null)) as SubscriptionRow | null
+async function subscriptionOwner(payload: Payload, subscriptionId: number): Promise<{ userId: number; courseId: number; failedAttempts: number; planPrice: number | null } | null> {
+  const subscription = (await payload.findByID({ collection: 'subscriptions', id: subscriptionId, depth: 1, overrideAccess: true }).catch(() => null)) as (SubscriptionRow & { plan?: { price?: number } | number }) | null
   if (!subscription) return null
-  return { userId: Number(relationId(subscription.user)), courseId: Number(relationId(subscription.course)), failedAttempts: Number(subscription.failedAttempts ?? 0) }
+  const planPrice = typeof subscription.plan === 'object' && subscription.plan ? Number(subscription.plan.price ?? 0) || null : null
+  return { userId: Number(relationId(subscription.user)), courseId: Number(relationId(subscription.course)), failedAttempts: Number(subscription.failedAttempts ?? 0), planPrice }
+}
+
+const lagosDay = (at: number | string) =>
+  new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Africa/Lagos' }).format(new Date(at))
+
+async function orderReceipt(payload: Payload, orderId: number): Promise<EventData> {
+  const order = await payload.findByID({ collection: 'orders', id: orderId, depth: 0, overrideAccess: true }).catch(() => null)
+  if (!order) return {}
+  return { reference: String(order.reference), amount: Number(order.amount), paidAt: lagosDay(String(order.paidAt ?? order.updatedAt ?? Date.now())) }
 }
 
 /**
@@ -72,6 +82,7 @@ async function sendEventStep(
   stepId: string,
   stage: Stage,
   channelOverride?: { channel: 'whatsapp'; template: string },
+  extra: EventData = {},
 ): Promise<void> {
   const step = stepById(stepId)
   if (!step) return
@@ -87,7 +98,7 @@ async function sendEventStep(
   else if (channel === 'email' && snapshot.emailSuppressed) skip = 'suppressed'
   else if (channel === 'whatsapp' && !snapshot.phone) skip = 'no_phone'
   else if (step.kind === 'service' && channel === 'email' && !snapshot.learningReminders) skip = 'learning_reminders_off'
-  await executeStep(payload, person, planned, await loadWindow(payload), skip)
+  await executeStep(payload, person, planned, await loadWindow(payload), skip, extra)
 }
 
 async function enrollmentFor(payload: Payload, userId: number, courseId: number): Promise<{ id: number; cycle: number } | null> {
@@ -106,12 +117,18 @@ async function sendForEvent(payload: Payload, event: LifecycleEvent): Promise<vo
   switch (event.type) {
     case 'first_payment_success': {
       const person = await forUser(event.userId)
-      if (person) await sendEventStep(payload, person, 'T1', stage(`order:${event.orderId}`, 0, event.courseId))
+      if (!person) return
+      const t1 = stage(`order:${event.orderId}`, 0, event.courseId)
+      await sendEventStep(payload, person, 'T1', t1, undefined, await orderReceipt(payload, event.orderId))
+      await sendEventStep(payload, person, 'T1', t1, { channel: 'whatsapp', template: 'skillsair_welcome' })
       return
     }
     case 'resubscribed': {
       const person = await forUser(event.userId)
-      if (person) await sendEventStep(payload, person, 'T7', stage(`sub:${event.subscriptionId}`, 0, event.courseId))
+      if (!person) return
+      const order = await payload.find({ collection: 'orders', where: { and: [{ user: { equals: event.userId } }, { status: { equals: 'success' } }] }, sort: '-createdAt', limit: 1, depth: 0, overrideAccess: true })
+      const receipt = order.docs[0] ? await orderReceipt(payload, Number(order.docs[0].id)) : {}
+      await sendEventStep(payload, person, 'T7', stage(`sub:${event.subscriptionId}`, 0, event.courseId), undefined, receipt)
       return
     }
     case 'renewal_success':
@@ -124,9 +141,18 @@ async function sendForEvent(payload: Payload, event: LifecycleEvent): Promise<vo
       const person = await forUser(owner.userId)
       if (!person) return
       const subject = `sub:${event.subscriptionId}`
-      if (event.type === 'renewal_success') await sendEventStep(payload, person, event.recovered ? 'T7' : 'T2', stage(subject, day, owner.courseId))
-      else if (event.type === 'invoice_upcoming') await sendEventStep(payload, person, 'T3', stage(subject, day, owner.courseId))
-      else if (event.type === 'cards_expiring') await sendEventStep(payload, person, 'T4', stage(subject, day, owner.courseId))
+      const amount = owner.planPrice ?? undefined
+      if (event.type === 'renewal_success') {
+        await sendEventStep(payload, person, event.recovered ? 'T7' : 'T2', stage(subject, day, owner.courseId), undefined, { amount, paidAt: lagosDay(now), ...(event.reference ? { reference: event.reference } : {}) })
+      } else if (event.type === 'invoice_upcoming') {
+        await sendEventStep(payload, person, 'T3', stage(subject, day, owner.courseId), undefined, {
+          amount: event.amount ?? amount, ...(event.chargeDate ? { chargeDate: lagosDay(event.chargeDate) } : {}), ...(event.cardLast4 ? { cardLast4: event.cardLast4 } : {}),
+        })
+      } else if (event.type === 'cards_expiring') {
+        await sendEventStep(payload, person, 'T4', stage(subject, day, owner.courseId), undefined, {
+          ...(event.cardExpiry ? { cardExpiry: event.cardExpiry } : {}), ...(event.cardDescription ? { cardLast4: (/\d{4}$/.exec(event.cardDescription) ?? [''])[0] } : {}),
+        })
+      }
       else if (event.type === 'subscription_cancelled') await sendEventStep(payload, person, 'T5', stage(subject, 0, owner.courseId))
       else {
         const dStage: Stage = { track: 'D', subjectId: subject, enteredAt: now, cycle: owner.failedAttempts, courseId: owner.courseId }
@@ -147,12 +173,15 @@ async function sendForEvent(payload: Payload, event: LifecycleEvent): Promise<vo
     }
     case 'enrollment_completed': {
       const person = await forUser(event.userId)
-      if (person) await sendEventStep(payload, person, 'T8', stage(`enr:${event.enrollmentId}`, 0, event.courseId))
+      if (!person) return
+      const t8 = stage(`enr:${event.enrollmentId}`, 0, event.courseId)
+      await sendEventStep(payload, person, 'T8', t8)
+      await sendEventStep(payload, person, 'T8', t8, { channel: 'whatsapp', template: 'skillsair_course_complete' })
       return
     }
     case 'certificate_issued': {
       const person = await forUser(event.userId)
-      if (person) await sendEventStep(payload, person, 'T9', stage(`cert:${event.courseId}`, 0, event.courseId))
+      if (person) await sendEventStep(payload, person, 'T9', stage(`cert:${event.courseId}`, 0, event.courseId), undefined, event.receipt ?? {})
       return
     }
   }

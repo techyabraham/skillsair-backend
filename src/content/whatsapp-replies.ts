@@ -31,7 +31,7 @@ export function howItWorksReply({ date, offerLink, windowOpen, price, standardPr
   return [
     "Here's how SkillsAir works 👇",
     '',
-    '📚 Self-paced: start today, most finish in about 3 months at 8 hours a week',
+    '📚 Self-paced: start today; designed to take about 3 months at 8 hours a week',
     priceLine,
     `🎓 When you finish: a verifiable certificate for ${naira(certificatePrice)}`,
     '🎁 Free CV & LinkedIn and Freelancing courses',

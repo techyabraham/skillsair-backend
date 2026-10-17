@@ -2,7 +2,6 @@ import type { Endpoint, PayloadRequest } from 'payload'
 import { sendSuccess, asyncHandler } from '../../middleware/validate.js'
 import { requireAuth } from '../../middleware/authenticate.js'
 import { disableSubscription } from '../../lib/paystack.js'
-import { subscriptionCancelledEmail, sendEmail } from '../../lib/resend.js'
 import { AppError } from '../../types/index.js'
 import { logger } from '../../lib/logger.js'
 import { onLifecycleEvent } from '../../lib/lifecycle/events.js'
@@ -20,10 +19,6 @@ interface SubscriptionDoc {
   currentPeriodEnd: string | null | undefined
 }
 
-interface UserDoc {
-  email: string
-  firstName: string
-}
 
 const FRONTEND_URL = process.env.FRONTEND_URL ?? 'https://skillsair.com'
 
@@ -56,23 +51,6 @@ async function handler(req: PayloadRequest): Promise<Response> {
     overrideAccess: true,
   })
   await onLifecycleEvent(payload, { type: 'subscription_cancelled', subscriptionId: Number(subscription.id), source: 'learner' })
-
-  const userDoc = (await payload.findByID({
-    collection: 'users',
-    id: user.id,
-    depth: 0,
-  })) as unknown as UserDoc
-  const accessEndDate = subscription.currentPeriodEnd
-    ? new Date(subscription.currentPeriodEnd).toLocaleDateString('en-GB')
-    : 'the end of the current billing period'
-  try {
-    await sendEmail(
-      userDoc.email,
-      subscriptionCancelledEmail(userDoc.firstName, accessEndDate, `${FRONTEND_URL}/dashboard/subscription`),
-    )
-  } catch (err) {
-    logger.error({ err, subscriptionId: subscription.id }, 'subscription_cancelled_email_failed')
-  }
 
   return sendSuccess(updated)
 }

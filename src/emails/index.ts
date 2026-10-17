@@ -2,6 +2,7 @@ import type { RenderedEmail } from './define.js'
 import type { EmailKind } from './layout.js'
 import { emailVerification } from './email-verification.js'
 import { passwordReset } from './password-reset.js'
+import { LIFECYCLE_TEMPLATES } from './lifecycle/index.js'
 
 export { defineEmail, firstNameOf, type EmailTemplate, type RenderedEmail } from './define.js'
 
@@ -17,6 +18,7 @@ export interface PreviewableTemplate {
 export const emailTemplates: Record<string, PreviewableTemplate> = {
   [passwordReset.id]: passwordReset,
   [emailVerification.id]: emailVerification,
+  ...LIFECYCLE_TEMPLATES,
 }
 
 export { emailVerification, passwordReset }

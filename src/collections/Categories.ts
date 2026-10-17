@@ -42,6 +42,15 @@ export const Categories: CollectionConfig = {
       type: 'textarea',
     },
     {
+      name: 'freeExercise',
+      type: 'textarea',
+      maxLength: 600,
+      admin: {
+        description:
+          'Nurture email P2: a free 20-minute exercise for this school, 2–4 sentences with a free tool. e.g. "Open Google Sheets, paste in your last month of spending, and make a chart of where the money went." Leave empty to skip P2.',
+      },
+    },
+    {
       name: 'icon',
       type: 'text',
     },

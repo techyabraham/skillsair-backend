@@ -1,6 +1,11 @@
 import type { Payload } from 'payload'
 import { relationId, findLeadForUser, formatLagosDate, type LeadDoc } from '../leads.js'
 import { getScholarshipWindow, windowIsOpen, certificatePrice } from '../pricing.js'
+import { accessGraceDays, stopBillingOnComplete } from '../billing.js'
+import { hasPriceLock, nextProgrammeLockDays } from '../price-lock.js'
+import { phoneFriendlyAlternatives } from '../offers.js'
+import { careerExplainer } from '../../content/career-explainers.js'
+import { offerFor } from './templates.js'
 import { isDeliverableEmail } from '../lead-messaging.js'
 import type { LogEntry, PersonSnapshot, Stage, WindowState } from './types.js'
 
@@ -141,45 +146,301 @@ export async function loadWindow(payload: Payload, now = Date.now()): Promise<Wi
   }
 }
 
-/** Data the templates use. Every field has a fallback; templates never see undefined. */
+/**
+ * Everything a lifecycle template can show. Every field has a fallback, so a template never
+ * prints "undefined"; optional owner content (anecdote, exercise, proof, pairing) is null when
+ * not filled in, and the template leaves that part out.
+ */
 export interface MessageData {
   firstName: string
   email: string
   programme: string
   programmeSlug: string
-  /** The applicant's personal offer page (resume link for leads). */
+  school: string
+  role: string
+  careerExplainer: string
+  phoneFriendly: boolean
+  phoneFriendlyList: string
+  // Links
   offerUrl: string
   checkoutUrl: string
+  resumeCheckoutUrl: string
+  waitlistUrl: string
+  previewUrl: string
+  phoneFriendlyUrl: string
+  dashboardUrl: string
+  resumeUrl: string
+  firstLessonUrl: string
+  billingUrl: string
+  updateCardUrl: string
+  certificateCheckoutUrl: string
+  laptopUrl: string
+  // Window and prices
+  windowOpen: boolean
   closesOn: string
+  closesDay: string
   closesAt: string | null
+  priceLocked: boolean
+  price: number
+  standardPrice: number
+  standardMonthlyPrice: number | null
   certificatePrice: number
+  // Learning
+  progressPercent: number
+  lessonsLeft: number
+  nextLessonTitle: string
+  lesson1Title: string
+  lesson1Minutes: number | null
+  weeksLeft: number
+  weekPlan: string[]
+  completedOn: string
+  // Billing (receipts, notices)
+  reference: string
+  amount: number
+  paidAt: string
+  billingDay: string
+  monthNumber: number
+  nextChargeDate: string
+  chargeDate: string
+  cardLast4: string
+  cardExpiry: string
+  periodEnd: string
+  graceDays: number
+  graceEnds: string
+  renewalSoon: boolean
+  stopBillingOnComplete: boolean
+  // Certificate and graduates
+  certificateUrl: string
+  linkedinAddUrl: string
+  laptopApplicationsOpen: boolean
+  laptopDeadline: string
+  nextProgramme: { title: string; slug: string; url: string; checkoutUrl: string; pairingReason: string | null } | null
+  nextProgrammeLockEnds: string
+  // Owner content
+  founderAnecdote: string | null
+  freeExercise: string | null
+  proof: { text: string; attribution: string } | null
+  /** Joined a programme on the ₦2,000-a-month Access Scholarship (price lock rules apply). */
+  joinedOnScholarship: boolean
+  /** 0 for the first send of a repeating step, 1 for the next... (rotates the wording). */
+  occurrence: number
+  // WhatsApp helpers
   resumeCode: string | null
   orderReference: string | null
 }
 
-const FRONTEND_URL = (process.env.FRONTEND_URL ?? 'https://skillsair.com').replace(/\/+$/, '')
+/** Values an event already knows (a receipt's reference, the card on a renewal notice...). */
+export type EventData = Partial<Pick<MessageData, 'reference' | 'amount' | 'paidAt' | 'chargeDate' | 'cardLast4' | 'cardExpiry'>>
 
-export async function buildMessageData(payload: Payload, person: LoadedPerson, stage: Stage, window: WindowState): Promise<MessageData> {
+const FRONTEND_URL = (process.env.FRONTEND_URL ?? 'https://skillsair.com').replace(/\/+$/, '')
+const site = (path: string) => `${FRONTEND_URL}${path}`
+
+function lagosDate(at: number | string | null | undefined, options: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'long', year: 'numeric' }): string {
+  if (at === null || at === undefined || at === '') return ''
+  const time = typeof at === 'number' ? at : Date.parse(at)
+  return Number.isFinite(time) ? new Intl.DateTimeFormat('en-GB', { ...options, timeZone: 'Africa/Lagos' }).format(new Date(time)) : ''
+}
+
+function ordinal(day: number): string {
+  const suffix = day % 10 === 1 && day !== 11 ? 'st' : day % 10 === 2 && day !== 12 ? 'nd' : day % 10 === 3 && day !== 13 ? 'rd' : 'th'
+  return `${day}${suffix}`
+}
+
+interface LessonRow { id: number; title: string; duration?: number | null; order: number; section: unknown }
+interface SectionRow { id: number; title: string; order: number }
+
+/** Progress, next lesson and a simple week-by-week plan for what's left (8 hours a week). */
+async function learningStats(payload: Payload, userId: number, courseId: number) {
+  const sections = (await payload.find({ collection: 'sections', where: { course: { equals: courseId } }, sort: 'order', limit: 500, depth: 0, overrideAccess: true })).docs as unknown as SectionRow[]
+  const sectionOrder = new Map(sections.map((section) => [section.id, section]))
+  const lessons = sections.length
+    ? ((await payload.find({ collection: 'lessons', where: { and: [{ section: { in: sections.map((section) => section.id) } }, { isPublished: { equals: true } }] }, limit: 5000, depth: 0, overrideAccess: true })).docs as unknown as LessonRow[])
+    : []
+  lessons.sort((a, b) => {
+    const sa = sectionOrder.get(Number(relationId(a.section)))?.order ?? 0
+    const sb = sectionOrder.get(Number(relationId(b.section)))?.order ?? 0
+    return sa - sb || a.order - b.order
+  })
+  const done = new Set(
+    lessons.length
+      ? (await payload.find({ collection: 'lesson-progress', where: { and: [{ student: { equals: userId } }, { lesson: { in: lessons.map((lesson) => lesson.id) } }, { isCompleted: { equals: true } }] }, limit: 5000, depth: 0, overrideAccess: true })).docs.map((doc) => Number(relationId(doc.lesson)))
+      : [],
+  )
+  const remaining = lessons.filter((lesson) => !done.has(lesson.id))
+  // Lesson durations are in seconds; when a course has none, assume 30 minutes a lesson.
+  const minutes = (lesson: LessonRow) => (lesson.duration && lesson.duration > 0 ? lesson.duration / 60 : 30)
+  const remainingMinutes = remaining.reduce((sum, lesson) => sum + minutes(lesson), 0)
+  const weeksLeft = Math.max(1, Math.ceil(remainingMinutes / 480))
+  const remainingSections: string[] = []
+  for (const lesson of remaining) {
+    const title = sectionOrder.get(Number(relationId(lesson.section)))?.title
+    if (title && !remainingSections.includes(title)) remainingSections.push(title)
+  }
+  const perWeek = Math.max(1, Math.ceil(remainingSections.length / weeksLeft))
+  const weekPlan: string[] = []
+  for (let week = 0; week < weeksLeft && week * perWeek < remainingSections.length; week++) {
+    weekPlan.push(`Week ${week + 1}: ${remainingSections.slice(week * perWeek, (week + 1) * perWeek).join(', ')}`)
+  }
+  const first = lessons[0]
+  return {
+    total: lessons.length,
+    progressPercent: lessons.length ? Math.round((done.size / lessons.length) * 100) : 0,
+    lessonsLeft: remaining.length,
+    nextLessonTitle: remaining[0]?.title ?? first?.title ?? '',
+    lesson1Title: first?.title ?? '',
+    lesson1Minutes: first?.duration && first.duration > 0 ? Math.max(1, Math.round(first.duration / 60)) : null,
+    weeksLeft,
+    weekPlan,
+  }
+}
+
+interface CourseRow {
+  id: number
+  title: string
+  slug: string
+  status?: string
+  price?: number
+  phoneFriendly?: boolean | null
+  categories?: Array<number | { id: number; name?: string; freeExercise?: string | null }> | null
+  nextProgrammes?: Array<{ programme?: number | { id: number; title?: string; slug?: string; status?: string }; pairingReason?: string | null }> | null
+}
+
+async function nextProgrammeFor(payload: Payload, course: CourseRow, excludeIds: number[]): Promise<MessageData['nextProgramme']> {
+  const make = (title: string, slug: string, pairingReason: string | null) => ({
+    title, slug, pairingReason, url: site(`/programmes/${encodeURIComponent(slug)}`), checkoutUrl: site(`/checkout?course=${encodeURIComponent(slug)}`),
+  })
+  for (const item of course.nextProgrammes ?? []) {
+    const programme = typeof item.programme === 'object' ? item.programme : null
+    if (programme?.slug && programme.title && programme.status === 'published' && !excludeIds.includes(programme.id)) return make(programme.title, programme.slug, item.pairingReason?.trim() || null)
+  }
+  const schoolId = Number(relationId(course.categories?.[0]))
+  const candidates = (await payload.find({
+    collection: 'courses',
+    where: { and: [{ status: { equals: 'published' } }, { price: { greater_than: 0 } }, { id: { not_in: excludeIds } }] },
+    limit: 200, depth: 0, overrideAccess: true, sort: 'title',
+  })).docs as unknown as CourseRow[]
+  const sameSchool = candidates.find((candidate) => (candidate.categories ?? []).some((category) => Number(relationId(category)) === schoolId))
+  const pick = sameSchool ?? candidates.find((candidate) => candidate.phoneFriendly)
+  return pick ? make(pick.title, pick.slug, null) : null
+}
+
+export async function buildMessageData(payload: Payload, person: LoadedPerson, stage: Stage, window: WindowState, extra: EventData = {}): Promise<MessageData> {
+  const now = Date.now()
+  const userId = person.user?.id
   const course = stage.courseId
-    ? ((await payload.findByID({ collection: 'courses', id: stage.courseId, depth: 0, overrideAccess: true }).catch(() => null)) as { title?: string; slug?: string } | null)
+    ? ((await payload.findByID({ collection: 'courses', id: stage.courseId, depth: 1, overrideAccess: true }).catch(() => null)) as unknown as CourseRow | null)
     : null
   const slug = course?.slug ?? ''
+  const school = (course?.categories ?? []).find((category): category is { id: number; name?: string; freeExercise?: string | null } => typeof category === 'object' && category !== null)
+  const explainer = careerExplainer(school?.name ?? '')
+  const offer = await offerFor(payload, stage.courseId, userId)
   const resumeCode = person.lead?.resumeCode ?? null
+
+  const learning = userId && stage.courseId && ['I', 'R', 'T', 'D', 'C'].includes(stage.track)
+    ? await learningStats(payload, userId, stage.courseId).catch(() => null)
+    : null
+
   let orderReference: string | null = null
   if (stage.subjectId.startsWith('order:')) {
     const order = await payload.findByID({ collection: 'orders', id: Number(stage.subjectId.slice(6)), depth: 0, overrideAccess: true }).catch(() => null)
     orderReference = order ? String(order.reference) : null
   }
+
+  // The programme's current (or latest) subscription, for billing dates.
+  const subscriptions = userId && stage.courseId
+    ? ((await payload.find({ collection: 'subscriptions', where: { and: [{ user: { equals: userId } }, { course: { equals: stage.courseId } }] }, sort: '-createdAt', limit: 10, depth: 0, overrideAccess: true })).docs as unknown as Array<{ id: number; status: string; currentPeriodStart?: string; currentPeriodEnd?: string | null; lastFailedAt?: string | null; createdAt: string }>)
+    : []
+  const subscription = stage.subjectId.startsWith('sub:') ? subscriptions.find((item) => item.id === Number(stage.subjectId.slice(4))) ?? subscriptions[0] : subscriptions[0]
+  const periodEnd = subscription?.currentPeriodEnd ?? null
+  const firstStart = subscriptions.length ? Math.min(...subscriptions.map((item) => Date.parse(item.createdAt))) : now
+  const graceEndsAt = subscription?.lastFailedAt ? Date.parse(subscription.lastFailedAt) + accessGraceDays() * 86_400_000 : null
+
+  const enrollment = userId && stage.courseId
+    ? ((await payload.find({ collection: 'enrollments', where: { and: [{ student: { equals: userId } }, { course: { equals: stage.courseId } }] }, limit: 1, depth: 0, overrideAccess: true })).docs[0] as unknown as { id: number; completedAt?: string | null } | undefined)
+    : undefined
+  const certificate = userId && stage.courseId
+    ? ((await payload.find({ collection: 'certificates', where: { and: [{ student: { equals: userId } }, { course: { equals: stage.courseId } }] }, limit: 1, depth: 0, overrideAccess: true })).docs[0] as unknown as { certificateCode?: string } | undefined)
+    : undefined
+  const certificateUrl = certificate?.certificateCode ? site(`/certificates/verify/${certificate.certificateCode}`) : ''
+  const completedOn = lagosDate(enrollment?.completedAt)
+  const nextLockEnds = enrollment?.completedAt ? Date.parse(enrollment.completedAt) + nextProgrammeLockDays() * 86_400_000 : null
+
+  const windowDoc = (await payload.findGlobal({ slug: 'scholarship-window', depth: 0, overrideAccess: true }).catch(() => null)) as { laptopApplicationsOpen?: boolean | null; laptopApplicationDeadline?: string | null } | null
+  const emailContent = (await payload.findGlobal({ slug: 'email-content', depth: 0, overrideAccess: true }).catch(() => null)) as { founderAnecdote?: string | null; proofItems?: Array<{ text?: string; attribution?: string; approved?: boolean | null }> | null } | null
+  const proof = (emailContent?.proofItems ?? []).find((item) => item.approved && item.text && item.attribution)
+  const enrolledCourseIds = userId
+    ? (await payload.find({ collection: 'enrollments', where: { student: { equals: userId } }, limit: 200, depth: 0, overrideAccess: true })).docs.map((doc) => Number(relationId(doc.course)))
+    : []
+  const nextProgramme = course && ['G', 'T', 'C'].includes(stage.track) ? await nextProgrammeFor(payload, course, [course.id, ...enrolledCourseIds]) : null
+  const phoneFriendlyList = (await phoneFriendlyAlternatives(payload)).map((item) => item.title).join(', ')
+  const renewalSoon = subscription?.status === 'active' && periodEnd !== null && Date.parse(periodEnd) - now < 5 * 86_400_000 && Date.parse(periodEnd) > now
+  const certificateLink = certificateUrl || site('/dashboard/certificates')
+
   return {
     firstName: (person.user?.firstName || person.lead?.firstName || '').trim() || 'there',
     email: person.snapshot.email ?? '',
     programme: course?.title ?? 'your programme',
     programmeSlug: slug,
-    offerUrl: resumeCode ? `${FRONTEND_URL}/r/${resumeCode}` : slug ? `${FRONTEND_URL}/apply/offer?programme=${encodeURIComponent(slug)}` : `${FRONTEND_URL}/apply`,
-    checkoutUrl: slug ? `${FRONTEND_URL}/checkout?course=${encodeURIComponent(slug)}` : `${FRONTEND_URL}/schools`,
+    school: school?.name ?? '',
+    role: explainer.role || 'people in this field',
+    careerExplainer: explainer.body,
+    phoneFriendly: Boolean(course?.phoneFriendly),
+    phoneFriendlyList,
+    offerUrl: resumeCode ? site(`/r/${resumeCode}`) : slug ? site(`/apply/offer?programme=${encodeURIComponent(slug)}`) : site('/apply'),
+    checkoutUrl: slug ? site(`/checkout?course=${encodeURIComponent(slug)}`) : site('/schools'),
+    resumeCheckoutUrl: slug ? site(`/checkout?course=${encodeURIComponent(slug)}`) : site('/dashboard/subscription'),
+    waitlistUrl: resumeCode ? site(`/r/${resumeCode}`) : slug ? site(`/apply/offer?programme=${encodeURIComponent(slug)}`) : site('/apply'),
+    previewUrl: slug ? site(`/programmes/${encodeURIComponent(slug)}`) : site('/schools'),
+    phoneFriendlyUrl: site('/schools'),
+    dashboardUrl: site('/dashboard'),
+    resumeUrl: slug ? site(`/dashboard/courses/${encodeURIComponent(slug)}/learn`) : site('/dashboard/courses'),
+    firstLessonUrl: slug ? site(`/dashboard/courses/${encodeURIComponent(slug)}/learn`) : site('/dashboard/courses'),
+    billingUrl: site('/dashboard/subscription'),
+    updateCardUrl: site(`/billing/update-card${subscription ? `?subscription=${subscription.id}` : ''}`),
+    certificateCheckoutUrl: slug ? site(`/checkout?certificate=${encodeURIComponent(slug)}`) : site('/dashboard/certificates'),
+    laptopUrl: site('/dashboard/laptop-support'),
+    windowOpen: window.open,
     closesOn: window.closesAt !== null ? formatLagosDate(new Date(window.closesAt).toISOString()) : '',
+    closesDay: window.closesAt !== null ? lagosDate(window.closesAt, { weekday: 'long', day: 'numeric', month: 'long' }) : '',
     closesAt: window.closesAt !== null ? new Date(window.closesAt).toISOString() : null,
+    priceLocked: Boolean(offer?.priceLocked),
+    price: offer?.price ?? 2000,
+    standardPrice: offer?.standardPrice ?? 100000,
+    standardMonthlyPrice: offer?.standardMonthlyPrice ?? null,
     certificatePrice: certificatePrice(),
+    progressPercent: learning?.progressPercent ?? 0,
+    lessonsLeft: learning?.lessonsLeft ?? 0,
+    nextLessonTitle: learning?.nextLessonTitle ?? '',
+    lesson1Title: learning?.lesson1Title ?? '',
+    lesson1Minutes: learning?.lesson1Minutes ?? null,
+    weeksLeft: learning?.weeksLeft ?? 1,
+    weekPlan: learning?.weekPlan ?? [],
+    completedOn,
+    reference: extra.reference ?? orderReference ?? '',
+    amount: extra.amount ?? offer?.price ?? 2000,
+    paidAt: extra.paidAt ?? lagosDate(now),
+    billingDay: periodEnd ? ordinal(Number(lagosDate(periodEnd, { day: 'numeric' }))) : '',
+    monthNumber: Math.max(1, Math.floor((now - firstStart) / (30 * 86_400_000)) + 1),
+    nextChargeDate: lagosDate(periodEnd),
+    chargeDate: extra.chargeDate ?? lagosDate(periodEnd),
+    cardLast4: extra.cardLast4 ?? '',
+    cardExpiry: extra.cardExpiry ?? '',
+    periodEnd: lagosDate(periodEnd),
+    graceDays: accessGraceDays(),
+    graceEnds: lagosDate(graceEndsAt, { weekday: 'long', day: 'numeric', month: 'long' }),
+    renewalSoon,
+    stopBillingOnComplete: stopBillingOnComplete(),
+    certificateUrl: certificateLink,
+    linkedinAddUrl: `https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${encodeURIComponent(course?.title ?? 'SkillsAir programme')}&organizationName=SkillsAir&certUrl=${encodeURIComponent(certificateLink)}${certificate?.certificateCode ? `&certId=${encodeURIComponent(certificate.certificateCode)}` : ''}`,
+    laptopApplicationsOpen: Boolean(windowDoc?.laptopApplicationsOpen),
+    laptopDeadline: lagosDate(windowDoc?.laptopApplicationDeadline),
+    nextProgramme,
+    nextProgrammeLockEnds: nextLockEnds && nextLockEnds > now ? lagosDate(nextLockEnds, { weekday: 'long', day: 'numeric', month: 'long' }) : '',
+    founderAnecdote: emailContent?.founderAnecdote?.trim() || null,
+    freeExercise: school?.freeExercise?.trim() || null,
+    proof: proof ? { text: String(proof.text), attribution: String(proof.attribution) } : null,
+    joinedOnScholarship: userId ? await hasPriceLock(payload, userId) : false,
+    occurrence: Number(/#(\d+)$/.exec(stage.subjectId)?.[1] ?? 0),
     resumeCode,
     orderReference,
   }

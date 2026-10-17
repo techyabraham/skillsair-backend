@@ -116,6 +116,16 @@ export const Courses: CollectionConfig = {
       },
     },
     { name: 'categories', type: 'relationship', relationTo: 'categories', hasMany: true },
+    {
+      name: 'nextProgrammes',
+      type: 'array',
+      maxRows: 3,
+      admin: { description: 'Graduate emails (G1–G3): the programmes that pair best with this one, best first. Empty: other programmes in the same school, then phone-friendly ones.' },
+      fields: [
+        { name: 'programme', type: 'relationship', relationTo: 'courses', required: true },
+        { name: 'pairingReason', type: 'textarea', maxLength: 300, admin: { description: 'One sentence, e.g. "Data Analysis plus Product Management means you can find the insight and decide what to build with it."' } },
+      ],
+    },
     { name: 'totalDuration', type: 'number', defaultValue: 0, admin: { readOnly: true } },
     { name: 'totalLessons', type: 'number', defaultValue: 0, admin: { readOnly: true } },
     {

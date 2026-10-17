@@ -96,7 +96,7 @@ function blockHtml(block: Block): string {
         return `<tr><td style="padding:8px 0;border-bottom:1px solid #e5e7eb;font-size:15px;color:${MUTED};">${inline(row.label)}</td><td style="padding:8px 0;border-bottom:1px solid #e5e7eb;font-size:15px;color:${INK};text-align:right;">${value}</td></tr>`
       })
       .join('')
-    const caption = block.caption ? `<p style="margin:8px 0 0;font-size:13px;line-height:1.5;color:${MUTED};">${inline(block.caption)}</p>` : ''
+    const caption = block.caption ? `<p style="margin:8px 0 16px;font-size:13px;line-height:1.5;color:${MUTED};">${inline(block.caption)}</p>` : ''
     return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 16px;border-collapse:collapse;">${rows}</table>${caption}`
   }
   return `<p style="margin:0 0 16px;font-size:13px;line-height:1.5;color:${MUTED};">${inline(block.small)}</p>`

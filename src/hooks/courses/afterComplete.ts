@@ -1,10 +1,8 @@
 import type { CollectionAfterChangeHook, Payload } from 'payload'
 import { generateCertificatePdf, uploadCertificatePdf } from '../../lib/pdf-certificate.js'
 import { generateCertificateCode } from '../../utils/generate-code.js'
-import { courseCompletionEmail, certificateUnlockedEmail, sendEmail } from '../../lib/resend.js'
 import { logger } from '../../lib/logger.js'
 import { certificatePrice } from '../../lib/pricing.js'
-import { sendCourseCompleteMessage } from '../../lib/lead-followups.js'
 import { disableAtPaystack, stopBillingOnComplete } from '../../lib/billing.js'
 import { onLifecycleEvent } from '../../lib/lifecycle/events.js'
 
@@ -65,6 +63,8 @@ export async function issueCertificate(
   payload: Payload,
   studentId: number | string,
   courseId: number | string,
+  /** The paid certificate order, shown as a receipt in the certificate email (T9). */
+  receipt?: { reference: string; amount: number; paidAt: string },
 ): Promise<unknown> {
   const existing = await payload.find({
     collection: 'certificates',
@@ -128,10 +128,8 @@ export async function issueCertificate(
     overrideAccess: true,
   })
 
-  await sendEmail(student.email, courseCompletionEmail(student.firstName, course.title, verificationUrl))
-  await sendEmail(student.email, certificateUnlockedEmail(student.firstName, pdfUrl, verificationUrl))
 
-  await onLifecycleEvent(payload, { type: 'certificate_issued', userId: Number(studentId), courseId: Number(courseId) })
+  await onLifecycleEvent(payload, { type: 'certificate_issued', userId: Number(studentId), courseId: Number(courseId), ...(receipt ? { receipt: { ...receipt, paidAt: new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Africa/Lagos' }).format(new Date(receipt.paidAt)) } } : {}) })
 
   return certificate
 }
@@ -158,16 +156,8 @@ export const afterComplete: CollectionAfterChangeHook = async ({ doc, previousDo
     })
   }
 
-  if (certificatePrice() > 0) {
-    const studentId = relationId(doc.student)
-    const courseId = relationId(doc.course)
-    if (studentId !== undefined && courseId !== undefined) {
-      void sendCourseCompleteMessage(req.payload, Number(studentId), Number(courseId)).catch((err: unknown) =>
-        logger.error({ err, enrollmentId: doc.id }, 'course_complete_message_failed'),
-      )
-    }
-    return doc
-  }
+  // With a certificate fee, the completion email (T8, sent through the completion event above) offers it.
+  if (certificatePrice() > 0) return doc
   try {
     const studentId = relationId(doc.student)
     const courseId = relationId(doc.course)

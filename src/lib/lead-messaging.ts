@@ -3,9 +3,10 @@ import { logger } from './logger.js'
 import { appendLog, formatLagosDate, hasFollowUp, relationId, type LeadDoc } from './leads.js'
 import { buildOffer, type OfferCourseDoc } from './offers.js'
 import { bodyParams, quickReplyButton, sendTemplate, urlButton, type WhatsAppSendResult } from './whatsapp.js'
-import { offerEmail, sendEmail } from './resend.js'
+import { sendEmail } from './resend.js'
+import { A0 } from '../emails/lifecycle/track-a.js'
 import { QUICK_REPLY_PAYLOADS } from '../content/whatsapp-replies.js'
-import { loadPerson } from './lifecycle/context.js'
+import { buildMessageData, loadPerson, loadWindow } from './lifecycle/context.js'
 import { recordMessage } from './lifecycle/send.js'
 import { idempotencyKey } from './lifecycle/plan.js'
 import { windowCycle } from './lifecycle/stage.js'
@@ -79,19 +80,14 @@ export async function sendOfferMessages(payload: Payload, leadId: number): Promi
     }
   }
 
-  if (!hasFollowUp(lead, 'email_offer') && isDeliverableEmail(lead.email)) {
+  if (!hasFollowUp(lead, 'email_offer') && isDeliverableEmail(lead.email) && !(lead as unknown as { emailSuppressed?: string | null }).emailSuppressed) {
     try {
-      await sendEmail(lead.email, offerEmail({
-        firstName: lead.firstName,
-        programme: offer.programme,
-        offerUrl: resumeUrl(lead),
-        windowOpen: offer.windowOpen,
-        price: offer.price,
-        standardPrice: offer.standardPrice,
-        standardMonthlyPrice: offer.standardMonthlyPrice,
-        certificatePrice: offer.certificatePrice,
-        closesOn,
-      }))
+      // A0: the offer they asked for (transactional), with the same data as every lifecycle email.
+      const person = await loadPerson(payload, { type: 'lead', id: lead.id })
+      if (!person) throw new Error('lead not found')
+      const window = await loadWindow(payload)
+      const data = await buildMessageData(payload, person, { track: 'A', subjectId: `lead:${lead.id}`, enteredAt: Date.now(), cycle: 0, courseId: Number(courseId) }, window)
+      await sendEmail(lead.email, A0.render(data), { tags: { track: 'A', step: 'A0' } })
       followUps.push({ key: 'email_offer', sentAt: now })
     } catch (err) {
       logger.error({ err, leadId }, 'lead_offer_email_failed')

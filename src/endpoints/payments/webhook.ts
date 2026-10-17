@@ -5,7 +5,6 @@ import { fulfillOrder } from '../../lib/order-fulfillment.js'
 import type { PaystackWebhookEvent, PaystackChargeSuccessEvent } from '../../types/paystack.js'
 import { AppError } from '../../types/index.js'
 import { logger } from '../../lib/logger.js'
-import { subscriptionCancelledEmail, sendEmail } from '../../lib/resend.js'
 import { linkSubscription, applyPaidInvoice } from '../../lib/subscription-events.js'
 import { findSubscriptionByCode, graceEndsAt } from '../../lib/billing.js'
 import { onLifecycleEvent } from '../../lib/lifecycle/events.js'
@@ -17,10 +16,6 @@ interface OrderDoc {
   currency: string
 }
 
-interface UserDoc {
-  email: string
-  firstName: string
-}
 
 function relationId(value: unknown): number | string | undefined {
   if (value === null || value === undefined) return undefined
@@ -109,17 +104,8 @@ async function handleNotRenew(data: SubscriptionRefData, payload: Payload): Prom
   }
   if (subscription.status !== 'active') return
   await payload.update({ collection: 'subscriptions', id: subscription.id, data: { status: 'cancelled', cancelledAt: new Date().toISOString() }, overrideAccess: true })
+  // The cancellation email (T5) goes from the lifecycle event.
   await onLifecycleEvent(payload, { type: 'subscription_cancelled', subscriptionId: subscription.id, source: 'paystack' })
-
-  const userId = relationId(subscription.user)
-  if (userId === undefined) return
-  try {
-    const user = (await payload.findByID({ collection: 'users', id: userId, depth: 0 })) as unknown as UserDoc
-    const accessEndDate = subscription.currentPeriodEnd ? new Date(subscription.currentPeriodEnd).toLocaleDateString('en-GB') : 'the end of the current billing period'
-    await sendEmail(user.email, subscriptionCancelledEmail(user.firstName, accessEndDate, `${FRONTEND_URL}/dashboard/subscription`))
-  } catch (err) {
-    logger.error({ err, subscriptionId: subscription.id }, 'subscription_cancelled_email_failed')
-  }
 }
 
 /**

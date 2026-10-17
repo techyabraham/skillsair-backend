@@ -14,7 +14,6 @@ import {
 } from './leads.js'
 import { getScholarshipWindow, windowIsOpen } from './pricing.js'
 import { bodyParams, quickReplyButton, sendTemplate, urlButton, type TemplateComponent } from './whatsapp.js'
-import { sendEmail, welcomeAfterPaymentEmail } from './resend.js'
 import { runLifecycle } from './lifecycle/engine.js'
 import { loadPerson, loadWindow } from './lifecycle/context.js'
 import { executeStep, recordMessage } from './lifecycle/send.js'
@@ -92,39 +91,6 @@ export async function sendPaymentHelp(payload: Payload, orderId: number): Promis
     idempotencyKey: idempotencyKey('B', 'B1-WA', stage.subjectId, 0), dueAt: Date.now(),
   }
   await executeStep(payload, person, planned, await loadWindow(payload), person.snapshot.phone ? undefined : 'no_phone')
-}
-
-/** Utility template + email E after a course payment succeeds. Once per learner and course. */
-export async function sendWelcomeMessages(payload: Payload, userId: number, courseId: number): Promise<void> {
-  if (!(await claimIdempotencyKey(`welcome:${userId}:${courseId}`, 365 * 24 * 60 * 60))) return
-  const [user, course] = await Promise.all([getUser(payload, userId), getCourse(payload, courseId)])
-  if (!user || !course) return
-  const finishBy = formatLagosDate(new Date(Date.now() + (course.durationMonths ?? 3) * 30 * 24 * HOUR).toISOString())
-  const lead = await findLeadForUser(payload, { id: user.id, email: user.email, role: 'student' })
-  const phone = user.phone || lead?.phone
-  if (phone) {
-    const result = await sendTemplate(phone, 'skillsair_welcome', 'en', [bodyParams(user.firstName, course.title, finishBy)])
-    await recordOnLead(payload, lead, {
-      direction: 'out',
-      type: result.sent ? 'template' : result.skipped ? `template_${result.skipped}` : 'error',
-      template: 'skillsair_welcome',
-      body: result.error ?? '',
-      at: new Date().toISOString(),
-    })
-  }
-  try {
-    await sendEmail(user.email, welcomeAfterPaymentEmail(user.firstName, course.title, finishBy))
-  } catch (err) {
-    logger.error({ err, userId }, 'welcome_email_failed')
-  }
-}
-
-/** Utility template when a learner completes a programme (certificate is claimable). */
-export async function sendCourseCompleteMessage(payload: Payload, userId: number, courseId: number): Promise<void> {
-  if (!(await claimIdempotencyKey(`course-complete:${userId}:${courseId}`, 365 * 24 * 60 * 60))) return
-  const [user, course] = await Promise.all([getUser(payload, userId), getCourse(payload, courseId)])
-  if (!user?.phone || !course) return
-  await sendTemplate(user.phone, 'skillsair_course_complete', 'en', [bodyParams(user.firstName, course.title), urlButton(0, course.slug)])
 }
 
 function reminderComponents(lead: LeadDoc, ...params: string[]): TemplateComponent[] {

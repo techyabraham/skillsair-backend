@@ -83,9 +83,21 @@ test('caps: one marketing email a day, three a week; no marketing on Sundays or 
   const sameDay = planPerson(p, openWindow, [sent(key('A1'), 'A1', T0 + 25 * HOUR - 1)], config(T0 + 25 * HOUR))
   assert.ok(sameDay.deferred.some((d) => d.reason === 'daily_cap'))
   // A3 was clicked, so its WhatsApp follow-up doesn't go and A4 is next in line.
+  // A1–A5 are exempt from the weekly cap: A4 goes on day 4 after A1–A3.
   const week = [sent(key('A1'), 'A1', T0 + HOUR), sent(key('A2'), 'A2', T0 + 24 * HOUR), { ...sent(key('A3'), 'A3', T0 + 48 * HOUR), clickedAt: T0 + 50 * HOUR }]
   const fourth = planPerson(p, openWindow, week, config(T0 + 72 * HOUR + HOUR))
-  assert.ok(fourth.deferred.some((d) => d.reason === 'weekly_cap'))
+  assert.ok(fourth.actions.some((a) => a.type === 'send' && a.stepId === 'A4'))
+  // Other tracks keep the cap: three Track R emails this week hold back a fourth marketing email.
+  const lapsedKey = (id: string) => idempotencyKey('R', id, 'enr:5', 1)
+  const rWeek = [sent(lapsedKey('R1'), 'R1', T0 - 5 * DAY), { ...sent(lapsedKey('R2'), 'R2', T0 - 3 * DAY), clickedAt: T0 - 3 * DAY + HOUR }, sent(lapsedKey('R3'), 'R3', T0 - DAY)]
+  const lapsed = person({
+    lead: null,
+    orders: [{ id: 1, type: 'subscription', status: 'success', courseId: 3, createdAt: T0 - 60 * DAY }],
+    subscriptions: [{ id: 9, courseId: 3, status: 'expired', lastFailedAt: null, currentPeriodEnd: T0 - 30 * DAY, failedAttempts: 0, updatedAt: T0 - 30 * DAY }],
+    enrollments: [{ id: 5, courseId: 3, status: 'active', enrolledAt: T0 - 60 * DAY, completedAt: null, cycle: 1, subscriptionBased: true }],
+  })
+  const capped = planPerson(lapsed, openWindow, rWeek, config(T0 + HOUR))
+  assert.ok(capped.deferred.some((d) => d.reason === 'weekly_cap'))
   assert.ok(planPerson(p, openWindow, [], config(at('2026-10-19T19:30:00Z'))).deferred.some((d) => d.reason === 'quiet_hours'))
   const sunday = person({ createdAt: at('2026-10-25T08:00:00Z'), lead: { id: 7, status: 'new', createdAt: at('2026-10-25T08:00:00Z'), courseId: 3 } })
   assert.ok(planPerson(sunday, openWindow, [], config(at('2026-10-25T10:00:00Z'))).deferred.some((d) => d.reason === 'sunday'))
@@ -212,8 +224,8 @@ test('integration: the full journey sends exactly the expected messages, in orde
 
   if (process.env.PRINT_TIMELINE) console.log('TIMELINE', JSON.stringify(timeline))
   assert.deepEqual(timeline, [
-    // Track A. A4 and A5 are held back by the 3-marketing-emails-a-week cap and then expire (stale).
-    'A0', 'A1', 'A2', 'A3', 'A3-WA',
+    // Track A: A1–A5 daily (exempt from the weekly cap); A3's WhatsApp a day after A3, before A4 the same morning.
+    'A0', 'A1', 'A2', 'A3', 'A3-WA', 'A4',
     // Checkout not finished: B1 after 1 hour, the WhatsApp payment help after 2. They pay before B2.
     'B1', 'B1-WA',
     // Paid: welcome; no lesson in 48 hours (I0); one lesson on day 8, then quiet (I1 5d, I2 10d, its WhatsApp, I3 18d).
@@ -238,8 +250,9 @@ test('integration: the full journey sends exactly the expected messages, in orde
   for (const entry of marketingEmail) {
     const sameDay = marketingEmail.filter((other) => Math.floor((other.sentAt + HOUR) / DAY) === Math.floor((entry.sentAt + HOUR) / DAY))
     assert.equal(sameDay.length, 1, `two marketing emails on the day of ${entry.stepId}`)
-    const week = marketingEmail.filter((other) => other.sentAt <= entry.sentAt && other.sentAt > entry.sentAt - 7 * DAY)
-    assert.ok(week.length <= 3, `more than 3 marketing emails in the week before ${entry.stepId}`)
+    const counted = marketingEmail.filter((other) => !(other.track === 'A' && ['A1', 'A2', 'A3', 'A4', 'A5'].includes(other.stepId)))
+    const week = counted.filter((other) => other.sentAt <= entry.sentAt && other.sentAt > entry.sentAt - 7 * DAY)
+    assert.ok(week.length <= 3, `more than 3 capped marketing emails in the week before ${entry.stepId}`)
   }
   // Selling (A, R, C, G) never went out while a programme was being studied (I or D active).
   const sellingWhileLearning = marketing.filter((entry) => ['A', 'R', 'C', 'G'].includes(entry.track) && log.some((other) => other.track === 'I' && Math.abs(other.sentAt - entry.sentAt) < HOUR))

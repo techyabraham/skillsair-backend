@@ -35,6 +35,7 @@ import { Leads } from './src/collections/Leads.js'
 import { LaptopApplications } from './src/collections/LaptopApplications.js'
 import { Messages } from './src/collections/Messages.js'
 import { ScholarshipWindow } from './src/globals/ScholarshipWindow.js'
+import { EmailContent } from './src/globals/EmailContent.js'
 
 import { registerEndpoint } from './src/endpoints/auth/register.js'
 import { loginEndpoint } from './src/endpoints/auth/login.js'
@@ -147,7 +148,7 @@ export default buildConfig({
     LaptopApplications,
     Messages,
   ],
-  globals: [ScholarshipWindow],
+  globals: [ScholarshipWindow, EmailContent],
   endpoints: [
     registerEndpoint,
     loginEndpoint,

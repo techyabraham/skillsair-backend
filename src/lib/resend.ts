@@ -143,54 +143,6 @@ export function enrollmentConfirmationEmail(firstName: string, courseName: strin
   }
 }
 
-export function courseCompletionEmail(firstName: string, courseName: string, certificateUrl: string): EmailContent {
-  const subject = `Congratulations! You completed ${courseName}`
-  const html = wrapHtml(`
-    <p>Hi ${firstName},</p>
-    <p>Congratulations on completing <strong>${courseName}</strong>! You've achieved a major milestone.</p>
-    ${button('Get your certificate', certificateUrl)}
-  `)
-  return {
-    subject,
-    html,
-    text: `Hi ${firstName}, congratulations on completing ${courseName}! Get your certificate: ${certificateUrl}`,
-  }
-}
-
-export function certificateUnlockedEmail(firstName: string, downloadUrl: string, verificationUrl: string): EmailContent {
-  const subject = 'Your certificate is ready to download'
-  const html = wrapHtml(`
-    <p>Hi ${firstName},</p>
-    <p>Your certificate is ready. Download it below and share your achievement on LinkedIn.</p>
-    ${button('Download certificate', downloadUrl)}
-    <p style="margin-top:16px;"><a href="${verificationUrl}">${verificationUrl}</a></p>
-  `)
-  return {
-    subject,
-    html,
-    text: `Hi ${firstName}, your certificate is ready: ${downloadUrl}. Verify at: ${verificationUrl}`,
-  }
-}
-
-export function paymentConfirmationEmail(
-  firstName: string,
-  reference: string,
-  amountFormatted: string,
-  itemDescription: string,
-): EmailContent {
-  const subject = `Payment confirmed — Order #${reference}`
-  const html = wrapHtml(`
-    <p>Hi ${firstName},</p>
-    <p>We've confirmed your payment of <strong>${amountFormatted}</strong> for ${itemDescription}.</p>
-    <p>Order reference: <strong>${reference}</strong></p>
-  `)
-  return {
-    subject,
-    html,
-    text: `Hi ${firstName}, payment confirmed for ${itemDescription}. Amount: ${amountFormatted}. Reference: ${reference}`,
-  }
-}
-
 export function accessExtendedEmail(firstName: string, newExpiryDate: string, daysAdded: number, reason: string): EmailContent {
   const subject = 'Your SkillsAir access has been extended'
   const html = wrapHtml(`
@@ -206,20 +158,6 @@ export function accessExtendedEmail(firstName: string, newExpiryDate: string, da
   }
 }
 
-export function subscriptionCancelledEmail(firstName: string, accessEndDate: string, resubscribeUrl: string): EmailContent {
-  const subject = 'Your SkillsAir subscription has been cancelled'
-  const html = wrapHtml(`
-    <p>Hi ${firstName},</p>
-    <p>Your subscription has been cancelled. You'll retain access until <strong>${accessEndDate}</strong>.</p>
-    ${button('Re-subscribe', resubscribeUrl)}
-  `)
-  return {
-    subject,
-    html,
-    text: `Hi ${firstName}, your subscription is cancelled. Access ends ${accessEndDate}. Re-subscribe: ${resubscribeUrl}`,
-  }
-}
-
 function escapeHtml(value: string): string {
   return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 }
@@ -228,90 +166,6 @@ const naira = (amount: number) => `₦${amount.toLocaleString('en-NG')}`
 
 const LEAD_FOOTER = `You're receiving this because you applied for a SkillsAir programme at skillsair.com.
               SKILLS AIR LIMITED · RC 9272398 · Osifila Street, Anifowose, Ikeja, Lagos.`
-
-export interface OfferEmailInput {
-  firstName: string
-  programme: string
-  offerUrl: string
-  windowOpen: boolean
-  price: number
-  standardPrice: number
-  standardMonthlyPrice: number | null
-  certificatePrice: number
-  closesOn: string
-}
-
-/** Email A: sent immediately when someone applies (transactional), signed by Imisi. */
-export function offerEmail(input: OfferEmailInput): EmailContent {
-  const name = escapeHtml(input.firstName)
-  const programme = escapeHtml(input.programme)
-  const cert = naira(input.certificatePrice)
-  if (!input.windowOpen) {
-    const monthly = input.standardMonthlyPrice ? ` (or ${naira(input.standardMonthlyPrice)}/month)` : ''
-    const subject = `${input.firstName}, your SkillsAir application for ${input.programme}`
-    const html = wrapHtml(`
-      <p>Hi ${name},</p>
-      <p>Thanks for applying for <strong>${programme}</strong>. The Access Scholarship window is closed right now, so the standard fee of <strong>${naira(input.standardPrice)}</strong>${monthly} applies.</p>
-      <p>We'll message you on WhatsApp the moment the next scholarship window opens.</p>
-      <p>Certificate: ${cert}, paid only when you finish and want it.</p>
-      ${button('See my offer', input.offerUrl)}
-      <p style="margin-top:24px;">Questions? Reply here or WhatsApp me on +234 818 212 6524.</p>
-      <p>Imisi, SkillsAir</p>
-    `, LEAD_FOOTER)
-    return {
-      subject,
-      html,
-      text: `Hi ${input.firstName}, thanks for applying for ${input.programme}. The Access Scholarship window is closed right now, so the standard fee of ${naira(input.standardPrice)}${monthly} applies. We'll message you on WhatsApp when the next window opens. Certificate: ${cert}, paid only when you finish and want it. Your offer: ${input.offerUrl}\n\nImisi, SkillsAir`,
-    }
-  }
-  const monthlyStandard = input.standardMonthlyPrice ? `${naira(input.standardMonthlyPrice)} a month` : ''
-  const standardLine = monthlyStandard ? `${monthlyStandard} (or ${naira(input.standardPrice)} once)` : naira(input.standardPrice)
-  const subject = `${input.firstName}, your ${naira(input.price)}/month SkillsAir scholarship offer (closes ${input.closesOn})`
-  const html = wrapHtml(`
-    <p>Hi ${name},</p>
-    <p>You qualify for the Access Scholarship on <strong>${programme}</strong>.</p>
-    <table role="presentation" width="100%" cellpadding="6" cellspacing="0" style="border:1px solid #e4e4e7;border-radius:8px;margin:16px 0;">
-      <tr><td>Standard fee</td><td align="right"><s>${standardLine}</s></td></tr>
-      <tr><td><strong>With your Access Scholarship</strong></td><td align="right"><strong>${naira(input.price)} a month</strong></td></tr>
-      <tr><td colspan="2" style="color:#52525b;font-size:13px;">Billed monthly by Paystack while you study. Keep it until you finish (most learners take about 3 months). Cancel anytime from your dashboard.</td></tr>
-      <tr><td>Certificate (when you finish)</td><td align="right">${cert}, optional; needed for internship access</td></tr>
-    </table>
-    <p>The scholarship closes on <strong>${escapeHtml(input.closesOn)}, 11:59pm</strong>.</p>
-    <p><strong>What you get:</strong></p>
-    <ul>
-      <li>The full ${programme} programme at your own pace, for as long as you study</li>
-      <li>When you finish: a verifiable certificate employers can check online (${cert})</li>
-      <li>Free bonus courses: CV &amp; LinkedIn, and Freelancing</li>
-      <li>Access to internship openings from SkillsAir partner firms once you're certified</li>
-    </ul>
-    <p>Our fair refund promise: complete at least one chapter or 5 lessons. If it's not for you, ask for a refund within 24 hours of paying.</p>
-    ${button('Secure my seat', input.offerUrl)}
-    <p style="margin-top:24px;">Questions? Reply here or WhatsApp me on +234 818 212 6524.</p>
-    <p>Imisi, SkillsAir</p>
-  `, LEAD_FOOTER)
-  return {
-    subject,
-    html,
-    text: [
-      `Hi ${input.firstName},`,
-      '',
-      `You qualify for the Access Scholarship on ${input.programme}.`,
-      '',
-      `Standard fee: ${standardLine}`,
-      `With your Access Scholarship: ${naira(input.price)} a month (billed monthly until you finish; most learners take about 3 months; cancel anytime)`,
-      `Certificate (when you finish): ${cert}, optional; needed for internship access`,
-      '',
-      `The scholarship closes on ${input.closesOn}, 11:59pm.`,
-      '',
-      "Refund promise: complete at least one chapter or 5 lessons. If it's not for you, ask for a refund within 24 hours of paying.",
-      '',
-      `Secure my seat: ${input.offerUrl}`,
-      '',
-      'Questions? Reply here or WhatsApp me on +234 818 212 6524.',
-      'Imisi, SkillsAir',
-    ].join('\n'),
-  }
-}
 
 export interface LeadSummaryInput {
   dateLabel: string
@@ -374,90 +228,5 @@ function marketingFooter(unsubscribeUrl: string): string {
               SKILLS AIR LIMITED · RC 9272398 · Osifila Street, Anifowose, Ikeja, Lagos.`
 }
 
-export interface FollowUpEmailInput {
-  firstName: string
-  programme: string
-  offerUrl: string
-  unsubscribeUrl: string
-  price: number
-  standardPrice: number
-  certificatePrice: number
-  closesOn: string
-}
-
 const signOff = `<p style="margin-top:24px;">Questions? Reply here or WhatsApp me on +234 818 212 6524.</p><p>Imisi, SkillsAir</p>`
 const signOffText = 'Questions? Reply here or WhatsApp me on +234 818 212 6524.\nImisi, SkillsAir'
-
-/** Email B (1 hour, no account; consent only). */
-export function followUpQuickQuestionEmail(input: FollowUpEmailInput): EmailContent {
-  const subject = `Quick question, ${input.firstName}`
-  const html = wrapHtml(`
-    <p>Hi ${escapeHtml(input.firstName)},</p>
-    <p>Most people ask two things: "Why only ${naira(input.price)} a month?" and "Can I do it on my phone?"</p>
-    <p><strong>Why only ${naira(input.price)} a month?</strong> Because talent isn't the problem. Access is. During this scholarship window, the Access Scholarship replaces the standard fee (${naira(input.standardPrice)}) with ${naira(input.price)} a month while you study. The certificate is ${naira(input.certificatePrice)}, paid only when you finish and want it.</p>
-    <p><strong>Can I do it on my phone?</strong> It depends on the programme. Your offer lists exactly what ${escapeHtml(input.programme)} needs, and which programmes work fully on a phone.</p>
-    ${button('See my offer', input.offerUrl)}
-    ${signOff}
-  `, marketingFooter(input.unsubscribeUrl))
-  return {
-    subject,
-    html,
-    text: `Hi ${input.firstName},\n\nMost people ask two things: "Why only ${naira(input.price)} a month?" and "Can I do it on my phone?"\n\nWhy only ${naira(input.price)} a month? During this scholarship window, the Access Scholarship replaces the ${naira(input.standardPrice)} standard fee with ${naira(input.price)} a month while you study. The certificate is ${naira(input.certificatePrice)}, paid only when you finish.\n\nCan I do it on my phone? It depends on the programme. Your offer lists exactly what ${input.programme} needs.\n\nSee my offer: ${input.offerUrl}\n\n${signOffText}\n\nUnsubscribe: ${input.unsubscribeUrl}`,
-  }
-}
-
-/** Email C (24 hours; consent only): an honest look at the career path. */
-export function followUpCareerEmail(input: FollowUpEmailInput & { role: string; explainer: string }): EmailContent {
-  const subject = `What a ${input.role} actually does all day`
-  const html = wrapHtml(`
-    <p>Hi ${escapeHtml(input.firstName)},</p>
-    <p>${escapeHtml(input.explainer)}</p>
-    <p>${escapeHtml(input.programme)} is self-paced: about 8 hours a week, and most learners finish in about 3 months. Your Access Scholarship price is ${naira(input.price)} a month (the certificate is ${naira(input.certificatePrice)} when you finish). The window closes on ${escapeHtml(input.closesOn)}.</p>
-    ${button('See my offer', input.offerUrl)}
-    ${signOff}
-  `, marketingFooter(input.unsubscribeUrl))
-  return {
-    subject,
-    html,
-    text: `Hi ${input.firstName},\n\n${input.explainer}\n\n${input.programme} is self-paced: about 8 hours a week, and most learners finish in about 3 months. Your Access Scholarship price is ${naira(input.price)} a month (certificate ${naira(input.certificatePrice)} when you finish). The window closes on ${input.closesOn}.\n\nSee my offer: ${input.offerUrl}\n\n${signOffText}\n\nUnsubscribe: ${input.unsubscribeUrl}`,
-  }
-}
-
-/** Email D (48 hours before the window closes; consent only, not yet paid). */
-export function followUpClosingEmail(input: FollowUpEmailInput): EmailContent {
-  const subject = `Your ${naira(input.price)}/month scholarship closes on ${input.closesOn}`
-  const html = wrapHtml(`
-    <p>Hi ${escapeHtml(input.firstName)},</p>
-    <p>After ${escapeHtml(input.closesOn)}, ${escapeHtml(input.programme)} is ${naira(input.standardPrice)} until the next window. If you want in at ${naira(input.price)} a month (plus ${naira(input.certificatePrice)} for your certificate when you finish), now's the time.</p>
-    ${button('Secure my seat', input.offerUrl)}
-    ${signOff}
-  `, marketingFooter(input.unsubscribeUrl))
-  return {
-    subject,
-    html,
-    text: `Hi ${input.firstName},\n\nAfter ${input.closesOn}, ${input.programme} is ${naira(input.standardPrice)} until the next window. If you want in at ${naira(input.price)} a month (plus ${naira(input.certificatePrice)} for your certificate when you finish), now's the time.\n\nSecure my seat: ${input.offerUrl}\n\n${signOffText}\n\nUnsubscribe: ${input.unsubscribeUrl}`,
-  }
-}
-
-/** Email E: welcome after payment (transactional). */
-export function welcomeAfterPaymentEmail(firstName: string, programme: string, finishBy: string): EmailContent {
-  const subject = `Welcome to SkillsAir, ${firstName}! Your seat in ${programme} is confirmed`
-  const html = wrapHtml(`
-    <p>Hi ${escapeHtml(firstName)},</p>
-    <p>Your seat in <strong>${escapeHtml(programme)}</strong> is confirmed. Here's how to start strong:</p>
-    <ol>
-      <li>Watch your first lesson today.</li>
-      <li>Aim for about 8 hours a week.</li>
-      <li>Finish by <strong>${escapeHtml(finishBy)}</strong>.</li>
-    </ol>
-    <p>Your free CV &amp; LinkedIn and Freelancing courses are waiting in your dashboard.</p>
-    ${button('Start learning', `${FRONTEND_URL}/dashboard/welcome`)}
-    <p style="margin-top:24px;">Questions? Reply here or WhatsApp me on +234 818 212 6524, Monday to Saturday, 9am–6pm.</p>
-    <p>Imisi, SkillsAir</p>
-  `)
-  return {
-    subject,
-    html,
-    text: `Hi ${firstName},\n\nYour seat in ${programme} is confirmed.\n1. Watch your first lesson today\n2. Aim for about 8 hours a week\n3. Finish by ${finishBy}\n\nYour free CV & LinkedIn and Freelancing courses are waiting in your dashboard: ${FRONTEND_URL}/dashboard/welcome\n\nQuestions? WhatsApp +234 818 212 6524, Monday to Saturday, 9am–6pm.\nImisi, SkillsAir`,
-  }
-}

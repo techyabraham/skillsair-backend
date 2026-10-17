@@ -12,7 +12,7 @@ import { DAY, HOUR, inQuietHours, isSundayInLagos, lagosDayNumber } from './timi
  * - Transactional steps always go. Marketing and service steps only from the active track.
  * - No selling while someone has an unfinished programme they can study (except finishing a
  *   checkout they started).
- * - Marketing email: at most 1 a day (Lagos) and 3 in 7 days. Marketing WhatsApp: 1 in 7 days,
+ * - Marketing email: at most 1 a day (Lagos) and 3 in 7 days (A1–A5 are exempt from the weekly cap). Marketing WhatsApp: 1 in 7 days,
  *   and at most 3 per scholarship window for leads.
  * - Marketing and service only 8am–8pm Lagos time; no marketing on Sundays.
  * - One marketing and one service send per person per run; closing-window emails go first.
@@ -48,6 +48,8 @@ export type Flags = StepContext['flags']
 export const SUNSET_AFTER_MS = 90 * DAY
 export const REPERMISSION_GRACE_MS = 14 * DAY
 const MARKETING_TRACKS = new Set(['A', 'Apost', 'B', 'R', 'C', 'G'])
+/** Track A's daily Soap Opera Sequence, exempt from the 3-a-week cap. */
+export const SOAP_OPERA = new Set(['A1', 'A2', 'A3', 'A4', 'A5'])
 
 export function idempotencyKey(track: string, stepId: string, subjectId: string, cycle: number): string {
   return `${track}:${stepId}:${subjectId}:${cycle}`
@@ -138,7 +140,11 @@ export function gate(
   if (email) {
     const today = lagosDayNumber(now)
     if (sentMarketing(log, 'email', now - 2 * DAY).some((entry) => lagosDayNumber(entry.sentAt) === today)) return { defer: 'daily_cap' }
-    if (sentMarketing(log, 'email', now - 7 * DAY).length >= 3) return { defer: 'weekly_cap' }
+    // Track A's first five days (A1–A5) go daily, outside the weekly cap, and don't count toward it (owner, 2026-10-17).
+    if (!SOAP_OPERA.has(candidate.step.id) || candidate.stage.track !== 'A') {
+      const counted = sentMarketing(log, 'email', now - 7 * DAY).filter((entry) => !(entry.track === 'A' && SOAP_OPERA.has(entry.stepId)))
+      if (counted.length >= 3) return { defer: 'weekly_cap' }
+    }
   } else {
     if (sentMarketing(log, 'whatsapp', now - 7 * DAY).length >= 1) return { defer: 'whatsapp_weekly_cap' }
     if (candidate.stage.track === 'A' || candidate.stage.track === 'Apost') {

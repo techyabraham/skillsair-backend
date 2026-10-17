@@ -4,7 +4,7 @@ import { sendEmail } from '../resend.js'
 import { sendTemplate } from '../whatsapp.js'
 import { listUnsubscribeHeaders, preferencesUrl, type EmailAudience } from '../email-tokens.js'
 import { maskEmail } from '../email-preferences.js'
-import { buildMessageData, type LoadedPerson } from './context.js'
+import { buildMessageData, type EventData, type LoadedPerson } from './context.js'
 import { LIFECYCLE_EMAILS, LIFECYCLE_WHATSAPP, offerFor } from './templates.js'
 import type { PlannedStep } from './plan.js'
 import type { Kind, Track, WindowState } from './types.js'
@@ -95,6 +95,7 @@ export async function executeStep(
   step: PlannedStep,
   window: WindowState,
   skipReason?: string,
+  extra: EventData = {},
 ): Promise<SendOutcome> {
   const base = {
     person, channel: step.channel, kind: step.kind, track: step.stage.track, stepId: step.stepId, template: step.template,
@@ -106,7 +107,7 @@ export async function executeStep(
       return 'skipped'
     }
 
-    const data = await buildMessageData(payload, person, step.stage, window)
+    const data = { ...(await buildMessageData(payload, person, step.stage, window, extra)), occurrence: Number(/#(\d+)/.exec(step.stepId)?.[1] ?? 0) }
     const userId = person.user?.id
     if (step.channel === 'email') {
       const renderer = LIFECYCLE_EMAILS[step.template]
