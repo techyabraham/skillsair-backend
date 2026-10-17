@@ -131,6 +131,8 @@ export async function issueCertificate(
   await sendEmail(student.email, courseCompletionEmail(student.firstName, course.title, verificationUrl))
   await sendEmail(student.email, certificateUnlockedEmail(student.firstName, pdfUrl, verificationUrl))
 
+  await onLifecycleEvent(payload, { type: 'certificate_issued', userId: Number(studentId), courseId: Number(courseId) })
+
   return certificate
 }
 

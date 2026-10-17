@@ -37,6 +37,23 @@ export const LessonProgress: CollectionConfig = {
     { name: 'completedAt', type: 'date' },
   ],
   hooks: {
+    afterChange: [
+      async ({ doc, req }) => {
+        const studentId = relationId(doc.student)
+        if (studentId === undefined) return doc
+        try {
+          const student = await req.payload.findByID({ collection: 'users', id: studentId, depth: 0, overrideAccess: true })
+          const last = Date.parse(String((student as { lifecycle?: { lastLearningAt?: string | null } }).lifecycle?.lastLearningAt ?? ''))
+          // Progress saves often while a video plays; one update every 15 minutes is enough.
+          if (!Number.isFinite(last) || Date.now() - last > 15 * 60 * 1000) {
+            await req.payload.update({ collection: 'users', id: studentId, data: { lifecycle: { lastLearningAt: new Date().toISOString() } }, depth: 0, overrideAccess: true })
+          }
+        } catch (err) {
+          req.payload.logger.error({ err, studentId }, 'last_learning_update_failed')
+        }
+        return doc
+      },
+    ],
     beforeValidate: [
       async ({ data, req, operation, originalDoc }) => {
         if (operation !== 'create' || !data) return data

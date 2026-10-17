@@ -45,6 +45,7 @@ export interface LeadDoc {
   score?: number | null
   needsHuman?: boolean | null
   lastEventAt?: string | null
+  lastEngagedAt?: string | null
   offerViewCount?: number | null
   resumeCode: string
   lastInboundAt?: string | null
@@ -131,12 +132,13 @@ export function scoreLeadEvent(lead: LeadDoc, event: LeadEvent): Partial<LeadDoc
   switch (event.type) {
     case 'talk':
     case 'free_text':
-      return { ...base, score: clampScore(score + 40), needsHuman: true }
+      return { ...base, lastEngagedAt: now, score: clampScore(score + 40), needsHuman: true }
     case 'offer_viewed': {
       const offerViewCount = Number(lead.offerViewCount ?? 0) + 1
       const advance = lead.status === 'new' || lead.status === 'contacted'
       return {
         ...base,
+        lastEngagedAt: now,
         offerViewCount,
         ...(offerViewCount === 2 ? { score: clampScore(score + 20) } : {}),
         ...(advance ? { status: 'offer_viewed' as const } : {}),

@@ -238,7 +238,7 @@ export const Leads: CollectionConfig = {
         {
           name: 'followUpsSent',
           type: 'array',
-          admin: { readOnly: true },
+          admin: { readOnly: true, description: 'History from before the lifecycle engine (and lead scoring markers). New messages are logged in Messages.' },
           fields: [
             { name: 'key', type: 'text', required: true },
             { name: 'sentAt', type: 'date', required: true },
