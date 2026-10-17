@@ -46,6 +46,12 @@ export const Enrollments: CollectionConfig = {
     { name: 'enrolledAt', type: 'date', defaultValue: () => new Date().toISOString() },
     { name: 'completedAt', type: 'date' },
     { name: 'progressPercent', type: 'number', defaultValue: 0, min: 0, max: 100 },
+    {
+      name: 'lifecycleCycle',
+      type: 'number',
+      defaultValue: 0,
+      admin: { readOnly: true, description: 'Times this enrolment has lapsed before completion (each lapse restarts the win-back emails).' },
+    },
     { name: 'orderId', type: 'text' },
     { name: 'subscription', type: 'relationship', relationTo: 'subscriptions' },
   ],

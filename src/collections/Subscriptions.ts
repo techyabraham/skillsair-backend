@@ -30,6 +30,7 @@ export const Subscriptions: CollectionConfig = {
       defaultValue: 'active',
       options: [
         { label: 'Active', value: 'active' },
+        { label: 'Past due (renewal failed, in grace)', value: 'past_due' },
         { label: 'Cancelled', value: 'cancelled' },
         { label: 'Expired', value: 'expired' },
       ],
@@ -41,6 +42,14 @@ export const Subscriptions: CollectionConfig = {
     { name: 'currentPeriodStart', type: 'date' },
     { name: 'currentPeriodEnd', type: 'date' },
     { name: 'cancelledAt', type: 'date' },
+    { name: 'failedAttempts', type: 'number', defaultValue: 0 },
+    { name: 'lastFailedAt', type: 'date' },
+    {
+      name: 'priceLocked',
+      type: 'checkbox',
+      defaultValue: false,
+      admin: { description: 'On the ₦2,000-a-month Access Scholarship plan: the learner keeps that rate for this programme.' },
+    },
   ],
   timestamps: true,
 }

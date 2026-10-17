@@ -1,5 +1,6 @@
 import { Resend } from 'resend'
 import { logger } from './logger.js'
+import { emailVerification, passwordReset } from '../emails/index.js'
 
 let resendClient: Resend | null = null
 
@@ -12,16 +13,38 @@ function getClient(): Resend {
   return resendClient
 }
 
-interface EmailContent {
+export interface EmailContent {
   subject: string
   html: string
   text: string
 }
 
+/**
+ * Two sending streams on separate subdomains, so a marketing complaint can never block a
+ * receipt: transactional (receipts, account, the offer someone asked for) and marketing
+ * (sales sequences, nudges, reminders). Both use one sender name, and replies go to a
+ * monitored inbox that Imisi reads.
+ */
+export type EmailStream = 'transactional' | 'marketing'
+
+export interface SendEmailOptions {
+  stream?: EmailStream
+  /** Extra headers, e.g. List-Unsubscribe for marketing and service email. */
+  headers?: Record<string, string>
+  /** Resend tags, e.g. { track: 'A', step: 'A1' }; letters, numbers, _ and - only. */
+  tags?: Record<string, string>
+}
+
 const BRAND_COLOR = '#1B5E20'
-const FROM_NAME = process.env.EMAIL_FROM_NAME ?? 'SkillsAir'
-const FROM_EMAIL = process.env.EMAIL_FROM ?? 'noreply@skillsair.com'
+export const EMAIL_SENDER_NAME = process.env.EMAIL_FROM_NAME ?? 'Imisi from SkillsAir'
+const FROM_TRANSACTIONAL = process.env.EMAIL_FROM_TRANSACTIONAL ?? process.env.EMAIL_FROM ?? 'imisi@notify.skillsair.com'
+const FROM_MARKETING = process.env.EMAIL_FROM_MARKETING ?? 'imisi@mail.skillsair.com'
+const REPLY_TO = process.env.EMAIL_REPLY_TO ?? 'hello@skillsair.com'
 const FRONTEND_URL = process.env.FRONTEND_URL ?? 'https://skillsair.com'
+
+export function senderAddress(stream: EmailStream): string {
+  return `${EMAIL_SENDER_NAME} <${stream === 'marketing' ? FROM_MARKETING : FROM_TRANSACTIONAL}>`
+}
 
 const ACCOUNT_FOOTER = `You're receiving this email because you have an account with SkillsAir.
               <a href="${FRONTEND_URL}/unsubscribe" style="color:#a1a1aa;">Unsubscribe</a>`
@@ -62,17 +85,24 @@ function button(label: string, url: string): string {
   return `<a href="${url}" style="display:inline-block;background-color:${BRAND_COLOR};color:#ffffff;text-decoration:none;padding:12px 24px;border-radius:6px;font-weight:bold;margin-top:16px;">${label}</a>`
 }
 
-export async function sendEmail(to: string, content: EmailContent): Promise<void> {
+/** Sends one email and returns Resend's email id (used to match bounce and click webhooks). */
+export async function sendEmail(to: string, content: EmailContent, options: SendEmailOptions = {}): Promise<string | null> {
+  const stream = options.stream ?? 'transactional'
   try {
-    await getClient().emails.send({
-      from: `${FROM_NAME} <${FROM_EMAIL}>`,
+    const result = await getClient().emails.send({
+      from: senderAddress(stream),
       to,
+      replyTo: REPLY_TO,
       subject: content.subject,
       html: content.html,
       text: content.text,
+      ...(options.headers ? { headers: options.headers } : {}),
+      ...(options.tags ? { tags: Object.entries(options.tags).map(([name, value]) => ({ name, value: value.replace(/[^A-Za-z0-9_-]/g, '_') })) } : {}),
     })
+    if (result.error) throw new Error(`${result.error.name}: ${result.error.message}`)
+    return result.data?.id ?? null
   } catch (err) {
-    logger.error({ err, to, subject: content.subject }, 'email_send_failed')
+    logger.error({ err, stream, subject: content.subject }, 'email_send_failed')
     throw err
   }
 }
@@ -92,31 +122,11 @@ export function welcomeEmail(firstName: string): EmailContent {
 }
 
 export function emailVerificationEmail(firstName: string, verifyUrl: string): EmailContent {
-  const subject = 'Verify your SkillsAir email'
-  const html = wrapHtml(`
-    <p>Hi ${firstName},</p>
-    <p>Please verify your email address. This link is valid for 24 hours.</p>
-    ${button('Verify email', verifyUrl)}
-  `)
-  return {
-    subject,
-    html,
-    text: `Hi ${firstName}, verify your email (valid 24 hours): ${verifyUrl}`,
-  }
+  return emailVerification.render({ firstName, verifyUrl })
 }
 
 export function passwordResetEmail(firstName: string, resetUrl: string): EmailContent {
-  const subject = 'Reset your SkillsAir password'
-  const html = wrapHtml(`
-    <p>Hi ${firstName},</p>
-    <p>We received a request to reset your password. This link is valid for 1 hour. If you didn't request this, you can ignore this email.</p>
-    ${button('Reset password', resetUrl)}
-  `)
-  return {
-    subject,
-    html,
-    text: `Hi ${firstName}, reset your password (valid 1 hour): ${resetUrl}`,
-  }
+  return passwordReset.render({ firstName, resetUrl })
 }
 
 export function enrollmentConfirmationEmail(firstName: string, courseName: string, courseUrl: string): EmailContent {

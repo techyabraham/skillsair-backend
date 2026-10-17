@@ -8,11 +8,11 @@ import {
   hasFollowUp,
   relationId,
   scoreLeadEvent,
-  unsubscribeToken,
   type LeadDoc,
   type LeadFollowUp,
   type LeadLogEntry,
 } from './leads.js'
+import { listUnsubscribeHeaders, preferencesUrl } from './email-tokens.js'
 import { buildOffer, type Offer, type OfferCourseDoc } from './offers.js'
 import { getScholarshipWindow, windowIsOpen } from './pricing.js'
 import { bodyParams, quickReplyButton, sendTemplate, urlButton, type TemplateComponent } from './whatsapp.js'
@@ -186,7 +186,7 @@ export async function processLeadFollowUps(payload: Payload, lead: LeadDoc, wind
         firstName: lead.firstName,
         programme: offer.programme,
         offerUrl: resumeUrl(lead),
-        unsubscribeUrl: `${FRONTEND_URL}/unsubscribe?t=${encodeURIComponent(unsubscribeToken(lead.id))}`,
+        unsubscribeUrl: preferencesUrl({ type: 'lead', id: lead.id }),
         price: offer.effectivePrice,
         standardPrice: offer.standardPrice,
         certificatePrice: offer.certificatePrice,
@@ -208,7 +208,11 @@ export async function processLeadFollowUps(payload: Payload, lead: LeadDoc, wind
       const sendMail = async (key: string, build: () => { subject: string; html: string; text: string }) => {
         if (!email || has(key)) return
         try {
-          await sendEmail(lead.email, build())
+          await sendEmail(lead.email, build(), {
+            stream: 'marketing',
+            headers: listUnsubscribeHeaders({ type: 'lead', id: lead.id }, 'offers'),
+            tags: { track: 'A', step: key },
+          })
           mark(key)
           sent++
         } catch (err) {

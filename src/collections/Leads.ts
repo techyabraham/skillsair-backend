@@ -164,6 +164,17 @@ export const Leads: CollectionConfig = {
           admin: { description: 'The exact wording the person agreed to.' },
         },
         { name: 'optedOutAt', type: 'date' },
+        { name: 'lastEngagedAt', type: 'date', admin: { description: 'Last email click, WhatsApp reply or offer visit.' } },
+        { name: 'sunsetAt', type: 'date', admin: { description: 'Marketing stopped after 90 days without engagement.' } },
+        {
+          name: 'emailSuppressed',
+          type: 'select',
+          options: [
+            { label: 'Hard bounce', value: 'bounced' },
+            { label: 'Spam complaint', value: 'complained' },
+          ],
+          admin: { description: 'Set by the Resend webhook. No email of any kind is sent, except a password reset.' },
+        },
       ],
     },
     {

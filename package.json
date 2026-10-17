@@ -28,8 +28,9 @@
     "migrate:import:learning": "node --loader ts-node/esm src/migrations/import-learning-data.ts",
     "seed:rebuild-pricing": "node --loader ts-node/esm src/migrations/seed-rebuild-pricing.ts",
     "seed:legal-pages": "node --loader ts-node/esm src/migrations/seed-legal-pages.ts",
+    "emails:preview": "node --loader ts-node/esm scripts/emails-preview.ts",
     "seed:schools": "node --loader ts-node/esm src/migrations/seed-schools.ts",
-    "test": "node --loader ts-node/esm src/lib/pricing.test.ts && node --loader ts-node/esm src/lib/leads.test.ts && node --loader ts-node/esm src/lib/whatsapp.test.ts && node --loader ts-node/esm src/lib/school-lineup.test.ts",
+    "test": "node --loader ts-node/esm src/lib/pricing.test.ts && node --loader ts-node/esm src/lib/leads.test.ts && node --loader ts-node/esm src/lib/whatsapp.test.ts && node --loader ts-node/esm src/lib/school-lineup.test.ts && node --loader ts-node/esm src/lib/email.test.ts",
     "lint": "eslint src --ext .ts",
     "typecheck": "tsc --noEmit"
   },

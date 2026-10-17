@@ -10,3 +10,4 @@ media/
 .migration-output/
 build/
 .next/
+tmp/
