@@ -28,7 +28,7 @@ export const A0 = lifecycleEmail({
               rows: [
                 { label: 'Standard fee', value: standardFee(d), struck: true },
                 { label: 'With your Access Scholarship', value: monthly(d), strong: true },
-                { label: 'Certificate (when you finish)', value: `${certificate(d)}, optional; needed for internship access` },
+                { label: 'Certificate (when you finish)', value: 'Optional, paid separately; needed for internship access' },
               ],
               caption: `Billed monthly by Paystack until you finish. ${DESIGNED[0]!.toUpperCase()}${DESIGNED.slice(1)}. Cancel anytime from your dashboard.`,
             },
@@ -36,7 +36,7 @@ export const A0 = lifecycleEmail({
             {
               list: [
                 `The full ${d.programme} programme, at your own pace, for as long as you study`,
-                `When you finish: a verifiable certificate employers can check online (${certificate(d)})`,
+                'When you finish: a verifiable certificate employers can check online (optional, paid separately)',
                 'Free bonus courses: CV & LinkedIn, and Freelancing',
                 "Access to internship openings from our partner firms once you're certified",
                 'Certified graduates can apply for laptop support (2 laptops per cohort)',
@@ -52,7 +52,7 @@ export const A0 = lifecycleEmail({
           blocks: blocks([
             `Hi ${d.firstName},`,
             `It's Imisi from SkillsAir. Thanks for applying for ${d.programme}.`,
-            `The Access Scholarship window is closed right now, so ${d.programme} is at the standard fee: ${standardFee(d)}. The certificate is ${certificate(d)} when you finish.`,
+            `The Access Scholarship window is closed right now, so ${d.programme} is at the standard fee: ${standardFee(d)}. The certificate is optional, paid separately when you finish.`,
             "Scholarship windows open regularly. You're on the list, so I'll tell you the moment the next one opens.",
           ]),
           button: { label: 'See my offer', url: d.offerUrl },
@@ -74,7 +74,7 @@ export const A1 = lifecycleEmail({
       "Imisi here again. I'm the person who answers when you message SkillsAir on WhatsApp, so you'll hear from me now and then over the next few days. I'll keep it short and useful, promise.",
       'Almost everyone who applies asks me the same two things. Here are straight answers.',
       `**1. "Why only ${monthly(d)}? What's the catch?"**`,
-      `No catch. During a scholarship window, the Access Scholarship covers most of the standard fee. You pay ${monthly(d)} while you study, and you can cancel anytime. When you finish, the certificate is ${certificate(d)} if you want it. That's all.`,
+      `No catch. During a scholarship window, the Access Scholarship covers most of the standard fee. You pay ${monthly(d)} while you study, and you can cancel anytime. When you finish, there's an optional certificate, paid separately. That's all.`,
       '**2. "Can I do it on my phone?"**',
       d.phoneFriendly
         ? `It depends on the programme. Good news: ${d.programme} works fully on a phone.`
@@ -107,7 +107,7 @@ export const A2 = lifecycleEmail({
       `You applied for ${d.programme}. That's the hard part done. The next step is just to start.`,
     ]),
     button: { label: `Start for ${monthly(d)}`, url: d.offerUrl },
-    ps: `The certificate is ${certificate(d)}, paid only when you finish and only if you want it. No other fees.`,
+    ps: 'The only other cost is an optional certificate, paid separately when you finish and only if you want it. No other fees.',
   }),
 })
 
@@ -127,7 +127,7 @@ export const A3 = lifecycleEmail({
       'If you can give it 8 hours a week, you can do this.',
     ]),
     button: { label: 'See my offer', url: d.offerUrl },
-    ps: `Your scholarship price is ${monthly(d)} until ${d.closesOn}. The certificate is ${certificate(d)} when you finish.`,
+    ps: `Your scholarship price is ${monthly(d)} until ${d.closesOn}. The certificate is optional, paid separately when you finish.`,
   }),
 })
 
@@ -146,7 +146,7 @@ export const A4 = lifecycleEmail({
         ordered: true,
         list: [
           '**Two free courses.** CV & LinkedIn, and Freelancing, so you can show your skills and start earning from them.',
-          `**A certificate employers can check.** When you finish, your certificate (${certificate(d)}) has its own link. An employer clicks it and sees it's real.`,
+          `**A certificate employers can check.** When you finish, your certificate has its own link. An employer clicks it and sees it's real.`,
           `**Your price is locked.** Join during the scholarship and you pay ${monthly(d)} until you finish, even after the window closes. If you take a break and come back, it's still ${monthly(d)}.`,
           "**Internship access.** Certified graduates get access to internship openings from our partner firms. The network is new and growing, so I won't overpromise, but the door is there.",
           '**Laptop support.** Each cohort, 2 laptops go to certified graduates who need one most. You apply with your story.',
@@ -177,7 +177,7 @@ export const A5 = lifecycleEmail({
         list: [
           `Start your scholarship plan: ${monthly(d)} by card.`,
           'Watch your first lesson today. About 8 hours a week gets you through in about 3 months.',
-          `When you finish, claim your verifiable certificate (${certificate(d)}) and unlock internship openings.`,
+          'When you finish, claim your verifiable certificate and unlock internship openings.',
         ],
       },
       'Picture yourself a few months from now, with a skill you can show, a certificate an employer can check, and a CV that says so.',
@@ -202,7 +202,7 @@ export const A6 = lifecycleEmail({
     blocks: blocks([
       `Hi ${d.firstName},`,
       `A quick heads-up: the Access Scholarship closes on ${d.closesOn} at 11:59pm.`,
-      `Until then, you can start ${d.programme} for ${monthly(d)}, and keep that rate until you finish. The certificate is ${certificate(d)} when you're done.`,
+      `Until then, you can start ${d.programme} for ${monthly(d)}, and keep that rate until you finish. The certificate is optional, paid separately when you finish.`,
       `After the deadline, it's the standard fee: ${standardFee(d)}.`,
       "If you've been meaning to start, this is the moment.",
     ]),
@@ -222,7 +222,7 @@ export const A7 = lifecycleEmail({
     blocks: blocks([
       `Hi ${d.firstName},`,
       'Short one. The Access Scholarship closes tonight at 11:59pm.',
-      `Start before then: ${monthly(d)}, locked until you finish. The certificate is ${certificate(d)} when you're done.`,
+      `Start before then: ${monthly(d)}, locked until you finish.`,
       `After tonight: ${standardFee(d)}.`,
       'It takes about 2 minutes by card.',
     ]),
@@ -242,7 +242,7 @@ export const W1 = lifecycleEmail({
     blocks: blocks([
       `Hi ${d.firstName},`,
       'You asked me to tell you first, so here it is: the Access Scholarship is open again.',
-      `Start ${d.programme} for ${monthly(d)} instead of ${naira(d.standardPrice)}. Join before ${d.closesOn} and the rate stays locked until you finish. The certificate is ${certificate(d)} when you're done.`,
+      `Start ${d.programme} for ${monthly(d)} instead of ${naira(d.standardPrice)}. Join before ${d.closesOn} and the rate stays locked until you finish. The certificate is optional, paid separately when you finish.`,
       'Your personal offer is ready.',
     ]),
     button: { label: 'See my offer', url: d.offerUrl },

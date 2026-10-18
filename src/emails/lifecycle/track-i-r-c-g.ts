@@ -71,7 +71,7 @@ export const I3 = lifecycleEmail({
       d.lessonsLeft ? `You have ${d.lessonsLeft} lessons to go.` : '',
       // Honest about paying for access they're not using.
       d.renewalSoon && d.chargeDate
-        ? `Your plan renews on ${d.chargeDate}. If you can't study right now, it's fine to cancel and come back later${d.joinedOnScholarship ? ` at the same ${monthly(d)} rate (the certificate is still ${certificate(d)} when you finish)` : ''}: ${d.billingUrl}`
+        ? `Your plan renews on ${d.chargeDate}. If you can't study right now, it's fine to cancel and come back later${d.joinedOnScholarship ? ` at the same ${monthly(d)} rate` : ''}: ${d.billingUrl}`
         : '',
     ]),
     button: { label: 'Continue learning', url: d.resumeUrl },
@@ -97,7 +97,6 @@ export const R1 = lifecycleEmail({
       `Restart today and you'll pick up exactly${d.nextLessonTitle ? ` at "${d.nextLessonTitle}"` : ' where you stopped'}.${lockSentence(d)}`,
     ]),
     button: { label: restartLabel(d), url: d.resumeCheckoutUrl },
-    ps: `The certificate is ${certificate(d)} when you finish.`,
   }),
 })
 
@@ -114,7 +113,7 @@ export const R2 = lifecycleEmail({
       `Your ${d.programme} access has been paused for a week. I'd like to know why, so we can do better. Was it money, time, or the programme itself?`,
       'Just reply with one word.',
       d.joinedOnScholarship
-        ? `And if it was money: your ${monthly(d)} rate never expires. Come back whenever you're ready. The certificate is ${certificate(d)} when you finish.`
+        ? `And if it was money: your ${monthly(d)} rate never expires. Come back whenever you're ready.`
         : 'And if it was money, tell me. I may be able to help you find a way back.',
     ]),
     button: { label: 'Restart my programme', url: d.resumeCheckoutUrl },
@@ -134,7 +133,7 @@ export const R3 = lifecycleEmail({
       'Starting again after a break feels harder than starting the first time. So here\'s a simple plan.',
       `You have ${d.lessonsLeft} lessons left. At about 8 hours a week, that's around ${d.weeksLeft} week${d.weeksLeft === 1 ? '' : 's'}.${d.joinedOnScholarship && d.weeksLeft <= 4 ? ` If you finish within one month of restarting, it costs you just ${monthly(d)} for that one month.` : ''}`,
       d.weekPlan.length ? { list: d.weekPlan } : '',
-      `At the end: your certificate (${certificate(d)}), a link employers can check, and access to internship openings.`,
+      'At the end: your verifiable certificate, a link employers can check, and access to internship openings.',
     ]),
     button: { label: restartLabel(d), url: d.resumeCheckoutUrl },
   }),
@@ -153,7 +152,7 @@ export const R4 = lifecycleEmail({
       d.joinedOnScholarship
         ? `Quick reminder: because you joined during the Access Scholarship, your rate is locked at ${monthly(d)}. That's true even when the scholarship window is closed and new learners pay ${d.standardMonthlyPrice ? `${naira(d.standardMonthlyPrice)} a month` : naira(d.standardPrice)}.`
         : `Quick reminder: your ${d.programme} progress is saved, and you can pick it up whenever you're ready.`,
-      `Your ${d.programme} progress (${d.progressPercent}%) is saved and waiting. The certificate is ${certificate(d)} when you finish.`,
+      `Your ${d.programme} progress (${d.progressPercent}%) is saved and waiting.`,
     ]),
     button: { label: restartLabel(d), url: d.resumeCheckoutUrl },
   }),
@@ -174,7 +173,7 @@ export const R5 = lifecycleEmail({
         blocks: blocks([
           `Hi ${d.firstName},`,
           `I don't want to fill your inbox. If you still want to finish ${d.programme}, tap below. If not, use "Email preferences" at the bottom of this email and turn off offers, and I won't mention it again.`,
-          d.joinedOnScholarship ? `Your rate is still ${monthly(d)}, and the certificate is ${certificate(d)} when you finish.` : '',
+          d.joinedOnScholarship ? `Your rate is still ${monthly(d)}.` : '',
         ]),
         button: { label: 'I still want to finish', url: d.resumeCheckoutUrl },
       }
@@ -185,7 +184,7 @@ export const R5 = lifecycleEmail({
           `Hi ${d.firstName},`,
           'A half-finished course is hard to put on a CV. A finished one, with a certificate an employer can check, is something you can point to.',
           `You're ${d.progressPercent}% of the way there. Restart, give it about 8 hours a week, and finish.${lockSentence(d)}`,
-          `Then claim your certificate (${certificate(d)}) and unlock internship openings.`,
+          'Then claim your certificate and unlock internship openings.',
         ]),
         button: { label: restartLabel(d), url: d.resumeCheckoutUrl },
       }
@@ -194,7 +193,7 @@ export const R5 = lifecycleEmail({
       blocks: blocks([
         `Hi ${d.firstName},`,
         `You're ${d.progressPercent}% through ${d.programme}, and your progress is saved.${lockSentence(d)}`,
-        `When you finish, your certificate (${certificate(d)}) gives you a link employers can check and access to internship openings.`,
+        'When you finish, your certificate gives you a link employers can check and access to internship openings.',
       ]),
       button: { label: restartLabel(d), url: d.resumeCheckoutUrl },
     }
@@ -330,8 +329,8 @@ const nextTitle = (d: MessageData) => d.nextProgramme?.title ?? 'your next progr
 const nextUrl = (d: MessageData) => d.nextProgramme?.url ?? d.dashboardUrl
 const priceToday = (d: MessageData) =>
   d.windowOpen
-    ? `While the Access Scholarship is open (until ${d.closesOn}), it's ${monthly(d)}, and the certificate is ${certificate(d)} when you finish.`
-    : `Right now it's the standard fee, ${standardFee(d)}, or you can wait for the next Access Scholarship window. The certificate is ${certificate(d)} when you finish.`
+    ? `While the Access Scholarship is open (until ${d.closesOn}), it's ${monthly(d)}.`
+    : `Right now it's the standard fee, ${standardFee(d)}, or you can wait for the next Access Scholarship window.`
 
 export const G1 = lifecycleEmail({
   id: 'G1',

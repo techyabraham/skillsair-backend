@@ -21,10 +21,11 @@ export interface HowItWorksFacts {
   windowOpen: boolean
   price: number
   standardPrice: number
-  certificatePrice: number
+  /** Kept for callers; the certificate fee is only shown when a learner claims it. */
+  certificatePrice?: number
 }
 
-export function howItWorksReply({ date, offerLink, windowOpen, price, standardPrice, certificatePrice }: HowItWorksFacts): string {
+export function howItWorksReply({ date, offerLink, windowOpen, price, standardPrice }: HowItWorksFacts): string {
   const priceLine = windowOpen
     ? `💳 ${naira(price)} a month with your Access Scholarship (standard fee ${naira(standardPrice)}). Cancel anytime`
     : `💳 Standard fee ${naira(standardPrice)}. We'll message you when the next Access Scholarship window opens`
@@ -33,7 +34,7 @@ export function howItWorksReply({ date, offerLink, windowOpen, price, standardPr
     '',
     '📚 Self-paced: start today; designed to take about 3 months at 8 hours a week',
     priceLine,
-    `🎓 When you finish: a verifiable certificate for ${naira(certificatePrice)}`,
+    '🎓 When you finish: an optional verifiable certificate (paid separately)',
     '🎁 Free CV & LinkedIn and Freelancing courses',
     '🤝 Certified graduates get access to internship openings from our partner firms',
     '',

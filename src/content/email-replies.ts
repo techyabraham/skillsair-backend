@@ -21,10 +21,10 @@ export const EMAIL_QUICK_REPLIES: QuickReply[] = [
   },
   {
     label: "3 · Not sure it's for me",
-    body: "That's worth knowing early. If you're within the refund window, I can help with that. If not, you might enjoy [a phone-friendly programme] more; your rate would stay at ₦2,000 a month, and the certificate is ₦10,000 when you finish.",
+    body: "That's worth knowing early. If you're within the refund window, I can help with that. If not, you might enjoy [a phone-friendly programme] more; your rate would stay at ₦2,000 a month.",
   },
   {
     label: 'Money',
-    body: 'Your ₦2,000-a-month rate never expires, so come back whenever you’re ready. If someone can help, they can pay with their own card at checkout. The certificate is ₦10,000 when you finish.',
+    body: 'Your ₦2,000-a-month rate never expires, so come back whenever you’re ready. If someone can help, they can pay with their own card at checkout.',
   },
 ]

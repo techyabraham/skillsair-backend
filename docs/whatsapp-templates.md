@@ -4,6 +4,8 @@ SkillsAir sends WhatsApp messages through the **Meta WhatsApp Cloud API** (`src/
 
 The owner submits these templates in **WhatsApp Manager → Message templates**. Template names, languages, button order and quick-reply payloads must match exactly, because the backend refers to them by name and button index.
 
+**Certificate price (owner, 2026-10-18):** templates for applicants and learners who haven't finished never quote the certificate fee. Only `skillsair_course_complete` (7) and `skillsair_certificate_reminder` (12), sent after a learner finishes, state it. Templates 2–4 were edited for this and need (re)submitting.
+
 ## Submission rules
 
 - Language: `en` (English).
@@ -89,7 +91,7 @@ Your offer is valid until {{3}}. Tap "View my offer" to see it, or tap a button 
 ```
 Hi {{1}}, it's Imisi from SkillsAir.
 
-Your Access Scholarship seat for {{2}} is still waiting for you. You start for just ₦2,000 a month, learn at your own pace (it's designed to take about 3 months). When you're done, your verifiable certificate is ₦10,000.
+Your Access Scholarship seat for {{2}} is still waiting for you. You start for just ₦2,000 a month, learn at your own pace (it's designed to take about 3 months), and claim an optional verifiable certificate when you finish.
 
 Not sure yet? Watch a free lesson first. The scholarship price closes on {{3}}, so don't leave it too late.
 ```
@@ -111,7 +113,7 @@ Hi {{1}}, a quick heads-up from Imisi at SkillsAir.
 
 The Access Scholarship closes on {{2}}. After that, {{3}} goes back to the standard fee (₦40,000 a month, or ₦100,000 once) until the next window opens.
 
-Today you can still start for ₦2,000 a month (plus ₦10,000 for your certificate when you finish). If you've been waiting for the right time, this is it.
+Today you can still start for ₦2,000 a month, locked until you finish. If you've been waiting for the right time, this is it.
 ```
 
 **Footer:** `Reply STOP to opt out`
@@ -127,7 +129,7 @@ Today you can still start for ₦2,000 a month (plus ₦10,000 for your certific
 ```
 Hi {{1}}, good news from SkillsAir 🎉
 
-You asked us to tell you when the Access Scholarship reopened. It's open now: start {{2}} for ₦2,000 a month instead of ₦40,000 a month, learn at your own pace (it's designed to take about 3 months). Your certificate is ₦10,000 when you're done.
+You asked us to tell you when the Access Scholarship reopened. It's open now: start {{2}} for ₦2,000 a month instead of ₦40,000 a month, learn at your own pace (it's designed to take about 3 months).
 
 This window closes on {{3}}, so grab your seat while it's open.
 ```
@@ -220,7 +222,7 @@ You keep access for {{3}} more days. Pay this month's ₦2,000 with the button b
 ```
 Hi {{1}}, your {{2}} access is paused because your plan has ended.
 
-Your progress is saved ({{3}}% done). Restart anytime at your locked rate of ₦2,000 a month. The certificate is ₦10,000 when you finish.
+Your progress is saved ({{3}}% done). Restart anytime at your locked rate of ₦2,000 a month.
 ```
 
 **Buttons:** URL `Restart` → `https://skillsair.com/{{1}}` · Quick reply `Talk to Imisi`
@@ -252,7 +254,7 @@ Your next lesson is ready: "{{3}}". Can you give it 20 minutes today?
 ```
 Hi {{1}}, it's Imisi. Your {{2}} progress is still saved ({{3}}% done).
 
-Your rate is locked at ₦2,000 a month, even though new learners pay more. Restart whenever you're ready. Certificate: ₦10,000 when you finish.
+Your rate is locked at ₦2,000 a month, even though new learners pay more. Restart whenever you're ready.
 ```
 
 **Footer:** `Reply STOP to opt out`

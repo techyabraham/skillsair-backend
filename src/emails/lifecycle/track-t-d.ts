@@ -41,7 +41,7 @@ export const T1 = lifecycleEmail({
       },
       d.priceLocked
         ? `Your plan: ${monthly(d)}, billed to your card${d.billingDay ? ` on the ${d.billingDay} of each month` : ' each month'} until you finish. ${LOCK_LINE(d)} You can cancel anytime from your dashboard.`
-        : `You've paid ${naira(d.amount)} for ${d.programme}. The certificate is ${certificate(d)} when you finish, only if you want it.`,
+        : `You've paid ${naira(d.amount)} for ${d.programme}. The certificate is optional, paid separately when you finish.`,
       '**Receipt**',
       receipt(d),
       'Questions? Reply here or WhatsApp me, Monday to Saturday, 9am–6pm.',
@@ -116,7 +116,7 @@ export const T5 = lifecycleEmail({
       `Hi ${d.firstName},`,
       `Done. Your ${d.programme} plan won't renew, and you won't be charged again.`,
       d.periodEnd ? `You still have full access until ${d.periodEnd}, so use it. ${progressLine(d)}`.trim() : progressLine(d),
-      d.joinedOnScholarship ? `If you come back later, your rate is still ${monthly(d)}. It's locked because you joined during the Access Scholarship. The certificate is ${certificate(d)} when you finish.` : '',
+      d.joinedOnScholarship ? `If you come back later, your rate is still ${monthly(d)}. It's locked because you joined during the Access Scholarship.` : '',
       "If something made you cancel, I'd really like to know. Just reply with one line.",
     ]),
     button: { label: d.periodEnd ? `Keep learning until ${d.periodEnd}` : 'Go to my dashboard', url: d.resumeUrl },
@@ -141,7 +141,6 @@ export const T6 = lifecycleEmail({
         : `Restart anytime${d.nextLessonTitle ? ` and carry on from "${d.nextLessonTitle}"` : ''}.`,
     ]),
     button: { label: d.joinedOnScholarship ? `Restart for ${monthly(d)}` : 'Restart my programme', url: d.resumeCheckoutUrl },
-    ps: `The certificate is ${certificate(d)} when you finish.`,
   }),
 })
 

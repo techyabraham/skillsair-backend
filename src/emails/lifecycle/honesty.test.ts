@@ -38,13 +38,12 @@ test('every lifecycle email renders a subject, preheader, html and text for ever
   }
 })
 
-test('₦2,000 always says "a month", next to the ₦10,000 certificate (offers and marketing)', () => {
+test('₦2,000 always says "a month" (offers and marketing)', () => {
   for (const { template, rendered } of renders()) {
     if (EXEMPT.has(template.id)) continue
     const copy = `${rendered.subject}\n${rendered.preheader}\n${rendered.text}`
     const bare = copy.match(/₦2,000(?!(\s|-)a(\s|-)month|\/month)/g)
     assert.equal(bare, null, `${template.id} mentions ₦2,000 without "a month": ${copy.slice(copy.search(/₦2,000(?!(\s|-)a(\s|-)month)/), copy.search(/₦2,000(?!(\s|-)a(\s|-)month)/) + 60)}`)
-    if (copy.includes('₦2,000')) assert.ok(copy.includes('₦10,000'), `${template.id} mentions ₦2,000 without the ₦10,000 certificate`)
   }
 })
 
@@ -88,4 +87,18 @@ test('A/B: each person always gets the same version; only A0, A1, A6, B1 and T6 
   }
   assert.deepEqual([...seen].sort(), [0, 1])
   assert.equal(variantFor('A2', 'user:1'), 0)
+})
+
+/** Owner, 2026-10-18: the certificate fee is shown only once a learner has finished and goes to claim it. */
+const AFTER_FINISHING = new Set(['T8', 'T9', 'C1', 'C2', 'C2L', 'C3', 'C4', 'C5'])
+
+test('the certificate fee only appears after someone has finished', () => {
+  for (const { template, rendered } of renders()) {
+    if (AFTER_FINISHING.has(template.id)) continue
+    const copy = `${rendered.subject}\n${rendered.preheader}\n${rendered.text}`
+    assert.ok(!copy.includes('₦10,000'), `${template.id} quotes the certificate fee before the learner has finished`)
+  }
+  for (const file of ['src/content/whatsapp-replies.ts', 'src/content/email-replies.ts', 'src/content/assistant-knowledge.ts']) {
+    assert.ok(!readFileSync(file, 'utf8').includes('₦10,000'), `${file} quotes the certificate fee`)
+  }
 })

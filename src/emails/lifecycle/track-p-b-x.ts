@@ -104,7 +104,7 @@ export const P5 = lifecycleEmail({
     blocks: blocks([
       `Hi ${d.firstName},`,
       `It's been about a month since you applied for ${d.programme}. If you still want to do it, here are your options.`,
-      `Start now at the standard fee: ${d.standardMonthlyPrice ? `${naira(d.standardMonthlyPrice)} a month, or ${naira(d.standardPrice)} once` : naira(d.standardPrice)}, with the same certificate (${certificate(d)}), the free bonus courses and internship access.`,
+      `Start now at the standard fee: ${d.standardMonthlyPrice ? `${naira(d.standardMonthlyPrice)} a month, or ${naira(d.standardPrice)} once` : naira(d.standardPrice)}, with the same optional certificate, the free bonus courses and internship access.`,
       'Or wait for the next Access Scholarship window. When it opens, people on the waitlist hear first.',
       'Either way, the important thing is that you start. A skill you begin this month is worth more than one you plan for next year.',
     ]),
@@ -214,7 +214,7 @@ export const B3 = lifecycleEmail({
       "This is the last reminder I'll send about this payment.",
     ]),
     button: { label: 'Finish my payment', url: d.checkoutUrl },
-    ps: `The certificate is ${certificate(d)}, paid only when you finish. Nothing else to pay.`,
+    ps: 'The only other cost is an optional certificate when you finish. Nothing else to pay.',
   }),
 })
 
