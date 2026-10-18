@@ -19,7 +19,7 @@ export interface RenderInput {
   links: FooterLinks
 }
 
-export type EmailRenderer = (input: RenderInput) => EmailContent | null
+export type EmailRenderer = (input: RenderInput & { variant?: number }) => EmailContent | null
 
 /** Steps that need content the owner may not have filled in yet. */
 const REQUIRES: Record<string, (data: MessageData) => boolean> = {
@@ -32,13 +32,28 @@ const REQUIRES: Record<string, (data: MessageData) => boolean> = {
   A3: (data) => Boolean(data.programmeSlug),
 }
 
+/**
+ * A/B subject lines (brief section 12): the person's version is fixed by a hash of their id, so
+ * they always see the same one; winners are picked on conversions in the lifecycle dashboard.
+ * LIFECYCLE_AB_TESTS=false sends everyone version a.
+ */
+export function variantFor(templateId: string, personKey: string): number {
+  const count = LIFECYCLE_TEMPLATES[templateId]?.variantCount ?? 1
+  if (count < 2 || process.env.LIFECYCLE_AB_TESTS === 'false') return 0
+  let hash = 0
+  for (const char of `${templateId}:${personKey}`) hash = (hash * 31 + char.charCodeAt(0)) >>> 0
+  return hash % count
+}
+
+export const variantLabel = (variant: number) => String.fromCharCode(97 + variant)
+
 export const LIFECYCLE_EMAILS: Record<string, EmailRenderer> = Object.fromEntries(
   Object.values(LIFECYCLE_TEMPLATES).map((template) => [
     template.id,
-    (input: RenderInput) => {
+    (input: RenderInput & { variant?: number }) => {
       const requirement = REQUIRES[template.id]
       if (requirement && !requirement(input.data)) return null
-      return template.render(input.data, input.links)
+      return template.render(input.data, input.links, input.variant ?? 0)
     },
   ]),
 )

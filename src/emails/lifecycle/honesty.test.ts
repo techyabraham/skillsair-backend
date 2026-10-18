@@ -3,6 +3,7 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { LIFECYCLE_TEMPLATES, SAMPLE } from './index.js'
 import type { MessageData } from '../../lib/lifecycle/context.js'
+import { variantFor } from '../../lib/lifecycle/templates.js'
 
 /**
  * Brief section 16 acceptance: honest copy.
@@ -21,8 +22,11 @@ const EXEMPT = new Set(['T1', 'T2', 'T3', 'T4', 'T7', 'T9', 'D1', 'D2', 'D3', 'B
 const BANNED = ['one time', 'one-time', '₦2,000 once', '3 months to finish', 'up to 3 months', 'most learners', 'limited seats', 'guaranteed']
 
 function renders() {
+  const links = { preferencesUrl: 'https://skillsair.com/email-preferences?token=t', unsubscribeUrl: 'https://skillsair.com/email-preferences?token=t' }
   return Object.values(LIFECYCLE_TEMPLATES).flatMap((template) =>
-    VARIANTS.map((variant) => ({ template, rendered: template.render({ ...SAMPLE, ...variant }, { preferencesUrl: 'https://skillsair.com/email-preferences?token=t', unsubscribeUrl: 'https://skillsair.com/email-preferences?token=t' }) })),
+    VARIANTS.flatMap((variant) =>
+      Array.from({ length: template.variantCount }, (_, ab) => ({ template, rendered: template.render({ ...SAMPLE, ...variant }, links, ab) })),
+    ),
   )
 }
 
@@ -50,6 +54,7 @@ test('no banned phrases in email or WhatsApp copy', () => {
     ['docs/whatsapp-templates.md', readFileSync('docs/whatsapp-templates.md', 'utf8')] as const,
     ['src/content/whatsapp-replies.ts', readFileSync('src/content/whatsapp-replies.ts', 'utf8')] as const,
     ['src/content/assistant-knowledge.ts', readFileSync('src/content/assistant-knowledge.ts', 'utf8')] as const,
+    ['src/content/email-replies.ts', readFileSync('src/content/email-replies.ts', 'utf8')] as const,
   ]
   for (const [name, text] of sources) {
     for (const phrase of BANNED) assert.ok(!text.toLowerCase().includes(phrase), `${name} contains "${phrase}"`)
@@ -70,4 +75,17 @@ test('optional owner content is left out when empty', () => {
   assert.ok(!a2.includes('FOUNDER_ANECDOTE'))
   assert.ok(LIFECYCLE_TEMPLATES.A2!.render({ ...SAMPLE, founderAnecdote: 'When I was 19…' }).text.includes('When I was 19…'))
   assert.ok(!LIFECYCLE_TEMPLATES.A4!.render({ ...SAMPLE, proof: null }).text.includes('“'))
+})
+
+test('A/B: each person always gets the same version; only A0, A1, A6, B1 and T6 are tested', () => {
+  const tested = Object.values(LIFECYCLE_TEMPLATES).filter((template) => template.variantCount > 1).map((template) => template.id).sort()
+  assert.deepEqual(tested, ['A0', 'A1', 'A6', 'B1', 'T6'])
+  const seen = new Set<number>()
+  for (let id = 1; id <= 50; id++) {
+    const first = variantFor('A1', `user:${id}`)
+    assert.equal(variantFor('A1', `user:${id}`), first)
+    seen.add(first)
+  }
+  assert.deepEqual([...seen].sort(), [0, 1])
+  assert.equal(variantFor('A2', 'user:1'), 0)
 })

@@ -5,7 +5,7 @@ import { sendTemplate } from '../whatsapp.js'
 import { listUnsubscribeHeaders, preferencesUrl, type EmailAudience } from '../email-tokens.js'
 import { maskEmail } from '../email-preferences.js'
 import { buildMessageData, type EventData, type LoadedPerson } from './context.js'
-import { LIFECYCLE_EMAILS, LIFECYCLE_WHATSAPP, offerFor } from './templates.js'
+import { LIFECYCLE_EMAILS, LIFECYCLE_WHATSAPP, offerFor, variantFor, variantLabel } from './templates.js'
 import type { PlannedStep } from './plan.js'
 import type { Kind, Track, WindowState } from './types.js'
 
@@ -42,6 +42,7 @@ export interface MessageRecord {
   skipReason?: string
   providerId?: string | null
   sentAt?: string
+  variant?: string | null
 }
 
 /** Writes one row of the messages log. A dry-run row is replaced when the step later goes for real. */
@@ -62,6 +63,7 @@ export async function recordMessage(payload: Payload, record: MessageRecord): Pr
     skipReason: record.skipReason ?? null,
     providerId: record.providerId ?? null,
     sentAt: record.sentAt ?? new Date().toISOString(),
+    variant: record.variant ?? null,
   }
   const existing = await payload.find({ collection: 'messages', where: { idempotencyKey: { equals: record.idempotencyKey } }, limit: 1, depth: 0, overrideAccess: true })
   const row = existing.docs[0] as unknown as { id: number; skipReason?: string | null } | undefined
@@ -113,20 +115,21 @@ export async function executeStep(
       const renderer = LIFECYCLE_EMAILS[step.template]
       if (!renderer) return 'deferred'
       const audience = audienceOf(person)
-      const links = step.kind === 'transactional' ? {} : { preferencesUrl: preferencesUrl(audience), unsubscribeUrl: preferencesUrl(audience) }
-      const content = renderer({ data, offer: await offerFor(payload, step.stage.courseId, userId), links })
+      const links = step.kind === 'transactional' ? {} : { preferencesUrl: preferencesUrl(audience, step.idempotencyKey), unsubscribeUrl: preferencesUrl(audience, step.idempotencyKey) }
+      const variant = variantFor(step.template, person.snapshot.key)
+      const content = renderer({ data, offer: await offerFor(payload, step.stage.courseId, userId), links, variant })
       if (!content) return 'deferred'
       if (!isLive(step.stage.track)) {
         logger.info({ to: maskEmail(person.snapshot.email ?? ''), step: step.stepId, track: step.stage.track, subject: content.subject, key: step.idempotencyKey }, 'lifecycle_dry_run')
-        await recordMessage(payload, { ...base, status: 'skipped', skipReason: 'dry_run' })
+        await recordMessage(payload, { ...base, status: 'skipped', skipReason: 'dry_run', variant: variantLabel(variant) })
         return 'skipped'
       }
       const providerId = await sendEmail(person.snapshot.email as string, content, {
         stream: step.kind === 'transactional' ? 'transactional' : 'marketing',
-        ...(step.kind === 'transactional' ? {} : { headers: listUnsubscribeHeaders(audience, step.kind === 'service' ? 'learning' : 'offers') }),
+        ...(step.kind === 'transactional' ? {} : { headers: listUnsubscribeHeaders(audience, step.kind === 'service' ? 'learning' : 'offers', step.idempotencyKey) }),
         tags: { track: step.stage.track, step: step.stepId },
       })
-      await recordMessage(payload, { ...base, status: 'sent', providerId })
+      await recordMessage(payload, { ...base, status: 'sent', providerId, variant: variantLabel(variant) })
       return 'sent'
     }
 

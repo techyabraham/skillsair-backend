@@ -19,6 +19,8 @@ export type EmailTokenPurpose = 'prefs' | 'unsub'
 export interface EmailTokenClaims extends EmailAudience {
   purpose: EmailTokenPurpose
   category: EmailCategory
+  /** The message (idempotency key) the link was in, if any. */
+  message?: string
 }
 
 const DEFAULT_TTL_DAYS = 365
@@ -39,9 +41,10 @@ export function createEmailToken(
   category: EmailCategory = 'all',
   ttlDays = DEFAULT_TTL_DAYS,
   now = Date.now(),
+  message?: string,
 ): string {
   const body = Buffer.from(
-    JSON.stringify({ t: audience.type === 'user' ? 'u' : 'l', i: audience.id, p: purpose, c: category, e: Math.floor(now / 1000) + ttlDays * 86400 }),
+    JSON.stringify({ t: audience.type === 'user' ? 'u' : 'l', i: audience.id, p: purpose, c: category, e: Math.floor(now / 1000) + ttlDays * 86400, ...(message ? { m: message.slice(0, 120) } : {}) }),
   ).toString('base64url')
   return `${body}.${sign(body)}`
 }
@@ -59,7 +62,7 @@ export function verifyEmailToken(token: string, now = Date.now()): EmailTokenCla
 
   const expected = sign(body)
   if (expected.length !== signature.length || !crypto.timingSafeEqual(Buffer.from(expected), Buffer.from(signature))) return null
-  let claims: { t?: unknown; i?: unknown; p?: unknown; c?: unknown; e?: unknown }
+  let claims: { t?: unknown; i?: unknown; p?: unknown; c?: unknown; e?: unknown; m?: unknown }
   try {
     claims = JSON.parse(Buffer.from(body, 'base64url').toString('utf8')) as typeof claims
   } catch {
@@ -71,7 +74,7 @@ export function verifyEmailToken(token: string, now = Date.now()): EmailTokenCla
   if (claims.t !== 'u' && claims.t !== 'l') return null
   if (claims.p !== 'prefs' && claims.p !== 'unsub') return null
   if (claims.c !== 'offers' && claims.c !== 'learning' && claims.c !== 'all') return null
-  return { type: claims.t === 'u' ? 'user' : 'lead', id, purpose: claims.p, category: claims.c }
+  return { type: claims.t === 'u' ? 'user' : 'lead', id, purpose: claims.p, category: claims.c, ...(typeof claims.m === 'string' ? { message: claims.m } : {}) }
 }
 
 function backendOrigin(): string {
@@ -83,21 +86,21 @@ function frontendOrigin(): string {
 }
 
 /** The visible "Email preferences" footer link (website page, no login). */
-export function preferencesUrl(audience: EmailAudience): string {
-  return `${frontendOrigin()}/email-preferences?token=${encodeURIComponent(createEmailToken(audience, 'prefs'))}`
+export function preferencesUrl(audience: EmailAudience, message?: string): string {
+  return `${frontendOrigin()}/email-preferences?token=${encodeURIComponent(createEmailToken(audience, 'prefs', 'all', DEFAULT_TTL_DAYS, Date.now(), message))}`
 }
 
 /** One-click unsubscribe URL (RFC 8058), handled by the backend directly. */
-export function oneClickUnsubscribeUrl(audience: EmailAudience, category: EmailCategory): string {
-  return `${backendOrigin()}/api/email/unsubscribe?token=${encodeURIComponent(createEmailToken(audience, 'unsub', category))}`
+export function oneClickUnsubscribeUrl(audience: EmailAudience, category: EmailCategory, message?: string): string {
+  return `${backendOrigin()}/api/email/unsubscribe?token=${encodeURIComponent(createEmailToken(audience, 'unsub', category, DEFAULT_TTL_DAYS, Date.now(), message))}`
 }
 
 /**
  * Headers for every marketing and service email, so Gmail and Yahoo show their own
  * "Unsubscribe" link. The mailto: form is only added when that inbox is actually processed.
  */
-export function listUnsubscribeHeaders(audience: EmailAudience, category: Exclude<EmailCategory, 'all'>): Record<string, string> {
-  const targets = [`<${oneClickUnsubscribeUrl(audience, category)}>`]
+export function listUnsubscribeHeaders(audience: EmailAudience, category: Exclude<EmailCategory, 'all'>, message?: string): Record<string, string> {
+  const targets = [`<${oneClickUnsubscribeUrl(audience, category, message)}>`]
   const mailto = process.env.EMAIL_UNSUBSCRIBE_MAILTO?.trim()
   if (mailto) targets.push(`<mailto:${mailto}?subject=unsubscribe>`)
   return { 'List-Unsubscribe': targets.join(', '), 'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click' }

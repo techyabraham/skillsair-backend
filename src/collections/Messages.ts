@@ -72,7 +72,9 @@ export const Messages: CollectionConfig = {
     { name: 'openedAt', type: 'date' },
     { name: 'clickedAt', type: 'date' },
     { name: 'convertedAt', type: 'date' },
-    { name: 'variant', type: 'text' },
+    { name: 'unsubscribedAt', type: 'date', admin: { description: 'The person unsubscribed from a link or header in this message.' } },
+    { name: 'complainedAt', type: 'date', admin: { description: 'The person marked this message as spam.' } },
+    { name: 'variant', type: 'text', admin: { description: 'A/B subject-line variant (a or b).' } },
   ],
   timestamps: true,
 }

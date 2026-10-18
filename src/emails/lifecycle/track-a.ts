@@ -12,6 +12,12 @@ export const A0 = lifecycleEmail({
     d.windowOpen
       ? `${monthly(d)} for ${d.programme} instead of ${naira(d.standardPrice)}. Closes ${d.closesOn}.`
       : `${d.programme}, and how to hear first when the scholarship reopens.`,
+  variants: [
+    {
+      subject: (d) => (d.windowOpen ? `You qualify, ${d.firstName}: ${d.programme}` : `${d.programme}: your next step`),
+      preheader: (d) => (d.windowOpen ? `${monthly(d)} with your Access Scholarship. Closes ${d.closesOn}.` : 'Your offer, and how to hear first when the scholarship reopens.'),
+    },
+  ],
   body: (d) =>
     d.windowOpen
       ? {
@@ -61,6 +67,7 @@ export const A1 = lifecycleEmail({
   stepId: 'A1',
   subject: () => 'Two questions everyone asks me',
   preheader: (d) => `"Why only ${monthly(d)}?" and "Can I do it on my phone?"`,
+  variants: [{ subject: (d) => `Is ${monthly(d)} too good to be true?`, preheader: () => 'Straight answers to the two questions everyone asks.' }],
   body: (d) => ({
     blocks: blocks([
       `Hi ${d.firstName},`,
@@ -190,6 +197,7 @@ export const A6 = lifecycleEmail({
   stepId: 'A6',
   subject: (d) => `Your scholarship closes ${d.closesDay}`,
   preheader: (d) => `After that, ${d.programme} is ${naira(d.standardPrice)}.`,
+  variants: [{ subject: (d) => `2 days left at ${monthly(d)}`, preheader: (d) => `The scholarship for ${d.programme} closes ${d.closesDay}.` }],
   body: (d) => ({
     blocks: blocks([
       `Hi ${d.firstName},`,

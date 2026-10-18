@@ -130,6 +130,7 @@ export const T6 = lifecycleEmail({
   stepId: 'T6',
   subject: (d) => `Your ${d.programme} access is paused`,
   preheader: () => 'Your progress is saved. Pick up where you stopped.',
+  variants: [{ subject: (d) => `Your ${d.programme} progress is saved`, preheader: () => 'Your access is paused. Restart whenever you’re ready.' }],
   body: (d) => ({
     blocks: blocks([
       `Hi ${d.firstName},`,

@@ -149,6 +149,7 @@ export const B1 = lifecycleEmail({
   stepId: 'B1',
   subject: (d) => `Your ${d.programme} seat isn't confirmed yet`,
   preheader: () => "Your payment didn't go through. Here's how to finish.",
+  variants: [{ subject: () => "Your payment didn't finish", preheader: (d) => `Your ${d.programme} seat is waiting. It takes 2 minutes.` }],
   body: (d) => ({
     blocks: blocks([
       `Hi ${d.firstName},`,

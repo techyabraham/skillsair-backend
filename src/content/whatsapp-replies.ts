@@ -58,6 +58,9 @@ export function talkOutOfHours(offerLink: string): string {
   return `Thanks for reaching out! I'm available Monday to Saturday, 9am–6pm, and I'll reply as soon as I'm back. Your offer is still here: ${offerLink}`
 }
 
-export const STOP_REPLY = "Done. You won't get any more messages from SkillsAir. If you change your mind, reply START."
+export const STOP_REPLY = "Done. You won't get any more updates or offers from SkillsAir, on WhatsApp or by email. Receipts and account emails still arrive. If you change your mind, reply START."
+
+/** Added to the STOP reply: where to change email settings (brief section 8). */
+export const STOP_EMAIL_PREFS_LINE = 'Email settings: '
 
 export const START_REPLY = "Welcome back! You'll get SkillsAir updates here again."

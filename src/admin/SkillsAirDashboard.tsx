@@ -80,7 +80,7 @@ export const SkillsAirDashboard = async (props: AdminViewServerProps) => {
           <div>
             <p className="sa-eyebrow"><span className="sa-eyebrow__dot" /> SKILLSAIR STUDIO <span className="sa-eyebrow__divider">/</span> OVERVIEW</p>
             <h1>{greeting}</h1>
-            <p className="sa-dashboard__intro">A clear picture of your courses, learners, and learning activity.</p>
+            <p className="sa-dashboard__intro">A clear picture of your courses, learners, and learning activity. <a href="/admin/lifecycle">Lifecycle emails →</a></p>
           </div>
           <a className="sa-button sa-button--primary" href="/admin/collections/courses/create"><Icon name="plus" /> Create a course</a>
         </div>

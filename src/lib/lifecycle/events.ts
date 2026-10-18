@@ -6,6 +6,7 @@ import { executeStep } from './send.js'
 import { stepById } from './sequences.js'
 import { idempotencyKey, type PlannedStep } from './plan.js'
 import { lagosDayNumber } from './timing.js'
+import { attributeConversion } from './attribution.js'
 import type { Stage } from './types.js'
 
 /**
@@ -25,6 +26,7 @@ export type LifecycleEvent =
   | { type: 'access_ended'; userId: number; courseId?: number; subscriptionId?: number; reason: 'lapsed' | 'grace_expired' | 'legacy_access_expired' }
   | { type: 'enrollment_completed'; userId: number; courseId: number; enrollmentId: number; billingStopped: boolean }
   | { type: 'certificate_issued'; userId: number; courseId: number; receipt?: { reference: string; amount: number; paidAt: string } }
+  | { type: 'lesson_completed'; userId: number; courseId: number }
 
 /** Bumps the cycle on unfinished enrolments, so a learner who lapses again gets the win-back emails again. */
 async function bumpLapseCycle(payload: Payload, userId: number, courseId?: number): Promise<number> {
@@ -115,7 +117,11 @@ async function sendForEvent(payload: Payload, event: LifecycleEvent): Promise<vo
   const forUser = async (userId: number) => loadPerson(payload, { type: 'user', id: userId })
 
   switch (event.type) {
+    case 'lesson_completed':
+      await attributeConversion(payload, event.userId, 'lesson')
+      return
     case 'first_payment_success': {
+      await attributeConversion(payload, event.userId, 'subscribed')
       const person = await forUser(event.userId)
       if (!person) return
       const t1 = stage(`order:${event.orderId}`, 0, event.courseId)
@@ -124,6 +130,7 @@ async function sendForEvent(payload: Payload, event: LifecycleEvent): Promise<vo
       return
     }
     case 'resubscribed': {
+      await attributeConversion(payload, event.userId, 'restarted')
       const person = await forUser(event.userId)
       if (!person) return
       const order = await payload.find({ collection: 'orders', where: { and: [{ user: { equals: event.userId } }, { status: { equals: 'success' } }] }, sort: '-createdAt', limit: 1, depth: 0, overrideAccess: true })
@@ -142,6 +149,7 @@ async function sendForEvent(payload: Payload, event: LifecycleEvent): Promise<vo
       if (!person) return
       const subject = `sub:${event.subscriptionId}`
       const amount = owner.planPrice ?? undefined
+      if (event.type === 'renewal_success' && event.recovered) await attributeConversion(payload, owner.userId, 'recovered')
       if (event.type === 'renewal_success') {
         await sendEventStep(payload, person, event.recovered ? 'T7' : 'T2', stage(subject, day, owner.courseId), undefined, { amount, paidAt: lagosDay(now), ...(event.reference ? { reference: event.reference } : {}) })
       } else if (event.type === 'invoice_upcoming') {
@@ -180,6 +188,7 @@ async function sendForEvent(payload: Payload, event: LifecycleEvent): Promise<vo
       return
     }
     case 'certificate_issued': {
+      await attributeConversion(payload, event.userId, 'certificate')
       const person = await forUser(event.userId)
       if (person) await sendEventStep(payload, person, 'T9', stage(`cert:${event.courseId}`, 0, event.courseId), undefined, event.receipt ?? {})
       return

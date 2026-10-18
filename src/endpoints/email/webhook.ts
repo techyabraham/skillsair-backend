@@ -3,6 +3,7 @@ import { asyncHandler, jsonResponse } from '../../middleware/validate.js'
 import { emailWebhookRateLimiter } from '../../lib/rate-limiter.js'
 import { verifySvixSignature } from '../../lib/svix.js'
 import { logger, logSecurityEvent } from '../../lib/logger.js'
+import { markMessageOutcome } from '../../lib/lifecycle/attribution.js'
 
 /**
  * POST /api/email/webhook: Resend delivery events (signed with Svix).
@@ -117,6 +118,7 @@ async function handle(req: PayloadRequest): Promise<Response> {
     case 'email.complained': {
       let updated = 0
       for (const email of emails) updated += await suppress(req.payload, email, 'complained')
+      await markMessageOutcome(req.payload, { providerId }, 'complainedAt')
       logger.warn({ providerId, records: updated }, 'email_complaint_suppressed')
       break
     }

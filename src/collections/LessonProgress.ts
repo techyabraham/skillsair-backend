@@ -38,9 +38,13 @@ export const LessonProgress: CollectionConfig = {
   ],
   hooks: {
     afterChange: [
-      async ({ doc, req }) => {
+      async ({ doc, previousDoc, req }) => {
         const studentId = relationId(doc.student)
         if (studentId === undefined) return doc
+        if (doc.isCompleted && !previousDoc?.isCompleted) {
+          const { onLifecycleEvent } = await import('../lib/lifecycle/events.js')
+          await onLifecycleEvent(req.payload, { type: 'lesson_completed', userId: Number(studentId), courseId: Number(relationId(doc.course)) })
+        }
         try {
           const student = await req.payload.findByID({ collection: 'users', id: studentId, depth: 0, overrideAccess: true })
           const last = Date.parse(String((student as { lifecycle?: { lastLearningAt?: string | null } }).lifecycle?.lastLearningAt ?? ''))

@@ -23,7 +23,10 @@ export interface EmailTemplate<T> {
   preheader(data: T): string
   html(data: T, links?: FooterLinks): string
   text(data: T, links?: FooterLinks): string
-  render(data: T, links?: FooterLinks): RenderedEmail
+  /** variant 0 is the main subject line; 1.. are the A/B alternatives. */
+  render(data: T, links?: FooterLinks, variant?: number): RenderedEmail
+  /** How many subject lines this template has (1 = no A/B test). */
+  variantCount: number
   /** Renders the sample data, with placeholder footer links. */
   renderSample(): RenderedEmail
 }
@@ -37,6 +40,8 @@ export interface EmailDefinition<T> {
   subject: (data: T) => string
   preheader: (data: T) => string
   body: (data: T) => EmailBody
+  /** A/B alternatives to subject + preheader (brief section 12). Body stays the same. */
+  variants?: Array<{ subject: (data: T) => string; preheader: (data: T) => string }>
 }
 
 /** "{{firstName}}" with its fallback. */
@@ -48,15 +53,16 @@ const SAMPLE_LINKS: FooterLinks = {
 }
 
 export function defineEmail<T>(definition: EmailDefinition<T>): EmailTemplate<T> {
-  const layout = (data: T, links: FooterLinks = {}) => {
+  const layout = (data: T, links: FooterLinks = {}, variant = 0) => {
+    const alternative = variant > 0 ? definition.variants?.[variant - 1] : undefined
     const body = definition.body(data)
     const button = body.button
       ? { ...body.button, url: withUtm(body.button.url, definition.kind, definition.track, definition.stepId) }
       : undefined
     return {
       kind: definition.kind,
-      subject: definition.subject(data),
-      preheader: definition.preheader(data),
+      subject: (alternative?.subject ?? definition.subject)(data),
+      preheader: (alternative?.preheader ?? definition.preheader)(data),
       ...body,
       button,
       ...(definition.kind === 'transactional' ? {} : links),
@@ -72,8 +78,9 @@ export function defineEmail<T>(definition: EmailDefinition<T>): EmailTemplate<T>
     preheader: definition.preheader,
     html: (data, links) => renderHtml(layout(data, links)),
     text: (data, links) => renderText(layout(data, links)),
-    render: (data, links) => {
-      const input = layout(data, links)
+    variantCount: 1 + (definition.variants?.length ?? 0),
+    render: (data, links, variant = 0) => {
+      const input = layout(data, links, variant)
       return { subject: input.subject, preheader: input.preheader, html: renderHtml(input), text: renderText(input) }
     },
     renderSample: () => template.render(definition.sample, SAMPLE_LINKS),

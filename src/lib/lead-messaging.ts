@@ -5,6 +5,7 @@ import { buildOffer, type OfferCourseDoc } from './offers.js'
 import { bodyParams, quickReplyButton, sendTemplate, urlButton, type WhatsAppSendResult } from './whatsapp.js'
 import { sendEmail } from './resend.js'
 import { A0 } from '../emails/lifecycle/track-a.js'
+import { variantFor, variantLabel } from './lifecycle/templates.js'
 import { QUICK_REPLY_PAYLOADS } from '../content/whatsapp-replies.js'
 import { buildMessageData, loadPerson, loadWindow } from './lifecycle/context.js'
 import { recordMessage } from './lifecycle/send.js'
@@ -80,6 +81,7 @@ export async function sendOfferMessages(payload: Payload, leadId: number): Promi
     }
   }
 
+  let a0Variant: string | null = null
   if (!hasFollowUp(lead, 'email_offer') && isDeliverableEmail(lead.email) && !(lead as unknown as { emailSuppressed?: string | null }).emailSuppressed) {
     try {
       // A0: the offer they asked for (transactional), with the same data as every lifecycle email.
@@ -87,7 +89,9 @@ export async function sendOfferMessages(payload: Payload, leadId: number): Promi
       if (!person) throw new Error('lead not found')
       const window = await loadWindow(payload)
       const data = await buildMessageData(payload, person, { track: 'A', subjectId: `lead:${lead.id}`, enteredAt: Date.now(), cycle: 0, courseId: Number(courseId) }, window)
-      await sendEmail(lead.email, A0.render(data), { tags: { track: 'A', step: 'A0' } })
+      const variant = variantFor('A0', person.snapshot.key)
+      a0Variant = variantLabel(variant)
+      await sendEmail(lead.email, A0.render(data, {}, variant), { tags: { track: 'A', step: 'A0' } })
       followUps.push({ key: 'email_offer', sentAt: now })
     } catch (err) {
       logger.error({ err, leadId }, 'lead_offer_email_failed')
@@ -114,7 +118,7 @@ export async function sendOfferMessages(payload: Payload, leadId: number): Promi
       if (person) {
         await recordMessage(payload, {
           person, channel: email ? 'email' : 'whatsapp', kind: 'transactional', track: 'A', stepId, template,
-          subjectId: `lead:${lead.id}`, cycle, idempotencyKey: idempotencyKey('A', stepId, `lead:${lead.id}`, cycle), status: 'sent', sentAt: item.sentAt,
+          subjectId: `lead:${lead.id}`, cycle, idempotencyKey: idempotencyKey('A', stepId, `lead:${lead.id}`, cycle), status: 'sent', sentAt: item.sentAt, variant: email ? a0Variant : null,
         }).catch((err: unknown) => logger.error({ err, leadId }, 'lead_offer_message_log_failed'))
       }
     }

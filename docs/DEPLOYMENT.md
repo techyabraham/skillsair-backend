@@ -247,9 +247,11 @@ Optional extra checks:
 
 ## 9. Lifecycle emails (email-lifecycle/phase-1)
 
-1. Run migrations `20261017_090000_email_lifecycle` and `20261018_090000_email_content`, then once: `npm run migrate:followups -- --execute`.
+1. Run migrations `20261017_090000_email_lifecycle`, `20261018_090000_email_content` and `20261018_120000_message_outcomes`, then once: `npm run migrate:followups -- --execute`.
 2. Set up the sender domains, DMARC and the Resend webhook: `docs/email-deliverability.md`. Set `RESEND_WEBHOOK_SECRET`.
 3. Submit WhatsApp templates 8–13 (`docs/whatsapp-templates.md`).
 4. Leave `LIFECYCLE_DRY_RUN=true` for 48 hours, then check `npm run lifecycle:dry-run`.
 5. Switch tracks on one at a time with `LIFECYCLE_DRY_RUN=false` and `LIFECYCLE_LIVE_TRACKS` (T,D → B → A → I → R → C → G → X).
 6. Optional content in the admin: Email content (founder anecdote, approved proof), each school's free exercise, each programme's next programmes, the laptop-application deadline.
+
+The full switch-on procedure and acceptance checks are in `docs/lifecycle-switch-on.md`; results are in **Admin → Lifecycle emails** (`/admin/lifecycle`).

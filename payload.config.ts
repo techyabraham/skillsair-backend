@@ -100,6 +100,11 @@ export default buildConfig({
           Component: '/src/admin/SkillsAirDashboard#SkillsAirDashboard',
           meta: { title: 'Overview · SkillsAir Studio' },
         },
+        lifecycle: {
+          Component: '/src/admin/LifecycleView#LifecycleView',
+          path: '/lifecycle',
+          meta: { title: 'Lifecycle emails' },
+        },
       },
     },
   },

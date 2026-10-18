@@ -5,6 +5,7 @@ import { emailPrefsRateLimiter } from '../../lib/rate-limiter.js'
 import { verifyEmailToken, type EmailTokenClaims } from '../../lib/email-tokens.js'
 import { changeForCategory, loadEmailPreferences, saveEmailPreferences } from '../../lib/email-preferences.js'
 import { logger } from '../../lib/logger.js'
+import { markMessageOutcome } from '../../lib/lifecycle/attribution.js'
 import { AppError } from '../../types/index.js'
 
 function tokenFromUrl(req: PayloadRequest): string {
@@ -45,6 +46,7 @@ async function savePreferences(req: PayloadRequest): Promise<Response> {
     'preference_centre',
   )
   if (!preferences) throw new AppError('NOT_FOUND', 'This link has expired or is not valid.')
+  if (claims.message && (body.unsubscribeAll || body.offers === false || body.learningReminders === false)) await markMessageOutcome(req.payload, { idempotencyKey: claims.message }, 'unsubscribedAt')
   logger.info({ audience: claims.type, id: claims.id, offers: preferences.offers, learningReminders: preferences.learningReminders }, 'email_preferences_saved')
   return sendSuccess(preferences)
 }
@@ -58,6 +60,7 @@ async function oneClickUnsubscribe(req: PayloadRequest): Promise<Response> {
   const claims = verifyEmailToken(tokenFromUrl(req))
   if (!claims) return jsonResponse({ success: false, error: { code: 'NOT_FOUND', message: 'Invalid unsubscribe link' } }, 404)
   await saveEmailPreferences(req.payload, claims, changeForCategory(claims.category), 'one_click_unsubscribe')
+  if (claims.message) await markMessageOutcome(req.payload, { idempotencyKey: claims.message }, 'unsubscribedAt')
   logger.info({ audience: claims.type, id: claims.id, category: claims.category }, 'email_one_click_unsubscribe')
   return sendSuccess({ unsubscribed: true, category: claims.category })
 }
