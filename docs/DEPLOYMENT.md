@@ -80,7 +80,7 @@ The admin service shares the same database and config. Give it the same database
 
 ### Backend: migration runner
 
-The same `DATABASE_URI`, `PAYLOAD_SECRET` and settings as the API, from the **same commit**.
+A separate Coolify application from the same repository and branch, built with `/Dockerfile.migrate` (no domain, no port). It stays running so you can open its **Terminal** and run the migration and seed commands; the API image can't run them. Copy the API's environment variables (`DATABASE_URI`, `PAYLOAD_SECRET`, `JWT_SECRET`, `ENCRYPTION_KEY`, `REDIS_URL`, `PAYSTACK_SECRET_KEY`, `FRONTEND_URL`...) **except `PAYLOAD_CONFIG_PATH`** (the image sets it to the source config). Redeploy it whenever you redeploy the API, so it's always on the same commit.
 
 ### Frontend
 
@@ -144,7 +144,7 @@ Then the prices. Run these only after the new frontend is live: the old frontend
 
 The seed also creates **two monthly Paystack plans per paid programme** (₦2,000/month "Access Scholarship" and ₦40,000/month "Standard"), so it needs `PAYSTACK_SECRET_KEY` on the machine you run it from. It only creates plans that don't exist yet. Use the **live** key in production; plans created with a test key don't exist in live mode.
 
-From the API container (Coolify → API → Terminal), or locally against production with care:
+From the **migration runner's** terminal (Coolify → migration-runner app → Terminal), not the API's: the API image only contains compiled code, without the tools these scripts need. The same applies to every `npm run seed:*`, `migrate`, `migrate:followups` and `lifecycle:dry-run` command in this guide:
 
 ```bash
 npm run seed:rebuild-pricing
