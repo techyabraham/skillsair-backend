@@ -2,9 +2,9 @@ import type { Endpoint, PayloadRequest } from 'payload'
 import { sendSuccess, asyncHandler } from '../../middleware/validate.js'
 import { requireAuth } from '../../middleware/authenticate.js'
 import { disableSubscription } from '../../lib/paystack.js'
-import { subscriptionCancelledEmail, sendEmail } from '../../lib/resend.js'
 import { AppError } from '../../types/index.js'
 import { logger } from '../../lib/logger.js'
+import { onLifecycleEvent } from '../../lib/lifecycle/events.js'
 import { z } from 'zod'
 import { parseBody, readJsonBody } from '../../middleware/validate.js'
 import { isValidPayloadId } from '../../utils/sanitize.js'
@@ -19,10 +19,6 @@ interface SubscriptionDoc {
   currentPeriodEnd: string | null | undefined
 }
 
-interface UserDoc {
-  email: string
-  firstName: string
-}
 
 const FRONTEND_URL = process.env.FRONTEND_URL ?? 'https://skillsair.com'
 
@@ -34,7 +30,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
 
   const subscriptions = await payload.find({
     collection: 'subscriptions',
-    where: { and: [{ id: { equals: body.subscriptionId } }, { user: { equals: user.id } }, { status: { equals: 'active' } }] },
+    where: { and: [{ id: { equals: body.subscriptionId } }, { user: { equals: user.id } }, { status: { in: ['active', 'past_due'] } }] },
     limit: 1,
   })
   const subscription = subscriptions.docs[0] as unknown as SubscriptionDoc | undefined
@@ -54,23 +50,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
     data: { status: 'cancelled', cancelledAt: new Date().toISOString() },
     overrideAccess: true,
   })
-
-  const userDoc = (await payload.findByID({
-    collection: 'users',
-    id: user.id,
-    depth: 0,
-  })) as unknown as UserDoc
-  const accessEndDate = subscription.currentPeriodEnd
-    ? new Date(subscription.currentPeriodEnd).toLocaleDateString('en-GB')
-    : 'the end of the current billing period'
-  try {
-    await sendEmail(
-      userDoc.email,
-      subscriptionCancelledEmail(userDoc.firstName, accessEndDate, `${FRONTEND_URL}/subscriptions`),
-    )
-  } catch (err) {
-    logger.error({ err, subscriptionId: subscription.id }, 'subscription_cancelled_email_failed')
-  }
+  await onLifecycleEvent(payload, { type: 'subscription_cancelled', subscriptionId: Number(subscription.id), source: 'learner' })
 
   return sendSuccess(updated)
 }

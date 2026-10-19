@@ -4,6 +4,8 @@ SkillsAir sends WhatsApp messages through the **Meta WhatsApp Cloud API** (`src/
 
 The owner submits these templates in **WhatsApp Manager → Message templates**. Template names, languages, button order and quick-reply payloads must match exactly, because the backend refers to them by name and button index.
 
+**Certificate price (owner, 2026-10-18):** templates for applicants and learners who haven't finished never quote the certificate fee. Only `skillsair_course_complete` (7) and `skillsair_certificate_reminder` (12), sent after a learner finishes, state it. Templates 2–4 were edited for this and need (re)submitting.
+
 ## Submission rules
 
 - Language: `en` (English).
@@ -89,7 +91,7 @@ Your offer is valid until {{3}}. Tap "View my offer" to see it, or tap a button 
 ```
 Hi {{1}}, it's Imisi from SkillsAir.
 
-Your Access Scholarship seat for {{2}} is still waiting for you. You start for just ₦2,000 a month, learn at your own pace and most people finish in 3 months. When you're done, your verifiable certificate is ₦10,000.
+Your Access Scholarship seat for {{2}} is still waiting for you. You start for just ₦2,000 a month, learn at your own pace (it's designed to take about 3 months), and claim an optional verifiable certificate when you finish.
 
 Not sure yet? Watch a free lesson first. The scholarship price closes on {{3}}, so don't leave it too late.
 ```
@@ -111,7 +113,7 @@ Hi {{1}}, a quick heads-up from Imisi at SkillsAir.
 
 The Access Scholarship closes on {{2}}. After that, {{3}} goes back to the standard fee (₦40,000 a month, or ₦100,000 once) until the next window opens.
 
-Today you can still start for ₦2,000 a month (plus ₦10,000 for your certificate when you finish). If you've been waiting for the right time, this is it.
+Today you can still start for ₦2,000 a month, locked until you finish. If you've been waiting for the right time, this is it.
 ```
 
 **Footer:** `Reply STOP to opt out`
@@ -127,7 +129,7 @@ Today you can still start for ₦2,000 a month (plus ₦10,000 for your certific
 ```
 Hi {{1}}, good news from SkillsAir 🎉
 
-You asked us to tell you when the Access Scholarship reopened. It's open now: start {{2}} for ₦2,000 a month instead of ₦40,000 a month, learn at your own pace, and finish in about 3 months. Your certificate is ₦10,000 when you're done.
+You asked us to tell you when the Access Scholarship reopened. It's open now: start {{2}} for ₦2,000 a month instead of ₦40,000 a month, learn at your own pace (it's designed to take about 3 months).
 
 This window closes on {{3}}, so grab your seat while it's open.
 ```
@@ -188,6 +190,112 @@ Tap below to claim it whenever you're ready.
 **Buttons:** URL `Claim my certificate` → `https://skillsair.com/checkout?certificate={{1}}`
 
 **Samples:** Tobi · Data Analysis · URL `data-analysis`
+
+---
+
+## Lifecycle templates (8–13)
+
+Submit these with the lifecycle email release (approval can take a few days). They all use **one URL button with a variable path**: `https://skillsair.com/{{1}}`. The backend fills the path (for example `billing/update-card?subscription=9` or `checkout?course=data-analysis`), so one approved template works for every programme. Marketing templates carry the footer **Reply STOP to opt out**. If Meta reclassifies a utility template as marketing, note it here: the engine then only sends it to people with marketing consent.
+
+The engine sends each one at most once per event (logged in the `messages` collection). Until a template is approved, sends fail quietly and are logged as skipped.
+
+## 8. `skillsair_payment_failed` (Utility) · D1
+
+Sent with email D1 on the first failed renewal. Paystack doesn't retry a failed renewal, so the button takes the learner to pay this month's ₦2,000 (at their locked rate).
+
+**Body:**
+
+```
+Hi {{1}}, your ₦2,000 monthly renewal for {{2}} didn't go through today.
+
+You keep access for {{3}} more days. Pay this month's ₦2,000 with the button below (same card or a different one) and you won't lose a day.
+```
+
+**Buttons:** URL `Pay ₦2,000` → `https://skillsair.com/{{1}}` · Quick reply `Talk to Imisi`
+
+**Samples:** Tobi · Data Analysis · 3 · URL `billing/update-card?subscription=9`
+
+## 9. `skillsair_access_paused` (Utility) · T6
+
+**Body:**
+
+```
+Hi {{1}}, your {{2}} access is paused because your plan has ended.
+
+Your progress is saved ({{3}}% done). Restart anytime at your locked rate of ₦2,000 a month.
+```
+
+**Buttons:** URL `Restart` → `https://skillsair.com/{{1}}` · Quick reply `Talk to Imisi`
+
+**Samples:** Tobi · Data Analysis · 45 · URL `checkout?course=data-analysis`
+
+## 10. `skillsair_learning_nudge` (Marketing, expected) · I2
+
+Only if email I2 wasn't opened within 24 hours, and only with marketing consent.
+
+**Body:**
+
+```
+Hi {{1}}, it's Imisi from SkillsAir. You haven't been back to {{2}} for a while.
+
+Your next lesson is ready: "{{3}}". Can you give it 20 minutes today?
+```
+
+**Footer:** `Reply STOP to opt out`
+
+**Buttons:** URL `Continue` → `https://skillsair.com/{{1}}` · Quick reply `I'm stuck` (puts the learner in Imisi's queue)
+
+**Samples:** Tobi · Data Analysis · Cleaning messy data · URL `dashboard/courses/data-analysis/learn`
+
+## 11. `skillsair_resume_offer` (Marketing) · R2
+
+**Body:**
+
+```
+Hi {{1}}, it's Imisi. Your {{2}} progress is still saved ({{3}}% done).
+
+Your rate is locked at ₦2,000 a month, even though new learners pay more. Restart whenever you're ready.
+```
+
+**Footer:** `Reply STOP to opt out`
+
+**Buttons:** URL `Restart` → `https://skillsair.com/{{1}}` · Quick reply `Talk to Imisi`
+
+**Samples:** Tobi · Data Analysis · 45 · URL `checkout?course=data-analysis`
+
+## 12. `skillsair_certificate_reminder` (Marketing) · C2
+
+**Body:**
+
+```
+Hi {{1}}, congratulations again on finishing {{2}} 🎓
+
+Your certificate is ready to claim for ₦10,000. It's your key to internship openings from our partner firms and to laptop support applications.
+```
+
+**Footer:** `Reply STOP to opt out`
+
+**Buttons:** URL `Claim my certificate` → `https://skillsair.com/{{1}}`
+
+**Samples:** Tobi · Data Analysis · URL `checkout?certificate=data-analysis`
+
+## 13. `skillsair_next_programme` (Marketing) · G2
+
+The owner's rule: the ₦2,000-a-month rate carries over to a new programme only within 3 days of finishing (that offer is in the completion email), so this template quotes no price.
+
+**Body:**
+
+```
+Hi {{1}}, congratulations again on your {{2}} certificate.
+
+{{3}} pairs well with it, and two certificates make a much stronger CV than one. See what it covers and what it costs today.
+```
+
+**Footer:** `Reply STOP to opt out`
+
+**Buttons:** URL `See next programme` → `https://skillsair.com/{{1}}`
+
+**Samples:** Tobi · Data Analysis · Product Management · URL `programmes/product-management`
 
 ---
 

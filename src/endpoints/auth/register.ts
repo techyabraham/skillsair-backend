@@ -99,6 +99,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
             marketingConsent: 'opted_in',
             marketingConsentAt: consentFromLead ? lead?.marketingConsentAt ?? now : now,
             marketingConsentSource: consentFromLead ? 'lead' : 'web_register',
+            lifecycle: { emailPrefs: { offers: true, learningReminders: true } },
           }
         : {}),
     },

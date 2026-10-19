@@ -1,6 +1,6 @@
 import type { Endpoint, PayloadRequest } from 'payload'
 import { asyncHandler, getParam, sendSuccess } from '../../middleware/validate.js'
-import { resolveLeadRequest } from '../../lib/leads.js'
+import { relationId, resolveLeadRequest } from '../../lib/leads.js'
 import { buildOffer, findPublishedCourseBySlug } from '../../lib/offers.js'
 import { AppError } from '../../types/index.js'
 
@@ -13,10 +13,11 @@ async function handler(req: PayloadRequest): Promise<Response> {
   const course = await findPublishedCourseBySlug(req.payload, slug)
   if (!course) throw new AppError('NOT_FOUND', 'Programme not found')
 
-  const offer = await buildOffer(req.payload, course)
+  const userId = user?.id ?? relationId(lead?.user)
+  const offer = await buildOffer(req.payload, course, userId ? Number(userId) : undefined)
 
   // Leads who see the closed state join the waitlist for the next window.
-  if (lead && !offer.windowOpen && !lead.waitlist) {
+  if (lead && !offer.windowOpen && !offer.priceLocked && !lead.waitlist) {
     await req.payload.update({
       collection: 'leads',
       id: lead.id,

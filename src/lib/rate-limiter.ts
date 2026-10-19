@@ -63,3 +63,7 @@ export const adminRateLimiter = createPayloadRateLimiter('admin', 60, 15 * 60)
 export const leadRateLimiter = createPayloadRateLimiter('lead', 10, 15 * 60)
 export const leadResumeRateLimiter = createPayloadRateLimiter('lead-resume', 30, 15 * 60)
 export const leadUpdateRateLimiter = createPayloadRateLimiter('lead-update', 60, 15 * 60)
+/** Preference centre reads and saves, per person in the signed link. */
+export const emailPrefsRateLimiter = createPayloadRateLimiter('email-prefs', 30, 15 * 60)
+/** Webhooks from email providers, per source IP (Resend sends in bursts). */
+export const emailWebhookRateLimiter = createPayloadRateLimiter('email-webhook', 600, 60)

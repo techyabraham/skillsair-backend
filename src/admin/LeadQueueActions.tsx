@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { useDocumentInfo } from '@payloadcms/ui'
+import { EMAIL_QUICK_REPLIES } from '../content/email-replies'
 
 /**
  * Imisi's queue actions on a lead: reply on WhatsApp (inside the 24-hour window) and
@@ -42,6 +43,18 @@ export function LeadQueueActions() {
   return (
     <div style={box}>
       <h3 style={{ marginTop: 0 }}>Imisi&apos;s queue</h3>
+      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 10 }} aria-label="Suggested replies">
+        {EMAIL_QUICK_REPLIES.map((reply) => (
+          <button
+            key={reply.label}
+            type="button"
+            onClick={() => setBody(reply.body)}
+            style={{ padding: '4px 10px', borderRadius: 999, border: '1px solid var(--theme-elevation-250)', background: 'transparent', cursor: 'pointer', fontSize: 13 }}
+          >
+            {reply.label}
+          </button>
+        ))}
+      </div>
       <label htmlFor="lead-wa-reply" style={{ display: 'block', marginBottom: 6 }}>
         Reply on WhatsApp (only within 24 hours of their last message)
       </label>
@@ -83,7 +96,7 @@ export function LeadQueueActions() {
         </p>
       )}
       <p style={{ marginTop: 12, fontSize: 13, opacity: 0.75 }}>
-        Tip: open Leads → filter &ldquo;Needs human&rdquo; is true → sort by Score (highest first) for the queue. If this number can use WhatsApp Business app coexistence, you can reply from the app instead.
+        Suggested replies fill the box: edit the [bracketed] parts first. They suit email replies too (hello@skillsair.com). Tip: open Leads → filter &ldquo;Needs human&rdquo; is true → sort by Score (highest first) for the queue. If this number can use WhatsApp Business app coexistence, you can reply from the app instead.
       </p>
     </div>
   )

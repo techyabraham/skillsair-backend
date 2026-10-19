@@ -1,10 +1,10 @@
 import type { CollectionAfterChangeHook, Payload } from 'payload'
 import { generateCertificatePdf, uploadCertificatePdf } from '../../lib/pdf-certificate.js'
 import { generateCertificateCode } from '../../utils/generate-code.js'
-import { courseCompletionEmail, certificateUnlockedEmail, sendEmail } from '../../lib/resend.js'
 import { logger } from '../../lib/logger.js'
 import { certificatePrice } from '../../lib/pricing.js'
-import { sendCourseCompleteMessage } from '../../lib/lead-followups.js'
+import { disableAtPaystack, stopBillingOnComplete } from '../../lib/billing.js'
+import { onLifecycleEvent } from '../../lib/lifecycle/events.js'
 
 interface UserDoc {
   email: string
@@ -28,11 +28,43 @@ function relationId(value: unknown): number | string | undefined {
 
 const FRONTEND_URL = process.env.FRONTEND_URL ?? 'https://skillsair.com'
 
+/**
+ * "Billed monthly until you finish": when a learner completes a programme, its monthly plan is
+ * switched off at Paystack. They keep access to the end of the month they've paid for.
+ * Owner switch: STOP_BILLING_ON_COMPLETE=false keeps billing until the learner cancels.
+ */
+export async function stopBillingForCompletedProgramme(payload: Payload, studentId: number | string, courseId: number | string): Promise<boolean> {
+  if (!stopBillingOnComplete()) return false
+  const live = await payload.find({
+    collection: 'subscriptions',
+    where: { and: [{ user: { equals: studentId } }, { course: { equals: courseId } }, { status: { in: ['active', 'past_due'] } }] },
+    limit: 5,
+    depth: 0,
+    overrideAccess: true,
+  })
+  let stopped = false
+  for (const doc of live.docs as unknown as Array<{ id: number; status: string; paystackSubscriptionCode?: string | null; paystackEmailToken?: string | null }>) {
+    const disabled = await disableAtPaystack(doc, 'programme_completed')
+    if (!disabled) continue
+    await payload.update({
+      collection: 'subscriptions',
+      id: doc.id,
+      // An active plan runs to the end of its paid month; a past-due one has nothing left to run.
+      data: { status: doc.status === 'active' ? 'cancelled' : 'expired', cancelledAt: new Date().toISOString() },
+      overrideAccess: true,
+    })
+    stopped = true
+  }
+  return stopped
+}
+
 /** Generates and uploads a course-completion certificate PDF, records it, and emails the student. */
 export async function issueCertificate(
   payload: Payload,
   studentId: number | string,
   courseId: number | string,
+  /** The paid certificate order, shown as a receipt in the certificate email (T9). */
+  receipt?: { reference: string; amount: number; paidAt: string },
 ): Promise<unknown> {
   const existing = await payload.find({
     collection: 'certificates',
@@ -96,8 +128,8 @@ export async function issueCertificate(
     overrideAccess: true,
   })
 
-  await sendEmail(student.email, courseCompletionEmail(student.firstName, course.title, verificationUrl))
-  await sendEmail(student.email, certificateUnlockedEmail(student.firstName, pdfUrl, verificationUrl))
+
+  await onLifecycleEvent(payload, { type: 'certificate_issued', userId: Number(studentId), courseId: Number(courseId), ...(receipt ? { receipt: { ...receipt, paidAt: new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Africa/Lagos' }).format(new Date(receipt.paidAt)) } } : {}) })
 
   return certificate
 }
@@ -106,16 +138,26 @@ export const afterComplete: CollectionAfterChangeHook = async ({ doc, previousDo
   if (operation !== 'update') return doc
   if (doc.status !== 'completed' || previousDoc?.status === 'completed') return doc
 
-  if (certificatePrice() > 0) {
-    const studentId = relationId(doc.student)
-    const courseId = relationId(doc.course)
-    if (studentId !== undefined && courseId !== undefined) {
-      void sendCourseCompleteMessage(req.payload, Number(studentId), Number(courseId)).catch((err: unknown) =>
-        logger.error({ err, enrollmentId: doc.id }, 'course_complete_message_failed'),
-      )
+  const completedStudentId = relationId(doc.student)
+  const completedCourseId = relationId(doc.course)
+  if (completedStudentId !== undefined && completedCourseId !== undefined) {
+    let billingStopped = false
+    try {
+      billingStopped = await stopBillingForCompletedProgramme(req.payload, completedStudentId, completedCourseId)
+    } catch (err) {
+      logger.error({ err, enrollmentId: doc.id }, 'stop_billing_on_complete_failed')
     }
-    return doc
+    await onLifecycleEvent(req.payload, {
+      type: 'enrollment_completed',
+      userId: Number(completedStudentId),
+      courseId: Number(completedCourseId),
+      enrollmentId: Number(doc.id),
+      billingStopped,
+    })
   }
+
+  // With a certificate fee, the completion email (T8, sent through the completion event above) offers it.
+  if (certificatePrice() > 0) return doc
   try {
     const studentId = relationId(doc.student)
     const courseId = relationId(doc.course)

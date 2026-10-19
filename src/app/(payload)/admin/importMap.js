@@ -29,6 +29,7 @@ import { LeadQueueActions as LeadQueueActions_f2886d308bcfa61243caf7fff8870b53 }
 import { LeadQueueLinks as LeadQueueLinks_d9d6aca1878ea58cc77884ab64cc2a31 } from '../../../../src/admin/LeadQueueLinks'
 import { S3ClientUploadHandler as S3ClientUploadHandler_f97aa6c64367fa259c5bc0567239ef24 } from '@payloadcms/storage-s3/client'
 import { SkillsAirDashboard as SkillsAirDashboard_0585c5b60f62f795e2fe29b49719daca } from '../../../../src/admin/SkillsAirDashboard'
+import { LifecycleView as LifecycleView_127634a7eaf3b1f364c264a5bf055a42 } from '../../../../src/admin/LifecycleView'
 import { CollectionCards as CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1 } from '@payloadcms/next/rsc'
 
 /** @type import('payload').ImportMap */
@@ -64,5 +65,6 @@ export const importMap = {
   "/src/admin/LeadQueueLinks#LeadQueueLinks": LeadQueueLinks_d9d6aca1878ea58cc77884ab64cc2a31,
   "@payloadcms/storage-s3/client#S3ClientUploadHandler": S3ClientUploadHandler_f97aa6c64367fa259c5bc0567239ef24,
   "/src/admin/SkillsAirDashboard#SkillsAirDashboard": SkillsAirDashboard_0585c5b60f62f795e2fe29b49719daca,
+  "/src/admin/LifecycleView#LifecycleView": LifecycleView_127634a7eaf3b1f364c264a5bf055a42,
   "@payloadcms/next/rsc#CollectionCards": CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1
 }

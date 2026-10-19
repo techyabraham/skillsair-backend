@@ -2,6 +2,7 @@ import cron from 'node-cron'
 import { getPayload } from 'payload'
 import type { SanitizedConfig } from 'payload'
 import { logger } from '../lib/logger.js'
+import { onLifecycleEvent } from '../lib/lifecycle/events.js'
 
 interface UserDoc {
   id: number
@@ -25,8 +26,14 @@ async function auditExpiredAccess(config: Promise<SanitizedConfig> | SanitizedCo
     overrideAccess: true,
   })
 
+  // The job runs daily, so only access that ended in the last 24 hours is new; older expiries
+  // were reported on an earlier run and mustn't restart the win-back emails again.
+  const since = Date.now() - 24 * 60 * 60 * 1000
   for (const doc of expired.docs as unknown as UserDoc[]) {
     logger.info({ userId: doc.id, accessExpiresAt: doc.accessExpiresAt }, 'user_access_expired')
+    if (doc.accessExpiresAt && Date.parse(doc.accessExpiresAt) >= since) {
+      await onLifecycleEvent(payload, { type: 'access_ended', userId: doc.id, reason: 'legacy_access_expired' })
+    }
   }
 
   logger.info({ expiredCount: expired.totalDocs }, 'access_expiry_audit_complete')

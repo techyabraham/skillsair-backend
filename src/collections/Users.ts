@@ -185,6 +185,34 @@ export const Users: CollectionConfig = {
       type: 'date',
       access: { create: isAdmin, update: isAdmin },
     },
+    {
+      name: 'lifecycle',
+      type: 'group',
+      admin: { description: 'Lifecycle email state. Preferences are changed by the learner from the email preference centre.' },
+      access: { create: isAdmin, update: isAdmin },
+      fields: [
+        { name: 'lastLearningAt', type: 'date', admin: { description: 'Last lesson progress; drives inactivity nudges.' } },
+        {
+          name: 'emailPrefs',
+          type: 'group',
+          fields: [
+            { name: 'offers', type: 'checkbox', defaultValue: false, admin: { description: 'Offers and scholarship news. Also needs marketing consent.' } },
+            { name: 'learningReminders', type: 'checkbox', defaultValue: true },
+          ],
+        },
+        {
+          name: 'emailSuppressed',
+          type: 'select',
+          options: [
+            { label: 'Hard bounce', value: 'bounced' },
+            { label: 'Spam complaint', value: 'complained' },
+          ],
+          admin: { description: 'Set by the Resend webhook. No email of any kind is sent, except a password reset.' },
+        },
+        { name: 'lastEngagedAt', type: 'date', admin: { description: 'Last email click, WhatsApp reply or site visit.' } },
+        { name: 'sunsetAt', type: 'date', admin: { description: 'Marketing stopped after 90 days without engagement.' } },
+      ],
+    },
   ],
   timestamps: true,
 }

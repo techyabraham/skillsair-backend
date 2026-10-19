@@ -19,7 +19,7 @@ const { registerAccessExpiryJob } = await import('./src/jobs/access-expiry.js')
 const { registerCertificateCleanupJob } = await import('./src/jobs/certificate-cleanup.js')
 const { registerOrderFulfillmentJob } = await import('./src/jobs/order-fulfillment.js')
 const { registerLeadDailySummaryJob } = await import('./src/jobs/lead-daily-summary.js')
-const { registerLeadFollowUpJob } = await import('./src/jobs/lead-followup.js')
+const { registerLifecycleJob } = await import('./src/jobs/lifecycle.js')
 const { registerScholarshipWindowJob } = await import('./src/jobs/scholarship-window.js')
 
 const app = express()
@@ -126,7 +126,7 @@ app.listen(PORT, () => {
     registerCertificateCleanupJob(config)
     registerOrderFulfillmentJob(config)
     registerLeadDailySummaryJob(config)
-    registerLeadFollowUpJob(config)
+    registerLifecycleJob(config)
     registerScholarshipWindowJob(config)
     logger.info({}, 'background_jobs_registered')
   }

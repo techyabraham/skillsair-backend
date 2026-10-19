@@ -4,6 +4,9 @@ import * as migration_20261014_080000_newsletter_subscribers from './20261014_08
 import * as migration_20261015_120000_rebuild_leads_pricing from './20261015_120000_rebuild_leads_pricing.js';
 import * as migration_20261016_090000_laptop_applications from './20261016_090000_laptop_applications.js';
 import * as migration_20261016_150000_plan_kind from './20261016_150000_plan_kind.js';
+import * as migration_20261017_090000_email_lifecycle from './20261017_090000_email_lifecycle.js';
+import * as migration_20261018_090000_email_content from './20261018_090000_email_content.js';
+import * as migration_20261018_120000_message_outcomes from './20261018_120000_message_outcomes.js';
 
 export const migrations = [
   {
@@ -35,5 +38,20 @@ export const migrations = [
     up: migration_20261016_150000_plan_kind.up,
     down: migration_20261016_150000_plan_kind.down,
     name: '20261016_150000_plan_kind'
+  },
+  {
+    up: migration_20261017_090000_email_lifecycle.up,
+    down: migration_20261017_090000_email_lifecycle.down,
+    name: '20261017_090000_email_lifecycle'
+  },
+  {
+    up: migration_20261018_090000_email_content.up,
+    down: migration_20261018_090000_email_content.down,
+    name: '20261018_090000_email_content'
+  },
+  {
+    up: migration_20261018_120000_message_outcomes.up,
+    down: migration_20261018_120000_message_outcomes.down,
+    name: '20261018_120000_message_outcomes'
   },
 ];

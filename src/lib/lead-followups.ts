@@ -8,24 +8,20 @@ import {
   hasFollowUp,
   relationId,
   scoreLeadEvent,
-  unsubscribeToken,
   type LeadDoc,
   type LeadFollowUp,
   type LeadLogEntry,
 } from './leads.js'
-import { buildOffer, type Offer, type OfferCourseDoc } from './offers.js'
 import { getScholarshipWindow, windowIsOpen } from './pricing.js'
 import { bodyParams, quickReplyButton, sendTemplate, urlButton, type TemplateComponent } from './whatsapp.js'
-import {
-  followUpCareerEmail,
-  followUpClosingEmail,
-  followUpQuickQuestionEmail,
-  sendEmail,
-  welcomeAfterPaymentEmail,
-} from './resend.js'
-import { isDeliverableEmail, resumeUrl } from './lead-messaging.js'
+import { runLifecycle } from './lifecycle/engine.js'
+import { loadPerson, loadWindow } from './lifecycle/context.js'
+import { executeStep, recordMessage } from './lifecycle/send.js'
+import { stepById } from './lifecycle/sequences.js'
+import { idempotencyKey, type PlannedStep } from './lifecycle/plan.js'
+import { windowCycle } from './lifecycle/stage.js'
+import type { Stage } from './lifecycle/types.js'
 import { QUICK_REPLY_PAYLOADS } from '../content/whatsapp-replies.js'
-import { careerExplainer } from '../content/career-explainers.js'
 
 const FRONTEND_URL = process.env.FRONTEND_URL ?? 'https://skillsair.com'
 const HOUR = 60 * 60 * 1000
@@ -76,64 +72,25 @@ async function recordOnLead(payload: Payload, lead: LeadDoc | null, entry: LeadL
 }
 
 /**
- * Utility template when a course payment fails or stays pending. Sent once per order;
- * the lead joins Imisi's queue (+40).
+ * WhatsApp payment help (utility) when a payment fails or stays pending: the B1-WA step of
+ * Track B, sent at once when Paystack reports a failed payment. The hourly engine sends the
+ * same step for orders still pending after 2 hours; the shared message key means it goes once.
  */
 export async function sendPaymentHelp(payload: Payload, orderId: number): Promise<void> {
   const order = await payload.findByID({ collection: 'orders', id: orderId, depth: 0, overrideAccess: true }).catch(() => null)
   if (!order || (order.type !== 'course' && order.type !== 'subscription') || order.status === 'success' || order.status === 'refunded') return
-  if (!(await claimIdempotencyKey(`payment-help:${orderId}`, 60 * 24 * 60 * 60))) return
   const userId = relationId(order.user)
   const courseId = relationId(order.course)
   if (!userId || !courseId) return
-  const [user, course] = await Promise.all([getUser(payload, userId), getCourse(payload, courseId)])
-  if (!user || !course) return
-  const lead = await findLeadForUser(payload, { id: user.id, email: user.email, role: 'student' })
-  const phone = user.phone || lead?.phone
-  const now = new Date().toISOString()
-  let entry: LeadLogEntry = { direction: 'out', type: 'skipped', template: 'skillsair_payment_help', body: 'no phone', at: now }
-  if (phone) {
-    const result = await sendTemplate(phone, 'skillsair_payment_help', 'en', [
-      bodyParams(user.firstName, course.title, String(order.reference)),
-      urlButton(0, course.slug),
-      quickReplyButton(1, QUICK_REPLY_PAYLOADS.talk),
-    ])
-    entry = { direction: 'out', type: result.sent ? 'template' : result.skipped ? `template_${result.skipped}` : 'error', template: 'skillsair_payment_help', body: result.error ?? String(order.reference), at: now }
+  const person = await loadPerson(payload, { type: 'user', id: Number(userId) })
+  const step = stepById('B1-WA')
+  if (!person || !step) return
+  const stage: Stage = { track: 'B', subjectId: `order:${orderId}`, enteredAt: Date.now(), cycle: 0, courseId: Number(courseId) }
+  const planned: PlannedStep = {
+    step, stage, stepId: 'B1-WA', kind: step.kind, channel: 'whatsapp', template: step.template,
+    idempotencyKey: idempotencyKey('B', 'B1-WA', stage.subjectId, 0), dueAt: Date.now(),
   }
-  if (lead) await recordOnLead(payload, lead, entry, scoreLeadEvent(lead, { type: 'payment_failed' }) as Record<string, unknown>)
-}
-
-/** Utility template + email E after a course payment succeeds. Once per learner and course. */
-export async function sendWelcomeMessages(payload: Payload, userId: number, courseId: number): Promise<void> {
-  if (!(await claimIdempotencyKey(`welcome:${userId}:${courseId}`, 365 * 24 * 60 * 60))) return
-  const [user, course] = await Promise.all([getUser(payload, userId), getCourse(payload, courseId)])
-  if (!user || !course) return
-  const finishBy = formatLagosDate(new Date(Date.now() + (course.durationMonths ?? 3) * 30 * 24 * HOUR).toISOString())
-  const lead = await findLeadForUser(payload, { id: user.id, email: user.email, role: 'student' })
-  const phone = user.phone || lead?.phone
-  if (phone) {
-    const result = await sendTemplate(phone, 'skillsair_welcome', 'en', [bodyParams(user.firstName, course.title, finishBy)])
-    await recordOnLead(payload, lead, {
-      direction: 'out',
-      type: result.sent ? 'template' : result.skipped ? `template_${result.skipped}` : 'error',
-      template: 'skillsair_welcome',
-      body: result.error ?? '',
-      at: new Date().toISOString(),
-    })
-  }
-  try {
-    await sendEmail(user.email, welcomeAfterPaymentEmail(user.firstName, course.title, finishBy))
-  } catch (err) {
-    logger.error({ err, userId }, 'welcome_email_failed')
-  }
-}
-
-/** Utility template when a learner completes a programme (certificate is claimable). */
-export async function sendCourseCompleteMessage(payload: Payload, userId: number, courseId: number): Promise<void> {
-  if (!(await claimIdempotencyKey(`course-complete:${userId}:${courseId}`, 365 * 24 * 60 * 60))) return
-  const [user, course] = await Promise.all([getUser(payload, userId), getCourse(payload, courseId)])
-  if (!user?.phone || !course) return
-  await sendTemplate(user.phone, 'skillsair_course_complete', 'en', [bodyParams(user.firstName, course.title), urlButton(0, course.slug)])
+  await executeStep(payload, person, planned, await loadWindow(payload), person.snapshot.phone ? undefined : 'no_phone')
 }
 
 function reminderComponents(lead: LeadDoc, ...params: string[]): TemplateComponent[] {
@@ -153,18 +110,17 @@ async function hasPaidOrder(payload: Payload, userId: number | undefined): Promi
   return orders.totalDocs > 0
 }
 
-/** Runs one lead through the follow-up rules; returns the number of messages sent. */
-export async function processLeadFollowUps(payload: Payload, lead: LeadDoc, window: WindowContext, now = Date.now()): Promise<number> {
+/**
+ * Lead scoring that doesn't send anything: "account created, no payment after 2 hours" and
+ * "viewed the offer, window closing within 48 hours". Idempotent through followUpsSent.
+ */
+export async function scoreLead(payload: Payload, lead: LeadDoc, window: WindowContext, now = Date.now()): Promise<void> {
   const followUps: LeadFollowUp[] = [...(lead.followUpsSent ?? [])]
-  let log = lead.whatsappLog ?? []
   const data: Record<string, unknown> = {}
   const nowIso = new Date(now).toISOString()
-  const created = new Date(lead.createdAt).getTime()
   const mark = (key: string) => followUps.push({ key, sentAt: nowIso })
   const has = (key: string) => followUps.some((item) => item.key === key)
-  let sent = 0
 
-  // Scoring rules that don't send anything.
   if (lead.status === 'account_created' && !has('score_no_payment') && lead.lastEventAt && now - new Date(lead.lastEventAt).getTime() > 2 * HOUR) {
     if (!(await hasPaidOrder(payload, relationId(lead.user)))) {
       Object.assign(data, scoreLeadEvent(lead, { type: 'account_no_payment' }))
@@ -176,70 +132,20 @@ export async function processLeadFollowUps(payload: Payload, lead: LeadDoc, wind
     data.score = Math.min(100, Number(data.score ?? lead.score ?? 0) + 10)
     mark(`score_window_closing:${window.key}`)
   }
-
-  const courseId = relationId(lead.course)
-  if (window.open && canMarket(lead) && courseId) {
-    const course = (await payload.findByID({ collection: 'courses', id: courseId, depth: 1, overrideAccess: true }).catch(() => null)) as OfferCourseDoc | null
-    const offer: Offer | null = course && course.status === 'published' ? await buildOffer(payload, course) : null
-    if (offer?.windowOpen) {
-      const emailInput = {
-        firstName: lead.firstName,
-        programme: offer.programme,
-        offerUrl: resumeUrl(lead),
-        unsubscribeUrl: `${FRONTEND_URL}/unsubscribe?t=${encodeURIComponent(unsubscribeToken(lead.id))}`,
-        price: offer.effectivePrice,
-        standardPrice: offer.standardPrice,
-        certificatePrice: offer.certificatePrice,
-        closesOn: window.closesOn,
-      }
-      const email = isDeliverableEmail(lead.email)
-      const waBudget = () => MARKETING_WA_CAP - marketingSentThisWindow({ followUpsSent: followUps }, window.key)
-      const sendWa = async (template: string, key: string, params: string[]) => {
-        if (waBudget() <= 0 || has(key)) return
-        const result = await sendTemplate(lead.phone, template, 'en', reminderComponents(lead, ...params))
-        if (result.sent) {
-          mark(key)
-          sent++
-        }
-        if (!result.skipped || result.sent) {
-          log = appendLog({ whatsappLog: log }, { direction: 'out', type: result.sent ? 'template' : 'error', template, body: result.error ?? '', at: nowIso })
-        }
-      }
-      const sendMail = async (key: string, build: () => { subject: string; html: string; text: string }) => {
-        if (!email || has(key)) return
-        try {
-          await sendEmail(lead.email, build())
-          mark(key)
-          sent++
-        } catch (err) {
-          logger.error({ err, leadId: lead.id, key }, 'lead_followup_email_failed')
-        }
-      }
-
-      const inFunnel = lead.status !== 'account_created'
-      if (inFunnel && now - created >= HOUR) await sendMail('email_b', () => followUpQuickQuestionEmail(emailInput))
-      if (inFunnel && now - created >= 24 * HOUR) {
-        const explainer = careerExplainer(offer.school)
-        await sendMail('email_c', () => followUpCareerEmail({ ...emailInput, role: explainer.role, explainer: explainer.body }))
-        await sendWa('skillsair_offer_reminder', `wa_mkt:offer_reminder:${window.key}`, [lead.firstName, offer.programme, window.closesOn])
-      }
-      if (closingSoon) {
-        await sendMail(`email_d:${window.key}`, () => followUpClosingEmail(emailInput))
-        await sendWa('skillsair_window_closing', `wa_mkt:window_closing:${window.key}`, [lead.firstName, window.closesOn, offer.programme])
-      }
-    }
-  }
-
   if (followUps.length !== (lead.followUpsSent ?? []).length || Object.keys(data).length) {
-    await payload.update({
-      collection: 'leads',
-      id: lead.id,
-      data: { ...data, followUpsSent: followUps, whatsappLog: log },
-      depth: 0,
-      overrideAccess: true,
-    })
+    await payload.update({ collection: 'leads', id: lead.id, data: { ...data, followUpsSent: followUps }, depth: 0, overrideAccess: true })
   }
-  return sent
+}
+
+/**
+ * Kept for existing callers: scores the lead, then runs them through the lifecycle engine
+ * (src/lib/lifecycle). Returns the number of messages sent.
+ */
+export async function processLeadFollowUps(payload: Payload, lead: LeadDoc, window: WindowContext, now = Date.now()): Promise<number> {
+  await scoreLead(payload, lead, window, now)
+  const userId = relationId(lead.user)
+  const summary = await runLifecycle(payload, now, [userId ? { type: 'user', id: Number(userId) } : { type: 'lead', id: lead.id }])
+  return summary.sent
 }
 
 export async function currentWindowContext(payload: Payload): Promise<WindowContext> {
@@ -288,7 +194,17 @@ export async function notifyWaitlist(payload: Payload): Promise<number> {
           depth: 0,
           overrideAccess: true,
         })
-        if (outcome.sent) sent++
+        if (outcome.sent) {
+          sent++
+          const person = await loadPerson(payload, { type: 'lead', id: lead.id })
+          if (person) {
+            const cycle = windowCycle(window.closesAt ? Date.parse(window.closesAt) : null)
+            await recordMessage(payload, {
+              person, channel: 'whatsapp', kind: 'marketing', track: 'A', stepId: 'W1-WA', template: 'skillsair_window_open',
+              subjectId: `lead:${lead.id}`, cycle, idempotencyKey: idempotencyKey('A', 'W1-WA', `lead:${lead.id}`, cycle), status: 'sent', providerId: outcome.messageId ?? null,
+            })
+          }
+        }
       } catch (err) {
         logger.error({ err, leadId: lead.id }, 'waitlist_notify_failed')
       }

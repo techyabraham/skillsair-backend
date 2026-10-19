@@ -33,7 +33,9 @@ import { Discussions } from './src/collections/Discussions.js'
 import { NewsletterSubscribers } from './src/collections/NewsletterSubscribers.js'
 import { Leads } from './src/collections/Leads.js'
 import { LaptopApplications } from './src/collections/LaptopApplications.js'
+import { Messages } from './src/collections/Messages.js'
 import { ScholarshipWindow } from './src/globals/ScholarshipWindow.js'
+import { EmailContent } from './src/globals/EmailContent.js'
 
 import { registerEndpoint } from './src/endpoints/auth/register.js'
 import { loginEndpoint } from './src/endpoints/auth/login.js'
@@ -66,6 +68,10 @@ import { changePasswordEndpoint } from './src/endpoints/profile/password.js'
 import { uploadAvatarEndpoint } from './src/endpoints/profile/avatar.js'
 import { newsletterSubscribeEndpoint } from './src/endpoints/newsletter/subscribe.js'
 import { getOfferEndpoint } from './src/endpoints/offers/get.js'
+import { getEmailPreferencesEndpoint, saveEmailPreferencesEndpoint, oneClickUnsubscribeEndpoint, unsubscribeLandingEndpoint } from './src/endpoints/email/preferences.js'
+import { resendWebhookEndpoint } from './src/endpoints/email/webhook.js'
+import { emailPreviewEndpoint } from './src/endpoints/email/preview.js'
+import { updateCardEndpoint } from './src/endpoints/billing/update-card.js'
 import { whatsappVerifyEndpoint, whatsappWebhookEndpoint } from './src/endpoints/whatsapp/webhook.js'
 
 import { graphQLQueries } from './src/lib/graphql-extensions.js'
@@ -94,6 +100,11 @@ export default buildConfig({
           Component: '/src/admin/SkillsAirDashboard#SkillsAirDashboard',
           meta: { title: 'Overview · SkillsAir Studio' },
         },
+        lifecycle: {
+          Component: '/src/admin/LifecycleView#LifecycleView',
+          path: '/lifecycle',
+          meta: { title: 'Lifecycle emails' },
+        },
       },
     },
   },
@@ -111,8 +122,8 @@ export default buildConfig({
   editor: lexicalEditor({}),
   email: resendAdapter({
     apiKey: process.env.RESEND_API_KEY ?? '',
-    defaultFromAddress: process.env.EMAIL_FROM ?? 'noreply@skillsair.com',
-    defaultFromName: process.env.EMAIL_FROM_NAME ?? 'SkillsAir',
+    defaultFromAddress: process.env.EMAIL_FROM_TRANSACTIONAL ?? process.env.EMAIL_FROM ?? 'imisi@notify.skillsair.com',
+    defaultFromName: process.env.EMAIL_FROM_NAME ?? 'Imisi from SkillsAir',
   }),
   collections: [
     Users,
@@ -140,8 +151,9 @@ export default buildConfig({
     NewsletterSubscribers,
     Leads,
     LaptopApplications,
+    Messages,
   ],
-  globals: [ScholarshipWindow],
+  globals: [ScholarshipWindow, EmailContent],
   endpoints: [
     registerEndpoint,
     loginEndpoint,
@@ -177,6 +189,13 @@ export default buildConfig({
     getOfferEndpoint,
     whatsappVerifyEndpoint,
     whatsappWebhookEndpoint,
+    getEmailPreferencesEndpoint,
+    saveEmailPreferencesEndpoint,
+    oneClickUnsubscribeEndpoint,
+    unsubscribeLandingEndpoint,
+    resendWebhookEndpoint,
+    emailPreviewEndpoint,
+    updateCardEndpoint,
   ],
   graphQL: {
     queries: graphQLQueries,

@@ -3,7 +3,9 @@ import { z } from 'zod'
 import { asyncHandler, getParam, parseBody, readJsonBody, sendSuccess } from '../../middleware/validate.js'
 import { adminRateLimiter } from '../../lib/rate-limiter.js'
 import { resolveAuthUser } from '../../middleware/authenticate.js'
-import { appendLog, relationId, verifyUnsubscribeToken, type LeadDoc } from '../../lib/leads.js'
+import { appendLog, relationId, type LeadDoc } from '../../lib/leads.js'
+import { verifyEmailToken } from '../../lib/email-tokens.js'
+import { saveEmailPreferences } from '../../lib/email-preferences.js'
 import { sendText } from '../../lib/whatsapp.js'
 import { isValidPayloadId } from '../../utils/sanitize.js'
 import { AppError } from '../../types/index.js'
@@ -74,26 +76,15 @@ async function done(req: PayloadRequest): Promise<Response> {
   return sendSuccess({ done: true })
 }
 
-const unsubscribeSchema = z.object({ token: z.string().min(3).max(200) })
+const unsubscribeSchema = z.object({ token: z.string().min(3).max(400) })
 
-/** One-click unsubscribe from marketing emails and WhatsApp (link in every marketing email). */
+/** Unsubscribe from all marketing (the website's /unsubscribe page). Accepts old lead links and new email links. */
 async function unsubscribe(req: PayloadRequest): Promise<Response> {
   const { token } = parseBody(unsubscribeSchema, await readJsonBody(req))
-  const leadId = verifyUnsubscribeToken(token)
-  if (!leadId) throw new AppError('NOT_FOUND', 'This unsubscribe link is not valid')
-  const lead = (await req.payload.findByID({ collection: 'leads', id: leadId, depth: 0, overrideAccess: true }).catch(() => null)) as unknown as LeadDoc | null
-  if (!lead) throw new AppError('NOT_FOUND', 'This unsubscribe link is not valid')
-  const now = new Date().toISOString()
-  await req.payload.update({ collection: 'leads', id: lead.id, data: { marketingConsent: false, optedOutAt: now }, depth: 0, overrideAccess: true })
-  const userId = relationId(lead.user)
-  if (userId) {
-    await req.payload.update({
-      collection: 'users',
-      id: userId,
-      data: { marketingConsent: 'opted_out', marketingConsentAt: now, marketingConsentSource: 'email_unsubscribe' },
-      overrideAccess: true,
-    })
-  }
+  const claims = verifyEmailToken(token)
+  if (!claims) throw new AppError('NOT_FOUND', 'This unsubscribe link is not valid')
+  const preferences = await saveEmailPreferences(req.payload, claims, { unsubscribeAll: true }, 'email_unsubscribe')
+  if (!preferences) throw new AppError('NOT_FOUND', 'This unsubscribe link is not valid')
   return sendSuccess({ unsubscribed: true })
 }
 

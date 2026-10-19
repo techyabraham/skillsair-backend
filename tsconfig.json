@@ -26,6 +26,6 @@
     "allowJs": false,
     "noEmitOnError": true
   },
-  "include": ["src/**/*.ts", "payload.config.ts", "server.ts"],
+  "include": ["src/**/*.ts", "scripts/**/*.ts", "payload.config.ts", "server.ts"],
   "exclude": ["node_modules", "dist", "src/app"]
 }

@@ -38,8 +38,12 @@ interface InvoiceEvent {
   transaction?: { reference?: string; status?: string; amount?: number; currency?: string }
 }
 
-export async function applyPaidInvoice(payload: Payload, event: InvoiceEvent): Promise<void> {
-  if (!event.paid || event.status !== 'success') return
+/**
+ * A paid renewal invoice: extends the period. A subscription that was past due (or had lapsed)
+ * is active again. Returns what changed, or null when there was nothing to apply.
+ */
+export async function applyPaidInvoice(payload: Payload, event: InvoiceEvent): Promise<{ subscriptionId: number; recovered: boolean } | null> {
+  if (!event.paid || event.status !== 'success') return null
   const code = event.subscription?.subscription_code
   if (!code || !event.invoice_code || !event.transaction?.reference || event.transaction.status !== 'success') {
     throw new AppError('VALIDATION_ERROR', 'Incomplete paid invoice event')
@@ -47,7 +51,7 @@ export async function applyPaidInvoice(payload: Payload, event: InvoiceEvent): P
   const found = await payload.find({ collection: 'subscriptions', where: { paystackSubscriptionCode: { equals: code } }, limit: 1, depth: 0, overrideAccess: true })
   const subscription = found.docs[0]
   if (!subscription) throw new AppError('NOT_FOUND', 'Subscription has not been linked yet')
-  if (subscription.lastInvoiceCode === event.invoice_code) return
+  if (subscription.lastInvoiceCode === event.invoice_code) return null
   if (event.transaction.currency !== 'NGN' || !event.transaction.amount || event.transaction.amount <= 0) {
     throw new AppError('VALIDATION_ERROR', 'Invoice payment is invalid')
   }
@@ -56,9 +60,12 @@ export async function applyPaidInvoice(payload: Payload, event: InvoiceEvent): P
     .map((value) => new Date(value))
     .filter((value) => !Number.isNaN(value.getTime()))
   const nextEnd = candidateDates.sort((a, b) => b.getTime() - a.getTime())[0]
-  if (!nextEnd || nextEnd.getTime() <= new Date(subscription.currentPeriodEnd ?? 0).getTime()) return
+  if (!nextEnd || nextEnd.getTime() <= new Date(subscription.currentPeriodEnd ?? 0).getTime()) return null
+  const recovered = subscription.status === 'past_due' || subscription.status === 'expired'
   await payload.update({ collection: 'subscriptions', id: subscription.id, data: {
     status: 'active', currentPeriodStart: event.period_start ?? new Date().toISOString(),
     currentPeriodEnd: nextEnd.toISOString(), lastInvoiceCode: event.invoice_code,
+    ...(recovered ? { failedAttempts: 0 } : {}),
   }, overrideAccess: true })
+  return { subscriptionId: Number(subscription.id), recovered }
 }

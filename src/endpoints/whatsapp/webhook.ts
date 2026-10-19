@@ -1,4 +1,5 @@
 import type { Endpoint, Payload, PayloadRequest } from 'payload'
+import { preferencesUrl } from '../../lib/email-tokens.js'
 import { asyncHandler, jsonResponse } from '../../middleware/validate.js'
 import { logger, logSecurityEvent } from '../../lib/logger.js'
 import { sendText, verifyWhatsAppSignature, whatsappEnabled } from '../../lib/whatsapp.js'
@@ -25,6 +26,7 @@ import {
   START_REPLY,
   START_WORDS,
   STOP_REPLY,
+  STOP_EMAIL_PREFS_LINE,
   STOP_WORDS,
   TALK_IN_HOURS,
   talkOutOfHours,
@@ -156,7 +158,9 @@ async function handleMessage(payload: Payload, message: InboundMessage, profileN
     // Honour STOP immediately: no marketing templates are ever sent after this.
     Object.assign(data, { marketingConsent: false, optedOutAt: nowIso, lastEventAt: nowIso })
     await updateLinkedUserConsent(payload, lead, false)
-    reply = STOP_REPLY
+    reply = `${STOP_REPLY}
+
+${STOP_EMAIL_PREFS_LINE}${preferencesUrl({ type: 'lead', id: lead.id })}`
   } else if (START_WORDS.includes(upper)) {
     Object.assign(data, {
       marketingConsent: true,

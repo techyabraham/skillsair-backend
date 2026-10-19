@@ -1,5 +1,6 @@
 import type { Payload } from 'payload'
 import { certificatePrice, getScholarshipWindow, oneOffCoursePrice, windowIsOpen } from './pricing.js'
+import { NO_LOCK, getPriceLock, type PriceLockReason } from './price-lock.js'
 
 export interface OfferCourseDoc {
   id: number
@@ -38,6 +39,11 @@ export interface Offer {
   standardPlanId: number | null
   windowOpen: boolean
   closesAt: string | null
+  /** The learner keeps ₦2,000 a month regardless of the window (see price-lock.ts). */
+  priceLocked: boolean
+  priceLockReason: PriceLockReason | null
+  /** Only for next_programme: start before this to keep the rate. */
+  priceLockEndsAt: string | null
   cohortLabel: string
   durationMonths: number
   weeklyHours: number
@@ -97,7 +103,8 @@ async function coursePlans(payload: Payload, courseId: number): Promise<PlanRow[
   return (result.docs as unknown as PlanRow[]).filter((plan) => Boolean(plan.paystackPlanCode))
 }
 
-export async function buildOffer(payload: Payload, course: OfferCourseDoc): Promise<Offer> {
+/** `userId` (when known) lets a price-locked learner see ₦2,000 a month with the window closed. */
+export async function buildOffer(payload: Payload, course: OfferCourseDoc, userId?: number): Promise<Offer> {
   const window = await getScholarshipWindow(payload)
   const open = windowIsOpen(window)
   const plans = await coursePlans(payload, course.id)
@@ -108,7 +115,8 @@ export async function buildOffer(payload: Payload, course: OfferCourseDoc): Prom
     (category): category is { id: number; name?: string; slug?: string } => typeof category === 'object' && category !== null,
   )
   const standardPrice = oneOffCoursePrice(course)
-  const scholarshipOn = open && Boolean(scholarshipPlan)
+  const lock = userId ? await getPriceLock(payload, userId, course.id) : NO_LOCK
+  const scholarshipOn = (open || lock.locked) && Boolean(scholarshipPlan)
   return {
     courseId: course.id,
     slug: course.slug,
@@ -124,6 +132,9 @@ export async function buildOffer(payload: Payload, course: OfferCourseDoc): Prom
     standardPlanId: standardPlan?.id ?? null,
     windowOpen: open,
     closesAt: open ? window.closesAt ?? null : null,
+    priceLocked: lock.locked && Boolean(scholarshipPlan),
+    priceLockReason: lock.locked && scholarshipPlan ? lock.reason : null,
+    priceLockEndsAt: lock.locked && scholarshipPlan ? lock.endsAt : null,
     cohortLabel: window.cohortLabel ?? '',
     durationMonths: course.durationMonths ?? 3,
     weeklyHours: course.weeklyHours ?? 8,
