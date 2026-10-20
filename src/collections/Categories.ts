@@ -1,10 +1,11 @@
 import type { CollectionConfig } from 'payload'
 import { slugify } from '../utils/slugify.js'
+import { STUDIO_GROUP } from '../admin/studio-config.js'
 
 export const Categories: CollectionConfig = {
-  slug: 'categories',
+  slug: 'categories', labels: { singular: 'School', plural: 'Schools' },
   admin: {
-    group: 'Content',
+    group: STUDIO_GROUP.website,
     useAsTitle: 'name',
     defaultColumns: ['name', 'slug', 'parent', 'updatedAt'],
   },

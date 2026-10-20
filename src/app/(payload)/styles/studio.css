@@ -1,0 +1,360 @@
+/*
+ * SkillsAir Studio shared styles: the nav, login, graphics and every `.sa-*` component.
+ * Unlayered, so these beat Payload's layered defaults; colours only through --sa-* tokens.
+ */
+
+.sa-visually-hidden {
+  position: absolute !important; /* visually hidden pattern: must not be overridden */
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* =========================================================================
+   Nav (src/admin/nav). Navy in both themes.
+   ========================================================================= */
+.nav {
+  background: var(--sa-navy);
+  border-right-color: var(--sa-navy);
+  color: var(--sa-navy-ink-muted);
+  --nav-padding-block-start: 16px;
+}
+
+.nav .nav__scroll {
+  --nav-padding-inline-start: 12px;
+  --nav-padding-inline-end: 12px;
+}
+
+/* Payload's sidebar toggle sits over the nav's top-left corner (template-default__nav-toggler-wrapper),
+   so the brand row starts after it and shares its height. */
+body:has(.template-default--nav-open) .template-default__nav-toggler-wrapper .hamburger {
+  background-color: var(--sa-navy-raised);
+  color: var(--sa-navy-ink);
+  box-shadow: 0 0 0 1px rgb(255 255 255 / 0.12);
+}
+
+body:has(.template-default--nav-open) .template-default__nav-toggler-wrapper .hamburger:hover {
+  background-color: color-mix(in srgb, var(--sa-navy-raised) 80%, white);
+}
+
+.sa-nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: calc(var(--app-header-height) - 16px);
+  margin-top: -6px;
+  padding: 0 8px 14px 36px;
+  color: var(--sa-navy-ink);
+  text-decoration: none;
+  font-family: var(--sa-font-display);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+.sa-nav__brand-air {
+  color: var(--sa-accent-bright);
+}
+
+.sa-nav__brand-studio {
+  color: var(--sa-navy-ink-subtle);
+  font-weight: 600;
+  margin-left: 2px;
+}
+
+.sa-nav__window {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 4px 18px;
+  padding: 8px 12px;
+  width: calc(100% - 8px);
+  border-radius: var(--style-radius-m);
+  background: var(--sa-navy-raised);
+  color: var(--sa-navy-ink);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  min-height: 40px;
+}
+
+.sa-nav__window small {
+  font-weight: 500;
+  color: var(--sa-navy-ink-muted);
+  font-size: 12px;
+}
+
+.sa-nav__window:hover {
+  color: var(--sa-navy-ink);
+  background: color-mix(in srgb, var(--sa-navy-raised) 80%, white);
+}
+
+.sa-nav__window-dot {
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sa-navy-ink-subtle);
+}
+
+.sa-nav__window--open .sa-nav__window-dot {
+  background: #4ade80; /* fixed: always on navy */
+  box-shadow: 0 0 0 3px rgb(74 222 128 / 0.2);
+}
+
+/* Group labels: 11px uppercase eyebrows. */
+.nav .nav-group__toggle {
+  color: var(--sa-navy-ink-subtle);
+  padding: 0 8px;
+  margin-bottom: 4px;
+}
+
+.nav .nav-group__toggle:hover,
+.nav .nav-group__toggle:focus-visible {
+  color: var(--sa-navy-ink);
+}
+
+.nav .nav-group__label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav .nav-group__indicator svg .stroke,
+.nav .nav-group__toggle:hover .stroke {
+  stroke: currentColor;
+}
+
+.nav .nav-group {
+  margin-bottom: 14px;
+}
+
+.nav .sa-nav__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 40px;
+  padding: 6px 8px;
+  margin: 1px 0;
+  border-radius: var(--style-radius-m);
+  color: var(--sa-navy-ink-muted);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  transition: background-color 160ms ease-out, color 160ms ease-out;
+}
+
+.nav a.sa-nav__link:hover,
+.nav a.sa-nav__link:focus-visible {
+  text-decoration: none;
+  color: var(--sa-navy-ink);
+  background: rgb(255 255 255 / 0.06);
+}
+
+.nav .sa-nav__link--active {
+  color: var(--sa-navy-ink);
+  background: rgb(255 255 255 / 0.08);
+  font-weight: 600;
+}
+
+.nav .sa-nav__link .nav__link-indicator {
+  inset-inline-start: -12px;
+  width: 3px;
+  height: 22px;
+  background: var(--sa-accent-bright);
+}
+
+.sa-nav__icon {
+  display: inline-flex;
+  flex: 0 0 18px;
+  color: var(--sa-navy-ink-subtle);
+}
+
+.sa-nav__link--active .sa-nav__icon,
+.sa-nav__link:hover .sa-nav__icon {
+  color: var(--sa-accent-bright);
+}
+
+.nav .sa-nav__link .nav__link-label {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sa-nav__badge {
+  flex: 0 0 auto;
+  min-width: 22px;
+  padding: 1px 7px;
+  border-radius: var(--sa-radius-pill);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Fixed colours: badges always sit on the navy nav. */
+.sa-nav__badge--accent {
+  background: #f97316;
+  color: #0d1b4b;
+}
+
+.sa-nav__badge--critical {
+  background: #fecaca;
+  color: #7f1d1d;
+}
+
+.sa-nav__controls {
+  color: var(--sa-navy-ink-muted);
+  padding: 0 8px 8px;
+}
+
+.nav .nav__controls a,
+.nav .nav__controls button,
+.nav .settings-menu-button {
+  color: var(--sa-navy-ink-muted);
+}
+
+.nav .nav__controls svg .stroke,
+.nav .nav__controls svg .fill {
+  stroke: currentColor;
+}
+
+.nav .nav__controls a:hover,
+.nav .nav__controls button:hover {
+  color: var(--sa-navy-ink);
+}
+
+.nav .nav__mobile-close .stroke {
+  stroke: var(--sa-navy-ink);
+}
+
+/* =========================================================================
+   Graphics
+   ========================================================================= */
+.sa-brand-mark {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.sa-graphic-icon {
+  display: inline-flex;
+}
+
+.sa-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--sa-ink);
+}
+
+.sa-logo__word {
+  font-family: var(--sa-font-display);
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.sa-logo__air {
+  color: var(--sa-accent);
+}
+
+.sa-logo__studio {
+  margin-left: 8px;
+  font-weight: 600;
+  color: var(--sa-ink-muted);
+}
+
+/* =========================================================================
+   Login: navy half with the Adire pattern (beforeLogin), Payload's form on the right.
+   ========================================================================= */
+.login.template-minimal .login__brand {
+  display: none;
+}
+
+.sa-login-panel {
+  position: relative;
+  overflow: hidden;
+  background: var(--sa-navy);
+  color: rgb(255 255 255 / 0.14);
+  margin: -60px calc(-1 * var(--gutter-h)) 32px;
+  padding: 40px var(--gutter-h) 32px;
+}
+
+.sa-login-panel__pattern {
+  position: absolute;
+  inset: 0;
+}
+
+.sa-login-panel__content {
+  position: relative;
+  display: grid;
+  gap: 16px;
+}
+
+.sa-login-panel .sa-logo {
+  color: var(--sa-navy-ink);
+}
+
+.sa-login-panel .sa-logo__air {
+  color: var(--sa-accent-bright);
+}
+
+.sa-login-panel .sa-logo__studio {
+  color: var(--sa-navy-ink-muted);
+}
+
+.sa-login-panel__line {
+  margin: 0;
+  color: var(--sa-navy-ink-muted);
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 34ch;
+}
+
+@media (min-width: 1024px) {
+  .login.template-minimal {
+    padding-left: calc(50vw + 40px);
+    padding-right: 40px;
+    min-height: 100vh;
+  }
+
+  .sa-login-panel {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: 50vw;
+    margin: 0;
+    padding: 64px;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .sa-login-panel .sa-logo__word {
+    font-size: 36px;
+  }
+
+  .sa-login-panel__line {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .login.template-minimal {
+    align-items: flex-start;
+  }
+}
+
+html[data-theme='dark'] .nav {
+  border-right-color: var(--sa-line);
+}

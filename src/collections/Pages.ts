@@ -1,11 +1,12 @@
 import type { CollectionConfig } from 'payload'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { slugify } from '../utils/slugify.js'
+import { STUDIO_GROUP } from '../admin/studio-config.js'
 
 export const Pages: CollectionConfig = {
-  slug: 'pages',
+  slug: 'pages', labels: { singular: 'Page', plural: 'Pages' },
   admin: {
-    group: 'Content',
+    group: STUDIO_GROUP.website,
     useAsTitle: 'title',
     defaultColumns: ['title', 'slug', 'status', 'updatedAt'],
   },

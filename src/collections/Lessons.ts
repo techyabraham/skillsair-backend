@@ -3,6 +3,7 @@ import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { slugify } from '../utils/slugify.js'
 import { resolveAuthUser } from '../middleware/authenticate.js'
 import { requireCourseAccess } from '../lib/course-access.js'
+import { STUDIO_GROUP } from '../admin/studio-config.js'
 
 interface SectionWithCourse {
   course: number | string | { id: number | string }
@@ -88,11 +89,11 @@ async function syncCourseStatsForLesson(
 }
 
 export const Lessons: CollectionConfig = {
-  slug: 'lessons',
+  slug: 'lessons', labels: { singular: 'Lesson', plural: 'Lessons' },
   admin: {
-    group: 'Learning',
+    group: STUDIO_GROUP.learning,
     useAsTitle: 'title',
-    defaultColumns: ['title', 'section', 'order', 'duration', 'isPublished', 'updatedAt'],
+    defaultColumns: ['title', 'section', 'isFree', 'duration', 'isPublished', 'updatedAt'],
   },
   access: {
     read: async ({ req }): Promise<boolean | Where> => {
@@ -189,11 +190,11 @@ export const Lessons: CollectionConfig = {
       editor: lexicalEditor({}),
     },
     { name: 'driveFileId', type: 'text' },
-    { name: 'duration', type: 'number', defaultValue: 0 },
+    { name: 'duration', type: 'number', defaultValue: 0, admin: { description: 'In seconds.', components: { Cell: '/src/admin/cells/cells#DurationCell' } } },
     { name: 'order', type: 'number', required: true },
-    { name: 'isFree', type: 'checkbox', defaultValue: false },
-    { name: 'isPublished', type: 'checkbox', defaultValue: false },
-    { name: 'section', type: 'relationship', relationTo: 'sections', required: true },
+    { name: 'isFree', type: 'checkbox', defaultValue: false, admin: { components: { Cell: '/src/admin/cells/cells#LessonTypeCell' } } },
+    { name: 'isPublished', type: 'checkbox', defaultValue: false, admin: { components: { Cell: '/src/admin/cells/cells#PublishStatusCell' } } },
+    { name: 'section', type: 'relationship', relationTo: 'sections', required: true, admin: { components: { Cell: '/src/admin/cells/cells#LessonPlaceCell' } } },
     { name: 'attachments', type: 'relationship', relationTo: 'media', hasMany: true },
   ],
   hooks: {

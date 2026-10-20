@@ -1,12 +1,15 @@
 import type { CollectionConfig } from 'payload'
 import { resolveAuthUser } from '../middleware/authenticate.js'
+import { STUDIO_GROUP } from '../admin/studio-config.js'
+import { DISPLAY_TITLES } from '../hooks/display-title.js'
 
 export const Subscriptions: CollectionConfig = {
-  slug: 'subscriptions',
+  slug: 'subscriptions', labels: { singular: 'Subscription', plural: 'Subscriptions' },
   admin: {
-    group: 'Commerce',
-    useAsTitle: 'id',
-    defaultColumns: ['user', 'course', 'plan', 'status', 'currentPeriodEnd'],
+    group: STUDIO_GROUP.revenue,
+    useAsTitle: 'displayTitle',
+    defaultColumns: ['displayTitle', 'user', 'plan', 'status', 'currentPeriodEnd'],
+    components: { beforeListTable: ['/src/admin/lists/strips#SubscriptionsStrip'] },
   },
   access: {
     read: async ({ req }) => {
@@ -20,14 +23,16 @@ export const Subscriptions: CollectionConfig = {
     delete: ({ req }) => req.user?.role === 'admin',
   },
   fields: [
-    { name: 'user', type: 'relationship', relationTo: 'users', required: true },
-    { name: 'plan', type: 'relationship', relationTo: 'plans', required: true },
+    DISPLAY_TITLES.subscriptions,
+    { name: 'user', type: 'relationship', relationTo: 'users', required: true, label: 'Learner', admin: { components: { Cell: '/src/admin/cells/cells#PersonCell' } } },
+    { name: 'plan', type: 'relationship', relationTo: 'plans', required: true, admin: { components: { Cell: '/src/admin/cells/cells#PlanKindCell' } } },
     { name: 'course', type: 'relationship', relationTo: 'courses', required: true },
     {
       name: 'status',
       type: 'select',
       required: true,
       defaultValue: 'active',
+      admin: { components: { Cell: '/src/admin/cells/cells#SubscriptionStatusCell' } },
       options: [
         { label: 'Active', value: 'active' },
         { label: 'Past due (renewal failed, in grace)', value: 'past_due' },
@@ -40,7 +45,7 @@ export const Subscriptions: CollectionConfig = {
     { name: 'initialOrderReference', type: 'text', unique: true },
     { name: 'lastInvoiceCode', type: 'text' },
     { name: 'currentPeriodStart', type: 'date' },
-    { name: 'currentPeriodEnd', type: 'date' },
+    { name: 'currentPeriodEnd', type: 'date', admin: { components: { Cell: '/src/admin/cells/cells#RenewalCell' } } },
     { name: 'cancelledAt', type: 'date' },
     { name: 'failedAttempts', type: 'number', defaultValue: 0 },
     { name: 'lastFailedAt', type: 'date' },

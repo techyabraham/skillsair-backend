@@ -2,14 +2,16 @@ import type { CollectionConfig, PayloadRequest } from 'payload'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { slugify } from '../utils/slugify.js'
 import { courseCurriculumEndpoint } from '../endpoints/courses/curriculum.js'
+import { STUDIO_GROUP } from '../admin/studio-config.js'
 
 export const Courses: CollectionConfig = {
-  slug: 'courses',
+  slug: 'courses', labels: { singular: 'Programme', plural: 'Programmes' },
   endpoints: [courseCurriculumEndpoint],
   admin: {
-    group: 'Learning',
+    group: STUDIO_GROUP.learning,
     useAsTitle: 'title',
-    defaultColumns: ['title', 'status', 'level', 'price', 'totalLessons', 'updatedAt'],
+    defaultColumns: ['title', 'status', 'price', 'totalLessons', 'readiness', 'updatedAt'],
+    components: { edit: { beforeDocumentControls: ['/src/admin/edit/course#ViewOnSite'] } },
   },
   access: {
     read: ({ req }) => {
@@ -21,89 +23,36 @@ export const Courses: CollectionConfig = {
     delete: ({ req }) => req.user?.role === 'admin',
   },
   fields: [
-    { name: 'title', type: 'text', required: true, maxLength: 200 },
     {
-      name: 'slug',
-      type: 'text',
-      unique: true,
-      admin: { readOnly: true },
-      hooks: {
-        beforeValidate: [
-          ({ value, data }) => {
-            if (value) return value
-            const title = typeof data?.title === 'string' ? data.title : ''
-            return slugify(title)
-          },
-        ],
-      },
-    },
-    {
-      name: 'description',
-      type: 'richText',
-      editor: lexicalEditor({}),
-    },
-    { name: 'shortDescription', type: 'text', maxLength: 300 },
-    { name: 'thumbnail', type: 'relationship', relationTo: 'media' },
-    { name: 'previewVideo', type: 'text' },
-    {
-      name: 'price',
-      type: 'number',
-      required: true,
-      min: 0,
-      defaultValue: 0,
-      admin: { description: 'Access Scholarship price (NGN), charged while a scholarship window is open.' },
-    },
-    {
-      name: 'standardPrice',
-      type: 'number',
-      min: 0,
-      admin: { description: 'Standard fee (NGN), charged whenever no scholarship window is open.' },
-      validate: (value: unknown, { siblingData }: { siblingData: Record<string, unknown> }) => {
-        if (value === null || value === undefined || value === '') return true
-        const price = Number(siblingData?.price ?? 0)
-        if (Number(value) < price) return 'The standard fee must be at least the scholarship price'
-        return true
-      },
-    },
-    {
-      name: 'standardMonthlyPrice',
-      type: 'number',
-      min: 0,
-      admin: { description: 'Display only: the monthly equivalent of the standard fee.' },
-    },
-    { name: 'durationMonths', type: 'number', defaultValue: 3, min: 1 },
-    { name: 'weeklyHours', type: 'number', defaultValue: 8, min: 1 },
-    {
-      name: 'phoneFriendly',
-      type: 'checkbox',
-      defaultValue: false,
-      admin: { description: 'Tick only if the whole programme can be completed on a phone.' },
-    },
-    {
-      name: 'level',
-      type: 'select',
-      required: true,
-      options: [
-        { label: 'Beginner', value: 'beginner' },
-        { label: 'Intermediate', value: 'intermediate' },
-        { label: 'Advanced', value: 'advanced' },
-      ],
+      name: 'readiness',
+      type: 'ui',
+      label: 'Ready to publish',
+      admin: { position: 'sidebar', components: { Cell: '/src/admin/cells/cells#CompletenessCell', Field: '/src/admin/edit/course#CourseReadyChecklist' } },
     },
     {
       name: 'status',
       type: 'select',
       required: true,
       defaultValue: 'draft',
+      admin: { position: 'sidebar', components: { Cell: '/src/admin/cells/cells#PublishStatusCell' } },
       options: [
         { label: 'Draft', value: 'draft' },
         { label: 'Published', value: 'published' },
       ],
     },
-    { name: 'isFeatured', type: 'checkbox', defaultValue: false },
+    { name: 'isFeatured', type: 'checkbox', defaultValue: false, admin: { position: 'sidebar' } },
+    {
+      name: 'phoneFriendly',
+      type: 'checkbox',
+      defaultValue: false,
+      admin: { position: 'sidebar', description: 'Tick only if the whole programme can be completed on a phone.' },
+    },
+    { name: 'publishedAt', type: 'date', admin: { position: 'sidebar' } },
     {
       name: 'instructor',
       type: 'relationship',
       relationTo: 'users',
+      admin: { position: 'sidebar' },
       filterOptions: { role: { in: ['instructor', 'admin'] } },
       validate: async (value: unknown, { req }: { req: PayloadRequest }): Promise<string | true> => {
         if (!value) return true
@@ -115,49 +64,147 @@ export const Courses: CollectionConfig = {
         return true
       },
     },
-    { name: 'categories', type: 'relationship', relationTo: 'categories', hasMany: true },
     {
-      name: 'nextProgrammes',
-      type: 'array',
-      maxRows: 3,
-      admin: { description: 'Graduate emails (G1–G3): the programmes that pair best with this one, best first. Empty: other programmes in the same school, then phone-friendly ones.' },
-      fields: [
-        { name: 'programme', type: 'relationship', relationTo: 'courses', required: true },
-        { name: 'pairingReason', type: 'textarea', maxLength: 300, admin: { description: 'One sentence, e.g. "Data Analysis plus Product Management means you can find the insight and decide what to build with it."' } },
+      type: 'tabs',
+      tabs: [
+        {
+          label: 'Overview',
+          fields: [
+            { name: 'title', type: 'text', required: true, maxLength: 200, admin: { components: { Cell: '/src/admin/cells/cells#ProgrammeTitleCell' } } },
+            {
+              name: 'slug',
+              type: 'text',
+              unique: true,
+              admin: { readOnly: true },
+              hooks: {
+                beforeValidate: [
+                  ({ value, data }) => {
+                    if (value) return value
+                    const title = typeof data?.title === 'string' ? data.title : ''
+                    return slugify(title)
+                  },
+                ],
+              },
+            },
+            { name: 'shortDescription', type: 'text', maxLength: 300 },
+            {
+              name: 'description',
+              type: 'richText',
+              editor: lexicalEditor({}),
+            },
+            { name: 'thumbnail', type: 'relationship', relationTo: 'media' },
+            { name: 'previewVideo', type: 'text' },
+            {
+              name: 'level',
+              type: 'select',
+              required: true,
+              options: [
+                { label: 'Beginner', value: 'beginner' },
+                { label: 'Intermediate', value: 'intermediate' },
+                { label: 'Advanced', value: 'advanced' },
+              ],
+            },
+            { name: 'categories', type: 'relationship', relationTo: 'categories', hasMany: true, label: 'Schools' },
+          ],
+        },
+        {
+          label: 'Outcomes',
+          fields: [
+            {
+              name: 'objectives',
+              type: 'array',
+              fields: [{ name: 'objective', type: 'text', required: true }],
+            },
+            {
+              name: 'requirements',
+              type: 'array',
+              fields: [{ name: 'requirement', type: 'text', required: true }],
+            },
+          ],
+        },
+        {
+          label: 'Curriculum',
+          fields: [
+            { name: 'outline', type: 'ui', admin: { disableListColumn: true, components: { Field: '/src/admin/edit/course#CourseOutline' } } },
+            {
+              name: 'sections',
+              type: 'join',
+              collection: 'sections',
+              on: 'course',
+              defaultSort: 'order',
+              admin: { allowCreate: true, defaultColumns: ['title', 'order', 'updatedAt'] },
+            },
+            { name: 'totalDuration', type: 'number', defaultValue: 0, admin: { readOnly: true } },
+            { name: 'totalLessons', type: 'number', defaultValue: 0, admin: { readOnly: true } },
+            { name: 'prerequisites', type: 'relationship', relationTo: 'courses', hasMany: true },
+          ],
+        },
+        {
+          label: 'Pricing',
+          fields: [
+            { name: 'pricingSummary', type: 'ui', admin: { disableListColumn: true, components: { Field: '/src/admin/edit/course#CoursePricing' } } },
+            {
+              name: 'price',
+              type: 'number',
+              required: true,
+              min: 0,
+              defaultValue: 0,
+              admin: { description: 'Access Scholarship price (NGN), charged while a scholarship window is open.', components: { Cell: '/src/admin/cells/cells#ProgrammePricesCell' } },
+            },
+            {
+              name: 'standardPrice',
+              type: 'number',
+              min: 0,
+              admin: { description: 'Standard fee (NGN), charged whenever no scholarship window is open.' },
+              validate: (value: unknown, { siblingData }: { siblingData: Record<string, unknown> }) => {
+                if (value === null || value === undefined || value === '') return true
+                const price = Number(siblingData?.price ?? 0)
+                if (Number(value) < price) return 'The standard fee must be at least the scholarship price'
+                return true
+              },
+            },
+            {
+              name: 'standardMonthlyPrice',
+              type: 'number',
+              min: 0,
+              admin: { description: 'Display only: the monthly equivalent of the standard fee.' },
+            },
+            { name: 'durationMonths', type: 'number', defaultValue: 3, min: 1 },
+            { name: 'weeklyHours', type: 'number', defaultValue: 8, min: 1 },
+          ],
+        },
+        {
+          label: 'Next programmes',
+          fields: [
+            {
+              name: 'nextProgrammes',
+              type: 'array',
+              maxRows: 3,
+              admin: { description: 'Graduate emails (G1–G3): the programmes that pair best with this one, best first. Empty: other programmes in the same school, then phone-friendly ones.' },
+              fields: [
+                { name: 'programme', type: 'relationship', relationTo: 'courses', required: true },
+                { name: 'pairingReason', type: 'textarea', maxLength: 300, admin: { description: 'One sentence, e.g. "Data Analysis plus Product Management means you can find the insight and decide what to build with it."' } },
+              ],
+            },
+          ],
+        },
+        {
+          label: 'Certificate',
+          fields: [
+            {
+              name: 'certificateTemplate',
+              type: 'select',
+              defaultValue: 'template1',
+              options: [
+                { label: 'Template 1', value: 'template1' },
+                { label: 'Template 2', value: 'template2' },
+                { label: 'Template 3', value: 'template3' },
+              ],
+            },
+          ],
+        },
       ],
     },
-    { name: 'totalDuration', type: 'number', defaultValue: 0, admin: { readOnly: true } },
-    { name: 'totalLessons', type: 'number', defaultValue: 0, admin: { readOnly: true } },
-    {
-      name: 'requirements',
-      type: 'array',
-      fields: [{ name: 'requirement', type: 'text', required: true }],
-    },
-    {
-      name: 'objectives',
-      type: 'array',
-      fields: [{ name: 'objective', type: 'text', required: true }],
-    },
-    {
-      name: 'sections',
-      type: 'join',
-      collection: 'sections',
-      on: 'course',
-      defaultSort: 'order',
-      admin: { allowCreate: true, defaultColumns: ['title', 'order', 'updatedAt'] },
-    },
-    { name: 'prerequisites', type: 'relationship', relationTo: 'courses', hasMany: true },
-    {
-      name: 'certificateTemplate',
-      type: 'select',
-      defaultValue: 'template1',
-      options: [
-        { label: 'Template 1', value: 'template1' },
-        { label: 'Template 2', value: 'template2' },
-        { label: 'Template 3', value: 'template3' },
-      ],
-    },
-    { name: 'publishedAt', type: 'date' },
   ],
   timestamps: true,
 }

@@ -7,6 +7,7 @@ import * as migration_20261016_150000_plan_kind from './20261016_150000_plan_kin
 import * as migration_20261017_090000_email_lifecycle from './20261017_090000_email_lifecycle.js';
 import * as migration_20261018_090000_email_content from './20261018_090000_email_content.js';
 import * as migration_20261018_120000_message_outcomes from './20261018_120000_message_outcomes.js';
+import * as migration_20261019_090000_display_titles from './20261019_090000_display_titles.js';
 
 export const migrations = [
   {
@@ -53,5 +54,10 @@ export const migrations = [
     up: migration_20261018_120000_message_outcomes.up,
     down: migration_20261018_120000_message_outcomes.down,
     name: '20261018_120000_message_outcomes'
+  },
+  {
+    up: migration_20261019_090000_display_titles.up,
+    down: migration_20261019_090000_display_titles.down,
+    name: '20261019_090000_display_titles'
   },
 ];

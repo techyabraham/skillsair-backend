@@ -1,4 +1,5 @@
 import type { GlobalConfig } from 'payload'
+import { STUDIO_GROUP } from '../admin/studio-config.js'
 
 /**
  * Owner-supplied content for the lifecycle emails. Anything left empty is simply left out of
@@ -7,7 +8,7 @@ import type { GlobalConfig } from 'payload'
 export const EmailContent: GlobalConfig = {
   slug: 'email-content',
   label: 'Email content',
-  admin: { group: 'Content', description: 'Optional, true content for the lifecycle emails. Empty fields are left out of the emails.' },
+  admin: { group: STUDIO_GROUP.messaging, description: 'Optional, true content for the lifecycle emails. Empty fields are left out of the emails.' },
   access: {
     read: ({ req }) => req.user?.role === 'admin',
     update: ({ req }) => req.user?.role === 'admin',

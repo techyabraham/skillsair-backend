@@ -1,4 +1,6 @@
 import type { CollectionConfig } from 'payload'
+import { STUDIO_GROUP } from '../admin/studio-config.js'
+import { DISPLAY_TITLES } from '../hooks/display-title.js'
 
 /**
  * Every lifecycle message SkillsAir sends (or decides not to send), by email or WhatsApp.
@@ -7,10 +9,10 @@ import type { CollectionConfig } from 'payload'
  * never go to the same person twice in the same cycle, even when webhooks retry.
  */
 export const Messages: CollectionConfig = {
-  slug: 'messages',
+  slug: 'messages', labels: { singular: 'Message', plural: 'Messages' },
   admin: {
-    group: 'People',
-    useAsTitle: 'idempotencyKey',
+    group: STUDIO_GROUP.messaging,
+    useAsTitle: 'displayTitle',
     defaultColumns: ['person', 'track', 'stepId', 'channel', 'status', 'sentAt'],
     description: 'Lifecycle emails and WhatsApp messages. Read-only.',
   },
@@ -22,6 +24,7 @@ export const Messages: CollectionConfig = {
   },
   indexes: [{ fields: ['personKey', 'sentAt'] }],
   fields: [
+    DISPLAY_TITLES.messages,
     { name: 'person', type: 'relationship', relationTo: ['users', 'leads'], required: true },
     {
       name: 'personKey',

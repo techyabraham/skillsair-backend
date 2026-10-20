@@ -1,8 +1,10 @@
 import type { CollectionConfig } from 'payload'
 import { resolveAuthUser } from '../middleware/authenticate.js'
+import { STUDIO_GROUP } from '../admin/studio-config.js'
+import { DISPLAY_TITLES } from '../hooks/display-title.js'
 
 export const QuizAttempts: CollectionConfig = {
-  slug: 'quiz-attempts', admin: { group: 'People', useAsTitle: 'id', defaultColumns: ['student', 'quiz', 'score', 'passed', 'createdAt'] },
+  slug: 'quiz-attempts', labels: { singular: 'Quiz attempt', plural: 'Quiz attempts' }, admin: { group: STUDIO_GROUP.learners, useAsTitle: 'displayTitle', defaultColumns: ['student', 'quiz', 'score', 'passed', 'createdAt'] },
   access: {
     read: async ({ req }) => {
       const user = req.user ?? await resolveAuthUser(req)
@@ -11,6 +13,7 @@ export const QuizAttempts: CollectionConfig = {
     create: () => false, update: () => false, delete: ({ req }) => req.user?.role === 'admin',
   },
   fields: [
+    DISPLAY_TITLES.quizAttempts,
     { name: 'student', type: 'relationship', relationTo: 'users', required: true },
     { name: 'quiz', type: 'relationship', relationTo: 'quizzes', required: true },
     { name: 'score', type: 'number', required: true, min: 0, max: 100 },

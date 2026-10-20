@@ -1,11 +1,12 @@
 import type { CollectionConfig } from 'payload'
+import { STUDIO_GROUP } from '../admin/studio-config.js'
 
 export const Sections: CollectionConfig = {
-  slug: 'sections',
+  slug: 'sections', labels: { singular: 'Section', plural: 'Sections' },
   admin: {
-    group: 'Learning',
+    group: STUDIO_GROUP.learning,
     useAsTitle: 'title',
-    defaultColumns: ['title', 'course', 'order', 'updatedAt'],
+    defaultColumns: ['order', 'title', 'course', 'lessonCount', 'updatedAt'],
   },
   access: {
     read: () => true,
@@ -15,8 +16,9 @@ export const Sections: CollectionConfig = {
   },
   fields: [
     { name: 'title', type: 'text', required: true },
-    { name: 'order', type: 'number', required: true },
+    { name: 'order', type: 'number', required: true, admin: { components: { Cell: '/src/admin/cells/cells#OrderNumberCell' } } },
     { name: 'course', type: 'relationship', relationTo: 'courses', required: true },
+    { name: 'lessonCount', type: 'ui', label: 'Lessons', admin: { components: { Cell: '/src/admin/cells/cells#SectionLessonCountCell' } } },
     {
       name: 'lessons',
       type: 'join',

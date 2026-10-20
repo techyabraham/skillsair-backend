@@ -1,11 +1,13 @@
 import type { CollectionConfig } from 'payload'
+import { STUDIO_GROUP } from '../admin/studio-config.js'
 
 export const Media: CollectionConfig = {
-  slug: 'media',
+  slug: 'media', labels: { singular: 'Media file', plural: 'Media' },
   admin: {
-    group: 'Content',
+    group: STUDIO_GROUP.website,
     useAsTitle: 'filename',
-    defaultColumns: ['filename', 'mimeType', 'filesize', 'updatedAt'],
+    defaultColumns: ['filename', 'alt', 'mimeType', 'filesize', 'updatedAt'],
+    components: { beforeListTable: ['/src/admin/lists/strips#MediaStrip'] },
   },
   access: {
     read: () => true,
@@ -28,6 +30,7 @@ export const Media: CollectionConfig = {
       name: 'alt',
       type: 'text',
       required: true,
+      admin: { components: { Cell: '/src/admin/cells/cells#AltTextCell' } },
     },
   ],
   hooks: {

@@ -1,11 +1,12 @@
 import type { CollectionConfig } from 'payload'
+import { STUDIO_GROUP } from '../admin/studio-config.js'
 
 export const Plans: CollectionConfig = {
-  slug: 'plans',
+  slug: 'plans', labels: { singular: 'Plan', plural: 'Plans' },
   admin: {
-    group: 'Commerce',
+    group: STUDIO_GROUP.revenue,
     useAsTitle: 'name',
-    defaultColumns: ['name', 'course', 'kind', 'price', 'interval', 'isActive'],
+    defaultColumns: ['name', 'course', 'kind', 'price', 'paystackPlanCode', 'isActive'],
   },
   access: {
     read: () => true,
@@ -17,7 +18,7 @@ export const Plans: CollectionConfig = {
     { name: 'name', type: 'text', required: true },
     { name: 'description', type: 'textarea' },
     { name: 'course', type: 'relationship', relationTo: 'courses', required: true },
-    { name: 'price', type: 'number', required: true, min: 0 },
+    { name: 'price', type: 'number', required: true, min: 0, admin: { components: { Cell: '/src/admin/cells/cells#PlanPriceCell' } } },
     {
       name: 'interval',
       type: 'select',
@@ -39,9 +40,10 @@ export const Plans: CollectionConfig = {
       admin: {
         description:
           'Scholarship plans (₦2,000 a month) can only be started while a scholarship window is open. Learners who subscribed keep their rate.',
+        components: { Cell: '/src/admin/cells/cells#PlanKindValueCell' },
       },
     },
-    { name: 'paystackPlanCode', type: 'text' },
+    { name: 'paystackPlanCode', type: 'text', admin: { components: { Cell: '/src/admin/cells/cells#PaystackCodeCell' } } },
     {
       name: 'features',
       type: 'array',
