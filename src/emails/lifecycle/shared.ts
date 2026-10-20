@@ -84,6 +84,7 @@ export const SAMPLE: MessageData = {
   graceEnds: 'Thursday 22 October',
   renewalSoon: false,
   stopBillingOnComplete: true,
+  manualBilling: false,
   certificateUrl: 'https://skillsair.com/certificates/verify/SAC-7Q2K9',
   linkedinAddUrl: 'https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Data%20Analysis&organizationName=SkillsAir',
   laptopApplicationsOpen: true,

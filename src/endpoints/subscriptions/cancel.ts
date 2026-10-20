@@ -17,6 +17,7 @@ interface SubscriptionDoc {
   paystackSubscriptionCode: string | null | undefined
   paystackEmailToken: string | null | undefined
   currentPeriodEnd: string | null | undefined
+  billing?: 'card' | 'manual' | null
 }
 
 
@@ -38,7 +39,11 @@ async function handler(req: PayloadRequest): Promise<Response> {
     throw new AppError('NOT_FOUND', 'No active subscription found')
   }
 
-  if (subscription.paystackSubscriptionCode && subscription.paystackEmailToken) {
+  // Month-by-month (transfer/OPay) plans have nothing at Paystack to switch off: cancelling stops
+  // the reminders and access runs to the end of the paid month.
+  if (subscription.billing === 'manual') {
+    // nothing to disable
+  } else if (subscription.paystackSubscriptionCode && subscription.paystackEmailToken) {
     await disableSubscription(subscription.paystackSubscriptionCode, subscription.paystackEmailToken)
   } else {
     throw new AppError('VALIDATION_ERROR', 'Subscription is awaiting Paystack confirmation')

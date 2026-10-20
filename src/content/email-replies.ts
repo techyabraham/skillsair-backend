@@ -25,6 +25,6 @@ export const EMAIL_QUICK_REPLIES: QuickReply[] = [
   },
   {
     label: 'Money',
-    body: 'Your ₦2,000-a-month rate never expires, so come back whenever you’re ready. If someone can help, they can pay with their own card at checkout.',
+    body: 'Your ₦2,000-a-month rate never expires, so come back whenever you’re ready. If someone can help, they can pay by bank transfer, OPay or their own card at checkout.',
   },
 ]

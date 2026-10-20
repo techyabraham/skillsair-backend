@@ -13,6 +13,7 @@ interface SubscriptionRow {
   status: 'active' | 'past_due' | 'cancelled' | 'expired'
   course: unknown
   paystackSubscriptionCode?: string | null
+  billing?: 'card' | 'manual' | null
   updatedAt?: string
 }
 
@@ -25,6 +26,8 @@ interface SubscriptionRow {
  *   subscription is switched off once the new one is paid.
  * - An active (or cancelled-but-running) plan: Paystack's hosted page to change the card
  *   before the next charge (for the upcoming-charge and expiring-card emails).
+ * - A month-by-month (transfer/OPay) plan: there's no card to change, so checkout for the same
+ *   programme, where paying adds the next month (mode "pay").
  * Returns { url, mode } for the website's /billing/update-card route to redirect to.
  */
 async function handler(req: PayloadRequest): Promise<Response> {
@@ -41,11 +44,12 @@ async function handler(req: PayloadRequest): Promise<Response> {
   const subscription = [...rows].sort((a, b) => priority.indexOf(a.status) - priority.indexOf(b.status))[0]
   if (!subscription) throw new AppError('NOT_FOUND', 'No subscription found')
 
-  if (subscription.status === 'past_due' || subscription.status === 'expired') {
+  if (subscription.billing === 'manual' || subscription.status === 'past_due' || subscription.status === 'expired') {
     const courseId = relationId(subscription.course)
     const course = courseId ? await req.payload.findByID({ collection: 'courses', id: courseId, depth: 0, overrideAccess: true }).catch(() => null) : null
     if (!course?.slug) throw new AppError('NOT_FOUND', 'Programme not found')
-    return sendSuccess({ url: `/checkout?course=${encodeURIComponent(String(course.slug))}`, mode: 'restart' })
+    const mode = subscription.billing === 'manual' && subscription.status !== 'expired' ? 'pay' : 'restart'
+    return sendSuccess({ url: `/checkout?course=${encodeURIComponent(String(course.slug))}`, mode })
   }
 
   if (!subscription.paystackSubscriptionCode) throw new AppError('VALIDATION_ERROR', 'Your plan is still being confirmed by Paystack. Please try again in a few minutes.')

@@ -27,6 +27,63 @@ export function inGrace(subscription: { status?: string | null; lastFailedAt?: s
   return end !== null && Date.parse(end) > now
 }
 
+/**
+ * How a learner can pay at checkout, in the order the site offers them. Bank transfer is the
+ * default; OPay is Paystack's "Pay with OPay", which Paystack lists under its Bank option; and
+ * Paystack is the full Paystack checkout with every option it offers.
+ */
+export const PAYMENT_METHODS = ['bank_transfer', 'opay', 'paystack'] as const
+export type PaymentMethod = (typeof PAYMENT_METHODS)[number]
+
+/**
+ * Paystack `channels` for a payment. Monthly plans paid through "Paystack" renew from a saved
+ * card, which Paystack only allows for card payments, so those are card-only. Transfer and OPay
+ * can't be charged again automatically: they pay for one month at a time (see `billing` on
+ * subscriptions). Undefined = every channel the Paystack account has switched on.
+ */
+export function paystackChannels(method: PaymentMethod, recurringPlan: boolean): string[] | undefined {
+  if (method === 'bank_transfer') return ['bank_transfer']
+  if (method === 'opay') return ['bank']
+  return recurringPlan ? ['card'] : undefined
+}
+
+/** Transfer and OPay pay month by month; only card payments through Paystack can renew. */
+export function billingFor(method: PaymentMethod): 'card' | 'manual' {
+  return method === 'paystack' ? 'card' : 'manual'
+}
+
+export interface AccessSubscription {
+  status?: string | null
+  billing?: string | null
+  currentPeriodEnd?: string | number | null
+  lastFailedAt?: string | number | null
+}
+
+const toMs = (value: string | number | null | undefined) => (value === null || value === undefined || value === '' ? 0 : typeof value === 'number' ? value : Date.parse(value) || 0)
+
+/**
+ * When a month-by-month (transfer/OPay) plan's access ends: the paid month plus the same grace
+ * days a failed card renewal gets, so a learner who pays a day late isn't locked out.
+ */
+export function manualAccessEndsAt(currentPeriodEnd: string | number | null | undefined, days = accessGraceDays()): number {
+  const end = toMs(currentPeriodEnd)
+  return end ? end + days * 86_400_000 : 0
+}
+
+/**
+ * Whether a subscription gives access right now: paid up (active, or cancelled but running to
+ * the end of its month), a failed card renewal inside its grace days, or a month-by-month plan
+ * inside its month plus grace days.
+ */
+export function subscriptionGivesAccess(subscription: AccessSubscription | null | undefined, now = Date.now()): boolean {
+  if (!subscription) return false
+  const status = String(subscription.status)
+  const end = toMs(subscription.currentPeriodEnd)
+  if (['active', 'cancelled', 'past_due'].includes(status) && end > now) return true
+  if (subscription.billing === 'manual' && status === 'active' && manualAccessEndsAt(subscription.currentPeriodEnd) > now) return true
+  return inGrace({ status: subscription.status, lastFailedAt: subscription.lastFailedAt ? new Date(toMs(subscription.lastFailedAt)).toISOString() : null }, now)
+}
+
 /** Billing stops when a learner finishes, unless the owner switches it off (STOP_BILLING_ON_COMPLETE=false). */
 export function stopBillingOnComplete(): boolean {
   return process.env.STOP_BILLING_ON_COMPLETE !== 'false'

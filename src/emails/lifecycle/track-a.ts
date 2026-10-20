@@ -175,7 +175,7 @@ export const A5 = lifecycleEmail({
       {
         ordered: true,
         list: [
-          `Start your scholarship plan: ${monthly(d)} by card.`,
+          `Start your scholarship plan: ${monthly(d)} by bank transfer, OPay or card.`,
           'Watch your first lesson today. About 8 hours a week gets you through in about 3 months.',
           'When you finish, claim your verifiable certificate and unlock internship openings.',
         ],
@@ -224,7 +224,7 @@ export const A7 = lifecycleEmail({
       'Short one. The Access Scholarship closes tonight at 11:59pm.',
       `Start before then: ${monthly(d)}, locked until you finish.`,
       `After tonight: ${standardFee(d)}.`,
-      'It takes about 2 minutes by card.',
+      'It takes about 2 minutes by bank transfer, OPay or card.',
     ]),
     button: { label: 'Start before midnight', url: d.checkoutUrl },
     ps: "This is the last email I'll send about this window.",

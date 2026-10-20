@@ -63,6 +63,20 @@ if (!instructorExists.totalDocs) {
   console.log(`Created demo instructor ${DEMO_INSTRUCTOR.email} for ${firstTwo.length} programmes.`)
 }
 
+// A local test learner whose email Paystack accepts (it rejects .test addresses), for trying
+// checkout in Paystack TEST mode. Password is local test data.
+export const DEMO_PAYER = { email: 'skillsair.demo.payer@example.com', password: 'Demo-Payer-Local-2026!' }
+const payerExists = await payload.count({ collection: 'users', where: { email: { equals: DEMO_PAYER.email } }, overrideAccess: true })
+if (!payerExists.totalDocs) {
+  await payload.create({
+    collection: 'users',
+    overrideAccess: true,
+    context: { skipWelcomeEmail: true },
+    data: { ...DEMO_PAYER, firstName: 'Tolu', lastName: 'Payer', role: 'student', isStudent: true, isVerified: true, phone: '+2348000000098' } as never,
+  })
+  console.log(`Created demo payer ${DEMO_PAYER.email}.`)
+}
+
 const existing = await payload.count({ collection: 'users', where: { email: { like: `%@${DEMO_DOMAIN}` } }, overrideAccess: true })
 if (existing.totalDocs > 0) {
   console.log(`Demo data already present (${existing.totalDocs} demo users). Nothing to do.`)

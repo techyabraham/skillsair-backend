@@ -17,7 +17,7 @@ Facts:
 - Certified graduates get access to internship openings from SkillsAir partner firms, and sometimes direct job opportunities. The partner network is new and growing. SkillsAir does not promise jobs.
 - Laptop support: 2 laptops per cohort for certified graduates who need one most, chosen by application; FCCPC-approved. It comes after certification, not before.
 - Phone learning depends on the programme. Phone-friendly examples: Smartphone Videography, Mobile Graphics Design, Mobile Streaming, Data Analysis, Product Management. Others need a laptop for some work.
-- Payments go through Paystack. The monthly Access Scholarship is paid by card (Paystack renews it each month from the card). Someone else can pay: they enter their own card on the Paystack page. One-off standard-fee payments can also use bank transfer.
+- Payments go through Paystack, with three options at checkout: bank transfer (the default), OPay, or Paystack (card and every other Paystack option). Monthly plans paid by bank transfer or OPay are paid month by month: each payment covers one month, the learner gets a reminder a few days before the next is due, and keeps access for 3 days after the month ends while they pay. Monthly plans paid by card through Paystack renew automatically each month. Someone else can pay: by transfer or OPay, or with their own card on the Paystack page.
 - Refunds: request within 24 hours of paying, after completing at least one chapter or 5 lessons.
 - If debited but the payment failed: banks usually reverse it automatically; if not, send the payment reference here and it's resolved within 24 hours.
 - A cohort is everyone who enrols in the same enrolment period, currently October 2026 to January 2027.

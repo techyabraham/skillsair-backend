@@ -55,6 +55,21 @@ export const Subscriptions: CollectionConfig = {
       defaultValue: false,
       admin: { description: 'On the ₦2,000-a-month Access Scholarship plan: the learner keeps that rate for this programme.' },
     },
+    {
+      name: 'billing',
+      type: 'select',
+      required: true,
+      defaultValue: 'card',
+      label: 'How they pay',
+      options: [
+        { label: 'Card (Paystack renews it each month)', value: 'card' },
+        { label: 'Bank transfer or OPay (pays each month themselves)', value: 'manual' },
+      ],
+      admin: {
+        description:
+          'Transfer and OPay payments can’t renew automatically: each payment adds one month, the learner is reminded before it ends, and access continues for the grace days after.',
+      },
+    },
   ],
   timestamps: true,
 }
