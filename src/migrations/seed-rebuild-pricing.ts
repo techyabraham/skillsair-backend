@@ -9,7 +9,8 @@
  * and, for every paid programme, the two monthly Paystack plans if they don't exist yet:
  *   - "Access Scholarship" plan: ₦2,000 a month (kind scholarship; only sold while a window is open)
  *   - "Standard monthly" plan:   ₦40,000 a month (kind standard)
- * Creating plans calls the Paystack API, so it needs PAYSTACK_SECRET_KEY and --execute.
+ * Creating plans calls the Paystack API, so it needs PAYSTACK_SECRET_KEY and --execute. The
+ * Paystack plan charges the price plus the Paystack fee (₦2,031 for ₦2,000; see billing.ts).
  * and ticks `phoneFriendly` for titles matching Canva Design, Smartphone Videography, Mobile Graphics Design, Mobile Streaming,
  * Data Analysis or Product Management (the owner confirms or adjusts these in the admin).
  *
@@ -23,6 +24,7 @@ import { loadEnv } from 'payload/node'
 import { getPayload } from 'payload'
 import type { Payload } from 'payload'
 import { createPlan } from '../lib/paystack.js'
+import { withPaystackFee } from '../lib/billing.js'
 
 const STANDARD_PRICE = 100000
 const STANDARD_MONTHLY_PRICE = 40000
@@ -64,14 +66,14 @@ async function ensurePlans(payload: Payload, course: CourseRow, execute: boolean
       continue
     }
     if (!execute) {
-      report.push(`${course.title}: would create ${spec.kind} plan ₦${spec.price}/month on Paystack`)
+      report.push(`${course.title}: would create ${spec.kind} plan ₦${spec.price}/month (₦${withPaystackFee(spec.price)} with the Paystack fee) on Paystack`)
       continue
     }
     if (!process.env.PAYSTACK_SECRET_KEY) {
       report.push(`${course.title}: SKIPPED ${spec.kind} plan (PAYSTACK_SECRET_KEY not set)`)
       continue
     }
-    const code = await createPlan(spec.name, spec.price, 'monthly')
+    const code = await createPlan(spec.name, withPaystackFee(spec.price), 'monthly')
     await payload.create({
       collection: 'plans',
       data: { name: spec.name, course: course.id, price: spec.price, interval: 'monthly', kind: spec.kind, paystackPlanCode: code, isActive: true },

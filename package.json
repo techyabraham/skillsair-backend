@@ -27,6 +27,7 @@
     "migrate:import:orders": "node --loader ts-node/esm src/migrations/import-orders.ts",
     "migrate:import:learning": "node --loader ts-node/esm src/migrations/import-learning-data.ts",
     "seed:rebuild-pricing": "node --loader ts-node/esm src/migrations/seed-rebuild-pricing.ts",
+    "paystack:plan-fees": "node --loader ts-node/esm src/migrations/update-plan-fees.ts",
     "seed:legal-pages": "node --loader ts-node/esm src/migrations/seed-legal-pages.ts",
     "migrate:followups": "node --loader ts-node/esm src/migrations/migrate-followups-to-messages.ts",
     "lifecycle:dry-run": "node --loader ts-node/esm scripts/lifecycle-dry-run.ts",

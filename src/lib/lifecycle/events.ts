@@ -7,6 +7,7 @@ import { stepById } from './sequences.js'
 import { idempotencyKey, type PlannedStep } from './plan.js'
 import { lagosDayNumber } from './timing.js'
 import { attributeConversion } from './attribution.js'
+import { withPaystackFee } from '../billing.js'
 import type { Stage } from './types.js'
 
 /**
@@ -18,7 +19,7 @@ import type { Stage } from './types.js'
 export type LifecycleEvent =
   | { type: 'first_payment_success'; userId: number; courseId: number; orderId: number; subscriptionId?: number }
   | { type: 'resubscribed'; userId: number; courseId: number; subscriptionId: number; replacedSubscriptionIds: number[] }
-  | { type: 'renewal_success'; subscriptionId: number; recovered: boolean; reference?: string }
+  | { type: 'renewal_success'; subscriptionId: number; recovered: boolean; reference?: string; amount?: number }
   /** Month-by-month (transfer/OPay) plan: next month due in a few days (soon) or the month has ended (grace). */
   | { type: 'manual_payment_due'; subscriptionId: number; due: 'soon' | 'grace'; periodEnd: string }
   | { type: 'invoice_upcoming'; subscriptionId: number; chargeDate: string | null; amount: number | null; cardLast4: string | null }
@@ -153,7 +154,7 @@ async function sendForEvent(payload: Payload, event: LifecycleEvent): Promise<vo
       const amount = owner.planPrice ?? undefined
       if (event.type === 'renewal_success' && event.recovered) await attributeConversion(payload, owner.userId, 'recovered')
       if (event.type === 'renewal_success') {
-        await sendEventStep(payload, person, event.recovered ? 'T7' : 'T2', stage(subject, day, owner.courseId), undefined, { amount, paidAt: lagosDay(now), ...(event.reference ? { reference: event.reference } : {}) })
+        await sendEventStep(payload, person, event.recovered ? 'T7' : 'T2', stage(subject, day, owner.courseId), undefined, { amount: event.amount ?? amount, paidAt: lagosDay(now), ...(event.reference ? { reference: event.reference } : {}) })
       } else if (event.type === 'invoice_upcoming') {
         await sendEventStep(payload, person, 'T3', stage(subject, day, owner.courseId), undefined, {
           amount: event.amount ?? amount, ...(event.chargeDate ? { chargeDate: lagosDay(event.chargeDate) } : {}), ...(event.cardLast4 ? { cardLast4: event.cardLast4 } : {}),
@@ -182,7 +183,8 @@ async function sendForEvent(payload: Payload, event: LifecycleEvent): Promise<vo
       // The reminder job runs hourly; sending (or a dry-run record) happens once per paid month.
       const already = await payload.count({ collection: 'messages', where: { idempotencyKey: { equals: idempotencyKey('T', stepId, dueStage.subjectId, dueStage.cycle) } }, overrideAccess: true })
       if (already.totalDocs) return
-      await sendEventStep(payload, person, stepId, dueStage, undefined, { amount: owner.planPrice ?? undefined })
+      // What they'll pay: the monthly price plus the Paystack fee.
+      await sendEventStep(payload, person, stepId, dueStage, undefined, { amount: owner.planPrice ? withPaystackFee(owner.planPrice) : undefined })
       return
     }
     case 'access_ended': {
