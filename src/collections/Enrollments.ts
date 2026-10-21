@@ -2,6 +2,8 @@ import type { CollectionConfig } from 'payload'
 import { afterEnroll } from '../hooks/courses/afterEnroll.js'
 import { afterComplete } from '../hooks/courses/afterComplete.js'
 import { resolveAuthUser } from '../middleware/authenticate.js'
+import { STUDIO_GROUP } from '../admin/studio-config.js'
+import { DISPLAY_TITLES } from '../hooks/display-title.js'
 
 function relationId(value: unknown): number | string | undefined {
   if (value === null || value === undefined) return undefined
@@ -12,10 +14,10 @@ function relationId(value: unknown): number | string | undefined {
 }
 
 export const Enrollments: CollectionConfig = {
-  slug: 'enrollments',
+  slug: 'enrollments', labels: { singular: 'Enrolment', plural: 'Enrolments' },
   admin: {
-    group: 'People',
-    useAsTitle: 'id',
+    group: STUDIO_GROUP.learners,
+    useAsTitle: 'displayTitle',
     defaultColumns: ['student', 'course', 'status', 'progressPercent', 'enrolledAt'],
   },
   access: {
@@ -30,6 +32,7 @@ export const Enrollments: CollectionConfig = {
     delete: ({ req }) => req.user?.role === 'admin',
   },
   fields: [
+    DISPLAY_TITLES.enrollments,
     { name: 'student', type: 'relationship', relationTo: 'users', required: true },
     { name: 'course', type: 'relationship', relationTo: 'courses', required: true },
     {

@@ -1,9 +1,10 @@
 import type { CollectionConfig } from 'payload'
+import { STUDIO_GROUP } from '../admin/studio-config.js'
 
 export const NewsletterSubscribers: CollectionConfig = {
-  slug: 'newsletter-subscribers',
+  slug: 'newsletter-subscribers', labels: { singular: 'Newsletter subscriber', plural: 'Newsletter subscribers' },
   admin: {
-    group: 'People',
+    group: STUDIO_GROUP.messaging,
     useAsTitle: 'email',
     defaultColumns: ['email', 'status', 'subscribedAt', 'createdAt'],
   },

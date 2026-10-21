@@ -8,10 +8,12 @@ import { initializeTransaction } from '../../lib/paystack.js'
 import { generatePaystackReference } from '../../utils/generate-code.js'
 import { AppError } from '../../types/index.js'
 import { certificatePrice } from '../../lib/pricing.js'
+import { PAYMENT_METHODS, paystackChannels } from '../../lib/billing.js'
 
 const purchaseSchema = z.object({
   courseId: z.string().min(1),
-  paymentMethod: z.enum(['paystack', 'bank_transfer']).optional(),
+  // Bank transfer is the default; see PAYMENT_METHODS in billing.ts.
+  paymentMethod: z.enum(PAYMENT_METHODS).optional(),
 })
 
 interface EnrollmentDoc {
@@ -85,6 +87,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
       currency: 'NGN',
       status: 'pending',
       reference,
+      metadata: { paymentMethod: body.paymentMethod ?? 'bank_transfer' },
     },
     overrideAccess: true,
   })
@@ -95,7 +98,10 @@ async function handler(req: PayloadRequest): Promise<Response> {
     reference,
     callback_url: `${FRONTEND_URL}/payments/callback`,
     currency: 'NGN',
-    ...(body.paymentMethod === 'bank_transfer' ? { channels: ['bank_transfer'] } : {}),
+    ...(() => {
+      const channels = paystackChannels(body.paymentMethod ?? 'bank_transfer', false)
+      return channels ? { channels } : {}
+    })(),
     metadata: {
       userId: user.id,
       type: 'certificate',

@@ -1,10 +1,12 @@
 import type { CollectionConfig } from 'payload'
+import { STUDIO_GROUP } from '../admin/studio-config.js'
+import { DISPLAY_TITLES } from '../hooks/display-title.js'
 
 export const Referrals: CollectionConfig = {
-  slug: 'referrals',
+  slug: 'referrals', labels: { singular: 'Referral', plural: 'Referrals' },
   admin: {
-    group: 'Commerce',
-    useAsTitle: 'id',
+    group: STUDIO_GROUP.revenue,
+    useAsTitle: 'displayTitle',
     defaultColumns: ['referrer', 'referredUser', 'order', 'status', 'createdAt'],
   },
   access: {
@@ -18,6 +20,7 @@ export const Referrals: CollectionConfig = {
     delete: ({ req }) => req.user?.role === 'admin',
   },
   fields: [
+    DISPLAY_TITLES.referrals,
     { name: 'referrer', type: 'relationship', relationTo: 'users', required: true },
     { name: 'referredUser', type: 'relationship', relationTo: 'users', required: true },
     { name: 'referralCode', type: 'text', required: true },

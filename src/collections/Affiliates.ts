@@ -1,11 +1,13 @@
 import type { CollectionConfig } from 'payload'
 import { encryptField, decryptField } from '../utils/sanitize.js'
+import { STUDIO_GROUP } from '../admin/studio-config.js'
+import { DISPLAY_TITLES } from '../hooks/display-title.js'
 
 export const Affiliates: CollectionConfig = {
-  slug: 'affiliates',
+  slug: 'affiliates', labels: { singular: 'Affiliate', plural: 'Affiliates' },
   admin: {
-    group: 'Commerce',
-    useAsTitle: 'id',
+    group: STUDIO_GROUP.revenue,
+    useAsTitle: 'displayTitle',
     defaultColumns: ['user', 'affiliateCode', 'isApproved', 'createdAt'],
   },
   access: {
@@ -23,6 +25,7 @@ export const Affiliates: CollectionConfig = {
     delete: ({ req }) => req.user?.role === 'admin',
   },
   fields: [
+    DISPLAY_TITLES.affiliates,
     { name: 'user', type: 'relationship', relationTo: 'users', required: true, unique: true },
     { name: 'affiliateCode', type: 'text', required: true, unique: true },
     { name: 'isApproved', type: 'checkbox', defaultValue: false },

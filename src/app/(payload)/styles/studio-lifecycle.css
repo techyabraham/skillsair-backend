@@ -1,0 +1,201 @@
+/* Lifecycle emails view (src/admin/views/lifecycle) and the shared drawer and health dot. */
+
+.sa-lifecycle {
+  display: grid;
+  gap: 20px;
+}
+
+.sa-lifecycle__tracks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 190px), 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sa-lifecycle__track {
+  display: grid;
+  gap: 4px;
+  padding: 14px 16px;
+  border: 1px solid var(--sa-line);
+  border-radius: var(--style-radius-l);
+  background: var(--sa-surface-raised);
+  box-shadow: var(--sa-shadow-1);
+}
+
+.sa-lifecycle__track-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--sa-font-display);
+  font-size: 20px;
+}
+
+.sa-lifecycle__track-name {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.sa-lifecycle__track-stats {
+  color: var(--sa-ink-muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.sa-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--sa-line-strong);
+}
+
+.sa-dot--positive { background: var(--sa-positive); }
+.sa-dot--caution { background: var(--sa-caution); }
+.sa-dot--critical { background: var(--sa-critical); box-shadow: 0 0 0 3px var(--sa-critical-soft); }
+
+.sa-lifecycle__table th[scope="row"] {
+  padding: 10px;
+  border-bottom: 1px solid var(--sa-line);
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 14px;
+}
+
+.sa-lifecycle__step {
+  display: inline-block;
+  min-width: 44px;
+  padding: 2px 8px;
+  border-radius: var(--style-radius-s);
+  background: var(--sa-surface-sunken);
+  color: var(--sa-ink);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.sa-lifecycle__name {
+  min-width: 220px;
+  max-width: 380px;
+}
+
+.sa-lifecycle__row--red td,
+.sa-lifecycle__row--red th {
+  background: var(--sa-critical-soft);
+}
+
+.sa-lifecycle__variants {
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.sa-lifecycle__variants summary {
+  color: var(--sa-accent);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sa-lifecycle__variants ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  color: var(--sa-ink-muted);
+}
+
+.sa-lifecycle__note {
+  margin: 0;
+  font-size: 13px;
+}
+
+/* Inline rate bars */
+.sa-rate {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 110px;
+}
+
+.sa-rate__track {
+  flex: 1;
+  height: 6px;
+  min-width: 50px;
+  border-radius: var(--sa-radius-pill);
+  background: var(--sa-surface-sunken);
+  overflow: hidden;
+}
+
+.sa-rate__track span {
+  display: block;
+  height: 100%;
+  background: var(--sa-chart-1);
+}
+
+.sa-rate--over .sa-rate__track span {
+  background: var(--sa-critical);
+}
+
+.sa-rate__value {
+  min-width: 4.5ch;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.sa-rate--over .sa-rate__value {
+  color: var(--sa-critical-ink);
+  font-weight: 700;
+}
+
+html[data-theme="dark"] .sa-rate--over .sa-rate__value {
+  color: var(--sa-critical);
+}
+
+/* Drawer (native dialog) */
+.sa-drawer {
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: min(720px, 100vw);
+  height: 100dvh;
+  max-height: none;
+  margin: 0 0 0 auto;
+  padding: 0;
+  border: 0;
+  border-left: 1px solid var(--sa-line);
+  background: var(--sa-surface-raised);
+  color: var(--sa-ink);
+  box-shadow: var(--sa-shadow-2);
+}
+
+.sa-drawer[open] {
+  display: flex;
+  flex-direction: column;
+  animation: sa-drawer-in 250ms ease-out;
+}
+
+@keyframes sa-drawer-in {
+  from { transform: translateX(32px); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-drawer[open] { animation: none; }
+}
+
+.sa-drawer::backdrop {
+  background: var(--theme-overlay);
+}
+
+.sa-drawer__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--sa-line);
+}
+
+.sa-drawer__frame {
+  flex: 1;
+  width: 100%;
+  border: 0;
+  background: #ffffff; /* fixed: emails are designed on white */
+}

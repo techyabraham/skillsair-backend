@@ -1,0 +1,324 @@
+/* List cells (src/admin/cells) and summary strips (src/admin/lists). */
+
+.sa-cell__link,
+.sa-cell__plain-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sa-cell__link:hover .sa-person__name,
+.sa-cell__link:hover .sa-programme-cell__title,
+.sa-cell__plain-link:hover {
+  color: var(--sa-accent);
+  text-decoration: underline;
+}
+
+.sa-cell__stack {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  min-width: 0;
+}
+
+.sa-cell__small {
+  font-size: 12px;
+}
+
+.sa-cell__chips {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.sa-cell__time {
+  white-space: nowrap;
+}
+
+.sa-cell__story {
+  display: -webkit-box;
+  max-width: 340px;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: var(--sa-ink-muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.sa-cell__ring {
+  display: inline-flex;
+}
+
+.sa-chip-sm {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 8px;
+  border-radius: var(--sa-radius-pill);
+  background: var(--sa-neutral-soft);
+  color: var(--sa-neutral-ink);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.sa-chip-sm--accent {
+  background: var(--sa-accent-soft);
+  color: var(--sa-accent-soft-ink);
+}
+
+.sa-person {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.sa-person__name {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  color: var(--sa-ink);
+}
+
+.sa-person__verified {
+  color: var(--sa-positive);
+}
+
+.sa-programme-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sa-programme-cell__title {
+  font-weight: 600;
+  color: var(--sa-ink);
+}
+
+.sa-thumb {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--style-radius-m);
+  object-fit: cover;
+  background: var(--sa-surface-sunken);
+  border: 1px solid var(--sa-line);
+}
+
+.sa-thumb--empty {
+  display: inline-block;
+  background:
+    repeating-linear-gradient(45deg, var(--sa-surface-sunken), var(--sa-surface-sunken) 6px, var(--sa-line) 6px, var(--sa-line) 7px);
+}
+
+.sa-score {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sa-score__track {
+  width: 56px;
+  height: 6px;
+  border-radius: var(--sa-radius-pill);
+  background: var(--sa-surface-sunken);
+  overflow: hidden;
+}
+
+.sa-score__track span {
+  display: block;
+  height: 100%;
+  background: var(--sa-accent-bright);
+}
+
+.sa-score__value {
+  min-width: 2.5ch;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.sa-needs-reply {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--sa-accent-soft-ink);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+html[data-theme="dark"] .sa-needs-reply {
+  color: var(--sa-accent);
+}
+
+.sa-needs-reply__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sa-accent-bright);
+  box-shadow: 0 0 0 3px var(--sa-accent-soft);
+}
+
+.sa-reference {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sa-copy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--style-radius-s);
+  background: transparent;
+  color: var(--sa-ink-muted);
+  cursor: pointer;
+}
+
+.sa-copy:hover {
+  border-color: var(--sa-line-strong);
+  color: var(--sa-ink);
+}
+
+.sa-renewal {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.sa-renewal--critical {
+  color: var(--sa-critical-ink);
+  font-weight: 600;
+}
+
+html[data-theme="dark"] .sa-renewal--critical {
+  color: var(--sa-critical);
+}
+
+.sa-lock {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--sa-accent-soft);
+  color: var(--sa-accent-soft-ink);
+}
+
+.sa-tick {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--sa-positive-ink);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+html[data-theme="dark"] .sa-tick {
+  color: var(--sa-positive);
+}
+
+.sa-order-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 6px;
+  border-radius: var(--style-radius-s);
+  background: var(--sa-surface-sunken);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Summary strips */
+.sa-strip {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.sa-strip__figures {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr));
+  gap: 12px;
+  margin: 0;
+}
+
+.sa-strip__figure {
+  padding: 12px 16px;
+  border: 1px solid var(--sa-line);
+  border-radius: var(--style-radius-l);
+  background: var(--sa-surface-raised);
+  box-shadow: var(--sa-shadow-1);
+}
+
+.sa-strip__figure dt {
+  color: var(--sa-ink-muted);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.sa-strip__figure dd {
+  margin: 4px 0 0;
+  font-family: var(--sa-font-display);
+  font-size: 24px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.sa-strip__figure dd a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sa-strip__figure dd a:hover {
+  color: var(--sa-accent);
+  text-decoration: underline;
+}
+
+.sa-strip__figure--critical {
+  border-color: color-mix(in srgb, var(--sa-critical) 40%, var(--sa-line));
+}
+
+.sa-strip__figure--critical dd {
+  color: var(--sa-critical-ink);
+}
+
+html[data-theme="dark"] .sa-strip__figure--critical dd {
+  color: var(--sa-critical);
+}
+
+.sa-strip__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sa-strip__chips .sa-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  text-decoration: none;
+}
+
+.sa-strip__chips .sa-chip[aria-current="page"] {
+  border-color: var(--sa-accent);
+  background: var(--sa-accent-soft);
+  color: var(--sa-accent-soft-ink);
+}
+
+.sa-chip--clear {
+  border-style: dashed;
+  color: var(--sa-ink-muted);
+}

@@ -1,12 +1,12 @@
 import type { GlobalConfig } from 'payload'
+import { STUDIO_GROUP } from '../admin/studio-config.js'
 
 export const ScholarshipWindow: GlobalConfig = {
   slug: 'scholarship-window',
-  label: 'Scholarship Window',
+  label: 'Scholarship window',
   admin: {
-    group: 'Sales',
-    description:
-      "When this window closes, every programme is charged its standard fee until a new window opens. Close windows when announced. Between windows, the standard fee is charged. Don't extend a window after its closing date has been announced to learners.",
+    group: STUDIO_GROUP.admissions,
+    // The warning that used to be the description is the amber callout in WindowStatusPanel.
   },
   access: {
     // The window dates are public facts shown on the site; nothing here is sensitive.
@@ -14,6 +14,7 @@ export const ScholarshipWindow: GlobalConfig = {
     update: ({ req }) => req.user?.role === 'admin',
   },
   fields: [
+    { name: 'status', type: 'ui', admin: { components: { Field: '/src/admin/edit/misc#WindowStatusPanel' } } },
     {
       type: 'row',
       fields: [

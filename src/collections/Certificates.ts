@@ -1,10 +1,11 @@
 import type { CollectionConfig } from 'payload'
 import { resolveAuthUser } from '../middleware/authenticate.js'
+import { STUDIO_GROUP } from '../admin/studio-config.js'
 
 export const Certificates: CollectionConfig = {
-  slug: 'certificates',
+  slug: 'certificates', labels: { singular: 'Certificate', plural: 'Certificates' },
   admin: {
-    group: 'Learning',
+    group: STUDIO_GROUP.learning,
     useAsTitle: 'certificateCode',
     defaultColumns: ['certificateCode', 'student', 'course', 'issuedAt'],
   },

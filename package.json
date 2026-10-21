@@ -12,7 +12,7 @@
     "dev": "node --loader ts-node/esm server.ts",
     "build": "tsc",
     "admin:dev": "next dev -p 3000",
-    "admin:build": "npm run generate:importmap && next build --webpack",
+    "admin:build": "npm run admin:contrast && npm run generate:importmap && next build --webpack",
     "admin:start": "next start -p 3000",
     "start": "node dist/server.js",
     "migrate": "payload migrate",
@@ -32,9 +32,13 @@
     "lifecycle:dry-run": "node --loader ts-node/esm scripts/lifecycle-dry-run.ts",
     "emails:preview": "node --loader ts-node/esm scripts/emails-preview.ts",
     "seed:schools": "node --loader ts-node/esm src/migrations/seed-schools.ts",
-    "test": "node --loader ts-node/esm src/lib/pricing.test.ts && node --loader ts-node/esm src/lib/leads.test.ts && node --loader ts-node/esm src/lib/whatsapp.test.ts && node --loader ts-node/esm src/lib/school-lineup.test.ts && node --loader ts-node/esm src/lib/email.test.ts && node --loader ts-node/esm src/lib/billing.test.ts && node --loader ts-node/esm src/lib/lifecycle/lifecycle.test.ts && node --loader ts-node/esm src/emails/lifecycle/honesty.test.ts",
+    "test": "node --loader ts-node/esm src/lib/pricing.test.ts && node --loader ts-node/esm src/lib/leads.test.ts && node --loader ts-node/esm src/lib/whatsapp.test.ts && node --loader ts-node/esm src/lib/school-lineup.test.ts && node --loader ts-node/esm src/lib/email.test.ts && node --loader ts-node/esm src/lib/billing.test.ts && node --loader ts-node/esm src/lib/lifecycle/lifecycle.test.ts && node --loader ts-node/esm src/emails/lifecycle/honesty.test.ts && node --loader ts-node/esm src/admin/data/metrics.test.ts",
     "lint": "eslint src --ext .ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "typecheck:admin": "tsc -p tsconfig.next.json --noEmit",
+    "admin:theme": "node scripts/generate-admin-theme.mjs",
+    "admin:contrast": "node scripts/check-admin-contrast.mjs",
+    "admin:qa": "node scripts/studio-qa.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.135.0",
@@ -68,6 +72,9 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource/space-grotesk": "^5.3.0",
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/jsonwebtoken": "^9.0.7",
@@ -76,6 +83,8 @@
     "@types/pdfkit": "^0.13.5",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.7",
+    "lucide-react": "^1.59.0",
+    "playwright-core": "^1.64.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3"
   }

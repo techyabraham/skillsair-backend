@@ -94,14 +94,40 @@ export default buildConfig({
       titleSuffix: '· SkillsAir Studio',
       defaultOGImageType: 'dynamic',
     },
+    dateFormat: 'd MMM yyyy, HH:mm',
     components: {
+      Nav: '/src/admin/nav/StudioNav#StudioNav',
+      graphics: {
+        Icon: '/src/admin/brand/StudioBrand#StudioIcon',
+        Logo: '/src/admin/brand/StudioBrand#StudioLogo',
+      },
+      beforeLogin: ['/src/admin/brand/StudioBrand#StudioLoginPanel'],
+      settingsMenu: ['/src/admin/nav/StudioSettingsMenu#StudioSettingsMenu'],
+      actions: ['/src/admin/command/CommandBar#CommandBar'],
+      header: ['/src/admin/command/EnvRibbon#EnvRibbon'],
+      providers: ['/src/admin/a11y/A11yPatches#A11yPatches'],
       views: {
         dashboard: {
-          Component: '/src/admin/SkillsAirDashboard#SkillsAirDashboard',
+          Component: '/src/admin/views/overview/OverviewView#OverviewView',
           meta: { title: 'Overview · SkillsAir Studio' },
         },
+        queue: {
+          Component: '/src/admin/views/queue/QueueView#QueueView',
+          path: '/queue',
+          meta: { title: "Imisi's queue" },
+        },
+        guide: {
+          Component: '/src/admin/views/guide/GuideView#GuideView',
+          path: '/guide',
+          meta: { title: 'Studio guide' },
+        },
+        studioKit: {
+          Component: '/src/admin/views/StudioKitView#StudioKitView',
+          path: '/studio-kit',
+          meta: { title: 'Studio kit' },
+        },
         lifecycle: {
-          Component: '/src/admin/LifecycleView#LifecycleView',
+          Component: '/src/admin/views/lifecycle/LifecycleView#LifecycleView',
           path: '/lifecycle',
           meta: { title: 'Lifecycle emails' },
         },

@@ -5,6 +5,8 @@ import { asyncHandler, parseBody, readJsonBody, sendSuccess } from '../middlewar
 import { getScholarshipWindow, type ScholarshipWindowState } from '../lib/pricing.js'
 import { sanitizeText } from '../utils/sanitize.js'
 import { AppError } from '../types/index.js'
+import { STUDIO_GROUP } from '../admin/studio-config.js'
+import { DISPLAY_TITLES } from '../hooks/display-title.js'
 
 const isAdmin = ({ req }: { req: { user?: unknown } }) => (req.user as { role?: string } | null | undefined)?.role === 'admin'
 
@@ -108,11 +110,11 @@ const mineEndpoint: Endpoint = { path: '/mine', method: 'get', handler: asyncHan
 const applyEndpoint: Endpoint = { path: '/apply', method: 'post', handler: asyncHandler(apply) }
 
 export const LaptopApplications: CollectionConfig = {
-  slug: 'laptop-applications',
+  slug: 'laptop-applications', labels: { singular: 'Laptop application', plural: 'Laptop applications' },
   admin: {
-    group: 'People',
-    useAsTitle: 'cohortLabel',
-    defaultColumns: ['user', 'cohortLabel', 'currentDevice', 'status', 'createdAt'],
+    group: STUDIO_GROUP.admissions,
+    useAsTitle: 'displayTitle',
+    defaultColumns: ['displayTitle', 'story', 'certificate', 'status', 'createdAt'],
     description: 'Laptop support (FCCPC-approved): 2 per cohort, certified graduates only, awarded to the greatest need.',
   },
   endpoints: [mineEndpoint, applyEndpoint],
@@ -129,16 +131,18 @@ export const LaptopApplications: CollectionConfig = {
     delete: isAdmin,
   },
   fields: [
+    DISPLAY_TITLES.laptopApplications,
+    { name: 'storyCard', type: 'ui', admin: { disableListColumn: true, components: { Field: '/src/admin/edit/misc#LaptopStoryCard' } } },
     { name: 'user', type: 'relationship', relationTo: 'users', required: true, index: true },
     { name: 'cohortLabel', type: 'text', required: true, index: true },
-    { name: 'certificate', type: 'relationship', relationTo: 'certificates', required: true },
+    { name: 'certificate', type: 'relationship', relationTo: 'certificates', required: true, admin: { components: { Cell: '/src/admin/cells/cells#CertificateTickCell' } } },
     {
       name: 'story',
       type: 'textarea',
       required: true,
       minLength: 150,
       maxLength: 1500,
-      admin: { description: 'Tell us your story and why you need a laptop.' },
+      admin: { description: 'Tell us your story and why you need a laptop.', components: { Cell: '/src/admin/cells/cells#StoryPreviewCell' } },
     },
     {
       name: 'currentDevice',
@@ -169,8 +173,10 @@ export const LaptopApplications: CollectionConfig = {
         { label: 'Awarded', value: 'awarded' },
         { label: 'Not selected', value: 'not_selected' },
       ],
+      admin: { position: 'sidebar', components: { Cell: '/src/admin/cells/cells#LaptopStatusCell' } },
     },
-    { name: 'reviewNotes', type: 'textarea', access: { read: isAdmin, update: isAdmin, create: isAdmin } },
+    { name: 'awardCounter', type: 'ui', admin: { position: 'sidebar', disableListColumn: true, components: { Field: '/src/admin/edit/misc#LaptopAwardCounter' } } },
+    { name: 'reviewNotes', type: 'textarea', admin: { position: 'sidebar' }, access: { read: isAdmin, update: isAdmin, create: isAdmin } },
   ],
   timestamps: true,
 }

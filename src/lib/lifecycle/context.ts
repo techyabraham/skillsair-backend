@@ -111,6 +111,7 @@ export async function loadPerson(payload: Payload, ref: PersonRef): Promise<Load
       subscriptions: subscriptions.docs.map((doc) => ({
         id: Number(doc.id), courseId: Number(relationId(doc.course)), status: doc.status as PersonSnapshot['subscriptions'][number]['status'],
         lastFailedAt: ms((doc as { lastFailedAt?: string | null }).lastFailedAt), currentPeriodEnd: ms(doc.currentPeriodEnd),
+        billing: (doc as { billing?: string | null }).billing === 'manual' ? 'manual' : 'card',
         failedAttempts: Number((doc as { failedAttempts?: number | null }).failedAttempts ?? 0), updatedAt: ms(doc.updatedAt) ?? 0,
       })),
       enrollments: enrollments.docs.map((doc) => ({
@@ -209,6 +210,8 @@ export interface MessageData {
   graceEnds: string
   renewalSoon: boolean
   stopBillingOnComplete: boolean
+  /** Pays month by month by bank transfer or OPay (no automatic renewal). */
+  manualBilling: boolean
   // Certificate and graduates
   certificateUrl: string
   linkedinAddUrl: string
@@ -348,12 +351,16 @@ export async function buildMessageData(payload: Payload, person: LoadedPerson, s
 
   // The programme's current (or latest) subscription, for billing dates.
   const subscriptions = userId && stage.courseId
-    ? ((await payload.find({ collection: 'subscriptions', where: { and: [{ user: { equals: userId } }, { course: { equals: stage.courseId } }] }, sort: '-createdAt', limit: 10, depth: 0, overrideAccess: true })).docs as unknown as Array<{ id: number; status: string; currentPeriodStart?: string; currentPeriodEnd?: string | null; lastFailedAt?: string | null; createdAt: string }>)
+    ? ((await payload.find({ collection: 'subscriptions', where: { and: [{ user: { equals: userId } }, { course: { equals: stage.courseId } }] }, sort: '-createdAt', limit: 10, depth: 0, overrideAccess: true })).docs as unknown as Array<{ id: number; status: string; billing?: string | null; currentPeriodStart?: string; currentPeriodEnd?: string | null; lastFailedAt?: string | null; createdAt: string }>)
     : []
   const subscription = stage.subjectId.startsWith('sub:') ? subscriptions.find((item) => item.id === Number(stage.subjectId.slice(4))) ?? subscriptions[0] : subscriptions[0]
   const periodEnd = subscription?.currentPeriodEnd ?? null
   const firstStart = subscriptions.length ? Math.min(...subscriptions.map((item) => Date.parse(item.createdAt))) : now
-  const graceEndsAt = subscription?.lastFailedAt ? Date.parse(subscription.lastFailedAt) + accessGraceDays() * 86_400_000 : null
+  const manualBilling = subscription?.billing === 'manual'
+  // Card: grace runs from the failed renewal. Month by month: from the end of the paid month.
+  const graceEndsAt = subscription?.lastFailedAt
+    ? Date.parse(subscription.lastFailedAt) + accessGraceDays() * 86_400_000
+    : manualBilling && periodEnd ? Date.parse(periodEnd) + accessGraceDays() * 86_400_000 : null
 
   const enrollment = userId && stage.courseId
     ? ((await payload.find({ collection: 'enrollments', where: { and: [{ student: { equals: userId } }, { course: { equals: stage.courseId } }] }, limit: 1, depth: 0, overrideAccess: true })).docs[0] as unknown as { id: number; completedAt?: string | null } | undefined)
@@ -430,6 +437,7 @@ export async function buildMessageData(payload: Payload, person: LoadedPerson, s
     graceEnds: lagosDate(graceEndsAt, { weekday: 'long', day: 'numeric', month: 'long' }),
     renewalSoon,
     stopBillingOnComplete: stopBillingOnComplete(),
+    manualBilling,
     certificateUrl: certificateLink,
     linkedinAddUrl: `https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${encodeURIComponent(course?.title ?? 'SkillsAir programme')}&organizationName=SkillsAir&certUrl=${encodeURIComponent(certificateLink)}${certificate?.certificateCode ? `&certId=${encodeURIComponent(certificate.certificateCode)}` : ''}`,
     laptopApplicationsOpen: Boolean(windowDoc?.laptopApplicationsOpen),

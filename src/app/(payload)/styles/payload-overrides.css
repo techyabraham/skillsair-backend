@@ -1,0 +1,293 @@
+/*
+ * Overrides of Payload 3.85.1's own admin classes. Theme colours come from theme.css; this file
+ * only adjusts shape, type and a few component colours Payload hard-wires to elevation steps.
+ * Every selector here targets a Payload class (BEM): recheck them after a Payload upgrade.
+ * The list is repeated in docs/STUDIO.md ("Payload class overrides").
+ */
+
+@layer payload {
+  :root {
+    --style-radius-s: 6px;
+    --style-radius-m: 10px;
+    --style-radius-l: 16px;
+    --accessibility-outline: none;
+    --accessibility-outline-offset: 0px;
+    --nav-width: 264px;
+  }
+}
+
+/* ---------- Type ---------- */
+body {
+  font-family: var(--font-body);
+  font-feature-settings: 'cv11', 'ss01';
+}
+
+h1,
+h2,
+h3,
+.render-title,
+.doc-header__title,
+.list-header__title,
+.collection-list__title {
+  font-family: var(--sa-font-display);
+  letter-spacing: -0.02em;
+}
+
+.table,
+.pill,
+.pagination,
+.per-page {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Focus: one visible ring everywhere (WCAG 2.4.7 / 2.4.11) ---------- */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid transparent;
+  box-shadow: var(--sa-focus-ring);
+  border-radius: var(--style-radius-s);
+}
+
+/* ---------- Buttons ---------- */
+.btn--style-primary {
+  --bg-color: var(--sa-accent);
+  --color: var(--sa-accent-ink);
+  --hover-bg: var(--sa-accent-hover);
+  --hover-color: var(--sa-accent-ink);
+  --btn-font-weight: 600;
+}
+
+.btn--style-primary.btn--disabled {
+  --bg-color: var(--theme-elevation-150);
+  --color: var(--theme-elevation-650);
+  --hover-bg: var(--bg-color);
+  --hover-color: var(--color);
+}
+
+.btn--style-secondary {
+  --color: var(--sa-ink);
+  --btn-border: 1px solid var(--theme-elevation-1000);
+  --hover-color: var(--sa-accent);
+  --hover-btn-border: 1px solid var(--sa-accent);
+}
+
+html[data-theme='dark'] .btn--style-secondary {
+  --btn-border: 1px solid var(--theme-elevation-650);
+}
+
+.btn {
+  border-radius: var(--style-radius-m);
+  transition: background-color 160ms ease-out, color 160ms ease-out, border-color 160ms ease-out;
+}
+
+/* ---------- App header ---------- */
+.app-header {
+  background: color-mix(in srgb, var(--sa-surface) 92%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--sa-line);
+}
+
+.step-nav a {
+  color: var(--sa-ink-muted);
+}
+
+.step-nav a:hover {
+  color: var(--sa-accent);
+}
+
+/* ---------- Tables (lists and join fields) ---------- */
+.table {
+  background: var(--sa-surface-raised);
+  border: 1px solid var(--sa-line);
+  border-radius: var(--style-radius-l);
+  box-shadow: var(--sa-shadow-1);
+}
+
+.table thead th {
+  color: var(--sa-ink-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--sa-line);
+}
+
+/* Payload stripes odd rows with elevation-50; Studio uses row lines instead. */
+.table tbody tr:nth-child(odd) {
+  background: transparent;
+}
+
+.table tbody tr + tr td {
+  border-top: 1px solid var(--sa-line);
+}
+
+.table tbody tr:hover {
+  background: var(--sa-surface-sunken);
+}
+
+.table td a {
+  color: var(--sa-ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.table td a:hover {
+  color: var(--sa-accent);
+  text-decoration: underline;
+}
+
+/* ---------- Pills ---------- */
+.pill {
+  border-radius: var(--sa-radius-pill);
+}
+
+/* ---------- Cards (Payload's collection cards and relationship cards) ---------- */
+.card {
+  background: var(--sa-surface-raised);
+  border: 1px solid var(--sa-line);
+  border-radius: var(--style-radius-l);
+  box-shadow: var(--sa-shadow-1);
+}
+
+/* ---------- Form fields ---------- */
+.field-type input,
+.field-type textarea,
+.field-type select,
+.react-select .rs__control {
+  border-radius: var(--style-radius-m);
+}
+
+.field-description {
+  color: var(--sa-ink-muted);
+}
+
+/* ---------- Drawers, popups and toasts ---------- */
+.drawer__content,
+.popup__content {
+  border-radius: var(--style-radius-l);
+}
+
+.popup__content {
+  box-shadow: var(--sa-shadow-2);
+  border: 1px solid var(--sa-line);
+}
+
+.payload-toast-container .payload-toast-item {
+  border-radius: var(--style-radius-m);
+}
+
+/* ---------- Login and other minimal-template screens ---------- */
+.template-minimal {
+  background: var(--sa-surface);
+}
+
+/* ---------- Banners (field descriptions on globals use Payload's view description) ---------- */
+.view-description {
+  color: var(--sa-ink-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important; /* reduced motion: Payload sets durations inline */
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Payload sizes the nav header at 100vw, which includes the scrollbar where one shows and
+   causes a sideways scroll; size it to the nav instead. */
+.nav__header {
+  width: 100%;
+}
+
+/* Accessibility fixes found by axe on Payload's own elements. */
+/* Inactive form tabs: Payload dims them with opacity 0.5 (3.3:1); use a muted colour at full
+   opacity instead (≥ 4.5:1), and keep the active tab in full ink with its underline. */
+.tabs-field__tab-button {
+  opacity: 1;
+  color: var(--sa-ink-muted);
+}
+
+.tabs-field__tab-button:hover {
+  opacity: 1;
+  color: var(--sa-ink);
+}
+
+.tabs-field__tab-button--active {
+  color: var(--sa-ink);
+}
+
+/* Table sort arrows: at least 24×24px targets (WCAG 2.5.8) and visible enough to find. */
+.sort-column__button {
+  min-width: 24px;
+  min-height: 24px;
+  opacity: 0.55;
+}
+
+/*
+ * SEO plugin (@payloadcms/plugin-seo 3.85.1) sets colours with inline styles: grey #9A9A9A help
+ * text (2.7:1) and white-on-red/orange/green length pills (as low as 2.9:1). Inline styles leave
+ * no alternative to !important; these selectors match only those exact inline values.
+ */
+[style*="#9A9A9A" i],
+[style*="154, 154, 154"] {
+  color: var(--sa-ink-muted) !important; /* inline style: SEO plugin help text */
+}
+
+[style*="#9A9A9A" i] a,
+[style*="154, 154, 154"] a {
+  color: inherit !important; /* inline style: SEO plugin help links */
+}
+
+div[style*="background-color: red"],
+div[style*="background-color: orangered"] {
+  background-color: var(--sa-critical-soft) !important; /* inline style: SEO plugin pill */
+  color: var(--sa-critical-ink) !important;
+}
+
+div[style*="background-color: orange;"] {
+  background-color: var(--sa-caution-soft) !important; /* inline style: SEO plugin pill */
+  color: var(--sa-caution-ink) !important;
+}
+
+div[style*="background-color: green"] {
+  background-color: var(--sa-positive-soft) !important; /* inline style: SEO plugin pill */
+  color: var(--sa-positive-ink) !important;
+}
+
+/* Multi-value chips (relationship fields): edit and remove buttons at least 24×24px (WCAG 2.5.8). */
+.relationship--multi-value-label__drawer-toggler,
+.rs__multi-value__remove {
+  min-width: 24px;
+  min-height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* react-select's type-ahead input sets an inline min-width of 2px next to selected chips, too
+   small to tap (WCAG 2.5.8). Inline style leaves no alternative to !important. */
+.react-select .rs__input-container {
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.react-select .rs__input {
+  min-width: 24px !important; /* inline style: react-select sets minWidth 2px */
+  min-height: 24px;
+}
+
+/* Phones: Payload's breadcrumb wrapper won't shrink below its text, pushing the header's search
+   button and account avatar off-screen; let it shrink and clip instead. */
+.app-header__step-nav-wrapper {
+  min-width: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .app-header__actions-wrapper {
+    margin-right: 8px;
+  }
+}
