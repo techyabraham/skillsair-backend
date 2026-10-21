@@ -2,7 +2,8 @@ import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { resolvePriceLock } from './price-lock.js'
 import { assertPlanPurchasable } from './pricing.js'
-import { graceEndsAt, inGrace } from './billing.js'
+import { billingFor, graceEndsAt, inGrace, manualAccessEndsAt, paystackChannels, subscriptionGivesAccess } from './billing.js'
+import { assertManualRenewalAllowed } from './subscription-guards.js'
 
 const now = Date.parse('2026-11-10T12:00:00Z')
 const day = 86_400_000
@@ -48,4 +49,37 @@ test('grace: past-due access lasts 3 days from the failed charge', () => {
   assert.equal(inGrace({ status: 'past_due', lastFailedAt: failed }, now), true)
   assert.equal(inGrace({ status: 'past_due', lastFailedAt: new Date(now - 4 * day).toISOString() }, now), false)
   assert.equal(inGrace({ status: 'active', lastFailedAt: failed }, now), false)
+})
+
+test('payment methods: transfer and OPay use their own Paystack channel; Paystack shows every option (card only for renewing plans)', () => {
+  assert.deepEqual(paystackChannels('bank_transfer', true), ['bank_transfer'])
+  assert.deepEqual(paystackChannels('bank_transfer', false), ['bank_transfer'])
+  assert.deepEqual(paystackChannels('opay', false), ['bank'])
+  assert.deepEqual(paystackChannels('paystack', true), ['card'])
+  assert.equal(paystackChannels('paystack', false), undefined)
+  assert.equal(billingFor('bank_transfer'), 'manual')
+  assert.equal(billingFor('opay'), 'manual')
+  assert.equal(billingFor('paystack'), 'card')
+})
+
+test('month-by-month access: the paid month plus the grace days, then it pauses', () => {
+  const ended = new Date(now - day).toISOString()
+  assert.equal(manualAccessEndsAt(ended, 3), now + 2 * day)
+  assert.equal(subscriptionGivesAccess({ status: 'active', billing: 'manual', currentPeriodEnd: ended }, now), true)
+  assert.equal(subscriptionGivesAccess({ status: 'active', billing: 'manual', currentPeriodEnd: new Date(now - 4 * day).toISOString() }, now), false)
+  // A card plan gets no grace from the period end alone (its grace runs from a failed renewal).
+  assert.equal(subscriptionGivesAccess({ status: 'active', billing: 'card', currentPeriodEnd: ended }, now), false)
+  assert.equal(subscriptionGivesAccess({ status: 'cancelled', billing: 'manual', currentPeriodEnd: new Date(now + day).toISOString() }, now), true)
+  assert.equal(subscriptionGivesAccess({ status: 'expired', billing: 'manual', currentPeriodEnd: new Date(now + day).toISOString() }, now), false)
+})
+
+test('month-by-month renewal: allowed in the last 7 days or the grace days; switching to card waits for the month to end', () => {
+  const in10 = { id: 1, status: 'active', currentPeriodEnd: new Date(now + 10 * day).toISOString() }
+  const in5 = { id: 1, status: 'active', currentPeriodEnd: new Date(now + 5 * day).toISOString() }
+  const endedYesterday = { id: 1, status: 'active', currentPeriodEnd: new Date(now - day).toISOString() }
+  assert.throws(() => assertManualRenewalAllowed(in10, 'manual', now), /pay for the next month from/)
+  assert.doesNotThrow(() => assertManualRenewalAllowed(in5, 'manual', now))
+  assert.doesNotThrow(() => assertManualRenewalAllowed(endedYesterday, 'manual', now))
+  assert.throws(() => assertManualRenewalAllowed(in5, 'card', now), /switch to card/)
+  assert.doesNotThrow(() => assertManualRenewalAllowed(endedYesterday, 'card', now))
 })

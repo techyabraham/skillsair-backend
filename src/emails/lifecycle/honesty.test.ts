@@ -17,8 +17,9 @@ const VARIANTS: Array<Partial<MessageData>> = [
   { joinedOnScholarship: false, priceLocked: false },
   { occurrence: 1 }, { occurrence: 2 }, { occurrence: 3 },
   { proof: null, founderAnecdote: 'A true memory.', renewalSoon: true },
+  { manualBilling: true },
 ]
-const EXEMPT = new Set(['T1', 'T2', 'T3', 'T4', 'T7', 'T9', 'D1', 'D2', 'D3', 'B1'])
+const EXEMPT = new Set(['T1', 'T2', 'T3', 'T4', 'T7', 'T9', 'T10', 'T11', 'D1', 'D2', 'D3', 'B1'])
 const BANNED = ['one time', 'one-time', '₦2,000 once', '3 months to finish', 'up to 3 months', 'most learners', 'limited seats', 'guaranteed']
 
 function renders() {

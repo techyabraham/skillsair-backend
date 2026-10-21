@@ -44,6 +44,8 @@ export interface SnapshotSubscription {
   status: 'active' | 'past_due' | 'cancelled' | 'expired'
   lastFailedAt: number | null
   currentPeriodEnd: number | null
+  /** card = Paystack renews it; manual = transfer/OPay, paid month by month. Missing = card. */
+  billing?: 'card' | 'manual'
   failedAttempts: number
   updatedAt: number
 }
