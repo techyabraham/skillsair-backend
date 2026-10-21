@@ -39,7 +39,9 @@ export const T1 = lifecycleEmail({
           "Open your free CV & LinkedIn course. It's in your dashboard.",
         ],
       },
-      d.priceLocked
+      d.priceLocked && d.manualBilling
+        ? `Your plan: ${monthly(d)}, paid month by month by bank transfer or OPay until you finish. This payment covers you until ${d.periodEnd}. We'll remind you a few days before, and you pay the next month the same way. ${LOCK_LINE(d)} You can cancel anytime from your dashboard.`
+        : d.priceLocked
         ? `Your plan: ${monthly(d)}, billed to your card${d.billingDay ? ` on the ${d.billingDay} of each month` : ' each month'} until you finish. ${LOCK_LINE(d)} You can cancel anytime from your dashboard.`
         : `You've paid ${naira(d.amount)} for ${d.programme}. The certificate is optional, paid separately when you finish.`,
       '**Receipt**',
@@ -61,7 +63,11 @@ export const T2 = lifecycleEmail({
     blocks: blocks([
       `Hi ${d.firstName},`,
       'Thanks. Your monthly payment went through.',
-      receipt(d, [{ label: 'Programme', value: `${d.programme} (month ${d.monthNumber})` }, ...(d.nextChargeDate ? [{ label: 'Next payment', value: d.nextChargeDate }] : [])]),
+      receipt(d, [
+        { label: 'Programme', value: `${d.programme} (month ${d.monthNumber})` },
+        ...(d.manualBilling && d.periodEnd ? [{ label: 'Paid until', value: d.periodEnd }] : d.nextChargeDate ? [{ label: 'Next payment', value: d.nextChargeDate }] : []),
+      ]),
+      d.manualBilling ? "We'll remind you a few days before your next month is due. Pay it the same way, by bank transfer or OPay." : '',
       `${progressLine(d)}${nextLesson(d)}`.trim(),
       { small: `Manage or cancel your plan: ${d.billingUrl}` },
     ]),
@@ -276,4 +282,44 @@ export const D3 = lifecycleEmail({
   }),
 })
 
-export const TRACK_T_D = [T1, T2, T3, T4, T5, T6, T7, T8, T9, D1, D2, D3]
+/** Month-by-month (transfer/OPay) plans: the next month is due soon. */
+export const T10 = lifecycleEmail({
+  id: 'T10',
+  kind: 'transactional',
+  track: 'T',
+  stepId: 'T10',
+  subject: (d) => `Your next month of ${d.programme} is due on ${d.periodEnd}`,
+  preheader: (d) => `Pay ${naira(d.amount)} by bank transfer or OPay to keep learning.`,
+  body: (d) => ({
+    blocks: blocks([
+      `Hi ${d.firstName},`,
+      `You've paid for ${d.programme} until ${d.periodEnd}. To keep learning after that, pay next month's ${naira(d.amount)} the same way you did before: bank transfer or OPay. It takes about two minutes.`,
+      d.priceLocked ? LOCK_LINE(d) : '',
+      `${progressLine(d)}${d.progressPercent >= 80 ? " You're close. One more month may be all you need." : ''}`.trim(),
+      { small: `If you'd rather it renewed by itself, choose Paystack and pay by card after ${d.periodEnd}. Want to stop? Cancel anytime: ${d.billingUrl}` },
+    ]),
+    button: { label: 'Pay for next month', url: d.updateCardUrl },
+  }),
+})
+
+/** Month-by-month plans: the paid month has ended; access continues for the grace days. */
+export const T11 = lifecycleEmail({
+  id: 'T11',
+  kind: 'transactional',
+  track: 'T',
+  stepId: 'T11',
+  subject: (d) => `Keep your ${d.programme} access: pay by ${d.graceEnds}`,
+  preheader: (d) => `Your paid month ended. You still have access until ${d.graceEnds}.`,
+  body: (d) => ({
+    blocks: blocks([
+      `Hi ${d.firstName},`,
+      `Your paid month of ${d.programme} ended on ${d.periodEnd}. You still have access until ${d.graceEnds}, so nothing is lost.`,
+      `Pay ${naira(d.amount)} by bank transfer or OPay before then to carry on. Your next month starts the day you pay.`,
+      d.priceLocked ? LOCK_LINE(d) : '',
+      { small: `Something stopping you? Reply to this email or WhatsApp us, Monday to Saturday, 9am–6pm.` },
+    ]),
+    button: { label: 'Pay for next month', url: d.updateCardUrl },
+  }),
+})
+
+export const TRACK_T_D = [T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, D1, D2, D3]

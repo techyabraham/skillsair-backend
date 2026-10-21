@@ -10,13 +10,15 @@ import { AppError } from '../../types/index.js'
 import { requirePrerequisites } from '../../lib/prerequisites.js'
 import { relationId } from '../../lib/course-access.js'
 import { oneOffCoursePrice } from '../../lib/pricing.js'
-import { assertCanStartPlan, assertNoCurrentSubscription } from '../../lib/subscription-guards.js'
+import { assertCanStartPlan, assertManualRenewalAllowed, assertNoCurrentSubscription, findRenewableManualSubscription } from '../../lib/subscription-guards.js'
+import { billingFor, PAYMENT_METHODS, paystackChannels } from '../../lib/billing.js'
 
 const initiateSchema = z.object({
   type: z.enum(['course', 'subscription']),
   courseId: z.string().optional(),
   planId: z.string().optional(),
-  paymentMethod: z.enum(['paystack', 'bank_transfer']).optional(),
+  // Bank transfer is the default; see PAYMENT_METHODS in billing.ts.
+  paymentMethod: z.enum(PAYMENT_METHODS).optional().default('bank_transfer'),
 })
 
 interface CourseDoc {
@@ -56,6 +58,10 @@ async function handler(req: PayloadRequest): Promise<Response> {
   let planId: number | undefined
   let description = ''
   let paystackPlanCode: string | undefined
+  // Month-by-month (transfer/OPay) payment that extends the learner's current plan by a month.
+  let renewsSubscriptionId: number | undefined
+  const paymentMethod = body.paymentMethod ?? 'bank_transfer'
+  const billing = billingFor(paymentMethod)
 
   if (body.type === 'course') {
     if (!body.courseId || !isValidPayloadId(body.courseId)) {
@@ -90,8 +96,6 @@ async function handler(req: PayloadRequest): Promise<Response> {
       throw new AppError('NOT_FOUND', 'Plan not found')
     }
     await assertCanStartPlan(payload, plan, user.id)
-    if (!plan.paystackPlanCode) throw new AppError('VALIDATION_ERROR', 'Subscription plan is not configured for billing')
-    await verifyPlanConfiguration(plan.paystackPlanCode, plan.price, plan.interval)
     const subscribedCourseId = relationId(plan.course)
     if (subscribedCourseId === undefined) throw new AppError('VALIDATION_ERROR', 'Subscription plan has no course')
     const subscribedCourse = await payload.findByID({ collection: 'courses', id: subscribedCourseId, depth: 0, overrideAccess: true }).catch(() => null)
@@ -99,12 +103,25 @@ async function handler(req: PayloadRequest): Promise<Response> {
     await requirePrerequisites(payload, user.id, subscribedCourseId)
     const existingEnrollment = await payload.find({ collection: 'enrollments', where: { and: [{ student: { equals: user.id } }, { course: { equals: subscribedCourseId } }] }, limit: 1, overrideAccess: true })
     if (existingEnrollment.docs[0] && !existingEnrollment.docs[0].subscription) throw new AppError('ALREADY_EXISTS', 'You already own this course')
-    await assertNoCurrentSubscription(payload, user.id, Number(subscribedCourseId))
+    const renewable = await findRenewableManualSubscription(payload, user.id, Number(subscribedCourseId))
+    if (renewable) {
+      assertManualRenewalAllowed(renewable, billing)
+      if (billing === 'manual') renewsSubscriptionId = renewable.id
+    } else {
+      await assertNoCurrentSubscription(payload, user.id, Number(subscribedCourseId))
+    }
+    // Card payments become a Paystack subscription, so the plan must exist at Paystack with the
+    // same price; transfer and OPay pay one month at a time and don't use the Paystack plan.
+    if (billing === 'card') {
+      if (!plan.paystackPlanCode) throw new AppError('VALIDATION_ERROR', 'Subscription plan is not configured for billing')
+      await verifyPlanConfiguration(plan.paystackPlanCode, plan.price, plan.interval)
+    }
     amount = plan.price
     planId = plan.id
     courseId = subscribedCourseId as number
     description = plan.name
-    paystackPlanCode = plan.paystackPlanCode
+    // Only card payments become a Paystack subscription; transfer and OPay pay for one month.
+    if (billing === 'card') paystackPlanCode = plan.paystackPlanCode
   }
 
   const userDoc = (await payload.findByID({
@@ -126,10 +143,12 @@ async function handler(req: PayloadRequest): Promise<Response> {
       currency: 'NGN',
       status: 'pending',
       reference,
+      metadata: { paymentMethod, ...(body.type === 'subscription' ? { billing } : {}), ...(renewsSubscriptionId ? { renewsSubscriptionId } : {}) },
     },
     overrideAccess: true,
   })
 
+  const channels = paystackChannels(paymentMethod, Boolean(paystackPlanCode))
   const paystackResponse = await initializeTransaction({
     amount: Math.round(amount * 100),
     email: userDoc.email,
@@ -137,8 +156,9 @@ async function handler(req: PayloadRequest): Promise<Response> {
     callback_url: `${FRONTEND_URL}/payments/callback`,
     currency: 'NGN',
     ...(paystackPlanCode ? { plan: paystackPlanCode } : {}),
-    // Paystack renews subscriptions from a saved card, so monthly plans are card-only.
-    ...(paystackPlanCode ? { channels: ['card'] } : body.paymentMethod === 'bank_transfer' ? { channels: ['bank_transfer'] } : {}),
+    // Card subscriptions renew from the saved card, so they're card-only; transfer and OPay use
+    // their own channel; a one-off "Paystack" payment shows every option.
+    ...(channels ? { channels } : {}),
     metadata: {
       userId: user.id,
       type: body.type,
@@ -146,6 +166,9 @@ async function handler(req: PayloadRequest): Promise<Response> {
       courseId,
       planId,
       description,
+      paymentMethod,
+      ...(body.type === 'subscription' ? { billing } : {}),
+      ...(renewsSubscriptionId ? { renewsSubscriptionId } : {}),
     },
   })
 

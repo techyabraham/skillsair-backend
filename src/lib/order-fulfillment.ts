@@ -7,23 +7,40 @@ import { redis } from './redis.js'
 import { randomUUID } from 'node:crypto'
 import { applyLeadEvent, findLeadForUser } from './leads.js'
 import { disableAtPaystack } from './billing.js'
+import { findRenewableManualSubscription } from './subscription-guards.js'
 import { onLifecycleEvent } from './lifecycle/events.js'
 
 /**
  * A learner whose renewal failed (or whose plan lapsed) restarts by paying again, which creates
  * a new subscription. The old one is switched off at Paystack so it can never charge as well.
+ * A month-by-month (transfer/OPay) plan whose month has ended is closed the same way when the
+ * learner starts a new plan (for example, switching to card during the grace days).
  */
 async function replaceOlderSubscriptions(payload: Payload, userId: number | string, courseId: number | string, keepId: number | string): Promise<number[]> {
   const older = await payload.find({
     collection: 'subscriptions',
-    where: { and: [{ user: { equals: userId } }, { course: { equals: courseId } }, { id: { not_equals: keepId } }, { status: { in: ['past_due', 'expired'] } }] },
+    where: {
+      and: [
+        { user: { equals: userId } },
+        { course: { equals: courseId } },
+        { id: { not_equals: keepId } },
+        {
+          or: [
+            { status: { in: ['past_due', 'expired'] } },
+            { and: [{ billing: { equals: 'manual' } }, { status: { in: ['active', 'cancelled'] } }, { currentPeriodEnd: { less_than: new Date().toISOString() } }] },
+          ],
+        },
+      ],
+    },
     limit: 20,
     depth: 0,
     overrideAccess: true,
   })
   const replaced: number[] = []
-  for (const doc of older.docs as unknown as Array<{ id: number; status: string; paystackSubscriptionCode?: string | null; paystackEmailToken?: string | null }>) {
-    if (doc.status === 'past_due') {
+  for (const doc of older.docs as unknown as Array<{ id: number; status: string; billing?: string | null; paystackSubscriptionCode?: string | null; paystackEmailToken?: string | null }>) {
+    if (doc.billing === 'manual' && doc.status !== 'expired') {
+      await payload.update({ collection: 'subscriptions', id: doc.id, data: { status: 'expired' }, overrideAccess: true })
+    } else if (doc.status === 'past_due') {
       await disableAtPaystack(doc, 'replaced_by_new_subscription')
       await payload.update({ collection: 'subscriptions', id: doc.id, data: { status: 'expired' }, overrideAccess: true })
     }
@@ -63,6 +80,9 @@ async function fulfillLockedOrder(payload: Payload, orderId: number | string): P
   const user = await payload.findByID({ collection: 'users', id: userId, depth: 0, overrideAccess: true })
   let replacedSubscriptionIds: number[] = []
   let paidSubscriptionId: number | undefined
+  // A transfer/OPay payment for the next month of an existing month-by-month plan.
+  let renewal: { subscriptionId: number; recovered: boolean } | undefined
+  const meta = (doc.metadata ?? {}) as { billing?: string; renewsSubscriptionId?: number | string }
 
   if (doc.type === 'course') {
     const courseId = relationId(doc.course)
@@ -78,14 +98,37 @@ async function fulfillLockedOrder(payload: Payload, orderId: number | string): P
     const courseId = relationId(plan.course)
     if (courseId === undefined) throw new Error('Subscription plan has no course')
     const existing = await payload.find({ collection: 'subscriptions', where: { initialOrderReference: { equals: doc.reference } }, limit: 1, overrideAccess: true })
+    type RenewableSubscription = { id: number; user: unknown; course: unknown; currentPeriodEnd?: string | null }
+    // A transfer/OPay payment renews the learner's month-by-month plan for this programme: the one
+    // named at checkout or, when two checkouts were paid, the plan the first one created (so a
+    // second payment adds a month instead of starting a duplicate plan).
+    const renewing = meta.renewsSubscriptionId
+      ? ((await payload.findByID({ collection: 'subscriptions', id: meta.renewsSubscriptionId, depth: 0, overrideAccess: true }).catch(() => null)) as unknown as RenewableSubscription | null)
+      : meta.billing === 'manual' && !existing.totalDocs
+        ? ((await findRenewableManualSubscription(payload, Number(userId), Number(courseId))) as unknown as RenewableSubscription | null)
+        : null
     let subscriptionId = existing.docs[0]?.id
-    if (!existing.totalDocs) {
+    if (renewing && String(relationId(renewing.user)) === String(userId) && String(relationId(renewing.course)) === String(courseId)) {
+      // Adds a month from the end of the paid month (or from today if it has already ended), so
+      // paying early never loses days and paying during the grace days starts a fresh month.
+      const paidAt = doc.paidAt ? new Date(doc.paidAt).getTime() : Date.now()
+      const currentEnd = renewing.currentPeriodEnd ? Date.parse(renewing.currentPeriodEnd) : 0
+      const start = new Date(Math.max(paidAt, currentEnd))
+      await payload.update({ collection: 'subscriptions', id: renewing.id, data: {
+        status: 'active', currentPeriodStart: start.toISOString(), currentPeriodEnd: addDays(start, plan.interval === 'annually' ? 365 : 30).toISOString(),
+        cancelledAt: null, failedAttempts: 0, lastFailedAt: null,
+      }, overrideAccess: true })
+      subscriptionId = renewing.id
+      renewal = { subscriptionId: Number(renewing.id), recovered: currentEnd < paidAt }
+    } else if (!existing.totalDocs) {
       const now = doc.paidAt ? new Date(doc.paidAt) : new Date()
       const subscription = await payload.create({ collection: 'subscriptions', data: {
         user: userId, plan: planId, course: courseId, status: 'active', initialOrderReference: doc.reference,
         currentPeriodStart: now.toISOString(), currentPeriodEnd: addDays(now, plan.interval === 'annually' ? 365 : 30).toISOString(),
         // Joining on the Access Scholarship plan locks the ₦2,000-a-month rate (see price-lock.ts).
         priceLocked: plan.kind === 'scholarship',
+        // Transfer/OPay: paid month by month (no Paystack subscription); card: Paystack renews it.
+        billing: meta.billing === 'manual' ? 'manual' : 'card',
       }, overrideAccess: true })
       subscriptionId = subscription.id
     }
@@ -107,7 +150,9 @@ async function fulfillLockedOrder(payload: Payload, orderId: number | string): P
   await payload.update({ collection: 'orders', id: doc.id, data: { fulfilledAt: new Date().toISOString() }, overrideAccess: true })
   if (doc.type === 'course' || doc.type === 'subscription') {
     const paidCourseId = relationId(doc.course)
-    if (paidCourseId !== undefined) {
+    if (renewal) {
+      await onLifecycleEvent(payload, { type: 'renewal_success', subscriptionId: renewal.subscriptionId, recovered: renewal.recovered, reference: String(doc.reference) })
+    } else if (paidCourseId !== undefined) {
       await onLifecycleEvent(
         payload,
         replacedSubscriptionIds.length && paidSubscriptionId !== undefined

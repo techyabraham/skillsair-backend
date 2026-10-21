@@ -159,7 +159,7 @@ export const B1 = lifecycleEmail({
         list: [
           "Your card isn't enabled for online payments. Turn it on in your bank app, then try again.",
           'The OTP expired. Just try again.',
-          'Your bank declined it. Try a different debit card.',
+          'Your bank declined it. Try a different debit card, or pay by bank transfer or OPay instead.',
         ],
       },
       `If money left your account, don't worry. Banks normally reverse failed payments automatically. If yours hasn't, reply with your reference${d.reference ? ` (${d.reference})` : ''} and we'll resolve it within 24 hours.`,
@@ -174,7 +174,7 @@ export const B2 = lifecycleEmail({
   track: 'B',
   stepId: 'B2',
   subject: () => 'Need a hand finishing?',
-  preheader: () => 'It takes about 2 minutes once your card is ready.',
+  preheader: () => 'It takes about 2 minutes by bank transfer, OPay or card.',
   body: (d) => ({
     blocks: blocks([
       `Hi ${d.firstName},`,
@@ -182,8 +182,8 @@ export const B2 = lifecycleEmail({
       'Two things that help people finish:',
       {
         list: [
-          "Monthly plans renew from a card, so use a debit card that's enabled for online payments.",
-          'Someone else paying? They can use their own card at checkout. The monthly charge will renew from that card, so agree it with them first.',
+          'Bank transfer is the easiest: Paystack shows you an account number to send the money to. OPay works too. Each payment covers a month, and we remind you before the next one is due.',
+          'Prefer it to renew by itself? Choose Paystack and pay with a debit card that’s enabled for online payments. Someone else paying can use their own card; agree the monthly charge with them first.',
         ],
       },
       "Stuck? Reply here or WhatsApp me on +234 818 212 6524 and tell me what happened. I'll walk you through it.",

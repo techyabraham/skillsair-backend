@@ -19,6 +19,8 @@ export type LifecycleEvent =
   | { type: 'first_payment_success'; userId: number; courseId: number; orderId: number; subscriptionId?: number }
   | { type: 'resubscribed'; userId: number; courseId: number; subscriptionId: number; replacedSubscriptionIds: number[] }
   | { type: 'renewal_success'; subscriptionId: number; recovered: boolean; reference?: string }
+  /** Month-by-month (transfer/OPay) plan: next month due in a few days (soon) or the month has ended (grace). */
+  | { type: 'manual_payment_due'; subscriptionId: number; due: 'soon' | 'grace'; periodEnd: string }
   | { type: 'invoice_upcoming'; subscriptionId: number; chargeDate: string | null; amount: number | null; cardLast4: string | null }
   | { type: 'payment_failed'; subscriptionId: number; firstFailure: boolean; graceEndsAt: string }
   | { type: 'cards_expiring'; subscriptionId: number; cardExpiry: string | null; cardDescription: string | null }
@@ -167,6 +169,20 @@ async function sendForEvent(payload: Payload, event: LifecycleEvent): Promise<vo
         await sendEventStep(payload, person, 'D1', dStage)
         if (event.firstFailure) await sendEventStep(payload, person, 'D1', dStage, { channel: 'whatsapp', template: 'skillsair_payment_failed' })
       }
+      return
+    }
+    case 'manual_payment_due': {
+      const owner = await subscriptionOwner(payload, event.subscriptionId)
+      if (!owner?.userId) return
+      const person = await forUser(owner.userId)
+      if (!person) return
+      // One reminder of each kind per paid month: the cycle is the day the month ends.
+      const dueStage: Stage = { track: 'T', subjectId: `sub:${event.subscriptionId}`, enteredAt: now, cycle: lagosDayNumber(Date.parse(event.periodEnd)), courseId: owner.courseId }
+      const stepId = event.due === 'soon' ? 'T10' : 'T11'
+      // The reminder job runs hourly; sending (or a dry-run record) happens once per paid month.
+      const already = await payload.count({ collection: 'messages', where: { idempotencyKey: { equals: idempotencyKey('T', stepId, dueStage.subjectId, dueStage.cycle) } }, overrideAccess: true })
+      if (already.totalDocs) return
+      await sendEventStep(payload, person, stepId, dueStage, undefined, { amount: owner.planPrice ?? undefined })
       return
     }
     case 'access_ended': {

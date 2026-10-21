@@ -31,6 +31,8 @@ function hasCurrentAccess(snapshot: PersonSnapshot, courseId: number, now: numbe
   return snapshot.subscriptions.some((subscription) => {
     if (subscription.courseId !== courseId) return false
     if ((subscription.status === 'active' || subscription.status === 'cancelled') && (subscription.currentPeriodEnd ?? 0) > now) return true
+    // Month-by-month (transfer/OPay) plans keep access for the grace days after the paid month.
+    if (subscription.billing === 'manual' && subscription.status === 'active' && (subscription.currentPeriodEnd ?? 0) + graceDays * DAY > now) return true
     return subscription.status === 'past_due' && subscription.lastFailedAt !== null && subscription.lastFailedAt + graceDays * DAY > now
   })
 }
