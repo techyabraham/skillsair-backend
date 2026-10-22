@@ -9,6 +9,8 @@ import * as migration_20261018_090000_email_content from './20261018_090000_emai
 import * as migration_20261018_120000_message_outcomes from './20261018_120000_message_outcomes.js';
 import * as migration_20261019_090000_display_titles from './20261019_090000_display_titles.js';
 import * as migration_20261020_090000_subscription_billing from './20261020_090000_subscription_billing.js';
+import * as migration_20261022_090000_lesson_resources from './20261022_090000_lesson_resources.js';
+import * as migration_20261022_100000_bonus_courses from './20261022_100000_bonus_courses.js';
 
 export const migrations = [
   {
@@ -65,5 +67,15 @@ export const migrations = [
     up: migration_20261020_090000_subscription_billing.up,
     down: migration_20261020_090000_subscription_billing.down,
     name: '20261020_090000_subscription_billing'
+  },
+  {
+    up: migration_20261022_090000_lesson_resources.up,
+    down: migration_20261022_090000_lesson_resources.down,
+    name: '20261022_090000_lesson_resources'
+  },
+  {
+    up: migration_20261022_100000_bonus_courses.up,
+    down: migration_20261022_100000_bonus_courses.down,
+    name: '20261022_100000_bonus_courses'
   },
 ];

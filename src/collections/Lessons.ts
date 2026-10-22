@@ -33,7 +33,7 @@ interface PayloadLocalApi {
   }) => Promise<unknown>
 }
 
-async function recalculateCourseStats(
+export async function recalculateCourseStats(
   courseId: number | string,
   payload: PayloadLocalApi,
 ): Promise<void> {
@@ -190,6 +190,19 @@ export const Lessons: CollectionConfig = {
       editor: lexicalEditor({}),
     },
     { name: 'driveFileId', type: 'text' },
+    {
+      // Documents kept in Google Drive (PDFs, worksheets, design files), streamed through the
+      // backend with the same access checks as the lesson video.
+      name: 'resources',
+      type: 'array',
+      labels: { singular: 'Resource', plural: 'Resources' },
+      admin: { description: 'Lesson materials stored in Google Drive. Learners open them from the lesson page.' },
+      fields: [
+        { name: 'title', type: 'text', required: true },
+        { name: 'driveFileId', type: 'text', required: true },
+        { name: 'mimeType', type: 'text' },
+      ],
+    },
     { name: 'duration', type: 'number', defaultValue: 0, admin: { description: 'In seconds.', components: { Cell: '/src/admin/cells/cells#DurationCell' } } },
     { name: 'order', type: 'number', required: true },
     { name: 'isFree', type: 'checkbox', defaultValue: false, admin: { components: { Cell: '/src/admin/cells/cells#LessonTypeCell' } } },
@@ -200,6 +213,8 @@ export const Lessons: CollectionConfig = {
   hooks: {
     afterChange: [
       async ({ doc, req }) => {
+        // Bulk imports skip this per lesson and recalculate once per course at the end.
+        if ((req.context as { skipCourseStats?: boolean } | undefined)?.skipCourseStats) return
         await syncCourseStatsForLesson(doc, req.payload as unknown as PayloadLocalApi)
       },
     ],

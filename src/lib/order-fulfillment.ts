@@ -9,6 +9,7 @@ import { applyLeadEvent, findLeadForUser } from './leads.js'
 import { disableAtPaystack } from './billing.js'
 import { findRenewableManualSubscription } from './subscription-guards.js'
 import { onLifecycleEvent } from './lifecycle/events.js'
+import { ensureBonusEnrollments } from './bonus-access.js'
 
 /**
  * A learner whose renewal failed (or whose plan lapsed) restarts by paying again, which creates
@@ -161,5 +162,7 @@ async function fulfillLockedOrder(payload: Payload, orderId: number | string): P
       )
     }
     await markLeadPaid(payload, Number(userId), user.email)
+    // Free bonus courses (Freelancer's Academy, CV & LinkedIn) appear in "My courses" once paid.
+    await ensureBonusEnrollments(payload, Number(userId)).catch((err: unknown) => logger.warn({ err, userId }, 'bonus_enrollments_failed'))
   }
 }

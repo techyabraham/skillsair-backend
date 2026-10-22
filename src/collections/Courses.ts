@@ -42,6 +42,15 @@ export const Courses: CollectionConfig = {
     },
     { name: 'isFeatured', type: 'checkbox', defaultValue: false, admin: { position: 'sidebar' } },
     {
+      // Freelancer's Academy, CV & LinkedIn: free to learners with a running programme, or who have
+      // paid for at least two months (see src/lib/bonus-access.ts). Not sold on its own.
+      name: 'isBonus',
+      type: 'checkbox',
+      defaultValue: false,
+      label: 'Free bonus course',
+      admin: { position: 'sidebar', description: 'Free while the learner has an active programme, or for good once they have paid for at least two months. Not sold on its own.' },
+    },
+    {
       name: 'phoneFriendly',
       type: 'checkbox',
       defaultValue: false,

@@ -19,7 +19,48 @@ export async function getLessonCourse(payload: Payload, lessonId: number | strin
   return { lesson, courseId }
 }
 
+/** Two paid months, allowing a few days' slack for how months were counted. */
+const BONUS_PAID_DAYS = 58
+
+/**
+ * Free bonus courses (Freelancer's Academy, CV & LinkedIn) are open to a learner who either has a
+ * programme running now or has paid for at least two months in total (so they keep the bonus
+ * courses after their programme ends). A one-off programme payment counts as paid in full.
+ */
+export async function bonusEligible(payload: Payload, studentId: number | string): Promise<boolean> {
+  const user = await payload.findByID({ collection: 'users', id: studentId, depth: 0, overrideAccess: true }).catch(() => null)
+  if (!user?.isActive) return false
+  const oneOff = await payload.count({ collection: 'orders', where: { and: [{ user: { equals: studentId } }, { type: { equals: 'course' } }, { status: { equals: 'success' } }] }, overrideAccess: true })
+  if (oneOff.totalDocs) return true
+  const subscriptions = await payload.find({ collection: 'subscriptions', where: { user: { equals: studentId } }, limit: 100, depth: 0, overrideAccess: true })
+  let paidDays = 0
+  for (const subscription of subscriptions.docs as unknown as Array<{ createdAt?: string; currentPeriodEnd?: string | null }>) {
+    const start = subscription.createdAt ? Date.parse(subscription.createdAt) : NaN
+    const end = subscription.currentPeriodEnd ? Date.parse(subscription.currentPeriodEnd) : NaN
+    if (Number.isFinite(start) && Number.isFinite(end) && end > start) paidDays += (end - start) / 86_400_000
+  }
+  if (paidDays >= BONUS_PAID_DAYS) return true
+  // Otherwise: any programme (not itself a bonus course) the learner can open right now.
+  const enrollments = await payload.find({ collection: 'enrollments', where: { and: [{ student: { equals: studentId } }, { status: { not_equals: 'refunded' } }] }, limit: 100, depth: 1, overrideAccess: true })
+  for (const enrollment of enrollments.docs as unknown as Array<{ course?: { id: number; isBonus?: boolean | null } | number | null }>) {
+    const course = enrollment.course
+    if (!course || typeof course !== 'object' || course.isBonus) continue
+    try {
+      await requireCourseAccess(payload, studentId, course.id)
+      return true
+    } catch {
+      // not open now; keep looking
+    }
+  }
+  return false
+}
+
 export async function requireCourseAccess(payload: Payload, studentId: number | string, courseId: number | string): Promise<void> {
+  const course = await payload.findByID({ collection: 'courses', id: courseId, depth: 0, overrideAccess: true }).catch(() => null) as { isBonus?: boolean | null } | null
+  if (course?.isBonus) {
+    if (await bonusEligible(payload, studentId)) return
+    throw new AppError('INSUFFICIENT_PERMISSION', 'This free bonus course is open while you have a programme running, or once you have paid for at least two months.')
+  }
   const enrollments = await payload.find({
     collection: 'enrollments',
     where: { and: [{ student: { equals: studentId } }, { course: { equals: courseId } }, { status: { not_equals: 'refunded' } }] },

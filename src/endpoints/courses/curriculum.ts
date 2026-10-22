@@ -59,6 +59,8 @@ async function handler(req: PayloadRequest): Promise<Response> {
             content: lesson.content,
             driveFileId: lesson.driveFileId,
             attachments: lesson.attachments,
+            // Drive documents: titles and types only; files open through /api/stream/:lessonId/resources/:index.
+            resources: ((lesson as unknown as { resources?: Array<{ title?: string; mimeType?: string | null }> | null }).resources ?? []).map((resource) => ({ title: resource.title, mimeType: resource.mimeType ?? null })),
           } : {}),
         }
       }),

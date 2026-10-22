@@ -49,7 +49,7 @@ import { completeEndpoint } from './src/endpoints/courses/complete.js'
 import { quizSubmitEndpoint } from './src/endpoints/courses/quiz-submit.js'
 import { reviewEndpoint } from './src/endpoints/courses/review.js'
 import { discussEndpoint } from './src/endpoints/courses/discuss.js'
-import { videoStreamEndpoint } from './src/endpoints/stream/video.js'
+import { lessonResourceEndpoint, videoStreamEndpoint } from './src/endpoints/stream/video.js'
 import { initiatePaymentEndpoint } from './src/endpoints/payments/initiate.js'
 import { paystackWebhookEndpoint } from './src/endpoints/payments/webhook.js'
 import { verifyPaymentEndpoint } from './src/endpoints/payments/verify.js'
@@ -194,6 +194,7 @@ export default buildConfig({
     reviewEndpoint,
     discussEndpoint,
     videoStreamEndpoint,
+    lessonResourceEndpoint,
     initiatePaymentEndpoint,
     paystackWebhookEndpoint,
     verifyPaymentEndpoint,
