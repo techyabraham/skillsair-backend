@@ -2,7 +2,7 @@ import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { resolvePriceLock } from './price-lock.js'
 import { assertPlanPurchasable } from './pricing.js'
-import { billingFor, graceEndsAt, inGrace, manualAccessEndsAt, paystackChannels, subscriptionGivesAccess } from './billing.js'
+import { billingFor, graceEndsAt, inGrace, manualAccessEndsAt, paystackChannels, paystackFee, PAYSTACK_FEE, subscriptionGivesAccess, withPaystackFee } from './billing.js'
 import { assertManualRenewalAllowed } from './subscription-guards.js'
 
 const now = Date.parse('2026-11-10T12:00:00Z')
@@ -82,4 +82,18 @@ test('month-by-month renewal: allowed in the last 7 days or the grace days; swit
   assert.doesNotThrow(() => assertManualRenewalAllowed(endedYesterday, 'manual', now))
   assert.throws(() => assertManualRenewalAllowed(in5, 'card', now), /switch to card/)
   assert.doesNotThrow(() => assertManualRenewalAllowed(endedYesterday, 'card', now))
+})
+
+test('Paystack fee is passed on so SkillsAir still receives the full price', () => {
+  assert.equal(withPaystackFee(2000), 2031)
+  assert.equal(withPaystackFee(40000), 40711)
+  assert.equal(withPaystackFee(100000), 101625)
+  assert.equal(paystackFee(500000), 2000) // capped
+  assert.equal(paystackFee(0), 0)
+  // Whatever the price, what Paystack keeps never eats into it (the ₦100 applies from ₦2,500 charged).
+  for (const price of [500, 2000, 2440, 2463, 2470, 2500, 40000, 100000, 131000, 132000, 500000]) {
+    const charged = withPaystackFee(price)
+    const kept = Math.min(charged * PAYSTACK_FEE.percent + (charged >= PAYSTACK_FEE.flatFrom ? PAYSTACK_FEE.flat : 0), PAYSTACK_FEE.cap)
+    assert.ok(charged - kept >= price, `price ${price}: charged ${charged}, Paystack keeps ${kept}`)
+  }
 })

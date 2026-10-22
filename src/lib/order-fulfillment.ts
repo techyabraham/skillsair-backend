@@ -151,7 +151,7 @@ async function fulfillLockedOrder(payload: Payload, orderId: number | string): P
   if (doc.type === 'course' || doc.type === 'subscription') {
     const paidCourseId = relationId(doc.course)
     if (renewal) {
-      await onLifecycleEvent(payload, { type: 'renewal_success', subscriptionId: renewal.subscriptionId, recovered: renewal.recovered, reference: String(doc.reference) })
+      await onLifecycleEvent(payload, { type: 'renewal_success', subscriptionId: renewal.subscriptionId, recovered: renewal.recovered, reference: String(doc.reference), amount: Number(doc.amount) })
     } else if (paidCourseId !== undefined) {
       await onLifecycleEvent(
         payload,

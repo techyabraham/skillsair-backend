@@ -11,7 +11,8 @@ import { requirePrerequisites } from '../../lib/prerequisites.js'
 import { relationId } from '../../lib/course-access.js'
 import { oneOffCoursePrice } from '../../lib/pricing.js'
 import { assertCanStartPlan, assertManualRenewalAllowed, assertNoCurrentSubscription, findRenewableManualSubscription } from '../../lib/subscription-guards.js'
-import { billingFor, PAYMENT_METHODS, paystackChannels } from '../../lib/billing.js'
+import { billingFor, PAYMENT_METHODS, paystackChannels, paystackFee, withPaystackFee } from '../../lib/billing.js'
+import { closeReplacedOrder } from '../../lib/order-replace.js'
 
 const initiateSchema = z.object({
   type: z.enum(['course', 'subscription']),
@@ -19,6 +20,8 @@ const initiateSchema = z.object({
   planId: z.string().optional(),
   // Bank transfer is the default; see PAYMENT_METHODS in billing.ts.
   paymentMethod: z.enum(PAYMENT_METHODS).optional().default('bank_transfer'),
+  // "Complete payment" from order history: the learner's pending order this payment replaces.
+  replacesOrderId: z.union([z.string(), z.number()]).optional(),
 })
 
 interface CourseDoc {
@@ -114,7 +117,8 @@ async function handler(req: PayloadRequest): Promise<Response> {
     // same price; transfer and OPay pay one month at a time and don't use the Paystack plan.
     if (billing === 'card') {
       if (!plan.paystackPlanCode) throw new AppError('VALIDATION_ERROR', 'Subscription plan is not configured for billing')
-      await verifyPlanConfiguration(plan.paystackPlanCode, plan.price, plan.interval)
+      // The Paystack plan charges the price plus the Paystack fee each month.
+      await verifyPlanConfiguration(plan.paystackPlanCode, withPaystackFee(plan.price), plan.interval)
     }
     amount = plan.price
     planId = plan.id
@@ -130,6 +134,11 @@ async function handler(req: PayloadRequest): Promise<Response> {
     depth: 0,
   })) as unknown as UserDoc
 
+  // Enrolments pass Paystack's fee on to the learner: the order is for what they're charged.
+  const price = amount
+  const fee = paystackFee(price)
+  amount = price + fee
+
   const reference = generatePaystackReference(body.type, user.id)
 
   const order = await payload.create({
@@ -143,7 +152,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
       currency: 'NGN',
       status: 'pending',
       reference,
-      metadata: { paymentMethod, ...(body.type === 'subscription' ? { billing } : {}), ...(renewsSubscriptionId ? { renewsSubscriptionId } : {}) },
+      metadata: { paymentMethod, price, paystackFee: fee, ...(body.type === 'subscription' ? { billing } : {}), ...(renewsSubscriptionId ? { renewsSubscriptionId } : {}) },
     },
     overrideAccess: true,
   })
@@ -171,6 +180,8 @@ async function handler(req: PayloadRequest): Promise<Response> {
       ...(renewsSubscriptionId ? { renewsSubscriptionId } : {}),
     },
   })
+
+  await closeReplacedOrder(payload, { userId: user.id, replacesOrderId: body.replacesOrderId, newOrderId: order.id, type: body.type, courseId })
 
   return sendSuccess(
     {

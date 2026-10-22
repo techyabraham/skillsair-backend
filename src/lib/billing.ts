@@ -52,6 +52,28 @@ export function billingFor(method: PaymentMethod): 'card' | 'manual' {
   return method === 'paystack' ? 'card' : 'manual'
 }
 
+/**
+ * Paystack's Nigerian local fee: 1.5% + ₦100, the ₦100 waived under ₦2,500, capped at ₦2,000.
+ * Enrolment payments pass it on to the learner, so SkillsAir receives the full price. Keep in
+ * sync with the frontend copy in src/lib/paystack-fee.ts (display only).
+ */
+export const PAYSTACK_FEE = { percent: 0.015, flat: 100, flatFrom: 2500, cap: 2000 } as const
+
+/** The fee (whole naira, rounded up) to add to `price` so the merchant still receives `price`. */
+export function paystackFee(price: number): number {
+  if (!(price > 0)) return 0
+  const gross = (flat: number) => Math.ceil((price + flat) / (1 - PAYSTACK_FEE.percent))
+  let total = gross(0)
+  // The ₦100 applies once the amount charged (not the price) reaches ₦2,500.
+  if (total >= PAYSTACK_FEE.flatFrom) total = gross(PAYSTACK_FEE.flat)
+  return Math.min(total - price, PAYSTACK_FEE.cap)
+}
+
+/** What the learner pays for an enrolment priced at `price`. */
+export function withPaystackFee(price: number): number {
+  return price + paystackFee(price)
+}
+
 export interface AccessSubscription {
   status?: string | null
   billing?: string | null

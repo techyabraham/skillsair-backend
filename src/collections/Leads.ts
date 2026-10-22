@@ -2,7 +2,7 @@ import type { CollectionBeforeValidateHook, CollectionConfig } from 'payload'
 import { decryptField, encryptField, isValidE164Phone, validateEncryptedE164 } from '../utils/sanitize.js'
 import { generateResumeCode, hashPhone } from '../lib/leads.js'
 import { createLeadEndpoint } from '../endpoints/leads/create.js'
-import { getMyLeadEndpoint, updateMyLeadEndpoint } from '../endpoints/leads/me.js'
+import { getMyLeadEndpoint, startMyApplicationEndpoint, updateMyLeadEndpoint } from '../endpoints/leads/me.js'
 import { resumeLeadEndpoint } from '../endpoints/leads/resume.js'
 import { leadDoneEndpoint, leadUnsubscribeEndpoint, leadWhatsAppReplyEndpoint } from '../endpoints/leads/admin-actions.js'
 import { STUDIO_GROUP } from '../admin/studio-config.js'
@@ -39,6 +39,7 @@ export const Leads: CollectionConfig = {
   endpoints: [
     createLeadEndpoint,
     getMyLeadEndpoint,
+    startMyApplicationEndpoint,
     updateMyLeadEndpoint,
     resumeLeadEndpoint,
     leadUnsubscribeEndpoint,

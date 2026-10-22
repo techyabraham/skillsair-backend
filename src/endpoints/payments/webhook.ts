@@ -223,7 +223,9 @@ export async function handlePaystackWebhook(req: PayloadRequest): Promise<Respon
     await linkSubscription(payload, event.data as Parameters<typeof linkSubscription>[1])
   } else if (event.event === 'invoice.update') {
     const applied = await applyPaidInvoice(payload, event.data as Parameters<typeof applyPaidInvoice>[1])
-    if (applied) await onLifecycleEvent(payload, { type: 'renewal_success', subscriptionId: applied.subscriptionId, recovered: applied.recovered })
+    // The receipt shows what Paystack actually charged (the plan price plus the Paystack fee).
+    const charged = (event.data as { amount?: unknown }).amount
+    if (applied) await onLifecycleEvent(payload, { type: 'renewal_success', subscriptionId: applied.subscriptionId, recovered: applied.recovered, ...(typeof charged === 'number' ? { amount: charged / 100 } : {}) })
   } else if (event.event === 'invoice.payment_failed') {
     await handlePaymentFailed(event.data as SubscriptionRefData, payload)
   } else if (event.event === 'invoice.create') {

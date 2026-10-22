@@ -66,6 +66,25 @@ export async function createPlan(name: string, amountNgn: number, interval: 'mon
   return response.data.plan_code
 }
 
+/** A Paystack plan's amount (kobo), for the plan-fee update script. */
+export async function getPlan(code: string): Promise<{ plan_code: string; name: string; amount: number; interval: string; currency: string }> {
+  const response = await paystackRequest<{ data: { plan_code: string; name: string; amount: number; interval: string; currency: string } }>(
+    `/plan/${encodeURIComponent(code)}`, { method: 'GET' },
+  )
+  return response.data
+}
+
+/**
+ * Changes what a Paystack plan charges (amount in naira). Existing subscribers keep the amount
+ * they signed up for; only new subscriptions use the new amount.
+ */
+export async function updatePlanAmount(code: string, amountNgn: number): Promise<void> {
+  await paystackRequest<{ status: boolean }>(`/plan/${encodeURIComponent(code)}`, {
+    method: 'PUT',
+    body: JSON.stringify({ amount: Math.round(amountNgn * 100), update_existing_subscriptions: false }),
+  })
+}
+
 export async function disableSubscription(subscriptionCode: string, emailToken: string): Promise<void> {
   await paystackRequest<{ status: boolean; message: string }>('/subscription/disable', {
     method: 'POST',

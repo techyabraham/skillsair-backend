@@ -9,11 +9,14 @@ import { generatePaystackReference } from '../../utils/generate-code.js'
 import { AppError } from '../../types/index.js'
 import { certificatePrice } from '../../lib/pricing.js'
 import { PAYMENT_METHODS, paystackChannels } from '../../lib/billing.js'
+import { closeReplacedOrder } from '../../lib/order-replace.js'
 
 const purchaseSchema = z.object({
   courseId: z.string().min(1),
   // Bank transfer is the default; see PAYMENT_METHODS in billing.ts.
   paymentMethod: z.enum(PAYMENT_METHODS).optional(),
+  // "Complete payment" from order history: the learner's pending order this payment replaces.
+  replacesOrderId: z.union([z.string(), z.number()]).optional(),
 })
 
 interface EnrollmentDoc {
@@ -110,6 +113,8 @@ async function handler(req: PayloadRequest): Promise<Response> {
       description: `Certificate for ${course.title}`,
     },
   })
+
+  await closeReplacedOrder(payload, { userId: user.id, replacesOrderId: body.replacesOrderId, newOrderId: order.id, type: 'certificate', courseId: course.id })
 
   return sendSuccess(
     { authorizationUrl: paystackResponse.data.authorization_url, reference, orderId: order.id },

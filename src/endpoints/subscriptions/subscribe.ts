@@ -10,6 +10,7 @@ import { AppError } from '../../types/index.js'
 import { relationId } from '../../lib/course-access.js'
 import { requirePrerequisites } from '../../lib/prerequisites.js'
 import { assertCanStartPlan, assertNoCurrentSubscription } from '../../lib/subscription-guards.js'
+import { paystackFee, withPaystackFee } from '../../lib/billing.js'
 
 const subscribeSchema = z.object({
   planId: z.string().min(1),
@@ -55,7 +56,9 @@ async function handler(req: PayloadRequest): Promise<Response> {
   }
   await assertCanStartPlan(payload, plan, user.id)
   if (!plan.paystackPlanCode) throw new AppError('VALIDATION_ERROR', 'Subscription plan is not configured for billing')
-  await verifyPlanConfiguration(plan.paystackPlanCode, plan.price, plan.interval)
+  // The Paystack plan charges the price plus the Paystack fee (passed on to the learner).
+  const charged = withPaystackFee(plan.price)
+  await verifyPlanConfiguration(plan.paystackPlanCode, charged, plan.interval)
   const courseId = relationId(plan.course)
   if (courseId === undefined) throw new AppError('VALIDATION_ERROR', 'Subscription plan has no course')
   const subscribedCourse = await payload.findByID({ collection: 'courses', id: courseId, depth: 0, overrideAccess: true }).catch(() => null)
@@ -80,16 +83,17 @@ async function handler(req: PayloadRequest): Promise<Response> {
       type: 'subscription',
       plan: plan.id,
       course: courseId,
-      amount: plan.price,
+      amount: charged,
       currency: 'NGN',
       status: 'pending',
       reference,
+      metadata: { paymentMethod: 'paystack', billing: 'card', price: plan.price, paystackFee: paystackFee(plan.price) },
     },
     overrideAccess: true,
   })
 
   const paystackResponse = await initializeTransaction({
-    amount: Math.round(plan.price * 100),
+    amount: Math.round(charged * 100),
     email: userDoc.email,
     reference,
     callback_url: `${FRONTEND_URL}/subscriptions/callback`,
