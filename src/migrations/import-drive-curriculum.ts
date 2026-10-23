@@ -22,6 +22,9 @@
  *
  * Usage:
  *   npm run import:drive-curriculum -- --course graphics-design=<folderId> [--course slug=<folderId> ...] [--execute] [--unpublished]
+ *
+ * Prints progress as it reads Drive and checks files. Add --skip-drive-check to skip the per-file
+ * service-account check (much faster; durations stay empty and access is not verified).
  */
 import { loadEnv } from 'payload/node'
 import { getPayload } from 'payload'
@@ -67,10 +70,20 @@ interface LessonDoc {
 
 const decode = (s: string) => s.replace(/&amp;/g, '&').replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
 
+/** Progress lines, so a long run never looks frozen. */
+const progress = (line: string) => console.log(`  [${new Date().toISOString().slice(11, 19)}] ${line}`)
+
 async function listPublicFolder(id: string): Promise<DriveItem[]> {
   for (let attempt = 0; attempt < 4; attempt++) {
-    const response = await fetch(`https://drive.google.com/embeddedfolderview?id=${encodeURIComponent(id)}`, { headers: { 'User-Agent': 'Mozilla/5.0 SkillsAir-curriculum-import' } })
-    if (response.ok) {
+    // A request Google never answers is abandoned after 30 seconds and retried.
+    const response = await fetch(`https://drive.google.com/embeddedfolderview?id=${encodeURIComponent(id)}`, {
+      headers: { 'User-Agent': 'Mozilla/5.0 SkillsAir-curriculum-import' },
+      signal: AbortSignal.timeout(30_000),
+    }).catch((err: unknown) => {
+      progress(`Drive folder ${id}: ${err instanceof Error ? err.message : String(err)}; retrying`)
+      return null
+    })
+    if (response?.ok) {
       const html = await response.text()
       const items: DriveItem[] = []
       const pattern = /<div class="flip-entry" id="entry-([^"]+)"[\s\S]*?<a href="([^"]+)"[\s\S]*?<div class="flip-entry-title">([^<]*)<\/div>/g
@@ -83,9 +96,12 @@ async function listPublicFolder(id: string): Promise<DriveItem[]> {
   throw new Error(`Could not list Drive folder ${id}. Is it shared as "anyone with the link"?`)
 }
 
-async function walk(id: string): Promise<DriveItem[]> {
+async function walk(id: string, stats = { folders: 0, files: 0 }): Promise<DriveItem[]> {
   const items = await listPublicFolder(id)
-  for (const item of items) if (item.folder) item.children = await walk(item.id)
+  stats.folders++
+  stats.files += items.filter((item) => !item.folder).length
+  if (stats.folders % 10 === 0) progress(`read ${stats.folders} folders, ${stats.files} files so far`)
+  for (const item of items) if (item.folder) item.children = await walk(item.id, stats)
   return items
 }
 
@@ -106,10 +122,13 @@ async function checkFiles(drive: drive_v3.Drive, ids: string[]): Promise<{ durat
   const durations = new Map<string, number>()
   const unreachable = new Set<string>()
   const queue = [...ids]
+  let done = 0
   await Promise.all(Array.from({ length: 8 }, async () => {
     for (let id = queue.shift(); id; id = queue.shift()) {
+      if (++done % 100 === 0) progress(`checked ${done} of ${ids.length} files`)
       try {
-        const { data } = await drive.files.get({ fileId: id, fields: 'id,videoMediaMetadata(durationMillis)', supportsAllDrives: true })
+        // 20 seconds per file at most; a file that doesn't answer is reported as not reachable.
+        const { data } = await drive.files.get({ fileId: id, fields: 'id,videoMediaMetadata(durationMillis)', supportsAllDrives: true }, { timeout: 20_000 })
         const millis = Number(data.videoMediaMetadata?.durationMillis ?? 0)
         if (millis > 0) durations.set(id, Math.round(millis / 1000))
       } catch {
@@ -239,6 +258,8 @@ async function importCourse(payload: Payload, slug: string, folderId: string, op
   const course = courses.docs[0] as unknown as { id: number; title: string } | undefined
   if (!course) { out(`\n### ${slug}: no course with this slug. Skipped.`); return false }
 
+  out(`\n### ${course.title} (${slug})`)
+  progress('reading the Drive folder...')
   const tree = await walk(folderId)
   const { sections: planned, skipped } = planCourse(tree)
 
@@ -260,6 +281,7 @@ async function importCourse(payload: Payload, slug: string, folderId: string, op
   let check: { durations: Map<string, number>; unreachable: Set<string> } | null = null
   if (options.drive) {
     const ids = planned.flatMap((section) => [...section.lessons.map((lesson) => lesson.driveFileId), ...section.resources.map((resource) => resource.driveFileId)])
+    progress(`checking ${ids.length} files with the service account (durations and access)...`)
     check = await checkFiles(options.drive, ids)
   }
 
@@ -287,7 +309,7 @@ async function importCourse(payload: Payload, slug: string, folderId: string, op
     notInDrive.push(`chapter "${section.title}" (kept)`)
   }
 
-  out(`\n### ${course.title} (${slug})`)
+  progress(options.execute ? 'writing chapters and lessons...' : 'planning (dry run)...')
   for (const [index, slot] of slots.entries()) {
     const order = index + 1
     const existing = slot.existing
@@ -421,6 +443,8 @@ async function run(): Promise<void> {
   const args = process.argv.slice(2)
   const execute = args.includes('--execute')
   const publish = !args.includes('--unpublished')
+  // Skips the per-file service-account check: faster, but durations stay empty and access isn't verified.
+  const skipDriveCheck = args.includes('--skip-drive-check')
   const courses: Array<[string, string]> = []
   args.forEach((arg, index) => {
     const value = args[index + 1]
@@ -437,7 +461,8 @@ async function run(): Promise<void> {
   await loadEnv()
   const { default: config } = await import('../../payload.config.js')
   const payload = await getPayload({ config })
-  const drive = serviceAccountDrive()
+  const drive = skipDriveCheck ? null : serviceAccountDrive()
+  if (!skipDriveCheck && !drive) console.log('Note: GOOGLE_SERVICE_ACCOUNT_KEY is missing or unreadable here, so files are not checked.')
 
   console.log(execute ? 'EXECUTING: changes will be written.' : 'DRY RUN: nothing is written. Re-run with --execute to apply.')
   let failed = 0
