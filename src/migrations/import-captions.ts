@@ -41,6 +41,8 @@ export interface CaptionReport {
   unchanged: number
   noSubtitle: string[]
   videoNotInFolder: string[]
+  /** Lessons whose save was refused; the rest of the programme still imports. */
+  saveFailed: string[]
   durationsFilled: number
   csvPath: string | null
 }
@@ -78,7 +80,7 @@ export async function importCaptionsForCourse(payload: Payload, slug: string, op
     : []
   const withVideo = lessons.filter((lesson) => lesson.driveFileId)
 
-  const report: CaptionReport = { slug, lessons: withVideo.length, withCaptions: 0, updated: 0, unchanged: 0, noSubtitle: [], videoNotInFolder: [], durationsFilled: 0, csvPath: null }
+  const report: CaptionReport = { slug, lessons: withVideo.length, withCaptions: 0, updated: 0, unchanged: 0, noSubtitle: [], videoNotInFolder: [], saveFailed: [], durationsFilled: 0, csvPath: null }
   const rows: string[][] = [['lesson_id', 'lesson', 'duration_seconds', 'captions', 'note']]
   const canReadDurations = Boolean(serviceAccountDrive())
   const context = { skipCourseStats: true }
@@ -139,11 +141,19 @@ export async function importCaptionsForCourse(payload: Payload, slug: string, op
           }
         }
       }
-      if (hasCaptions) report.withCaptions++
       if (execute && Object.keys(data).length) {
-        await payload.update({ collection: 'lessons', id: lesson.id, data, overrideAccess: true, context })
-        if (data.captions) await cacheDel(CACHE_KEYS.captions(lesson.id, 'en'), CACHE_KEYS.transcript(lesson.id))
+        try {
+          await payload.update({ collection: 'lessons', id: lesson.id, data, overrideAccess: true, context })
+          if (data.captions) await cacheDel(CACHE_KEYS.captions(lesson.id, 'en'), CACHE_KEYS.transcript(lesson.id))
+        } catch (err) {
+          // One lesson that can't be saved shouldn't stop the rest of the programme.
+          if (data.captions) { report.updated--; hasCaptions = Boolean(lesson.hasCaptions) }
+          if (data.duration) report.durationsFilled--
+          note = `could not save (${err instanceof Error ? err.message : String(err)})`
+          report.saveFailed.push(`${lesson.title}: ${note}`)
+        }
       }
+      if (hasCaptions) report.withCaptions++
       rows.push([String(lesson.id), lesson.title, String(data.duration ?? lesson.duration ?? 0), hasCaptions ? 'yes' : 'no', note])
     }
   }))
@@ -164,6 +174,7 @@ export async function importCaptionsForCourse(payload: Payload, slug: string, op
   const coverage = report.lessons ? Math.round((report.withCaptions / report.lessons) * 100) : 0
   console.log(`  Captions: ${report.withCaptions} of ${report.lessons} lessons (${coverage}%); ${report.updated} ${execute ? 'updated' : 'would update'}, ${report.unchanged} unchanged; ${report.durationsFilled} durations ${execute ? 'filled' : 'would be filled'}${canReadDurations ? '' : ' (durations need the service account)'}.`)
   if (report.noSubtitle.length) console.log(`  No subtitle file (${report.noSubtitle.length}):\n${report.noSubtitle.slice(0, 40).map((title) => `    - ${title}`).join('\n')}${report.noSubtitle.length > 40 ? '\n    …' : ''}`)
+  if (report.saveFailed.length) console.log(`  Could not save (${report.saveFailed.length}):\n${report.saveFailed.slice(0, 20).map((line) => `    - ${line}`).join('\n')}`)
   if (report.videoNotInFolder.length) console.log(`  Video not found in the Drive folder (${report.videoNotInFolder.length}):\n${report.videoNotInFolder.slice(0, 20).map((title) => `    - ${title}`).join('\n')}`)
   if (report.csvPath) console.log(`  CSV: ${report.csvPath}`)
   return report

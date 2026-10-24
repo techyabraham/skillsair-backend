@@ -205,7 +205,8 @@ export const Lessons: CollectionConfig = {
       fields: [
         { name: 'language', type: 'text', required: true, defaultValue: 'en' },
         { name: 'label', type: 'text', required: true, defaultValue: 'English' },
-        { name: 'vtt', type: 'textarea', required: true },
+        // Long lectures' subtitles pass Payload's default 40,000-character limit; the column is unbounded.
+        { name: 'vtt', type: 'textarea', required: true, maxLength: 2_000_000 },
         { name: 'sourceFileId', type: 'text' },
         { name: 'sourceModifiedTime', type: 'text' },
       ],
@@ -213,6 +214,7 @@ export const Lessons: CollectionConfig = {
     {
       name: 'transcript',
       type: 'textarea',
+      maxLength: 2_000_000,
       access: { read: ({ req }) => req.user?.role === 'admin' || req.user?.role === 'instructor' },
       admin: { readOnly: true, description: 'Plain text with [mm:ss] markers, from the captions.' },
     },
