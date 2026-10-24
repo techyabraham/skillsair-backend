@@ -1,0 +1,69 @@
+{
+  "seoTitle": "Data Analysis Course with Microsoft Excel · SkillsAir",
+  "metaDescription": "Data analysis course in Microsoft Excel: sort, filter, chart and test real data, with a guided 12-week plan, chapter quizzes and a certificate exam.",
+  "shortDescription": "Learn to clean, summarise, chart and analyse real data in Microsoft Excel, starting from zero, with practice and a quiz after every chapter.",
+  "description": "This data analysis course teaches you to turn messy spreadsheets into clear answers using Microsoft Excel, the tool most Nigerian offices already rely on every day.\n\nEvery business collects data: sales records, customer lists, attendance sheets, stock counts. Very few people can look at five thousand rows and say what is actually happening. That skill is what employers mean when they ask for someone who is good with data, and it is what you will practise here, one chapter at a time, on realistic files.\n\n## What you will learn in the data analysis course\n\nThe programme follows the order you would use on a real job: get the data in order, find the part that matters, show it clearly and then test what it is telling you.\n\n- **Sorting.** Single and multi-level sorts, custom orders such as days of the week or High, Medium and Low, sorting by cell or font colour, and reversing a list with a helper column.\n- **Filtering.** AutoFilter for text, numbers and dates, removing duplicates safely, pulling out a list of unique values and using the FILTER function to build results that update themselves.\n- **Charts.** Choosing between column, bar, line, pie and scatter charts, arranging the source data so the chart reads correctly, and formatting charts so the main message is obvious at a glance.\n- **Tables.** Converting ranges into Excel tables, structured references such as Sales[Amount], calculated columns that fill themselves, and totals that stay correct as new rows arrive.\n- **Statistics.** Descriptive statistics, histograms, moving averages, exponential smoothing and correlation with the Analysis ToolPak, plus how to explain the results without overstating them.\n\nEach lesson is short and practical. You watch a technique, repeat it on the practice file and then move on, so you are using Excel from the first day rather than just watching someone else use it.\n\n## How the programme works\n\nYou follow a guided 12-week plan that sets weekly goals: a group of short video lessons, practice straight after each one and a quiz at the end of every chapter. Each quiz is drawn from the lessons you have just watched, and every answer comes with a short explanation, so a wrong answer teaches you something instead of just costing you marks. If your weeks are unpredictable you can learn at your own pace instead, though most learners finish sooner with the plan.\n\nThe chapter quizzes are written around situations rather than definitions. Instead of asking what a filter is, a question might describe a mailing list with repeated email addresses and ask which tool cleans it permanently. That is the kind of judgement a manager expects from you, and practising it is what makes the skill stick.\n\n## Tools you will use\n\nYou need Microsoft Excel on a Windows or Mac computer. The statistics chapter uses the Analysis ToolPak, a free add-in that ships with desktop Excel; we show you how to switch it on. Sorting, filtering, charts and tables also work in Excel on the web, but the ToolPak does not, so plan to use a laptop or desktop for the final chapter.\n\n## Who it is for\n\nThis programme suits graduates and NYSC members who want a practical skill for their CV, administrative and finance staff who already work in spreadsheets and want to do more with them, small business owners who want to understand their own numbers, and anyone preparing for a data analyst role who needs a solid Excel foundation first. You do not need a background in maths or statistics: each idea is explained in plain English with a worked example.\n\n## After you finish\n\nYou will be able to take a raw export from a sales system, a survey or an accounting package and produce a short, accurate summary with the right chart and a clear statement of what the numbers show. Many learners go on to add SQL or Power BI later; the habits you build here, checking data before trusting it and choosing the simplest chart that tells the truth, carry straight across.\n\n## Certificate and final exam\n\nWhen you are ready, you can get your SkillsAir certificate. Once it is unlocked, you sit a timed final exam drawn from every chapter of the programme. Pass it and your certificate is issued with a verification link that employers and clients can check. Certified graduates can also apply for internship openings from our growing partner network, with no job guarantees.\n\nEvery learner also gets the free Freelancer’s Academy bonus course, which shows you how to set up a professional Fiverr profile and gigs so you can start finding paying clients for your new skills.",
+  "objectives": [
+    "Sort data by value, colour and custom orders so you can put any list in the order a report needs",
+    "Filter, de-duplicate and extract unique values so you can clean a messy dataset without losing records",
+    "Choose and format the right chart so you can show a trend, comparison or relationship clearly",
+    "Build Excel tables with structured references so you can keep formulas correct as data grows",
+    "Run descriptive statistics and histograms so you can summarise a dataset in a few honest numbers",
+    "Use moving averages, smoothing and correlation so you can describe trends and relationships responsibly",
+    "Explain what your analysis shows and what it does not so you can support decisions with confidence"
+  ],
+  "requirements": [
+    "A Windows or Mac computer with Microsoft Excel (the statistics chapter needs desktop Excel)",
+    "Basic computer skills: opening files, typing and using a mouse or trackpad",
+    "No maths or statistics background needed: we start from zero",
+    "A few hours each week to follow the guided plan"
+  ],
+  "whoItsFor": [
+    "Graduates and NYSC members who want a practical, in-demand skill",
+    "Office, admin and finance staff who already use spreadsheets",
+    "Small business owners who want to understand their own numbers",
+    "Anyone preparing for a data analyst role who needs strong Excel foundations"
+  ],
+  "toolsCovered": [
+    "Microsoft Excel",
+    "Excel tables and structured references",
+    "FILTER and UNIQUE functions",
+    "Excel charts",
+    "Analysis ToolPak"
+  ],
+  "careerPaths": [
+    "Data entry and reporting assistant",
+    "Junior data analyst",
+    "Operations or sales analyst",
+    "Finance or admin officer with reporting duties"
+  ],
+  "faq": [
+    {
+      "question": "Do I need to be good at maths?",
+      "answer": "No. You need to be comfortable with everyday numbers such as totals and percentages. Every statistical idea is explained with a worked example before you use it."
+    },
+    {
+      "question": "Can I take this course on my phone?",
+      "answer": "You can watch the lessons on a phone, but you should practise on a computer with desktop Excel. The statistics chapter uses the Analysis ToolPak, which is not available in the Excel mobile apps or Excel on the web."
+    },
+    {
+      "question": "Does it cover Power BI or SQL?",
+      "answer": "No. This programme focuses on Excel, which is where most analysis work starts. The habits you build here carry over directly if you learn Power BI or SQL later."
+    },
+    {
+      "question": "How do the quizzes and final exam work?",
+      "answer": "Each chapter ends with a short quiz drawn from its lessons, with an explanation for every answer. The final certificate exam draws questions from every chapter and is timed."
+    },
+    {
+      "question": "Will I get a job after the course?",
+      "answer": "There are no job guarantees, but you will finish with practical skills and work you can show. Certified graduates can apply for internship openings from our partner network."
+    }
+  ],
+  "primaryKeyword": "data analysis course",
+  "secondaryKeywords": [
+    "Excel data analysis course",
+    "learn data analysis online",
+    "Excel charts and statistics",
+    "data analyst training Nigeria"
+  ]
+}

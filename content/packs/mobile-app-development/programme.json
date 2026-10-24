@@ -1,0 +1,72 @@
+{
+  "seoTitle": "Mobile App Development Course: React Native · SkillsAir",
+  "metaDescription": "Mobile app development course in React Native and Expo: build real apps with Firebase, maps, payments and the camera, with a guided 12-week plan and exam.",
+  "shortDescription": "Build Android and iOS apps with React Native and Expo, from your first screen to a full restaurant app with login, maps, payments and release.",
+  "description": "This mobile app development course teaches you to build Android and iOS apps from one codebase with React Native and Expo, finishing with a complete restaurant discovery app.\n\nMost Nigerians reach the internet through a phone, so businesses want apps that work well on both Android and iPhone without paying for two separate teams. React Native makes that possible, and it is used by companies large and small. You will start with the fundamentals, build a small app end to end and then spend most of the programme on a larger project that brings together the features real apps need.\n\n## What the mobile app development course covers\n\n- **React Native fundamentals.** How React Native works, the bridge and the newer architecture, and how it compares with web views and fully native development.\n- **Expo or the CLI.** The two ways to start a project, when each makes sense, and running your app on a real phone with Expo Go.\n- **FocusTime app.** A complete small app with state, timers, vibration, keep-awake, lists, AsyncStorage and a progress bar.\n- **Professional setup.** Node, package managers, emulators, VS Code, ESLint, Prettier, Git and GitHub.\n- **MealsToGo master project.** Project structure, themes and styled-components, typography and spacing components, tab navigation, search, SVG ratings, restaurant details, favourites and safe areas.\n- **Authentication.** Firebase Authentication, React Context, separate navigators for signed-in and signed-out users, and clear error messages.\n- **Camera, maps and functions.** Taking profile photos with expo-camera, geocoding and maps with markers, and Firebase Cloud Functions as a backend.\n- **Payments.** A checkout flow with Stripe, tokenising cards on the client, keeping secret keys on the server and handling failures.\n- **Release.** App icons, splash screens and versions, EAS Build, Android App Bundles, TestFlight, store review and privacy policies.\n- **Appendices.** React fundamentals and hooks, Git and GitHub workflows, and contributing to open source.\n\n## How the programme works\n\nYou follow a guided 12-week plan that sets weekly goals: a group of short video lessons, practice straight after each one and a quiz at the end of every chapter. Each quiz is drawn from the lessons you have just watched, and every answer comes with a short explanation, so a wrong answer teaches you something instead of just costing you marks. If your weeks are unpredictable you can learn at your own pace instead, though most learners finish sooner with the plan.\n\nQuizzes focus on the decisions you make while building: why FlatList beats ScrollView for long lists, where secret keys belong, what to do when a permission is denied. Because the master project grows across several chapters, you finish with one substantial app rather than many disconnected exercises.\n\n## Tools you will use\n\nYou will use React Native, Expo, JavaScript, Firebase, Stripe in test mode, Google Maps, VS Code, Git and GitHub, plus an Android emulator or your own phone. A laptop or desktop is required; building for iOS app stores requires an Apple developer account, which is optional.\n\n## Who it is for\n\nThe programme suits web developers who want to build mobile apps, graduates with some JavaScript who want a focused career path and founders who want to build a first version of their own app. Some JavaScript knowledge helps; the React appendix covers what you need if you are new to React.\n\n## After you finish\n\nYou will be able to structure a React Native project, build screens and navigation, connect authentication and a backend, use device features such as the camera and location, take payments and prepare a release build for the stores.\n\n## Certificate and final exam\n\nWhen you are ready, you can get your SkillsAir certificate. Once it is unlocked, you sit a timed final exam drawn from every chapter of the programme. Pass it and your certificate is issued with a verification link that employers and clients can check. Certified graduates can also apply for internship openings from our growing partner network, with no job guarantees.\n\nEvery learner also gets the free Freelancer’s Academy bonus course, which shows you how to set up a professional Fiverr profile and gigs so you can start finding paying clients for your new skills.",
+  "objectives": [
+    "Explain how React Native works so you can choose between Expo and the CLI for each project",
+    "Build screens with components, state and hooks so you can create responsive mobile interfaces",
+    "Structure a large app with themes and navigation so you can add features without making a mess",
+    "Add Firebase login and Cloud Functions so you can give your app real users and a backend",
+    "Use the camera, location and maps so you can build features that rely on the device",
+    "Integrate Stripe payments safely so you can take money in an app without exposing secrets",
+    "Prepare and submit release builds so you can publish your apps to Google Play and the App Store",
+    "Work with Git, GitHub and open source so you can collaborate like a professional developer"
+  ],
+  "requirements": [
+    "A laptop or desktop computer (Windows, Mac or Linux)",
+    "An Android or iOS phone for testing, or an emulator",
+    "Some JavaScript knowledge helps; React basics are covered in an appendix",
+    "A few hours each week to follow the guided plan"
+  ],
+  "whoItsFor": [
+    "Web developers who want to build mobile apps",
+    "Graduates with some JavaScript who want a focused career path",
+    "Founders who want to build the first version of their app"
+  ],
+  "toolsCovered": [
+    "React Native",
+    "Expo and EAS Build",
+    "JavaScript and React",
+    "Firebase Authentication and Cloud Functions",
+    "Stripe",
+    "Google Maps",
+    "styled-components",
+    "Git and GitHub"
+  ],
+  "careerPaths": [
+    "Junior React Native developer",
+    "Mobile app developer",
+    "Front-end developer (web and mobile)",
+    "Freelance app developer"
+  ],
+  "faq": [
+    {
+      "question": "Does the course teach Flutter or Kotlin?",
+      "answer": "No. It teaches React Native with Expo, which builds Android and iOS apps from one JavaScript codebase."
+    },
+    {
+      "question": "Do I need to know JavaScript first?",
+      "answer": "It helps. The programme includes a React appendix, but you will be more comfortable if you already know JavaScript basics such as variables, functions and arrays."
+    },
+    {
+      "question": "Do I need a Mac to build iPhone apps?",
+      "answer": "You can develop and test with Expo on Windows or Linux. Publishing to the App Store needs an Apple developer account, and EAS Build can create iOS builds in the cloud."
+    },
+    {
+      "question": "Will I build a real app?",
+      "answer": "Yes. The master project, MealsToGo, is a restaurant discovery app with login, maps, favourites, a camera feature and payments."
+    },
+    {
+      "question": "Will I get a job after the course?",
+      "answer": "There are no job guarantees, but you will finish with practical skills and a substantial project. Certified graduates can apply for internship openings from our partner network."
+    }
+  ],
+  "primaryKeyword": "mobile app development course",
+  "secondaryKeywords": [
+    "React Native course",
+    "learn app development",
+    "Expo and Firebase app development",
+    "build mobile apps Nigeria"
+  ]
+}

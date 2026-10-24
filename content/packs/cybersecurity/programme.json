@@ -1,0 +1,72 @@
+{
+  "seoTitle": "Cybersecurity Course: Defend Systems and Data · SkillsAir",
+  "metaDescription": "Cybersecurity course covering threats, endpoint and network defence, privacy and ethical hacking basics, with a guided 12-week plan and certificate exam.",
+  "shortDescription": "Understand how attacks work and how to defend people, devices and networks, from security basics to an ethical hacking introduction.",
+  "description": "This cybersecurity course shows you how attackers think and how defenders stop them, so you can protect people, devices and networks from the threats Nigerian businesses face every day.\n\nPhishing messages, SIM-swap fraud, ransomware and stolen passwords are no longer problems only for banks. Small firms, schools and online sellers are targeted precisely because their defences are weaker. Organisations need people who understand the risks and can put sensible protections in place, and that understanding is what this programme builds, one topic at a time.\n\n## What the cybersecurity course covers\n\n- **Foundations.** What cybersecurity is, the confidentiality, integrity and availability triad, how attacks have changed over the decades and the main career paths in the field.\n- **Understanding hackers.** White, black and grey-hat hackers, hacktivists and criminal groups, the common attack types, and why attackers are hard to trace.\n- **Bugs and vulnerabilities.** Vulnerabilities, exploits and CVEs, injection and cross-site scripting, buffer overflows and protections such as ASLR and stack canaries.\n- **Social engineering.** Phishing, smishing and vishing, how to spot look-alike domains, how SPF, DKIM and DMARC help, and why awareness training matters.\n- **Endpoint protection.** Browser hardening, antivirus and its limits, Microsoft Defender and macOS protections, password managers, host firewalls and tools for spotting suspicious processes and connections.\n- **Network security.** Firewalls, segmentation and DMZs, scanning with Nmap, vulnerability scanning with Nessus, packet capture with Wireshark and tcpdump, and wireless risks.\n- **Strategies.** Protect-and-recover, application-centric, data-centric and attack-centric approaches, with DLP, EDR, WAFs and the MITRE ATT&CK knowledge base.\n- **Tracking, privacy and anonymity.** Cookies, tracking pixels and fingerprinting, VPNs, Tor and proxy chains, and what each one does and does not hide.\n- **Ethical hacking introduction.** The stages of a penetration test on deliberately vulnerable lab machines, from reconnaissance to reporting, with the legal and ethical rules that separate testing from crime.\n\n## How the programme works\n\nYou follow a guided 12-week plan that sets weekly goals: a group of short video lessons, practice straight after each one and a quiz at the end of every chapter. Each quiz is drawn from the lessons you have just watched, and every answer comes with a short explanation, so a wrong answer teaches you something instead of just costing you marks. If your weeks are unpredictable you can learn at your own pace instead, though most learners finish sooner with the plan.\n\nQuizzes focus on judgement: which control fits a scenario, what a scan result means, what to do with a suspicious email. Hands-on demonstrations always use your own machines or practice labs. You must never test systems you do not own or have written permission to test, and the course explains why.\n\n## Tools you will use\n\nThe lessons use free tools wherever possible, including Kali Linux in a virtual machine, Nmap, Wireshark, Metasploit on lab targets, Tor Browser, KeePass and the security features already built into Windows, macOS and Linux. A laptop with at least 8 GB of RAM makes running a virtual machine much easier.\n\n## Who it is for\n\nThe programme suits IT support staff who want to move into security, graduates in computing or related fields, small business owners responsible for their own systems and anyone curious about how attacks really work. Basic comfort with computers and the internet is enough to start; networking ideas are explained as you meet them.\n\n## After you finish\n\nYou will be able to explain the main threats to an organisation, harden a laptop and a home or office network, read the output of common scanning tools and describe how a penetration test is run. That is a strong base for entry-level roles such as SOC analyst or IT support with security duties, and for professional certifications such as CompTIA Security+.\n\n## Certificate and final exam\n\nWhen you are ready, you can get your SkillsAir certificate. Once it is unlocked, you sit a timed final exam drawn from every chapter of the programme. Pass it and your certificate is issued with a verification link that employers and clients can check. Certified graduates can also apply for internship openings from our growing partner network, with no job guarantees.\n\nEvery learner also gets the free Freelancer’s Academy bonus course, which shows you how to set up a professional Fiverr profile and gigs so you can start finding paying clients for your new skills.",
+  "objectives": [
+    "Explain the CIA triad and common attack types so you can assess risks to people, systems and data",
+    "Recognise phishing and social engineering so you can protect yourself and train colleagues",
+    "Harden browsers, endpoints and passwords so you can reduce the attack surface of everyday devices",
+    "Use Nmap, Wireshark and vulnerability scanners in a lab so you can find weaknesses before attackers do",
+    "Design segmentation and firewall rules so you can limit how far an attack can spread on a network",
+    "Compare VPNs, Tor and other privacy tools so you can choose the right protection for each situation",
+    "Describe each stage of an ethical penetration test so you can work safely within scope and the law"
+  ],
+  "requirements": [
+    "A laptop or desktop computer (8 GB of RAM or more is recommended for virtual machines)",
+    "Basic computer and internet skills",
+    "Willingness to practise only on your own devices and lab machines",
+    "A few hours each week to follow the guided plan"
+  ],
+  "whoItsFor": [
+    "IT support staff who want to move into security",
+    "Computing graduates and students who want a security specialism",
+    "Small business owners who look after their own systems",
+    "Career changers curious about how attacks and defences work"
+  ],
+  "toolsCovered": [
+    "Kali Linux",
+    "Nmap",
+    "Wireshark and tcpdump",
+    "Nessus",
+    "Metasploit (lab use)",
+    "Tor Browser and proxychains",
+    "KeePass",
+    "Microsoft Defender"
+  ],
+  "careerPaths": [
+    "SOC analyst (entry level)",
+    "IT support with security duties",
+    "Junior vulnerability analyst",
+    "Security awareness officer"
+  ],
+  "faq": [
+    {
+      "question": "Is ethical hacking legal?",
+      "answer": "Yes, when you have written permission from the owner of the systems and stay within the agreed scope. The course uses deliberately vulnerable lab machines and explains the legal rules before any hands-on testing."
+    },
+    {
+      "question": "Do I need programming experience?",
+      "answer": "No. Some lessons show commands and short scripts, and each one is explained. Basic comfort with computers is enough to start."
+    },
+    {
+      "question": "Will this prepare me for a certification?",
+      "answer": "It gives you a broad foundation that helps with certifications such as CompTIA Security+, but it is not an official exam preparation course for any specific certification."
+    },
+    {
+      "question": "Can I follow along on a phone?",
+      "answer": "You can watch lessons on a phone, but the practical work needs a laptop or desktop that can run a virtual machine."
+    },
+    {
+      "question": "Will I get a job after the course?",
+      "answer": "There are no job guarantees. You will finish with practical knowledge and lab experience, and certified graduates can apply for internship openings from our partner network."
+    }
+  ],
+  "primaryKeyword": "cybersecurity course",
+  "secondaryKeywords": [
+    "learn cybersecurity online",
+    "ethical hacking course",
+    "network security training",
+    "cybersecurity training Nigeria"
+  ]
+}

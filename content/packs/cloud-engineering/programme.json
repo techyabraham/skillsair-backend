@@ -1,0 +1,69 @@
+{
+  "seoTitle": "Cloud Engineering Course: AWS Architecture · SkillsAir",
+  "metaDescription": "Cloud engineering course on AWS: IAM, compute, networking, storage, databases, security and the Well-Architected Framework, with a guided 12-week plan.",
+  "shortDescription": "Learn to design secure, reliable and cost-aware systems on Amazon Web Services, aligned to the AWS Solutions Architect Associate exam.",
+  "description": "This cloud engineering course teaches you to design and run systems on Amazon Web Services, following the topics of the AWS Certified Solutions Architect – Associate exam.\n\nBanks, fintechs, telcos and start-ups in Nigeria are moving their systems to the cloud, and AWS is the most widely used platform. Teams need people who can choose the right services, connect them securely and keep the bill under control. This programme walks through each area of AWS in the order an architect thinks about it, with scenarios that mirror the decisions you would make at work.\n\n## What the cloud engineering course covers\n\n- **Getting started.** Setting up an account safely with budgets and MFA, the AWS CLI and CloudShell, Regions, Availability Zones, edge locations and the shared responsibility model.\n- **Identity and access.** IAM users, groups, roles and policies, least privilege, AWS Organizations, IAM Identity Center, Control Tower and Directory Service.\n- **Compute.** EC2 instance types and pricing options, Lambda, ECS, Fargate and container images.\n- **Scaling and load balancing.** Application and Network Load Balancers, health checks, launch templates and Auto Scaling policies.\n- **Networking.** VPCs, public and private subnets, route tables, gateways, security groups and network ACLs, VPC peering, Site-to-Site VPN and Direct Connect.\n- **Storage and databases.** S3 storage classes, policies, versioning, lifecycle rules and replication; EBS and EFS; RDS, Aurora, DynamoDB, DAX and ElastiCache.\n- **Migration and analytics.** DataSync, Transfer Family, the Snow Family, DMS and Storage Gateway; Athena, Kinesis, Glue, EMR and QuickSight.\n- **Operations and security.** CloudWatch, CloudTrail and Config; KMS, Secrets Manager, WAF, Shield, GuardDuty, Macie, Inspector and Security Hub; CloudFormation and Systems Manager.\n- **Architecture.** Route 53 routing policies, CloudFront, SQS, SNS, EventBridge and Step Functions, backup and disaster recovery strategies, cost management and the six pillars of the Well-Architected Framework.\n\n## How the programme works\n\nYou follow a guided 12-week plan that sets weekly goals: a group of short video lessons, practice straight after each one and a quiz at the end of every chapter. Each quiz is drawn from the lessons you have just watched, and every answer comes with a short explanation, so a wrong answer teaches you something instead of just costing you marks. If your weeks are unpredictable you can learn at your own pace instead, though most learners finish sooner with the plan.\n\nQuizzes are written like short exam scenarios: a requirement, a constraint and four plausible designs. Learning to spot the deciding detail, such as lowest cost, least operational effort or fastest recovery, is the skill both the AWS exam and real architecture work reward. A final module covers exam strategy and booking.\n\n## Tools you will use\n\nYou will use the AWS Management Console, the AWS CLI, CloudShell and CloudFormation. Many labs fit within the AWS Free Tier, but some services are billed, so the course shows you how to set a budget and alerts before you start and how to clean up afterwards.\n\n## Who it is for\n\nThe programme suits developers and IT professionals moving into cloud roles, system administrators who manage on-premises servers today and graduates with some IT background who want a clear route to an AWS certification. Familiarity with basic networking and the command line helps; cloud ideas are explained from the ground up.\n\n## After you finish\n\nYou will be able to design a secure, highly available architecture on AWS, explain the trade-offs between services and estimate what it will cost. You will also be prepared to sit the AWS Solutions Architect – Associate exam, which you book and pay for separately with AWS.\n\n## Certificate and final exam\n\nWhen you are ready, you can get your SkillsAir certificate. Once it is unlocked, you sit a timed final exam drawn from every chapter of the programme. Pass it and your certificate is issued with a verification link that employers and clients can check. Certified graduates can also apply for internship openings from our growing partner network, with no job guarantees.\n\nEvery learner also gets the free Freelancer’s Academy bonus course, which shows you how to set up a professional Fiverr profile and gigs so you can start finding paying clients for your new skills.",
+  "objectives": [
+    "Secure an AWS account with IAM, MFA and least privilege so you can protect every environment you build",
+    "Choose between EC2, Lambda and containers so you can run each workload on the right compute service",
+    "Design VPCs with public and private subnets so you can isolate and connect resources safely",
+    "Select storage and database services so you can meet each application’s durability and speed needs",
+    "Build load-balanced, auto-scaling architectures so you can keep applications available under changing demand",
+    "Monitor, encrypt and audit workloads so you can meet security and compliance requirements",
+    "Plan backups, disaster recovery and costs so you can run systems that are resilient and affordable",
+    "Apply the Well-Architected Framework so you can answer scenario questions on the associate exam"
+  ],
+  "requirements": [
+    "A laptop or desktop computer and a stable internet connection",
+    "An AWS account with a debit or credit card (most labs fit the Free Tier; set a budget first)",
+    "Basic IT knowledge: files, the command line and simple networking ideas help",
+    "A few hours each week to follow the guided plan"
+  ],
+  "whoItsFor": [
+    "Developers and IT professionals moving into cloud roles",
+    "System administrators who manage on-premises servers",
+    "Graduates with an IT background aiming for an AWS certification"
+  ],
+  "toolsCovered": [
+    "Amazon Web Services (AWS)",
+    "AWS Management Console",
+    "AWS CLI and CloudShell",
+    "AWS CloudFormation",
+    "Amazon CloudWatch"
+  ],
+  "careerPaths": [
+    "Cloud support associate",
+    "Junior cloud engineer",
+    "AWS solutions architect (associate)",
+    "Cloud operations engineer"
+  ],
+  "faq": [
+    {
+      "question": "Does this prepare me for an AWS certification?",
+      "answer": "Yes. The modules follow the topics of the AWS Certified Solutions Architect – Associate exam and include a module on exam strategy. You book and pay for the exam separately with AWS."
+    },
+    {
+      "question": "Will the labs cost money?",
+      "answer": "Many labs fit within the AWS Free Tier, but some services are billed. The course shows you how to set budgets and alerts first and how to delete resources when you finish."
+    },
+    {
+      "question": "Do I need programming skills?",
+      "answer": "No. You will use the console, the command line and templates. Some IT background, such as basic networking, makes the programme easier to follow."
+    },
+    {
+      "question": "Does it cover Azure or Google Cloud?",
+      "answer": "No. The programme focuses on AWS. Most cloud concepts, such as networks, identity and scaling, transfer to other providers."
+    },
+    {
+      "question": "Will I get a job after the course?",
+      "answer": "There are no job guarantees, but you will finish ready for the associate exam with practical architecture skills. Certified graduates can apply for internship openings from our partner network."
+    }
+  ],
+  "primaryKeyword": "cloud engineering course",
+  "secondaryKeywords": [
+    "AWS course online",
+    "AWS Solutions Architect Associate training",
+    "cloud computing training Nigeria",
+    "AWS certification preparation"
+  ]
+}

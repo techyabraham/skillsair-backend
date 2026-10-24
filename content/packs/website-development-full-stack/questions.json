@@ -1,0 +1,5238 @@
+[
+  {
+    "key": "website-development-full-stack-l208-01",
+    "lessonDriveFileId": "1DNwhTWEFZi-0XbhF8o_tqu2St6L3q5kE",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Why do professional developers use version control when working in teams?",
+    "options": [
+      "It tracks changes and lets several people work on the same code safely",
+      "It makes code run faster",
+      "It replaces the need to write any automated tests",
+      "It designs the website"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Git records history and helps merge work.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l208-02",
+    "lessonDriveFileId": "1DNwhTWEFZi-0XbhF8o_tqu2St6L3q5kE",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "A code review is:",
+    "options": [
+      "Deleting old code",
+      "Teammates checking each other's code before it's merged",
+      "Running the website",
+      "Buying a domain name for the team's project"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Reviews catch bugs and share knowledge.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l209-01",
+    "lessonDriveFileId": "1JW9eLuEGZfN6MLNeUqXNi9yRb04rqer_",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Open-source software is:",
+    "options": [
+      "Software that costs nothing to host",
+      "Software sold only to companies with a paid support contract",
+      "Software whose source code is publicly available to use and modify under a licence",
+      "Software only big companies use"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Licences like MIT and GPL set the rules.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l210-01",
+    "lessonDriveFileId": "1cmXFPLXGO0-pKJN1MkjV7V8Z8EjcfXmv",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "'Don't reinvent the wheel' in web development means:",
+    "options": [
+      "Always write your own code so you understand every line",
+      "Always write your own framework",
+      "Copy code without reading it",
+      "Use proven libraries and tools instead of building everything from scratch"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Leverage existing, well-tested code.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l210-02",
+    "lessonDriveFileId": "1cmXFPLXGO0-pKJN1MkjV7V8Z8EjcfXmv",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Before using an open-source library, you should check:",
+    "options": [
+      "Its licence, maintenance activity and documentation",
+      "Only its logo",
+      "Only the number of letters in its name",
+      "Nothing"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Healthy, licensed libraries are safer.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l211-01",
+    "lessonDriveFileId": "1WD1Hvc4gGgNbuV1nTVI7y8u_I2sAo5Ll",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Which three languages form the foundation of front-end web development?",
+    "options": [
+      "Python, Java and C",
+      "HTML, CSS and JavaScript",
+      "SQL, PHP and Go",
+      "Swift, Kotlin and Dart"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Structure, style and behaviour.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l211-02",
+    "lessonDriveFileId": "1WD1Hvc4gGgNbuV1nTVI7y8u_I2sAo5Ll",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "HTML is responsible for a page's:",
+    "options": [
+      "Styling",
+      "Database",
+      "Structure and content",
+      "Fonts and colours"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "CSS styles; JavaScript adds interactivity.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l211-03",
+    "lessonDriveFileId": "1WD1Hvc4gGgNbuV1nTVI7y8u_I2sAo5Ll",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "A front-end developer mainly works on:",
+    "options": [
+      "Database servers only",
+      "Network cables",
+      "Server hardware and network cabling in the data centre",
+      "What users see and interact with in the browser"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "The client side.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l211-04",
+    "lessonDriveFileId": "1WD1Hvc4gGgNbuV1nTVI7y8u_I2sAo5Ll",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "A back-end developer mainly works on:",
+    "options": [
+      "Servers, databases and application logic",
+      "Only colours and fonts",
+      "Visual layouts and colour schemes",
+      "Photo editing"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "The server side.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l208-03",
+    "lessonDriveFileId": "1DNwhTWEFZi-0XbhF8o_tqu2St6L3q5kE",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "A full-stack developer:",
+    "options": [
+      "Only designs logos",
+      "Works on both front end and back end",
+      "Only manages servers",
+      "Only writes CSS"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Comfortable across the stack.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l209-02",
+    "lessonDriveFileId": "1JW9eLuEGZfN6MLNeUqXNi9yRb04rqer_",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Contributing to open source helps your career because:",
+    "options": [
+      "It's always paid, like a full-time job",
+      "It replaces learning",
+      "It builds public proof of your skills and collaboration",
+      "It hides your work"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Employers can see your contributions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l211-05",
+    "lessonDriveFileId": "1WD1Hvc4gGgNbuV1nTVI7y8u_I2sAo5Ll",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "The file usually served as a website's home page is called:",
+    "options": [
+      "home.css",
+      "main.js",
+      "start.txt",
+      "index.html"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Servers look for index.html by default.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l211-06",
+    "lessonDriveFileId": "1WD1Hvc4gGgNbuV1nTVI7y8u_I2sAo5Ll",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Which language would you use to make a button do something when clicked?",
+    "options": [
+      "JavaScript",
+      "HTML",
+      "CSS with a :hover rule",
+      "SQL"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "JavaScript handles interactivity.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l209-03",
+    "lessonDriveFileId": "1JW9eLuEGZfN6MLNeUqXNi9yRb04rqer_",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Which licence lets others reuse code with very few restrictions?",
+    "options": [
+      "All rights reserved",
+      "MIT licence",
+      "No licence",
+      "A private NDA"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "MIT is permissive.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l208-04",
+    "lessonDriveFileId": "1DNwhTWEFZi-0XbhF8o_tqu2St6L3q5kE",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "When working in a team, the best way to avoid overwriting each other's code is to:",
+    "options": [
+      "Email zip files back and forth",
+      "Edit the live server directly",
+      "Use Git branches and pull requests",
+      "Work on one shared laptop"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Version control manages collaboration.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l210-03",
+    "lessonDriveFileId": "1cmXFPLXGO0-pKJN1MkjV7V8Z8EjcfXmv",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Which is a sensible reason to use an existing library?",
+    "options": [
+      "It has the coolest name",
+      "It was released yesterday with no docs",
+      "It's abandoned",
+      "It's widely used, tested and maintained"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Mature libraries save time.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l305-01",
+    "lessonDriveFileId": "1n6snS6Om_jZ-68Jv0zzjn1kloOAjt9gi",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "When you visit a website, your browser sends:",
+    "options": [
+      "An HTTP request to a server",
+      "An email to the owner",
+      "A text message",
+      "A printer job"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "The server returns a response.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l305-02",
+    "lessonDriveFileId": "1n6snS6Om_jZ-68Jv0zzjn1kloOAjt9gi",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A server response usually includes:",
+    "options": [
+      "Only a picture",
+      "A status code, headers and a body",
+      "Your password",
+      "Only the HTML file, with nothing else attached"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "E.g. 200 OK plus HTML.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l305-03",
+    "lessonDriveFileId": "1n6snS6Om_jZ-68Jv0zzjn1kloOAjt9gi",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "DNS is used to:",
+    "options": [
+      "Style pages loaded from another server",
+      "Store passwords",
+      "Turn a domain name into an IP address",
+      "Compress images"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It's the internet's address book.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l306-01",
+    "lessonDriveFileId": "1alhKG0Wh6PyMV1Wl74rNgTTgmc6XiWj5",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "How does a browser use HTML, CSS and JavaScript?",
+    "options": [
+      "It ignores CSS until JavaScript has finished running",
+      "It only reads JavaScript",
+      "It sends them back to the server",
+      "It builds the page structure, applies styles and runs scripts"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "The browser renders all three.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l306-02",
+    "lessonDriveFileId": "1alhKG0Wh6PyMV1Wl74rNgTTgmc6XiWj5",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "The DOM is:",
+    "options": [
+      "The browser's tree representation of the page that JavaScript can change",
+      "A database",
+      "A server-side template that generates HTML before sending it",
+      "A font file loaded by the browser"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Document Object Model.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l307-01",
+    "lessonDriveFileId": "16Ss6zhkKzRVAcDXUt9Mdj8POZJ0gEPsI",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Where can you inspect requests and responses in Chrome?",
+    "options": [
+      "The bookmarks bar in the browser's toolbar",
+      "The Network tab in Developer Tools",
+      "The downloads page",
+      "The print preview"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "DevTools shows every request.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l307-02",
+    "lessonDriveFileId": "16Ss6zhkKzRVAcDXUt9Mdj8POZJ0gEPsI",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A 404 status code means:",
+    "options": [
+      "Success — the page loaded correctly",
+      "Server error",
+      "The requested resource wasn't found",
+      "Redirect"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Not Found.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l307-03",
+    "lessonDriveFileId": "16Ss6zhkKzRVAcDXUt9Mdj8POZJ0gEPsI",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A 200 status code means:",
+    "options": [
+      "Not found",
+      "Unauthorised",
+      "Server crashed",
+      "The request succeeded"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "OK.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l305-04",
+    "lessonDriveFileId": "1n6snS6Om_jZ-68Jv0zzjn1kloOAjt9gi",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "HTTPS differs from HTTP because it:",
+    "options": [
+      "Encrypts data between browser and server",
+      "Is slower and less secure",
+      "Doesn't use servers",
+      "Only works offline"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "TLS encryption protects data.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l306-03",
+    "lessonDriveFileId": "1alhKG0Wh6PyMV1Wl74rNgTTgmc6XiWj5",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A browser loads a page's CSS file because the HTML includes:",
+    "options": [
+      "A <video> tag",
+      "A <link> tag pointing to it",
+      "A <form> tag",
+      "A <style> tag that names the file"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "<link rel=\"stylesheet\" href=\"styles.css\">",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l308-01",
+    "lessonDriveFileId": "1-Or3mjZQKZ6H2hxNsglxTaxfoQdmNHYB",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "The request–response cycle describes:",
+    "options": [
+      "Designing a logo",
+      "Writing a database",
+      "A client asking for something and the server answering",
+      "Printing a page from the browser to paper"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "The basic web interaction.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l307-04",
+    "lessonDriveFileId": "16Ss6zhkKzRVAcDXUt9Mdj8POZJ0gEPsI",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A 500 status code indicates:",
+    "options": [
+      "Success",
+      "A missing page",
+      "A redirect",
+      "A server-side error"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Internal Server Error.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l305-05",
+    "lessonDriveFileId": "1n6snS6Om_jZ-68Jv0zzjn1kloOAjt9gi",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "What happens first when you type a URL into a browser?",
+    "options": [
+      "The domain is resolved to an IP address via DNS",
+      "The page is printed in the browser window",
+      "CSS runs before anything",
+      "The server emails you"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "DNS lookup comes first.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l307-05",
+    "lessonDriveFileId": "16Ss6zhkKzRVAcDXUt9Mdj8POZJ0gEPsI",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which tool shows how long each file took to load?",
+    "options": [
+      "A spreadsheet",
+      "Browser DevTools Network tab",
+      "A word processor",
+      "A screenshot"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Waterfall timings help debug speed.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l306-04",
+    "lessonDriveFileId": "1alhKG0Wh6PyMV1Wl74rNgTTgmc6XiWj5",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which changes when JavaScript adds an item to a list on the page?",
+    "options": [
+      "The server's hard drive",
+      "The domain name",
+      "The DOM",
+      "The HTTP version"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "JS manipulates the DOM.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l305-06",
+    "lessonDriveFileId": "1n6snS6Om_jZ-68Jv0zzjn1kloOAjt9gi",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Why do browsers show a padlock for some sites?",
+    "options": [
+      "The site is free",
+      "The site has no images",
+      "The server is offline",
+      "The connection uses HTTPS"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Encrypted connection.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l409-01",
+    "lessonDriveFileId": "1PC9cmcnxDqqRZFkra6SlYtMdMOcoXvH7",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Split editor view in VS Code lets you:",
+    "options": [
+      "View two or more files side by side",
+      "Delete files",
+      "Run a server",
+      "Change the font for the OS"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Handy for HTML and CSS together.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l410-01",
+    "lessonDriveFileId": "1VZeUaGXLVQgpILsa4MjaE9S2-5M19UeL",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Ctrl/Cmd + Shift + F in VS Code is used to:",
+    "options": [
+      "Format the disk",
+      "Search across all files in the project",
+      "Close VS Code and reopen the last project",
+      "Open a browser"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Global search.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l411-01",
+    "lessonDriveFileId": "19s3DOscbPsx_zx2-0c1xgEY878P5qFOp",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Multi-cursor editing lets you:",
+    "options": [
+      "Undo all changes",
+      "Change the theme",
+      "Type in several places at once",
+      "Install Node.js packages from the editor"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Alt/Option-click adds cursors.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l412-01",
+    "lessonDriveFileId": "1eG01BQWgeHITZ7CsIaXkD6HOvj0_ETgu",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "VS Code extensions are used to:",
+    "options": [
+      "Make the editor slower only",
+      "Delete unused files from the project",
+      "Host websites",
+      "Add features like linting, formatting and language support"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "The marketplace has thousands.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l409-02",
+    "lessonDriveFileId": "1PC9cmcnxDqqRZFkra6SlYtMdMOcoXvH7",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "The Explorer panel in VS Code shows:",
+    "options": [
+      "Your project's files and folders",
+      "Your emails",
+      "Your browser history",
+      "Your photos"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Navigate the project tree.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l410-02",
+    "lessonDriveFileId": "1VZeUaGXLVQgpILsa4MjaE9S2-5M19UeL",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Ctrl/Cmd + P in VS Code lets you:",
+    "options": [
+      "Print the file",
+      "Quickly open a file by name",
+      "Delete a file",
+      "Push your changes to Git automatically"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Quick Open.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l411-02",
+    "lessonDriveFileId": "19s3DOscbPsx_zx2-0c1xgEY878P5qFOp",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Selecting the next matching word with Ctrl/Cmd + D helps you:",
+    "options": [
+      "Delete the file",
+      "Open settings",
+      "Edit repeated words quickly",
+      "Run tests"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Adds the next occurrence to the selection.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l412-02",
+    "lessonDriveFileId": "1eG01BQWgeHITZ7CsIaXkD6HOvj0_ETgu",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "The Live Server extension:",
+    "options": [
+      "Hosts your site publicly forever",
+      "Writes code for you",
+      "Compresses images before you upload them",
+      "Reloads your page in the browser automatically when you save"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Speeds up front-end work.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l409-03",
+    "lessonDriveFileId": "1PC9cmcnxDqqRZFkra6SlYtMdMOcoXvH7",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "The integrated terminal in VS Code lets you:",
+    "options": [
+      "Run commands without leaving the editor",
+      "Draw images and edit them in the editor",
+      "Browse the web",
+      "Edit videos"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Open with Ctrl/Cmd + `.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l410-03",
+    "lessonDriveFileId": "1VZeUaGXLVQgpILsa4MjaE9S2-5M19UeL",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Using 'Find and Replace' helps you:",
+    "options": [
+      "Delete projects",
+      "Change all occurrences of a word at once",
+      "Install fonts",
+      "Push code to the remote repository"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Bulk edits safely.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l412-03",
+    "lessonDriveFileId": "1eG01BQWgeHITZ7CsIaXkD6HOvj0_ETgu",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Prettier in VS Code is used to:",
+    "options": [
+      "Check spelling in emails",
+      "Host a database",
+      "Format code automatically",
+      "Create logos"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Consistent formatting on save.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l411-03",
+    "lessonDriveFileId": "19s3DOscbPsx_zx2-0c1xgEY878P5qFOp",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Emmet in VS Code lets you type 'ul>li*3' and get:",
+    "options": [
+      "A CSS file",
+      "A database",
+      "An image gallery with three pictures",
+      "A list with three list items"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Emmet expands abbreviations to HTML.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l410-04",
+    "lessonDriveFileId": "1VZeUaGXLVQgpILsa4MjaE9S2-5M19UeL",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "You need to find every file that uses the class 'btn-primary'. Use:",
+    "options": [
+      "Search across files (Ctrl/Cmd + Shift + F)",
+      "Open each file manually",
+      "Restart VS Code and open each file in turn",
+      "Delete the folder"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Global search finds all matches.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l411-04",
+    "lessonDriveFileId": "19s3DOscbPsx_zx2-0c1xgEY878P5qFOp",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which VS Code feature speeds up writing HTML with abbreviations?",
+    "options": [
+      "Git",
+      "Emmet",
+      "Terminal",
+      "Minimap"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Built into VS Code.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l412-04",
+    "lessonDriveFileId": "1eG01BQWgeHITZ7CsIaXkD6HOvj0_ETgu",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Why install a linting extension like ESLint?",
+    "options": [
+      "To host websites directly from the editor",
+      "To design graphics",
+      "To catch errors and style problems as you type",
+      "To compress videos"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Linters prevent bugs.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l409-04",
+    "lessonDriveFileId": "1PC9cmcnxDqqRZFkra6SlYtMdMOcoXvH7",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which keyboard shortcut opens VS Code's command palette?",
+    "options": [
+      "Ctrl + Alt + Del",
+      "Ctrl/Cmd + Q",
+      "F12 only",
+      "Ctrl/Cmd + Shift + P"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Access every command from one place.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l517-01",
+    "lessonDriveFileId": "10-tMqHt1pR8xIUCi1CmaFeo3Lfg_Pkmo",
+    "chapterOrder": 4,
+    "type": "true_false",
+    "prompt": "In HTML, a comment is written as <!-- comment --> and isn't shown on the page.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Comments aren't shown on the page.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l517-02",
+    "lessonDriveFileId": "10-tMqHt1pR8xIUCi1CmaFeo3Lfg_Pkmo",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which tag creates the largest heading?",
+    "options": [
+      "<h1>",
+      "<h6>",
+      "<head>",
+      "<header>"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "h1 to h6, largest to smallest.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l517-03",
+    "lessonDriveFileId": "10-tMqHt1pR8xIUCi1CmaFeo3Lfg_Pkmo",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which tag creates a hyperlink?",
+    "options": [
+      "<link>",
+      "<a>",
+      "<href>",
+      "<url>"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "<a href=\"...\">",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l517-04",
+    "lessonDriveFileId": "10-tMqHt1pR8xIUCi1CmaFeo3Lfg_Pkmo",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "The alt attribute on an <img> tag provides:",
+    "options": [
+      "The image's file size in kilobytes",
+      "The file format",
+      "Alternative text for screen readers and broken images",
+      "A caption only for designers"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Important for accessibility and SEO.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l520-01",
+    "lessonDriveFileId": "1B6dKOpLHLCETiV25G8Dxmbf-p424uFXE",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Where is JavaScript usually included with a <script> tag for best performance?",
+    "options": [
+      "Inside the <title>",
+      "Inside an <img> tag after the src attribute",
+      "It can't be included",
+      "At the end of <body> or with the defer attribute"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Lets the HTML load first.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l521-01",
+    "lessonDriveFileId": "13hkxQKsPbQqrmmtgvjZ4l1ULsF3Qv2pU",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "CodePen is used to:",
+    "options": [
+      "Write and share front-end code snippets online",
+      "Host databases",
+      "Design logos",
+      "Send emails from a web page form"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Great for demos and sharing.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l522-01",
+    "lessonDriveFileId": "1vd9tgmQXB1zDOO_aR_xO2kIV5FyisTDT",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which is a reliable reference for HTML, CSS and JavaScript?",
+    "options": [
+      "Random social media posts",
+      "MDN Web Docs",
+      "An old printed magazine",
+      "A spam email"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Mozilla's documentation is authoritative.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l523-01",
+    "lessonDriveFileId": "1hb8fps4dy4lGKuWFjkgL5R6p8ovVddJt",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which tag wraps all the visible content of a page?",
+    "options": [
+      "<head>",
+      "<meta>",
+      "<body>",
+      "<title>"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "<head> holds metadata.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l517-05",
+    "lessonDriveFileId": "10-tMqHt1pR8xIUCi1CmaFeo3Lfg_Pkmo",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "An unordered (bullet) list uses:",
+    "options": [
+      "<ol> only",
+      "<list> with <item> elements inside",
+      "<bullet>",
+      "<ul> with <li> items"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "<ol> is for numbered lists.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l517-06",
+    "lessonDriveFileId": "10-tMqHt1pR8xIUCi1CmaFeo3Lfg_Pkmo",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "The <title> tag sets:",
+    "options": [
+      "The text shown in the browser tab",
+      "The biggest heading",
+      "The page background",
+      "The footer"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "It's inside <head>.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l520-02",
+    "lessonDriveFileId": "1B6dKOpLHLCETiV25G8Dxmbf-p424uFXE",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which attribute links an external JavaScript file?",
+    "options": [
+      "href",
+      "src",
+      "alt",
+      "rel"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "<script src=\"app.js\"></script>",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l523-02",
+    "lessonDriveFileId": "1hb8fps4dy4lGKuWFjkgL5R6p8ovVddJt",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Semantic HTML tags like <header>, <nav> and <footer> help:",
+    "options": [
+      "Make pages slower",
+      "Hide content",
+      "Accessibility and SEO by describing content meaning",
+      "Replace CSS so pages need no stylesheets"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Meaningful structure.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l517-07",
+    "lessonDriveFileId": "10-tMqHt1pR8xIUCi1CmaFeo3Lfg_Pkmo",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which HTML tag displays an image?",
+    "options": [
+      "<image>",
+      "<pic>",
+      "<src>",
+      "<img>"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "<img src=\"photo.jpg\" alt=\"...\">",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l520-03",
+    "lessonDriveFileId": "1B6dKOpLHLCETiV25G8Dxmbf-p424uFXE",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which tag adds JavaScript to an HTML page?",
+    "options": [
+      "<script>",
+      "<js>",
+      "<code>",
+      "<style>"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Inline or via src.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l523-03",
+    "lessonDriveFileId": "1hb8fps4dy4lGKuWFjkgL5R6p8ovVddJt",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Every HTML document should start with:",
+    "options": [
+      "<html5>",
+      "<!DOCTYPE html>",
+      "<start>",
+      "<page> followed by the <html> tag"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Tells the browser to use standards mode.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l522-02",
+    "lessonDriveFileId": "1vd9tgmQXB1zDOO_aR_xO2kIV5FyisTDT",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "When you're stuck on a coding problem, a good first step is to:",
+    "options": [
+      "Delete the project and start again from scratch",
+      "Wait for it to fix itself",
+      "Read the error, check MDN and search for the specific message",
+      "Change random code"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Targeted research solves most problems.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l617-01",
+    "lessonDriveFileId": "1cr84uAWDyebQn-Pc2BMq0_aScu1oPGYZ",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A <textarea> is used for:",
+    "options": [
+      "Single checkboxes",
+      "Images",
+      "Videos",
+      "Multi-line text input"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "E.g. message fields.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l618-01",
+    "lessonDriveFileId": "16a4op1TlvEEFqBxOkqHjKj6JDQ-HIFoC",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "<button type=\"submit\"> inside a form will:",
+    "options": [
+      "Submit the form",
+      "Reset the page styling",
+      "Open a new tab always",
+      "Play a video"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Default type in forms is submit.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l619-01",
+    "lessonDriveFileId": "1ZChkwAQzDbmovMaujvqwzmzr25DysE1D",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which tag creates a dropdown list?",
+    "options": [
+      "<dropdown>",
+      "<select> with <option> elements",
+      "<list> with <choice> elements inside",
+      "<menu>"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Options appear in the dropdown.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l620-01",
+    "lessonDriveFileId": "18GPCrEyPDvI2FCjWc_7GjU7DSFHkQoZS",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which tag is commonly used to embed a YouTube video?",
+    "options": [
+      "<img>",
+      "<a>",
+      "<iframe>",
+      "<embed-yt>"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "YouTube provides an iframe embed code.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l621-01",
+    "lessonDriveFileId": "1eQWSDOS220uX_ThNocSpAHSwcX8mycrs",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "The <form> action attribute specifies:",
+    "options": [
+      "The form's colour",
+      "The font",
+      "The page title",
+      "Where the form data is sent"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "The URL that processes the data.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l617-02",
+    "lessonDriveFileId": "1cr84uAWDyebQn-Pc2BMq0_aScu1oPGYZ",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "The <label> element improves forms by:",
+    "options": [
+      "Linking descriptive text to an input for accessibility",
+      "Hiding inputs until the user clicks the form",
+      "Changing colours",
+      "Adding animations"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Clicking the label focuses the input.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l618-02",
+    "lessonDriveFileId": "16a4op1TlvEEFqBxOkqHjKj6JDQ-HIFoC",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "An <input type=\"email\"> helps by:",
+    "options": [
+      "Sending emails automatically",
+      "Validating email format and showing the right mobile keyboard",
+      "Hiding the text as the user types it in",
+      "Storing passwords"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Built-in validation.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l619-02",
+    "lessonDriveFileId": "1ZChkwAQzDbmovMaujvqwzmzr25DysE1D",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "The 'selected' attribute on an <option>:",
+    "options": [
+      "Deletes it",
+      "Hides it",
+      "Makes it the default choice",
+      "Disables the form"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Pre-selects an option.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l620-02",
+    "lessonDriveFileId": "18GPCrEyPDvI2FCjWc_7GjU7DSFHkQoZS",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "The <video> tag's 'controls' attribute:",
+    "options": [
+      "Hides the video",
+      "Makes it autoplay with sound",
+      "Deletes it",
+      "Shows play, pause and volume controls"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Lets users control playback.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l621-02",
+    "lessonDriveFileId": "1eQWSDOS220uX_ThNocSpAHSwcX8mycrs",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "The 'required' attribute on an input:",
+    "options": [
+      "Prevents form submission if the field is empty",
+      "Hides the field",
+      "Makes it optional",
+      "Styles it red so users notice it first"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Built-in validation.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l617-03",
+    "lessonDriveFileId": "1cr84uAWDyebQn-Pc2BMq0_aScu1oPGYZ",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "An HTML table is built with:",
+    "options": [
+      "<grid>, <row>",
+      "<table>, <tr>, <th> and <td>",
+      "<sheet> with <row> and <cell> elements",
+      "<div> only"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Rows and cells.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l618-03",
+    "lessonDriveFileId": "16a4op1TlvEEFqBxOkqHjKj6JDQ-HIFoC",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "<input type=\"password\"> displays:",
+    "options": [
+      "The password in plain text",
+      "A dropdown",
+      "Masked characters as the user types",
+      "A checkbox"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Hides typed characters.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l621-03",
+    "lessonDriveFileId": "1eQWSDOS220uX_ThNocSpAHSwcX8mycrs",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which attribute sets where form data is sent?",
+    "options": [
+      "method",
+      "name",
+      "value",
+      "action"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "method sets GET or POST.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l619-03",
+    "lessonDriveFileId": "1ZChkwAQzDbmovMaujvqwzmzr25DysE1D",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which elements create a dropdown?",
+    "options": [
+      "<select> and <option>",
+      "<ul> and <li>",
+      "<table> and <td>",
+      "<form> and <label>"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Standard dropdown markup.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l617-04",
+    "lessonDriveFileId": "1cr84uAWDyebQn-Pc2BMq0_aScu1oPGYZ",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Why should every form input have a <label>?",
+    "options": [
+      "It's decorative only",
+      "It improves accessibility and usability",
+      "It makes the page load more slowly",
+      "It replaces the input"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Screen readers announce labels.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l620-03",
+    "lessonDriveFileId": "18GPCrEyPDvI2FCjWc_7GjU7DSFHkQoZS",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which tag plays a video file hosted on your own site?",
+    "options": [
+      "<iframe> only",
+      "<audio>",
+      "<video>",
+      "<img>"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "<video src=\"clip.mp4\" controls>",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l727-01",
+    "lessonDriveFileId": "1J4t0Z6DTwyDX7Rbv-xRKvKefNPOBrLP4",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which CSS property adds a shadow around an element?",
+    "options": [
+      "text-shadow",
+      "shadow",
+      "border-shadow",
+      "box-shadow"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "text-shadow is for text.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l731-01",
+    "lessonDriveFileId": "1YuFtYkkfgjn0GEB2Kv9dUDSr2_eQmUJw",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which property makes an element see-through?",
+    "options": [
+      "opacity",
+      "display",
+      "visibility: hidden only",
+      "z-index"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "0 is transparent; 1 is opaque.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l732-01",
+    "lessonDriveFileId": "1EwJFVRbwZ8S19VsOk9_CPEl7qrqv336n",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Why move CSS into an external file?",
+    "options": [
+      "It makes styles stop working",
+      "It can be reused across pages and keeps HTML clean",
+      "It's required for JavaScript",
+      "It slows the site"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Link it with <link rel=\"stylesheet\">.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l733-01",
+    "lessonDriveFileId": "1Dpax2MOfq5hiC6EyCpUpq2oGDfL6Z9e2",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "The 'float' property was used to:",
+    "options": [
+      "Animate elements",
+      "Hide elements until the user scrolls to them",
+      "Let text wrap around an element, like an image in an article",
+      "Centre text vertically"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Modern layouts use Flexbox or Grid instead.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l734-01",
+    "lessonDriveFileId": "1c0b7D7rIsA2oB2UOR6KCaS65s9wg61mt",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "In the CSS box model, padding is:",
+    "options": [
+      "Space outside the border",
+      "The border itself",
+      "The content",
+      "Space between the content and the border"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Margin is outside the border.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l734-02",
+    "lessonDriveFileId": "1c0b7D7rIsA2oB2UOR6KCaS65s9wg61mt",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A CSS class selector starts with:",
+    "options": [
+      "A dot, e.g. .card",
+      "A hash #",
+      "An @",
+      "A dollar sign, e.g. $card"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "# is for IDs.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l734-03",
+    "lessonDriveFileId": "1c0b7D7rIsA2oB2UOR6KCaS65s9wg61mt",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which selector has higher specificity?",
+    "options": [
+      ".header (a class)",
+      "#header (an ID)",
+      "div (an element)",
+      "* (universal)"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "IDs outrank classes and elements.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l727-02",
+    "lessonDriveFileId": "1J4t0Z6DTwyDX7Rbv-xRKvKefNPOBrLP4",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which property changes text colour?",
+    "options": [
+      "font-color",
+      "text-color",
+      "color",
+      "foreground"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "color: #333;",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l731-02",
+    "lessonDriveFileId": "1YuFtYkkfgjn0GEB2Kv9dUDSr2_eQmUJw",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "rgba(0, 0, 0, 0.5) represents:",
+    "options": [
+      "White at full opacity",
+      "Red",
+      "Transparent white",
+      "Black at 50% opacity"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "The fourth value is alpha.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l733-02",
+    "lessonDriveFileId": "1Dpax2MOfq5hiC6EyCpUpq2oGDfL6Z9e2",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which property clears floats?",
+    "options": [
+      "clear",
+      "float: none only",
+      "display: none",
+      "stop"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "clear: both.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l732-02",
+    "lessonDriveFileId": "1EwJFVRbwZ8S19VsOk9_CPEl7qrqv336n",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "How do you link an external stylesheet?",
+    "options": [
+      "<style src=\"styles.css\">",
+      "<link rel=\"stylesheet\" href=\"styles.css\">",
+      "<css href=\"styles.css\">",
+      "<script src=\"styles.css\">"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Placed inside <head>.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l734-04",
+    "lessonDriveFileId": "1c0b7D7rIsA2oB2UOR6KCaS65s9wg61mt",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "'box-sizing: border-box' makes width include:",
+    "options": [
+      "Only content",
+      "Margin",
+      "Padding and border",
+      "Nothing"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Easier sizing calculations.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l727-03",
+    "lessonDriveFileId": "1J4t0Z6DTwyDX7Rbv-xRKvKefNPOBrLP4",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which property rounds the corners of a box?",
+    "options": [
+      "corner",
+      "radius",
+      "box-round",
+      "border-radius"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "border-radius: 8px;",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l731-03",
+    "lessonDriveFileId": "1YuFtYkkfgjn0GEB2Kv9dUDSr2_eQmUJw",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "An element with opacity: 0 is:",
+    "options": [
+      "Invisible but still takes up space",
+      "Removed from the page",
+      "Bright red",
+      "Bold"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Use display: none to remove it from layout.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l734-05",
+    "lessonDriveFileId": "1c0b7D7rIsA2oB2UOR6KCaS65s9wg61mt",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which part of the box model is outside the border?",
+    "options": [
+      "Padding",
+      "Margin",
+      "Content",
+      "Outline only"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Margin separates elements.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l732-03",
+    "lessonDriveFileId": "1EwJFVRbwZ8S19VsOk9_CPEl7qrqv336n",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which tag goes in <head> to load styles from a file?",
+    "options": [
+      "<a>",
+      "<script>",
+      "<link>",
+      "<img>"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "<link rel=\"stylesheet\">",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l822-01",
+    "lessonDriveFileId": "1uFAOanMjoxmmApe_V7pkZwP-Gqg5vZG4",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which property creates a gradient background?",
+    "options": [
+      "color: gradient",
+      "gradient: on with a list of colours",
+      "font: gradient",
+      "background-image: linear-gradient(...)"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Gradients are images in CSS.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l822-02",
+    "lessonDriveFileId": "1uFAOanMjoxmmApe_V7pkZwP-Gqg5vZG4",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "You can layer multiple backgrounds by:",
+    "options": [
+      "Separating them with commas in background-image",
+      "Using two body tags",
+      "Using JavaScript only",
+      "It's impossible; each element gets one background"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "The first listed is on top.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l824-01",
+    "lessonDriveFileId": "1CEyKST02qO6zLx3ZLfu17ZBr5YZ7jTBS",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "transform: rotate(45deg) will:",
+    "options": [
+      "Move it 45 pixels",
+      "Rotate an element 45 degrees",
+      "Scale it 45 times",
+      "Hide it"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Transforms change shape and position.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l824-02",
+    "lessonDriveFileId": "1CEyKST02qO6zLx3ZLfu17ZBr5YZ7jTBS",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "transform: scale(1.2) makes an element:",
+    "options": [
+      "20% smaller",
+      "Move right",
+      "20% larger",
+      "Disappear"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Scale multiplies size.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l826-01",
+    "lessonDriveFileId": "1Ss1p0hkVD9tbunXRrMvbUsNiyWnmfph4",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "To start using Flexbox on a container, you set:",
+    "options": [
+      "position: flex",
+      "float: flex",
+      "flex: on",
+      "display: flex"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Children become flex items.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l826-02",
+    "lessonDriveFileId": "1Ss1p0hkVD9tbunXRrMvbUsNiyWnmfph4",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "In Flexbox, justify-content controls alignment along the:",
+    "options": [
+      "Main axis",
+      "Cross axis",
+      "Z axis",
+      "Diagonal"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Row direction = horizontal.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l826-03",
+    "lessonDriveFileId": "1Ss1p0hkVD9tbunXRrMvbUsNiyWnmfph4",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "align-items: center in a row flex container centres items:",
+    "options": [
+      "Horizontally",
+      "Vertically",
+      "Diagonally",
+      "Not at all"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Cross axis alignment.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l827-01",
+    "lessonDriveFileId": "1zQMZXRYDyQjW-JG4KhGy0Pgc7KoQssmF",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "CSS Grid is best for:",
+    "options": [
+      "One-dimensional lists only",
+      "Text colour",
+      "Two-dimensional layouts with rows and columns",
+      "Fonts"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Grid handles both axes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l827-02",
+    "lessonDriveFileId": "1zQMZXRYDyQjW-JG4KhGy0Pgc7KoQssmF",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "grid-template-columns: 1fr 1fr 1fr creates:",
+    "options": [
+      "Three rows of equal height",
+      "One column",
+      "Three pixels",
+      "Three equal-width columns"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "fr shares available space.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l827-03",
+    "lessonDriveFileId": "1zQMZXRYDyQjW-JG4KhGy0Pgc7KoQssmF",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "The 'gap' property sets:",
+    "options": [
+      "Space between grid or flex items",
+      "Outer margin of the page",
+      "Border thickness",
+      "Font size"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Cleaner than margins.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l824-03",
+    "lessonDriveFileId": "1CEyKST02qO6zLx3ZLfu17ZBr5YZ7jTBS",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "The 'transition' property lets you:",
+    "options": [
+      "Change HTML elements when the page loads",
+      "Animate changes smoothly, such as on hover",
+      "Load images",
+      "Run JavaScript"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "transition: all 0.3s ease;",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l826-04",
+    "lessonDriveFileId": "1Ss1p0hkVD9tbunXRrMvbUsNiyWnmfph4",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "flex-direction: column stacks flex items:",
+    "options": [
+      "Horizontally",
+      "Diagonally",
+      "Vertically",
+      "In a grid"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Changes the main axis.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l826-05",
+    "lessonDriveFileId": "1Ss1p0hkVD9tbunXRrMvbUsNiyWnmfph4",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which layout method is ideal for a navigation bar of items in a row?",
+    "options": [
+      "Tables",
+      "Floats only",
+      "Absolute positioning for every item",
+      "Flexbox"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Flexbox handles one-dimensional rows.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l827-04",
+    "lessonDriveFileId": "1zQMZXRYDyQjW-JG4KhGy0Pgc7KoQssmF",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which layout method best builds a full page with header, sidebar, content and footer areas?",
+    "options": [
+      "CSS Grid",
+      "Inline styles only",
+      "Float everything",
+      "<br> tags"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Grid template areas suit page layouts.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l824-04",
+    "lessonDriveFileId": "1CEyKST02qO6zLx3ZLfu17ZBr5YZ7jTBS",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A button grows slightly on hover. Which properties are likely used?",
+    "options": [
+      "display: none",
+      "transform: scale and transition",
+      "float: left and a bigger font-size",
+      "z-index only"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Smooth hover effect.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l822-03",
+    "lessonDriveFileId": "1uFAOanMjoxmmApe_V7pkZwP-Gqg5vZG4",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which value creates a smooth top-to-bottom colour blend?",
+    "options": [
+      "radial-blend()",
+      "color-mix only",
+      "linear-gradient(to bottom, #fff, #000)",
+      "gradient(top) with two colour stops"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Linear gradients follow a direction.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1022-01",
+    "lessonDriveFileId": "1wXx48Kl2eMgFuTQSkEfMLrSVVh9z82Kq",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which brackets create an array literal in JavaScript, e.g. a list of fruits?",
+    "options": [
+      "Curly braces { }",
+      "Round brackets ( )",
+      "Angle brackets < >",
+      "Square brackets [ ]"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Arrays use square brackets.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1022-02",
+    "lessonDriveFileId": "1wXx48Kl2eMgFuTQSkEfMLrSVVh9z82Kq",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Array indexes in JavaScript start at:",
+    "options": [
+      "0",
+      "1",
+      "10",
+      "It depends on the browser"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "The first item is index 0.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1022-03",
+    "lessonDriveFileId": "1wXx48Kl2eMgFuTQSkEfMLrSVVh9z82Kq",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which method adds an item to the end of an array?",
+    "options": [
+      "pop()",
+      "push()",
+      "shift()",
+      "slice()"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "pop() removes the last item.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1023-01",
+    "lessonDriveFileId": "1UxHcXsx_GaZ3ldVcBHGTpBz6TyGw-pdB",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which method creates a new array by transforming every item?",
+    "options": [
+      "forEach() only",
+      "push()",
+      "map()",
+      "join()"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "map returns a new array.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1023-02",
+    "lessonDriveFileId": "1UxHcXsx_GaZ3ldVcBHGTpBz6TyGw-pdB",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which method returns only the items that pass a test?",
+    "options": [
+      "map()",
+      "reduce()",
+      "sort() only",
+      "filter()"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "filter keeps matching items.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1026-01",
+    "lessonDriveFileId": "1IBVEok8AWp6ZNKQt5XW2HeTO18ib0vh0",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Why use functions?",
+    "options": [
+      "To reuse code and organise logic",
+      "To slow programs",
+      "To store images",
+      "To style pages without writing any CSS"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Write once, call many times.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1026-02",
+    "lessonDriveFileId": "1IBVEok8AWp6ZNKQt5XW2HeTO18ib0vh0",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "An arrow function looks like:",
+    "options": [
+      "function => add(a, b)",
+      "const add = (a, b) => a + b",
+      "add -> (a, b)",
+      "def add(a, b):"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Concise function syntax.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1027-01",
+    "lessonDriveFileId": "1xmWWBFsVouy9_MlDwknGinyQmjeX287N",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "The rest operator (...args) in a function lets you:",
+    "options": [
+      "Stop the function",
+      "Delete arguments the function doesn't use",
+      "Accept any number of arguments as an array",
+      "Rename the function"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Collects remaining arguments.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1028-01",
+    "lessonDriveFileId": "1XPSmSSefjGt3T5RS4xB9Be_-lZAmw8Px",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "An object in JavaScript stores:",
+    "options": [
+      "Only numbers",
+      "Only HTML",
+      "Only CSS rules for the page's elements",
+      "Key–value pairs, including functions as methods"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "const user = {name: 'Ada', greet() {...}}",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1028-02",
+    "lessonDriveFileId": "1XPSmSSefjGt3T5RS4xB9Be_-lZAmw8Px",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Inside an object's method, 'this' usually refers to:",
+    "options": [
+      "The object itself",
+      "The browser window always",
+      "The HTML file",
+      "Nothing"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Access other properties via this.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1029-01",
+    "lessonDriveFileId": "1qa1cscewRiSTsBRfVL2YL9PQFc1J0_Oz",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which keyword declares a variable that can't be reassigned?",
+    "options": [
+      "let",
+      "const",
+      "var",
+      "static"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Use let when the value must change.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1029-02",
+    "lessonDriveFileId": "1qa1cscewRiSTsBRfVL2YL9PQFc1J0_Oz",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "'===' in JavaScript checks:",
+    "options": [
+      "Only value",
+      "Assignment",
+      "Value and type equality",
+      "Only type, ignoring the value"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Strict equality avoids type coercion surprises.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1022-04",
+    "lessonDriveFileId": "1wXx48Kl2eMgFuTQSkEfMLrSVVh9z82Kq",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "What does [10, 20, 30].length return?",
+    "options": [
+      "30",
+      "2",
+      "60",
+      "3"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "length counts items.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1023-03",
+    "lessonDriveFileId": "1UxHcXsx_GaZ3ldVcBHGTpBz6TyGw-pdB",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "What does [1, 2, 3].map(n => n * 2) return?",
+    "options": [
+      "[2, 4, 6]",
+      "[1, 2, 3]",
+      "6",
+      "[3, 2, 1]"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Each number is doubled.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1026-03",
+    "lessonDriveFileId": "1IBVEok8AWp6ZNKQt5XW2HeTO18ib0vh0",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "What will this return: const sum = (a, b) => a + b; sum(2, 3)?",
+    "options": [
+      "23",
+      "5",
+      "undefined",
+      "'a + b'"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Arrow function adds the numbers.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1029-03",
+    "lessonDriveFileId": "1qa1cscewRiSTsBRfVL2YL9PQFc1J0_Oz",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which statement about let and const is true?",
+    "options": [
+      "Both can't be reassigned",
+      "let is global always",
+      "const can't be reassigned; let can",
+      "const only stores numbers"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Prefer const by default.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1028-03",
+    "lessonDriveFileId": "1XPSmSSefjGt3T5RS4xB9Be_-lZAmw8Px",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "How do you access the 'name' property of an object called user?",
+    "options": [
+      "name.user",
+      "user.getName",
+      "user.nameOf",
+      "user.name"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Dot notation (or user['name']).",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1121-01",
+    "lessonDriveFileId": "1R4mReuR0xyAlwBbdt7rF2tiI8yTZv6h6",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "A JavaScript class is:",
+    "options": [
+      "A blueprint for creating objects",
+      "A CSS rule applied to every element",
+      "An HTML tag",
+      "A database"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Classes group data and behaviour.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1122-01",
+    "lessonDriveFileId": "1B0wdm3LJySMvbYg2GVmxyyHlx5OaWghA",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "The constructor method in a class:",
+    "options": [
+      "Deletes objects when they are no longer used",
+      "Runs when a new object is created, to set initial values",
+      "Styles the page",
+      "Sends HTTP requests"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "new User('Ada') calls the constructor.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1121-02",
+    "lessonDriveFileId": "1R4mReuR0xyAlwBbdt7rF2tiI8yTZv6h6",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which keyword creates a new object from a class?",
+    "options": [
+      "make",
+      "create",
+      "new",
+      "class"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "const u = new User().",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1123-01",
+    "lessonDriveFileId": "1DrA6oNyVZQMGeIkVbB7wwGRl5jMUysiq",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "JSON stands for:",
+    "options": [
+      "Java Standard Object Network",
+      "JavaScript Online Node",
+      "JSON Server Object Name",
+      "JavaScript Object Notation"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "A lightweight data format.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1123-02",
+    "lessonDriveFileId": "1DrA6oNyVZQMGeIkVbB7wwGRl5jMUysiq",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which converts a JavaScript object into a JSON string?",
+    "options": [
+      "JSON.stringify()",
+      "JSON.parse()",
+      "toString() only",
+      "JSON.object()"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "parse does the reverse.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1124-01",
+    "lessonDriveFileId": "1IFyh6RxTwOmdGBNzj-ujnfRwhHA_rzy5",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Ajax allows a web page to:",
+    "options": [
+      "Change the domain",
+      "Fetch data from a server without reloading the page",
+      "Install software",
+      "Print documents directly from the browser"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Asynchronous requests.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1125-01",
+    "lessonDriveFileId": "1ntZ7uwjuKll4bE11hAM9MhrRZ1I3n2wO",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "The fetch() function returns:",
+    "options": [
+      "An HTML file",
+      "A CSS rule",
+      "A Promise",
+      "Nothing"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Use .then() or await.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1125-02",
+    "lessonDriveFileId": "1ntZ7uwjuKll4bE11hAM9MhrRZ1I3n2wO",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "To read JSON from a fetch response, you call:",
+    "options": [
+      "response.text() only",
+      "JSON.fetch()",
+      "response.html()",
+      "response.json()"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "It also returns a Promise.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1125-03",
+    "lessonDriveFileId": "1ntZ7uwjuKll4bE11hAM9MhrRZ1I3n2wO",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "The 'await' keyword can be used inside:",
+    "options": [
+      "An async function",
+      "Any CSS file",
+      "An HTML tag",
+      "A JSON file"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Pauses until the Promise resolves.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1121-03",
+    "lessonDriveFileId": "1R4mReuR0xyAlwBbdt7rF2tiI8yTZv6h6",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "The 'extends' keyword lets a class:",
+    "options": [
+      "Delete properties",
+      "Inherit from another class",
+      "Change HTML",
+      "Import CSS"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "class Admin extends User {}",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1124-02",
+    "lessonDriveFileId": "1IFyh6RxTwOmdGBNzj-ujnfRwhHA_rzy5",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Asynchronous code is important on the web because:",
+    "options": [
+      "It makes code shorter",
+      "Browsers can't run synchronous code",
+      "Network requests take time and shouldn't freeze the page",
+      "It's required for CSS"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Keep the UI responsive.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1123-03",
+    "lessonDriveFileId": "1DrA6oNyVZQMGeIkVbB7wwGRl5jMUysiq",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which rule applies to valid JSON?",
+    "options": [
+      "Keys must be wrapped in single quotes",
+      "Trailing commas are required",
+      "Comments are allowed with //",
+      "Keys must be wrapped in double quotes"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "JSON needs double-quoted keys and no trailing commas.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1123-04",
+    "lessonDriveFileId": "1DrA6oNyVZQMGeIkVbB7wwGRl5jMUysiq",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which method turns a JSON string into a JavaScript object?",
+    "options": [
+      "JSON.parse()",
+      "JSON.stringify()",
+      "JSON.load()",
+      "eval() always"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Parse incoming data.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1125-04",
+    "lessonDriveFileId": "1ntZ7uwjuKll4bE11hAM9MhrRZ1I3n2wO",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which modern browser API makes HTTP requests from JavaScript?",
+    "options": [
+      "print()",
+      "fetch()",
+      "alert()",
+      "console.log()"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Built into modern browsers.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1122-02",
+    "lessonDriveFileId": "1B0wdm3LJySMvbYg2GVmxyyHlx5OaWghA",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "In class Car { constructor(make) { this.make = make; } }, what does new Car('Toyota').make return?",
+    "options": [
+      "undefined",
+      "'Car'",
+      "'Toyota'",
+      "make"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "The constructor sets this.make.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1124-03",
+    "lessonDriveFileId": "1IFyh6RxTwOmdGBNzj-ujnfRwhHA_rzy5",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Updating a list of comments without reloading the page uses:",
+    "options": [
+      "A page refresh",
+      "CSS only",
+      "A new domain",
+      "Ajax / fetch requests"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Asynchronous data loading.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1216-01",
+    "lessonDriveFileId": "1f8bPA0Q7smYop2kTuEqscPJsWqBccrgi",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Bootstrap is:",
+    "options": [
+      "A CSS framework with ready-made responsive components",
+      "A database for storing website content",
+      "A JavaScript runtime",
+      "A design tool"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Speeds up building layouts.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1216-02",
+    "lessonDriveFileId": "1f8bPA0Q7smYop2kTuEqscPJsWqBccrgi",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Bootstrap's grid is based on how many columns?",
+    "options": [
+      "10",
+      "12",
+      "16",
+      "4"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Divide rows into 12 columns.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1216-03",
+    "lessonDriveFileId": "1f8bPA0Q7smYop2kTuEqscPJsWqBccrgi",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "The class col-md-6 means:",
+    "options": [
+      "Six pixels wide",
+      "Always full width",
+      "Take half the width from medium screens upwards",
+      "Six rows stacked on medium screens"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "6 of 12 columns at md and above.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1218-01",
+    "lessonDriveFileId": "1k65hxCBMPOFSQUAV8gQfjsy1xdUraeHI",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "A .container in Bootstrap:",
+    "options": [
+      "Hides content on screens smaller than a phone",
+      "Adds animation",
+      "Creates a database",
+      "Centres content with responsive maximum widths"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": ".container-fluid is full width.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1220-01",
+    "lessonDriveFileId": "1A2Tbld9p2c4FuDFMszy9oXITdSW-xdK9",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Gutters in Bootstrap's grid are:",
+    "options": [
+      "The spacing between columns",
+      "Page headers",
+      "Images",
+      "Fonts used in the column headings"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Controlled with g-* classes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1221-01",
+    "lessonDriveFileId": "17nMzv0qBpRKAxVJq0dmV92GHscWZDwOr",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Which Bootstrap component shows a pop-up dialog?",
+    "options": [
+      "Badge",
+      "Modal",
+      "Breadcrumb",
+      "Spinner"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Modals overlay the page.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1221-02",
+    "lessonDriveFileId": "17nMzv0qBpRKAxVJq0dmV92GHscWZDwOr",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "A Bootstrap navbar is used for:",
+    "options": [
+      "Database queries",
+      "File uploads",
+      "Responsive site navigation",
+      "Video playback"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Collapses on small screens.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1216-04",
+    "lessonDriveFileId": "1f8bPA0Q7smYop2kTuEqscPJsWqBccrgi",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Bootstrap's 'mobile-first' approach means styles:",
+    "options": [
+      "Only work on desktop",
+      "Ignore phones",
+      "Never change, whatever the screen size",
+      "Apply to small screens first, then larger breakpoints override"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Breakpoints add rules upwards.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1222-01",
+    "lessonDriveFileId": "1TdyH5IphP7TE5t7Lt5E_zz7xPIcPwBxD",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Why read the Bootstrap documentation?",
+    "options": [
+      "To learn the available classes and components correctly",
+      "It's optional and useless",
+      "To find bugs in your browser",
+      "To change your operating system's settings"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Docs are the best reference.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1220-02",
+    "lessonDriveFileId": "1A2Tbld9p2c4FuDFMszy9oXITdSW-xdK9",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Which class removes gutters between columns?",
+    "options": [
+      "no-space",
+      "g-0",
+      "gutter-off",
+      "p-0 only"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "g-0 sets gutters to zero.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1221-03",
+    "lessonDriveFileId": "17nMzv0qBpRKAxVJq0dmV92GHscWZDwOr",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Bootstrap utility classes like mt-3 add:",
+    "options": [
+      "Text colour",
+      "A modal",
+      "Margin on the top",
+      "Rounded borders"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "m = margin, t = top, 3 = size.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1216-05",
+    "lessonDriveFileId": "1f8bPA0Q7smYop2kTuEqscPJsWqBccrgi",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Which Bootstrap breakpoint prefix targets large screens?",
+    "options": [
+      "xs only",
+      "tiny",
+      "huge",
+      "lg"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "sm, md, lg, xl, xxl.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1216-06",
+    "lessonDriveFileId": "1f8bPA0Q7smYop2kTuEqscPJsWqBccrgi",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "In Bootstrap, three equal columns on medium screens and above use:",
+    "options": [
+      "col-md-4 on each",
+      "col-md-3 on each",
+      "col-md-12 on each",
+      "col-4px"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "4 + 4 + 4 = 12.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1218-02",
+    "lessonDriveFileId": "1k65hxCBMPOFSQUAV8gQfjsy1xdUraeHI",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Which class makes a container stretch the full width of the screen?",
+    "options": [
+      "container-small",
+      "container-fluid",
+      "row-full",
+      "col-12-fluid"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Fluid containers are 100% wide.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1221-04",
+    "lessonDriveFileId": "17nMzv0qBpRKAxVJq0dmV92GHscWZDwOr",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Which Bootstrap component is used for a dismissible notification message?",
+    "options": [
+      "Carousel",
+      "Pagination",
+      "Alert",
+      "Accordion"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Alerts show feedback messages.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1222-02",
+    "lessonDriveFileId": "1TdyH5IphP7TE5t7Lt5E_zz7xPIcPwBxD",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "A key benefit of Bootstrap for beginners is:",
+    "options": [
+      "It removes the need to learn HTML",
+      "It writes the back end",
+      "It's required by browsers",
+      "Building responsive layouts quickly with tested components"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Fast, consistent UI.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1331-01",
+    "lessonDriveFileId": "1v5aitbHQQcA7tshXKhYwxV3zNDCWC9Qq",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "jQuery is:",
+    "options": [
+      "A JavaScript library that simplifies DOM manipulation and Ajax",
+      "A CSS framework",
+      "A database engine that stores data for dynamic websites",
+      "A web server that runs PHP code"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Popular in older codebases.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1331-02",
+    "lessonDriveFileId": "1v5aitbHQQcA7tshXKhYwxV3zNDCWC9Qq",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "In jQuery, $('.item') selects:",
+    "options": [
+      "Only the first element",
+      "All elements with the class 'item'",
+      "An ID",
+      "Nothing"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "jQuery uses CSS selectors.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1331-03",
+    "lessonDriveFileId": "1v5aitbHQQcA7tshXKhYwxV3zNDCWC9Qq",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which jQuery method loops through selected elements?",
+    "options": [
+      ".loop()",
+      ".for()",
+      ".each()",
+      ".map() only"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Run a function for each element.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1332-01",
+    "lessonDriveFileId": "17Pfy9OaCp-LgTmk1hEgWwxzE0RBfuvvi",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which jQuery method changes an attribute?",
+    "options": [
+      ".css() only",
+      ".html()",
+      ".val() only",
+      ".attr()"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": ".attr('src', 'new.jpg')",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1333-01",
+    "lessonDriveFileId": "1YYJZk46l2fevfXTRbWByl_Cvee6r44h3",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which jQuery method sends a GET request?",
+    "options": [
+      "$.get()",
+      "$.send()",
+      "$.fetch()",
+      "$.load() only"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Also $.ajax with type GET.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1334-01",
+    "lessonDriveFileId": "1YZZY2FvKGvGgvqwBiviAC4AyVL0Agayo",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which jQuery method sends a POST request?",
+    "options": [
+      "$.put()",
+      "$.post()",
+      "$.create()",
+      "$.form()"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Send data to a server.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1332-02",
+    "lessonDriveFileId": "17Pfy9OaCp-LgTmk1hEgWwxzE0RBfuvvi",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "$('#title').text('Hello') will:",
+    "options": [
+      "Delete the element",
+      "Add a class",
+      "Change the element's text to 'Hello'",
+      "Hide it and remove it from the page"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Sets text content.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1331-04",
+    "lessonDriveFileId": "1v5aitbHQQcA7tshXKhYwxV3zNDCWC9Qq",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "$(document).ready() ensures code runs:",
+    "options": [
+      "Before HTML loads",
+      "Only on mobile",
+      "Never",
+      "After the DOM has loaded"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Safe to manipulate elements.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1332-03",
+    "lessonDriveFileId": "17Pfy9OaCp-LgTmk1hEgWwxzE0RBfuvvi",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which jQuery method adds a CSS class?",
+    "options": [
+      ".addClass()",
+      ".class()",
+      ".style()",
+      ".newClass()"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "removeClass and toggleClass also exist.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1335-01",
+    "lessonDriveFileId": "1BbnZyaOUNi9utonrJvtOs73JOtz9766P",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Why do many new projects use plain JavaScript or frameworks instead of jQuery?",
+    "options": [
+      "jQuery doesn't work",
+      "Modern browsers now support most of what jQuery simplified",
+      "jQuery is illegal to use in commercial sites",
+      "Browsers block it"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "But it's still common in existing sites.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1333-02",
+    "lessonDriveFileId": "1YYJZk46l2fevfXTRbWByl_Cvee6r44h3",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "A GET request is typically used to:",
+    "options": [
+      "Delete data",
+      "Create data",
+      "Retrieve data",
+      "Encrypt data"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "POST creates or submits data.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1331-05",
+    "lessonDriveFileId": "1v5aitbHQQcA7tshXKhYwxV3zNDCWC9Qq",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which jQuery method attaches a click handler?",
+    "options": [
+      ".press()",
+      ".tap()",
+      ".clicker()",
+      ".on('click', ...)"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": ".click() is a shorthand.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1331-06",
+    "lessonDriveFileId": "1v5aitbHQQcA7tshXKhYwxV3zNDCWC9Qq",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "What does $('#menu') select?",
+    "options": [
+      "The element with the ID 'menu'",
+      "All elements with class 'menu'",
+      "All <menu> tags",
+      "Nothing"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "# selects by ID.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1334-02",
+    "lessonDriveFileId": "1YZZY2FvKGvGgvqwBiviAC4AyVL0Agayo",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Submitting a contact form's data with jQuery Ajax usually uses:",
+    "options": [
+      "$.get() with a password in the URL",
+      "$.post()",
+      "$.delete()",
+      "$.css()"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "POST sends form data.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1332-04",
+    "lessonDriveFileId": "17Pfy9OaCp-LgTmk1hEgWwxzE0RBfuvvi",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which jQuery method sets the value of an input field?",
+    "options": [
+      ".text()",
+      ".src()",
+      ".val()",
+      ".value() only"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": ".val('new value')",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1335-02",
+    "lessonDriveFileId": "1BbnZyaOUNi9utonrJvtOs73JOtz9766P",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Where are you most likely to meet jQuery today?",
+    "options": [
+      "Only brand-new React apps",
+      "Mobile app stores",
+      "Database engines and server operating systems",
+      "Maintaining older websites and WordPress themes"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Legacy code still uses it widely.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1412-01",
+    "lessonDriveFileId": "1krQ5-ScbqxZgtwaq3OGLZIFEtM94-gpQ",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Pseudo coding means:",
+    "options": [
+      "Writing out program logic in plain language before coding",
+      "Writing fake code to trick users",
+      "Copying code",
+      "Deleting code"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Plan the steps first.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1416-01",
+    "lessonDriveFileId": "1oUZ2e6gZRE3WquaTAQQVf0j-ZK7Yqaxv",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "In React, API requests are commonly made inside:",
+    "options": [
+      "useState only",
+      "useEffect",
+      "render()",
+      "CSS files"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Effects run after render.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1416-02",
+    "lessonDriveFileId": "1oUZ2e6gZRE3WquaTAQQVf0j-ZK7Yqaxv",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Data fetched from an API is stored in React using:",
+    "options": [
+      "A CSS variable",
+      "localStorage only",
+      "useState",
+      "An HTML comment"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "State updates trigger re-renders.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1417-01",
+    "lessonDriveFileId": "1f6W5Ocau9CehZDzPQlrOP8SyezwgfWFv",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Math.random() returns:",
+    "options": [
+      "A random integer from 1 to 100",
+      "A string",
+      "Always 1",
+      "A number between 0 (inclusive) and 1 (exclusive)"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Multiply and floor to get integers.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1418-01",
+    "lessonDriveFileId": "1CUmp9hyANhbhGOpxS5w1Ioar99BSRqny",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "In JSX, a link is written as:",
+    "options": [
+      "<a href=\"...\">text</a>",
+      "<link to=\"...\">",
+      "<url>",
+      "<href>"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Standard anchor tag (or a router Link).",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1419-01",
+    "lessonDriveFileId": "13KrtgJGs54EVHyVcmddVlcSUdiTIi-7n",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "To render a list in React, you typically use:",
+    "options": [
+      "A for loop inside JSX directly",
+      "array.map() returning JSX elements",
+      "CSS",
+      "An iframe"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "map turns data into elements.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1419-02",
+    "lessonDriveFileId": "13KrtgJGs54EVHyVcmddVlcSUdiTIi-7n",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Each element in a mapped list needs a unique:",
+    "options": [
+      "id attribute only",
+      "class",
+      "key prop",
+      "style"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Keys help React track changes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1420-01",
+    "lessonDriveFileId": "1a_37sqxXjKZHgdvMa6mD6v7Qec9e9A_D",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "React components are:",
+    "options": [
+      "Database tables",
+      "CSS files",
+      "Servers that send HTML to the browser",
+      "Reusable functions that return UI"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Compose UIs from components.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1420-02",
+    "lessonDriveFileId": "1a_37sqxXjKZHgdvMa6mD6v7Qec9e9A_D",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "In JSX, the HTML 'class' attribute is written as:",
+    "options": [
+      "className",
+      "class",
+      "cssClass",
+      "styleClass"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "class is a reserved word in JS.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1416-03",
+    "lessonDriveFileId": "1oUZ2e6gZRE3WquaTAQQVf0j-ZK7Yqaxv",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Why include an empty dependency array in useEffect for a one-time fetch?",
+    "options": [
+      "To run it every second",
+      "So the request runs only once after the first render",
+      "To stop React re-rendering the component",
+      "To clear state"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Avoids repeated requests.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1412-02",
+    "lessonDriveFileId": "1krQ5-ScbqxZgtwaq3OGLZIFEtM94-gpQ",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Breaking a problem into small steps before coding helps:",
+    "options": [
+      "Make code longer",
+      "Avoid testing",
+      "Write clearer, more correct code",
+      "Hide bugs so they don't appear in testing"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Planning reduces errors.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1420-03",
+    "lessonDriveFileId": "1a_37sqxXjKZHgdvMa6mD6v7Qec9e9A_D",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Props in React are:",
+    "options": [
+      "Global CSS styles shared by every page",
+      "Database rows",
+      "Server routes",
+      "Inputs passed into components"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Configure components from parents.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1419-03",
+    "lessonDriveFileId": "13KrtgJGs54EVHyVcmddVlcSUdiTIi-7n",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "What does users.map(u => <li key={u.id}>{u.name}</li>) produce?",
+    "options": [
+      "A list item for each user",
+      "One list item total",
+      "An error always",
+      "Nothing"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Data becomes elements.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1416-04",
+    "lessonDriveFileId": "1oUZ2e6gZRE3WquaTAQQVf0j-ZK7Yqaxv",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Which hook would you use to fetch data when a component first appears?",
+    "options": [
+      "useMemo",
+      "useEffect",
+      "useRef only",
+      "useClass"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Side effects belong in useEffect.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1420-04",
+    "lessonDriveFileId": "1a_37sqxXjKZHgdvMa6mD6v7Qec9e9A_D",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Which JSX attribute applies a CSS class?",
+    "options": [
+      "class",
+      "css",
+      "className",
+      "styleName"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "JSX uses className.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1417-02",
+    "lessonDriveFileId": "1f6W5Ocau9CehZDzPQlrOP8SyezwgfWFv",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Which expression gives a random whole number from 0 to 9?",
+    "options": [
+      "Math.random(10)",
+      "Math.ceil(10)",
+      "random(0, 9) from the Math library",
+      "Math.floor(Math.random() * 10)"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Scale, then round down.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1511-01",
+    "lessonDriveFileId": "1iOOaDo9NoQLVKcPwKwtwwjWu9-O9BKxv",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "PUT is typically used to:",
+    "options": [
+      "Replace a resource entirely",
+      "Partially update a resource",
+      "Read data",
+      "Delete data"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "PATCH is for partial updates.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1511-02",
+    "lessonDriveFileId": "1iOOaDo9NoQLVKcPwKwtwwjWu9-O9BKxv",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "PATCH is typically used to:",
+    "options": [
+      "Delete a resource",
+      "Update part of a resource",
+      "Read data only",
+      "Create a domain"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Send only the fields that change.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1512-01",
+    "lessonDriveFileId": "187jx2-ukasazG-S8PzINLd4U4u-MMQCG",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "An API (Application Programming Interface) lets:",
+    "options": [
+      "Users draw logos",
+      "Browsers print web pages to PDF",
+      "Programs communicate with each other",
+      "Servers turn off"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Defined requests and responses.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1512-02",
+    "lessonDriveFileId": "187jx2-ukasazG-S8PzINLd4U4u-MMQCG",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "A REST API usually uses:",
+    "options": [
+      "Only email",
+      "Only FTP for uploading and downloading files",
+      "Only SQL",
+      "HTTP methods on resource URLs"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "GET /users, POST /users, etc.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1513-01",
+    "lessonDriveFileId": "19KMJg3Qu2gSaJ1NTA8NXDTQO1SR_m_Gu",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Which HTTP method is used to create a new resource?",
+    "options": [
+      "POST",
+      "GET",
+      "DELETE",
+      "HEAD"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "POST /orders creates an order.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1514-01",
+    "lessonDriveFileId": "1i5KrXJb4mZeuLif7rJ2BhEgLF-3z5KLD",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Status code 201 means:",
+    "options": [
+      "Not found",
+      "Created",
+      "Forbidden",
+      "Server error"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "A new resource was created.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1514-02",
+    "lessonDriveFileId": "1i5KrXJb4mZeuLif7rJ2BhEgLF-3z5KLD",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Status code 401 means:",
+    "options": [
+      "Success, and the response body has the data",
+      "Created",
+      "Unauthorised — authentication is required",
+      "Redirect"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "The client must log in.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1514-03",
+    "lessonDriveFileId": "1i5KrXJb4mZeuLif7rJ2BhEgLF-3z5KLD",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Status code 403 means:",
+    "options": [
+      "Not found",
+      "Created",
+      "OK — the request completed successfully",
+      "Forbidden — authenticated but not allowed"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "No permission for this action.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1515-01",
+    "lessonDriveFileId": "1bFRaclmI7ktbclNgBPR_7fX0whtrU8ZH",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "API keys should be:",
+    "options": [
+      "Kept secret and never exposed in public front-end code",
+      "Posted on GitHub so teammates can find them",
+      "Shared on social media",
+      "Put in image names"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Use server-side storage.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1515-02",
+    "lessonDriveFileId": "1bFRaclmI7ktbclNgBPR_7fX0whtrU8ZH",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Rate limiting protects an API by:",
+    "options": [
+      "Making it faster for attackers",
+      "Restricting how many requests a client can make in a period",
+      "Removing authentication",
+      "Deleting data that clients send too often"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Prevents abuse.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1513-02",
+    "lessonDriveFileId": "19KMJg3Qu2gSaJ1NTA8NXDTQO1SR_m_Gu",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Request headers can carry:",
+    "options": [
+      "Only images attached to the request",
+      "The full website",
+      "Metadata like content type and authorisation tokens",
+      "Database files"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "E.g. Authorization: Bearer <token>.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1512-03",
+    "lessonDriveFileId": "187jx2-ukasazG-S8PzINLd4U4u-MMQCG",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "API documentation tells you:",
+    "options": [
+      "The developer's salary",
+      "The server's colour",
+      "Nothing useful beyond the API's price",
+      "Available endpoints, parameters and responses"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Read docs before consuming an API.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1514-04",
+    "lessonDriveFileId": "1i5KrXJb4mZeuLif7rJ2BhEgLF-3z5KLD",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "An API returns 404. What does it mean?",
+    "options": [
+      "The requested resource doesn't exist",
+      "The request succeeded",
+      "You must log in",
+      "The server is down"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Not Found.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1511-03",
+    "lessonDriveFileId": "1iOOaDo9NoQLVKcPwKwtwwjWu9-O9BKxv",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "To change only a user's email address, which method fits best?",
+    "options": [
+      "PUT with an empty body",
+      "PATCH",
+      "DELETE",
+      "GET"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Partial update.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1515-03",
+    "lessonDriveFileId": "1bFRaclmI7ktbclNgBPR_7fX0whtrU8ZH",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Which is the safest place to store a secret API key for a web app?",
+    "options": [
+      "In front-end JavaScript",
+      "In the HTML source",
+      "On the server or in environment variables",
+      "In a public README"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Keep secrets off the client.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1513-03",
+    "lessonDriveFileId": "19KMJg3Qu2gSaJ1NTA8NXDTQO1SR_m_Gu",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Which HTTP method should retrieve data without changing it?",
+    "options": [
+      "POST",
+      "PUT",
+      "DELETE",
+      "GET"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "GET is safe and read-only.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1514-05",
+    "lessonDriveFileId": "1i5KrXJb4mZeuLif7rJ2BhEgLF-3z5KLD",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Which status code range indicates server errors?",
+    "options": [
+      "5xx",
+      "2xx",
+      "3xx",
+      "4xx"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "4xx are client errors.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l208-05",
+    "lessonDriveFileId": "1DNwhTWEFZi-0XbhF8o_tqu2St6L3q5kE",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "A merge conflict happens when:",
+    "options": [
+      "The internet goes down",
+      "Two people change the same lines and Git can't combine them automatically",
+      "A file is too large to commit to the repository",
+      "A branch is deleted"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Resolve by choosing the correct lines.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l209-04",
+    "lessonDriveFileId": "1JW9eLuEGZfN6MLNeUqXNi9yRb04rqer_",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Which website hosts millions of open-source projects?",
+    "options": [
+      "Photoshop",
+      "Excel Online",
+      "GitHub",
+      "Canva"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "GitHub is the main home of open source.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l210-04",
+    "lessonDriveFileId": "1cmXFPLXGO0-pKJN1MkjV7V8Z8EjcfXmv",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "npm is used to:",
+    "options": [
+      "Design logos",
+      "Host videos and stream them to users",
+      "Edit spreadsheets",
+      "Install and manage JavaScript packages"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Node Package Manager.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l211-07",
+    "lessonDriveFileId": "1WD1Hvc4gGgNbuV1nTVI7y8u_I2sAo5Ll",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Which statement describes the back end of a website?",
+    "options": [
+      "Server-side code and databases that power the site",
+      "The colours of buttons",
+      "The browser tab",
+      "The keyboard and mouse used by visitors"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Users don't see it directly.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l305-07",
+    "lessonDriveFileId": "1n6snS6Om_jZ-68Jv0zzjn1kloOAjt9gi",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which part of a URL identifies the website's domain in https://shop.example.com/cart?",
+    "options": [
+      "https",
+      "example.com",
+      "/cart",
+      "shop only"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "shop is a subdomain; /cart is the path.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l306-05",
+    "lessonDriveFileId": "1alhKG0Wh6PyMV1Wl74rNgTTgmc6XiWj5",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which happens if a CSS file fails to load?",
+    "options": [
+      "The page is deleted",
+      "JavaScript stops existing",
+      "The page shows unstyled HTML content",
+      "The domain expires"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "HTML still renders without styles.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l307-06",
+    "lessonDriveFileId": "16Ss6zhkKzRVAcDXUt9Mdj8POZJ0gEPsI",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which DevTools tab shows JavaScript errors?",
+    "options": [
+      "Network",
+      "Application",
+      "Lighthouse",
+      "Console"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Errors and logs appear in the Console.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l308-02",
+    "lessonDriveFileId": "1-Or3mjZQKZ6H2hxNsglxTaxfoQdmNHYB",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A redirect status code such as 301 means:",
+    "options": [
+      "The resource has moved permanently to a new URL",
+      "Success, and the page loads from the same URL",
+      "Server error",
+      "Forbidden"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Browsers follow the new location.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l409-05",
+    "lessonDriveFileId": "1PC9cmcnxDqqRZFkra6SlYtMdMOcoXvH7",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which VS Code feature shows a zoomed-out view of the whole file on the right?",
+    "options": [
+      "Terminal",
+      "Minimap",
+      "Explorer",
+      "Breadcrumbs"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Quick navigation in long files.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l410-05",
+    "lessonDriveFileId": "1VZeUaGXLVQgpILsa4MjaE9S2-5M19UeL",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which VS Code shortcut jumps to a specific line number?",
+    "options": [
+      "Ctrl/Cmd + L",
+      "Ctrl/Cmd + Q",
+      "Ctrl/Cmd + G",
+      "Ctrl/Cmd + W"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Go to Line.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l411-05",
+    "lessonDriveFileId": "19s3DOscbPsx_zx2-0c1xgEY878P5qFOp",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which shortcut comments out the selected lines in VS Code?",
+    "options": [
+      "Ctrl/Cmd + C",
+      "Ctrl/Cmd + X",
+      "Ctrl/Cmd + V",
+      "Ctrl/Cmd + /"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Toggle line comment.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l412-05",
+    "lessonDriveFileId": "1eG01BQWgeHITZ7CsIaXkD6HOvj0_ETgu",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Why use the Live Server extension while learning HTML and CSS?",
+    "options": [
+      "You see changes instantly in the browser after saving",
+      "It publishes your site to the world",
+      "It writes code for you",
+      "It replaces HTML"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Fast feedback loop.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l517-08",
+    "lessonDriveFileId": "10-tMqHt1pR8xIUCi1CmaFeo3Lfg_Pkmo",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which tag creates a numbered list?",
+    "options": [
+      "<ul>",
+      "<ol>",
+      "<li> only",
+      "<nl>"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Ordered list.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l521-02",
+    "lessonDriveFileId": "13hkxQKsPbQqrmmtgvjZ4l1ULsF3Qv2pU",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Why share code on CodePen when asking for help?",
+    "options": [
+      "It hides errors",
+      "It's required by browsers",
+      "Others can see and run your exact code",
+      "It speeds up your laptop"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Reproducible examples get faster answers.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l523-04",
+    "lessonDriveFileId": "1hb8fps4dy4lGKuWFjkgL5R6p8ovVddJt",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which tag holds metadata like the page title and stylesheet links?",
+    "options": [
+      "<body>",
+      "<footer>",
+      "<main>",
+      "<head>"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Metadata isn't displayed directly.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l517-09",
+    "lessonDriveFileId": "10-tMqHt1pR8xIUCi1CmaFeo3Lfg_Pkmo",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which attribute on <a> opens a link in a new tab?",
+    "options": [
+      "target=\"_blank\"",
+      "href=\"new\"",
+      "rel=\"tab\"",
+      "open=\"true\""
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Add rel=\"noopener\" for security.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l618-04",
+    "lessonDriveFileId": "16a4op1TlvEEFqBxOkqHjKj6JDQ-HIFoC",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which button type clears all fields in a form?",
+    "options": [
+      "submit",
+      "reset",
+      "clear",
+      "delete"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "<button type=\"reset\">.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l621-04",
+    "lessonDriveFileId": "1eQWSDOS220uX_ThNocSpAHSwcX8mycrs",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which form method should send passwords?",
+    "options": [
+      "GET",
+      "PUT in the URL",
+      "POST",
+      "HEAD"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "GET puts data in the URL.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l617-05",
+    "lessonDriveFileId": "1cr84uAWDyebQn-Pc2BMq0_aScu1oPGYZ",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which input type shows a date picker in modern browsers?",
+    "options": [
+      "calendar",
+      "time-only",
+      "picker",
+      "date"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "<input type=\"date\">.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l619-04",
+    "lessonDriveFileId": "1ZChkwAQzDbmovMaujvqwzmzr25DysE1D",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which tag groups related options inside a <select>?",
+    "options": [
+      "<optgroup>",
+      "<group>",
+      "<fieldset>",
+      "<ul>"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Labels groups of options.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l727-04",
+    "lessonDriveFileId": "1J4t0Z6DTwyDX7Rbv-xRKvKefNPOBrLP4",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which property adds space inside an element's border?",
+    "options": [
+      "margin",
+      "padding",
+      "gap only",
+      "spacing"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Padding is inner spacing.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l731-04",
+    "lessonDriveFileId": "1YuFtYkkfgjn0GEB2Kv9dUDSr2_eQmUJw",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which property hides an element and removes it from the layout?",
+    "options": [
+      "opacity: 0",
+      "visibility: visible",
+      "display: none",
+      "color: transparent"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "No space is reserved.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l733-03",
+    "lessonDriveFileId": "1Dpax2MOfq5hiC6EyCpUpq2oGDfL6Z9e2",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which property sets the text font?",
+    "options": [
+      "text-style",
+      "font-type",
+      "typeface",
+      "font-family"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "font-family: Arial, sans-serif;",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l734-06",
+    "lessonDriveFileId": "1c0b7D7rIsA2oB2UOR6KCaS65s9wg61mt",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which unit is relative to the root element's font size?",
+    "options": [
+      "rem",
+      "px",
+      "cm",
+      "pt"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Good for scalable typography.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l822-04",
+    "lessonDriveFileId": "1uFAOanMjoxmmApe_V7pkZwP-Gqg5vZG4",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A media query lets you:",
+    "options": [
+      "Load videos only on fast connections",
+      "Apply CSS only at certain screen sizes",
+      "Query a database",
+      "Change the domain"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "@media (max-width: 600px) {...}",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l824-05",
+    "lessonDriveFileId": "1CEyKST02qO6zLx3ZLfu17ZBr5YZ7jTBS",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which property moves an element without affecting layout?",
+    "options": [
+      "margin only",
+      "float with a negative margin",
+      "transform: translate()",
+      "display"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Transforms don't reflow the page.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l826-06",
+    "lessonDriveFileId": "1Ss1p0hkVD9tbunXRrMvbUsNiyWnmfph4",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which Flexbox property lets items wrap onto multiple lines?",
+    "options": [
+      "flex-direction: wrap",
+      "display: wrap",
+      "align-wrap",
+      "flex-wrap: wrap"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Prevents overflow.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l827-05",
+    "lessonDriveFileId": "1zQMZXRYDyQjW-JG4KhGy0Pgc7KoQssmF",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "In CSS Grid, 'grid-column: 1 / 3' makes an item:",
+    "options": [
+      "Span from column line 1 to line 3 (two columns)",
+      "Span three columns",
+      "Move to row 3",
+      "Disappear from the grid completely"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Grid lines define spans.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1022-05",
+    "lessonDriveFileId": "1wXx48Kl2eMgFuTQSkEfMLrSVVh9z82Kq",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "What does [5, 6, 7].includes(6) return?",
+    "options": [
+      "false",
+      "true",
+      "6",
+      "1"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "includes checks for a value.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1023-04",
+    "lessonDriveFileId": "1UxHcXsx_GaZ3ldVcBHGTpBz6TyGw-pdB",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which method combines array values into a single result, like a total?",
+    "options": [
+      "map()",
+      "filter()",
+      "reduce()",
+      "find()"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "reduce accumulates a value.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1026-04",
+    "lessonDriveFileId": "1IBVEok8AWp6ZNKQt5XW2HeTO18ib0vh0",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which keyword returns a value from a function?",
+    "options": [
+      "give",
+      "yield always",
+      "send",
+      "return"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Ends the function with a value.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1028-04",
+    "lessonDriveFileId": "1XPSmSSefjGt3T5RS4xB9Be_-lZAmw8Px",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "What is the result of typeof {}?",
+    "options": [
+      "'object'",
+      "'array'",
+      "'json'",
+      "'map'"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Objects and arrays both report 'object'.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1121-04",
+    "lessonDriveFileId": "1R4mReuR0xyAlwBbdt7rF2tiI8yTZv6h6",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which keyword lets a class reuse another class's features?",
+    "options": [
+      "inherits",
+      "extends",
+      "implements",
+      "copies"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Class inheritance.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1123-05",
+    "lessonDriveFileId": "1DrA6oNyVZQMGeIkVbB7wwGRl5jMUysiq",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which data format do most modern web APIs return?",
+    "options": [
+      "DOCX",
+      "PNG",
+      "JSON",
+      "MP3"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Lightweight and easy to parse.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1124-04",
+    "lessonDriveFileId": "1IFyh6RxTwOmdGBNzj-ujnfRwhHA_rzy5",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "What does 'asynchronous' mean in JavaScript?",
+    "options": [
+      "Code runs backwards from the last line",
+      "Code runs only once a day",
+      "Code can't use the network",
+      "Code can start a task and continue without waiting for it to finish"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Results arrive later via Promises.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1125-05",
+    "lessonDriveFileId": "1ntZ7uwjuKll4bE11hAM9MhrRZ1I3n2wO",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "How do you handle errors from fetch with async/await?",
+    "options": [
+      "Wrap it in try/catch",
+      "Ignore them",
+      "Use CSS",
+      "Reload the browser"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Catch network and parsing errors.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1216-07",
+    "lessonDriveFileId": "1f8bPA0Q7smYop2kTuEqscPJsWqBccrgi",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Which Bootstrap class makes an image scale with its container?",
+    "options": [
+      "img-big",
+      "img-fluid",
+      "responsive-img",
+      "fit-image"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "max-width: 100%; height: auto.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1218-03",
+    "lessonDriveFileId": "1k65hxCBMPOFSQUAV8gQfjsy1xdUraeHI",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "In Bootstrap, columns must be placed inside a:",
+    "options": [
+      "column",
+      "grid-item",
+      "row",
+      "wrapper only"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": ".container > .row > .col.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1220-03",
+    "lessonDriveFileId": "1A2Tbld9p2c4FuDFMszy9oXITdSW-xdK9",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Which Bootstrap class adds padding on all sides at size 3?",
+    "options": [
+      "m-3",
+      "pad-3",
+      "space-3",
+      "p-3"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "p = padding.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1221-05",
+    "lessonDriveFileId": "17nMzv0qBpRKAxVJq0dmV92GHscWZDwOr",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Which Bootstrap component cycles through images like a slideshow?",
+    "options": [
+      "Carousel",
+      "Alert",
+      "Badge",
+      "Tooltip"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Carousel rotates slides.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1331-07",
+    "lessonDriveFileId": "1v5aitbHQQcA7tshXKhYwxV3zNDCWC9Qq",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which jQuery method hides an element?",
+    "options": [
+      ".remove()",
+      ".hide()",
+      ".none()",
+      ".invisible()"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": ".show() makes it visible again.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1332-05",
+    "lessonDriveFileId": "17Pfy9OaCp-LgTmk1hEgWwxzE0RBfuvvi",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which jQuery method gets or sets HTML inside an element?",
+    "options": [
+      ".text() only",
+      ".attr()",
+      ".html()",
+      ".val()"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Be careful with untrusted HTML.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1333-03",
+    "lessonDriveFileId": "1YYJZk46l2fevfXTRbWByl_Cvee6r44h3",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "jQuery's $.ajax() function lets you:",
+    "options": [
+      "Style elements without writing any CSS",
+      "Create classes",
+      "Install packages",
+      "Configure any type of HTTP request"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Flexible Ajax calls.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1335-03",
+    "lessonDriveFileId": "1BbnZyaOUNi9utonrJvtOs73JOtz9766P",
+    "chapterOrder": 11,
+    "type": "true_false",
+    "prompt": "In jQuery, $('.card') selects every element with the class 'card', like document.querySelectorAll('.card').",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "jQuery wraps the selected elements.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1412-03",
+    "lessonDriveFileId": "1krQ5-ScbqxZgtwaq3OGLZIFEtM94-gpQ",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Which step should come first when solving a coding problem?",
+    "options": [
+      "Understand the problem and outline the steps",
+      "Write code immediately",
+      "Choose fonts and colours for the project",
+      "Deploy to production"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Plan before coding.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1418-02",
+    "lessonDriveFileId": "1CUmp9hyANhbhGOpxS5w1Ioar99BSRqny",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Which library is commonly used for navigation between pages in a React app?",
+    "options": [
+      "jQuery",
+      "React Router",
+      "Bootstrap",
+      "Express"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "It maps URLs to components.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1419-04",
+    "lessonDriveFileId": "13KrtgJGs54EVHyVcmddVlcSUdiTIi-7n",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Why does React warn about missing keys in lists?",
+    "options": [
+      "Keys change the colours of list items",
+      "Keys are required for CSS",
+      "Keys help React update lists efficiently and correctly",
+      "Keys speed up the internet"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Use stable unique IDs.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1420-05",
+    "lessonDriveFileId": "1a_37sqxXjKZHgdvMa6mD6v7Qec9e9A_D",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Which tool is popular for creating a new React project today?",
+    "options": [
+      "Bootstrap",
+      "jQuery",
+      "Excel",
+      "Vite"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Fast development setup.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1512-04",
+    "lessonDriveFileId": "187jx2-ukasazG-S8PzINLd4U4u-MMQCG",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "An API endpoint is:",
+    "options": [
+      "A specific URL where an API can be accessed",
+      "A CSS class that styles the API's output",
+      "An HTML tag",
+      "A database password"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "E.g. https://api.example.com/users.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1513-04",
+    "lessonDriveFileId": "19KMJg3Qu2gSaJ1NTA8NXDTQO1SR_m_Gu",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Which header tells the server the request body is JSON?",
+    "options": [
+      "Accept-Language: en",
+      "Content-Type: application/json",
+      "Cache-Control: no-cache",
+      "Host: json"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Servers parse the body accordingly.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1515-04",
+    "lessonDriveFileId": "1bFRaclmI7ktbclNgBPR_7fX0whtrU8ZH",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Which practice keeps API traffic secure in transit?",
+    "options": [
+      "Using HTTP only",
+      "Putting keys in URLs",
+      "Using HTTPS",
+      "Disabling authentication"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "TLS encrypts requests.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "website-development-full-stack-l1511-04",
+    "lessonDriveFileId": "1iOOaDo9NoQLVKcPwKwtwwjWu9-O9BKxv",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Which HTTP method removes a resource?",
+    "options": [
+      "REMOVE",
+      "POST",
+      "GET",
+      "DELETE"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "DELETE /items/42.",
+    "pools": [
+      "exam"
+    ]
+  }
+]

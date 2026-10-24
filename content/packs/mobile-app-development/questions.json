@@ -1,0 +1,4942 @@
+[
+  {
+    "key": "mobile-app-development-l101-01",
+    "lessonDriveFileId": "1L7PuV1jQLBxq63-7mUVT6jPptQ68rwo3",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "What does this programme teach you to build?",
+    "options": [
+      "Cross-platform mobile apps with React Native",
+      "Desktop video games in C++",
+      "Printed brochures",
+      "Spreadsheet macros"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "React Native builds apps for iOS and Android from one JavaScript codebase.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l104-01",
+    "lessonDriveFileId": "1-rAX0PjEeAlEbgbKMmjSaENQmqsDescn",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "What's the best way to keep up with a project-based coding programme?",
+    "options": [
+      "Only watch the videos",
+      "Code along and run the app yourself after each lesson",
+      "Skip the exercises",
+      "Copy the final code at the end"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Building alongside the lessons is how skills stick.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l101-02",
+    "lessonDriveFileId": "1L7PuV1jQLBxq63-7mUVT6jPptQ68rwo3",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Which two mobile platforms can a React Native app target?",
+    "options": [
+      "Windows XP and DOS",
+      "PlayStation and Xbox",
+      "iOS and Android",
+      "Smart TVs only"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "One codebase serves both major mobile platforms.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l201-01",
+    "lessonDriveFileId": "1IPzsbMPl4L_etf1XKbyOTXKSB-ABZ0lx",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "React Native was created by:",
+    "options": [
+      "Google",
+      "Apple",
+      "Microsoft",
+      "Facebook (Meta)"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Meta open-sourced React Native in 2015.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l203-01",
+    "lessonDriveFileId": "1Vb8k9y9umuE7ZfrMYQWbcidqX8Au1PEg",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A key benefit of React Native is:",
+    "options": [
+      "Sharing most code between iOS and Android",
+      "It only works on iOS",
+      "It requires writing two separate apps",
+      "It can't use JavaScript"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "One JavaScript codebase reduces effort.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l203-02",
+    "lessonDriveFileId": "1Vb8k9y9umuE7ZfrMYQWbcidqX8Au1PEg",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "React Native apps render:",
+    "options": [
+      "Only web pages in a browser",
+      "Real native UI components",
+      "Only images",
+      "Only text"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "RN maps components to native views.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l204-01",
+    "lessonDriveFileId": "1kaox8CdCA6ftvC7jd5va754E6SJJM--n",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "In React Native, which component is the basic building block for layout?",
+    "options": [
+      "div",
+      "span",
+      "View",
+      "table"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "View is like a div for mobile.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l204-02",
+    "lessonDriveFileId": "1kaox8CdCA6ftvC7jd5va754E6SJJM--n",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which component displays text in React Native?",
+    "options": [
+      "p",
+      "label",
+      "h1",
+      "Text"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "All text must be inside a Text component.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l205-01",
+    "lessonDriveFileId": "1xejAJvg96jg3qUFGuh5NkvRsZvqAr9xv",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "The JavaScript in a React Native app communicates with native code through:",
+    "options": [
+      "A bridge or the newer JSI architecture",
+      "Email",
+      "A shared SQL database that both layers read and write",
+      "A printer driver"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "JS and native layers exchange messages.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l205-02",
+    "lessonDriveFileId": "1xejAJvg96jg3qUFGuh5NkvRsZvqAr9xv",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "React Native's newer architecture introduced JSI to:",
+    "options": [
+      "Remove JavaScript",
+      "Let JavaScript call native code more directly and quickly",
+      "Let React Native apps run without any JavaScript engine",
+      "Disable components"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "JSI reduces bridge overhead.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l207-01",
+    "lessonDriveFileId": "1Keac6S3Dfota1RZgxYnRUwIS7dI9sOSB",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "How is styling done in React Native?",
+    "options": [
+      "With .css files exactly like the web",
+      "With HTML attributes",
+      "With JavaScript objects, often via StyleSheet.create",
+      "It can't be styled"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Styles look like CSS but are JS objects in camelCase.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l207-02",
+    "lessonDriveFileId": "1Keac6S3Dfota1RZgxYnRUwIS7dI9sOSB",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "In React Native styles, 'background-color' is written as:",
+    "options": [
+      "background_color",
+      "bgColor",
+      "backColour",
+      "backgroundColor"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Style properties use camelCase.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l207-03",
+    "lessonDriveFileId": "1Keac6S3Dfota1RZgxYnRUwIS7dI9sOSB",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "The default flexDirection in React Native is:",
+    "options": [
+      "column",
+      "row",
+      "grid",
+      "inline"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Unlike the web, RN defaults to column.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l202-01",
+    "lessonDriveFileId": "1NPxfk8AC9W-FWgFBB9i7Dp7qG-BSeH48",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Before React Native, many cross-platform mobile apps were built with:",
+    "options": [
+      "Native Java and Swift code written twice, once per platform",
+      "Web views wrapped in a native shell, such as Cordova",
+      "Only Excel",
+      "Printed code"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Hybrid apps ran web code in a WebView.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l204-03",
+    "lessonDriveFileId": "1kaox8CdCA6ftvC7jd5va754E6SJJM--n",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Components in React Native are written using:",
+    "options": [
+      "SQL",
+      "Assembly",
+      "JSX",
+      "Markdown"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "JSX is the same syntax used in React.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l201-02",
+    "lessonDriveFileId": "1IPzsbMPl4L_etf1XKbyOTXKSB-ABZ0lx",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "React Native is based on which web library?",
+    "options": [
+      "Angular",
+      "jQuery",
+      "Vue",
+      "React"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "React concepts like components and state carry over.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l203-03",
+    "lessonDriveFileId": "1Vb8k9y9umuE7ZfrMYQWbcidqX8Au1PEg",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Why might a startup choose React Native?",
+    "options": [
+      "To launch on iOS and Android faster with one team",
+      "To build only websites",
+      "To avoid JavaScript",
+      "Because it only supports one platform"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Shared code saves time and money.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l204-04",
+    "lessonDriveFileId": "1kaox8CdCA6ftvC7jd5va754E6SJJM--n",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which component should wrap any string you want to display?",
+    "options": [
+      "View",
+      "Text",
+      "Image",
+      "Button only"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Raw strings outside Text cause errors.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l205-03",
+    "lessonDriveFileId": "1xejAJvg96jg3qUFGuh5NkvRsZvqAr9xv",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which statement about React Native is true?",
+    "options": [
+      "It runs only in a browser",
+      "It uses Java only",
+      "It produces apps with native UI, not web pages",
+      "It can't access device features"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "RN renders native components.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l207-04",
+    "lessonDriveFileId": "1Keac6S3Dfota1RZgxYnRUwIS7dI9sOSB",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which style layout system does React Native use?",
+    "options": [
+      "Tables",
+      "Floats",
+      "Absolute only",
+      "Flexbox"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Flexbox is the layout model.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l206-01",
+    "lessonDriveFileId": "1_WQjrcRfhWNtojgG2dKiShKWRBXVL1uh",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Why is understanding React Native internals useful?",
+    "options": [
+      "It helps you debug performance and native integration issues",
+      "It's required to install Node",
+      "It replaces JavaScript",
+      "It removes the need to test on real devices at all"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Knowing how the layers talk helps troubleshoot.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l301-01",
+    "lessonDriveFileId": "1tc14Rzkb9eReJh2MsFbfU4zlVaJhw0la",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "The two common ways to start a React Native project are:",
+    "options": [
+      "Using Word or Excel",
+      "Using Expo or the React Native CLI",
+      "Using Photoshop or Illustrator",
+      "Using SQL or NoSQL"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Expo is simpler; the CLI gives full native control.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l302-01",
+    "lessonDriveFileId": "169M4DU1KAgRaNf4lH2cdGys5gmET-UE7",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "React DOM differs from React Native because React DOM:",
+    "options": [
+      "Renders native mobile views",
+      "Can't use components",
+      "Renders to web browser elements like div",
+      "Only works offline"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Same React core, different renderers.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l303-01",
+    "lessonDriveFileId": "1LRZV6kKLOnS8x2ZspN8bonXvLrzrx_uJ",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which tool is recommended for writing React Native code in this programme?",
+    "options": [
+      "Notepad only",
+      "Microsoft Paint",
+      "Excel",
+      "Visual Studio Code"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "VS Code is a popular, free code editor.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l401-01",
+    "lessonDriveFileId": "1AeOGYnuQFTmcBfMYycG7KkwIJl7VksBz",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Expo is:",
+    "options": [
+      "A framework and toolset that makes building React Native apps easier",
+      "A cloud database service for storing React Native app data",
+      "A design tool",
+      "A payment service"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Expo handles much native setup for you.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l403-01",
+    "lessonDriveFileId": "1Nepm3vU5GzS6SN4h6G9rFmN3_ZtOtCvz",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "The Expo Go app lets you:",
+    "options": [
+      "Design logos",
+      "Run your project on a real phone by scanning a QR code",
+      "Pay for apps",
+      "Publish your app straight to the Play Store without review"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Fast testing on real devices.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l405-01",
+    "lessonDriveFileId": "13mGZ4KbRu6wM6IJickWq3d4QZOO06P48",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Expo Snack is:",
+    "options": [
+      "A food delivery app",
+      "A testing framework",
+      "An online editor for running React Native code in the browser",
+      "A paid desktop IDE that compiles native Swift and Kotlin code"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Great for quick experiments.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l413-01",
+    "lessonDriveFileId": "1syg2a280XfxcrMaMgrDZ0boAszbtSps9",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which component lets users type into an app?",
+    "options": [
+      "Text",
+      "View",
+      "Image",
+      "TextInput"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "TextInput captures keyboard input.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l416-01",
+    "lessonDriveFileId": "1YD0PUELABvjxcXM2TjSoUEZiu-2e0reU",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which React hook stores a value that can change, like a focus subject?",
+    "options": [
+      "useState",
+      "useStyle",
+      "useText",
+      "useSnack"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "useState holds component state.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l419-01",
+    "lessonDriveFileId": "1NUIqtMxKVXf6Fk-FNP8SGi-Qy4dnMbCq",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which hook is used to run side effects such as starting a timer?",
+    "options": [
+      "useState",
+      "useEffect",
+      "useMemo only",
+      "useText"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Effects run after render.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l420-01",
+    "lessonDriveFileId": "1Y4pwCyYC8vRAn_uK6pQHJahScpoldQlQ",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Why should you clear an interval when a timer component unmounts?",
+    "options": [
+      "To make the timer count down faster on older phones",
+      "It's required by Expo",
+      "To avoid memory leaks and stray updates",
+      "To change colours"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Return a cleanup function from useEffect.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l426-01",
+    "lessonDriveFileId": "13qIe6BZ4-o3zUOuCG1SNVUPL1ORNzeA1",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Keeping the screen awake during a timer uses:",
+    "options": [
+      "Turning off the phone",
+      "A database",
+      "A custom font loaded with expo-font before rendering",
+      "A keep-awake API such as expo-keep-awake"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "It prevents the screen from sleeping.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l427-01",
+    "lessonDriveFileId": "1rcn_03QiarkB0Uf5HkhVUp6FdvZQbbvN",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Vibration when a timer finishes improves:",
+    "options": [
+      "User feedback",
+      "Battery life",
+      "App size",
+      "Download speed"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Haptic feedback signals completion.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l434-01",
+    "lessonDriveFileId": "1F9kaGu-zs5ZGpKSijYAMDyVGL6XLYV_Z",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "FlatList is preferred over ScrollView for long lists because it:",
+    "options": [
+      "Renders all items at once",
+      "Renders only the items on screen, improving performance",
+      "Loads every item at once so scrolling never pauses",
+      "Only shows images"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Virtualisation saves memory.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l437-01",
+    "lessonDriveFileId": "1Z-HQgxAA0B-IV-GTQczjJdOHRRUraMqL",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "AsyncStorage is used to:",
+    "options": [
+      "Send push notifications to users when the app is closed",
+      "Process payments",
+      "Save simple data on the device so it persists after closing the app",
+      "Render images"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It's a key–value store on the device.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l411-01",
+    "lessonDriveFileId": "19R0cXR0zkU38qqKNxgqW0JSaFDPq5wMd",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "In a simple app, conditionally rendering one screen or another is based on:",
+    "options": [
+      "The phone's colour",
+      "The time zone only",
+      "Random numbers",
+      "State values"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "State decides what renders.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l401-02",
+    "lessonDriveFileId": "1AeOGYnuQFTmcBfMYycG7KkwIJl7VksBz",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "What does the FocusTime app help users do?",
+    "options": [
+      "Focus on a task for a set time and track history",
+      "Order food from nearby restaurants and pay in the app",
+      "Edit photos",
+      "Send money"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "It's a focus timer project.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l403-02",
+    "lessonDriveFileId": "1Nepm3vU5GzS6SN4h6G9rFmN3_ZtOtCvz",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Why do beginners often start with Expo?",
+    "options": [
+      "It's required by Apple",
+      "It removes most native setup so you can build quickly",
+      "It's the only way to build apps",
+      "It doesn't use JavaScript"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Less configuration, faster start.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l413-02",
+    "lessonDriveFileId": "1syg2a280XfxcrMaMgrDZ0boAszbtSps9",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "To read what a user typed in a TextInput, you usually use:",
+    "options": [
+      "The onPrint event",
+      "A CSS selector",
+      "The onChangeText callback",
+      "document.getElementById"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "onChangeText receives the new text.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l419-02",
+    "lessonDriveFileId": "1NUIqtMxKVXf6Fk-FNP8SGi-Qy4dnMbCq",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A countdown timer that updates every second typically uses:",
+    "options": [
+      "A for loop that blocks the UI",
+      "CSS animations only",
+      "A database query",
+      "setInterval inside useEffect"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Intervals schedule repeated updates.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l424-01",
+    "lessonDriveFileId": "1mhWJV9HgZGrigzUXKi4piuedwm8FHjXs",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A progress bar for a timer should reflect:",
+    "options": [
+      "Time remaining compared with total time",
+      "The phone's battery",
+      "The speed of the user's network connection over time",
+      "The app's version"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Progress = elapsed ÷ total.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l437-02",
+    "lessonDriveFileId": "1Z-HQgxAA0B-IV-GTQczjJdOHRRUraMqL",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Data saved with AsyncStorage is stored:",
+    "options": [
+      "On Google Drive automatically",
+      "Locally on the user's device",
+      "In the app store",
+      "Nowhere"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "It's local, unencrypted key–value storage.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l434-02",
+    "lessonDriveFileId": "1F9kaGu-zs5ZGpKSijYAMDyVGL6XLYV_Z",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which prop tells FlatList how to render each item?",
+    "options": [
+      "style",
+      "onPress",
+      "renderItem",
+      "source"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "renderItem returns the component for each item.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l503-01",
+    "lessonDriveFileId": "1b48Po4L3AcUYrUZgT-urw6_nUtZhUynp",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Git is used to:",
+    "options": [
+      "Design screens",
+      "Host and stream videos for your app's users",
+      "Process payments",
+      "Track changes to your code over time"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Git is a version control system.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l504-01",
+    "lessonDriveFileId": "1ePrVsklP0pi_EuUcXnahxaM9V56SyJsi",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Node.js is needed for React Native development because:",
+    "options": [
+      "The tooling and packages run on Node",
+      "It edits photos",
+      "It replaces the phone",
+      "It is a database"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Metro, Expo CLI and npm need Node.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l504-02",
+    "lessonDriveFileId": "1ePrVsklP0pi_EuUcXnahxaM9V56SyJsi",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Yarn and npm are:",
+    "options": [
+      "Code editors with built-in Android emulators",
+      "Package managers for JavaScript libraries",
+      "Phone emulators",
+      "Web browsers"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "They install and manage dependencies.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l505-01",
+    "lessonDriveFileId": "151XUjSn7msPIaZ43oQAu4NbtKGNuMVU6",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "The iOS Simulator is available only on:",
+    "options": [
+      "Windows",
+      "Linux",
+      "macOS with Xcode",
+      "Android phones"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Apple's tools run on Macs.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l506-01",
+    "lessonDriveFileId": "1etPVVO46EWQ2k7-VJ9fGZFObgVHfFndV",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Android Studio provides:",
+    "options": [
+      "iOS simulators",
+      "Photo editing",
+      "Spreadsheet tools",
+      "The Android SDK and emulator"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "It's the official Android IDE.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l508-01",
+    "lessonDriveFileId": "1gM63DGM4OJlxr4UVW8kmI2R-8k3eJGR7",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "An emulator lets you:",
+    "options": [
+      "Run a virtual phone on your computer to test apps",
+      "Charge your phone",
+      "Print screens",
+      "Write SQL queries against your phone's database"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Test without a physical device.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l509-01",
+    "lessonDriveFileId": "15uCShm0gqFDmSoffw-lGCict3L-grRhI",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "VS Code extensions like ESLint and Prettier help you:",
+    "options": [
+      "Design logos",
+      "Catch errors and format code consistently",
+      "Record video",
+      "Send SMS messages from VS Code to test devices"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Linting and formatting improve quality.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l515-01",
+    "lessonDriveFileId": "1bilX2qZCkkqI9nQQiV9J7mS0Ns0cRLJ3",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "GitHub is:",
+    "options": [
+      "A phone emulator",
+      "A visual design tool for creating app mock-ups",
+      "An online platform for hosting Git repositories and collaborating",
+      "A payment gateway"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It stores code and supports teamwork.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l503-02",
+    "lessonDriveFileId": "1b48Po4L3AcUYrUZgT-urw6_nUtZhUynp",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A commit in Git is:",
+    "options": [
+      "A deleted file",
+      "A remote server that runs your app in production",
+      "A design",
+      "A saved snapshot of your changes with a message"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Commits record history.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l515-02",
+    "lessonDriveFileId": "1bilX2qZCkkqI9nQQiV9J7mS0Ns0cRLJ3",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Publishing your code to GitHub helps you:",
+    "options": [
+      "Back it up and share it as part of your portfolio",
+      "Hide it permanently",
+      "Delete it from your computer once it is online",
+      "Encrypt the phone"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Public repos show your work.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l522-01",
+    "lessonDriveFileId": "1kzMvb1Q4zCbLfjjiTXcsJePjoO6_Q9sw",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "If your setup isn't working, a good first step is to:",
+    "options": [
+      "Reinstall your operating system immediately",
+      "Read the error message carefully and search for it",
+      "Give up",
+      "Delete the project"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Error messages usually point to the fix.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l506-02",
+    "lessonDriveFileId": "1etPVVO46EWQ2k7-VJ9fGZFObgVHfFndV",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "To run Android apps from the command line, you need:",
+    "options": [
+      "Only Photoshop",
+      "Only Excel",
+      "The Android SDK installed and configured",
+      "Nothing, because Expo installs everything automatically"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "The SDK provides build tools.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l503-03",
+    "lessonDriveFileId": "1b48Po4L3AcUYrUZgT-urw6_nUtZhUynp",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which command saves staged changes in Git?",
+    "options": [
+      "git delete",
+      "git print",
+      "git open",
+      "git commit"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "git commit records a snapshot.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l504-03",
+    "lessonDriveFileId": "1ePrVsklP0pi_EuUcXnahxaM9V56SyJsi",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which file lists a JavaScript project's dependencies?",
+    "options": [
+      "package.json",
+      "index.html",
+      "styles.css",
+      "README.txt"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "package.json declares dependencies and scripts.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l505-02",
+    "lessonDriveFileId": "151XUjSn7msPIaZ43oQAu4NbtKGNuMVU6",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A Windows user wants to test on iOS. What can they do?",
+    "options": [
+      "Install the iOS Simulator on Windows",
+      "Use Expo Go on a real iPhone or a cloud build service",
+      "It's impossible to test iOS",
+      "Use Android Studio for iOS"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "The iOS Simulator requires a Mac.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l508-02",
+    "lessonDriveFileId": "1gM63DGM4OJlxr4UVW8kmI2R-8k3eJGR7",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Why test on both an emulator and a real device?",
+    "options": [
+      "Emulators are always perfect",
+      "Real devices can't run apps",
+      "Real devices reveal performance and hardware issues emulators miss",
+      "Because Git refuses to commit untested code to a repo"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Both have value.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l515-03",
+    "lessonDriveFileId": "1bilX2qZCkkqI9nQQiV9J7mS0Ns0cRLJ3",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which statement about Git and GitHub is true?",
+    "options": [
+      "They are the same thing, just with different names",
+      "GitHub is a code editor",
+      "Git only works on phones",
+      "Git is the version control tool; GitHub hosts Git repositories online"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Git runs locally; GitHub is a hosting service.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l522-02",
+    "lessonDriveFileId": "1kzMvb1Q4zCbLfjjiTXcsJePjoO6_Q9sw",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "When asking for help with a setup error, you should share:",
+    "options": [
+      "The exact error message and what you tried",
+      "Only 'it doesn't work'",
+      "Your password",
+      "Only a screenshot of your app's home screen"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Specific details get faster help.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l601-01",
+    "lessonDriveFileId": "1TEBfxfSwFSyN_ZNKxDGqOT4jAUuPZ8g6",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "MealsToGo is a master project that simulates:",
+    "options": [
+      "A banking app",
+      "A restaurant discovery app",
+      "A multiplayer racing game with a global leaderboard",
+      "A music player"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "It covers lists, maps, auth and payments.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l603-01",
+    "lessonDriveFileId": "1zJe1VbLYBuCP9br3IFR93hkdRz8M1I37",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Why plan the project structure before coding a large app?",
+    "options": [
+      "It's required by Apple",
+      "Structure doesn't matter",
+      "A clear structure makes features easier to add and maintain",
+      "It makes the final app download noticeably slower"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Organised folders by feature scale better.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l605-01",
+    "lessonDriveFileId": "1U9KjCBhtj47p2sohAebvxww0TQmpV-CU",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A new Expo project is typically created with:",
+    "options": [
+      "npm delete",
+      "git push origin main --create-expo",
+      "yarn print",
+      "npx create-expo-app"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "The Expo CLI scaffolds a project.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l703-01",
+    "lessonDriveFileId": "1-uN7jp0j_hZ1XLXL1VROp6_JkT8-VPqp",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "In Flexbox, 'justifyContent' controls alignment along the:",
+    "options": [
+      "Main axis",
+      "Cross axis",
+      "Z axis",
+      "Diagonal"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "With column direction, the main axis is vertical.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l703-02",
+    "lessonDriveFileId": "1-uN7jp0j_hZ1XLXL1VROp6_JkT8-VPqp",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "'alignItems: center' in a column layout centres children:",
+    "options": [
+      "Vertically",
+      "Horizontally",
+      "Diagonally",
+      "Not at all"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "alignItems works on the cross axis.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l703-03",
+    "lessonDriveFileId": "1-uN7jp0j_hZ1XLXL1VROp6_JkT8-VPqp",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Setting 'flex: 1' on a View makes it:",
+    "options": [
+      "Disappear",
+      "Become 1 pixel tall",
+      "Expand to fill the available space",
+      "Scroll"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Flex grows to fill space.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l708-01",
+    "lessonDriveFileId": "1D8e34uX5m4c_oU4cxhwKN-64xuj7Ofbm",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "SafeAreaView helps prevent content from:",
+    "options": [
+      "Loading images before the network responds",
+      "Scrolling",
+      "Changing colour",
+      "Being hidden behind notches and status bars"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "It respects device safe areas.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l711-01",
+    "lessonDriveFileId": "1hb68cTgI4fWqFgkpybyScI2M8QhINDl0",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "ESLint is used to:",
+    "options": [
+      "Find problems and enforce code style rules",
+      "Compile Java",
+      "Draw icons",
+      "Host apps on a server so users can download them"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Linters catch mistakes early.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l711-02",
+    "lessonDriveFileId": "1hb68cTgI4fWqFgkpybyScI2M8QhINDl0",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Prettier is used to:",
+    "options": [
+      "Test payments",
+      "Automatically format code consistently",
+      "Store user data on the device between sessions",
+      "Encrypt files"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "It ends style debates.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l725-01",
+    "lessonDriveFileId": "1ka2CgxbZE6uv7LhIm7kW3IL07Lf-llvp",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "styled-components lets you:",
+    "options": [
+      "Design in Photoshop",
+      "Store images",
+      "Write styles as tagged template literals tied to components",
+      "Run SQL queries directly from inside a component"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "CSS-in-JS with reusable styled components.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l731-01",
+    "lessonDriveFileId": "1ppGBHLYtxfRx6M6xzUx-Q4-DXcreKt4v",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A theme object in an app stores:",
+    "options": [
+      "User passwords",
+      "Payment details",
+      "User photos downloaded from the device gallery",
+      "Shared colours, fonts and spacing values"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Themes keep design consistent.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l735-01",
+    "lessonDriveFileId": "1j6TnibYJG_hvLg9Ohh8QgL86D_f18JF6",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Custom fonts in Expo are loaded with:",
+    "options": [
+      "expo-font / useFonts",
+      "A CSS @import only",
+      "Git",
+      "AsyncStorage"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Fonts must load before rendering text.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l741-01",
+    "lessonDriveFileId": "13ykrM9_5_AzDs2Yhwf1QwzfZYBNjJmBc",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A reusable Spacer component helps:",
+    "options": [
+      "Store data in AsyncStorage between app launches",
+      "Apply consistent spacing without repeating margins",
+      "Fetch APIs",
+      "Play sounds"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Small utilities enforce consistency.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l747-01",
+    "lessonDriveFileId": "176xMvGnHbfHkrgi_I1ZRAdF7b3UUQzP5",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which FlatList prop gives each item a unique key?",
+    "options": [
+      "renderItem",
+      "onPress",
+      "keyExtractor",
+      "style"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Keys help React track items.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l753-01",
+    "lessonDriveFileId": "18mjbrlO-qEFIL-_mjJD4TpLsN-N7VuGj",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "React Navigation's tab navigator creates:",
+    "options": [
+      "A database",
+      "A payment form",
+      "A full-screen map with nearby places marked",
+      "A bar of tabs to switch between main screens"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Bottom tabs are common in mobile apps.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l750-01",
+    "lessonDriveFileId": "1Zp6fzeeHBX_n8f7EbT-hmCfY8mr5U9Oe",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Why avoid inline styles in a growing codebase?",
+    "options": [
+      "They're harder to reuse and maintain",
+      "They don't work at all",
+      "They're faster",
+      "They're required"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Centralised styles scale better.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l737-01",
+    "lessonDriveFileId": "1vXrn0wUQG4qykk2YXhM6pH6vFxdZWs32",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "react-native-svg is used to:",
+    "options": [
+      "Store data in a local SQLite database on the device",
+      "Render scalable vector graphics like rating stars",
+      "Send emails",
+      "Encrypt passwords"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "SVGs stay sharp at any size.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l703-04",
+    "lessonDriveFileId": "1-uN7jp0j_hZ1XLXL1VROp6_JkT8-VPqp",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "You want two buttons side by side. Which style helps?",
+    "options": [
+      "flexDirection: 'column'",
+      "display: 'table'",
+      "flexDirection: 'row' on their container",
+      "float: 'left'"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Row lays children horizontally.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l711-03",
+    "lessonDriveFileId": "1hb68cTgI4fWqFgkpybyScI2M8QhINDl0",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Using ESLint and Prettier in a team helps because:",
+    "options": [
+      "It automatically removes all bugs from the codebase",
+      "It replaces testing",
+      "It makes apps smaller",
+      "Everyone's code follows the same rules and format"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Consistency eases code review.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l716-01",
+    "lessonDriveFileId": "1Y6tM0PsqHP1mckCAZdtfFiOumIptRGOT",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A search bar component usually needs:",
+    "options": [
+      "State for the query and a handler for submitting",
+      "A camera",
+      "A payment SDK",
+      "A map component and a list of location markers"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Input plus submit logic.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l718-01",
+    "lessonDriveFileId": "186TjJHLV8N8s2IzpgMnBofkWNaZAsajh",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Breaking the UI into components like RestaurantInfoCard helps:",
+    "options": [
+      "Make the app slower",
+      "Reuse, testing and readability",
+      "Hide bugs",
+      "Remove styling"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Small components are easier to manage.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l731-02",
+    "lessonDriveFileId": "1ppGBHLYtxfRx6M6xzUx-Q4-DXcreKt4v",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Changing the primary colour in the theme should:",
+    "options": [
+      "Update only one screen",
+      "Break the app",
+      "Update it across the whole app",
+      "Have no effect"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "That's the benefit of a theme.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l745-01",
+    "lessonDriveFileId": "1fGNnIZDRQ8J6nX0l3Kh2Uv9mQ6YCaaw7",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A Typography component standardises:",
+    "options": [
+      "Image sizes",
+      "API calls and their error-handling logic",
+      "Navigation",
+      "Text variants such as heading, body and caption"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Consistent text styles across screens.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l747-02",
+    "lessonDriveFileId": "176xMvGnHbfHkrgi_I1ZRAdF7b3UUQzP5",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which component is best for rendering a long list of restaurants?",
+    "options": [
+      "FlatList",
+      "ScrollView with 1,000 children",
+      "Text",
+      "SafeAreaView"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "FlatList virtualises rows.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l755-01",
+    "lessonDriveFileId": "1trGMuNt03TB33m0P0K2r5LYZRe-sKnrr",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Bottom tab navigation is commonly used for:",
+    "options": [
+      "Entering passwords",
+      "Switching between an app's main sections",
+      "Showing error messages after a failed request",
+      "Printing receipts"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "E.g. Restaurants, Map, Settings.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l851-01",
+    "lessonDriveFileId": "1BqX1dMvMwCAa9IwMCc8R7cR5F3pCMSo1",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Firebase is:",
+    "options": [
+      "A phone emulator",
+      "A visual design tool for prototyping mobile screens",
+      "Google's backend platform offering authentication, databases and more",
+      "A code editor"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Backend as a service.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l852-01",
+    "lessonDriveFileId": "108Mpg2YCmjFx-ItH5OxgAT23OHZVmQnI",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Firebase Authentication lets users:",
+    "options": [
+      "Edit photos",
+      "Write and deploy backend code without a database",
+      "Print documents",
+      "Sign up and log in securely with email or other providers"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Handles identity securely.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l853-01",
+    "lessonDriveFileId": "1BOg0kY7typSb95d89D0L4mJqOGEaIXtM",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "React Context is useful for:",
+    "options": [
+      "Sharing state like the logged-in user across many components",
+      "Styling text consistently across every screen",
+      "Rendering lists",
+      "Loading fonts"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Avoids passing props through many levels.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l853-02",
+    "lessonDriveFileId": "1BOg0kY7typSb95d89D0L4mJqOGEaIXtM",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "An authentication service module typically wraps:",
+    "options": [
+      "Colour themes",
+      "Login, register and logout functions",
+      "Image assets",
+      "Fonts, colours and spacing values for the theme"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Keeps auth logic in one place.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l854-01",
+    "lessonDriveFileId": "1JyedJe5v1HR39pxWA-ARZDpUaGdXfoQh",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Why have separate navigators for logged-in and logged-out users?",
+    "options": [
+      "To make the app load more slowly for new users",
+      "To hide the app",
+      "To show account screens before login and app screens after",
+      "It's required by Expo"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Navigation depends on auth state.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l856-01",
+    "lessonDriveFileId": "14a5P1opuJPpRMQ15sWlFHygS_9CelKet",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "ImageBackground is used to:",
+    "options": [
+      "Store images in the device's photo library",
+      "Upload photos",
+      "Compress files",
+      "Display an image behind other content"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Useful for login screens.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l859-01",
+    "lessonDriveFileId": "1Tx4M-zvmxjZjGvepDpHTHnadZkhnyqJG",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "A login screen should show errors when:",
+    "options": [
+      "Credentials are wrong or the network fails",
+      "Never, because errors confuse users and slow login",
+      "Only after five minutes",
+      "Only in English"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Clear feedback helps users.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l862-01",
+    "lessonDriveFileId": "18fASl5omP5JfK2AhcOHq9r_mmbxDpsNO",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Registration forms commonly validate that:",
+    "options": [
+      "The user's photo is blue",
+      "Password and repeated password match",
+      "The phone is charged",
+      "The app is installed twice"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Validation prevents mistakes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l867-01",
+    "lessonDriveFileId": "1cXyLTx7oYqMjfG1mSGIJrnqcPlyhFnye",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "A settings screen often includes:",
+    "options": [
+      "Payment card numbers in plain text",
+      "Source code",
+      "Profile details and a logout option",
+      "Developer tools"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Account controls live in settings.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l853-03",
+    "lessonDriveFileId": "1BOg0kY7typSb95d89D0L4mJqOGEaIXtM",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "When the app restarts, how can you keep the user logged in?",
+    "options": [
+      "Ask for the password every time",
+      "Store the password in plain text",
+      "Disable login",
+      "Use Firebase's auth state listener to restore the session"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "onAuthStateChanged restores sessions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l852-02",
+    "lessonDriveFileId": "108Mpg2YCmjFx-ItH5OxgAT23OHZVmQnI",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which is a security best practice for apps using Firebase?",
+    "options": [
+      "Never commit secret keys to public repositories and use security rules",
+      "Share your API keys publicly",
+      "Disable security rules so the app can read any data",
+      "Store passwords in AsyncStorage"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Protect configuration and enforce rules.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l859-02",
+    "lessonDriveFileId": "1Tx4M-zvmxjZjGvepDpHTHnadZkhnyqJG",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Showing a loading indicator during login helps because:",
+    "options": [
+      "It speeds up the network",
+      "Users know the app is working",
+      "It's decorative only",
+      "It hides errors"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Feedback reduces repeated taps.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l851-02",
+    "lessonDriveFileId": "1BqX1dMvMwCAa9IwMCc8R7cR5F3pCMSo1",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which Firebase service handles user sign-in?",
+    "options": [
+      "Hosting",
+      "Analytics only",
+      "Authentication",
+      "Crashlytics"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Firebase Auth manages users.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l853-04",
+    "lessonDriveFileId": "1BOg0kY7typSb95d89D0L4mJqOGEaIXtM",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which React feature avoids passing the user object through every component manually?",
+    "options": [
+      "FlatList",
+      "StyleSheet",
+      "SafeAreaView",
+      "Context"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Context provides global-ish state.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l854-02",
+    "lessonDriveFileId": "1JyedJe5v1HR39pxWA-ARZDpUaGdXfoQh",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "After a successful login, the app should:",
+    "options": [
+      "Switch to the main app navigator",
+      "Close itself",
+      "Show the login screen again",
+      "Delete the user"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Auth state drives navigation.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l862-02",
+    "lessonDriveFileId": "18fASl5omP5JfK2AhcOHq9r_mmbxDpsNO",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which check should a registration screen do before calling the backend?",
+    "options": [
+      "Battery level",
+      "Required fields filled and passwords matching",
+      "Screen brightness",
+      "The font size and colour of the input fields"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Client-side validation saves round trips.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l867-02",
+    "lessonDriveFileId": "1cXyLTx7oYqMjfG1mSGIJrnqcPlyhFnye",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Logging out should:",
+    "options": [
+      "Delete the app",
+      "Keep the user logged in",
+      "Clear the session and return to the account screens",
+      "Crash the app so all stored data is wiped"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Clean logout protects accounts.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l902-01",
+    "lessonDriveFileId": "1NYUKqzXzWdyF8VnTYq22FH5uHEUXs-vF",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Before using the camera, an app must:",
+    "options": [
+      "Restart the phone",
+      "Disable the internet",
+      "Log out the user",
+      "Request the user's permission"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Mobile OSes require camera permission.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l904-01",
+    "lessonDriveFileId": "1PxGf5aVcDCQ74Rf5k3LW3_T7kNYyf-GI",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "expo-camera provides:",
+    "options": [
+      "A Camera component to preview and capture photos",
+      "Payment processing",
+      "A Maps component to show nearby locations",
+      "Push notifications only"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "It wraps native camera APIs.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l905-01",
+    "lessonDriveFileId": "1KNVKA2sPWg8MuZpWAoP2poOcmIhYb4DW",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "takePictureAsync returns:",
+    "options": [
+      "The user's location",
+      "Information about the captured photo, such as its URI",
+      "A payment token",
+      "A custom font file loaded into the app"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Use the URI to display or store the image.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l907-01",
+    "lessonDriveFileId": "1D4dcBTsc_CuNrDb7VDXbuYtRz4yGXERm",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Storing a profile photo URI in AsyncStorage lets the app:",
+    "options": [
+      "Upload it to Instagram",
+      "Encrypt the phone",
+      "Show the photo again after restarting",
+      "Delete it"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Persistence across sessions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l904-02",
+    "lessonDriveFileId": "1PxGf5aVcDCQ74Rf5k3LW3_T7kNYyf-GI",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which camera is commonly used for profile selfies?",
+    "options": [
+      "The back camera only",
+      "No camera",
+      "A webcam",
+      "The front camera"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Front-facing camera for selfies.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l902-02",
+    "lessonDriveFileId": "1NYUKqzXzWdyF8VnTYq22FH5uHEUXs-vF",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "If camera permission is denied, the app should:",
+    "options": [
+      "Explain why it's needed and offer a way to enable it",
+      "Crash immediately so the user restarts the app",
+      "Keep asking every second",
+      "Close silently"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Respect the user's choice.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l905-02",
+    "lessonDriveFileId": "1KNVKA2sPWg8MuZpWAoP2poOcmIhYb4DW",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Displaying the captured photo uses which component?",
+    "options": [
+      "Text",
+      "Image",
+      "FlatList",
+      "Button"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Image renders from a URI.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l907-02",
+    "lessonDriveFileId": "1D4dcBTsc_CuNrDb7VDXbuYtRz4yGXERm",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Keying the stored photo by user ID ensures:",
+    "options": [
+      "All users share one photo",
+      "Photos are deleted",
+      "Each user sees their own photo",
+      "Faster downloads"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Per-user storage.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l904-03",
+    "lessonDriveFileId": "1PxGf5aVcDCQ74Rf5k3LW3_T7kNYyf-GI",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Testing camera features is best done on:",
+    "options": [
+      "An emulator only",
+      "A printer",
+      "A spreadsheet",
+      "A real device"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Emulators have limited camera support.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l905-03",
+    "lessonDriveFileId": "1KNVKA2sPWg8MuZpWAoP2poOcmIhYb4DW",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Why might you reduce image quality when taking a photo?",
+    "options": [
+      "Smaller files load and upload faster",
+      "Higher quality is banned",
+      "It improves colour",
+      "It adds filters"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Balance quality and size.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l902-03",
+    "lessonDriveFileId": "1NYUKqzXzWdyF8VnTYq22FH5uHEUXs-vF",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which Expo method requests camera permission?",
+    "options": [
+      "Camera.deleteAsync",
+      "Camera.requestCameraPermissionsAsync",
+      "Camera.paintCameraPermissionsToScreen",
+      "Camera.print"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "It prompts the user.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l907-03",
+    "lessonDriveFileId": "1D4dcBTsc_CuNrDb7VDXbuYtRz4yGXERm",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "A user's photo should be loaded when:",
+    "options": [
+      "Never, because photos are loaded only at sign-up",
+      "Only on first install",
+      "The profile screen gains focus or mounts",
+      "Only after logout"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Load when the screen appears.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l902-04",
+    "lessonDriveFileId": "1NYUKqzXzWdyF8VnTYq22FH5uHEUXs-vF",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Why must apps ask permission before using the camera?",
+    "options": [
+      "To slow the app",
+      "To save battery",
+      "It's optional",
+      "To protect user privacy"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "OS privacy rules require consent.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l905-04",
+    "lessonDriveFileId": "1KNVKA2sPWg8MuZpWAoP2poOcmIhYb4DW",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "After taking a photo, the URI points to:",
+    "options": [
+      "Where the image file is stored on the device",
+      "A web search result for the image's subject",
+      "The app store",
+      "A payment page"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Use it to display or save the image.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l907-04",
+    "lessonDriveFileId": "1D4dcBTsc_CuNrDb7VDXbuYtRz4yGXERm",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which storage is simplest for saving a small piece of data like a photo URI?",
+    "options": [
+      "A SQL server in the cloud",
+      "AsyncStorage",
+      "Printed notes",
+      "Git"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Key–value storage for small data.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1002-01",
+    "lessonDriveFileId": "16W18UehetKnner9q--8zrc9Ck-h7ZQyO",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Firebase Cloud Functions let you:",
+    "options": [
+      "Design user interfaces visually in a drag-and-drop editor",
+      "Edit photos",
+      "Run backend code in response to requests or events",
+      "Create fonts"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Serverless backend code.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1005-01",
+    "lessonDriveFileId": "1BbUDPgHpBEsiQcC3Hmp9rPV1jnWBtZWm",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Running functions locally with the emulator helps you:",
+    "options": [
+      "Publish to app stores",
+      "Pay bills",
+      "Design logos",
+      "Test backend code without deploying"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Faster, safer development.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1009-01",
+    "lessonDriveFileId": "1Tz4E1D7y_X9vpDRTuO3EHIo24wztp5DX",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Deploying functions makes them:",
+    "options": [
+      "Available on the internet for your app to call",
+      "Deleted from the project once they are uploaded",
+      "Private forever",
+      "Run only on your laptop"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Deployment publishes the code.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1013-01",
+    "lessonDriveFileId": "1yoB_lCQegfDSS79FQhj_qAveCrY7nFMw",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Why should API keys for services like Google Maps be kept on the server where possible?",
+    "options": [
+      "Keys are free to share",
+      "To prevent misuse and unexpected bills",
+      "It makes the app faster",
+      "It's required by fonts"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Exposed keys can be abused.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1017-01",
+    "lessonDriveFileId": "1jdMkWBuDLbBBahWL-pYdJgQ8WziO8LS6",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Geocoding converts:",
+    "options": [
+      "Images into text",
+      "Code into an app bundle that phones can run",
+      "A place name or address into latitude and longitude",
+      "Payments into points"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Used to centre maps on places.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1017-02",
+    "lessonDriveFileId": "1jdMkWBuDLbBBahWL-pYdJgQ8WziO8LS6",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "react-native-maps provides:",
+    "options": [
+      "Payment forms",
+      "Camera access",
+      "A Fonts component for loading custom typefaces",
+      "A MapView component with markers"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Display maps and pins.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1020-01",
+    "lessonDriveFileId": "1OOVjIVyNpcB8x492uHLXwJlFAR1swk6f",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Publishing an Expo update lets you:",
+    "options": [
+      "Ship JavaScript changes to users without a full store release",
+      "Change the app icon instantly",
+      "Bypass all store rules",
+      "Delete inactive users from your database automatically"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Over-the-air updates for JS changes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1013-02",
+    "lessonDriveFileId": "1yoB_lCQegfDSS79FQhj_qAveCrY7nFMw",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "A 'cautionary tale' about cloud costs teaches you to:",
+    "options": [
+      "Ignore billing because cloud services are always free",
+      "Set budgets and alerts on paid services",
+      "Share your card",
+      "Turn off security"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Monitor spending.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1005-02",
+    "lessonDriveFileId": "1BbUDPgHpBEsiQcC3Hmp9rPV1jnWBtZWm",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Calling a cloud function from the app is usually done with:",
+    "options": [
+      "A printer connected to the developer's computer",
+      "A USB cable",
+      "An HTTP request using fetch",
+      "AsyncStorage"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Functions expose HTTP endpoints.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1017-03",
+    "lessonDriveFileId": "1jdMkWBuDLbBBahWL-pYdJgQ8WziO8LS6",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "A map marker usually represents:",
+    "options": [
+      "A user's password",
+      "A font used for the place names on the map",
+      "An error",
+      "A location such as a restaurant"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Markers pin places.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1009-02",
+    "lessonDriveFileId": "1Tz4E1D7y_X9vpDRTuO3EHIo24wztp5DX",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Separating backend logic into cloud functions helps:",
+    "options": [
+      "Keep secrets off the device and centralise logic",
+      "Make the app offline-only",
+      "Remove the need for a backend",
+      "Slow the app"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Server-side code is more secure.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1002-02",
+    "lessonDriveFileId": "16W18UehetKnner9q--8zrc9Ck-h7ZQyO",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Some Firebase features require the Blaze plan because:",
+    "options": [
+      "They're broken",
+      "They use paid Google Cloud resources",
+      "They're free",
+      "They need Apple approval"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Pay-as-you-go unlocks external calls.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1017-04",
+    "lessonDriveFileId": "1jdMkWBuDLbBBahWL-pYdJgQ8WziO8LS6",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Which process turns 'Lekki, Lagos' into coordinates?",
+    "options": [
+      "Encoding",
+      "Compiling",
+      "Geocoding",
+      "Hashing"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Geocoding maps names to coordinates.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1013-03",
+    "lessonDriveFileId": "1yoB_lCQegfDSS79FQhj_qAveCrY7nFMw",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "What's the best defence against a surprise cloud bill?",
+    "options": [
+      "Sharing keys publicly",
+      "Ignoring usage",
+      "Using one key everywhere",
+      "Budgets, alerts and restricted API keys"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Limits and monitoring prevent shocks.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1020-02",
+    "lessonDriveFileId": "1OOVjIVyNpcB8x492uHLXwJlFAR1swk6f",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Over-the-air updates are limited to:",
+    "options": [
+      "JavaScript and asset changes, not new native code",
+      "Any change at all",
+      "Only native code",
+      "Changing the app's bundle ID"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Native changes need a new build.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1005-03",
+    "lessonDriveFileId": "1BbUDPgHpBEsiQcC3Hmp9rPV1jnWBtZWm",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Why test functions locally before deploying?",
+    "options": [
+      "It's slower and adds nothing to the release process",
+      "To catch bugs quickly without affecting users",
+      "It costs more",
+      "It's required by Apple"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Local emulators are fast and safe.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1105-01",
+    "lessonDriveFileId": "1wOWPfgnNGt6ZXycJprSiY8DjG-qhXYib",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "In a typical Stripe mobile payment flow, the card is tokenised:",
+    "options": [
+      "By emailing the card number",
+      "By storing it in AsyncStorage",
+      "On the client, then the token is sent to your server to charge",
+      "By printing it and posting it to the payment provider"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Raw card data shouldn't touch your server.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1105-02",
+    "lessonDriveFileId": "1wOWPfgnNGt6ZXycJprSiY8DjG-qhXYib",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Why should payments be confirmed on a server, not only in the app?",
+    "options": [
+      "Apps can't connect to the internet",
+      "Servers are faster",
+      "It's required by fonts",
+      "The secret key must stay private on the server"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Secret keys never ship in apps.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1107-01",
+    "lessonDriveFileId": "1H6iz1yKejXBBV9kzmHGJQaNniJxdjIL_",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "A checkout screen should clearly show:",
+    "options": [
+      "The items, total amount and payment form",
+      "Only the company logo and a single Pay button",
+      "Only the settings",
+      "The user's password"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Clarity builds trust.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1114-01",
+    "lessonDriveFileId": "13AJ0cShfDagw4ko91UybJWluEafViFON",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "A cart bug where items duplicate is often caused by:",
+    "options": [
+      "The phone's colour",
+      "Incorrect state updates",
+      "The font",
+      "The Wi-Fi name"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Immutable, correct state updates prevent this.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1118-01",
+    "lessonDriveFileId": "1MSa7Kc48G3D3OvHz3OdBnkaXlh6SbUVI",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Collecting the payee's name helps:",
+    "options": [
+      "Make the app slower",
+      "Hide the payment",
+      "Identify the payment and meet receipt requirements",
+      "Remove the need for any payment security checks"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Good records matter.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1121-01",
+    "lessonDriveFileId": "1tK7BhtTS63a6ClJxbxM3PYEXEAFCLZs1",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "A payment request sends what to your backend?",
+    "options": [
+      "The raw card number",
+      "The user's password",
+      "A photo",
+      "A token and the amount"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Never send raw card data.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1124-01",
+    "lessonDriveFileId": "1-n0wYopKtDb0_EeL-B5vlIx5Jw6abB_5",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Showing a loading state during payment prevents:",
+    "options": [
+      "Users tapping pay twice",
+      "Payments from working",
+      "The keyboard from opening",
+      "Logging"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Disable the button while processing.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1105-03",
+    "lessonDriveFileId": "1wOWPfgnNGt6ZXycJprSiY8DjG-qhXYib",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Publishable keys and secret keys differ because:",
+    "options": [
+      "They are identical keys and can be swapped freely",
+      "The publishable key is safe in the app; the secret key must stay on the server",
+      "The secret key goes in the app",
+      "Neither should be used"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Keep the secret key secret.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1121-02",
+    "lessonDriveFileId": "1tK7BhtTS63a6ClJxbxM3PYEXEAFCLZs1",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "After a successful payment, the app should:",
+    "options": [
+      "Charge again",
+      "Crash",
+      "Clear the cart and show a confirmation",
+      "Show the checkout again"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Close the loop for the user.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1124-02",
+    "lessonDriveFileId": "1-n0wYopKtDb0_EeL-B5vlIx5Jw6abB_5",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "If a payment fails, the app should:",
+    "options": [
+      "Silently do nothing",
+      "Delete the cart so the user must start again",
+      "Log the user out",
+      "Show a clear error and let the user try again"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Graceful failure handling.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1107-02",
+    "lessonDriveFileId": "1H6iz1yKejXBBV9kzmHGJQaNniJxdjIL_",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Storing cart data in context or state lets you:",
+    "options": [
+      "Access it across screens like menu and checkout",
+      "Print it as a receipt once the order is placed",
+      "Encrypt the phone",
+      "Remove it"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Shared state for the cart.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1114-02",
+    "lessonDriveFileId": "13AJ0cShfDagw4ko91UybJWluEafViFON",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Reproducing a bug before fixing it helps you:",
+    "options": [
+      "Hide the bug from users without changing any code",
+      "Understand the cause and confirm the fix works",
+      "Make it worse",
+      "Skip testing"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Reproduce, fix, verify.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1105-04",
+    "lessonDriveFileId": "1wOWPfgnNGt6ZXycJprSiY8DjG-qhXYib",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which key must never be included in a mobile app?",
+    "options": [
+      "The publishable key",
+      "The app name",
+      "The payment provider's secret key",
+      "The version number"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Apps can be decompiled.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1121-03",
+    "lessonDriveFileId": "1tK7BhtTS63a6ClJxbxM3PYEXEAFCLZs1",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "In Nigeria, payment providers similar to Stripe include:",
+    "options": [
+      "Photoshop and Figma",
+      "Git and GitHub",
+      "Expo and Metro",
+      "Paystack and Flutterwave"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Local gateways follow the same token-and-server pattern.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1124-03",
+    "lessonDriveFileId": "1-n0wYopKtDb0_EeL-B5vlIx5Jw6abB_5",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Disabling the Pay button while a payment is processing prevents:",
+    "options": [
+      "Duplicate charges",
+      "Any payment",
+      "Network access",
+      "The receipt"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "One tap, one charge.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1114-03",
+    "lessonDriveFileId": "13AJ0cShfDagw4ko91UybJWluEafViFON",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which approach avoids state bugs when adding items to a cart?",
+    "options": [
+      "Mutate the array directly",
+      "Create a new array instead of mutating the old one",
+      "Use global variables that every screen can change",
+      "Store it in the font file"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Immutable updates trigger correct re-renders.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1203-01",
+    "lessonDriveFileId": "1g3brBp5MXpRg95X_LIFFkm1xVKtcaHr3",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "A standalone build is:",
+    "options": [
+      "A web page that runs only inside the browser",
+      "A design file",
+      "An installable app binary (APK/AAB for Android, IPA for iOS)",
+      "A Git repository"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Binaries are what stores distribute.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1203-02",
+    "lessonDriveFileId": "1g3brBp5MXpRg95X_LIFFkm1xVKtcaHr3",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "EAS Build is Expo's service for:",
+    "options": [
+      "Designing logos",
+      "Storing passwords",
+      "Running SQL queries against your Firebase database",
+      "Building app binaries in the cloud"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "No local native toolchain needed.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1205-01",
+    "lessonDriveFileId": "1KX7QJ5kvl2zMZTQaFuWCEueKZ4LuGgrG",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "An APK can be installed on:",
+    "options": [
+      "Android devices or emulators",
+      "iPhones and iPads through the App Store only",
+      "Smart fridges",
+      "Printers"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "APK is Android's package format.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1206-01",
+    "lessonDriveFileId": "15iS0ZeDxVnm7w0NxAqBPpdqhA_M36A_F",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Publishing to Google Play requires:",
+    "options": [
+      "An Apple ID only",
+      "A Google Play developer account",
+      "A GitHub account only",
+      "No account"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "There's a one-time registration fee.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1206-02",
+    "lessonDriveFileId": "15iS0ZeDxVnm7w0NxAqBPpdqhA_M36A_F",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Google Play now requires new apps to be uploaded as:",
+    "options": [
+      "ZIP files",
+      "PDFs signed with the developer's certificate",
+      "Android App Bundles (AAB)",
+      "EXE files"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "AAB is the required format for new apps.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1208-01",
+    "lessonDriveFileId": "1B9S9IpkyhIJhTrlEvILFDiQK6AxSpgsc",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Publishing to the Apple App Store requires:",
+    "options": [
+      "A Google Play account",
+      "Nothing",
+      "A Facebook page",
+      "An Apple Developer Program membership"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Apple charges an annual fee.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1201-01",
+    "lessonDriveFileId": "14gqaC7TnXGdjN8cy0LVl0Qc__c9qBnTo",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Before releasing, you should set:",
+    "options": [
+      "The app name, icon, splash screen and version",
+      "Only the font",
+      "Only the colour",
+      "Nothing, because the store fills these in for you"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "These appear to users and stores.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1203-03",
+    "lessonDriveFileId": "1g3brBp5MXpRg95X_LIFFkm1xVKtcaHr3",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Each new store release should:",
+    "options": [
+      "Keep the same build number",
+      "Increase the version and build number",
+      "Delete the old app",
+      "Change the bundle ID"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Stores reject duplicate build numbers.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1208-02",
+    "lessonDriveFileId": "1B9S9IpkyhIJhTrlEvILFDiQK6AxSpgsc",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "TestFlight is used to:",
+    "options": [
+      "Design screens",
+      "Process payments",
+      "Distribute iOS beta builds to testers",
+      "Edit and publish videos for the app's store listing"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Apple's beta testing service.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1201-02",
+    "lessonDriveFileId": "14gqaC7TnXGdjN8cy0LVl0Qc__c9qBnTo",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "App store review checks that apps:",
+    "options": [
+      "Use a certain font",
+      "Are written in Swift only",
+      "Have no images, so the download stays small",
+      "Follow the store's guidelines for content, privacy and quality"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Rejections usually cite specific guidelines.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1206-03",
+    "lessonDriveFileId": "15iS0ZeDxVnm7w0NxAqBPpdqhA_M36A_F",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "A privacy policy is required in app stores when:",
+    "options": [
+      "Your app collects user data",
+      "Never, because stores don't check data collection",
+      "Only for games",
+      "Only on iOS"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Most apps need one.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1205-02",
+    "lessonDriveFileId": "1KX7QJ5kvl2zMZTQaFuWCEueKZ4LuGgrG",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Testing the release build on an emulator before submitting helps:",
+    "options": [
+      "Make it faster",
+      "Catch issues that only appear in production builds",
+      "Skip the store review process entirely",
+      "Change the icon"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Release builds can differ from dev builds.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1203-04",
+    "lessonDriveFileId": "1g3brBp5MXpRg95X_LIFFkm1xVKtcaHr3",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Which file format does Google Play require for new app submissions?",
+    "options": [
+      "IPA",
+      "EXE",
+      "AAB",
+      "DMG"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Android App Bundle.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1208-03",
+    "lessonDriveFileId": "1B9S9IpkyhIJhTrlEvILFDiQK6AxSpgsc",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Which service distributes iOS test builds to testers?",
+    "options": [
+      "Expo Snack",
+      "Play Console",
+      "Firebase Hosting",
+      "TestFlight"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "TestFlight is Apple's beta platform.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1206-04",
+    "lessonDriveFileId": "15iS0ZeDxVnm7w0NxAqBPpdqhA_M36A_F",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Why might an app be rejected by a store?",
+    "options": [
+      "It breaks guidelines, such as missing a privacy policy or crashing",
+      "It has a nice icon",
+      "It uses React Native",
+      "It runs too fast on new phones and drains battery"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Follow the guidelines carefully.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1201-03",
+    "lessonDriveFileId": "14gqaC7TnXGdjN8cy0LVl0Qc__c9qBnTo",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "An app's version number should change when:",
+    "options": [
+      "Never",
+      "You release an update",
+      "Every time you open the code",
+      "Only when the icon changes"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Versioning tracks releases.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1301-01",
+    "lessonDriveFileId": "1QAil2WXY8KY8l8SOKVcngLkXTAfcnoWZ",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Polishing an app typically means:",
+    "options": [
+      "Rewriting it in another language",
+      "Deleting features",
+      "Refining details like spacing, colours and feedback",
+      "Removing navigation"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Small details improve perceived quality.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1302-01",
+    "lessonDriveFileId": "1cOqK-1HDlvbqdExct3Yx-UXoUzqOxuan",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Adapting theme colours to a brand helps:",
+    "options": [
+      "Slow the app down so animations look smoother",
+      "Hide content",
+      "Break navigation",
+      "The app feel consistent and recognisable"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Brand consistency builds trust.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1303-01",
+    "lessonDriveFileId": "1fpxjLQxcnw4AuvhAhRZLBUh2iUXerJbe",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "A good settings screen should:",
+    "options": [
+      "Group related options clearly",
+      "Show everything in one long list",
+      "Hide logout",
+      "Use tiny text"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Organisation aids findability.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1304-01",
+    "lessonDriveFileId": "1paOq3lNYqmU4sd9lV-tYC-hCD75IyTJ3",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "A restaurant detail screen improves usability when it:",
+    "options": [
+      "Shows only the restaurant's database ID number",
+      "Shows key info and actions clearly, like menu and directions",
+      "Has no back button",
+      "Uses tiny images"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Prioritise user tasks.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1305-01",
+    "lessonDriveFileId": "14wdGkL_hya2IcvqysdB5zCz26eDyEx1N",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "A favourites bar lets users:",
+    "options": [
+      "Delete the app",
+      "Change language",
+      "Quickly access saved items",
+      "Pay"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Shortcuts to favourites.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1305-02",
+    "lessonDriveFileId": "14wdGkL_hya2IcvqysdB5zCz26eDyEx1N",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Saving favourites per user requires:",
+    "options": [
+      "One global list for everyone",
+      "No storage",
+      "Printing them",
+      "Storing them keyed to the user's ID"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Per-user persistence.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1301-02",
+    "lessonDriveFileId": "1QAil2WXY8KY8l8SOKVcngLkXTAfcnoWZ",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Subtle animations can improve polish by:",
+    "options": [
+      "Making transitions feel smooth and responsive",
+      "Slowing every tap",
+      "Hiding content",
+      "Draining battery intentionally"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Purposeful motion helps.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1302-02",
+    "lessonDriveFileId": "1cOqK-1HDlvbqdExct3Yx-UXoUzqOxuan",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Using theme tokens instead of hard-coded colours makes rebranding:",
+    "options": [
+      "Impossible",
+      "Much faster",
+      "Slower",
+      "Irrelevant"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Change once, update everywhere.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1303-02",
+    "lessonDriveFileId": "1fpxjLQxcnw4AuvhAhRZLBUh2iUXerJbe",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Icons in a settings list help users:",
+    "options": [
+      "Log out accidentally",
+      "Load faster",
+      "Scan options quickly",
+      "Avoid reading"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Visual cues aid scanning.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1304-02",
+    "lessonDriveFileId": "1paOq3lNYqmU4sd9lV-tYC-hCD75IyTJ3",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "An accordion on a detail screen is useful for:",
+    "options": [
+      "Payments",
+      "A login form with fields for email and password",
+      "Camera",
+      "Showing and hiding sections like breakfast, lunch and dinner menus"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "It keeps long content tidy.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1301-03",
+    "lessonDriveFileId": "1QAil2WXY8KY8l8SOKVcngLkXTAfcnoWZ",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Consistent empty states (e.g. 'No favourites yet') help because:",
+    "options": [
+      "Users understand what to do next",
+      "They hide errors",
+      "They load faster",
+      "They remove features"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Guide users when there's no content.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1305-03",
+    "lessonDriveFileId": "14wdGkL_hya2IcvqysdB5zCz26eDyEx1N",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "A heart icon that fills when tapped is an example of:",
+    "options": [
+      "A loading spinner",
+      "Clear visual feedback for a toggle",
+      "An error that appears when the network fails",
+      "A payment"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "State changes should be visible.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1301-04",
+    "lessonDriveFileId": "1QAil2WXY8KY8l8SOKVcngLkXTAfcnoWZ",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Which change most improves an app's perceived quality?",
+    "options": [
+      "Adding more random colours",
+      "Removing all icons",
+      "Consistent spacing, typography and feedback",
+      "Using many fonts"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Consistency signals craft.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1305-04",
+    "lessonDriveFileId": "14wdGkL_hya2IcvqysdB5zCz26eDyEx1N",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Where should favourites be stored so they survive app restarts?",
+    "options": [
+      "Component state only",
+      "A console.log",
+      "Nowhere, because favourites only need to last one session",
+      "Persistent storage such as AsyncStorage or a backend"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "State resets on restart unless persisted.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1302-03",
+    "lessonDriveFileId": "1cOqK-1HDlvbqdExct3Yx-UXoUzqOxuan",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Customising MealsToGo with your own brand and features helps your portfolio because:",
+    "options": [
+      "It shows you can adapt and extend a project",
+      "Copying the course exactly impresses more",
+      "Employers don't look at projects",
+      "It's required by stores"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Unique work stands out.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1502-01",
+    "lessonDriveFileId": "1YzbsVsSe6gnfID15gUQYG-5Mx3pto543",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "React is:",
+    "options": [
+      "A database that stores user data on the server",
+      "A JavaScript library for building user interfaces",
+      "A server operating system",
+      "A CSS framework"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "React builds UIs from components.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1502-02",
+    "lessonDriveFileId": "1YzbsVsSe6gnfID15gUQYG-5Mx3pto543",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "In React, a component is:",
+    "options": [
+      "A database table",
+      "A CSS file",
+      "A reusable piece of UI, usually a function returning JSX",
+      "A server that sends pages to the browser"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Components compose UIs.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1506-01",
+    "lessonDriveFileId": "1Ui4pgHeVcyo-NC9RHVsCMgn-Ugke4EUW",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "create-react-app was used to:",
+    "options": [
+      "Build iOS binaries",
+      "Design logos",
+      "Host databases",
+      "Scaffold a new React web project"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Modern alternatives include Vite.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1510-01",
+    "lessonDriveFileId": "1SM2YHnfX0WfSRZOntspuFeu_Fv4X0Okx",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Props in React are:",
+    "options": [
+      "Inputs passed from a parent component to a child",
+      "Global variables",
+      "CSS classes applied to elements on the page",
+      "Database rows"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Props configure components.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1510-02",
+    "lessonDriveFileId": "1SM2YHnfX0WfSRZOntspuFeu_Fv4X0Okx",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "State differs from props because state:",
+    "options": [
+      "Is passed from the parent only",
+      "Is managed inside the component and can change",
+      "Can never change",
+      "Is a CSS file"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "State is internal and mutable via setters.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1518-01",
+    "lessonDriveFileId": "1lKUvJbMQA6ulBqlJJN5w7DO_wq-Prq-Z",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Keeping dependencies up to date matters because:",
+    "options": [
+      "Old versions are faster",
+      "Updates always break apps",
+      "Updates fix bugs and security issues",
+      "It's never needed"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Update regularly and test.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1521-01",
+    "lessonDriveFileId": "1xGpps0x71OehWTMgPwSqzcWAfwrvdNgH",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Deploying a React web app makes it:",
+    "options": [
+      "Private to your laptop",
+      "Deleted",
+      "Offline only",
+      "Available on the internet"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Hosts like Netlify or Vercel serve built apps.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1523-01",
+    "lessonDriveFileId": "1UU0444MOezYAj8Oa5MiOdkPtXuZbPjCm",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Hooks were introduced in React to:",
+    "options": [
+      "Let function components use state and lifecycle features",
+      "Replace JavaScript",
+      "Remove components",
+      "Style apps without writing any CSS or styles"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "useState, useEffect and more.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1524-01",
+    "lessonDriveFileId": "1Mu1amvWIO-TCrwP7ffPfb-uaNr0ZKcay",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "The dependency array in useEffect controls:",
+    "options": [
+      "The component's colour",
+      "When the effect re-runs",
+      "The props",
+      "The file name"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Empty array = run once after mount.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1531-01",
+    "lessonDriveFileId": "1OKuN1dzEGE5KOs1yrlHaNZzilhR3alsi",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Custom hooks let you:",
+    "options": [
+      "Style text consistently across components",
+      "Create databases",
+      "Reuse stateful logic across components",
+      "Replace JSX"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Extract logic into useSomething functions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1510-03",
+    "lessonDriveFileId": "1SM2YHnfX0WfSRZOntspuFeu_Fv4X0Okx",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "When a component's state changes, React:",
+    "options": [
+      "Deletes it",
+      "Reloads the browser",
+      "Ignores it",
+      "Re-renders the component"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Rendering reflects new state.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1523-02",
+    "lessonDriveFileId": "1UU0444MOezYAj8Oa5MiOdkPtXuZbPjCm",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Hooks must be called:",
+    "options": [
+      "At the top level of a component, not inside loops or conditions",
+      "Inside loops only, so they run once per item",
+      "Only in class components",
+      "Anywhere at random"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Rules of Hooks keep order consistent.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1502-03",
+    "lessonDriveFileId": "1YzbsVsSe6gnfID15gUQYG-5Mx3pto543",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Which concept is shared by React and React Native?",
+    "options": [
+      "HTML div elements",
+      "Components, props and state",
+      "CSS files",
+      "Browser DOM APIs"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Core React concepts transfer directly.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1510-04",
+    "lessonDriveFileId": "1SM2YHnfX0WfSRZOntspuFeu_Fv4X0Okx",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "A child component needs data from its parent. Use:",
+    "options": [
+      "Global CSS",
+      "A database query in the parent's file name",
+      "Props",
+      "Git"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Pass data down via props.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1524-02",
+    "lessonDriveFileId": "1Mu1amvWIO-TCrwP7ffPfb-uaNr0ZKcay",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "useEffect(() => {...}, []) runs:",
+    "options": [
+      "On every render",
+      "Never",
+      "Only on unmount",
+      "Once after the first render"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Empty dependencies run once.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1531-02",
+    "lessonDriveFileId": "1OKuN1dzEGE5KOs1yrlHaNZzilhR3alsi",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Why create a custom hook like useFetch?",
+    "options": [
+      "To reuse data-fetching logic in many components",
+      "To style components",
+      "To deploy apps to the store automatically",
+      "To replace React"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Custom hooks share logic cleanly.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1601-01",
+    "lessonDriveFileId": "1YFrNAigDRJpuOlwW9cg5q8pRJK8flLHu",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "A Git repository is:",
+    "options": [
+      "A cloud server",
+      "A project folder whose history Git tracks",
+      "A design file",
+      "A phone used to test apps during development"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Repos contain files plus history.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1601-02",
+    "lessonDriveFileId": "1YFrNAigDRJpuOlwW9cg5q8pRJK8flLHu",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "git clone is used to:",
+    "options": [
+      "Delete a repository",
+      "Merge two apps",
+      "Copy a remote repository to your computer",
+      "Install Node.js and npm on your computer"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Clone downloads the repo and history.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1601-03",
+    "lessonDriveFileId": "1YFrNAigDRJpuOlwW9cg5q8pRJK8flLHu",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "git push sends:",
+    "options": [
+      "Emails to everyone who watches the repository",
+      "Payments",
+      "Images to Instagram",
+      "Your local commits to a remote repository"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Push uploads commits.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1601-04",
+    "lessonDriveFileId": "1YFrNAigDRJpuOlwW9cg5q8pRJK8flLHu",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "git pull:",
+    "options": [
+      "Fetches and merges changes from a remote repository",
+      "Deletes local changes always",
+      "Creates a new app",
+      "Formats code to match the team's style rules"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Keep your copy up to date.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1603-01",
+    "lessonDriveFileId": "1gF_-X8Qc22JZ66Oy70lPHOF0y-mpvb5P",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "A branch in Git lets you:",
+    "options": [
+      "Delete history",
+      "Work on changes separately from the main code",
+      "Encrypt files so others can't read your code",
+      "Rename the app"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Branches isolate features.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1603-02",
+    "lessonDriveFileId": "1gF_-X8Qc22JZ66Oy70lPHOF0y-mpvb5P",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "A pull request on GitHub is:",
+    "options": [
+      "A request to delete code",
+      "A payment",
+      "A request to review and merge changes from one branch into another",
+      "A bug report filed by a user on the issue tracker"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "PRs enable code review.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1603-03",
+    "lessonDriveFileId": "1gF_-X8Qc22JZ66Oy70lPHOF0y-mpvb5P",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "A merge conflict happens when:",
+    "options": [
+      "The internet is slow",
+      "A file is renamed only",
+      "The app crashes because of a syntax error",
+      "Two changes edit the same lines differently"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "You must choose the correct result.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1601-05",
+    "lessonDriveFileId": "1YFrNAigDRJpuOlwW9cg5q8pRJK8flLHu",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "git status shows:",
+    "options": [
+      "Which files changed and which are staged",
+      "Your GitHub followers",
+      "The weather forecast for your current location",
+      "App store reviews"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Check before committing.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1601-06",
+    "lessonDriveFileId": "1YFrNAigDRJpuOlwW9cg5q8pRJK8flLHu",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "git add is used to:",
+    "options": [
+      "Delete files",
+      "Stage changes for the next commit",
+      "Push code straight to the remote repository",
+      "Clone a repo"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Staging selects what to commit.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1603-04",
+    "lessonDriveFileId": "1gF_-X8Qc22JZ66Oy70lPHOF0y-mpvb5P",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Good commit messages:",
+    "options": [
+      "Say 'stuff' so they stay short and quick",
+      "Are always empty",
+      "Describe clearly what changed and why",
+      "Contain passwords"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Helpful history for teammates.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1601-07",
+    "lessonDriveFileId": "1YFrNAigDRJpuOlwW9cg5q8pRJK8flLHu",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "A .gitignore file:",
+    "options": [
+      "Deletes the repository",
+      "Adds colours",
+      "Runs your tests before every commit you make",
+      "Lists files Git should not track, like node_modules or secrets"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Keeps repos clean and safe.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1603-05",
+    "lessonDriveFileId": "1gF_-X8Qc22JZ66Oy70lPHOF0y-mpvb5P",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Why work on a feature branch rather than main?",
+    "options": [
+      "To keep main stable while you develop",
+      "Branches are faster",
+      "Main can't be edited",
+      "It's required by Expo"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Merge when ready and reviewed.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1601-08",
+    "lessonDriveFileId": "1YFrNAigDRJpuOlwW9cg5q8pRJK8flLHu",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Which command uploads your commits to GitHub?",
+    "options": [
+      "git clone",
+      "git push",
+      "git init",
+      "git status"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Push sends commits to the remote.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1603-06",
+    "lessonDriveFileId": "1gF_-X8Qc22JZ66Oy70lPHOF0y-mpvb5P",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "What should you do when you get a merge conflict?",
+    "options": [
+      "Delete the repository",
+      "Ignore it and push your branch anyway",
+      "Edit the file to keep the correct changes, then commit",
+      "Force push without checking"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Resolve deliberately.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1601-09",
+    "lessonDriveFileId": "1YFrNAigDRJpuOlwW9cg5q8pRJK8flLHu",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Which file should list node_modules so it isn't committed?",
+    "options": [
+      "package.json",
+      "README.md",
+      "app.json",
+      ".gitignore"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Dependencies are reinstalled, not committed.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1701-01",
+    "lessonDriveFileId": "1hrtU-wizkiMpZHU98z6-bPs3eoOXyhh5",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Contributing to open source helps developers:",
+    "options": [
+      "Gain real-world experience and build a public track record",
+      "Avoid learning new tools or technologies",
+      "Hide their code",
+      "Get paid automatically"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Contributions show skills publicly.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1702-01",
+    "lessonDriveFileId": "13eQnduoUGDfH68bwzkf-O51aeI4ngiZ2",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "A good first open-source contribution is often:",
+    "options": [
+      "Rewriting the whole project",
+      "Fixing documentation or a small 'good first issue'",
+      "Deleting files the project doesn't seem to use",
+      "Changing the licence"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Start small and follow the project's guidelines.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1701-02",
+    "lessonDriveFileId": "1hrtU-wizkiMpZHU98z6-bPs3eoOXyhh5",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Before contributing to a project, you should read its:",
+    "options": [
+      "Private emails",
+      "Passwords and private keys used by maintainers",
+      "CONTRIBUTING guide and code of conduct",
+      "Payment history"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Guidelines explain how to contribute.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l202-02",
+    "lessonDriveFileId": "1NPxfk8AC9W-FWgFBB9i7Dp7qG-BSeH48",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Hybrid apps built in a WebView often felt slower than native apps because:",
+    "options": [
+      "They used too little JavaScript",
+      "They had no internet access",
+      "They were written in Swift",
+      "They render web pages instead of native components"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "React Native addressed this by rendering native views.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l204-05",
+    "lessonDriveFileId": "1kaox8CdCA6ftvC7jd5va754E6SJJM--n",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which component would you use to show a photo from a URL?",
+    "options": [
+      "Image",
+      "Text",
+      "TextInput",
+      "SafeAreaView"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Image renders local or remote pictures.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l207-05",
+    "lessonDriveFileId": "1Keac6S3Dfota1RZgxYnRUwIS7dI9sOSB",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "How do you apply two style objects to one component?",
+    "options": [
+      "Use two style props",
+      "Pass an array: style={[styles.a, styles.b]}",
+      "Concatenate strings",
+      "Use a separate CSS file imported at the top"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Later styles in the array override earlier ones.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l405-02",
+    "lessonDriveFileId": "13mGZ4KbRu6wM6IJickWq3d4QZOO06P48",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Expo Snack is most useful for:",
+    "options": [
+      "Publishing to app stores",
+      "Hosting production databases for large apps",
+      "Sharing and testing small code examples quickly in a browser",
+      "Processing payments"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "No local setup needed.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l416-02",
+    "lessonDriveFileId": "1YD0PUELABvjxcXM2TjSoUEZiu-2e0reU",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Calling a state setter like setSubject(value) causes:",
+    "options": [
+      "The app to restart",
+      "Nothing to happen until the app is restarted",
+      "The value to be deleted",
+      "The component to re-render with the new value"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "State updates trigger re-renders.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l427-02",
+    "lessonDriveFileId": "1rcn_03QiarkB0Uf5HkhVUp6FdvZQbbvN",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which Expo-compatible API triggers device vibration?",
+    "options": [
+      "Vibration from react-native",
+      "AsyncStorage",
+      "FlatList with a vibrate prop set to true",
+      "StyleSheet"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Vibration.vibrate() provides haptic feedback.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l509-02",
+    "lessonDriveFileId": "15uCShm0gqFDmSoffw-lGCict3L-grRhI",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which tool formats your code automatically on save in VS Code?",
+    "options": [
+      "Git",
+      "Prettier",
+      "Android Studio",
+      "Xcode"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Prettier enforces consistent formatting.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l506-03",
+    "lessonDriveFileId": "1etPVVO46EWQ2k7-VJ9fGZFObgVHfFndV",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which tool provides the official Android emulator?",
+    "options": [
+      "Xcode",
+      "Expo Snack",
+      "Android Studio",
+      "GitHub"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Android Studio's AVD Manager creates emulators.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l603-02",
+    "lessonDriveFileId": "1zJe1VbLYBuCP9br3IFR93hkdRz8M1I37",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Organising a large app by feature folders (e.g. restaurants, account) helps because:",
+    "options": [
+      "Files load faster",
+      "Expo requires it",
+      "It hides bugs so they never reach users",
+      "Related code stays together and is easier to find"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Feature-based structure scales well.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l708-02",
+    "lessonDriveFileId": "1D8e34uX5m4c_oU4cxhwKN-64xuj7Ofbm",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Why can content appear under the status bar on Android?",
+    "options": [
+      "The layout doesn't account for the status bar height",
+      "The phone is broken",
+      "Custom fonts are missing from the project",
+      "The app has no internet"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Use SafeAreaView or StatusBar height offsets.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l725-02",
+    "lessonDriveFileId": "1ka2CgxbZE6uv7LhIm7kW3IL07Lf-llvp",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A benefit of styled-components is:",
+    "options": [
+      "They remove the need for components",
+      "Styles live next to the components that use them and can use theme values",
+      "They replace JavaScript",
+      "They only work on iOS and can't use themes"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Co-located, themeable styles.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l735-02",
+    "lessonDriveFileId": "1j6TnibYJG_hvLg9Ohh8QgL86D_f18JF6",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Why must custom fonts finish loading before rendering text?",
+    "options": [
+      "Fonts don't matter because text always looks the same",
+      "It speeds up loading",
+      "Otherwise text may render with the wrong font or crash",
+      "It's required by Git"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Wait for useFonts to return true.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l741-02",
+    "lessonDriveFileId": "13ykrM9_5_AzDs2Yhwf1QwzfZYBNjJmBc",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A Spacer component taking 'size' and 'position' props is an example of:",
+    "options": [
+      "A database model",
+      "A navigation stack",
+      "A payment method",
+      "A reusable utility component"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Small utilities enforce consistency.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l753-02",
+    "lessonDriveFileId": "18mjbrlO-qEFIL-_mjJD4TpLsN-N7VuGj",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which library is commonly used for navigation in React Native apps?",
+    "options": [
+      "React Navigation",
+      "React DOM",
+      "Express",
+      "jQuery"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "It provides stack, tab and drawer navigators.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l852-03",
+    "lessonDriveFileId": "108Mpg2YCmjFx-ItH5OxgAT23OHZVmQnI",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Why shouldn't you store user passwords yourself when using Firebase Auth?",
+    "options": [
+      "Passwords aren't needed",
+      "Firebase handles secure password storage and hashing",
+      "AsyncStorage is safer",
+      "It's faster to store them in plain text"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Use the auth provider's secure handling.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l856-02",
+    "lessonDriveFileId": "14a5P1opuJPpRMQ15sWlFHygS_9CelKet",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which component would you use for a full-screen photo behind a login form?",
+    "options": [
+      "FlatList",
+      "TextInput",
+      "ImageBackground",
+      "Vibration"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It renders children over an image.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l859-03",
+    "lessonDriveFileId": "1Tx4M-zvmxjZjGvepDpHTHnadZkhnyqJG",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "A good login error message is:",
+    "options": [
+      "Error 0x8F2: authentication module failure",
+      "Something happened",
+      "Your password is 'abc123'",
+      "Email or password is incorrect. Please try again."
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Clear and safe, without leaking details.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l904-04",
+    "lessonDriveFileId": "1PxGf5aVcDCQ74Rf5k3LW3_T7kNYyf-GI",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which component shows the live camera preview in Expo?",
+    "options": [
+      "Camera (CameraView)",
+      "MapView",
+      "FlatList",
+      "Text with a camera icon placed inside it"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "expo-camera renders the preview.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1002-03",
+    "lessonDriveFileId": "16W18UehetKnner9q--8zrc9Ck-h7ZQyO",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Firebase Cloud Functions are an example of:",
+    "options": [
+      "A design system",
+      "Serverless computing",
+      "A mobile emulator",
+      "A font library"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "You deploy functions without managing servers.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1017-05",
+    "lessonDriveFileId": "1jdMkWBuDLbBBahWL-pYdJgQ8WziO8LS6",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "A MapView centred on a city uses which values?",
+    "options": [
+      "Font size and colour of the map labels",
+      "Width and height only",
+      "Latitude and longitude with a zoom delta",
+      "Username and password"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Region needs coordinates and deltas.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1107-03",
+    "lessonDriveFileId": "1H6iz1yKejXBBV9kzmHGJQaNniJxdjIL_",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Why should the order total be recalculated on the server?",
+    "options": [
+      "Servers can't add numbers",
+      "It's faster on the phone",
+      "It's optional",
+      "The client could be tampered with"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Never trust client-side prices.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1118-02",
+    "lessonDriveFileId": "1MSa7Kc48G3D3OvHz3OdBnkaXlh6SbUVI",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which data should never be logged to the console in a payment flow?",
+    "options": [
+      "Full card numbers",
+      "The order ID",
+      "The cart item count",
+      "A success message"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Card data must be protected.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1206-05",
+    "lessonDriveFileId": "15iS0ZeDxVnm7w0NxAqBPpdqhA_M36A_F",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "An app's unique identifier on Android is its:",
+    "options": [
+      "App icon",
+      "Package name (e.g. com.company.app)",
+      "Font name used in the app's title bar",
+      "Splash colour"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "It can't change after publishing.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1203-05",
+    "lessonDriveFileId": "1g3brBp5MXpRg95X_LIFFkm1xVKtcaHr3",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Which Expo service builds iOS and Android binaries in the cloud?",
+    "options": [
+      "Expo Snack",
+      "Expo Go",
+      "EAS Build",
+      "Metro"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "EAS handles signing and builds.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1303-03",
+    "lessonDriveFileId": "1fpxjLQxcnw4AuvhAhRZLBUh2iUXerJbe",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Which element belongs on a user's settings screen?",
+    "options": [
+      "The app's source code",
+      "Another user's profile",
+      "The store review form",
+      "A logout option"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Account controls live in settings.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1304-03",
+    "lessonDriveFileId": "1paOq3lNYqmU4sd9lV-tYC-hCD75IyTJ3",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "A detail screen loaded from a list item usually receives its data via:",
+    "options": [
+      "Navigation route params",
+      "A printer",
+      "AsyncStorage only",
+      "The app icon"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Pass the selected item through navigation.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1506-02",
+    "lessonDriveFileId": "1Ui4pgHeVcyo-NC9RHVsCMgn-Ugke4EUW",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Which tool is a popular modern alternative to create-react-app for new web projects?",
+    "options": [
+      "Xcode",
+      "Vite",
+      "Android Studio",
+      "EAS"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Vite offers fast builds and dev server.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1521-02",
+    "lessonDriveFileId": "1xGpps0x71OehWTMgPwSqzcWAfwrvdNgH",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Before deploying a React web app, you create:",
+    "options": [
+      "A Git branch only",
+      "A new font",
+      "A production build",
+      "An APK"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Builds are optimised for production.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1603-07",
+    "lessonDriveFileId": "1gF_-X8Qc22JZ66Oy70lPHOF0y-mpvb5P",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "A pull request is mainly used for:",
+    "options": [
+      "Downloading a repo",
+      "Deleting branches",
+      "Formatting code automatically before saving",
+      "Reviewing changes before merging them"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "PRs enable discussion and review.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1601-10",
+    "lessonDriveFileId": "1YFrNAigDRJpuOlwW9cg5q8pRJK8flLHu",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Which command starts tracking a new project with Git?",
+    "options": [
+      "git init",
+      "git push",
+      "git pull",
+      "git merge"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Init creates a new repository.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l1702-02",
+    "lessonDriveFileId": "13eQnduoUGDfH68bwzkf-O51aeI4ngiZ2",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Open-source contributions on your GitHub profile help employers see:",
+    "options": [
+      "Your passwords",
+      "Your real code and collaboration skills",
+      "Your salary history and previous pay rises",
+      "Nothing useful"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Public work demonstrates ability.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "mobile-app-development-l301-02",
+    "lessonDriveFileId": "1tc14Rzkb9eReJh2MsFbfU4zlVaJhw0la",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "When would you choose the React Native CLI over Expo?",
+    "options": [
+      "When you want the easiest setup",
+      "When you only build websites",
+      "When you need custom native modules Expo doesn't support",
+      "Never, because Expo supports every native module"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "The CLI gives full native control (though Expo's dev builds now cover many cases).",
+    "pools": [
+      "exam"
+    ]
+  }
+]

@@ -1,0 +1,3564 @@
+[
+  {
+    "key": "smart-phone-videography-l103-01",
+    "lessonDriveFileId": "15iAU_3Rnk0DYU3aYskAeID3-BnIV_DQb",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "What makes a smartphone a powerful filmmaking tool?",
+    "options": [
+      "It's always with you and combines a good camera, apps and instant sharing",
+      "It has no limitations at all",
+      "It always beats cinema cameras",
+      "It records perfect video in any light without help"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Portability and an all-in-one workflow make phones ideal for many video jobs.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l104-01",
+    "lessonDriveFileId": "1oK_qBJeFOHmI-MCiSNMHzYAHnP5xtbq8",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Why study exceptional examples of mobile videos?",
+    "options": [
+      "To copy them frame by frame and repost",
+      "To see what's possible and learn techniques you can copy",
+      "To discourage yourself",
+      "Because phones can't make good videos"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Good examples inspire and teach technique.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l102-01",
+    "lessonDriveFileId": "1oqQMMKkNKjAdr66IEqAdD9CD9lIjkDPZ",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "What's the main lesson of a creator's journey into mobile filmmaking?",
+    "options": [
+      "You must buy a cinema camera first",
+      "Only experts can make videos",
+      "You can start creating professional work with the gear you already own",
+      "You need expensive cinema cameras before you start"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Start with what you have and improve through practice.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l103-02",
+    "lessonDriveFileId": "15iAU_3Rnk0DYU3aYskAeID3-BnIV_DQb",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Which limitation of smartphones should you plan around?",
+    "options": [
+      "They can't record sound",
+      "They can't record video",
+      "They can't be held",
+      "Small sensors struggle in low light"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Light carefully to get clean images.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l302-01",
+    "lessonDriveFileId": "1afsSbdHOqHyi_YlImLPciHzQ9Nt4z97V",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which aspect ratio is best for TikTok, Reels and WhatsApp Status?",
+    "options": [
+      "9:16 (vertical)",
+      "16:9 (horizontal)",
+      "4:3",
+      "1:1 only"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Vertical video fills phone screens on these platforms.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l302-02",
+    "lessonDriveFileId": "1afsSbdHOqHyi_YlImLPciHzQ9Nt4z97V",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A 16:9 video is best suited to:",
+    "options": [
+      "Instagram Stories",
+      "YouTube and TV screens",
+      "WhatsApp Status",
+      "Phone wallpapers"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "16:9 is the standard widescreen format.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l302-03",
+    "lessonDriveFileId": "1afsSbdHOqHyi_YlImLPciHzQ9Nt4z97V",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "1080p resolution means:",
+    "options": [
+      "1080 × 720 pixels",
+      "4K",
+      "1920 × 1080 pixels",
+      "720 × 480 pixels"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Full HD is 1920 × 1080.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l303-01",
+    "lessonDriveFileId": "1gcA2gcoDLMeFBvO8dyjyy3wldkeedjO1",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which frame rate gives a classic cinematic look?",
+    "options": [
+      "60 fps",
+      "120 fps",
+      "240 fps",
+      "24 fps"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "24 fps is the film standard.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l303-02",
+    "lessonDriveFileId": "1gcA2gcoDLMeFBvO8dyjyy3wldkeedjO1",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Why record at 60 fps or higher?",
+    "options": [
+      "To allow smooth slow motion later",
+      "To reduce file size",
+      "To make colours brighter",
+      "To record better audio"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "More frames can be slowed down smoothly.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l304-01",
+    "lessonDriveFileId": "14toGfXug-OjWM-QozXHq8mWIZt7zs1RC",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Exposure describes:",
+    "options": [
+      "The sharpness of the lens",
+      "How bright or dark the image is",
+      "The audio volume",
+      "The video length"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Correct exposure keeps detail in highlights and shadows.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l304-02",
+    "lessonDriveFileId": "14toGfXug-OjWM-QozXHq8mWIZt7zs1RC",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Locking exposure (AE lock) on your phone helps:",
+    "options": [
+      "Increase zoom",
+      "Record stereo sound",
+      "Stop brightness changing mid-shot",
+      "Add filters"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Auto exposure shifts can ruin a shot.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l305-01",
+    "lessonDriveFileId": "1Du43fv9Y69OPmoFObmUEqduyH7pN_z1B",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "White balance controls:",
+    "options": [
+      "How loud the audio is recorded",
+      "How many frames are recorded each second",
+      "Resolution",
+      "How accurately colours are reproduced under different light"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Wrong white balance makes footage too blue or orange.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l306-01",
+    "lessonDriveFileId": "1Yk2fhV9veRlal6CHZKnJ2zhVBPGGkkKY",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "The rule of thirds suggests placing your subject:",
+    "options": [
+      "Along the grid lines or where they cross",
+      "Always in the exact centre",
+      "At the very edge",
+      "Out of frame"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Off-centre placement creates balance and interest.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l307-01",
+    "lessonDriveFileId": "1dgzZfuaQCjzfI3Y8ZRk93tK86VV6ju3b",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A low-angle shot (camera looking up) usually makes the subject appear:",
+    "options": [
+      "Small and weak",
+      "Powerful or dominant",
+      "Far away",
+      "Blurry"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Looking up gives a sense of strength.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l308-01",
+    "lessonDriveFileId": "1QSmzNaiTuTPGgjhkpQGfDCz3L0_W_nRb",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A pan is:",
+    "options": [
+      "Moving the camera forward",
+      "Tilting the camera up and down from a fixed position",
+      "Turning the camera horizontally from a fixed position",
+      "Moving the camera up and down"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Tilt is vertical; pan is horizontal.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l309-01",
+    "lessonDriveFileId": "1hmSUNNmgqUqiZAR5xU_876B2tDDwUFpu",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Why is audio so important in video?",
+    "options": [
+      "Most viewers watch with sound off, so audio matters less",
+      "Videos have no sound",
+      "Platforms remove audio",
+      "Viewers forgive average images more than bad sound"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Clear sound keeps people watching.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l309-02",
+    "lessonDriveFileId": "1hmSUNNmgqUqiZAR5xU_876B2tDDwUFpu",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "The simplest way to improve dialogue audio is to:",
+    "options": [
+      "Get the microphone closer to the speaker",
+      "Shout",
+      "Record further away",
+      "Turn the volume to zero"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Distance kills audio quality.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l302-04",
+    "lessonDriveFileId": "1afsSbdHOqHyi_YlImLPciHzQ9Nt4z97V",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "You're filming for Instagram Reels. Which orientation should you shoot in?",
+    "options": [
+      "Horizontal",
+      "Vertical",
+      "Diagonal",
+      "Square only"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Reels are vertical.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l303-03",
+    "lessonDriveFileId": "1gcA2gcoDLMeFBvO8dyjyy3wldkeedjO1",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Footage shot at 120 fps and played at 30 fps will appear:",
+    "options": [
+      "Twice as fast",
+      "The same speed",
+      "Four times slower",
+      "Four times faster"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "120 ÷ 30 = 4× slow motion.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l304-03",
+    "lessonDriveFileId": "14toGfXug-OjWM-QozXHq8mWIZt7zs1RC",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A bright sky turns completely white in your shot. This is:",
+    "options": [
+      "Underexposure",
+      "Bad white balance",
+      "Low frame rate",
+      "Overexposure"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Highlights have lost detail.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l305-02",
+    "lessonDriveFileId": "1Du43fv9Y69OPmoFObmUEqduyH7pN_z1B",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Footage shot indoors under bulbs looks too orange. What should you adjust?",
+    "options": [
+      "White balance",
+      "Frame rate",
+      "Aspect ratio",
+      "Resolution"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Correct the colour temperature.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l306-02",
+    "lessonDriveFileId": "1Yk2fhV9veRlal6CHZKnJ2zhVBPGGkkKY",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Leaving space in front of a person's face in the direction they look is called:",
+    "options": [
+      "Headroom only",
+      "Lead room (looking room)",
+      "Dutch angle",
+      "Headroom above the person"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "It feels natural and balanced.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l307-02",
+    "lessonDriveFileId": "1dgzZfuaQCjzfI3Y8ZRk93tK86VV6ju3b",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A bird's-eye shot is filmed:",
+    "options": [
+      "From ground level",
+      "From behind the subject",
+      "From directly above",
+      "Through a window"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Top-down shots are popular for food and products.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l308-02",
+    "lessonDriveFileId": "1QSmzNaiTuTPGgjhkpQGfDCz3L0_W_nRb",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Moving the whole camera towards the subject is called:",
+    "options": [
+      "A tilt from a fixed position",
+      "A pan",
+      "A cut",
+      "A dolly or push-in"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Dolly moves the camera itself.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l309-03",
+    "lessonDriveFileId": "1hmSUNNmgqUqiZAR5xU_876B2tDDwUFpu",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which is the best way to reduce wind noise outdoors?",
+    "options": [
+      "Use a microphone with a windshield (deadcat)",
+      "Record further away",
+      "Turn up the gain",
+      "Cover the phone with your hand"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Windshields block gusts.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l402-01",
+    "lessonDriveFileId": "1KE6wZsqqGATo2Ea3vJQSn2nZFAIuOAcb",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "When choosing a phone for video, which feature matters most?",
+    "options": [
+      "The phone's colour",
+      "Good stabilisation and video recording options",
+      "Number of ringtones",
+      "The colour and design of the case"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Stability and recording controls drive quality.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l404-01",
+    "lessonDriveFileId": "1aT3c-XMh53p9TR1lQJkVbz1OfWjuXqwU",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Why avoid digital zoom when filming?",
+    "options": [
+      "It improves sharpness",
+      "It's always optical",
+      "It enlarges pixels and reduces image quality",
+      "It drains the battery faster than optical zoom"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Move closer instead, or use optical lenses.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l404-02",
+    "lessonDriveFileId": "1aT3c-XMh53p9TR1lQJkVbz1OfWjuXqwU",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "OIS stands for:",
+    "options": [
+      "Online image storage",
+      "Original image size",
+      "Output image setting",
+      "Optical image stabilisation"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "OIS uses hardware to reduce shake.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l405-01",
+    "lessonDriveFileId": "10CJhyD-5HiZiTvL5WcV1qOy1gNbyGrpr",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which accessory most improves footage stability?",
+    "options": [
+      "A tripod or gimbal",
+      "A pop socket",
+      "A phone case",
+      "A screen protector"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Stable shots look professional.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l406-01",
+    "lessonDriveFileId": "1LBzRYWUoV0vDkitEb7K-qSw3oOLfa5ci",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "A gimbal:",
+    "options": [
+      "Records audio",
+      "Uses motors to keep the phone steady while moving",
+      "Adds light to dark scenes automatically",
+      "Zooms the lens"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Gimbals smooth walking and moving shots.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l407-01",
+    "lessonDriveFileId": "10b_9hjHQAdVDbisuFr4O6Cki1jvic7YF",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Gimbal apps can add features like:",
+    "options": [
+      "More phone storage",
+      "Extra storage and longer battery life",
+      "Face tracking and motion timelapse",
+      "Faster charging"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Apps unlock smart modes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l408-01",
+    "lessonDriveFileId": "1iVoWmR_G_DF5CZFqvsicF4qqyDHhxZbk",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "A clip-on wide-angle lens helps you:",
+    "options": [
+      "Record better audio",
+      "Zoom in far",
+      "Charge faster",
+      "Fit more into the frame"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Useful in small rooms.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l408-02",
+    "lessonDriveFileId": "1iVoWmR_G_DF5CZFqvsicF4qqyDHhxZbk",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "A macro lens lets you:",
+    "options": [
+      "Film very close-up details",
+      "Film far away",
+      "Record stereo audio",
+      "Remove noise"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Great for products and textures.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l409-01",
+    "lessonDriveFileId": "1kdflakTVLNWOZ70o_pViDGkiz0pzDUvO",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "A lavalier (lapel) microphone is best for:",
+    "options": [
+      "Recording a whole stadium",
+      "Recording one person speaking clearly",
+      "Lighting a scene",
+      "Stabilising shots"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "It clips near the mouth.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l410-01",
+    "lessonDriveFileId": "1A2iIqfswe6VvSPYMFhDQepFOTK27D8gZ",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "An LED light on your phone helps by:",
+    "options": [
+      "Recording sound",
+      "Making the phone record in slow motion",
+      "Adding consistent light to your subject",
+      "Stabilising"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Light improves image quality on small sensors.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l410-02",
+    "lessonDriveFileId": "1A2iIqfswe6VvSPYMFhDQepFOTK27D8gZ",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Soft light is preferred for faces because it:",
+    "options": [
+      "Makes skin look oily",
+      "Creates strong contrast",
+      "Removes colour",
+      "Reduces harsh shadows"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Diffused light is flattering.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l405-02",
+    "lessonDriveFileId": "10CJhyD-5HiZiTvL5WcV1qOy1gNbyGrpr",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "A small phone tripod is especially useful for:",
+    "options": [
+      "Talking-head videos and timelapses",
+      "Shots from a moving car",
+      "Underwater filming",
+      "Running shots and fast action"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "It holds the phone still.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l402-02",
+    "lessonDriveFileId": "1KE6wZsqqGATo2Ea3vJQSn2nZFAIuOAcb",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which phone feature most improves low-light video?",
+    "options": [
+      "More RAM and a bigger screen",
+      "A larger sensor and good night mode",
+      "A bigger battery",
+      "A brighter case"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Sensor size affects light gathering.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l404-03",
+    "lessonDriveFileId": "1aT3c-XMh53p9TR1lQJkVbz1OfWjuXqwU",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "The best way to get a closer shot with a phone is usually to:",
+    "options": [
+      "Use maximum digital zoom",
+      "Crop later at 400%",
+      "Move the phone closer",
+      "Shout at the subject"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Physical distance keeps quality.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l406-02",
+    "lessonDriveFileId": "1LBzRYWUoV0vDkitEb7K-qSw3oOLfa5ci",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which shot benefits most from a gimbal?",
+    "options": [
+      "A still product photo",
+      "A screen recording",
+      "A fixed interview on a tripod",
+      "Walking alongside a moving subject"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Gimbals smooth movement.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l409-02",
+    "lessonDriveFileId": "1kdflakTVLNWOZ70o_pViDGkiz0pzDUvO",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "For an interview on a busy street, the best microphone choice is:",
+    "options": [
+      "A lavalier mic close to the speaker",
+      "The phone's built-in mic from 3 metres",
+      "No microphone",
+      "A speaker"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Close mics reject background noise.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l410-03",
+    "lessonDriveFileId": "1A2iIqfswe6VvSPYMFhDQepFOTK27D8gZ",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Why add a light even during the day indoors?",
+    "options": [
+      "Daylight is always perfect",
+      "To fill shadows and keep the subject evenly lit",
+      "Lights reduce file size",
+      "Filming apps won't record without extra light"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Supplemental light improves quality.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l408-03",
+    "lessonDriveFileId": "1iVoWmR_G_DF5CZFqvsicF4qqyDHhxZbk",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "To film a small product's texture in detail, use:",
+    "options": [
+      "A wide-angle lens",
+      "A fisheye lens",
+      "A macro lens",
+      "No lens at all from far away"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Macro focuses very close.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l501-01",
+    "lessonDriveFileId": "1hPHYyREf8M0dJ7QT6kW4AGpD6FhgsuPV",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Before filming, you should define:",
+    "options": [
+      "Only the music",
+      "Only the filter",
+      "The filter you'll use in editing",
+      "The aim of the video and who it's for"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Purpose guides every decision.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l502-01",
+    "lessonDriveFileId": "1xbYJQ-PsltZgilNykA6wnM3WyRmpG0wq",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A shot list is:",
+    "options": [
+      "A planned list of the shots you need to capture",
+      "A list of followers",
+      "A music playlist",
+      "A list of the apps you'll use to edit"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "It saves time and avoids missing shots.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l503-01",
+    "lessonDriveFileId": "1DnnffM4NuHRmSq1i-HAKHdVbgdk4UaG1",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "The 'rhythm' of a video refers to:",
+    "options": [
+      "The phone's ringtone",
+      "The pace created by shot lengths and editing",
+      "The resolution and frame rate you film at",
+      "The brightness"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Pacing keeps viewers engaged.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l506-01",
+    "lessonDriveFileId": "1JroTFQr0S6NseJFF5ADPQwnCJoRWIHwO",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Manual filming apps let you control:",
+    "options": [
+      "Your phone's contacts",
+      "Battery health",
+      "Exposure, focus, white balance and frame rate",
+      "Your phone's Wi-Fi and Bluetooth settings"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Pro apps unlock manual settings.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l508-01",
+    "lessonDriveFileId": "1AkYZZE-G82HawkXmKdTg8jmlfi4I0eKP",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "An in-camera transition is:",
+    "options": [
+      "A filter added later",
+      "A sound effect",
+      "A transition effect added later in the editing app",
+      "A transition created while filming, such as covering the lens"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "You plan the move between two shots.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l510-01",
+    "lessonDriveFileId": "1PqHU1eFvEk-LuCuqD0c29iCMD052C5Ma",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Golden hour is:",
+    "options": [
+      "The soft, warm light just after sunrise or before sunset",
+      "Midday sun",
+      "The bright, harsh light around midday",
+      "Any cloudy day"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Low sun gives flattering light.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l510-02",
+    "lessonDriveFileId": "1PqHU1eFvEk-LuCuqD0c29iCMD052C5Ma",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Filming a person facing a window gives:",
+    "options": [
+      "A silhouette",
+      "Soft, flattering natural light",
+      "A dark silhouette of the person",
+      "Orange colour"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "The window acts as a large soft light.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l512-01",
+    "lessonDriveFileId": "1e_Y6voith_X3tEqG8bFcQqa1DRgvuyc8",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A timelapse:",
+    "options": [
+      "Slows motion down",
+      "Records audio only",
+      "Compresses a long time into a short clip",
+      "Slows a short moment down into a long clip"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Great for sunsets and crowds.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l512-02",
+    "lessonDriveFileId": "1e_Y6voith_X3tEqG8bFcQqa1DRgvuyc8",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A hyperlapse differs from a timelapse because:",
+    "options": [
+      "It's always slow motion",
+      "It is always recorded in slow motion",
+      "It records audio",
+      "The camera moves through space during the capture"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Moving timelapses create dynamic shots.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l502-02",
+    "lessonDriveFileId": "1xbYJQ-PsltZgilNykA6wnM3WyRmpG0wq",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Including wide, medium and close-up shots in your list helps:",
+    "options": [
+      "Give editors variety and tell the story clearly",
+      "Make the video longer only",
+      "Confuse viewers",
+      "Avoid the need for any editing at all"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Variety supports storytelling.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l503-02",
+    "lessonDriveFileId": "1DnnffM4NuHRmSq1i-HAKHdVbgdk4UaG1",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Shorter clips and quick cuts generally create:",
+    "options": [
+      "A slow, calm feel",
+      "A fast, energetic feel",
+      "No feeling",
+      "Audio problems"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Cut length shapes pace.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l501-02",
+    "lessonDriveFileId": "1hPHYyREf8M0dJ7QT6kW4AGpD6FhgsuPV",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A video meant to sell a product should end with:",
+    "options": [
+      "No conclusion",
+      "A random clip",
+      "A clear call to action",
+      "Silence"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Tell viewers what to do next.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l501-03",
+    "lessonDriveFileId": "1hPHYyREf8M0dJ7QT6kW4AGpD6FhgsuPV",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "What should you decide first when planning a video?",
+    "options": [
+      "The transition effects",
+      "The font for captions",
+      "The export settings",
+      "Its goal and target audience"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Everything follows from the goal.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l502-03",
+    "lessonDriveFileId": "1xbYJQ-PsltZgilNykA6wnM3WyRmpG0wq",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which document helps you avoid forgetting important shots on set?",
+    "options": [
+      "A shot list",
+      "An invoice",
+      "A contract",
+      "A playlist"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Plan before you film.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l506-02",
+    "lessonDriveFileId": "1JroTFQr0S6NseJFF5ADPQwnCJoRWIHwO",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Why might you use a manual camera app instead of the default?",
+    "options": [
+      "To make the battery last longer",
+      "To lock settings like exposure and focus for consistent footage",
+      "To get more storage space on the phone",
+      "To edit photos"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Manual control prevents unwanted changes.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l508-02",
+    "lessonDriveFileId": "1AkYZZE-G82HawkXmKdTg8jmlfi4I0eKP",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Covering the lens with your hand at the end of one shot and uncovering it at the start of the next creates:",
+    "options": [
+      "A colour grade",
+      "A voice over",
+      "An in-camera transition",
+      "A timelapse"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "A classic, simple trick.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l510-03",
+    "lessonDriveFileId": "1PqHU1eFvEk-LuCuqD0c29iCMD052C5Ma",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Filming a person with the bright sun behind them often causes:",
+    "options": [
+      "Perfect exposure",
+      "Better audio",
+      "More colour",
+      "A dark face or silhouette"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Backlight underexposes the subject.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l512-03",
+    "lessonDriveFileId": "1e_Y6voith_X3tEqG8bFcQqa1DRgvuyc8",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which technique best shows clouds moving over a city?",
+    "options": [
+      "Timelapse",
+      "Slow motion",
+      "Macro",
+      "Voice over"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Compress time to show movement.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l601-01",
+    "lessonDriveFileId": "1YK__MNVZSrN1iY6uNhfE2M2I0peDuZSn",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Why edit directly on your phone?",
+    "options": [
+      "Phones can't edit",
+      "It's fast and lets you publish quickly",
+      "It always gives better quality than a computer",
+      "It's required by YouTube"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Mobile editing suits quick turnarounds.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l602-01",
+    "lessonDriveFileId": "1XbM4o8Ov6Q08w8FwTWVinL-LzkygcQVA",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A timeline in an editing app shows:",
+    "options": [
+      "Your phone contacts",
+      "Your photos only",
+      "Your clips in order, so you can trim and arrange them",
+      "The date each clip was recorded on your phone"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Edit by arranging clips on the timeline.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l602-02",
+    "lessonDriveFileId": "1XbM4o8Ov6Q08w8FwTWVinL-LzkygcQVA",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Trimming a clip means:",
+    "options": [
+      "Changing its colour",
+      "Adding background music to the clip",
+      "Exporting it",
+      "Cutting off unwanted start or end parts"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Trim to keep the best moments.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l603-01",
+    "lessonDriveFileId": "1Izvz7nzuw4L57QjrkYi9hCVx8muUo9Uk",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Adding captions to social videos helps because:",
+    "options": [
+      "Many people watch with the sound off",
+      "Captions make videos longer",
+      "Platforms require them",
+      "They reduce quality"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Captions improve accessibility and retention.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l605-01",
+    "lessonDriveFileId": "1Bkk4kXfyT3i1XLbBZYPc-HosNPKQqH9G",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "CapCut, InShot and VN are examples of:",
+    "options": [
+      "Social networks",
+      "Mobile video editing apps",
+      "Camera lenses",
+      "Microphones"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Popular phone editors.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l606-01",
+    "lessonDriveFileId": "1y8OU8cGIUrte_qeVOj12dV4NQu81OH1S",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A key editing tip for social media is to:",
+    "options": [
+      "Start with a long intro",
+      "Use only one long shot",
+      "Hook viewers in the first few seconds",
+      "Hide the main message"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Grab attention immediately.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l606-02",
+    "lessonDriveFileId": "1y8OU8cGIUrte_qeVOj12dV4NQu81OH1S",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Cutting on action means:",
+    "options": [
+      "Cutting randomly",
+      "Only cutting at silence",
+      "Waiting until all movement stops before cutting",
+      "Cutting between shots during a movement to hide the edit"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Movement masks the cut.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l602-03",
+    "lessonDriveFileId": "1XbM4o8Ov6Q08w8FwTWVinL-LzkygcQVA",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A J-cut is when:",
+    "options": [
+      "The audio of the next clip starts before its video",
+      "The video ends early",
+      "The video of the next clip starts before its audio",
+      "The clip is reversed"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "It creates smooth transitions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l603-02",
+    "lessonDriveFileId": "1Izvz7nzuw4L57QjrkYi9hCVx8muUo9Uk",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Keeping text on screen long enough to read is important because:",
+    "options": [
+      "Text slows the video",
+      "Viewers need time to take it in",
+      "Platforms delete text",
+      "It improves audio"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Rule of thumb: read it twice slowly.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l605-02",
+    "lessonDriveFileId": "1Bkk4kXfyT3i1XLbBZYPc-HosNPKQqH9G",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Why use templates in quick editing apps?",
+    "options": [
+      "To lower video quality",
+      "To remove your clips",
+      "To create polished edits fast",
+      "To avoid music"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Templates speed up production.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l606-03",
+    "lessonDriveFileId": "1y8OU8cGIUrte_qeVOj12dV4NQu81OH1S",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Background music should be:",
+    "options": [
+      "Louder than speech",
+      "Always silent",
+      "Copyrighted without permission",
+      "Lower than speech so voices stay clear"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Balance audio levels.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l606-04",
+    "lessonDriveFileId": "1y8OU8cGIUrte_qeVOj12dV4NQu81OH1S",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Using copyrighted music without a licence can lead to:",
+    "options": [
+      "Muted audio or removed videos",
+      "More views guaranteed",
+      "Faster uploads",
+      "Better quality"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Use licensed or royalty-free music.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l601-02",
+    "lessonDriveFileId": "1YK__MNVZSrN1iY6uNhfE2M2I0peDuZSn",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which is a major advantage of editing on your phone?",
+    "options": [
+      "It always produces cinema-quality colour",
+      "You can film, edit and post from one device",
+      "It never crashes",
+      "It needs no storage"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "An all-in-one workflow is fast.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l603-03",
+    "lessonDriveFileId": "1Izvz7nzuw4L57QjrkYi9hCVx8muUo9Uk",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Most social videos are watched:",
+    "options": [
+      "Only with headphones",
+      "Only on TVs",
+      "With the sound off, so captions matter",
+      "Only in full screen landscape"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Design for silent viewing.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l606-05",
+    "lessonDriveFileId": "1y8OU8cGIUrte_qeVOj12dV4NQu81OH1S",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "What should the first three seconds of a social video do?",
+    "options": [
+      "Show the credits",
+      "Display a long logo animation",
+      "Be silent and black",
+      "Hook the viewer"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Viewers decide quickly whether to keep watching.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l602-04",
+    "lessonDriveFileId": "1XbM4o8Ov6Q08w8FwTWVinL-LzkygcQVA",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "In the timeline, splitting a clip lets you:",
+    "options": [
+      "Cut it into two parts to remove or move a section",
+      "Change its resolution",
+      "Change the clip's resolution and frame rate",
+      "Add a filter only"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Split, then delete or rearrange.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l701-01",
+    "lessonDriveFileId": "1AGlbXp60mwx35wkvOYc0R8rd-OEKdgIL",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Filmora is:",
+    "options": [
+      "A camera brand",
+      "A desktop and mobile video editor",
+      "A social network",
+      "A smartphone gimbal brand"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Filmora offers a beginner-friendly interface.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l703-01",
+    "lessonDriveFileId": "1gqnLCYkeQS9FcAIslNeTpxfuR4ABTFez",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "The razor or split tool in an editor is used to:",
+    "options": [
+      "Change brightness",
+      "Add text",
+      "Cut a clip at the playhead",
+      "Export"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Split clips to trim or rearrange.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l704-01",
+    "lessonDriveFileId": "1VWeHrjJJKLL1C5ICd8oTQ_kFVkYcoMpZ",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Editing your soundtrack includes:",
+    "options": [
+      "Changing the video colour",
+      "Cropping the frame",
+      "Adding stickers",
+      "Adjusting volume levels and removing noise"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Clean audio matters.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l705-01",
+    "lessonDriveFileId": "1RK6-fFXzHY5eToTtRndNDEVEedc_McFS",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Editing to music means:",
+    "options": [
+      "Cutting clips in time with the beat",
+      "Ignoring the music",
+      "Adding music only after the edit is finished",
+      "Adding random cuts"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Beat-synced cuts feel satisfying.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l706-01",
+    "lessonDriveFileId": "148w0k-68OIXtDWADPfHcQjwcrwYSS3Yd",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "When mixing voice over and music, the music should:",
+    "options": [
+      "Be louder than the voice",
+      "Duck (lower) under the voice",
+      "Stop the voice",
+      "Be removed"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Keep speech intelligible.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l707-01",
+    "lessonDriveFileId": "1uYDDrV8DIQXeYLtXckyenD9eiJTZUv2n",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Colour grading is used to:",
+    "options": [
+      "Add titles and captions to the video",
+      "Record audio",
+      "Create a consistent look and mood",
+      "Stabilise footage"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Grading styles the image.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l707-02",
+    "lessonDriveFileId": "1uYDDrV8DIQXeYLtXckyenD9eiJTZUv2n",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Colour correction usually comes before grading because:",
+    "options": [
+      "Grading must come first",
+      "Grading only works on black and white footage",
+      "Correction is optional always",
+      "You fix exposure and white balance before adding a style"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Correct, then create a look.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l708-01",
+    "lessonDriveFileId": "15vIZfuVWtS7v90-ypMc3T5oY3ailsBCu",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A split screen shows:",
+    "options": [
+      "Two or more clips at the same time",
+      "One clip upside down",
+      "Only text",
+      "Only audio"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Useful for comparisons.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l709-01",
+    "lessonDriveFileId": "1xr2B5LSgF27aJEQa5sIri7bYUiS7Qe_4",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Good titles and on-screen text should be:",
+    "options": [
+      "Tiny and decorative",
+      "Readable, short and on-brand",
+      "Full paragraphs",
+      "Moving too fast to read"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Clarity wins.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l708-02",
+    "lessonDriveFileId": "15vIZfuVWtS7v90-ypMc3T5oY3ailsBCu",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Overusing flashy transitions tends to:",
+    "options": [
+      "Always improve the video",
+      "Fix bad audio",
+      "Distract from the story",
+      "Increase resolution"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Simple cuts are often best.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l704-02",
+    "lessonDriveFileId": "1VWeHrjJJKLL1C5ICd8oTQ_kFVkYcoMpZ",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Adding fade-ins and fade-outs to audio helps:",
+    "options": [
+      "Make audio louder",
+      "Remove music",
+      "Change pitch",
+      "Avoid abrupt starts and stops"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Smooth audio transitions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l709-02",
+    "lessonDriveFileId": "1xr2B5LSgF27aJEQa5sIri7bYUiS7Qe_4",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Lower thirds are used to:",
+    "options": [
+      "Show names or titles near the bottom of the screen",
+      "Cover the whole frame",
+      "Hide the bottom of the frame",
+      "Rotate video"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "They identify speakers.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l705-02",
+    "lessonDriveFileId": "1RK6-fFXzHY5eToTtRndNDEVEedc_McFS",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Cutting your clips exactly on the beat of a song is called:",
+    "options": [
+      "Colour correction",
+      "Editing to music (beat sync)",
+      "Colour grading to music",
+      "Keyframing"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "It creates rhythm.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l706-02",
+    "lessonDriveFileId": "148w0k-68OIXtDWADPfHcQjwcrwYSS3Yd",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Automatically lowering music when someone speaks is called:",
+    "options": [
+      "Grading",
+      "Splitting",
+      "Ducking",
+      "Masking"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Ducking keeps the voice clear.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l707-03",
+    "lessonDriveFileId": "1uYDDrV8DIQXeYLtXckyenD9eiJTZUv2n",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which step should come first?",
+    "options": [
+      "Colour grading",
+      "Adding a cinematic LUT",
+      "Exporting",
+      "Colour correction"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Fix problems before styling.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l709-03",
+    "lessonDriveFileId": "1xr2B5LSgF27aJEQa5sIri7bYUiS7Qe_4",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which text choice is easiest to read on a phone screen?",
+    "options": [
+      "Large, bold text with good contrast",
+      "Thin script font in light grey",
+      "Tiny text in a corner",
+      "Text that flashes rapidly"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Legibility first.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l801-01",
+    "lessonDriveFileId": "1qvLlltJkNg-1RH30aopVoFFqM8qwMvt-",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "iMovie is available on:",
+    "options": [
+      "Android phones only",
+      "Apple devices (iPhone, iPad and Mac)",
+      "Windows only",
+      "Android phones and Windows PCs"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "It's Apple's free editor.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l801-02",
+    "lessonDriveFileId": "1qvLlltJkNg-1RH30aopVoFFqM8qwMvt-",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Organising your clips before editing helps you:",
+    "options": [
+      "Make files bigger",
+      "Remove sound",
+      "Find the best shots quickly",
+      "Change resolution"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Good organisation speeds editing.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l803-01",
+    "lessonDriveFileId": "18g3nuBXDo8kf8pe7zHqgQPkaeWPgOUu0",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Mixing your soundtrack means:",
+    "options": [
+      "Deleting all audio",
+      "Changing video speed",
+      "Adding visual filters to every clip",
+      "Balancing the levels of dialogue, music and effects"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "A good mix is clear and comfortable.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l805-01",
+    "lessonDriveFileId": "1A2H7qRZU-XxB6uC_wyGjgMUXDT9ZoInv",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "When recording a voice over, you should:",
+    "options": [
+      "Record in a quiet room with the mic close",
+      "Record near traffic",
+      "Shout into the phone",
+      "Record in a bathroom with echo"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Quiet spaces give clean VO.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l806-01",
+    "lessonDriveFileId": "12E7FcKZn_drJY2gOcqutFz5rps5TK_oK",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "iMovie's 'speed' tool lets you:",
+    "options": [
+      "Change its colour",
+      "Speed up or slow down a clip",
+      "Add a microphone",
+      "Export as PDF"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Adjust playback speed.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l807-01",
+    "lessonDriveFileId": "1ueiaZfU_dB53slWtfGZEMyqNCDStgxkB",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Sound design includes:",
+    "options": [
+      "Removing all sound",
+      "Choosing fonts and colours for titles",
+      "Adding effects and ambience to make scenes feel real",
+      "Cropping the frame"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Sound builds atmosphere.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l808-01",
+    "lessonDriveFileId": "1bqux05zGOMDbbntwlYOwXK239SFvCDAB",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Applying the same filter or grade across clips helps:",
+    "options": [
+      "Make clips mismatched",
+      "Make each clip look different from the others",
+      "Lower resolution",
+      "Keep the whole video visually consistent"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Consistency looks professional.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l809-01",
+    "lessonDriveFileId": "1S2aEA72ZKEeEHgeG7RhVgO43RITQZrPF",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A cross dissolve transition:",
+    "options": [
+      "Gradually blends one clip into the next",
+      "Adds sound effects automatically",
+      "Flips the screen",
+      "Cuts instantly from one clip to the next"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Soft, gentle transition.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l811-01",
+    "lessonDriveFileId": "1xh0Uwx2_lzvLElpVroQbGjde2_9J9QnK",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "When exporting for social media, you should choose:",
+    "options": [
+      "The lowest quality always",
+      "The right resolution and frame rate for the platform",
+      "A random setting",
+      "The lowest resolution to save time"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Match platform requirements.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l811-02",
+    "lessonDriveFileId": "1xh0Uwx2_lzvLElpVroQbGjde2_9J9QnK",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Exporting at a higher resolution than your footage:",
+    "options": [
+      "Makes it sharper",
+      "Improves audio",
+      "Doesn't add real detail",
+      "Fixes shaky footage"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "You can't create detail that wasn't captured.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l807-02",
+    "lessonDriveFileId": "1ueiaZfU_dB53slWtfGZEMyqNCDStgxkB",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Adding subtle background ambience (e.g. street sounds) helps:",
+    "options": [
+      "Hide all dialogue",
+      "Shorten the video",
+      "Hide the dialogue completely",
+      "Make cuts feel natural and scenes believable"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Ambience smooths edits.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l805-02",
+    "lessonDriveFileId": "1A2H7qRZU-XxB6uC_wyGjgMUXDT9ZoInv",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Speaking slightly closer to the mic and at a steady pace helps:",
+    "options": [
+      "Produce clear, consistent voice over",
+      "Add echo and reverb to the voice",
+      "Increase noise",
+      "Reduce clarity"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Consistency improves quality.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l801-03",
+    "lessonDriveFileId": "1qvLlltJkNg-1RH30aopVoFFqM8qwMvt-",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which editor comes free with iPhones?",
+    "options": [
+      "Filmora",
+      "iMovie",
+      "Premiere Pro",
+      "DaVinci Resolve"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "iMovie is free on Apple devices.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l803-02",
+    "lessonDriveFileId": "18g3nuBXDo8kf8pe7zHqgQPkaeWPgOUu0",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "In a good mix, which should usually be loudest?",
+    "options": [
+      "Background music",
+      "Ambient noise",
+      "Dialogue",
+      "Sound effects always"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Speech must be clear.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l809-02",
+    "lessonDriveFileId": "1S2aEA72ZKEeEHgeG7RhVgO43RITQZrPF",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which transition is the most common and least distracting?",
+    "options": [
+      "A spinning cube",
+      "A star wipe",
+      "A page curl",
+      "A straight cut"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Most edits use simple cuts.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l811-03",
+    "lessonDriveFileId": "1xh0Uwx2_lzvLElpVroQbGjde2_9J9QnK",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which export setting suits Instagram Reels?",
+    "options": [
+      "1080 × 1920 vertical",
+      "640 × 480",
+      "1920 × 1080 horizontal only",
+      "Audio only"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Vertical Full HD fits Reels.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l901-01",
+    "lessonDriveFileId": "1ZYbKcaATnlq18HVfYMQLorkHCb52eydT",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Video marketing is effective because:",
+    "options": [
+      "People don't watch videos",
+      "Video holds attention and builds trust quickly",
+      "It never needs any planning or budget",
+      "It replaces products"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Video communicates fast and personally.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l901-02",
+    "lessonDriveFileId": "1ZYbKcaATnlq18HVfYMQLorkHCb52eydT",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which metric shows how long people keep watching?",
+    "options": [
+      "Number of hashtags",
+      "File size",
+      "Audience retention / watch time",
+      "Frame rate"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Retention reveals engagement.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l903-01",
+    "lessonDriveFileId": "1bgvZp_6fI1DdKrweutzqmn1Zd76BSztt",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "A website helps a video creator by:",
+    "options": [
+      "Increasing the phone's camera quality",
+      "Making every video longer and higher resolution",
+      "Replacing all social media accounts",
+      "Showing a portfolio and making it easy for clients to contact them"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "A home base for your business.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l905-01",
+    "lessonDriveFileId": "1OsaGb4PBodtSpnGol7DR2zkuwMcXrf7W",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Ways to make money with smartphone videography include:",
+    "options": [
+      "Filming for local businesses, events and social media clients",
+      "Only winning online video competitions",
+      "Selling followers to brands",
+      "Copying others' videos"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Many businesses need short videos.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l906-01",
+    "lessonDriveFileId": "1fwje_7IcWHUcSOyq_QIOoANfe8TWlMyi",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Affiliate marketing means:",
+    "options": [
+      "Selling your own factory products only",
+      "Earning a commission when people buy through your link",
+      "Paying others to watch",
+      "Buying followers"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Recommend products and earn per sale.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l906-02",
+    "lessonDriveFileId": "1fwje_7IcWHUcSOyq_QIOoANfe8TWlMyi",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Affiliate links should be:",
+    "options": [
+      "Hidden",
+      "Fake",
+      "Disclosed honestly to viewers",
+      "Spammed in comments everywhere"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Transparency builds trust and follows rules.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l901-03",
+    "lessonDriveFileId": "1ZYbKcaATnlq18HVfYMQLorkHCb52eydT",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Posting consistently on social media helps because:",
+    "options": [
+      "It reduces views",
+      "Platforms punish consistency",
+      "It isn't important",
+      "Algorithms and audiences reward regular content"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Consistency grows audiences.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l905-02",
+    "lessonDriveFileId": "1OsaGb4PBodtSpnGol7DR2zkuwMcXrf7W",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "A strong portfolio for a mobile videographer includes:",
+    "options": [
+      "Short samples showing different video types",
+      "Only one long video",
+      "One long video with every clip you've filmed",
+      "Other people's work"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Show range and quality.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l903-02",
+    "lessonDriveFileId": "1bgvZp_6fI1DdKrweutzqmn1Zd76BSztt",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which should a videographer's website include?",
+    "options": [
+      "Only a logo and a background video",
+      "Portfolio, services, prices or packages, and contact details",
+      "Only a blog about food",
+      "Nothing but music"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Make it easy to hire you.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l901-04",
+    "lessonDriveFileId": "1ZYbKcaATnlq18HVfYMQLorkHCb52eydT",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which video length usually performs best on TikTok and Reels?",
+    "options": [
+      "Long videos of at least 20 minutes",
+      "Exactly 30 minutes",
+      "Short videos, often under a minute",
+      "Only silent clips"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Short-form suits these platforms.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l906-03",
+    "lessonDriveFileId": "1fwje_7IcWHUcSOyq_QIOoANfe8TWlMyi",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which content works well for affiliate marketing?",
+    "options": [
+      "Random dance clips with no product",
+      "Copied videos",
+      "Fake testimonials",
+      "Honest product reviews and tutorials"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Useful reviews drive trusted sales.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l905-03",
+    "lessonDriveFileId": "1OsaGb4PBodtSpnGol7DR2zkuwMcXrf7W",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Pricing your video services should consider:",
+    "options": [
+      "Time, equipment, editing and the client's usage",
+      "Only what friends pay",
+      "Only what your competitors charge",
+      "Only the phone's price"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Value your full effort.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l901-05",
+    "lessonDriveFileId": "1ZYbKcaATnlq18HVfYMQLorkHCb52eydT",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "A local restaurant wants more customers. Which video is most useful?",
+    "options": [
+      "A two-hour documentary",
+      "Short clips showing dishes, atmosphere and how to order",
+      "A long interview with the owner about their life",
+      "A silent black screen"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Show what customers get.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l905-04",
+    "lessonDriveFileId": "1OsaGb4PBodtSpnGol7DR2zkuwMcXrf7W",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which is a realistic first client for a new smartphone videographer?",
+    "options": [
+      "A Hollywood studio",
+      "A Hollywood film studio",
+      "A small local business needing social media videos",
+      "A national TV network's evening news"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Start local and build your portfolio.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l906-04",
+    "lessonDriveFileId": "1fwje_7IcWHUcSOyq_QIOoANfe8TWlMyi",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Why must you disclose affiliate links?",
+    "options": [
+      "It's optional and useless",
+      "It reduces income to zero",
+      "Disclosure lets you charge viewers for the link",
+      "Honesty builds trust and advertising rules require it"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Transparency matters.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l903-03",
+    "lessonDriveFileId": "1bgvZp_6fI1DdKrweutzqmn1Zd76BSztt",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "The main job of a videographer's website is to:",
+    "options": [
+      "Turn visitors into enquiries",
+      "Store raw footage",
+      "Replace editing apps",
+      "Host games"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Make contacting you easy.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l1002-01",
+    "lessonDriveFileId": "15YA-7KN_PFJdNQuEFYHqzwYVGvKhgTY8",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "For real estate and short-let videos, which shots matter most?",
+    "options": [
+      "Shaky close-ups only",
+      "Wide, steady shots that show space and light",
+      "Dark shots",
+      "Tight close-ups of small decorations"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Buyers want to see the space.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l1003-01",
+    "lessonDriveFileId": "12NKimIXgQEmytUE_gqK68Nla2-YBRdZ3",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Studio product shots benefit most from:",
+    "options": [
+      "Natural light from any direction",
+      "Busy backgrounds",
+      "Controlled lighting and a clean background",
+      "Handheld shaky shots"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Control makes products look premium.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l1004-01",
+    "lessonDriveFileId": "14vCy6n7IJda4lMY2qR7iYglYgHUmsoF4",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Editing studio shots usually involves:",
+    "options": [
+      "Removing all lighting",
+      "Removing the product",
+      "Adding heavy shake and fast zooms",
+      "Smooth cuts, colour correction and clean graphics"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Polish the product's look.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l1005-01",
+    "lessonDriveFileId": "1Tc99czDN8vpQ06eSSrwmpMD2ZSaZEpe3",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "When filming fitness or yoga videos, it's important to:",
+    "options": [
+      "Show the full body so movements are clear",
+      "Crop out the arms and legs",
+      "Film only faces",
+      "Film in the dark"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Viewers need to see form.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l1007-01",
+    "lessonDriveFileId": "1y4EI8gLLt2GFqqr_gCNZe4vff5jbo_wq",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "In a music session video, the most important element is:",
+    "options": [
+      "Fancy transitions",
+      "Clean, well-recorded audio",
+      "Heavy filters",
+      "Tiny text"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Sound is the product.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l1009-01",
+    "lessonDriveFileId": "1W2u62LtJdUrTNKwiw16UKYi7Eknryg94",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Unboxing videos work well because:",
+    "options": [
+      "They're always long",
+      "They avoid showing any packaging",
+      "Viewers enjoy seeing a product revealed and explained",
+      "They hide the product until the very end"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "They answer buyers' questions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l1002-02",
+    "lessonDriveFileId": "15YA-7KN_PFJdNQuEFYHqzwYVGvKhgTY8",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Slow, smooth movement through a room helps viewers:",
+    "options": [
+      "Feel dizzy",
+      "Lose interest",
+      "See less",
+      "Understand the layout"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Steady motion shows flow.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l1003-02",
+    "lessonDriveFileId": "12NKimIXgQEmytUE_gqK68Nla2-YBRdZ3",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Using a tripod for product shots helps:",
+    "options": [
+      "Keep framing consistent across takes",
+      "Add natural movement to each shot",
+      "Lower quality",
+      "Remove light"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Consistency aids editing.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l1005-02",
+    "lessonDriveFileId": "1Tc99czDN8vpQ06eSSrwmpMD2ZSaZEpe3",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Adding on-screen labels for each exercise helps viewers:",
+    "options": [
+      "Get confused",
+      "Follow the routine",
+      "Skip exercises",
+      "Mute the video"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Clear guidance improves usefulness.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l1009-02",
+    "lessonDriveFileId": "1W2u62LtJdUrTNKwiw16UKYi7Eknryg94",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "A product tutorial should be structured as:",
+    "options": [
+      "Highlights only, without the steps",
+      "Only the ending",
+      "Clear steps from setup to result",
+      "Only the price"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Logical steps help learners.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l1007-02",
+    "lessonDriveFileId": "1y4EI8gLLt2GFqqr_gCNZe4vff5jbo_wq",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Using multiple angles in a music performance video helps:",
+    "options": [
+      "Replace the need for good audio",
+      "Shorten the song",
+      "Remove the artist",
+      "Keep the video visually engaging"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Variety holds attention.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l1002-03",
+    "lessonDriveFileId": "15YA-7KN_PFJdNQuEFYHqzwYVGvKhgTY8",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Shooting real estate during daytime with lights on helps:",
+    "options": [
+      "Rooms look bright and welcoming",
+      "Rooms look dark",
+      "Make rooms look smaller and cosier",
+      "Reduce detail"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Bright spaces sell.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l1002-04",
+    "lessonDriveFileId": "15YA-7KN_PFJdNQuEFYHqzwYVGvKhgTY8",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which shot best opens a short-let apartment video?",
+    "options": [
+      "A close-up of a light switch",
+      "A wide, bright establishing shot of the main room",
+      "A dark corridor",
+      "A blurry selfie"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Establish the space first.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l1003-03",
+    "lessonDriveFileId": "12NKimIXgQEmytUE_gqK68Nla2-YBRdZ3",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "What's the biggest factor in making a product look premium on video?",
+    "options": [
+      "Phone colour",
+      "Video length",
+      "Lighting",
+      "Hashtags"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Light shapes perception.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l1005-03",
+    "lessonDriveFileId": "1Tc99czDN8vpQ06eSSrwmpMD2ZSaZEpe3",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "For a yoga video, which camera position usually works best?",
+    "options": [
+      "Extremely close to the face",
+      "Very close to the instructor's face",
+      "Moving randomly",
+      "A stable side or three-quarter angle showing the full body"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Viewers need to see posture.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l1009-03",
+    "lessonDriveFileId": "1W2u62LtJdUrTNKwiw16UKYi7Eknryg94",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "What makes an unboxing video useful to buyers?",
+    "options": [
+      "Showing what's in the box and how the product works",
+      "Fast cuts that skip the product details",
+      "Skipping the opening",
+      "No narration or captions"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Answer buyers' questions.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l1007-03",
+    "lessonDriveFileId": "1y4EI8gLLt2GFqqr_gCNZe4vff5jbo_wq",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "When filming a live music performance on a phone, what should you prioritise?",
+    "options": [
+      "Using the loudest filter",
+      "Recording good audio, ideally with an external mic",
+      "Adding as many filters as possible",
+      "Recording vertically only"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Audio quality defines the video.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l103-03",
+    "lessonDriveFileId": "15iAU_3Rnk0DYU3aYskAeID3-BnIV_DQb",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Before filming, what simple step improves phone footage immediately?",
+    "options": [
+      "Turn on maximum digital zoom",
+      "Lower the screen brightness",
+      "Wipe the camera lens clean",
+      "Switch to selfie mode"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Smudged lenses make footage hazy.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l302-05",
+    "lessonDriveFileId": "1afsSbdHOqHyi_YlImLPciHzQ9Nt4z97V",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which resolution is commonly called 4K?",
+    "options": [
+      "1920 × 1080",
+      "1280 × 720",
+      "640 × 480",
+      "3840 × 2160"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "UHD 4K is 3840 × 2160.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l303-04",
+    "lessonDriveFileId": "1gcA2gcoDLMeFBvO8dyjyy3wldkeedjO1",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Why should you avoid mixing 24 fps and 30 fps clips in one project without care?",
+    "options": [
+      "Motion can look inconsistent or stutter",
+      "The colours change",
+      "The audio disappears",
+      "The files can't be opened"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Keep frame rates consistent.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l304-04",
+    "lessonDriveFileId": "14toGfXug-OjWM-QozXHq8mWIZt7zs1RC",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "On most phones, tapping and holding on the subject does what?",
+    "options": [
+      "Deletes the clip",
+      "Locks focus and exposure (AE/AF lock)",
+      "Starts slow motion",
+      "Switches to the front camera"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Lock to stop the camera hunting.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l306-03",
+    "lessonDriveFileId": "1Yk2fhV9veRlal6CHZKnJ2zhVBPGGkkKY",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which composition rule uses lines in a scene to guide the viewer's eye?",
+    "options": [
+      "Jump cut",
+      "White balance",
+      "Leading lines",
+      "Frame rate"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Roads, fences and edges draw attention.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l307-03",
+    "lessonDriveFileId": "1dgzZfuaQCjzfI3Y8ZRk93tK86VV6ju3b",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "An eye-level shot generally feels:",
+    "options": [
+      "Threatening",
+      "Powerful",
+      "Disorienting",
+      "Neutral and natural"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "It mirrors how we see people.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l308-03",
+    "lessonDriveFileId": "1QSmzNaiTuTPGgjhkpQGfDCz3L0_W_nRb",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Tilting the camera up and down from a fixed position is called:",
+    "options": [
+      "A tilt",
+      "A pan",
+      "A dolly",
+      "A zoom"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Tilt is vertical movement.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l309-04",
+    "lessonDriveFileId": "1hmSUNNmgqUqiZAR5xU_876B2tDDwUFpu",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "What's a quick way to check audio while recording on a phone?",
+    "options": [
+      "Look at the screen only",
+      "Use wired or low-latency headphones to monitor",
+      "Turn the phone upside down",
+      "Record and hope"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Monitoring catches problems early.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l404-04",
+    "lessonDriveFileId": "1aT3c-XMh53p9TR1lQJkVbz1OfWjuXqwU",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Electronic image stabilisation (EIS) works by:",
+    "options": [
+      "Moving the lens with motors",
+      "Adding a tripod",
+      "Cropping and shifting the image in software",
+      "Lowering the frame rate"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "EIS uses a slight crop to smooth shake.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l405-03",
+    "lessonDriveFileId": "10CJhyD-5HiZiTvL5WcV1qOy1gNbyGrpr",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "A phone tripod with a Bluetooth remote is useful for:",
+    "options": [
+      "Cooling the phone down",
+      "Charging the phone while filming",
+      "Improving audio",
+      "Starting recording without touching the phone"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Avoids bumping the shot.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l406-03",
+    "lessonDriveFileId": "1LBzRYWUoV0vDkitEb7K-qSw3oOLfa5ci",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Before using a gimbal, you should first:",
+    "options": [
+      "Balance the phone on the gimbal",
+      "Turn off the phone",
+      "Remove the battery",
+      "Set the screen to black"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Balance lets motors work smoothly.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l408-04",
+    "lessonDriveFileId": "1iVoWmR_G_DF5CZFqvsicF4qqyDHhxZbk",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Clip-on lenses can cause quality problems if:",
+    "options": [
+      "They're cleaned",
+      "They're low quality or misaligned",
+      "They're removed",
+      "The phone is charged"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Cheap optics add blur and distortion.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l410-04",
+    "lessonDriveFileId": "1A2iIqfswe6VvSPYMFhDQepFOTK27D8gZ",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Placing a light at 45 degrees to the side of a subject's face is a common:",
+    "options": [
+      "Backlight error",
+      "Audio setup",
+      "Key light position",
+      "Colour grade"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It creates shape and depth.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l501-04",
+    "lessonDriveFileId": "1hPHYyREf8M0dJ7QT6kW4AGpD6FhgsuPV",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "The best way to plan a short promotional video is to:",
+    "options": [
+      "Start filming without a plan",
+      "Edit before filming",
+      "Start filming and decide the message later",
+      "Write the message, the shots and the call to action first"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Planning saves time.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l503-03",
+    "lessonDriveFileId": "1DnnffM4NuHRmSq1i-HAKHdVbgdk4UaG1",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "To make a calm, relaxing video, you would usually use:",
+    "options": [
+      "Longer shots and slower cuts",
+      "Very fast cuts",
+      "Flashing transitions",
+      "Loud effects"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Pace sets mood.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l506-03",
+    "lessonDriveFileId": "1JroTFQr0S6NseJFF5ADPQwnCJoRWIHwO",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which apps are examples of manual filming apps?",
+    "options": [
+      "Instagram, Facebook",
+      "Filmic Pro, Blackmagic Camera, ProTake",
+      "WhatsApp, Telegram and Messenger",
+      "Gmail, Outlook"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Pro camera apps give manual control.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l510-04",
+    "lessonDriveFileId": "1PqHU1eFvEk-LuCuqD0c29iCMD052C5Ma",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which time of day gives the harshest light outdoors?",
+    "options": [
+      "Golden hour",
+      "Blue hour",
+      "Midday",
+      "Overcast morning"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "High sun creates strong shadows.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l512-04",
+    "lessonDriveFileId": "1e_Y6voith_X3tEqG8bFcQqa1DRgvuyc8",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Slow motion is most effective for:",
+    "options": [
+      "Reading text on screen",
+      "Talking-head interviews and lectures",
+      "Screen recordings",
+      "Showing fast action in detail, like a splash"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Slow motion reveals details.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l602-05",
+    "lessonDriveFileId": "1XbM4o8Ov6Q08w8FwTWVinL-LzkygcQVA",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which editing action removes dead space at the start of a clip?",
+    "options": [
+      "Trim",
+      "Duplicate",
+      "Reverse",
+      "Export"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Trimming tightens pacing.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l605-03",
+    "lessonDriveFileId": "1Bkk4kXfyT3i1XLbBZYPc-HosNPKQqH9G",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Exporting from a mobile editor at the highest setting is useful when:",
+    "options": [
+      "You want the smallest possible file size",
+      "You'll upload to YouTube or a client needs a master file",
+      "You're sending a voice note",
+      "The video is audio only"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Export quality to match the destination.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l606-06",
+    "lessonDriveFileId": "1y8OU8cGIUrte_qeVOj12dV4NQu81OH1S",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Removing pauses and 'umms' from a talking-head video makes it:",
+    "options": [
+      "Longer",
+      "Harder to follow",
+      "Tighter and more engaging",
+      "Lower resolution"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Jump cuts keep pace.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l703-02",
+    "lessonDriveFileId": "1gqnLCYkeQS9FcAIslNeTpxfuR4ABTFez",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "In Filmora, the playhead shows:",
+    "options": [
+      "The export folder",
+      "The file size",
+      "The microphone level",
+      "The current position in the timeline"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Edits happen at the playhead.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l704-03",
+    "lessonDriveFileId": "1VWeHrjJJKLL1C5ICd8oTQ_kFVkYcoMpZ",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Background hiss in your audio can be reduced with:",
+    "options": [
+      "Noise reduction or denoise tools",
+      "A colour filter",
+      "A transition",
+      "A colour grade or LUT"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Denoise cleans constant noise.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l708-03",
+    "lessonDriveFileId": "15vIZfuVWtS7v90-ypMc3T5oY3ailsBCu",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A good reason to use a split screen is to:",
+    "options": [
+      "Make the video look busier",
+      "Show a before-and-after comparison",
+      "Lower resolution",
+      "Mute the music"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Side-by-side comparisons are clear.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l801-04",
+    "lessonDriveFileId": "1qvLlltJkNg-1RH30aopVoFFqM8qwMvt-",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "In iMovie, the project timeline is where you:",
+    "options": [
+      "Buy music",
+      "Record phone calls",
+      "Arrange, trim and layer your clips",
+      "Change system settings"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It's the main editing area.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l803-03",
+    "lessonDriveFileId": "18g3nuBXDo8kf8pe7zHqgQPkaeWPgOUu0",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "If music drowns out speech in your iMovie project, you should:",
+    "options": [
+      "Raise the music so it covers the voice",
+      "Delete the dialogue",
+      "Add more effects",
+      "Lower the music volume under the dialogue"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Keep speech clear.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l807-03",
+    "lessonDriveFileId": "1ueiaZfU_dB53slWtfGZEMyqNCDStgxkB",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A 'whoosh' sound added under a quick transition is an example of:",
+    "options": [
+      "Sound design",
+      "Colour grading",
+      "Exposure",
+      "Framing"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Sound effects add energy.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l808-02",
+    "lessonDriveFileId": "1bqux05zGOMDbbntwlYOwXK239SFvCDAB",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Clips filmed at different times look mismatched. The fix is:",
+    "options": [
+      "Speed them up so viewers don't notice",
+      "Colour correct and grade them to match",
+      "Add more transitions",
+      "Lower the volume"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Matching creates continuity.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l903-04",
+    "lessonDriveFileId": "1bgvZp_6fI1DdKrweutzqmn1Zd76BSztt",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which link should every video creator include in their social bios?",
+    "options": [
+      "A link to random news",
+      "A link to a random viral video",
+      "A link to their portfolio or booking page",
+      "A link to a competitor"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Make it easy to hire you.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l905-05",
+    "lessonDriveFileId": "1OsaGb4PBodtSpnGol7DR2zkuwMcXrf7W",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which service could a smartphone videographer offer Nigerian SMEs?",
+    "options": [
+      "Building satellites",
+      "Medical diagnosis",
+      "Legal advice on business registration",
+      "Short product and promo videos for Instagram and WhatsApp"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Many SMEs sell through social platforms.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l906-05",
+    "lessonDriveFileId": "1fwje_7IcWHUcSOyq_QIOoANfe8TWlMyi",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which platforms commonly offer affiliate programmes?",
+    "options": [
+      "Online stores and digital product platforms",
+      "Only banks and government agencies",
+      "Only governments",
+      "Only schools"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Many marketplaces pay commissions.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l1004-02",
+    "lessonDriveFileId": "14vCy6n7IJda4lMY2qR7iYglYgHUmsoF4",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which editing approach suits a premium product video?",
+    "options": [
+      "Shaky clips and heavy filters",
+      "Smooth, well-timed cuts with clean colour",
+      "Random speed changes",
+      "No editing at all"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Polish signals quality.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l1005-04",
+    "lessonDriveFileId": "1Tc99czDN8vpQ06eSSrwmpMD2ZSaZEpe3",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Why record fitness videos in landscape for YouTube but vertical for Reels?",
+    "options": [
+      "Landscape is always banned",
+      "Vertical is always lower quality",
+      "Each platform displays a different aspect ratio best",
+      "It doesn't matter"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Shoot for the destination.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l1003-04",
+    "lessonDriveFileId": "12NKimIXgQEmytUE_gqK68Nla2-YBRdZ3",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "A white sweep or seamless background is used in product videos to:",
+    "options": [
+      "Add texture and busy patterns behind the product",
+      "Change the audio",
+      "Speed up filming",
+      "Remove distractions and focus on the product"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Clean backgrounds keep attention on the product.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "smart-phone-videography-l1009-04",
+    "lessonDriveFileId": "1W2u62LtJdUrTNKwiw16UKYi7Eknryg94",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which detail improves a product tutorial most?",
+    "options": [
+      "Clear close-ups of each step",
+      "Only wide shots from far away",
+      "Hiding the hands",
+      "Skipping steps"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Viewers need to see what you do.",
+    "pools": [
+      "exam"
+    ]
+  }
+]

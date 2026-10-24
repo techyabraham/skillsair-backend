@@ -1,0 +1,4702 @@
+[
+  {
+    "key": "product-management-l101-01",
+    "lessonDriveFileId": "1OnBFoB9U9y0tkc9jd61jmnv29wzSeXlf",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "What is the main focus of this product management programme?",
+    "options": [
+      "Learning how to decide what to build and why, and guiding a product from idea to launch",
+      "Learning to code full mobile apps alone",
+      "Learning to design logos, brand identities and marketing graphics",
+      "Managing a company's accounts"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Product management is about understanding users, deciding what to build and working with teams to deliver it.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l102-01",
+    "lessonDriveFileId": "1fA_JN1YpsD3_AS_BYVohRePe8T7zImj_",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "What is the best way to get value from a practical course like this?",
+    "options": [
+      "Watch everything at double speed and skip exercises",
+      "Apply each lesson to a real or practice product as you go",
+      "Memorise definitions only",
+      "Wait until the end before trying anything"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Applying ideas to a product makes the concepts stick.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l201-01",
+    "lessonDriveFileId": "1ev8C5D5Z2ksZefL7z_LVZqj6wdR_Q2N-",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A product manager is mainly responsible for:",
+    "options": [
+      "Writing and testing most of the product's code personally",
+      "Approving every expense",
+      "Deciding what gets built and why, based on user and business needs",
+      "Designing the company logo"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "PMs own the 'what' and 'why'; engineers and designers own much of the 'how'.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l201-02",
+    "lessonDriveFileId": "1ev8C5D5Z2ksZefL7z_LVZqj6wdR_Q2N-",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which phrase best describes a PM's position in a team?",
+    "options": [
+      "Above every department as their boss",
+      "Only inside the sales team",
+      "Only inside the engineering team",
+      "At the intersection of business, technology and user experience"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "PMs connect business goals, technical feasibility and user needs.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l201-03",
+    "lessonDriveFileId": "1ev8C5D5Z2ksZefL7z_LVZqj6wdR_Q2N-",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A PM usually leads the team through:",
+    "options": [
+      "Influence rather than direct authority",
+      "Formal power to hire and fire everyone",
+      "Writing contracts",
+      "Approving salaries"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Most PMs don't manage engineers or designers directly, so they lead by influence.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l202-01",
+    "lessonDriveFileId": "1V1TP9ih8zP2EkDSpOIBiRPSnkxu1Cq0A",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "In product management, a 'product' is:",
+    "options": [
+      "Only software sold in app stores",
+      "Anything that solves a problem for users and delivers value, physical or digital",
+      "Only physical goods sold in shops and markets",
+      "Only a company's website"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Products can be apps, services, tools or physical goods.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l204-01",
+    "lessonDriveFileId": "1cx95E_gmNWGUosUYzjMCvsFa4gDwiFpZ",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A technical PM typically focuses on:",
+    "options": [
+      "Only marketing campaigns",
+      "Answering customer support tickets and refunds",
+      "Products where deep technical understanding matters, such as APIs or platforms",
+      "Only office logistics"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Technical PMs work closely with engineering on technically complex products.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l204-02",
+    "lessonDriveFileId": "1cx95E_gmNWGUosUYzjMCvsFa4gDwiFpZ",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A growth PM is mostly concerned with:",
+    "options": [
+      "Fixing office equipment",
+      "Designing logos and brand colours",
+      "Writing legal contracts",
+      "Increasing acquisition, activation and retention"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Growth PMs run experiments to grow and keep users.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l205-01",
+    "lessonDriveFileId": "1cixFqIoNiHt96YkstaZH6adjFcg88h-L",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "When choosing what kind of PM to be, it helps to consider:",
+    "options": [
+      "Your strengths, interests and the type of company you enjoy",
+      "Only the highest salary",
+      "Only the job title and the salary on offer",
+      "Only the office location"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Fit matters: technical, consumer, B2B, startup or large company.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l206-01",
+    "lessonDriveFileId": "10sB6zt3iSjFyTpyJj_qcyHItp5iyKogM",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "What's the key difference between product and project management?",
+    "options": [
+      "Project management decides what to build; product management tracks the schedule",
+      "Product management decides what to build; project management makes sure it's delivered on time",
+      "Project managers decide product strategy",
+      "Product managers only manage budgets"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Product focuses on the right outcome; project focuses on execution and schedule.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l206-02",
+    "lessonDriveFileId": "10sB6zt3iSjFyTpyJj_qcyHItp5iyKogM",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A project usually has:",
+    "options": [
+      "No end at all",
+      "No end date at all",
+      "A defined start and end date",
+      "No deliverables"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Projects are temporary; products live on and evolve.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l207-01",
+    "lessonDriveFileId": "1XATcqBzBn9UmXB5NvuqHpeYGWo0tqgkR",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which activity is a normal part of a PM's day?",
+    "options": [
+      "Coding the entire back end",
+      "Running payroll and approving staff expenses",
+      "Repairing hardware",
+      "Meeting engineers, reviewing data and talking to users"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "PM days mix communication, analysis and decision making.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l208-01",
+    "lessonDriveFileId": "1T9EONnAi6nYzOreZBQQTKGr_RAKTz4A7",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "One reason many people enjoy product management is:",
+    "options": [
+      "You see the direct impact of decisions on real users",
+      "You never work with other people",
+      "There are no decisions to make",
+      "You don't need to understand users"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "PMs shape products people use daily.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l207-02",
+    "lessonDriveFileId": "1XATcqBzBn9UmXB5NvuqHpeYGWo0tqgkR",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Why do PMs spend so much time in meetings and conversations?",
+    "options": [
+      "Meetings replace the need for decisions",
+      "Alignment across teams is essential to ship the right product",
+      "They have nothing else to do",
+      "It's required by law"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Communication keeps everyone moving in the same direction.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l201-04",
+    "lessonDriveFileId": "1ev8C5D5Z2ksZefL7z_LVZqj6wdR_Q2N-",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "The 'CEO of the product' description of a PM is misleading because:",
+    "options": [
+      "PMs usually have more authority than the actual CEO",
+      "PMs run the whole company",
+      "PMs usually have responsibility without formal authority",
+      "PMs never make decisions"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "PMs must persuade rather than command.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l202-02",
+    "lessonDriveFileId": "1V1TP9ih8zP2EkDSpOIBiRPSnkxu1Cq0A",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which of these is a product?",
+    "options": [
+      "A team meeting",
+      "A project deadline",
+      "A job description",
+      "A mobile banking app"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "An app that delivers value to users is a product.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l204-03",
+    "lessonDriveFileId": "1cx95E_gmNWGUosUYzjMCvsFa4gDwiFpZ",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which PM type is most likely to work on an internal tool used by staff?",
+    "options": [
+      "An internal or platform PM",
+      "A consumer growth PM",
+      "A hardware PM for phones",
+      "A marketing manager"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Internal tools have employees as their users.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l206-03",
+    "lessonDriveFileId": "10sB6zt3iSjFyTpyJj_qcyHItp5iyKogM",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A team must launch a new feature by March and track tasks to hit that date. This work is mostly:",
+    "options": [
+      "Product strategy",
+      "Project management",
+      "Market sizing",
+      "User research"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Scheduling and tracking delivery is project management.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l208-02",
+    "lessonDriveFileId": "1T9EONnAi6nYzOreZBQQTKGr_RAKTz4A7",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which skill set is most valuable for a new PM?",
+    "options": [
+      "Fast typing and advanced spreadsheet formulas",
+      "Photo editing",
+      "Communication, curiosity about users and clear thinking",
+      "Accounting certifications"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "PMs succeed by understanding people and problems.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l301-01",
+    "lessonDriveFileId": "1w8jgYtmRosMcxihzKlriKwEUy3NNZ0th",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "What are the four classic phases of the product lifecycle?",
+    "options": [
+      "Plan, code, test, ship",
+      "Idea, design, build, sell",
+      "Research, write, edit, publish",
+      "Introduction, growth, maturity, decline"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Products move through introduction, growth, maturity and decline.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l301-02",
+    "lessonDriveFileId": "1w8jgYtmRosMcxihzKlriKwEUy3NNZ0th",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "During the growth phase, a product typically sees:",
+    "options": [
+      "Rapidly rising adoption and sales",
+      "Sales stay flat with no new users",
+      "Falling sales as users leave",
+      "Discontinuation"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Growth is when demand accelerates.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l303-01",
+    "lessonDriveFileId": "1JK3wRfydN9RHqjUB4hqovKSaZP_jmdmT",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "A product in the decline phase may need:",
+    "options": [
+      "No decisions",
+      "Reinvention, repositioning or retirement",
+      "More of exactly the same",
+      "A bigger logo"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Declining products need a deliberate strategy.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l304-01",
+    "lessonDriveFileId": "1C90_2iMx6WPVQfjsp2jh4YJhiPk3ACNH",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which comes first in a typical product development process?",
+    "options": [
+      "Launching to the public",
+      "Writing release notes",
+      "Understanding the problem and user needs",
+      "Scaling the servers"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Good products start with a well-understood problem.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l306-01",
+    "lessonDriveFileId": "1190j1KRuP_5Byqvj-1xibFtQrN8jnxTJ",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Lean product development emphasises:",
+    "options": [
+      "Planning everything for a year before building",
+      "Never talking to users",
+      "Building every feature at once",
+      "Building small, measuring results and learning quickly"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Build–measure–learn reduces waste.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l307-01",
+    "lessonDriveFileId": "1CtN0iMFrVonio3hFf6RAjLXvJTKB4J1n",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Agile development delivers work:",
+    "options": [
+      "In small increments, adapting to feedback",
+      "All at once at the end",
+      "Only after a five-year plan",
+      "Without testing"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Agile favours iteration and responding to change.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l308-01",
+    "lessonDriveFileId": "1zjQXsb071MachZEzyMQeie7LwMV6LpAL",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "In Scrum, a 'sprint' is:",
+    "options": [
+      "A daily meeting",
+      "A fixed time box, often 1–4 weeks, to deliver a set of work",
+      "A long planning phase that happens once a year",
+      "A marketing campaign"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Sprints are short, repeated cycles.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l308-02",
+    "lessonDriveFileId": "1zjQXsb071MachZEzyMQeie7LwMV6LpAL",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "The daily stand-up in Scrum is for:",
+    "options": [
+      "Approving budgets",
+      "Reviewing annual performance",
+      "Sharing progress, plans and blockers briefly",
+      "Writing contracts"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It keeps the team synchronised.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l309-01",
+    "lessonDriveFileId": "1uuq-i3Tod0ad9mZ9_HWxlWYKSHSRLySE",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Kanban manages work by:",
+    "options": [
+      "Fixed sprints only",
+      "Running fixed two-week sprints with a sprint review",
+      "Working without priorities",
+      "Visualising tasks on a board and limiting work in progress"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Columns like To Do, Doing, Done show flow; WIP limits prevent overload.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l310-01",
+    "lessonDriveFileId": "1DHmvJPHVIIpOZYav-gx2K9uhtvDHsRrw",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Waterfall development is:",
+    "options": [
+      "A sequential process where each phase finishes before the next starts",
+      "An iterative process with short sprints",
+      "A way to visualise tasks only",
+      "A marketing method"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Requirements, design, build, test and release happen in order.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l311-01",
+    "lessonDriveFileId": "1w4HEtlYTbtqDtNQmsJDkCjfeIJ-R08xt",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "When might Waterfall be appropriate?",
+    "options": [
+      "When user needs change weekly",
+      "When requirements are fixed and changes are costly, such as some hardware or regulated projects",
+      "When you want rapid experiments",
+      "For early startups testing ideas with users every week"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Waterfall suits stable, well-defined requirements.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l305-01",
+    "lessonDriveFileId": "14gDxVy3rzw5Qg7daz-a6heHqm1Pvq5aq",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Why do teams iterate on a product after launch?",
+    "options": [
+      "Launch means the product is finished",
+      "Users never give feedback",
+      "Real usage reveals improvements the team couldn't predict",
+      "It wastes time"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Feedback after launch drives improvement.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l301-03",
+    "lessonDriveFileId": "1w8jgYtmRosMcxihzKlriKwEUy3NNZ0th",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "A popular messaging app has stable user numbers and strong competitors. It's most likely in the:",
+    "options": [
+      "Introduction phase",
+      "Growth phase",
+      "Decline phase",
+      "Maturity phase"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Maturity brings stable demand and competition.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l304-02",
+    "lessonDriveFileId": "1C90_2iMx6WPVQfjsp2jh4YJhiPk3ACNH",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which order reflects a sensible product development flow?",
+    "options": [
+      "Discover the problem, design a solution, build, launch, learn",
+      "Build, launch, then find the problem",
+      "Launch, design, discover",
+      "Learn, launch, build"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Understand first, then build and learn.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l306-02",
+    "lessonDriveFileId": "1190j1KRuP_5Byqvj-1xibFtQrN8jnxTJ",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "The main goal of Lean thinking is to:",
+    "options": [
+      "Build the biggest product possible",
+      "Reduce waste by learning what users value as early as possible",
+      "Avoid any measurement",
+      "Plan every feature in detail before building anything"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Lean focuses on validated learning.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l307-02",
+    "lessonDriveFileId": "1CtN0iMFrVonio3hFf6RAjLXvJTKB4J1n",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which value comes from the Agile Manifesto?",
+    "options": [
+      "Comprehensive documentation over working software",
+      "Contracts over collaboration",
+      "Responding to change over following a plan",
+      "Processes over people"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Agile values working software, collaboration and adaptability.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l308-03",
+    "lessonDriveFileId": "1zjQXsb071MachZEzyMQeie7LwMV6LpAL",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Who prioritises the product backlog in Scrum?",
+    "options": [
+      "The Scrum Master",
+      "The CEO only",
+      "The newest engineer",
+      "The Product Owner"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "The Product Owner (often the PM) orders the backlog.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l309-02",
+    "lessonDriveFileId": "1uuq-i3Tod0ad9mZ9_HWxlWYKSHSRLySE",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "A Kanban team limits 'Doing' to three tasks. The purpose is to:",
+    "options": [
+      "Finish work before starting more, improving flow",
+      "Slow the team down",
+      "Hide extra tasks from managers",
+      "Avoid priorities"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "WIP limits reduce multitasking and bottlenecks.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l310-02",
+    "lessonDriveFileId": "1DHmvJPHVIIpOZYav-gx2K9uhtvDHsRrw",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "A big risk of Waterfall for software products is:",
+    "options": [
+      "Too much user feedback",
+      "Discovering late that you built the wrong thing",
+      "Releasing too many small updates to users",
+      "Too much flexibility"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Feedback comes only at the end.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l311-02",
+    "lessonDriveFileId": "1w4HEtlYTbtqDtNQmsJDkCjfeIJ-R08xt",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Many modern teams use:",
+    "options": [
+      "Only Waterfall forever",
+      "Only Waterfall, because it's the industry rule",
+      "A mix of methods suited to their context",
+      "Only Kanban by law"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Teams adapt Agile, Kanban and other methods.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l401-01",
+    "lessonDriveFileId": "1a4btTMPugwbeJr_9OcpUQ4Y8h-T1HQnY",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A user need is:",
+    "options": [
+      "A feature request copied word for word",
+      "A competitor's product",
+      "A company's revenue target",
+      "The underlying problem or goal a person wants to achieve"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Needs sit beneath requests; features are just possible solutions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l402-01",
+    "lessonDriveFileId": "1m5sj6gP5LXsWU5V-Z-oCEUkEn58UsHqx",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which is a good source of product ideas?",
+    "options": [
+      "Customer feedback, data and support tickets",
+      "Only the PM's personal taste",
+      "Random guesses",
+      "Copying every competitor feature"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Ideas come from users, data, teams and the market.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l402-02",
+    "lessonDriveFileId": "1m5sj6gP5LXsWU5V-Z-oCEUkEn58UsHqx",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Why should a PM collect ideas from the whole team?",
+    "options": [
+      "Only the PM is allowed ideas",
+      "Engineers, sales and support see different user problems",
+      "It means the PM never has to make decisions",
+      "It makes meetings longer"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Different perspectives surface more opportunities.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l403-01",
+    "lessonDriveFileId": "14-p-NRk0Y1nQTjVYC4qgkYi6FPg94zxI",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A user asks for 'a faster horse'. What should a PM do?",
+    "options": [
+      "Build a faster horse exactly",
+      "Build exactly what the user asked for",
+      "Dig into why: the real need may be getting places faster",
+      "Ask a competitor"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Look for the need behind the request.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l403-02",
+    "lessonDriveFileId": "14-p-NRk0Y1nQTjVYC4qgkYi6FPg94zxI",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "The '5 Whys' technique helps you:",
+    "options": [
+      "Write code faster",
+      "Calculate market size",
+      "Estimate how long a feature will take",
+      "Find the root cause behind a problem or request"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Asking 'why' repeatedly uncovers deeper needs.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l403-03",
+    "lessonDriveFileId": "14-p-NRk0Y1nQTjVYC4qgkYi6FPg94zxI",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which interview question is best for uncovering user needs?",
+    "options": [
+      "Tell me about the last time you tried to do this",
+      "Would you use our app?",
+      "Do you like this feature?",
+      "How much would you pay right now?"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Questions about past behaviour give more reliable insight than hypotheticals.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l405-01",
+    "lessonDriveFileId": "1KcnhfIb7Fb3SObug8q6MtavDgCWKJXWP",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "What's the difference between users and customers?",
+    "options": [
+      "They are always the same people",
+      "Users use the product; customers pay for it, and they may differ",
+      "Customers never use products",
+      "Customers use the product; users always pay for it"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "In B2B, a company buys while employees use it.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l405-02",
+    "lessonDriveFileId": "1KcnhfIb7Fb3SObug8q6MtavDgCWKJXWP",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "For a free social app funded by adverts, the customers are mainly:",
+    "options": [
+      "The users",
+      "The engineers",
+      "The advertisers",
+      "The investors only"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Advertisers pay; users use.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l401-02",
+    "lessonDriveFileId": "1a4btTMPugwbeJr_9OcpUQ4Y8h-T1HQnY",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Why should PMs focus on problems before solutions?",
+    "options": [
+      "Solutions are always obvious",
+      "Solutions are usually obvious, so problems need little research",
+      "It's faster to skip the problem",
+      "A clear problem leads to better solutions and avoids building the wrong thing"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Fall in love with the problem, not your solution.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l402-03",
+    "lessonDriveFileId": "1m5sj6gP5LXsWU5V-Z-oCEUkEn58UsHqx",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which source of ideas comes directly from usage data?",
+    "options": [
+      "Seeing where users drop off in a sign-up flow",
+      "A brainstorm about colours",
+      "A competitor's press release",
+      "A random social media post"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Analytics reveal friction points.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l403-04",
+    "lessonDriveFileId": "14-p-NRk0Y1nQTjVYC4qgkYi6FPg94zxI",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Observing users as they use a product is valuable because:",
+    "options": [
+      "Users never make mistakes",
+      "People often do things differently from what they say",
+      "It replaces all other research",
+      "It's always faster than surveys"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Observation reveals real behaviour.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l405-03",
+    "lessonDriveFileId": "1KcnhfIb7Fb3SObug8q6MtavDgCWKJXWP",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "In a school management app sold to schools, who are the users?",
+    "options": [
+      "Only the school's bank",
+      "Only the app's investors",
+      "Teachers, students and parents who use it",
+      "Only the PM"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "The school buys; many groups use.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l401-03",
+    "lessonDriveFileId": "1a4btTMPugwbeJr_9OcpUQ4Y8h-T1HQnY",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A request for 'a dashboard export button' is best seen as:",
+    "options": [
+      "A requirement to build immediately",
+      "Irrelevant",
+      "A competitor feature",
+      "A possible solution; the PM should find the need behind it"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Understand what the user is trying to achieve.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l402-04",
+    "lessonDriveFileId": "1m5sj6gP5LXsWU5V-Z-oCEUkEn58UsHqx",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which idea source is most reliable for spotting a widespread problem?",
+    "options": [
+      "Patterns across many support tickets",
+      "One loud user's opinion",
+      "A single tweet",
+      "The PM's hunch"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Patterns show how common a problem is.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l403-05",
+    "lessonDriveFileId": "14-p-NRk0Y1nQTjVYC4qgkYi6FPg94zxI",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Why avoid asking users 'Would you buy this?'",
+    "options": [
+      "Users always say no to that question",
+      "People are poor at predicting their future behaviour",
+      "The question is too long for a survey",
+      "It's too technical"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Past behaviour is a better guide.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l405-04",
+    "lessonDriveFileId": "1KcnhfIb7Fb3SObug8q6MtavDgCWKJXWP",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Why does the user–customer distinction matter for a B2B product?",
+    "options": [
+      "Only buyers matter",
+      "Only the buyer's opinion matters because they pay",
+      "You must satisfy both the buyer's goals and the users' day-to-day needs",
+      "It doesn't matter"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "A product that buyers like but users hate won't be renewed.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l501-01",
+    "lessonDriveFileId": "1MERQJLmxMjrWVMmSzEgJ3iAL3dSVuhYO",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "TAM stands for:",
+    "options": [
+      "Total Average Margin",
+      "Target Audience Measure",
+      "Time and Money",
+      "Total Addressable Market"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "TAM is the total demand for a product category.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l501-02",
+    "lessonDriveFileId": "1MERQJLmxMjrWVMmSzEgJ3iAL3dSVuhYO",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "In market sizing, SAM is:",
+    "options": [
+      "The part of the total market your product can realistically serve",
+      "The whole world population",
+      "Your company's current revenue and profit",
+      "Your competitors' revenue"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Serviceable Available Market narrows TAM to what you can reach.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l501-03",
+    "lessonDriveFileId": "1MERQJLmxMjrWVMmSzEgJ3iAL3dSVuhYO",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A bottom-up market sizing starts from:",
+    "options": [
+      "A single industry report headline",
+      "Units and prices, such as number of potential customers × price",
+      "A single headline figure from an industry report",
+      "Competitor logos"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Bottom-up estimates build from customer counts and pricing.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l503-01",
+    "lessonDriveFileId": "1M7FLj8RkmmOzgDXh8Wn6kGpvvpi92pid",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Where can a PM find competitors?",
+    "options": [
+      "Only in newspapers and printed magazines",
+      "Only by asking investors",
+      "App stores, search results, review sites and customer conversations",
+      "Nowhere; competitors don't exist"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Many public sources reveal competitors.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l504-01",
+    "lessonDriveFileId": "1sTT-mFfUMrlIvYh2pbnCli0pIS1MfOIY",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "An indirect competitor:",
+    "options": [
+      "Sells exactly the same product",
+      "Is your own company",
+      "Has no customers",
+      "Solves the same problem in a different way"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Spreadsheets are an indirect competitor to project management apps.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l504-02",
+    "lessonDriveFileId": "1sTT-mFfUMrlIvYh2pbnCli0pIS1MfOIY",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A potential competitor is:",
+    "options": [
+      "A company that could enter your market in future",
+      "A company that already copies you",
+      "A supplier",
+      "A customer"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Large firms in adjacent markets can enter quickly.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l505-01",
+    "lessonDriveFileId": "1Kw4ULJumhXSP3E1jCE2qMNsU-IYEqyFI",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Why compare competitors using consistent criteria?",
+    "options": [
+      "It hides your own product's weaknesses from investors",
+      "It makes strengths and gaps easy to see side by side",
+      "It's required by law",
+      "It makes reports longer"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Consistent criteria allow fair comparison.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l507-01",
+    "lessonDriveFileId": "1cq9vooat9kUlNZe91XF0lXdZAbtQ7-Si",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A feature table compares:",
+    "options": [
+      "Each team member's salary",
+      "Office locations",
+      "Which features each competitor offers",
+      "Server costs"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It's a grid of products and features.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l513-01",
+    "lessonDriveFileId": "1ZM_lR5BJAukR0Pji1SMOhz10hcvedz-2",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Why keep monitoring competitors after launch?",
+    "options": [
+      "Monitoring is only needed before launch",
+      "It replaces user research",
+      "Competitors never change once you've launched",
+      "Markets change, and competitors release new features and pricing"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Ongoing monitoring avoids surprises.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l514-01",
+    "lessonDriveFileId": "1o_A_XWTzjDoptRmAUYbTu40_zeJgs270",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "In competitive analysis, what should a PM ultimately care about most?",
+    "options": [
+      "Meeting user needs better than alternatives",
+      "Copying every competitor feature",
+      "Having the most features",
+      "Beating competitors on price only"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Competition matters because users choose between options.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l501-04",
+    "lessonDriveFileId": "1MERQJLmxMjrWVMmSzEgJ3iAL3dSVuhYO",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "In market sizing, SOM is:",
+    "options": [
+      "The total demand for the whole product category",
+      "The share of the market you can realistically capture soon",
+      "A competitor's revenue",
+      "A type of metric framework"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Serviceable Obtainable Market is your near-term achievable share.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l505-02",
+    "lessonDriveFileId": "1Kw4ULJumhXSP3E1jCE2qMNsU-IYEqyFI",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which is a useful criterion when assessing a competitor?",
+    "options": [
+      "Their office furniture",
+      "Their logo colour",
+      "Their target users and pricing",
+      "Their CEO's hobbies"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Users, pricing, features, strengths and weaknesses are common criteria.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l501-05",
+    "lessonDriveFileId": "1MERQJLmxMjrWVMmSzEgJ3iAL3dSVuhYO",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A city has 20,000 small shops; you expect 10% to pay ₦5,000 a month. This is an example of:",
+    "options": [
+      "Top-down market sizing",
+      "A feature table",
+      "A user persona",
+      "Bottom-up market sizing"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Customers × adoption × price builds the estimate.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l503-02",
+    "lessonDriveFileId": "1M7FLj8RkmmOzgDXh8Wn6kGpvvpi92pid",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Your best signal that a competitor matters is:",
+    "options": [
+      "Your target users are already using it",
+      "It has a big office",
+      "It has a famous founder",
+      "It advertises on TV"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Competitors matter when they serve your users.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l504-03",
+    "lessonDriveFileId": "1sTT-mFfUMrlIvYh2pbnCli0pIS1MfOIY",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "For a food delivery app, cooking at home is:",
+    "options": [
+      "A direct competitor",
+      "An indirect competitor",
+      "Not a competitor",
+      "A supplier"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "It solves the same need (getting fed) differently.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l507-02",
+    "lessonDriveFileId": "1cq9vooat9kUlNZe91XF0lXdZAbtQ7-Si",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "What's a risk of relying only on feature tables?",
+    "options": [
+      "They are too accurate",
+      "They take no time",
+      "They ignore how well features actually work for users",
+      "They include pricing automatically"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Having a feature isn't the same as doing it well.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l513-02",
+    "lessonDriveFileId": "1ZM_lR5BJAukR0Pji1SMOhz10hcvedz-2",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which is a light way to monitor competitors?",
+    "options": [
+      "Hack their servers",
+      "Ignore them until customers start leaving",
+      "Copy their code",
+      "Follow their release notes and app store updates"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Public channels show what's changing.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l514-02",
+    "lessonDriveFileId": "1o_A_XWTzjDoptRmAUYbTu40_zeJgs270",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A competitor adds a feature your users never ask for. What should you do?",
+    "options": [
+      "Check whether it solves a real user need before reacting",
+      "Copy it immediately",
+      "Remove your own features",
+      "Copy the feature immediately to keep up"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Don't chase features blindly.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l701-01",
+    "lessonDriveFileId": "16Yr-DBuZPQ5qXfpzYwSjBGsZxtueHrDm",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "An MVP (minimum viable product) is:",
+    "options": [
+      "The first full version with every feature",
+      "The smallest thing you can build to test a key assumption",
+      "A finished, polished product",
+      "A marketing plan"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "MVPs maximise learning with minimum effort.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l703-01",
+    "lessonDriveFileId": "1RsrI1-oSZdZ-Y3zehwMK_WIV5F5Gj1AL",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Running an MVP experiment starts with:",
+    "options": [
+      "Building the full product",
+      "Hiring a big team",
+      "Identifying the assumptions behind your idea",
+      "Launching adverts"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "You test assumptions, so you must name them first.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l704-01",
+    "lessonDriveFileId": "1T0GzGgJhLA5reSaExEnFWaDoeILDJhub",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "An assumption is:",
+    "options": [
+      "A proven fact",
+      "A finished feature",
+      "A fact you've already proved with data",
+      "Something you believe is true but haven't proved"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Assumptions carry risk until tested.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l706-01",
+    "lessonDriveFileId": "1iN-FbTB9FvPxWfjuOjglC0umRmtoHKbY",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which assumption should you test first?",
+    "options": [
+      "The riskiest one that would sink the idea if wrong",
+      "The easiest one, so you get a quick win",
+      "The most fun one",
+      "The one about the logo"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Test what's most likely to kill the idea.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l708-01",
+    "lessonDriveFileId": "1rZT8e4upBtrvvcC0e3OkkBICIUmatDJs",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A good hypothesis is:",
+    "options": [
+      "Vague and inspirational",
+      "Specific and testable, with a measurable outcome",
+      "Impossible to measure",
+      "A general statement like 'users will love it'"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "E.g. 'At least 20% of visitors will sign up for early access'.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l711-01",
+    "lessonDriveFileId": "1V_SgTxG-x_BH4NJ7NwXI_2ssibBI2i2J",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Minimum criteria for success (MCS) is:",
+    "options": [
+      "The number of features in the first release",
+      "The launch date",
+      "The result your experiment must hit for you to proceed",
+      "The maximum budget you can spend on a test"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Set the bar before running the test to avoid bias.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l714-01",
+    "lessonDriveFileId": "1Q2pSzmT9jTaARkrt39mMJyKzr0Nu8lyQ",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A 'Wizard of Oz' or concierge MVP:",
+    "options": [
+      "Uses full automation from day one",
+      "Has no users",
+      "Is only a logo",
+      "Delivers the service manually behind the scenes"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Humans do the work so you can test demand before building.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l719-01",
+    "lessonDriveFileId": "1_r7PQZwOfVl8jQaTavjY-e3t37EFV5_F",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A 'coming soon' landing page MVP tests:",
+    "options": [
+      "Whether people are interested enough to sign up",
+      "Server performance",
+      "How fast your servers respond under load",
+      "Office space"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Sign-ups measure demand.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l720-01",
+    "lessonDriveFileId": "1BnwSIPXCbW6ipc0jIPGvmF3DF4l3rJ6-",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "An explainer-video MVP is useful because:",
+    "options": [
+      "It replaces the product forever",
+      "It shows the concept and measures interest without building it",
+      "It costs nothing to watch",
+      "It replaces the need to ever build the product"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Dropbox famously used a video to test demand.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l722-01",
+    "lessonDriveFileId": "1QIRCtEesiNBhBTWI2OO9KZUfpQHbRuUK",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A concierge MVP differs from Wizard of Oz because:",
+    "options": [
+      "It needs no customers to run",
+      "It is fully automated from day one",
+      "Users know a person is providing the service",
+      "It's only for hardware"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "In a concierge MVP the manual service is visible.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l724-01",
+    "lessonDriveFileId": "1wK5yt_QIIRgvE-Tr7V7qSpY_aWShB7wg",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "After an experiment misses its success criteria, a PM should:",
+    "options": [
+      "Ignore the result",
+      "Lower the criteria afterwards",
+      "Launch the full product anyway",
+      "Learn why, then pivot, adjust or stop"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Results guide the next decision.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l714-02",
+    "lessonDriveFileId": "1Q2pSzmT9jTaARkrt39mMJyKzr0Nu8lyQ",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A 'piecemeal' MVP is built by:",
+    "options": [
+      "Combining existing tools and services instead of custom code",
+      "Hiring a large engineering team first",
+      "Hiring 50 engineers",
+      "Writing everything from scratch with custom code"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Off-the-shelf tools test ideas fast.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l701-02",
+    "lessonDriveFileId": "16Yr-DBuZPQ5qXfpzYwSjBGsZxtueHrDm",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Why build an MVP instead of the full product first?",
+    "options": [
+      "To avoid talking to users",
+      "To learn whether the idea works before investing heavily",
+      "Because full products are illegal",
+      "To impress investors only"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "MVPs reduce risk and wasted effort.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l703-02",
+    "lessonDriveFileId": "1RsrI1-oSZdZ-Y3zehwMK_WIV5F5Gj1AL",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which step should come right before running an MVP experiment?",
+    "options": [
+      "Writing the launch press release",
+      "Hiring a sales team",
+      "Setting a clear hypothesis and success criteria",
+      "Designing the final logo"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Know what you're testing and what success looks like.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l704-02",
+    "lessonDriveFileId": "1T0GzGgJhLA5reSaExEnFWaDoeILDJhub",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "'Users will pay monthly for this service' is best described as:",
+    "options": [
+      "A proven fact",
+      "A metric",
+      "A competitor",
+      "An assumption to test"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Until tested, it's an assumption.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l706-02",
+    "lessonDriveFileId": "1iN-FbTB9FvPxWfjuOjglC0umRmtoHKbY",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "The risk/difficulty square helps you decide:",
+    "options": [
+      "Which assumptions to test first based on risk and effort",
+      "Which team members to hire for the project",
+      "What colour to use",
+      "Which server to buy"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "High-risk, easy-to-test assumptions go first.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l708-02",
+    "lessonDriveFileId": "1rZT8e4upBtrvvcC0e3OkkBICIUmatDJs",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which is the best hypothesis?",
+    "options": [
+      "Our app will be the best on the market",
+      "If we email 500 shop owners, at least 50 will book a demo within a week",
+      "People will love our app and tell their friends",
+      "We will be successful"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "It's specific, measurable and time-bound.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l711-02",
+    "lessonDriveFileId": "1V_SgTxG-x_BH4NJ7NwXI_2ssibBI2i2J",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Why set success criteria before an experiment?",
+    "options": [
+      "So you can change them later if results are poor",
+      "To make the test longer",
+      "To avoid bending the interpretation of results afterwards",
+      "To impress the team"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Pre-set criteria prevent bias.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l719-02",
+    "lessonDriveFileId": "1_r7PQZwOfVl8jQaTavjY-e3t37EFV5_F",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A 404 or 'fake door' test works by:",
+    "options": [
+      "Breaking the site on purpose for everyone",
+      "Deleting old features",
+      "Hiding the product",
+      "Showing a button for a feature that isn't built yet and measuring clicks"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Clicks measure interest; users then see a message.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l722-02",
+    "lessonDriveFileId": "1QIRCtEesiNBhBTWI2OO9KZUfpQHbRuUK",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which MVP type is best for testing a personal meal-planning service before building software?",
+    "options": [
+      "Concierge MVP",
+      "Full mobile app",
+      "Machine learning model",
+      "Hardware prototype"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Deliver it manually to a few users first.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l724-02",
+    "lessonDriveFileId": "1wK5yt_QIIRgvE-Tr7V7qSpY_aWShB7wg",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "An experiment beats its success criteria. The next step is:",
+    "options": [
+      "Stop testing and build every feature at once",
+      "Use what you learned to decide the next build or test",
+      "Delete the data",
+      "Repeat the same test forever"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Success unlocks the next stage.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l720-02",
+    "lessonDriveFileId": "1BnwSIPXCbW6ipc0jIPGvmF3DF4l3rJ6-",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which company famously validated demand with an explainer video?",
+    "options": [
+      "Microsoft Excel",
+      "IBM",
+      "Dropbox",
+      "Nokia"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Dropbox's video drove sign-ups before the product was ready.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l801-01",
+    "lessonDriveFileId": "1_HlzWViza6gpJ_wUqNQusGWXD7SFIsjy",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A wireframe is:",
+    "options": [
+      "The final coded app",
+      "A marketing poster",
+      "The final coded version of a screen",
+      "A simple, low-detail layout of a screen"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Wireframes focus on structure, not visual polish.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l802-01",
+    "lessonDriveFileId": "1DvtMFSGxVl8YtYeM92O9Dhes2SN2A8dn",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "What's the usual order of fidelity?",
+    "options": [
+      "Wireframe, mockup, prototype",
+      "Prototype, wireframe, mockup",
+      "Mockup, prototype, wireframe",
+      "Wireframe only"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Fidelity grows from structure to visuals to interaction.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l802-02",
+    "lessonDriveFileId": "1DvtMFSGxVl8YtYeM92O9Dhes2SN2A8dn",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A prototype differs from a mockup because it is:",
+    "options": [
+      "Always black and white",
+      "Interactive, so users can click through it",
+      "Always in black and white",
+      "Never shared"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Prototypes simulate flows.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l803-01",
+    "lessonDriveFileId": "1wAGZcLbpm5dkY2LDVIKEB2VHUxecLbCl",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Why start with paper sketches?",
+    "options": [
+      "They're the final design",
+      "They replace user testing",
+      "They're fast and cheap, so you can explore many ideas",
+      "They look the most professional"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Low effort encourages exploration.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l804-01",
+    "lessonDriveFileId": "1djrGJHxu3CnOAFKwBSfzxpdcJEAJtEYf",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "When sketching a mobile app, you should consider:",
+    "options": [
+      "Desktop keyboard shortcuts first",
+      "Printing layouts",
+      "TV remote controls",
+      "Small screen space and thumb-friendly controls"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Mobile constraints shape layout.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l806-01",
+    "lessonDriveFileId": "1r46wV4q0H5DvT6m1AHHEnXhz6aFP3zOs",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Balsamiq is a tool for:",
+    "options": [
+      "Creating quick low-fidelity wireframes",
+      "Hosting databases in the cloud",
+      "Writing back-end code and APIs",
+      "Video editing"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Its sketchy style keeps focus on structure.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l801-02",
+    "lessonDriveFileId": "1_HlzWViza6gpJ_wUqNQusGWXD7SFIsjy",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Why should PMs, not just designers, understand wireframing?",
+    "options": [
+      "PMs must replace designers",
+      "It helps communicate ideas clearly with designers and engineers",
+      "PMs are expected to replace designers",
+      "It's only for marketing"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Visuals reduce misunderstandings.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l802-03",
+    "lessonDriveFileId": "1DvtMFSGxVl8YtYeM92O9Dhes2SN2A8dn",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which artefact is best for testing a sign-up flow with users before coding?",
+    "options": [
+      "A spreadsheet",
+      "A press release",
+      "A clickable prototype",
+      "A final invoice"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Prototypes let users try the flow.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l803-02",
+    "lessonDriveFileId": "1wAGZcLbpm5dkY2LDVIKEB2VHUxecLbCl",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A key rule when sketching ideas is:",
+    "options": [
+      "Perfect the first idea",
+      "Use only one colour pen",
+      "Never share sketches",
+      "Go for quantity first, then refine"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Many rough ideas lead to better solutions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l806-02",
+    "lessonDriveFileId": "1r46wV4q0H5DvT6m1AHHEnXhz6aFP3zOs",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Why do low-fidelity wireframes often get better feedback on structure?",
+    "options": [
+      "People don't get distracted by colours and fonts",
+      "They look finished",
+      "They have real data",
+      "They include real customer data"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Low fidelity keeps attention on layout and flow.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l804-02",
+    "lessonDriveFileId": "1djrGJHxu3CnOAFKwBSfzxpdcJEAJtEYf",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "In a mobile sketch, the most important actions should be:",
+    "options": [
+      "Hidden in menus",
+      "Easy to reach and clearly visible",
+      "At the very top corner only",
+      "Removed"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Prioritise key actions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l801-03",
+    "lessonDriveFileId": "1_HlzWViza6gpJ_wUqNQusGWXD7SFIsjy",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Wireframes typically use:",
+    "options": [
+      "Final brand colours and photos",
+      "Animations",
+      "Simple boxes, lines and placeholder text",
+      "Real customer data"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "They show where things go, not how they look.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l801-04",
+    "lessonDriveFileId": "1_HlzWViza6gpJ_wUqNQusGWXD7SFIsjy",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "At which stage is a wireframe most useful?",
+    "options": [
+      "After the product has launched",
+      "During accounting",
+      "Only for marketing",
+      "Early, when exploring layout and flow"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Wireframes are cheap early explorations.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l802-04",
+    "lessonDriveFileId": "1DvtMFSGxVl8YtYeM92O9Dhes2SN2A8dn",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A high-fidelity mockup includes:",
+    "options": [
+      "Real colours, fonts and imagery but no interaction",
+      "Only boxes and lines",
+      "Working back-end code",
+      "Working code and a live database"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Mockups show visual design.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l803-03",
+    "lessonDriveFileId": "1wAGZcLbpm5dkY2LDVIKEB2VHUxecLbCl",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which is a benefit of sketching with your team?",
+    "options": [
+      "It removes the need for users",
+      "Shared understanding and more varied ideas",
+      "It's slower than coding",
+      "It fixes all bugs"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Collaborative sketching aligns the team.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l806-03",
+    "lessonDriveFileId": "1r46wV4q0H5DvT6m1AHHEnXhz6aFP3zOs",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "You need to show engineers a rough screen layout this afternoon. The best tool is:",
+    "options": [
+      "A full design system",
+      "A fully coded prototype with real data",
+      "A quick wireframing tool like Balsamiq or paper",
+      "A finished app"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Speed matters more than polish here.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l901-01",
+    "lessonDriveFileId": "1Kw6uweS8eId8YzIvsDKnUG5Lflde6kNJ",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Why do PMs use metrics?",
+    "options": [
+      "Because investors require a dashboard",
+      "To replace talking to users",
+      "To make dashboards look busy for managers",
+      "To define success and measure whether the product achieves it"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Metrics show whether changes help.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l903-01",
+    "lessonDriveFileId": "1rzTNJyNwIG6YmkamIvV9o3-w43-7aQaf",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "A vanity metric is:",
+    "options": [
+      "A number that looks good but doesn't guide decisions",
+      "A metric tied to revenue",
+      "The percentage of users who return each week",
+      "A conversion rate"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Total downloads can look impressive without showing real engagement.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l903-02",
+    "lessonDriveFileId": "1rzTNJyNwIG6YmkamIvV9o3-w43-7aQaf",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which is an actionable metric?",
+    "options": [
+      "Total number of press mentions",
+      "Percentage of new users who complete onboarding",
+      "Number of social followers",
+      "Number of press mentions"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "It shows where to improve.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l904-01",
+    "lessonDriveFileId": "1LS0Jkj_PtfA_C1w4Qis6OYJAQKLAaDiG",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "A good metric is:",
+    "options": [
+      "Complicated and unique",
+      "A large total that keeps rising whatever the team does",
+      "Clear, comparable over time, and linked to user and business value",
+      "Unrelated to goals but easy to collect automatically"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Good metrics are understandable and actionable.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l905-01",
+    "lessonDriveFileId": "1lRRBnclBJE8fWST0Uen7Vd8yytPZqSQB",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "The HEART framework stands for:",
+    "options": [
+      "Health, Energy, Activity, Rest, Time",
+      "Hits, Exits, Ads, Revenue, Traffic",
+      "Help, Edit, Add, Remove, Test",
+      "Happiness, Engagement, Adoption, Retention, Task success"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Google's HEART measures user experience quality.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l905-02",
+    "lessonDriveFileId": "1lRRBnclBJE8fWST0Uen7Vd8yytPZqSQB",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "HEART is usually paired with which process?",
+    "options": [
+      "Goals, Signals, Metrics",
+      "Plan, Do, Check",
+      "Sprint, Review, Retro",
+      "Build, Measure, Learn only"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "For each HEART area you set goals, signals and metrics.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l907-01",
+    "lessonDriveFileId": "1yRtpe3yQPKwqZhxMfxOx6U3mN1ETdJiM",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "AARRR (pirate metrics) stands for:",
+    "options": [
+      "Ads, Apps, Reach, Reviews, Returns",
+      "Acquisition, Activation, Retention, Referral, Revenue",
+      "Ask, Answer, Review, Rate, Repeat",
+      "Access, Adoption, Rating, Reach, Rank"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Dave McClure's funnel for growth.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l907-02",
+    "lessonDriveFileId": "1yRtpe3yQPKwqZhxMfxOx6U3mN1ETdJiM",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "In AARRR, 'activation' means:",
+    "options": [
+      "Users finding the website",
+      "Users paying for the first time",
+      "Users having a first great experience with the product",
+      "Users telling friends"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Activation is the first moment of real value.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l908-01",
+    "lessonDriveFileId": "11YUb6nArnSvHnEFN53zZ3db_lrm4JEK4",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Why define metrics before launching a feature?",
+    "options": [
+      "Metrics can't be added later",
+      "It's required by law",
+      "Metrics can't be added after launch",
+      "So you can measure impact and set up tracking in advance"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Tracking must be in place to measure change.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l901-02",
+    "lessonDriveFileId": "1Kw6uweS8eId8YzIvsDKnUG5Lflde6kNJ",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "A North Star metric is:",
+    "options": [
+      "The single metric that best captures the value users get",
+      "A random daily figure",
+      "The number of features shipped this year",
+      "The number of employees in the company"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "It aligns the team on long-term value.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l904-02",
+    "lessonDriveFileId": "1LS0Jkj_PtfA_C1w4Qis6OYJAQKLAaDiG",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Ratios like conversion rate are often better than totals because:",
+    "options": [
+      "They're always larger",
+      "They allow fair comparison over time and between groups",
+      "They never change, so reports stay simple",
+      "They are always bigger numbers"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Rates normalise for size.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l908-02",
+    "lessonDriveFileId": "11YUb6nArnSvHnEFN53zZ3db_lrm4JEK4",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "A cohort analysis groups users by:",
+    "options": [
+      "Their names in alphabetical order",
+      "Their phone colour",
+      "When they started, to compare behaviour over time",
+      "Random selection"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Cohorts reveal retention trends.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l901-03",
+    "lessonDriveFileId": "1Kw6uweS8eId8YzIvsDKnUG5Lflde6kNJ",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "What's the main risk of having no clear success metric for a feature?",
+    "options": [
+      "It ships faster",
+      "Users like it more",
+      "Engineers code better",
+      "You can't tell whether it worked"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Without measures, success is guesswork.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l903-03",
+    "lessonDriveFileId": "1rzTNJyNwIG6YmkamIvV9o3-w43-7aQaf",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "An app has 1 million downloads but only 2% use it weekly. The downloads figure is:",
+    "options": [
+      "A vanity metric here",
+      "The best North Star metric",
+      "An activation metric",
+      "A retention metric"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Weekly use tells the real story.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l904-03",
+    "lessonDriveFileId": "1LS0Jkj_PtfA_C1w4Qis6OYJAQKLAaDiG",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which metric best measures whether users keep finding value?",
+    "options": [
+      "Total sign-ups ever",
+      "Retention rate",
+      "Number of app store screenshots",
+      "Logo impressions"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Retention shows ongoing value.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l905-03",
+    "lessonDriveFileId": "1lRRBnclBJE8fWST0Uen7Vd8yytPZqSQB",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Under HEART, 'Task success' could be measured by:",
+    "options": [
+      "Number of social likes",
+      "Office attendance",
+      "Percentage of users completing checkout without errors",
+      "The number of servers running the app"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Task success measures effectiveness.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l907-03",
+    "lessonDriveFileId": "1yRtpe3yQPKwqZhxMfxOx6U3mN1ETdJiM",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "A user invites three friends. Which AARRR stage is this?",
+    "options": [
+      "Acquisition",
+      "Revenue",
+      "Activation",
+      "Referral"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Referral is users bringing others.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l908-03",
+    "lessonDriveFileId": "11YUb6nArnSvHnEFN53zZ3db_lrm4JEK4",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which tool category helps track product metrics?",
+    "options": [
+      "Product analytics tools such as Mixpanel or Google Analytics",
+      "Video editors and design tools",
+      "Word processors",
+      "Photo filters and social media scheduling apps"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Analytics tools record events and funnels.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l905-04",
+    "lessonDriveFileId": "1lRRBnclBJE8fWST0Uen7Vd8yytPZqSQB",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Why might a PM use HEART instead of only revenue?",
+    "options": [
+      "Revenue never matters for products",
+      "It captures user experience signals that drive long-term success",
+      "HEART is required by law for all digital products",
+      "It's simpler than counting users"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Experience quality predicts retention and growth.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1001-01",
+    "lessonDriveFileId": "1RKslYkDG61mPoz59XKApa1PkQYXTwkXR",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "An epic is:",
+    "options": [
+      "A single bug",
+      "A one-line task",
+      "A large body of work that can be broken into smaller user stories",
+      "A weekly meeting where the team reviews progress"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Epics group related stories.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1002-01",
+    "lessonDriveFileId": "1gHP2fmCYT7AeJXV5lSfMm2EYQg7vTLHt",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "An epic spec typically includes:",
+    "options": [
+      "A list of competitor prices",
+      "Only the designer's name",
+      "Only the release date and the designer's name",
+      "The problem, goals, requirements and success metrics"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Specs explain why and what before how.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1003-01",
+    "lessonDriveFileId": "1u9U5ofIKZA0K8-ytuC1Jqsh-iEbdx4a5",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which is a well-formed user story?",
+    "options": [
+      "As a shopper, I want to save items so that I can buy them later",
+      "Add a save button",
+      "The database should be faster than it is now",
+      "The shopping page should look modern and load quickly"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Who, what and why.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1003-02",
+    "lessonDriveFileId": "1u9U5ofIKZA0K8-ytuC1Jqsh-iEbdx4a5",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Acceptance criteria describe:",
+    "options": [
+      "The team's salaries",
+      "Conditions that must be met for a story to be complete",
+      "The company's long-term vision and mission",
+      "The marketing budget"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "They make 'done' clear and testable.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1005-01",
+    "lessonDriveFileId": "1_bQ2xwl7xGKHRYhAW6Ahtf0w7sqyvVwA",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Story points estimate:",
+    "options": [
+      "Exact hours to the minute",
+      "The price of a feature",
+      "Relative effort and complexity of work",
+      "The number of users"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Points compare effort between stories.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1005-02",
+    "lessonDriveFileId": "1_bQ2xwl7xGKHRYhAW6Ahtf0w7sqyvVwA",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Velocity is:",
+    "options": [
+      "The speed of the internet",
+      "How fast the CEO walks",
+      "The number of bugs reported each week",
+      "The amount of work a team completes per sprint on average"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Velocity helps forecast future sprints.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1006-01",
+    "lessonDriveFileId": "10SmWQtJAF1zUGSL1Ot02748_JvpM5Ybq",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "A product roadmap communicates:",
+    "options": [
+      "Planned direction and priorities over time",
+      "Every line of code",
+      "The team's holiday schedule",
+      "Server costs only"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Roadmaps align stakeholders on where the product is heading.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1006-02",
+    "lessonDriveFileId": "10SmWQtJAF1zUGSL1Ot02748_JvpM5Ybq",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Why do many teams avoid fixed dates on long-term roadmaps?",
+    "options": [
+      "Roadmaps are only for investors, so dates don't matter",
+      "Plans change as teams learn, so themes or Now/Next/Later work better",
+      "Roadmaps shouldn't change",
+      "Dates confuse engineers"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Flexible roadmaps reflect uncertainty.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1007-01",
+    "lessonDriveFileId": "1rLdtQScS0ELmYqIy9rML3TBT7iE8oU69",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "The RICE prioritisation score uses:",
+    "options": [
+      "Revenue, Income, Cost, Expense",
+      "Risk, Idea, Code, Emotion",
+      "Reach, Impact, Confidence, Effort",
+      "Rank, Interest, Clicks, Engagement"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "RICE = (Reach × Impact × Confidence) ÷ Effort.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1007-02",
+    "lessonDriveFileId": "1rLdtQScS0ELmYqIy9rML3TBT7iE8oU69",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "The MoSCoW method sorts work into:",
+    "options": [
+      "Monday to Sunday delivery days",
+      "Most, Some, Common, Weird",
+      "Money, Scope, Cost, Work",
+      "Must have, Should have, Could have, Won't have"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "It clarifies what's essential.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1003-03",
+    "lessonDriveFileId": "1u9U5ofIKZA0K8-ytuC1Jqsh-iEbdx4a5",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "The product backlog is:",
+    "options": [
+      "An ordered list of work the team may do",
+      "A list of fired staff",
+      "A bug in the code",
+      "A list of bugs found after launch only"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "The backlog is prioritised by the PM or Product Owner.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1007-03",
+    "lessonDriveFileId": "1rLdtQScS0ELmYqIy9rML3TBT7iE8oU69",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "A high-impact, low-effort task is often called:",
+    "options": [
+      "A money pit",
+      "A quick win",
+      "A distraction",
+      "A blocker"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Impact vs effort matrices highlight quick wins.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1001-02",
+    "lessonDriveFileId": "1RKslYkDG61mPoz59XKApa1PkQYXTwkXR",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "'Let users pay with mobile money' is best treated as:",
+    "options": [
+      "A single line of code",
+      "A metric",
+      "An epic, broken into smaller stories",
+      "A meeting"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It spans many tasks: UI, integration, receipts, errors.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1003-04",
+    "lessonDriveFileId": "1u9U5ofIKZA0K8-ytuC1Jqsh-iEbdx4a5",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Why include 'so that…' in a user story?",
+    "options": [
+      "It makes stories longer",
+      "It's grammatically required",
+      "It sets the deadline for the story",
+      "It explains the value, helping the team build the right thing"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "The reason guides solution choices.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1005-03",
+    "lessonDriveFileId": "1_bQ2xwl7xGKHRYhAW6Ahtf0w7sqyvVwA",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "A team's velocity averages 30 points. The backlog holds 90 points of priority work. Roughly how many sprints will it take?",
+    "options": [
+      "3",
+      "1",
+      "9",
+      "30"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "90 ÷ 30 = 3 sprints.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1006-03",
+    "lessonDriveFileId": "10SmWQtJAF1zUGSL1Ot02748_JvpM5Ybq",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Who is a roadmap mainly for?",
+    "options": [
+      "Only the engineering team",
+      "Stakeholders and the team, to align on direction",
+      "Only investors deciding on funding",
+      "Only customers"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "It's a communication tool.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1007-04",
+    "lessonDriveFileId": "1rLdtQScS0ELmYqIy9rML3TBT7iE8oU69",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Feature A: reach 1000, impact 2, confidence 80%, effort 4. Its RICE score is:",
+    "options": [
+      "1600",
+      "200",
+      "400",
+      "8000"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "(1000 × 2 × 0.8) ÷ 4 = 400.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1003-05",
+    "lessonDriveFileId": "1u9U5ofIKZA0K8-ytuC1Jqsh-iEbdx4a5",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "'Given a logged-in user, when they tap Save, then the item appears in their list' is:",
+    "options": [
+      "A market sizing estimate",
+      "A user persona for a shopper",
+      "A market size",
+      "An acceptance criterion in Given/When/Then form"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Given/When/Then makes criteria testable.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1002-02",
+    "lessonDriveFileId": "1gHP2fmCYT7AeJXV5lSfMm2EYQg7vTLHt",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Why write a spec before development starts?",
+    "options": [
+      "It aligns the team on the problem, scope and success",
+      "It replaces conversations",
+      "Engineers can't code without it",
+      "It guarantees success"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Specs reduce misunderstandings.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1101-01",
+    "lessonDriveFileId": "1MC4lHzGsrsEUsBZoUf6obkQ_mEGHSNaH",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Which communication habit helps PMs most?",
+    "options": [
+      "Talking the most in every meeting",
+      "Being clear, concise and listening actively",
+      "Avoiding written updates",
+      "Using lots of jargon"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Clarity and listening build trust.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1102-01",
+    "lessonDriveFileId": "1X6unDLHAeBGgN_68rL-sCWnCZMjWDK3U",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "When working with engineers, a PM should:",
+    "options": [
+      "Dictate the exact code",
+      "Avoid them until launch",
+      "Explain the problem and why, and let them shape the how",
+      "Set deadlines without discussion"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Engineers solve problems best with context.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1102-02",
+    "lessonDriveFileId": "1X6unDLHAeBGgN_68rL-sCWnCZMjWDK3U",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "An engineer says a feature will take far longer than expected. A good PM response is:",
+    "options": [
+      "Insist the original deadline must be met anyway",
+      "Remove the engineer",
+      "Ignore the estimate",
+      "Discuss trade-offs and smaller ways to deliver value"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Scope can often be reduced.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1103-01",
+    "lessonDriveFileId": "1cgFtZCpqBKtGfKKTwzoeTkGtu0XVLjhD",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "A strong PM–designer relationship involves:",
+    "options": [
+      "Sharing user insights early and giving feedback on goals, not taste",
+      "Telling them exactly which colours to use",
+      "Skipping design",
+      "Only reviewing at launch"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Focus feedback on whether designs meet user goals.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1104-01",
+    "lessonDriveFileId": "1rmpVwQaUGR8knhlGnyapoM3AODUITEeF",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "When updating executives, a PM should:",
+    "options": [
+      "Share every technical detail first",
+      "Lead with the key message, impact and any decisions needed",
+      "Avoid bad news",
+      "Send long unstructured emails"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Executives need the headline and the ask.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1104-02",
+    "lessonDriveFileId": "1rmpVwQaUGR8knhlGnyapoM3AODUITEeF",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "A stakeholder is:",
+    "options": [
+      "Only shareholders",
+      "Only the company's shareholders",
+      "Anyone affected by or able to influence the product",
+      "Only engineers"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Sales, legal, support and leaders are stakeholders too.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1101-02",
+    "lessonDriveFileId": "1MC4lHzGsrsEUsBZoUf6obkQ_mEGHSNaH",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Why is writing clearly important for PMs?",
+    "options": [
+      "PMs rarely write, so it doesn't matter much",
+      "It replaces meetings entirely",
+      "It's only for marketing",
+      "Specs, updates and decisions are often read by people not in the room"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Good writing scales communication.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1104-03",
+    "lessonDriveFileId": "1rmpVwQaUGR8knhlGnyapoM3AODUITEeF",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "How should a PM handle a stakeholder pushing for a low-priority feature?",
+    "options": [
+      "Listen, explain the priorities and the data, and look for common goals",
+      "Agree to everything",
+      "Ignore the request and stop inviting them to meetings",
+      "Escalate immediately"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Transparent reasoning builds trust.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1102-03",
+    "lessonDriveFileId": "1X6unDLHAeBGgN_68rL-sCWnCZMjWDK3U",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Including engineers early in discovery helps because:",
+    "options": [
+      "They want more meetings",
+      "They can flag technical constraints and suggest smarter solutions",
+      "It means the PM no longer needs to write specs",
+      "It removes the PM's job"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Early input avoids costly surprises.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1103-02",
+    "lessonDriveFileId": "1cgFtZCpqBKtGfKKTwzoeTkGtu0XVLjhD",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Good design feedback sounds like:",
+    "options": [
+      "Make it pop more",
+      "I just don't like it; try another colour",
+      "Will a first-time user know what to do on this screen?",
+      "Use my favourite colour"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Tie feedback to user goals.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1101-03",
+    "lessonDriveFileId": "1MC4lHzGsrsEUsBZoUf6obkQ_mEGHSNaH",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Saying no to a request is easier when you:",
+    "options": [
+      "Never give reasons, so the decision can't be argued",
+      "Say yes then forget",
+      "Avoid replying until they forget",
+      "Explain how it fits against priorities and offer alternatives"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Context makes 'no' acceptable.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1104-04",
+    "lessonDriveFileId": "1rmpVwQaUGR8knhlGnyapoM3AODUITEeF",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "A useful way to map stakeholders is by:",
+    "options": [
+      "Their influence and interest in the product",
+      "Alphabetical order of their names",
+      "Their favourite food",
+      "How long they've worked at the company"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "High-influence, high-interest people need closest engagement.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1101-04",
+    "lessonDriveFileId": "1MC4lHzGsrsEUsBZoUf6obkQ_mEGHSNaH",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Which trait best describes how PMs lead teams?",
+    "options": [
+      "Avoiding any decisions",
+      "Influence through trust and clear reasoning",
+      "Avoiding decisions",
+      "Command and control through formal authority"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "PMs rarely have direct authority.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1102-04",
+    "lessonDriveFileId": "1X6unDLHAeBGgN_68rL-sCWnCZMjWDK3U",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "What helps most when an engineer disagrees with a product decision?",
+    "options": [
+      "Escalate to HR immediately",
+      "Ignore it",
+      "Revisit the problem and evidence together",
+      "Overrule them without discussion"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Shared evidence resolves disagreements.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1103-03",
+    "lessonDriveFileId": "1cgFtZCpqBKtGfKKTwzoeTkGtu0XVLjhD",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "When should PMs involve designers?",
+    "options": [
+      "Only after engineering finishes",
+      "Never",
+      "Only for logos",
+      "From discovery, before solutions are fixed"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Early involvement leads to better solutions.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1104-05",
+    "lessonDriveFileId": "1rmpVwQaUGR8knhlGnyapoM3AODUITEeF",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "A launch will slip by two weeks. The best way to tell executives is:",
+    "options": [
+      "Early, with the reason, impact and plan",
+      "After launch",
+      "Only if they ask",
+      "By hiding it in a long report"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "No surprises: share bad news early with a plan.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1201-01",
+    "lessonDriveFileId": "1KhwP19AcNZ0f4ysKSw-7-GPMsqJXz3QU",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Why should PMs learn technical basics?",
+    "options": [
+      "To replace the engineers",
+      "To communicate better with engineers and understand trade-offs",
+      "To write all the code",
+      "So they can replace the engineering team"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Technical literacy improves decisions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1202-01",
+    "lessonDriveFileId": "1Rw7eVziXmM-D3uTP2tQ1Kf1pZzX5OqH0",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "In the client–server model, the client is usually:",
+    "options": [
+      "The database",
+      "The data centre building",
+      "The browser or app the user interacts with",
+      "The power supply"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Clients request; servers respond.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1202-02",
+    "lessonDriveFileId": "1Rw7eVziXmM-D3uTP2tQ1Kf1pZzX5OqH0",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "'The cloud' refers to:",
+    "options": [
+      "Data stored only on your own laptop",
+      "A local hard drive",
+      "A type of cable that connects office computers",
+      "Computing resources run on someone else's servers over the internet"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Cloud providers like AWS rent servers and services.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1203-01",
+    "lessonDriveFileId": "165OeSgyj64iX2f1xAu6w7t_LHr00t-c0",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "The front end of a web app is:",
+    "options": [
+      "The part users see and interact with",
+      "The database where user records are stored",
+      "The server room",
+      "The payment bank"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "HTML, CSS and JavaScript power front ends.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1203-02",
+    "lessonDriveFileId": "165OeSgyj64iX2f1xAu6w7t_LHr00t-c0",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "The back end is responsible for:",
+    "options": [
+      "Button colours only",
+      "Business logic, data storage and server processing",
+      "The app icon and button colours",
+      "The user's keyboard"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Back ends handle data and rules.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1203-03",
+    "lessonDriveFileId": "165OeSgyj64iX2f1xAu6w7t_LHr00t-c0",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "A 'tech stack' is:",
+    "options": [
+      "A list of team members' job titles",
+      "A list of employees",
+      "The set of technologies used to build a product",
+      "A pile of laptops used by the team"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "E.g. React, Node.js and PostgreSQL.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1204-01",
+    "lessonDriveFileId": "1RTYrdPu8glv82N7Zy_UQEr2lKd4xKSog",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "An API is:",
+    "options": [
+      "A type of laptop",
+      "A design style",
+      "A metric that tracks user engagement",
+      "A defined way for software systems to talk to each other"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "APIs expose functions and data to other programs.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1204-02",
+    "lessonDriveFileId": "1RTYrdPu8glv82N7Zy_UQEr2lKd4xKSog",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "A payment app using Paystack to charge cards is an example of:",
+    "options": [
+      "Integrating a third-party API",
+      "Building a database from scratch",
+      "Designing a logo",
+      "Writing a roadmap"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "APIs let products reuse others' services.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1205-01",
+    "lessonDriveFileId": "15FPX6p30p_dZg3XxTtlx2CXUu2IjTmBk",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "A database is used to:",
+    "options": [
+      "Send push notifications only",
+      "Store and retrieve data in an organised way",
+      "Display buttons and layouts on screen",
+      "Design screens"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Products store users, orders and more in databases.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1202-03",
+    "lessonDriveFileId": "1Rw7eVziXmM-D3uTP2tQ1Kf1pZzX5OqH0",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "When you load a website, your browser:",
+    "options": [
+      "Creates the site from nothing",
+      "Downloads the whole internet",
+      "Sends a request to a server and receives a response",
+      "Talks only to your printer"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Request–response is the basic web pattern.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1205-02",
+    "lessonDriveFileId": "15FPX6p30p_dZg3XxTtlx2CXUu2IjTmBk",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Technical debt is:",
+    "options": [
+      "Money owed to engineers",
+      "Money the company owes its engineers",
+      "A type of loan",
+      "Shortcuts in code that make future changes harder"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "It must be repaid with refactoring time.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1204-03",
+    "lessonDriveFileId": "1RTYrdPu8glv82N7Zy_UQEr2lKd4xKSog",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Why do PMs care about API rate limits and reliability?",
+    "options": [
+      "They affect what the product can do and how it behaves under load",
+      "They only affect the colour of the interface",
+      "They only affect design",
+      "They change logo colours"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "External dependencies shape product decisions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1201-02",
+    "lessonDriveFileId": "1KhwP19AcNZ0f4ysKSw-7-GPMsqJXz3QU",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which statement about PMs and technology is true?",
+    "options": [
+      "Technology knowledge doesn't matter for PMs",
+      "PMs need enough understanding to discuss trade-offs, not to code everything",
+      "PMs must be senior engineers who code every feature",
+      "PMs only need design skills"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Fluency, not expertise, is the goal.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1202-04",
+    "lessonDriveFileId": "1Rw7eVziXmM-D3uTP2tQ1Kf1pZzX5OqH0",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Hosting a product on AWS or Google Cloud means:",
+    "options": [
+      "Running it on your phone",
+      "Running it on your own phone or laptop",
+      "Running it on servers rented from a cloud provider",
+      "Storing it on paper"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Cloud providers rent infrastructure.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1203-04",
+    "lessonDriveFileId": "165OeSgyj64iX2f1xAu6w7t_LHr00t-c0",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "A user sees a slow-loading button animation. This is most likely a:",
+    "options": [
+      "Database backup issue",
+      "Payroll issue",
+      "Contract issue",
+      "Front-end issue"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "What users see and interact with is the front end.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1204-04",
+    "lessonDriveFileId": "1RTYrdPu8glv82N7Zy_UQEr2lKd4xKSog",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which question about an API should a PM ask?",
+    "options": [
+      "What data can it provide, and what happens if it goes down?",
+      "What's the API's favourite colour?",
+      "Can it replace the PM?",
+      "Does it need a logo?"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Capabilities and failure modes matter.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1205-03",
+    "lessonDriveFileId": "15FPX6p30p_dZg3XxTtlx2CXUu2IjTmBk",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Why should PMs understand technical debt?",
+    "options": [
+      "It doesn't exist",
+      "Ignoring it slows future development",
+      "It's paid in cash",
+      "It only affects designers"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Balance new features with paying down debt.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1301-01",
+    "lessonDriveFileId": "1quNtuF5eNbbCtjoIrPYObJUdINU3Vw8L",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "A good way to get relevant PM experience before your first PM job is:",
+    "options": [
+      "Only read books about management",
+      "Wait until someone hires you as a PM",
+      "Take on product-like work in your current role or a side project",
+      "Avoid any projects"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Practical experience shows you can do the work.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1302-01",
+    "lessonDriveFileId": "1bMuWPjM60QFf4Zi5YwF2insrnFvvvPpC",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Why build a side project for your PM portfolio?",
+    "options": [
+      "It replaces interviews",
+      "It's required by law",
+      "It must make money before employers care",
+      "It shows how you identify problems, make decisions and measure results"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Portfolios show your thinking.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1303-01",
+    "lessonDriveFileId": "1Qe3xuczwBk16LGPaUS4N0jKLvULf-9bC",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Personal branding for aspiring PMs could include:",
+    "options": [
+      "Writing about product teardowns and lessons online",
+      "Hiding your work",
+      "Copying others' posts",
+      "Keeping all your work private and offline"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Sharing thinking shows expertise.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1401-01",
+    "lessonDriveFileId": "1Dy8-aKqkdMcXjDH-4aUdE_SKT0OXpwIo",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "When reading a PM job description, you should look for:",
+    "options": [
+      "Only the salary and office location",
+      "The type of product, users and skills the team needs",
+      "Only the office photos",
+      "Only the job title"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Match your strengths to the role.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1402-01",
+    "lessonDriveFileId": "1q1nRVzSj7p6wFQcDeQv4QyQlkfNgogOT",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Which approach usually helps most in a PM job hunt?",
+    "options": [
+      "Applying to hundreds of jobs with one CV",
+      "Avoiding people in the industry",
+      "Networking and referrals alongside applications",
+      "Only waiting for recruiters"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Referrals often lead to interviews.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1501-01",
+    "lessonDriveFileId": "1eZQaRpVNWYK6_wT0kywQ-O-1f-qZ1SLs",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "A strong PM CV highlights:",
+    "options": [
+      "Only duties and responsibilities",
+      "Hobbies first",
+      "Long paragraphs of theory",
+      "Outcomes and impact, such as metrics improved"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Show results, not just tasks.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1501-02",
+    "lessonDriveFileId": "1eZQaRpVNWYK6_wT0kywQ-O-1f-qZ1SLs",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Which CV bullet is strongest?",
+    "options": [
+      "Led redesign of checkout, increasing conversion by 12%",
+      "Responsible for checkout",
+      "Worked on many things",
+      "Responsible for attending meetings"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Specific impact stands out.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1502-01",
+    "lessonDriveFileId": "1MFg7Ho5iZZ3mYRx-T7Zn3_v8Uet938fi",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "PM interviews often include:",
+    "options": [
+      "Only coding tests",
+      "Product design, strategy, metrics and behavioural questions",
+      "Only live coding tests on algorithms",
+      "Only typing tests"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Interviews test product thinking.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1502-02",
+    "lessonDriveFileId": "1MFg7Ho5iZZ3mYRx-T7Zn3_v8Uet938fi",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "A product design question might be:",
+    "options": [
+      "Write a sorting algorithm in Java",
+      "Recite the company's mission statement",
+      "How would you design an app for farmers to sell produce?",
+      "Name every Excel function"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Design questions test user-centred thinking.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1503-01",
+    "lessonDriveFileId": "1hocADhzKbSH9gQ261XX3GXj7VWrWDhJl",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "A good structure for product design answers is:",
+    "options": [
+      "Jump straight to features",
+      "Jump straight to listing as many features as possible",
+      "Give one-word answers",
+      "Clarify the goal, identify users and needs, propose solutions, prioritise, define metrics"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Structure shows clear thinking.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1503-02",
+    "lessonDriveFileId": "1hocADhzKbSH9gQ261XX3GXj7VWrWDhJl",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "The STAR method structures answers as:",
+    "options": [
+      "Situation, Task, Action, Result",
+      "Start, Talk, Answer, Repeat",
+      "Skill, Time, Attitude, Role",
+      "Story, Theme, Audience, Review"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "STAR works for behavioural questions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1503-03",
+    "lessonDriveFileId": "1hocADhzKbSH9gQ261XX3GXj7VWrWDhJl",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Why ask clarifying questions at the start of a case question?",
+    "options": [
+      "To waste time",
+      "To understand constraints and goals before solving",
+      "Because interviewers expect silence",
+      "To avoid answering"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Clarifying shows good product instincts.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1504-01",
+    "lessonDriveFileId": "1AJo2C1SnX6cOah6eX_ThylbJj16-p3Wh",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Before a PM interview, you should:",
+    "options": [
+      "Learn nothing about them",
+      "Only check the salary range and benefits",
+      "Research the company's product and form views on improvements",
+      "Memorise random facts"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Showing product curiosity impresses.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1502-03",
+    "lessonDriveFileId": "1MFg7Ho5iZZ3mYRx-T7Zn3_v8Uet938fi",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "A metrics interview question tests whether you can:",
+    "options": [
+      "Write SQL queries from memory",
+      "Draw logos",
+      "Write SQL only",
+      "Choose and interpret the right measures of success"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Metrics thinking is core to PM work.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1504-02",
+    "lessonDriveFileId": "1AJo2C1SnX6cOah6eX_ThylbJj16-p3Wh",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "After an interview, a short thank-you note:",
+    "options": [
+      "Shows professionalism and keeps you memorable",
+      "Is unprofessional and should be avoided",
+      "Is required by law",
+      "Guarantees the job"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "It's a simple, positive signal.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1501-03",
+    "lessonDriveFileId": "1eZQaRpVNWYK6_wT0kywQ-O-1f-qZ1SLs",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Tailoring your CV to each PM role means:",
+    "options": [
+      "Adding experience you don't have to match the job",
+      "Highlighting the experience most relevant to that job",
+      "Using one CV for all jobs",
+      "Removing all metrics"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Relevance improves your chances.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1503-04",
+    "lessonDriveFileId": "1hocADhzKbSH9gQ261XX3GXj7VWrWDhJl",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "When estimating a number in an interview (e.g. how many taxis in Lagos), interviewers mostly care about:",
+    "options": [
+      "The exact correct answer",
+      "Speed only",
+      "Your structured reasoning",
+      "Using a calculator"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Estimation questions test logical thinking.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "product-management-l1501-04",
+    "lessonDriveFileId": "1eZQaRpVNWYK6_wT0kywQ-O-1f-qZ1SLs",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Which detail makes a CV bullet stronger?",
+    "options": [
+      "A longer sentence",
+      "A fancy font",
+      "A list of tools only",
+      "A measurable result"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Numbers show impact.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1503-05",
+    "lessonDriveFileId": "1hocADhzKbSH9gQ261XX3GXj7VWrWDhJl",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Answering 'Tell me about a time you handled conflict' is best done with:",
+    "options": [
+      "The STAR method",
+      "A product design framework",
+      "A RICE score",
+      "A market sizing formula"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Behavioural questions suit STAR.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1504-03",
+    "lessonDriveFileId": "1AJo2C1SnX6cOah6eX_ThylbJj16-p3Wh",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Which insider tip helps candidates stand out?",
+    "options": [
+      "Avoid asking questions so you seem confident",
+      "Bring a thoughtful idea or teardown of the company's product",
+      "Arrive without research",
+      "Criticise the interviewer"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Shows initiative and product sense.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1601-01",
+    "lessonDriveFileId": "1nrkW_XfCLLMCHVWD9CHI1VWsUDu9i6GB",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "In your first weeks as a new PM, you should prioritise:",
+    "options": [
+      "Changing the roadmap on day one",
+      "Avoiding the team",
+      "Listening, learning the product and building relationships",
+      "Launching big features immediately"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Earn trust and context first.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1602-01",
+    "lessonDriveFileId": "17E4eKQKDxoYhBB-8ESHRZx5GyB1oznBv",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Which habit keeps PMs improving after they get the job?",
+    "options": [
+      "Stopping learning once hired",
+      "Ignoring feedback",
+      "Avoiding new tools",
+      "Continuous learning from users, data and peers"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Product skills grow with practice.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1701-01",
+    "lessonDriveFileId": "1FXOP7PlCVLlUnvJyAOcqw9odLKr36reT",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "A common lesson from experienced PMs is that:",
+    "options": [
+      "Understanding users deeply matters more than any single framework",
+      "Frameworks replace judgement",
+      "Users don't matter",
+      "One framework solves every product problem"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Frameworks help, but user insight drives good decisions.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1702-01",
+    "lessonDriveFileId": "1caU77oQq1slEOaJjuFdbZ7GKbXJje7yw",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Experienced PMs often say the hardest part of the job is:",
+    "options": [
+      "Booking meeting rooms and sending invites",
+      "Aligning people and making trade-offs under uncertainty",
+      "Choosing fonts",
+      "Writing code for every feature"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Judgement and alignment are central.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1703-01",
+    "lessonDriveFileId": "1uccXYFkJlnqgIuyKdryHxJH4iUZSCEVc",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Why listen to interviews with working PMs?",
+    "options": [
+      "To copy their exact career path",
+      "To memorise their CVs word for word",
+      "To see how real teams apply product concepts",
+      "They replace practice"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Real stories show context and nuance.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l205-02",
+    "lessonDriveFileId": "1cixFqIoNiHt96YkstaZH6adjFcg88h-L",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A PM who loves data, experiments and fast iteration might suit which role best?",
+    "options": [
+      "Hardware supply chain manager",
+      "Office manager",
+      "Legal counsel",
+      "Growth PM"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Growth PMs run many experiments on acquisition and retention.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l207-03",
+    "lessonDriveFileId": "1XATcqBzBn9UmXB5NvuqHpeYGWo0tqgkR",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which task would a PM most likely do after a feature launches?",
+    "options": [
+      "Review usage data and user feedback",
+      "Rewrite the company's tax return",
+      "Replace the servers",
+      "Design the office"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Post-launch learning drives the next iteration.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l303-02",
+    "lessonDriveFileId": "1JK3wRfydN9RHqjUB4hqovKSaZP_jmdmT",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "A once-popular product is losing users to newer alternatives. A PM should first:",
+    "options": [
+      "Add random features",
+      "Understand why users are leaving",
+      "Ignore the trend",
+      "Double the price"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Diagnose before acting.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l305-02",
+    "lessonDriveFileId": "14gDxVy3rzw5Qg7daz-a6heHqm1Pvq5aq",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "In which phase of product development is user feedback most valuable?",
+    "options": [
+      "Only before any design",
+      "Only after five years",
+      "Throughout, from discovery to after launch",
+      "Only once, after the final launch"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Continuous feedback reduces risk.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l308-04",
+    "lessonDriveFileId": "1zjQXsb071MachZEzyMQeie7LwMV6LpAL",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "The sprint retrospective is used to:",
+    "options": [
+      "Demo features to customers",
+      "Demo finished features to customers",
+      "Write user stories only",
+      "Reflect on how the team worked and improve the process"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Retros focus on process improvement.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l402-05",
+    "lessonDriveFileId": "1m5sj6gP5LXsWU5V-Z-oCEUkEn58UsHqx",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A sales team says three big clients asked for the same feature. A PM should:",
+    "options": [
+      "Treat it as a signal and investigate the underlying need",
+      "Build it immediately without questions",
+      "Ignore sales",
+      "Tell clients no outright"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Signals guide discovery, not blind building.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l403-06",
+    "lessonDriveFileId": "14-p-NRk0Y1nQTjVYC4qgkYi6FPg94zxI",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which research method best reveals real user needs?",
+    "options": [
+      "Asking users to design the product",
+      "Interviews about past behaviour plus observation",
+      "A single survey question",
+      "Guessing"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Behaviour-based research is most reliable.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l501-06",
+    "lessonDriveFileId": "1MERQJLmxMjrWVMmSzEgJ3iAL3dSVuhYO",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which is usually largest?",
+    "options": [
+      "SAM",
+      "SOM",
+      "TAM",
+      "They're always equal"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "TAM ⊇ SAM ⊇ SOM.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l505-03",
+    "lessonDriveFileId": "1Kw4ULJumhXSP3E1jCE2qMNsU-IYEqyFI",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A SWOT analysis covers:",
+    "options": [
+      "Sales, Wages, Orders, Taxes",
+      "Speed, Width, Output, Time",
+      "Software, Web, Online, Tech",
+      "Strengths, Weaknesses, Opportunities, Threats"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "A classic framework for assessing position.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l703-03",
+    "lessonDriveFileId": "1RsrI1-oSZdZ-Y3zehwMK_WIV5F5Gj1AL",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Why test assumptions one at a time where possible?",
+    "options": [
+      "So you know which assumption the result relates to",
+      "It's faster to test all at once",
+      "Results don't matter",
+      "It's required by law"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Isolating variables makes learning clear.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l714-03",
+    "lessonDriveFileId": "1Q2pSzmT9jTaARkrt39mMJyKzr0Nu8lyQ",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A team takes orders by WhatsApp and fulfils them by hand before building an app. This is:",
+    "options": [
+      "A finished product",
+      "A manual (concierge/Wizard of Oz) style MVP",
+      "A Waterfall project",
+      "A fully automated finished product"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Manual delivery tests demand cheaply.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l711-03",
+    "lessonDriveFileId": "1V_SgTxG-x_BH4NJ7NwXI_2ssibBI2i2J",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which statement about minimum criteria for success is true?",
+    "options": [
+      "It should be set after the test",
+      "It's the same for every experiment",
+      "It should be agreed before you see the results",
+      "It's optional"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Pre-commitment avoids bias.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l802-05",
+    "lessonDriveFileId": "1DvtMFSGxVl8YtYeM92O9Dhes2SN2A8dn",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which is the most interactive artefact?",
+    "options": [
+      "Wireframe",
+      "Paper sketch",
+      "Mood board",
+      "Prototype"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Prototypes simulate user interaction.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l804-03",
+    "lessonDriveFileId": "1djrGJHxu3CnOAFKwBSfzxpdcJEAJtEYf",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which layout choice suits a mobile banking app's main screen?",
+    "options": [
+      "Large, clear buttons for the most common actions",
+      "Tiny links in a footer",
+      "Tiny text so more fits on screen",
+      "A wide desktop-style table of every account detail"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Mobile screens need clear primary actions.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l903-04",
+    "lessonDriveFileId": "1rzTNJyNwIG6YmkamIvV9o3-w43-7aQaf",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which is a leading indicator for retention?",
+    "options": [
+      "Total app downloads ever",
+      "Users completing a key action in their first week",
+      "The number of employees",
+      "Total number of app downloads ever"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Early behaviour predicts retention.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l907-04",
+    "lessonDriveFileId": "1yRtpe3yQPKwqZhxMfxOx6U3mN1ETdJiM",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "A user signs up after seeing an Instagram ad. Which AARRR stage is this?",
+    "options": [
+      "Retention",
+      "Referral",
+      "Acquisition",
+      "Revenue"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Acquisition is how users arrive.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l901-04",
+    "lessonDriveFileId": "1Kw6uweS8eId8YzIvsDKnUG5Lflde6kNJ",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "For a ride-hailing app, a sensible North Star metric could be:",
+    "options": [
+      "Number of office desks",
+      "Logo impressions",
+      "Total app store reviews",
+      "Completed rides per week"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "It captures value delivered to riders and drivers.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1001-03",
+    "lessonDriveFileId": "1RKslYkDG61mPoz59XKApa1PkQYXTwkXR",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Breaking epics into smaller stories helps because:",
+    "options": [
+      "Smaller pieces can be estimated, built and tested faster",
+      "It hides work from stakeholders",
+      "It makes estimates unnecessary because work finishes faster",
+      "It removes acceptance criteria"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Small stories reduce risk and improve flow.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1006-04",
+    "lessonDriveFileId": "10SmWQtJAF1zUGSL1Ot02748_JvpM5Ybq",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "A Now / Next / Later roadmap is useful because:",
+    "options": [
+      "It sets fixed deadlines for every feature",
+      "It shows priorities without committing to exact dates",
+      "It lists every bug in the backlog",
+      "It replaces strategy"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "It communicates direction flexibly.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1007-05",
+    "lessonDriveFileId": "1rLdtQScS0ELmYqIy9rML3TBT7iE8oU69",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Under MoSCoW, a feature the release can't ship without is a:",
+    "options": [
+      "Should have",
+      "Could have",
+      "Must have",
+      "Won't have"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Must haves are essential.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1102-05",
+    "lessonDriveFileId": "1X6unDLHAeBGgN_68rL-sCWnCZMjWDK3U",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Which question shows respect for engineering input?",
+    "options": [
+      "Why are you so slow?",
+      "Can you just code it tonight?",
+      "Why do you need details?",
+      "What's the simplest way to solve this problem?"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Inviting their expertise improves solutions.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1104-06",
+    "lessonDriveFileId": "1rmpVwQaUGR8knhlGnyapoM3AODUITEeF",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "When an executive requests a feature without context, a PM should:",
+    "options": [
+      "Ask about the goal behind it",
+      "Build it silently",
+      "Refuse to discuss it",
+      "Delete the backlog"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Understand the 'why' first.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1202-05",
+    "lessonDriveFileId": "1Rw7eVziXmM-D3uTP2tQ1Kf1pZzX5OqH0",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which device is the server when you use an online shopping app?",
+    "options": [
+      "Your phone, because it shows the products",
+      "The shop's computer that stores products and processes orders",
+      "Your headphones",
+      "Your charger"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Your app is the client.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1203-05",
+    "lessonDriveFileId": "165OeSgyj64iX2f1xAu6w7t_LHr00t-c0",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which pair are both front-end technologies?",
+    "options": [
+      "PostgreSQL and MySQL",
+      "Linux and Windows Server",
+      "HTML and CSS",
+      "Redis and Kafka"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "HTML structures pages; CSS styles them.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1204-05",
+    "lessonDriveFileId": "1RTYrdPu8glv82N7Zy_UQEr2lKd4xKSog",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "A weather widget showing data from a weather service uses:",
+    "options": [
+      "A spreadsheet",
+      "A wireframe",
+      "A user story",
+      "An API"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "APIs deliver data between systems.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1502-04",
+    "lessonDriveFileId": "1MFg7Ho5iZZ3mYRx-T7Zn3_v8Uet938fi",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "A good answer to 'How would you improve WhatsApp?' starts with:",
+    "options": [
+      "Clarifying goals and which users to focus on",
+      "Listing ten random features",
+      "Saying it can't be improved",
+      "Talking about your hobbies"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Structure starts with goals and users.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1503-06",
+    "lessonDriveFileId": "1hocADhzKbSH9gQ261XX3GXj7VWrWDhJl",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "In a product interview, what matters most?",
+    "options": [
+      "Perfect answers",
+      "Clear, structured, user-focused reasoning",
+      "Speaking very fast",
+      "Using as much jargon as possible"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Interviewers assess your thinking process.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "product-management-l1601-02",
+    "lessonDriveFileId": "1nrkW_XfCLLMCHVWD9CHI1VWsUDu9i6GB",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "A useful first-30-days goal for a new PM is:",
+    "options": [
+      "Rewrite all specs alone",
+      "Cancel the roadmap",
+      "Meet key stakeholders and understand current metrics and users",
+      "Rewrite the whole roadmap on day one"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Context first, then change.",
+    "pools": [
+      "exam"
+    ]
+  }
+]

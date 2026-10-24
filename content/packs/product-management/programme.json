@@ -1,0 +1,68 @@
+{
+  "seoTitle": "Product Management Course: Ideas to Launch · SkillsAir",
+  "metaDescription": "Product management course on user needs, market analysis, MVPs, metrics, roadmaps and stakeholders, plus getting hired, with a guided 12-week plan.",
+  "shortDescription": "Learn how product managers find real problems, test ideas, define what to build, work with teams and measure success, then how to land the job.",
+  "description": "This product management course teaches you how good products get made: finding a real problem, testing ideas cheaply, deciding what to build and measuring whether it worked.\n\nNigeria’s fintechs, e-commerce companies and start-ups hire product managers to sit between customers, engineers, designers and the business. It is one of the few tech roles that does not require you to write code, but it does require clear thinking, good questions and the ability to bring people with you. This programme covers the full product life cycle and then the practical steps to get your first role.\n\n## What the product management course covers\n\n- **The role.** What product managers do, how the role differs from project management, and how products move through their life cycle.\n- **Product development.** Waterfall, Agile, Scrum and Kanban, and how teams plan and ship work in short cycles.\n- **Ideas and user needs.** Users and customers, interviews that avoid leading questions, personas and turning observations into problem statements.\n- **Market analysis.** TAM, SAM and SOM, top-down and bottom-up sizing, and direct and indirect competitors.\n- **Experiments and MVPs.** Writing testable hypotheses, minimum criteria for success, and landing-page, concierge, Wizard of Oz and piecemeal MVPs.\n- **Defining the solution.** Sketches, wireframes, mockups and prototypes, and tools such as Balsamiq.\n- **Metrics.** North Star metrics, ratios versus totals, the HEART framework, and product analytics tools.\n- **Building the product.** Epics, user stories and acceptance criteria, specs, prioritisation with MoSCoW, and roadmaps such as Now, Next, Later.\n- **People and stakeholders.** Leading without authority, working with engineers and designers, giving design feedback, mapping stakeholders and saying no well.\n- **Technology for PMs.** Clients, servers, APIs, databases, the cloud and tech stacks, explained without code.\n- **Getting the job.** Building relevant experience, CVs and portfolios, interview questions, your first ninety days and long conversations with working product managers.\n\n## How the programme works\n\nYou follow a guided 12-week plan that sets weekly goals: a group of short video lessons, practice straight after each one and a quiz at the end of every chapter. Each quiz is drawn from the lessons you have just watched, and every answer comes with a short explanation, so a wrong answer teaches you something instead of just costing you marks. If your weeks are unpredictable you can learn at your own pace instead, though most learners finish sooner with the plan.\n\nQuizzes ask what a product manager should do in realistic situations, such as a stakeholder pushing a low-priority feature or a test that missed its success criteria, so you practise the judgement interviewers look for.\n\n## Tools you will use\n\nYou need a computer, a spreadsheet tool such as Google Sheets or Excel, and a free wireframing tool. The programme introduces Balsamiq for wireframes and explains what product analytics tools do, without requiring paid software.\n\n## Who it is for\n\nThis programme suits graduates and career changers who want a tech role that does not require coding, as well as designers, engineers, marketers and customer support staff who already work alongside product teams. No technical background is needed.\n\n## After you finish\n\nYou will be able to run user interviews, size a market, design an experiment, write clear user stories, choose meaningful metrics and present a roadmap. You will also have a plan for building experience, preparing for interviews and settling into your first product role.\n\n## Certificate and final exam\n\nWhen you are ready, you can get your SkillsAir certificate. Once it is unlocked, you sit a timed final exam drawn from every chapter of the programme. Pass it and your certificate is issued with a verification link that employers and clients can check. Certified graduates can also apply for internship openings from our growing partner network, with no job guarantees.\n\nEvery learner also gets the free Freelancer’s Academy bonus course, which shows you how to set up a professional Fiverr profile and gigs so you can start finding paying clients for your new skills.",
+  "objectives": [
+    "Interview users without leading questions so you can uncover real problems worth solving",
+    "Size a market and map competitors so you can judge whether an opportunity is worth pursuing",
+    "Design hypotheses and MVP experiments so you can test ideas before investing in a full build",
+    "Turn ideas into wireframes, epics and user stories so you can give teams clear direction",
+    "Choose North Star and HEART metrics so you can measure whether a product is succeeding",
+    "Prioritise and build roadmaps so you can align teams and stakeholders on what comes next",
+    "Prepare your CV, portfolio and interview answers so you can compete for product roles"
+  ],
+  "requirements": [
+    "A laptop, desktop or tablet with a stable internet connection",
+    "No technical or coding background needed: we start from zero",
+    "Curiosity about how products are made and used",
+    "A few hours each week to follow the guided plan"
+  ],
+  "whoItsFor": [
+    "Graduates and career changers who want a non-coding tech role",
+    "Designers, engineers and marketers who work with product teams",
+    "Founders who want a structured way to build products",
+    "Customer support and operations staff moving into product"
+  ],
+  "toolsCovered": [
+    "Balsamiq",
+    "Google Sheets or Excel",
+    "Product analytics tools",
+    "Agile, Scrum and Kanban"
+  ],
+  "careerPaths": [
+    "Associate product manager",
+    "Product analyst",
+    "Product owner",
+    "Product operations associate"
+  ],
+  "faq": [
+    {
+      "question": "Do I need to know how to code?",
+      "answer": "No. The programme explains the technology product managers work with, such as APIs and databases, in plain English so you can talk confidently with engineers."
+    },
+    {
+      "question": "Is product management the same as project management?",
+      "answer": "No. Product management decides what to build and why; project management makes sure work is delivered on time. The course explains how the two roles work together."
+    },
+    {
+      "question": "Does it cover Agile and Scrum?",
+      "answer": "Yes. You learn how Agile, Scrum and Kanban work and how product managers plan and prioritise within them."
+    },
+    {
+      "question": "Does the course help me get a job?",
+      "answer": "It includes several chapters on building experience, writing your CV, preparing for interviews and your first months in the role. There are no job guarantees."
+    },
+    {
+      "question": "What happens after I finish?",
+      "answer": "You can sit the final exam to earn your certificate. Certified graduates can apply for internship openings from our partner network."
+    }
+  ],
+  "primaryKeyword": "product management course",
+  "secondaryKeywords": [
+    "learn product management",
+    "product manager training Nigeria",
+    "Agile and Scrum for product managers",
+    "how to become a product manager"
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "seoTitle": "Web Development Course: HTML, CSS, JavaScript · SkillsAir",
+  "metaDescription": "Web development course from HTML and CSS to JavaScript, Bootstrap, jQuery, React and APIs, with real projects, a guided 12-week plan and certificate exam.",
+  "shortDescription": "Learn how websites work and build them yourself with HTML, CSS, JavaScript, Bootstrap, jQuery and React, then connect them to APIs.",
+  "description": "This web development course takes you from your first line of HTML to interactive React pages that load live data from APIs, with a project at the end of each stage.\n\nNigerian businesses, schools and churches all need websites, and the companies that build them need developers who understand the fundamentals rather than just one template. You will learn how the web actually works, then build up the languages and tools layer by layer, so each new topic makes sense because you already know what sits underneath it.\n\n## What the web development course covers\n\n- **Fundamentals.** How developers work in teams, version control and code review, open source and when to use existing libraries, and writing your first code.\n- **How websites work.** DNS, requests and responses, status codes, how the browser turns HTML, CSS and JavaScript into a page, and reading network traffic in Chrome Developer Tools.\n- **VS Code.** Views, search across files, multiple cursors, Emmet, extensions and the integrated terminal, so you work quickly from the start.\n- **HTML.** Page structure, semantic tags, links, images, lists, tables, forms, inputs, buttons, dropdowns and embedded video, with accessibility built in.\n- **CSS.** Selectors, the box model, shadows, transparency, external stylesheets and floats, then backgrounds, gradients, transforms, transitions, Flexbox and Grid.\n- **JavaScript.** Variables, arrays and iteration, functions and the rest operator, objects and methods, classes and constructors, JSON, Ajax and the Fetch API.\n- **Bootstrap and jQuery.** Responsive grids, breakpoints, containers, gutters and components, then selecting elements, handling events and making Ajax requests with jQuery, which you will still meet on many existing sites.\n- **React.** Components, props, state and effects, fetching from an API, rendering lists with keys and planning features with pseudocode.\n- **APIs.** REST methods including PUT and PATCH, consuming APIs, request and response headers, status codes, API keys and rate limiting.\n\n## How the programme works\n\nYou follow a guided 12-week plan that sets weekly goals: a group of short video lessons, practice straight after each one and a quiz at the end of every chapter. Each quiz is drawn from the lessons you have just watched, and every answer comes with a short explanation, so a wrong answer teaches you something instead of just costing you marks. If your weeks are unpredictable you can learn at your own pace instead, though most learners finish sooner with the plan.\n\nQuizzes check real understanding: which CSS property moves an element without affecting layout, what a 403 means, why React warns about missing keys. Each section ends with a project, so you finish with several working pages rather than a folder of notes.\n\n## Tools you will use\n\nEverything is free: Visual Studio Code, Google Chrome and its Developer Tools, CodePen for quick experiments, Node.js and npm for React projects, and Git and GitHub for saving and sharing your code. A laptop or desktop is needed; a phone is fine for watching lessons but not for writing code.\n\n## Who it is for\n\nThe programme suits graduates and NYSC members starting a tech career, designers who want to build what they design, entrepreneurs who want to manage their own site and anyone who enjoys solving problems. You do not need any coding experience to begin.\n\n## After you finish\n\nYou will be able to build responsive, accessible websites, add interactivity with JavaScript, create React interfaces that display live data and explain how requests travel between browser and server. The programme concentrates on the front end and on consuming APIs; building your own server and database is a natural next step once these foundations are solid.\n\n## Certificate and final exam\n\nWhen you are ready, you can get your SkillsAir certificate. Once it is unlocked, you sit a timed final exam drawn from every chapter of the programme. Pass it and your certificate is issued with a verification link that employers and clients can check. Certified graduates can also apply for internship openings from our growing partner network, with no job guarantees.\n\nEvery learner also gets the free Freelancer’s Academy bonus course, which shows you how to set up a professional Fiverr profile and gigs so you can start finding paying clients for your new skills.",
+  "objectives": [
+    "Explain how browsers, servers and DNS work together so you can debug a page with Developer Tools",
+    "Write semantic, accessible HTML so you can structure any page and form correctly",
+    "Style responsive layouts with CSS Flexbox and Grid so you can build pages that work on every screen",
+    "Program with JavaScript functions, objects and classes so you can add real interactivity to a page",
+    "Fetch and display data from APIs so you can build pages that update with live information",
+    "Build responsive pages quickly with Bootstrap so you can deliver client sites faster",
+    "Create React components with state and effects so you can build modern interactive interfaces",
+    "Use VS Code, Git and GitHub so you can work efficiently and share your code like a professional"
+  ],
+  "requirements": [
+    "A laptop or desktop computer (Windows, Mac or Linux)",
+    "A stable internet connection to install free tools",
+    "No coding experience needed: we start from zero",
+    "A few hours each week to follow the guided plan"
+  ],
+  "whoItsFor": [
+    "Graduates and NYSC members starting a tech career",
+    "Designers who want to build what they design",
+    "Entrepreneurs who want to manage their own websites",
+    "Problem-solvers curious about how the web works"
+  ],
+  "toolsCovered": [
+    "HTML",
+    "CSS (Flexbox and Grid)",
+    "JavaScript",
+    "Bootstrap",
+    "jQuery",
+    "React",
+    "REST APIs and Fetch",
+    "VS Code",
+    "Chrome Developer Tools",
+    "Git and GitHub"
+  ],
+  "careerPaths": [
+    "Junior front-end developer",
+    "Web developer for small businesses",
+    "WordPress or website maintenance developer",
+    "Freelance website builder"
+  ],
+  "faq": [
+    {
+      "question": "Do I need coding experience?",
+      "answer": "No. The programme starts with how websites work and your first line of code, then builds up one layer at a time."
+    },
+    {
+      "question": "Does it cover back-end development?",
+      "answer": "It explains how servers, requests and APIs work and how to consume APIs from the front end. Building your own server and database is not a main focus; it is a natural next step after this programme."
+    },
+    {
+      "question": "Can I learn on my phone?",
+      "answer": "You can watch lessons on a phone, but you need a laptop or desktop to write and run code."
+    },
+    {
+      "question": "Why learn jQuery and Bootstrap as well as React?",
+      "answer": "Many existing business websites still use them, so knowing them helps with real maintenance and client work. React then shows you how modern interfaces are built."
+    },
+    {
+      "question": "Will I get a job after the course?",
+      "answer": "There are no job guarantees, but you will finish with practical skills and several projects. Certified graduates can apply for internship openings from our partner network."
+    }
+  ],
+  "primaryKeyword": "web development course",
+  "secondaryKeywords": [
+    "learn HTML CSS JavaScript",
+    "React course Nigeria",
+    "front-end web development",
+    "website design training Nigeria"
+  ]
+}

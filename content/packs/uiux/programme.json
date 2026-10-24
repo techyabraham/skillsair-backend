@@ -1,0 +1,68 @@
+{
+  "seoTitle": "UI/UX Design Course: Interfaces and Prototypes · SkillsAir",
+  "metaDescription": "UI/UX design course: design web and mobile interfaces, make them responsive and build interactive prototypes, with a guided 12-week plan and certificate.",
+  "shortDescription": "Learn to design clear, usable interfaces for websites and apps, make them responsive and turn them into interactive prototypes people can test.",
+  "description": "This UI/UX design course teaches you to design websites and apps that people find easy to use, from the first wireframe to a clickable prototype you can test with real users.\n\nEvery bank app, online store and government portal is a set of design decisions. When they are made well, people complete their task without thinking about it; when they are not, they give up. Companies in Nigeria and abroad hire designers who can make those decisions with care and explain them. You will learn the tools and the reasoning together, one project at a time.\n\n## What the UI/UX design course covers\n\n- **Getting started.** What UI and UX mean, how designers work with developers, and setting up your workspace.\n- **Design tools and features.** Artboards, shapes, text, images, masks, repeat grids, layers and alignment, using Adobe XD.\n- **Saving and exporting.** Cloud documents, sharing for review and exporting assets in the right formats for developers.\n- **Components and collaboration.** Reusable components with states, overriding instances, design systems and working on files with others.\n- **Your first web design.** Planning a page from content and research, then designing a full landing page with clear hierarchy.\n- **Responsive design.** Designing for desktop, tablet and mobile, layout grids, touch targets and responsive resize.\n- **Prototyping.** Linking screens, transitions, auto-animate, overlays, scrolling areas and micro-interactions, plus respecting users who prefer reduced motion.\n- **User experience.** User research, personas, user flows, visual hierarchy, usability testing and accessibility.\n\n## How the programme works\n\nYou follow a guided 12-week plan that sets weekly goals: a group of short video lessons, practice straight after each one and a quiz at the end of every chapter. Each quiz is drawn from the lessons you have just watched, and every answer comes with a short explanation, so a wrong answer teaches you something instead of just costing you marks. If your weeks are unpredictable you can learn at your own pace instead, though most learners finish sooner with the plan.\n\nQuizzes test both tool skills and design thinking: when to use a component, how big a touch target should be, what a search box needs in each state. The projects give you finished screens and prototypes for your portfolio.\n\n## Tools you will use\n\nThe lessons are taught in Adobe XD. Adobe is no longer adding new features to XD, so we recommend that you also try Figma, which is free to start and widely used by teams today. The skills transfer directly: artboards become frames, components and states work the same way, and the prototyping ideas are identical. A laptop or desktop is needed for design work.\n\n## Who it is for\n\nThe programme suits graphic designers moving into digital products, developers who want to design better interfaces, product and marketing staff who brief designers, and graduates looking for a creative tech career. You do not need drawing skills or any design experience to begin.\n\n## After you finish\n\nYou will be able to research a user’s needs, plan a flow, design responsive screens with reusable components and build a prototype that others can click through and test. You will also understand how to hand designs over to developers cleanly, which is a large part of working well in a product team.\n\n## Certificate and final exam\n\nWhen you are ready, you can get your SkillsAir certificate. Once it is unlocked, you sit a timed final exam drawn from every chapter of the programme. Pass it and your certificate is issued with a verification link that employers and clients can check. Certified graduates can also apply for internship openings from our growing partner network, with no job guarantees.\n\nEvery learner also gets the free Freelancer’s Academy bonus course, which shows you how to set up a professional Fiverr profile and gigs so you can start finding paying clients for your new skills.",
+  "objectives": [
+    "Explain the difference between UI and UX so you can focus each design decision on the user",
+    "Lay out screens with hierarchy, spacing and grids so you can make interfaces that are easy to scan",
+    "Build reusable components with states so you can design consistently and update quickly",
+    "Design responsive layouts for desktop, tablet and mobile so you can serve users on every device",
+    "Create interactive prototypes with transitions so you can test ideas before anything is built",
+    "Run simple user research and usability tests so you can improve designs with real evidence",
+    "Export assets and share files with developers so you can hand over work that is ready to build"
+  ],
+  "requirements": [
+    "A laptop or desktop computer (Windows or Mac)",
+    "Adobe XD for the lessons, or Figma as a free alternative",
+    "No design or drawing experience needed: we start from zero",
+    "A few hours each week to follow the guided plan"
+  ],
+  "whoItsFor": [
+    "Graphic designers moving into digital products",
+    "Developers who want to design better interfaces",
+    "Product and marketing staff who work with designers",
+    "Graduates looking for a creative tech career"
+  ],
+  "toolsCovered": [
+    "Adobe XD",
+    "Figma (recommended alongside)",
+    "Components and design systems",
+    "Interactive prototyping"
+  ],
+  "careerPaths": [
+    "Junior UI designer",
+    "Junior UX designer",
+    "Product designer (associate)",
+    "Freelance web and app designer"
+  ],
+  "faq": [
+    {
+      "question": "Which design tool does the course use?",
+      "answer": "The lessons use Adobe XD. Adobe has stopped adding features to XD, so we recommend practising in Figma too; the concepts and workflows carry over directly."
+    },
+    {
+      "question": "Do I need to be good at drawing?",
+      "answer": "No. Interface design depends on layout, hierarchy and understanding users far more than on drawing skills."
+    },
+    {
+      "question": "Will I learn to code?",
+      "answer": "No. This programme focuses on design and prototyping. You will learn how to hand designs to developers, and you can pair it with our web development programme if you want to build them too."
+    },
+    {
+      "question": "Will I have portfolio pieces?",
+      "answer": "Yes. You will design a web landing page, responsive layouts and interactive prototypes you can show to employers and clients."
+    },
+    {
+      "question": "Will I get a job after the course?",
+      "answer": "There are no job guarantees, but you will finish with practical skills and portfolio work. Certified graduates can apply for internship openings from our partner network."
+    }
+  ],
+  "primaryKeyword": "UI/UX design course",
+  "secondaryKeywords": [
+    "learn UI UX design online",
+    "Adobe XD course",
+    "prototyping and responsive design",
+    "UX design training Nigeria"
+  ]
+}

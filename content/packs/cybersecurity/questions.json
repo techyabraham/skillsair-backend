@@ -1,0 +1,5082 @@
+[
+  {
+    "key": "cybersecurity-l001-01",
+    "lessonDriveFileId": "1LYBtl7NCMfAOtwRY4IqpsdWck8j1ckbu",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "What is the overall aim of this cybersecurity programme?",
+    "options": [
+      "To understand how attacks work so you can protect people, systems and data",
+      "To learn to break into systems for profit",
+      "To memorise antivirus product names",
+      "To build mobile games and publish them on app stores"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "The programme teaches defensive thinking: understanding attacks in order to prevent and respond to them.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l001-02",
+    "lessonDriveFileId": "1LYBtl7NCMfAOtwRY4IqpsdWck8j1ckbu",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Which mindset does a cybersecurity learner need most?",
+    "options": [
+      "Speed typing",
+      "Curiosity plus a strong sense of ethics",
+      "Graphic design skill",
+      "Memorising every port number on day one"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Security work rewards curiosity and must always stay within legal and ethical limits.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l002-01",
+    "lessonDriveFileId": "1tsriHCSfgQW4kOqFvWYymfE4_8NNKadK",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Cybersecurity is best described as:",
+    "options": [
+      "Building faster computers",
+      "Designing websites so they load quickly on phones",
+      "Protecting systems, networks and data from digital attacks",
+      "Repairing broken hardware"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Cybersecurity covers the practices and tools that keep digital assets safe.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l002-02",
+    "lessonDriveFileId": "1tsriHCSfgQW4kOqFvWYymfE4_8NNKadK",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which of these is a cybersecurity concern?",
+    "options": [
+      "A printer running out of ink",
+      "A slow Wi-Fi connection on a train",
+      "A laptop battery wearing out",
+      "An attacker stealing customer passwords from a website"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Unauthorised access to data is a core security concern.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l002-03",
+    "lessonDriveFileId": "1tsriHCSfgQW4kOqFvWYymfE4_8NNKadK",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Why does cybersecurity matter to small businesses, not only big companies?",
+    "options": [
+      "Attackers often target small firms because their defences are weaker",
+      "Small businesses can't be hacked",
+      "Only banks and large firms hold data worth stealing",
+      "Laws don't apply to small firms"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Small organisations hold valuable data and often have fewer protections.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l003-01",
+    "lessonDriveFileId": "1mFAibuut7-18GX33GOhF1TjYfSMngkYO",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which background knowledge helps most before studying cybersecurity?",
+    "options": [
+      "Advanced calculus and theoretical physics",
+      "Basic understanding of computers, operating systems and networks",
+      "Fluency in French",
+      "Professional photography"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Security builds on how computers and networks work.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l003-02",
+    "lessonDriveFileId": "1mFAibuut7-18GX33GOhF1TjYfSMngkYO",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Do you need to be an expert programmer to start learning cybersecurity?",
+    "options": [
+      "Yes, you must know five languages",
+      "Yes, only programmers are allowed",
+      "No, but basic scripting and technical comfort help a lot",
+      "No, computers aren't involved at all"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Many roles start with fundamentals; programming skills grow over time.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l003-03",
+    "lessonDriveFileId": "1mFAibuut7-18GX33GOhF1TjYfSMngkYO",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which operating system is widely used by security professionals for testing tools?",
+    "options": [
+      "Windows 95",
+      "MS-DOS",
+      "Android Go",
+      "Kali Linux"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Kali Linux bundles many security testing tools.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l004-01",
+    "lessonDriveFileId": "15I6kIuVygxxu0OwkGtr1T7WsgIVSc9U-",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which role focuses on defending an organisation by monitoring alerts?",
+    "options": [
+      "Security Operations Centre (SOC) analyst",
+      "Penetration tester",
+      "Graphic designer for the marketing team",
+      "Database administrator"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "SOC analysts watch for and respond to threats.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l004-02",
+    "lessonDriveFileId": "15I6kIuVygxxu0OwkGtr1T7WsgIVSc9U-",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A penetration tester is paid to:",
+    "options": [
+      "Steal data and sell it",
+      "Legally attack systems with permission to find weaknesses",
+      "Fix printers and network cables in the office",
+      "Write marketing emails"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Pen testers simulate attacks under a signed agreement so issues can be fixed.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l004-03",
+    "lessonDriveFileId": "15I6kIuVygxxu0OwkGtr1T7WsgIVSc9U-",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which career path focuses on rules, policies and risk rather than hands-on hacking?",
+    "options": [
+      "Exploit development",
+      "Malware reverse engineering",
+      "Governance, risk and compliance (GRC)",
+      "Red teaming"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "GRC roles manage policies, audits and risk.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l005-01",
+    "lessonDriveFileId": "1NoLvm5lZCqFQ0E1WZjkdYtpEM8JoJWtp",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Early computer viruses spread mainly through:",
+    "options": [
+      "Cloud storage links",
+      "Smartphone apps",
+      "5G mobile networks and smartphone apps",
+      "Floppy disks shared between computers"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Before widespread internet use, removable media spread infections.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l005-02",
+    "lessonDriveFileId": "1NoLvm5lZCqFQ0E1WZjkdYtpEM8JoJWtp",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "The Morris Worm of 1988 is notable because it was:",
+    "options": [
+      "One of the first worms to spread widely across the internet",
+      "The first antivirus",
+      "A secure password manager",
+      "A commercial firewall product sold to universities"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "It slowed thousands of machines and drew attention to internet security.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l005-03",
+    "lessonDriveFileId": "1NoLvm5lZCqFQ0E1WZjkdYtpEM8JoJWtp",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Why have cyber attacks grown over the decades?",
+    "options": [
+      "Computers became slower",
+      "More of life and business moved online, creating more targets",
+      "The internet became smaller",
+      "Encryption was banned in most countries worldwide"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "More connected systems and data mean more opportunity for attackers.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l002-04",
+    "lessonDriveFileId": "1tsriHCSfgQW4kOqFvWYymfE4_8NNKadK",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which statement best describes cybersecurity?",
+    "options": [
+      "It only means installing antivirus",
+      "It is only about physical locks",
+      "It protects the confidentiality, integrity and availability of information",
+      "It only matters to governments and the military"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Security protects information and systems in many ways, not with a single tool.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l003-04",
+    "lessonDriveFileId": "1mFAibuut7-18GX33GOhF1TjYfSMngkYO",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Why is networking knowledge important for cybersecurity?",
+    "options": [
+      "Networks are rarely attacked, so it's mostly theory",
+      "It's only needed for gaming",
+      "It replaces the need for passwords",
+      "Most attacks travel over networks, so you must understand how traffic flows"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Understanding networks helps you spot and stop malicious traffic.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l004-04",
+    "lessonDriveFileId": "15I6kIuVygxxu0OwkGtr1T7WsgIVSc9U-",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which team role investigates what happened after a breach?",
+    "options": [
+      "Incident responder or digital forensics analyst",
+      "UX designer who reviews the login screens",
+      "Sales manager",
+      "Front-end developer"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Incident response and forensics teams contain and investigate incidents.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l005-04",
+    "lessonDriveFileId": "1NoLvm5lZCqFQ0E1WZjkdYtpEM8JoJWtp",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which trend has most changed cybersecurity in recent years?",
+    "options": [
+      "The return of floppy disks",
+      "The move to cloud services and remote work",
+      "Fewer internet users",
+      "The end of email"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Cloud and remote work widened the attack surface organisations must protect.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l006-01",
+    "lessonDriveFileId": "1Zgg0IWxImuxfzaT0LUfOlZ1-6V0eR6d4",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "What does the 'C' in the CIA triad stand for?",
+    "options": [
+      "Compliance",
+      "Control",
+      "Confidentiality",
+      "Cryptography"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "CIA = Confidentiality, Integrity, Availability.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l006-02",
+    "lessonDriveFileId": "1Zgg0IWxImuxfzaT0LUfOlZ1-6V0eR6d4",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Integrity in the CIA triad means:",
+    "options": [
+      "Data is always kept secret from every user",
+      "Systems are always online",
+      "Users are always honest",
+      "Data is accurate and hasn't been altered without permission"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Integrity protects data from unauthorised changes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l006-03",
+    "lessonDriveFileId": "1Zgg0IWxImuxfzaT0LUfOlZ1-6V0eR6d4",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "A DDoS attack that takes a website offline mainly targets:",
+    "options": [
+      "Availability",
+      "Confidentiality",
+      "Integrity",
+      "Authentication"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "DDoS stops legitimate users reaching a service, harming availability.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l007-01",
+    "lessonDriveFileId": "1XY_Fz4zu85HNyGU_lhXpeKvAO8yt6x6O",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "In security exercises, the Red Team:",
+    "options": [
+      "Defends the network",
+      "Plays the attacker",
+      "Writes the company's adverts",
+      "Manages payroll"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Red teams simulate real attackers.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l007-02",
+    "lessonDriveFileId": "1XY_Fz4zu85HNyGU_lhXpeKvAO8yt6x6O",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "The Blue Team is responsible for:",
+    "options": [
+      "Launching attacks",
+      "Selling products",
+      "Defending systems and detecting attacks",
+      "Designing logos and brand material for the company"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Blue teams monitor, detect and respond.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l007-03",
+    "lessonDriveFileId": "1XY_Fz4zu85HNyGU_lhXpeKvAO8yt6x6O",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "What is a Purple Team?",
+    "options": [
+      "A team that only writes reports",
+      "A government regulator",
+      "A malware family",
+      "Red and Blue working together to improve defences"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Purple teaming shares attacker findings directly with defenders.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l008-01",
+    "lessonDriveFileId": "131emOBxxZOH9zSR8MH1s0joHB0kGC0i4",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "In security, an 'asset' is:",
+    "options": [
+      "Anything of value to an organisation, such as data, systems or people",
+      "Only the cash an organisation holds in the bank",
+      "Only physical buildings",
+      "Only software licences"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Assets include information, hardware, software, people and reputation.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l008-02",
+    "lessonDriveFileId": "131emOBxxZOH9zSR8MH1s0joHB0kGC0i4",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Why should an organisation keep an inventory of its assets?",
+    "options": [
+      "It's required to install Wi-Fi",
+      "You can't protect what you don't know you have",
+      "It speeds up the internet",
+      "It replaces backups"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Asset inventories are the starting point for risk management.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l009-01",
+    "lessonDriveFileId": "14ZtsHlz8nKynjyF27f2tlRnvgJx5ngmq",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which is one of the most common ways companies get compromised?",
+    "options": [
+      "Solar flares",
+      "Power cables being too long",
+      "Employees clicking on phishing emails",
+      "Printers being out of paper"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Phishing remains a leading entry point for attackers.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l009-02",
+    "lessonDriveFileId": "14ZtsHlz8nKynjyF27f2tlRnvgJx5ngmq",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Using weak or reused passwords helps attackers because:",
+    "options": [
+      "Long passwords are easier to guess",
+      "Passwords are never stored",
+      "It makes encryption stronger",
+      "Stolen passwords from one site can unlock other accounts"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Credential stuffing tries leaked passwords on other services.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l010-01",
+    "lessonDriveFileId": "1kXNuBG8G3p8fa00lpF7CJIs8I_ZQoukf",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which type of security protects data travelling between devices?",
+    "options": [
+      "Network security",
+      "Physical security",
+      "Payroll security",
+      "Brand security"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Network security protects data in transit and network infrastructure.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l010-02",
+    "lessonDriveFileId": "1kXNuBG8G3p8fa00lpF7CJIs8I_ZQoukf",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Locks, guards and CCTV are examples of:",
+    "options": [
+      "Application security",
+      "Physical security",
+      "Cloud security",
+      "Cryptography"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Physical security protects buildings and hardware.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l010-03",
+    "lessonDriveFileId": "1kXNuBG8G3p8fa00lpF7CJIs8I_ZQoukf",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Application security focuses on:",
+    "options": [
+      "Locking server room doors",
+      "Training sales staff",
+      "Finding and fixing weaknesses in software",
+      "Buying faster laptops"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "AppSec covers secure coding, testing and patching software.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l006-04",
+    "lessonDriveFileId": "1Zgg0IWxImuxfzaT0LUfOlZ1-6V0eR6d4",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Encrypting a file so only authorised people can read it protects:",
+    "options": [
+      "Availability",
+      "Integrity only",
+      "Nothing",
+      "Confidentiality"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Encryption keeps data secret from unauthorised readers.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l006-05",
+    "lessonDriveFileId": "1Zgg0IWxImuxfzaT0LUfOlZ1-6V0eR6d4",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "A hash value is often used to check that a downloaded file hasn't been changed. This supports:",
+    "options": [
+      "Integrity",
+      "Availability",
+      "Anonymity",
+      "Confidentiality only"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Matching hashes show the file is unaltered.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l007-04",
+    "lessonDriveFileId": "1XY_Fz4zu85HNyGU_lhXpeKvAO8yt6x6O",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which activity is typical of a Blue Team?",
+    "options": [
+      "Writing phishing emails to test staff",
+      "Reviewing logs for signs of intrusion",
+      "Breaking into a building",
+      "Exploiting a server"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Monitoring logs and alerts is core defensive work.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l008-03",
+    "lessonDriveFileId": "131emOBxxZOH9zSR8MH1s0joHB0kGC0i4",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which is the most valuable asset for many online businesses?",
+    "options": [
+      "The office chairs",
+      "The coffee machine",
+      "Their customers' data",
+      "The company car"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Customer data is often both valuable and heavily targeted.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l009-03",
+    "lessonDriveFileId": "14ZtsHlz8nKynjyF27f2tlRnvgJx5ngmq",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "An unpatched public server is risky because:",
+    "options": [
+      "It runs too fast",
+      "It can't connect to the internet",
+      "It encrypts everything automatically",
+      "Attackers can exploit known vulnerabilities in it"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Known, unpatched flaws are easy targets.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l010-04",
+    "lessonDriveFileId": "1kXNuBG8G3p8fa00lpF7CJIs8I_ZQoukf",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which security area protects data stored in services like AWS or Google Cloud?",
+    "options": [
+      "Cloud security",
+      "Physical security",
+      "Payroll security",
+      "Print security"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Cloud security covers configuration, identity and data protection in cloud platforms.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l011-01",
+    "lessonDriveFileId": "1U7WvhEoxt4RXHrPt95KxkT6Iwku3-hFD",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A white-hat hacker:",
+    "options": [
+      "Attacks for personal profit",
+      "Finds weaknesses with permission to help fix them",
+      "Works only on video games",
+      "Never uses computers and works only with paper records"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "White hats are ethical, authorised security testers.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l011-02",
+    "lessonDriveFileId": "1U7WvhEoxt4RXHrPt95KxkT6Iwku3-hFD",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A black-hat hacker:",
+    "options": [
+      "Is hired to test security",
+      "Only writes documentation",
+      "Breaks into systems illegally, often for profit or damage",
+      "Works in a SOC monitoring alerts for an employer"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Black hats act without permission and with malicious intent.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l011-03",
+    "lessonDriveFileId": "1U7WvhEoxt4RXHrPt95KxkT6Iwku3-hFD",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A grey-hat hacker typically:",
+    "options": [
+      "Always has a contract",
+      "Only attacks their own systems",
+      "A type of malware that hides inside other programs",
+      "Acts without permission but without clear malicious intent"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Grey hats operate in a legal grey area and can still break the law.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l011-04",
+    "lessonDriveFileId": "1U7WvhEoxt4RXHrPt95KxkT6Iwku3-hFD",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Hacktivists are motivated mainly by:",
+    "options": [
+      "Political or social causes",
+      "Bug bounty payments",
+      "Software licences",
+      "Improving their typing speed"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Hacktivism uses attacks to promote a cause.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l012-01",
+    "lessonDriveFileId": "1nIobGyAcOvfvuHY7D6XXqX6iW4ThjStk",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which attack floods a service with traffic to make it unavailable?",
+    "options": [
+      "Phishing",
+      "Denial of service (DoS)",
+      "SQL injection",
+      "Shoulder surfing"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "DoS and DDoS overwhelm resources so real users can't connect.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l012-02",
+    "lessonDriveFileId": "1nIobGyAcOvfvuHY7D6XXqX6iW4ThjStk",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A man-in-the-middle attack involves:",
+    "options": [
+      "Guessing a password once",
+      "Stealing a laptop from someone's bag in a café",
+      "Secretly intercepting communication between two parties",
+      "Deleting log files"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "The attacker sits between two parties and can read or alter traffic.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l012-03",
+    "lessonDriveFileId": "1nIobGyAcOvfvuHY7D6XXqX6iW4ThjStk",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Trying every possible password combination is called:",
+    "options": [
+      "A phishing attack",
+      "A rootkit",
+      "A watering-hole attack",
+      "A brute-force attack"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Brute force tries many combinations until one works.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l013-01",
+    "lessonDriveFileId": "1Lw1KLVayg1_Js-l5z_Ixow8OtjUahveH",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Ransomware:",
+    "options": [
+      "Encrypts victims' files and demands payment for the key",
+      "Speeds up a computer",
+      "Only shows adverts in the browser without harm",
+      "Repairs damaged files"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Ransomware holds data hostage.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l013-02",
+    "lessonDriveFileId": "1Lw1KLVayg1_Js-l5z_Ixow8OtjUahveH",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A Trojan horse is malware that:",
+    "options": [
+      "Spreads only by itself without users",
+      "Pretends to be legitimate software",
+      "Is built into the CPU",
+      "Only affects printers"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Trojans trick users into running them.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l013-03",
+    "lessonDriveFileId": "1Lw1KLVayg1_Js-l5z_Ixow8OtjUahveH",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "How is a worm different from a virus?",
+    "options": [
+      "A worm can't harm computers",
+      "A worm only infects paper documents",
+      "A worm spreads by itself across networks without user action",
+      "There is no difference"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Worms self-propagate; viruses usually need a host file and user action.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l014-01",
+    "lessonDriveFileId": "1L28g-atCc6BGSbbo4_1JyFj2hPEsgwxK",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Why is it hard to catch cyber criminals?",
+    "options": [
+      "They always use their real names",
+      "They never use the internet",
+      "Police can't use computers, so crimes go unrecorded",
+      "They hide behind proxies, VPNs and other countries' jurisdictions"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Anonymity tools and cross-border laws slow investigations.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l014-02",
+    "lessonDriveFileId": "1L28g-atCc6BGSbbo4_1JyFj2hPEsgwxK",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "What helps investigators trace attackers?",
+    "options": [
+      "Logs, digital evidence and mistakes attackers make",
+      "Deleting all logs",
+      "Turning off monitoring",
+      "Ignoring alerts until the attacker gives up"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Good logging and forensic evidence support attribution.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l011-05",
+    "lessonDriveFileId": "1U7WvhEoxt4RXHrPt95KxkT6Iwku3-hFD",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which hacker type would a company hire to test its network?",
+    "options": [
+      "A black-hat hacker",
+      "An ethical (white-hat) penetration tester",
+      "A script kiddie",
+      "A hacktivist protesting against the company"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Authorised ethical testers work under contract.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l011-06",
+    "lessonDriveFileId": "1U7WvhEoxt4RXHrPt95KxkT6Iwku3-hFD",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A 'script kiddie' is:",
+    "options": [
+      "A senior security architect",
+      "A secure coding standard",
+      "An unskilled attacker using tools made by others",
+      "A type of firewall"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Script kiddies rely on ready-made tools without deep understanding.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l012-04",
+    "lessonDriveFileId": "1nIobGyAcOvfvuHY7D6XXqX6iW4ThjStk",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which defence best reduces brute-force login attacks?",
+    "options": [
+      "Shorter passwords",
+      "Disabling logs",
+      "Sharing passwords with colleagues",
+      "Account lockouts plus multi-factor authentication"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Lockouts slow guessing and MFA stops a guessed password being enough.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l013-04",
+    "lessonDriveFileId": "1Lw1KLVayg1_Js-l5z_Ixow8OtjUahveH",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Spyware is designed to:",
+    "options": [
+      "Secretly collect information about a user",
+      "Delete the operating system",
+      "Improve battery life",
+      "Block adverts"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Spyware monitors activity and steals data.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l013-05",
+    "lessonDriveFileId": "1Lw1KLVayg1_Js-l5z_Ixow8OtjUahveH",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "The best protection against losing data to ransomware is:",
+    "options": [
+      "Paying the ransom immediately",
+      "Regular, tested backups kept offline",
+      "Turning off the screen",
+      "Using a shorter password"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Offline backups let you restore without paying.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l014-03",
+    "lessonDriveFileId": "1L28g-atCc6BGSbbo4_1JyFj2hPEsgwxK",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which of these makes attribution of an attack easier?",
+    "options": [
+      "Using shared admin accounts",
+      "Deleting old logs daily",
+      "Centralised, tamper-proof logging",
+      "Turning off auditing"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Reliable logs provide the evidence trail.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l015-01",
+    "lessonDriveFileId": "1iUMU-Q0606wLV6NtJnHrx6hnoG_5igQd",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A vulnerability is:",
+    "options": [
+      "A security patch",
+      "A firewall rule that blocks an unused port",
+      "A strong password",
+      "A weakness that could be exploited to cause harm"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Vulnerabilities are flaws in software, configuration or process.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l015-02",
+    "lessonDriveFileId": "1iUMU-Q0606wLV6NtJnHrx6hnoG_5igQd",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "What is an exploit?",
+    "options": [
+      "Code or a technique that takes advantage of a vulnerability",
+      "A software update",
+      "An antivirus scan",
+      "A backup copy of the system's configuration"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "An exploit uses a weakness to achieve something unintended.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l015-03",
+    "lessonDriveFileId": "1iUMU-Q0606wLV6NtJnHrx6hnoG_5igQd",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A zero-day vulnerability is one that:",
+    "options": [
+      "Was fixed zero days ago",
+      "Is unknown to the vendor, so no patch exists yet",
+      "Only exists on day one of the month",
+      "Can't be exploited"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Zero-days are dangerous because there's no fix available.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l016-01",
+    "lessonDriveFileId": "1ihv1aOzam3lIpG3TN_tp9Js7EONZQomk",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "SQL injection happens when:",
+    "options": [
+      "A database runs out of space",
+      "A user forgets their password",
+      "User input is placed directly into a database query",
+      "A firewall blocks a port"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Unsanitised input can change the meaning of the query.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l016-02",
+    "lessonDriveFileId": "1ihv1aOzam3lIpG3TN_tp9Js7EONZQomk",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Cross-site scripting (XSS) lets an attacker:",
+    "options": [
+      "Physically steal a server",
+      "Speed up a website by caching pages for users",
+      "Encrypt a hard drive",
+      "Run malicious scripts in other users' browsers"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "XSS injects script into pages viewed by others.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l016-03",
+    "lessonDriveFileId": "1ihv1aOzam3lIpG3TN_tp9Js7EONZQomk",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which list ranks the most critical web application security risks?",
+    "options": [
+      "The OWASP Top 10",
+      "The Fortune 500",
+      "The Billboard Hot 100",
+      "The TIOBE index"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "OWASP publishes the widely used Top 10 web risks.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l017-01",
+    "lessonDriveFileId": "14oIDFnd_N9kOpGn12XnlikW7-NQQqazg",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Why are unpatched machines easy targets?",
+    "options": [
+      "They are always switched off",
+      "Public exploits already exist for their known flaws",
+      "They have no network card",
+      "They are encrypted, so attackers can read them"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Attackers scan for systems missing known patches.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l018-01",
+    "lessonDriveFileId": "1fo52OqbPEea4lp8yIQX8ywQthEIPOPBk",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which practice most directly prevents known vulnerabilities being exploited?",
+    "options": [
+      "Disabling all logging",
+      "Using default passwords",
+      "Applying security updates promptly",
+      "Sharing admin accounts"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Patching closes known holes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l018-02",
+    "lessonDriveFileId": "1fo52OqbPEea4lp8yIQX8ywQthEIPOPBk",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Validating and sanitising user input helps prevent:",
+    "options": [
+      "Hardware failure",
+      "Power cuts and hardware failure in the data centre",
+      "Slow internet",
+      "Injection attacks such as SQL injection"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Treating input as untrusted stops it altering queries or pages.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l019-01",
+    "lessonDriveFileId": "1vdrliE4vC6SWDLaodkaGUMIVMPK6BS7s",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A buffer overflow happens when a program:",
+    "options": [
+      "Writes more data into memory than a buffer can hold",
+      "Downloads too many files",
+      "Uses too long a password",
+      "Runs on too many CPU cores at the same time"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Overflowing a buffer can overwrite nearby memory.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l020-01",
+    "lessonDriveFileId": "11VzqID3j5LDdMbVJTjStUF2IFoW6jvSQ",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Why can buffer overflows be dangerous?",
+    "options": [
+      "They make screens brighter",
+      "Overwritten memory can let attackers run their own code",
+      "They only slow printing",
+      "They delete antivirus software from every machine"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Controlling overwritten memory can redirect program execution.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l020-02",
+    "lessonDriveFileId": "11VzqID3j5LDdMbVJTjStUF2IFoW6jvSQ",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which protection makes buffer overflow exploitation harder?",
+    "options": [
+      "Shorter file names",
+      "A bigger monitor with a higher screen resolution",
+      "Address Space Layout Randomisation (ASLR)",
+      "Disabling updates"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "ASLR randomises memory addresses so attackers can't predict them.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l015-04",
+    "lessonDriveFileId": "1iUMU-Q0606wLV6NtJnHrx6hnoG_5igQd",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "What is the relationship between a vulnerability, a threat and a risk?",
+    "options": [
+      "They mean exactly the same thing",
+      "Risk only exists without vulnerabilities",
+      "Threats remove vulnerabilities",
+      "Risk arises when a threat can exploit a vulnerability"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Risk combines the likelihood of a threat exploiting a weakness and the impact.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l015-05",
+    "lessonDriveFileId": "1iUMU-Q0606wLV6NtJnHrx6hnoG_5igQd",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A CVE number is:",
+    "options": [
+      "A public identifier for a known vulnerability",
+      "A type of malware",
+      "A password policy",
+      "A brand of firewall sold to large companies"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "CVE (Common Vulnerabilities and Exposures) gives each known flaw an ID.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l016-04",
+    "lessonDriveFileId": "1ihv1aOzam3lIpG3TN_tp9Js7EONZQomk",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Using default admin passwords on a device is an example of:",
+    "options": [
+      "Strong authentication",
+      "Security misconfiguration",
+      "Encryption",
+      "Patching"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Leaving defaults in place is a common misconfiguration.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l017-02",
+    "lessonDriveFileId": "14oIDFnd_N9kOpGn12XnlikW7-NQQqazg",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A demo shows an old, unpatched machine being taken over in minutes. The key lesson is:",
+    "options": [
+      "Old machines can't be attacked",
+      "Antivirus alone is enough",
+      "Keep systems updated and retire unsupported ones",
+      "Disconnect the monitor"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Unsupported, unpatched systems carry known, exploitable flaws.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l018-03",
+    "lessonDriveFileId": "1fo52OqbPEea4lp8yIQX8ywQthEIPOPBk",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which development practice catches vulnerabilities before release?",
+    "options": [
+      "Skipping testing to save time",
+      "Using only default settings",
+      "Hiding the source code",
+      "Code review and security testing"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Testing and review find flaws early, when they're cheapest to fix.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l019-02",
+    "lessonDriveFileId": "1vdrliE4vC6SWDLaodkaGUMIVMPK6BS7s",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which programming languages are most prone to buffer overflows?",
+    "options": [
+      "Low-level languages like C and C++",
+      "Python",
+      "JavaScript",
+      "SQL and other database query languages"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "C and C++ give direct memory access without automatic bounds checks.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l020-03",
+    "lessonDriveFileId": "11VzqID3j5LDdMbVJTjStUF2IFoW6jvSQ",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "The 'stack canary' protection works by:",
+    "options": [
+      "Encrypting all files",
+      "Placing a check value that reveals if memory was overwritten",
+      "Blocking all network traffic",
+      "Slowing the CPU so attacks take longer to run"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "If the canary value changes, the program stops before returning.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l021-01",
+    "lessonDriveFileId": "1ZwKhSjziIRxiR-Ca3aZT5UFyWJwtxwER",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Social engineering attacks target:",
+    "options": [
+      "Only hardware, such as servers and routers",
+      "Only encryption algorithms",
+      "People, by manipulating them into giving access or information",
+      "Only power supplies"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Social engineering exploits human trust rather than technical flaws.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l021-02",
+    "lessonDriveFileId": "1ZwKhSjziIRxiR-Ca3aZT5UFyWJwtxwER",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "An attacker calls pretending to be from IT support and asks for your password. This is:",
+    "options": [
+      "A buffer overflow",
+      "A firewall",
+      "Encryption",
+      "Pretexting (vishing)"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Pretexting uses an invented scenario to gain trust; by phone it's vishing.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l021-03",
+    "lessonDriveFileId": "1ZwKhSjziIRxiR-Ca3aZT5UFyWJwtxwER",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Leaving infected USB sticks in a car park for staff to find is called:",
+    "options": [
+      "Baiting",
+      "Tailgating",
+      "Patching",
+      "Hashing"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Baiting relies on curiosity to get someone to plug in a malicious device.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l021-04",
+    "lessonDriveFileId": "1ZwKhSjziIRxiR-Ca3aZT5UFyWJwtxwER",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Following an employee through a secure door without a badge is:",
+    "options": [
+      "Phishing",
+      "Tailgating",
+      "Smishing",
+      "Spoofing"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Tailgating (piggybacking) bypasses physical access controls.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l022-01",
+    "lessonDriveFileId": "1EmLPlF3Z7aSdZqZbwir1K1kM3ZajUp2L",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which is a common sign of a phishing email?",
+    "options": [
+      "A greeting using your full name only",
+      "No links at all",
+      "Urgent pressure to click a link or pay quickly",
+      "An email you expected from a colleague"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Urgency and fear push victims to act before thinking.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l022-02",
+    "lessonDriveFileId": "1EmLPlF3Z7aSdZqZbwir1K1kM3ZajUp2L",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Before clicking a link in an email, you should:",
+    "options": [
+      "Click it twice to be sure",
+      "Forward it to all contacts",
+      "Reply with your password",
+      "Hover over it to check the real destination"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Hovering reveals the actual URL, which may differ from the text.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l022-03",
+    "lessonDriveFileId": "1EmLPlF3Z7aSdZqZbwir1K1kM3ZajUp2L",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "An email from 'paypa1-security.com' is suspicious because:",
+    "options": [
+      "The domain imitates a real brand with a small change",
+      "It contains the letter p",
+      "It is too short",
+      "It uses .com instead of a country domain"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Look-alike domains are a classic phishing trick.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l023-01",
+    "lessonDriveFileId": "1DLIvBtPxMVKLS5XJYJfgMXUuhv9sLnGD",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Why examine an email's headers when analysing phishing?",
+    "options": [
+      "They contain the recipient's password",
+      "They show the true sending servers and authentication results",
+      "They change the email's colour",
+      "They delete attachments"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Headers reveal the route and SPF/DKIM/DMARC results.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l023-02",
+    "lessonDriveFileId": "1DLIvBtPxMVKLS5XJYJfgMXUuhv9sLnGD",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "SPF, DKIM and DMARC help to:",
+    "options": [
+      "Encrypt hard drives",
+      "Speed up email delivery between mail servers",
+      "Verify that an email really came from the domain it claims",
+      "Block all attachments"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "They are email authentication standards against spoofing.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l024-01",
+    "lessonDriveFileId": "1_MPyOO_bvGZpvjYxFcOB1ij99QFdyRND",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "The best overall defence against social engineering is:",
+    "options": [
+      "Faster computers",
+      "Turning off email",
+      "Longer network cables between offices",
+      "Regular security awareness training"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Trained people recognise and report manipulation.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l024-02",
+    "lessonDriveFileId": "1_MPyOO_bvGZpvjYxFcOB1ij99QFdyRND",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "If you suspect a phishing email at work, you should:",
+    "options": [
+      "Report it to your security team without clicking",
+      "Delete it and tell no one",
+      "Forward it to friends to ask if it looks real",
+      "Reply to ask if it's real"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Reporting helps protect others who received the same message.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l022-04",
+    "lessonDriveFileId": "1EmLPlF3Z7aSdZqZbwir1K1kM3ZajUp2L",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Phishing by SMS text message is called:",
+    "options": [
+      "Vishing",
+      "Smishing",
+      "Whaling",
+      "Pharming"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Smishing = SMS phishing.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l021-05",
+    "lessonDriveFileId": "1ZwKhSjziIRxiR-Ca3aZT5UFyWJwtxwER",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A targeted phishing email aimed at a company's CEO is called:",
+    "options": [
+      "Smishing",
+      "Baiting",
+      "Whaling",
+      "Tailgating"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Whaling targets senior executives.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l021-06",
+    "lessonDriveFileId": "1ZwKhSjziIRxiR-Ca3aZT5UFyWJwtxwER",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Why do social engineers often pose as authority figures?",
+    "options": [
+      "Authority figures have no passwords",
+      "It makes emails shorter",
+      "It disables antivirus",
+      "People tend to obey authority without questioning"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Authority is a powerful psychological lever.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l022-05",
+    "lessonDriveFileId": "1EmLPlF3Z7aSdZqZbwir1K1kM3ZajUp2L",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "An email says your bank account will close in 24 hours unless you log in via a link. The safest action is:",
+    "options": [
+      "Go to the bank's site or app directly, not through the link",
+      "Click the link quickly",
+      "Reply with your PIN so the bank can verify you",
+      "Forward it to colleagues"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Never use links in unexpected urgent emails; go directly to the source.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l023-03",
+    "lessonDriveFileId": "1DLIvBtPxMVKLS5XJYJfgMXUuhv9sLnGD",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which tool would help you check whether a link in a suspicious email is malicious?",
+    "options": [
+      "A word processor",
+      "A URL scanning service such as VirusTotal",
+      "A spreadsheet chart",
+      "A video editor to replay the email's content"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Scanning services check URLs and files against many engines.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l024-03",
+    "lessonDriveFileId": "1_MPyOO_bvGZpvjYxFcOB1ij99QFdyRND",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which technical control limits damage if a phished password is used?",
+    "options": [
+      "A bigger inbox",
+      "Disabling spam filters",
+      "Multi-factor authentication",
+      "Using the same password everywhere"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "MFA requires a second factor the attacker usually doesn't have.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l025-01",
+    "lessonDriveFileId": "1XlIxiQtSgehfuqHA-H6YHVpmK4YiQkjl",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "An endpoint is:",
+    "options": [
+      "A type of network cable used in offices",
+      "The last line of code",
+      "A firewall rule",
+      "A device that connects to a network, like a laptop or phone"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Endpoints are user devices and servers on the network.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l026-01",
+    "lessonDriveFileId": "1RPIvFD8QBSHgsEKFACQynBuw5H7SCaRI",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Why is browser security important?",
+    "options": [
+      "The browser is one of the most attacked pieces of software",
+      "Browsers never connect to the internet",
+      "Browsers can't run code",
+      "Browsers have no settings"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Browsers process untrusted content all day.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l027-01",
+    "lessonDriveFileId": "1OqcncbmzTTCho7vQzy2NpckIqwQjCG8D",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "'Hardening' a browser like Firefox means:",
+    "options": [
+      "Making it load more adverts",
+      "Changing settings to reduce attack surface and tracking",
+      "Installing every extension",
+      "Removing all updates so settings don't change"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Hardening tightens defaults for security and privacy.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l028-01",
+    "lessonDriveFileId": "1LYFPFWew0D6H31b7xtWqsCkISADV2z6-",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Brave is known for:",
+    "options": [
+      "Having no settings",
+      "Being a firewall that replaces Windows Defender",
+      "Blocking trackers and adverts by default",
+      "Requiring Windows XP"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Brave ships with built-in tracker and ad blocking.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l030-01",
+    "lessonDriveFileId": "19sSmVs81ZszO1ydajg18eegkurdHnVhw",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Signature-based antivirus detects malware by:",
+    "options": [
+      "Guessing randomly",
+      "Checking file sizes only",
+      "Asking the user whether each file looks safe",
+      "Matching files against known malware patterns"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Signatures identify known threats; new ones need heuristics or behaviour analysis.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l030-02",
+    "lessonDriveFileId": "19sSmVs81ZszO1ydajg18eegkurdHnVhw",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Heuristic or behavioural detection helps catch:",
+    "options": [
+      "New malware that has no signature yet",
+      "Only old viruses that were removed years ago",
+      "Only printer errors",
+      "Only spam emails"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "It looks for suspicious behaviour rather than exact matches.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l031-01",
+    "lessonDriveFileId": "1a2B3Gw683frzjsegKezSe5ktzabMLzTE",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "What is the built-in antivirus on Windows 10 and 11?",
+    "options": [
+      "XProtect",
+      "Microsoft Defender Antivirus",
+      "Gatekeeper",
+      "ClamAV, which ships with every Windows version"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Microsoft Defender is included with Windows.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l032-01",
+    "lessonDriveFileId": "1UntAx0Uu_0B1pvX5HfB7iJqChjgO4bye",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "XProtect on macOS is:",
+    "options": [
+      "A Windows firewall",
+      "A password manager",
+      "Apple's built-in malware detection",
+      "A VPN that hides your Mac's IP address"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "XProtect uses signatures to block known macOS malware.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l034-01",
+    "lessonDriveFileId": "1nciOMhJBnTGigraUSr7hspjO_63N-yTO",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Why use a password manager?",
+    "options": [
+      "It makes all passwords the same",
+      "It shares passwords publicly",
+      "It removes the need for any password",
+      "It creates and stores strong, unique passwords for every account"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Unique, random passwords stop one leak exposing everything.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l034-02",
+    "lessonDriveFileId": "1nciOMhJBnTGigraUSr7hspjO_63N-yTO",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which is the strongest password?",
+    "options": [
+      "A long random passphrase like 'tiger-orbit-mango-cello-42'",
+      "password123",
+      "Your birthday",
+      "Your name followed by your year of birth"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Length and randomness matter most.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l035-01",
+    "lessonDriveFileId": "1z_gr9iSovsh2TWKJjnOPa821KvMbFnip",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "KeePass stores passwords:",
+    "options": [
+      "On a public website",
+      "In a locally encrypted database file",
+      "In plain text emails",
+      "On sticky notes"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "KeePass keeps an encrypted file you control.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l037-01",
+    "lessonDriveFileId": "17WGoj2UBze8AFGVz0k6VYW6NV4LnBPGj",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Full-disk encryption protects data mainly when:",
+    "options": [
+      "Malware is running while you're logged in",
+      "You send an email",
+      "A device is lost or stolen",
+      "You browse the web"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Encryption at rest keeps data unreadable without the key.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l037-02",
+    "lessonDriveFileId": "17WGoj2UBze8AFGVz0k6VYW6NV4LnBPGj",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "BitLocker and FileVault are examples of:",
+    "options": [
+      "Antivirus scanners",
+      "Web browsers",
+      "Firewalls",
+      "Disk encryption tools"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "BitLocker (Windows) and FileVault (macOS) encrypt drives.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l038-01",
+    "lessonDriveFileId": "1TNFMWRHsF6WRm5EnUFUcL7M5k5s0-zRO",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Process Explorer helps you:",
+    "options": [
+      "Inspect running processes and spot suspicious ones",
+      "Write documents",
+      "Edit photos and remove metadata from images",
+      "Send emails"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "It shows detailed process information on Windows.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l039-01",
+    "lessonDriveFileId": "1kaIAI30iAv76K779lZK9PpAkmBMti_7_",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Netstat shows:",
+    "options": [
+      "Disk usage and free space on each drive",
+      "Active network connections and listening ports",
+      "Battery health",
+      "Screen brightness"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Netstat lists connections, useful for spotting unexpected ones.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l039-02",
+    "lessonDriveFileId": "1kaIAI30iAv76K779lZK9PpAkmBMti_7_",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Wireshark is used to:",
+    "options": [
+      "Encrypt disks so files can't be read offline",
+      "Manage passwords",
+      "Capture and analyse network packets",
+      "Block adverts"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Wireshark is a packet analyser.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l041-01",
+    "lessonDriveFileId": "149GxA_o9pO2A6Y6pNuVcrJUz8P5RlJ00",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Rootkit Hunter (rkhunter) scans Linux systems for:",
+    "options": [
+      "Spelling mistakes",
+      "Printer drivers",
+      "Slow Wi-Fi and dropped wireless connections",
+      "Rootkits and signs of compromise"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "rkhunter checks for known rootkits and suspicious changes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l042-01",
+    "lessonDriveFileId": "1jKWXBnMFTpabxZE5L2ialImzodR4_W43",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A host-based firewall:",
+    "options": [
+      "Controls traffic in and out of a single device",
+      "Protects a whole building physically",
+      "Stores passwords",
+      "Encrypts emails"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Host firewalls filter traffic at the device level.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l043-01",
+    "lessonDriveFileId": "1Az_YH322FRZdnFFKijjrYiD-KqNpUChe",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "iptables is used on Linux to:",
+    "options": [
+      "Edit spreadsheets",
+      "Define firewall rules for network traffic",
+      "Install fonts and manage system themes",
+      "Manage photos"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "iptables configures the Linux kernel's packet filtering.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l046-01",
+    "lessonDriveFileId": "1N_AUqm1H8Okf0UmbERnl0Bss8OC09Eax",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Why doesn't emptying the Recycle Bin securely delete a file?",
+    "options": [
+      "It encrypts the file",
+      "It sends the file to the cloud",
+      "The data stays on disk until overwritten",
+      "It prints the file"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Deletion removes the reference, not the data, so it can be recovered.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l029-01",
+    "lessonDriveFileId": "1KaPNuc4LtOE6uULkPJO-Y8OY9Dkdnosr",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Keeping Chrome or Safari updated matters because:",
+    "options": [
+      "Updates add more adverts",
+      "Updates slow browsing on purpose",
+      "Updates remove passwords",
+      "Updates fix security vulnerabilities attackers exploit"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Browser patches close exploitable flaws.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l036-01",
+    "lessonDriveFileId": "1Hwn7QYqkDPgD0nyEkKrzHDmjPYt7lSu-",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A key risk of a cloud password manager is:",
+    "options": [
+      "A breach of the provider, so a strong master password and MFA are vital",
+      "It can't generate passwords",
+      "It only works offline",
+      "It stores passwords in plain text by design"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Protect the vault with a strong master password and MFA.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l025-02",
+    "lessonDriveFileId": "1XlIxiQtSgehfuqHA-H6YHVpmK4YiQkjl",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which is NOT an endpoint?",
+    "options": [
+      "A laptop",
+      "A network cable",
+      "A smartphone",
+      "A server"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Endpoints are devices; cables are infrastructure.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l026-02",
+    "lessonDriveFileId": "1RPIvFD8QBSHgsEKFACQynBuw5H7SCaRI",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which browser habit improves security most?",
+    "options": [
+      "Installing every free extension",
+      "Never updating, so nothing changes unexpectedly",
+      "Installing only trusted extensions and keeping the browser updated",
+      "Saving passwords in a text file"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Malicious extensions and outdated browsers are common risks.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l027-02",
+    "lessonDriveFileId": "1OqcncbmzTTCho7vQzy2NpckIqwQjCG8D",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Firefox's Enhanced Tracking Protection set to Strict:",
+    "options": [
+      "Disables HTTPS on sites that load slowly",
+      "Makes all sites load ads",
+      "Turns off updates",
+      "Blocks more trackers but may break some sites"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Stricter blocking trades a little compatibility for privacy.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l030-03",
+    "lessonDriveFileId": "19sSmVs81ZszO1ydajg18eegkurdHnVhw",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Why shouldn't you run two real-time antivirus products at once?",
+    "options": [
+      "They can conflict and slow or destabilise the system",
+      "It is illegal",
+      "It doubles protection perfectly",
+      "It deletes Windows"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Competing real-time scanners interfere with each other.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l031-02",
+    "lessonDriveFileId": "1a2B3Gw683frzjsegKezSe5ktzabMLzTE",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Windows SmartScreen helps protect users by:",
+    "options": [
+      "Encrypting the hard drive",
+      "Warning about unrecognised apps and malicious websites",
+      "Managing passwords and filling in login forms",
+      "Speeding up downloads"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "SmartScreen checks reputation of files and sites.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l033-01",
+    "lessonDriveFileId": "15_iob4Hjcpj-9Q4DwTmQt4a1k3Kdimry",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Malwarebytes is often used:",
+    "options": [
+      "As a web browser that blocks all adverts",
+      "As a disk encryption tool",
+      "As an extra scanner to find and remove malware",
+      "As an email client"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It's a popular anti-malware scanner.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l034-03",
+    "lessonDriveFileId": "1nciOMhJBnTGigraUSr7hspjO_63N-yTO",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "What makes a password manager safe to use?",
+    "options": [
+      "Writing the master password on your monitor",
+      "Sharing the vault with friends",
+      "Using 'password' as the master",
+      "A strong master password plus multi-factor authentication"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "The master password protects everything else.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l037-03",
+    "lessonDriveFileId": "17WGoj2UBze8AFGVz0k6VYW6NV4LnBPGj",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which statement about file encryption is true?",
+    "options": [
+      "Without the key, encrypted data is unreadable",
+      "Encrypted data can be read by anyone",
+      "Encryption makes files larger by ten times",
+      "Encryption replaces backups"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Encryption protects confidentiality, but you still need backups.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l039-03",
+    "lessonDriveFileId": "1kaIAI30iAv76K779lZK9PpAkmBMti_7_",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "You see an unknown program connected to a foreign IP on an unusual port. Which tool showed you this?",
+    "options": [
+      "Microsoft Word",
+      "Netstat",
+      "Paint",
+      "Calculator"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Netstat lists active connections and the processes using them.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l040-01",
+    "lessonDriveFileId": "1WqE_XrdxcRnKopHvIdm0bjYhspJrWC6f",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "htop on Linux is used to:",
+    "options": [
+      "Encrypt files in a user's home folder",
+      "Write firewall rules",
+      "Monitor running processes and resource usage",
+      "Scan for Wi-Fi"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "htop is an interactive process viewer.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l042-02",
+    "lessonDriveFileId": "1jKWXBnMFTpabxZE5L2ialImzodR4_W43",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Why use a host-based firewall even behind a network firewall?",
+    "options": [
+      "It's never needed once a network firewall exists",
+      "It disables the network firewall",
+      "It removes malware automatically",
+      "It protects the device if the network is compromised or untrusted"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Defence in depth: each layer catches what others miss.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l044-01",
+    "lessonDriveFileId": "1dlnwC-2U_doVIJ8KjEbhOIWNHwUv9bzC",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Windows Defender Firewall can:",
+    "options": [
+      "Allow or block apps and ports for inbound and outbound traffic",
+      "Encrypt the hard drive",
+      "Remove viruses from infected downloads",
+      "Store passwords"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "It filters traffic per app, port and network profile.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l045-01",
+    "lessonDriveFileId": "1PFpX0u7J0FkrPyOYpNsgLR00Hj8PePrL",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "macOS's built-in firewall mainly controls:",
+    "options": [
+      "Outgoing emails",
+      "Incoming connections to apps",
+      "Battery usage and power-saving settings",
+      "Disk encryption"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "The macOS application firewall blocks unwanted incoming connections.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l046-02",
+    "lessonDriveFileId": "1N_AUqm1H8Okf0UmbERnl0Bss8OC09Eax",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "How should you dispose of an old hard drive with sensitive data?",
+    "options": [
+      "Throw it away as it is",
+      "Empty the Recycle Bin first",
+      "Securely wipe it or physically destroy it",
+      "Rename the files"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Secure wiping or destruction stops data recovery.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l047-01",
+    "lessonDriveFileId": "1nsvaRm0oy6qjscw4DVKcy6IZNwi5vwjM",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which combination best protects an endpoint?",
+    "options": [
+      "A good monitor and keyboard",
+      "Only antivirus, because it catches everything",
+      "Only a strong password",
+      "Updates, antivirus, firewall, encryption and strong passwords"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Layered controls cover different threats.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l035-02",
+    "lessonDriveFileId": "1z_gr9iSovsh2TWKJjnOPa821KvMbFnip",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "An advantage of KeePass over cloud password managers is:",
+    "options": [
+      "You control where the encrypted database is stored",
+      "It needs no master password",
+      "It can't be backed up, so it's harder to steal",
+      "It only works on phones"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Local storage avoids trusting a third-party cloud.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l038-02",
+    "lessonDriveFileId": "1TNFMWRHsF6WRm5EnUFUcL7M5k5s0-zRO",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "In Process Explorer, a process with no company name and an odd file location may be:",
+    "options": [
+      "Always safe, since Windows lists every process",
+      "Suspicious and worth investigating",
+      "A Windows update",
+      "A printer driver"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Unsigned processes in unusual locations are red flags.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l043-02",
+    "lessonDriveFileId": "1Az_YH322FRZdnFFKijjrYiD-KqNpUChe",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "An iptables rule that DROPs incoming traffic on port 23 blocks:",
+    "options": [
+      "All web traffic",
+      "Email sending",
+      "Telnet connections",
+      "DNS lookups"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Port 23 is Telnet, an insecure remote access protocol.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l048-01",
+    "lessonDriveFileId": "1bSb27lDmeVe3LBcLpzhA7iLDley8dI3y",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Network security protects:",
+    "options": [
+      "Only paper documents",
+      "Only office furniture",
+      "Only printers and other shared office devices",
+      "Data and devices as they communicate across networks"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "It covers traffic, devices and infrastructure.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l049-01",
+    "lessonDriveFileId": "12kfc2FLSO2P2bK2WWz2x4JP2OEzVWOtc",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "A network firewall filters traffic based on:",
+    "options": [
+      "Rules about addresses, ports and protocols",
+      "The colour of cables",
+      "The time zone only",
+      "User's favourite websites"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Firewall rules allow or deny traffic.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l049-02",
+    "lessonDriveFileId": "12kfc2FLSO2P2bK2WWz2x4JP2OEzVWOtc",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "A stateful firewall:",
+    "options": [
+      "Only checks the packet's colour",
+      "Tracks connections and allows return traffic for established sessions",
+      "Ignores all connections",
+      "Encrypts all files stored on connected servers"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "It remembers connection state.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l050-01",
+    "lessonDriveFileId": "1T0BG6IMPH-I2k3xi9YL7B9TpIeF9eNgw",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "A next-generation firewall (NGFW) adds:",
+    "options": [
+      "Faster printing",
+      "A built-in keyboard",
+      "Application awareness and intrusion prevention",
+      "Wi-Fi passwords for guests only"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "NGFWs inspect applications and content, not just ports.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l051-01",
+    "lessonDriveFileId": "1sO0vAPl-58sTvXLnJunxOxcbk62_D2Au",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Network scanning is used by defenders to:",
+    "options": [
+      "Delete devices",
+      "Slow down networks",
+      "Send spam to every address on the network",
+      "Find devices, open ports and weaknesses before attackers do"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Scanning reveals what's exposed.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l052-01",
+    "lessonDriveFileId": "1jzVw9ASKRQldzsXTEosARvxgJ7k3Y8Ix",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Nmap is a tool for:",
+    "options": [
+      "Discovering hosts and open ports on a network",
+      "Editing images and removing EXIF data",
+      "Writing emails",
+      "Encrypting disks"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Nmap is the standard network scanner.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l052-02",
+    "lessonDriveFileId": "1jzVw9ASKRQldzsXTEosARvxgJ7k3Y8Ix",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Why must you have permission before scanning a network?",
+    "options": [
+      "Scanning breaks computers permanently",
+      "Unauthorised scanning can be illegal and treated as an attack",
+      "Nmap costs money per scan",
+      "It isn't possible without permission"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Always get written authorisation.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l053-01",
+    "lessonDriveFileId": "1GM2FDsTuKYLL3Zzxwf2_3MxEnn145j2x",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Nessus is a:",
+    "options": [
+      "Web browser",
+      "Password manager",
+      "Vulnerability scanner",
+      "Video player"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Nessus checks hosts for known vulnerabilities.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l055-01",
+    "lessonDriveFileId": "1Hg9qdbnxtljwhruqznU5posRyF0qxwFH",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Routersploit is a framework for:",
+    "options": [
+      "Designing websites",
+      "Managing payroll",
+      "Editing video captured by security cameras",
+      "Testing routers and embedded devices for vulnerabilities"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "It targets weaknesses in routers and IoT devices.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l056-01",
+    "lessonDriveFileId": "1IozCbRzkF_4ucig2SmdN9Z_AzBP-6rMl",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Why are router default credentials dangerous?",
+    "options": [
+      "They are publicly documented, so anyone can log in",
+      "They are too long for users to remember",
+      "They change daily",
+      "They are encrypted"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Default logins are listed online; always change them.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l057-01",
+    "lessonDriveFileId": "1n3DDubb4iy9odrUuqZTtph4Z0IZvyajO",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Network segmentation means:",
+    "options": [
+      "Using one big flat network",
+      "Splitting a network into zones to limit the spread of an attack",
+      "Removing all firewalls",
+      "Sharing one password across all departments"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Segments contain breaches.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l057-02",
+    "lessonDriveFileId": "1n3DDubb4iy9odrUuqZTtph4Z0IZvyajO",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "A DMZ is used to:",
+    "options": [
+      "Store backups offline",
+      "Encrypt emails sent between internal staff",
+      "Host public-facing servers separately from the internal network",
+      "Speed up Wi-Fi"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "A demilitarised zone isolates exposed services.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l058-01",
+    "lessonDriveFileId": "1uAtO5FftivR7nf78KyC0Ygexd0DIKJKb",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which Wi-Fi security standard is the most secure of these?",
+    "options": [
+      "WEP",
+      "WPA",
+      "Open network",
+      "WPA3"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "WPA3 is the current standard; WEP is broken.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l060-01",
+    "lessonDriveFileId": "11benDwrdC5-ItnzCpr9GMkD9nsAW-UlL",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "tcpdump is used to:",
+    "options": [
+      "Capture network packets from the command line",
+      "Edit documents stored on a remote server",
+      "Create firewalls",
+      "Encrypt drives"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "tcpdump is a command-line packet capture tool.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l061-01",
+    "lessonDriveFileId": "1kAEc4S4D3lUtNTHEsJs2_Gy2LOIASK_v",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "ARP spoofing allows an attacker to:",
+    "options": [
+      "Speed up the network",
+      "Intercept traffic on a local network",
+      "Encrypt traffic",
+      "Fix routing errors"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Fake ARP replies redirect traffic through the attacker.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l048-02",
+    "lessonDriveFileId": "1bSb27lDmeVe3LBcLpzhA7iLDley8dI3y",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Defence in depth means:",
+    "options": [
+      "Relying on one strong firewall",
+      "Hiding the server deep underground",
+      "Using several layers of security so one failure isn't fatal",
+      "Using very long cables"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Layered controls back each other up.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l049-03",
+    "lessonDriveFileId": "12kfc2FLSO2P2bK2WWz2x4JP2OEzVWOtc",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "A firewall rule allowing only ports 80 and 443 inbound to a web server follows:",
+    "options": [
+      "Open by default",
+      "Security through obscurity",
+      "Full trust",
+      "The principle of least privilege"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Only what's needed is allowed.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l050-02",
+    "lessonDriveFileId": "1T0BG6IMPH-I2k3xi9YL7B9TpIeF9eNgw",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which device inspects traffic for attack patterns and can block them?",
+    "options": [
+      "Intrusion prevention system (IPS)",
+      "Switch",
+      "Modem supplied by the internet provider",
+      "Keyboard"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "An IPS detects and stops malicious traffic.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l051-02",
+    "lessonDriveFileId": "1sO0vAPl-58sTvXLnJunxOxcbk62_D2Au",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "An open port means:",
+    "options": [
+      "The network is offline and can't be reached",
+      "A service is listening and may accept connections",
+      "The device is encrypted",
+      "The firewall is broken"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Every open port is a potential entry point.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l052-03",
+    "lessonDriveFileId": "1jzVw9ASKRQldzsXTEosARvxgJ7k3Y8Ix",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which Nmap scan type is often called a 'stealth' scan?",
+    "options": [
+      "Ping only",
+      "UDP flood",
+      "SYN scan (-sS)",
+      "Full disk scan"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "A SYN scan doesn't complete the TCP handshake.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l053-02",
+    "lessonDriveFileId": "1GM2FDsTuKYLL3Zzxwf2_3MxEnn145j2x",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "After a Nessus scan, vulnerabilities should be fixed in order of:",
+    "options": [
+      "Alphabetical order",
+      "Plugin ID, starting from the lowest number",
+      "Random order",
+      "Severity and how exposed the system is"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Prioritise critical, exposed issues first.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l054-01",
+    "lessonDriveFileId": "1r20T31MYdQS59wGiaYhsSrem6zCdwNzT",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "A scan of an old Windows 7 machine shows many critical issues. The main reason is:",
+    "options": [
+      "Windows 7 no longer receives security updates",
+      "Windows 7 is too fast for modern scanners",
+      "The scanner is broken",
+      "Windows 7 has no network"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Unsupported operating systems accumulate unpatched flaws.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l055-02",
+    "lessonDriveFileId": "1Hg9qdbnxtljwhruqznU5posRyF0qxwFH",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Home and office routers are attractive targets because:",
+    "options": [
+      "They have no software",
+      "They are rarely updated and control all traffic",
+      "They are always switched off",
+      "They can't connect to the internet"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Compromising a router exposes everything behind it.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l056-02",
+    "lessonDriveFileId": "1IozCbRzkF_4ucig2SmdN9Z_AzBP-6rMl",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "After installing a new router, your first security step should be:",
+    "options": [
+      "Leave defaults so support can help",
+      "Disable encryption",
+      "Change the default admin password and update the firmware",
+      "Publish the Wi-Fi password online"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Defaults and old firmware are easy targets.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l057-03",
+    "lessonDriveFileId": "1n3DDubb4iy9odrUuqZTtph4Z0IZvyajO",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Putting smart TVs and IoT devices on a separate guest network is an example of:",
+    "options": [
+      "Encryption",
+      "Phishing staff with a fake guest login page",
+      "Brute force",
+      "Network segmentation"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Separating untrusted devices limits damage.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l058-02",
+    "lessonDriveFileId": "1uAtO5FftivR7nf78KyC0Ygexd0DIKJKb",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Why is WEP considered insecure?",
+    "options": [
+      "Its encryption can be cracked within minutes",
+      "It is too new for older devices to support",
+      "It has no password",
+      "It only works on phones"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "WEP's design flaws make keys easy to recover.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l059-01",
+    "lessonDriveFileId": "1uEPD7oc78r0MMJhaqXPO2lBWmtSWVb86",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "A wireless deauthentication attack:",
+    "options": [
+      "Encrypts all traffic",
+      "Forces devices to disconnect from a Wi-Fi network",
+      "Speeds up Wi-Fi by removing idle devices",
+      "Adds a new router"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Deauth frames kick clients off, sometimes to capture handshakes.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l060-02",
+    "lessonDriveFileId": "11benDwrdC5-ItnzCpr9GMkD9nsAW-UlL",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Packet captures are useful for defenders because:",
+    "options": [
+      "They delete malware",
+      "They encrypt passwords",
+      "They show exactly what traffic crossed the network",
+      "They block ports that attackers try to use"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Captured packets support investigation.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l061-02",
+    "lessonDriveFileId": "1kAEc4S4D3lUtNTHEsJs2_Gy2LOIASK_v",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which attack overwhelms a target using many compromised machines?",
+    "options": [
+      "SQL injection",
+      "Phishing emails sent to the finance team",
+      "Tailgating",
+      "Distributed denial of service (DDoS)"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "A botnet floods the target from many sources.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l058-03",
+    "lessonDriveFileId": "1uAtO5FftivR7nf78KyC0Ygexd0DIKJKb",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Disabling WPS on a router is recommended because:",
+    "options": [
+      "WPS PINs can be brute-forced",
+      "It improves signal strength",
+      "It adds encryption",
+      "It's required by law"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "WPS has well-known weaknesses.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l062-01",
+    "lessonDriveFileId": "1KcXyPyYVhDZ-Wfo1P2U4c2pisctcqF2C",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "A 'protect and recover' strategy focuses on:",
+    "options": [
+      "Ignoring backups because defences stop every attack",
+      "Strong perimeter defences plus the ability to restore after an incident",
+      "Only training staff",
+      "Only buying insurance"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Prevent where you can, recover when you can't.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l062-02",
+    "lessonDriveFileId": "1KcXyPyYVhDZ-Wfo1P2U4c2pisctcqF2C",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Why is a tested backup plan part of any security strategy?",
+    "options": [
+      "Backups prevent all attacks",
+      "Backups replace firewalls and antivirus entirely",
+      "No defence is perfect, so you must be able to recover",
+      "Backups speed up computers"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Recovery limits the damage of a breach.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l063-01",
+    "lessonDriveFileId": "1rFY_P5zksBHjGMsRJZ_gs_Urz5wcNapI",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "An endpoint protection strategy assumes that:",
+    "options": [
+      "The network firewall stops everything",
+      "Users never take laptops home",
+      "Endpoints are unimportant",
+      "Each device must defend itself, not just the perimeter"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Remote work makes device-level protection essential.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l064-01",
+    "lessonDriveFileId": "1gl22l3vUsHkIMI5673gHNHIhZOdbRl6F",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "An application-centric strategy prioritises:",
+    "options": [
+      "Securing the software and the data it handles",
+      "Only physical security",
+      "Only the Wi-Fi",
+      "Only email, because most attacks start there"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Secure coding, testing and app controls are central.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l065-01",
+    "lessonDriveFileId": "1nlJbHuWgZZk1qHLsW9rEw7iQj5EEcU8g",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "An identity-centric strategy treats what as the new perimeter?",
+    "options": [
+      "The office building",
+      "User identities and access rights",
+      "The printer",
+      "The Wi-Fi password"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Strong authentication and least privilege are key.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l065-02",
+    "lessonDriveFileId": "1nlJbHuWgZZk1qHLsW9rEw7iQj5EEcU8g",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Zero Trust means:",
+    "options": [
+      "Trust everyone inside the network",
+      "Remove all passwords",
+      "Never trust by default; verify every access request",
+      "Turn off logging"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Zero Trust checks identity and context for each request.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l066-01",
+    "lessonDriveFileId": "1Ufgj5HxHM2UrkGfOXAgJXGMXORS_AaUz",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "A data-centric strategy focuses on:",
+    "options": [
+      "Protecting only servers in the main data centre",
+      "Protecting only routers",
+      "Ignoring sensitive data",
+      "Classifying and protecting the data itself, wherever it goes"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Encryption, classification and DLP follow the data.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l066-02",
+    "lessonDriveFileId": "1Ufgj5HxHM2UrkGfOXAgJXGMXORS_AaUz",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Data Loss Prevention (DLP) tools help to:",
+    "options": [
+      "Stop sensitive data leaving the organisation",
+      "Speed up file transfers",
+      "Create backups of every file automatically",
+      "Remove viruses"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "DLP detects and blocks unauthorised data transfers.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l067-01",
+    "lessonDriveFileId": "1A9BK1HT74ie0sUL9SsAIUICsES844eY9",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "An attack-centric strategy is based on:",
+    "options": [
+      "Ignoring threat intelligence",
+      "Understanding attackers' tactics to build defences against them",
+      "Only buying antivirus for every laptop",
+      "Only using strong passwords"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Models like MITRE ATT&CK map real attacker behaviour.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l067-02",
+    "lessonDriveFileId": "1A9BK1HT74ie0sUL9SsAIUICsES844eY9",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "MITRE ATT&CK is:",
+    "options": [
+      "A brand of firewall",
+      "A password manager for security teams",
+      "A knowledge base of attacker tactics and techniques",
+      "A programming language"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It catalogues how real adversaries operate.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l063-02",
+    "lessonDriveFileId": "1rFY_P5zksBHjGMsRJZ_gs_Urz5wcNapI",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "EDR (Endpoint Detection and Response) tools:",
+    "options": [
+      "Only block adverts in employees' browsers",
+      "Only manage passwords",
+      "Only encrypt email",
+      "Monitor endpoints and help investigate and stop threats"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "EDR records activity and enables response.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l064-02",
+    "lessonDriveFileId": "1gl22l3vUsHkIMI5673gHNHIhZOdbRl6F",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Web Application Firewalls (WAFs) protect against:",
+    "options": [
+      "Attacks such as SQL injection and XSS against web apps",
+      "Power cuts that take web servers offline",
+      "Hardware theft",
+      "Printer jams"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "WAFs filter malicious HTTP requests.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l062-03",
+    "lessonDriveFileId": "1KcXyPyYVhDZ-Wfo1P2U4c2pisctcqF2C",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "The 3-2-1 backup rule recommends:",
+    "options": [
+      "3 passwords, 2 users, 1 server",
+      "3 copies, on 2 types of media, with 1 off-site",
+      "3 firewalls, 2 routers, 1 switch",
+      "3 backups all on the same drive"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Diversity and an off-site copy protect against loss.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l063-03",
+    "lessonDriveFileId": "1rFY_P5zksBHjGMsRJZ_gs_Urz5wcNapI",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Why did endpoint protection grow in importance?",
+    "options": [
+      "Laptops became cheaper",
+      "Firewalls were banned",
+      "Remote work moved devices outside the corporate network",
+      "Phones stopped connecting to the internet"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Devices now often connect from untrusted networks.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l064-03",
+    "lessonDriveFileId": "1gl22l3vUsHkIMI5673gHNHIhZOdbRl6F",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which practice fits an application-centric strategy?",
+    "options": [
+      "Only installing antivirus",
+      "Locking the server room door at night",
+      "Changing the Wi-Fi password",
+      "Security testing in the software development lifecycle"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Building security into development catches flaws early.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l065-03",
+    "lessonDriveFileId": "1nlJbHuWgZZk1qHLsW9rEw7iQj5EEcU8g",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Least privilege means users get:",
+    "options": [
+      "Only the access they need to do their job",
+      "Admin rights everywhere",
+      "No access at all",
+      "Access to everyone's email"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Limiting access limits damage from compromised accounts.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l066-03",
+    "lessonDriveFileId": "1Ufgj5HxHM2UrkGfOXAgJXGMXORS_AaUz",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Classifying data as Public, Internal or Confidential helps to:",
+    "options": [
+      "Make files smaller",
+      "Apply the right protection to each kind of data",
+      "Speed up email by compressing attachments",
+      "Remove encryption"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Classification drives handling rules.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l067-03",
+    "lessonDriveFileId": "1A9BK1HT74ie0sUL9SsAIUICsES844eY9",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Threat intelligence supports an attack-centric strategy by:",
+    "options": [
+      "Replacing all firewalls",
+      "Removing the need for patches",
+      "Telling defenders which tactics attackers are currently using",
+      "Encrypting backups before they leave the site"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Knowing current threats focuses defences.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l068-01",
+    "lessonDriveFileId": "1Jz05wVRdy33eaIQpyybLbatEt42KXTeU",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Your public IP address can reveal:",
+    "options": [
+      "Your exact password",
+      "Your bank PIN and online banking password",
+      "Your date of birth",
+      "Your approximate location and internet provider"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "IP geolocation gives a rough location and ISP.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l068-02",
+    "lessonDriveFileId": "1Jz05wVRdy33eaIQpyybLbatEt42KXTeU",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Which tool hides your IP address from the websites you visit?",
+    "options": [
+      "A VPN or Tor",
+      "A stronger password",
+      "A screen protector",
+      "An antivirus scan"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Traffic is routed through other servers.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l069-01",
+    "lessonDriveFileId": "1x9G6GKrX7HgsZJGg_bOu3ACxGZS3-8jL",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Third-party cookies are mainly used to:",
+    "options": [
+      "Store your Wi-Fi password",
+      "Track users across different websites",
+      "Speed up your CPU",
+      "Encrypt your hard drive"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Advertisers use them to follow users across sites.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l069-02",
+    "lessonDriveFileId": "1x9G6GKrX7HgsZJGg_bOu3ACxGZS3-8jL",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Clearing cookies regularly helps to:",
+    "options": [
+      "Remove malware hidden in downloaded files",
+      "Change your IP address",
+      "Reduce tracking and log you out of sessions",
+      "Encrypt your files"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Cookies hold tracking IDs and session data.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l070-01",
+    "lessonDriveFileId": "1m4DMvkYwFCWuvgp1FCHTPGmxkU7tkuUf",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Imposter syndrome in a technical field is:",
+    "options": [
+      "A type of malware that targets developers",
+      "A phishing technique",
+      "A firewall setting",
+      "Feeling you're not good enough despite evidence of your skill"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "It's common among learners; progress comes with practice.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l070-02",
+    "lessonDriveFileId": "1m4DMvkYwFCWuvgp1FCHTPGmxkU7tkuUf",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "A healthy way to handle imposter syndrome while learning security is to:",
+    "options": [
+      "Track your progress and remember everyone starts somewhere",
+      "Quit at the first hard topic",
+      "Compare yourself only with experts",
+      "Avoid asking questions"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Steady practice builds real confidence.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l071-01",
+    "lessonDriveFileId": "1cNPqQpp0jipNyJTGHksZ36ohuC5SaWAS",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Browser fingerprinting tracks you by:",
+    "options": [
+      "Reading your fingerprints through the screen",
+      "Combining details about your device and browser settings",
+      "Using your password",
+      "Checking your antivirus"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Screen size, fonts and settings form a near-unique profile.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l071-02",
+    "lessonDriveFileId": "1cNPqQpp0jipNyJTGHksZ36ohuC5SaWAS",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Why can fingerprinting track you even after you delete cookies?",
+    "options": [
+      "It uses your bank account",
+      "It reads your emails",
+      "It doesn't rely on stored data on your device",
+      "It turns off your VPN"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Fingerprints are computed from device characteristics.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l071-03",
+    "lessonDriveFileId": "1cNPqQpp0jipNyJTGHksZ36ohuC5SaWAS",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Location tracking on smartphones often comes from:",
+    "options": [
+      "The phone's colour",
+      "The screen brightness",
+      "The charger",
+      "GPS, Wi-Fi networks and mobile masts"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Several signals pinpoint a phone's position.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l068-03",
+    "lessonDriveFileId": "1Jz05wVRdy33eaIQpyybLbatEt42KXTeU",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Which statement about IP addresses is true?",
+    "options": [
+      "Websites log the IP addresses of visitors",
+      "IP addresses are always secret",
+      "Each website has no record of visitors",
+      "IP addresses never change"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Server logs typically record visitor IPs.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l069-03",
+    "lessonDriveFileId": "1x9G6GKrX7HgsZJGg_bOu3ACxGZS3-8jL",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Private (incognito) browsing mode:",
+    "options": [
+      "Makes you completely anonymous",
+      "Doesn't save history locally but doesn't hide you from websites or your ISP",
+      "Hides your IP address",
+      "Blocks all malware and hides your IP address"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Incognito only affects what's stored on your device.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l071-04",
+    "lessonDriveFileId": "1cNPqQpp0jipNyJTGHksZ36ohuC5SaWAS",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Tracking pixels in emails can reveal:",
+    "options": [
+      "Your password for the email account",
+      "Your bank balance",
+      "When and where you opened the email",
+      "Your fingerprints"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "A tiny remote image loads when you open the email.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l068-04",
+    "lessonDriveFileId": "1Jz05wVRdy33eaIQpyybLbatEt42KXTeU",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "A website owner can usually learn which from your IP address?",
+    "options": [
+      "Your full home address",
+      "Your passwords",
+      "Your contact list",
+      "Your rough city and internet provider"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "IP data is approximate, not exact.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l069-04",
+    "lessonDriveFileId": "1x9G6GKrX7HgsZJGg_bOu3ACxGZS3-8jL",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "First-party cookies are mainly used to:",
+    "options": [
+      "Remember your login and settings on the site you're visiting",
+      "Track you across every website",
+      "Install malware",
+      "Change your IP address on each visit"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "They support site functions like staying logged in.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l070-03",
+    "lessonDriveFileId": "1m4DMvkYwFCWuvgp1FCHTPGmxkU7tkuUf",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Which approach best supports long-term learning in cybersecurity?",
+    "options": [
+      "Memorising facts the night before",
+      "Consistent practice and hands-on labs",
+      "Avoiding difficult topics",
+      "Only watching videos without practice"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Regular hands-on work builds lasting skills.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l071-05",
+    "lessonDriveFileId": "1cNPqQpp0jipNyJTGHksZ36ohuC5SaWAS",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Which browser setting helps reduce fingerprinting?",
+    "options": [
+      "Installing many unusual fonts",
+      "Using a rare screen size and unusual fonts",
+      "Using a browser with fingerprinting protection, such as Brave or Tor",
+      "Adding lots of extensions"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Unusual setups make you more unique, not less.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l072-01",
+    "lessonDriveFileId": "1nLeVEefGUeTkxTggBV646U-cJbS6_16p",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "What's the difference between privacy and anonymity?",
+    "options": [
+      "They are exactly the same",
+      "Anonymity hides what you do; privacy hides who you are",
+      "Neither relates to the internet",
+      "Privacy hides what you do; anonymity hides who you are"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "You can be private but identified, or anonymous but visible.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l073-01",
+    "lessonDriveFileId": "1jfb7RCvXAipzBZbqwxutmNfvZ-nwhZJJ",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Tor provides anonymity by:",
+    "options": [
+      "Routing traffic through several encrypted relays",
+      "Using one fast server",
+      "Deleting your files after each browsing session",
+      "Turning off the internet"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Onion routing means no single relay knows both source and destination.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l073-02",
+    "lessonDriveFileId": "1jfb7RCvXAipzBZbqwxutmNfvZ-nwhZJJ",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "In the Tor network, the exit node can see:",
+    "options": [
+      "Your real IP address",
+      "Unencrypted traffic leaving the network, if the site doesn't use HTTPS",
+      "Your hard drive",
+      "Nothing at all, because Tor encrypts everything end to end"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Use HTTPS so exit nodes can't read your content.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l074-01",
+    "lessonDriveFileId": "14tXsQTH4PkhzI5UUYF7RYs95zg75pZN0",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Proxychains is used to:",
+    "options": [
+      "Encrypt disks before sending them to a server",
+      "Manage passwords",
+      "Route a program's traffic through a chain of proxies",
+      "Scan for viruses"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It forces tools to use proxies, such as Tor.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l075-01",
+    "lessonDriveFileId": "1xd1Xw-SeJcLbMbS4Vu00_Ob9roKFzLvk",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "A VPN mainly:",
+    "options": [
+      "Makes you invisible to the provider",
+      "Removes all malware from the devices you connect",
+      "Speeds up every connection",
+      "Encrypts your traffic and sends it through the VPN provider's server"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "You shift trust from your ISP to the VPN provider.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l075-02",
+    "lessonDriveFileId": "1xd1Xw-SeJcLbMbS4Vu00_Ob9roKFzLvk",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "When choosing a VPN for privacy, you should check:",
+    "options": [
+      "Its logging policy and who owns it",
+      "The colour of its logo",
+      "How many adverts it shows",
+      "Whether it's free"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "A no-logs policy and trustworthy provider matter.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l076-01",
+    "lessonDriveFileId": "1v1UisnlJTEVnVSelN0FeCHTOby3NZcck",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Tools like 'whoami' on Kali aim to:",
+    "options": [
+      "Show your real name",
+      "Change identifiers like MAC address and route traffic anonymously",
+      "Delete Kali tools that reveal your identity",
+      "Speed up the CPU"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "They automate several anonymity measures.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l076-02",
+    "lessonDriveFileId": "1v1UisnlJTEVnVSelN0FeCHTOby3NZcck",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Changing your MAC address helps to:",
+    "options": [
+      "Change your IP on the internet",
+      "Encrypt your files",
+      "Avoid being tracked on local networks by your hardware ID",
+      "Remove viruses from the network card's firmware"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "MAC addresses identify devices on local networks.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l077-01",
+    "lessonDriveFileId": "1XkbOzb2KoJLAfsSuzRprcU2n2e21AEl9",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which habit undermines anonymity even when using Tor?",
+    "options": [
+      "Using HTTPS sites",
+      "Keeping Tor updated",
+      "Not installing plugins",
+      "Logging into personal accounts"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Logging in tells the site exactly who you are.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l077-02",
+    "lessonDriveFileId": "1XkbOzb2KoJLAfsSuzRprcU2n2e21AEl9",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Why avoid installing extra plugins in the Tor Browser?",
+    "options": [
+      "They can leak identifying information",
+      "They make Tor faster",
+      "They are required",
+      "They improve anonymity"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Plugins can bypass protections or add fingerprintable features.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l072-02",
+    "lessonDriveFileId": "1nLeVEefGUeTkxTggBV646U-cJbS6_16p",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Using an alias email address for sign-ups improves:",
+    "options": [
+      "Your typing speed",
+      "Privacy, by keeping your main address private",
+      "Your antivirus's ability to scan attachments",
+      "Your Wi-Fi signal"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Aliases limit spam and data linking.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l074-02",
+    "lessonDriveFileId": "14tXsQTH4PkhzI5UUYF7RYs95zg75pZN0",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "In proxychains, a 'dynamic chain' will:",
+    "options": [
+      "Stop if any proxy fails",
+      "Use no proxies and connect to the site directly",
+      "Skip proxies that are down and continue through the rest",
+      "Encrypt your disk"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Dynamic chains tolerate dead proxies.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l072-03",
+    "lessonDriveFileId": "1nLeVEefGUeTkxTggBV646U-cJbS6_16p",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which statement about online anonymity is true?",
+    "options": [
+      "A VPN makes anyone perfectly anonymous",
+      "Incognito mode guarantees anonymity",
+      "Anonymity is impossible to improve",
+      "Perfect anonymity is very hard; small mistakes can reveal you"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Layers help, but behaviour matters as much as tools.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l073-03",
+    "lessonDriveFileId": "1jfb7RCvXAipzBZbqwxutmNfvZ-nwhZJJ",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Tor Browser is based on which browser?",
+    "options": [
+      "Firefox",
+      "Internet Explorer",
+      "Safari",
+      "Opera"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Tor Browser is a hardened Firefox ESR.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l074-03",
+    "lessonDriveFileId": "14tXsQTH4PkhzI5UUYF7RYs95zg75pZN0",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Proxychains settings are kept in which file?",
+    "options": [
+      "/etc/passwd, alongside the user accounts",
+      "/etc/proxychains.conf (or proxychains4.conf)",
+      "C:\\Windows\\hosts",
+      "/var/log/syslog"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "The config file lists proxies and chain type.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l075-03",
+    "lessonDriveFileId": "1xd1Xw-SeJcLbMbS4Vu00_Ob9roKFzLvk",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "A VPN does NOT protect you from:",
+    "options": [
+      "Your ISP seeing site contents",
+      "Snooping on public Wi-Fi",
+      "Malware you download yourself",
+      "Websites seeing your real IP"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "VPNs protect traffic, not your device from malicious files.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l076-03",
+    "lessonDriveFileId": "1v1UisnlJTEVnVSelN0FeCHTOby3NZcck",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Why should anonymity tools only be used legally?",
+    "options": [
+      "They stop working otherwise",
+      "They cost more",
+      "They delete files",
+      "Anonymity doesn't make illegal actions legal"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Laws still apply; tools only change visibility.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l077-03",
+    "lessonDriveFileId": "1XkbOzb2KoJLAfsSuzRprcU2n2e21AEl9",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which is a sensible step towards greater online anonymity?",
+    "options": [
+      "Separating anonymous activity from personal accounts and devices",
+      "Using your real name everywhere",
+      "Posting photos with location data",
+      "Reusing the same username everywhere for convenience"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Compartmentalisation stops linking identities.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l078-01",
+    "lessonDriveFileId": "1LVeLY1ZNq19bQQInXNXlaA3An8P_hGws",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "What is the first stage of a penetration test?",
+    "options": [
+      "Exploitation",
+      "Reconnaissance (information gathering)",
+      "Covering tracks",
+      "Reporting the findings to the client"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Testers start by learning about the target.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l078-02",
+    "lessonDriveFileId": "1LVeLY1ZNq19bQQInXNXlaA3An8P_hGws",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Which list shows the usual stages of a penetration test in order?",
+    "options": [
+      "Reporting, exploitation, then scanning the target",
+      "Scanning, reporting, reconnaissance",
+      "Reconnaissance, scanning, gaining access, maintaining access, reporting",
+      "Exploitation, reconnaissance, scanning"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Each stage builds on the last; reporting delivers value to the client.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l079-01",
+    "lessonDriveFileId": "1-SyTkSQ4gr87UbjkuAflXBBmcOT7TzB5",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "A whois lookup reveals:",
+    "options": [
+      "Users' passwords",
+      "Server source code",
+      "Private emails sent by the domain's owner",
+      "Domain registration details such as registrar and dates"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Whois shows public registration records.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l080-01",
+    "lessonDriveFileId": "1Z3FMiw-28C88f6279zNcMGuW_ZN875MZ",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "WhatWeb is used to:",
+    "options": [
+      "Identify the technologies a website runs on",
+      "Crack passwords stored in a website's database",
+      "Encrypt traffic",
+      "Delete websites"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "It fingerprints CMSs, servers and frameworks.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l081-01",
+    "lessonDriveFileId": "1jEocu1zsrTSXvkZQo4Aah4jYui8fr8rl",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "theHarvester gathers:",
+    "options": [
+      "Bank details of a company's employees",
+      "Email addresses and subdomains from public sources",
+      "Encrypted passwords",
+      "Hard drive contents"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Passive OSINT collection supports reconnaissance.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l082-01",
+    "lessonDriveFileId": "14WtmKZ_u0amV9D-fsaGZ3Oi_2zxGUtWA",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Active scanning differs from passive reconnaissance because it:",
+    "options": [
+      "Uses only public records",
+      "Never sends packets",
+      "Interacts directly with the target system",
+      "Can't be detected"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Active scans touch the target and can be logged.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l083-01",
+    "lessonDriveFileId": "1Lc7f_8TJrUeIdFSLrVhiZI88G_41ffwd",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "TCP differs from UDP because TCP:",
+    "options": [
+      "Is always faster",
+      "Has no ports and can't carry web traffic",
+      "Never resends data",
+      "Establishes a connection and guarantees delivery"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "TCP uses a handshake and acknowledgements; UDP doesn't.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l083-02",
+    "lessonDriveFileId": "1Lc7f_8TJrUeIdFSLrVhiZI88G_41ffwd",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "The TCP three-way handshake is:",
+    "options": [
+      "SYN, SYN-ACK, ACK",
+      "ACK, SYN, FIN",
+      "GET, POST, PUT",
+      "PING, PONG, END"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "This sequence opens a TCP connection.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l084-01",
+    "lessonDriveFileId": "1Ghs63gHp935qbY4R33M2t8K7EsqFR6yY",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Netdiscover is used to:",
+    "options": [
+      "Write emails",
+      "Find live hosts on a local network using ARP",
+      "Manage passwords",
+      "Edit images captured from network cameras"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "It discovers devices on the LAN.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l085-01",
+    "lessonDriveFileId": "1lRpH5n-1GMQ3hs9UVjzsXL9ghFERsY4g",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "In penetration testing, exploitation means:",
+    "options": [
+      "Writing the final report",
+      "Collecting public emails",
+      "Using a vulnerability to gain access or control",
+      "Installing updates to close known weaknesses"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It's the stage where weaknesses are actually used.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l086-01",
+    "lessonDriveFileId": "10oF_jXIGTxtYG1on-dm-Js9VKicv3Go9",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "In a reverse shell, which side starts the connection?",
+    "options": [
+      "The tester connects to the target's open port",
+      "Neither side connects",
+      "A third-party server",
+      "The target connects back to the tester's machine"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Reverse shells often bypass inbound firewall rules.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l087-01",
+    "lessonDriveFileId": "1a2GUoWttwfcWKfnT7OvMpRY4VM8tPDH_",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "msfconsole is the main interface for:",
+    "options": [
+      "The Metasploit Framework",
+      "Microsoft Word",
+      "Wireshark",
+      "Photoshop"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Testers search, configure and run modules from msfconsole.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l087-02",
+    "lessonDriveFileId": "1a2GUoWttwfcWKfnT7OvMpRY4VM8tPDH_",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "In Metasploit, which command sets the target address?",
+    "options": [
+      "run target",
+      "set RHOSTS",
+      "open host",
+      "go IP"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "RHOSTS defines the remote host(s).",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l088-01",
+    "lessonDriveFileId": "1MhHzPrRuzSQ8iTkEikt97eInkXkV-_E6",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "The vsftpd 2.3.4 example shows that:",
+    "options": [
+      "FTP is always safe when run on Linux",
+      "Old software never has bugs",
+      "A backdoored software version can give instant access",
+      "Firewalls aren't needed"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "That release contained a deliberate backdoor; the fix is updating.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l089-01",
+    "lessonDriveFileId": "1_ivId4DSCbLEqSgHWfbS0EW6mZzjADJB",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "The Samba exploitation demo highlights the importance of:",
+    "options": [
+      "Using more fonts",
+      "Faster internet for file-sharing servers",
+      "Larger monitors",
+      "Patching file-sharing services"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Old Samba versions had serious flaws.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l090-01",
+    "lessonDriveFileId": "1ox77TbBZQ48NNIzPkmy-LsagF95Vv1Ir",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "msfvenom is used to:",
+    "options": [
+      "Generate payloads in different formats",
+      "Scan Wi-Fi networks for hidden SSIDs",
+      "Edit spreadsheets",
+      "Browse anonymously"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "It creates payloads for testing.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l092-01",
+    "lessonDriveFileId": "1PrxvP9Qh77tAVlfJe6frqlesJV_KHIPu",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Post-exploitation includes:",
+    "options": [
+      "Writing the contract",
+      "Assessing what access was gained and what data is at risk",
+      "Gathering emails passively",
+      "Choosing a target and agreeing the scope"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "It shows real impact for the report.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l094-01",
+    "lessonDriveFileId": "1pdlYQN8iJGFZDzQMQa3U2NPlnL82WsSc",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Meterpreter is:",
+    "options": [
+      "A firewall that blocks Metasploit traffic",
+      "An antivirus",
+      "An advanced Metasploit payload with an interactive shell",
+      "A web browser"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It runs in memory and offers many post-exploitation commands.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cybersecurity-l078-03",
+    "lessonDriveFileId": "1LVeLY1ZNq19bQQInXNXlaA3An8P_hGws",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Why is the reporting stage critical in a penetration test?",
+    "options": [
+      "It's optional when nothing serious is found",
+      "It hides the findings",
+      "It's only for the tester",
+      "It tells the client what was found and how to fix it"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "The report turns findings into improvements.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l078-04",
+    "lessonDriveFileId": "1LVeLY1ZNq19bQQInXNXlaA3An8P_hGws",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Before any penetration test starts, the tester must have:",
+    "options": [
+      "Written permission and an agreed scope",
+      "The client's admin password",
+      "A new laptop",
+      "Social media followers"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Authorisation and scope make testing legal.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l079-02",
+    "lessonDriveFileId": "1-SyTkSQ4gr87UbjkuAflXBBmcOT7TzB5",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Whois information is gathered during:",
+    "options": [
+      "Exploitation",
+      "Reconnaissance",
+      "Post-exploitation",
+      "Reporting"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "It's passive information gathering.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l080-02",
+    "lessonDriveFileId": "1Z3FMiw-28C88f6279zNcMGuW_ZN875MZ",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Why does knowing a site's software versions help a tester?",
+    "options": [
+      "It makes the site faster",
+      "It changes the site's colour",
+      "Versions can be matched to known vulnerabilities",
+      "It removes passwords"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Outdated versions point to known CVEs.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l081-02",
+    "lessonDriveFileId": "1jEocu1zsrTSXvkZQo4Aah4jYui8fr8rl",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "A defender can reduce the value of email harvesting by:",
+    "options": [
+      "Publishing all staff emails",
+      "Disabling spam filters so nothing is missed",
+      "Using one shared inbox for all",
+      "Training staff against phishing and limiting public exposure of addresses"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Harvested emails feed phishing campaigns.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l082-02",
+    "lessonDriveFileId": "14WtmKZ_u0amV9D-fsaGZ3Oi_2zxGUtWA",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Port scanning helps a tester to:",
+    "options": [
+      "Find services that may be vulnerable",
+      "Encrypt data sent between the tester and the target",
+      "Write the report",
+      "Create backups"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Open ports reveal services.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l083-03",
+    "lessonDriveFileId": "1Lc7f_8TJrUeIdFSLrVhiZI88G_41ffwd",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Which protocol is used by DNS queries by default?",
+    "options": [
+      "Only TCP",
+      "UDP",
+      "FTP",
+      "SMTP"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "DNS usually uses UDP port 53 for speed.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l084-02",
+    "lessonDriveFileId": "1Ghs63gHp935qbY4R33M2t8K7EsqFR6yY",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Netdiscover works on which kind of network?",
+    "options": [
+      "The whole internet",
+      "Only Bluetooth",
+      "The local network (LAN)",
+      "Only satellite"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "ARP only works within a local segment.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l085-02",
+    "lessonDriveFileId": "1lRpH5n-1GMQ3hs9UVjzsXL9ghFERsY4g",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "From a defender's view, the best response to a public exploit for your software is:",
+    "options": [
+      "Wait and see",
+      "Turn off logging",
+      "Publish your passwords",
+      "Patch or mitigate quickly"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Public exploits are used widely and fast.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l086-02",
+    "lessonDriveFileId": "10oF_jXIGTxtYG1on-dm-Js9VKicv3Go9",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "A bind shell differs from a reverse shell because:",
+    "options": [
+      "The target opens a port and waits for the tester to connect",
+      "The tester connects back to the target",
+      "It never uses a network",
+      "It uses email"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Bind shells listen on the target.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l087-03",
+    "lessonDriveFileId": "1a2GUoWttwfcWKfnT7OvMpRY4VM8tPDH_",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "In msfconsole, the 'search' command helps you:",
+    "options": [
+      "Search the web for news about the target company",
+      "Find modules related to a service or vulnerability",
+      "Search your emails",
+      "Search for Wi-Fi"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "It searches Metasploit's module database.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l088-02",
+    "lessonDriveFileId": "1MhHzPrRuzSQ8iTkEikt97eInkXkV-_E6",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "What's the fix for the vsftpd 2.3.4 backdoor?",
+    "options": [
+      "Change the FTP port only",
+      "Disable the firewall",
+      "Install a clean, updated version",
+      "Use a longer username"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Replacing the compromised software removes the backdoor.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l089-02",
+    "lessonDriveFileId": "1_ivId4DSCbLEqSgHWfbS0EW6mZzjADJB",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Samba provides:",
+    "options": [
+      "Email encryption",
+      "Video streaming between Linux machines",
+      "Antivirus scanning",
+      "File and printer sharing compatible with Windows"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Samba implements SMB on Linux and Unix.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l090-02",
+    "lessonDriveFileId": "1ox77TbBZQ48NNIzPkmy-LsagF95Vv1Ir",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Why do defenders study payload generation?",
+    "options": [
+      "To build detections for the techniques attackers use",
+      "To attack competitors",
+      "To slow their own network",
+      "To delete logs that show their own testing"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Understanding payloads improves detection.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l091-01",
+    "lessonDriveFileId": "1PRWNs-jSAPuhh82gtVjGUlK2nhQhHwwx",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Encoding a payload with msfvenom is often intended to:",
+    "options": [
+      "Make it larger for fun",
+      "Avoid simple signature-based detection",
+      "Improve printing",
+      "Increase Wi-Fi speed"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Encoders change the payload's appearance; modern defences use behaviour too.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l092-02",
+    "lessonDriveFileId": "1PrxvP9Qh77tAVlfJe6frqlesJV_KHIPu",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Which ethical rule applies during post-exploitation in a pen test?",
+    "options": [
+      "Copy all data for later use",
+      "Delete the client's backups",
+      "Stay within scope and protect any client data you access",
+      "Share findings publicly so others can learn from them"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Professional testers handle data responsibly.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l094-02",
+    "lessonDriveFileId": "1pdlYQN8iJGFZDzQMQa3U2NPlnL82WsSc",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Meterpreter's 'sysinfo' command shows:",
+    "options": [
+      "Your own Wi-Fi password",
+      "The weather",
+      "A list of websites",
+      "Information about the compromised system"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "It reports OS, hostname and architecture.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l085-03",
+    "lessonDriveFileId": "1lRpH5n-1GMQ3hs9UVjzsXL9ghFERsY4g",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "A penetration test differs from a criminal attack mainly because it is:",
+    "options": [
+      "Authorised, scoped and reported to the owner",
+      "Always unsuccessful",
+      "Done with no tools other than a web browser",
+      "Done only at night"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Permission and intent separate testing from crime.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l002-05",
+    "lessonDriveFileId": "1tsriHCSfgQW4kOqFvWYymfE4_8NNKadK",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which of these is the best everyday security habit for any computer user?",
+    "options": [
+      "Sharing passwords with trusted friends",
+      "Turning on automatic updates and multi-factor authentication",
+      "Disabling the firewall to speed things up",
+      "Clicking every link to check where it goes"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Updates close known holes and MFA protects accounts even if a password leaks.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l069-05",
+    "lessonDriveFileId": "1x9G6GKrX7HgsZJGg_bOu3ACxGZS3-8jL",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "A cookie banner lets you 'Reject all non-essential cookies'. Choosing this mainly:",
+    "options": [
+      "Logs you out of every site forever",
+      "Blocks malware downloads",
+      "Limits advertising and tracking cookies",
+      "Hides your IP address"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Essential cookies stay; tracking and advertising cookies are refused.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l012-05",
+    "lessonDriveFileId": "1nIobGyAcOvfvuHY7D6XXqX6iW4ThjStk",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "An attacker tries a list of leaked username and password pairs on many websites. This is:",
+    "options": [
+      "Tailgating",
+      "Buffer overflow",
+      "Port scanning",
+      "Credential stuffing"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "It works because people reuse passwords across sites.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l095-01",
+    "lessonDriveFileId": "1CCFyuDj4RwLi-ij_RkTmDo0kokqGHzSj",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "After finishing this programme, which next step builds your cybersecurity career?",
+    "options": [
+      "Practise in legal labs and work towards a recognised certification",
+      "Test skills on random websites without permission",
+      "Stop practising",
+      "Only read news headlines"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Hands-on labs and certifications show employers your skills.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cybersecurity-l095-02",
+    "lessonDriveFileId": "1CCFyuDj4RwLi-ij_RkTmDo0kokqGHzSj",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Which platforms let you practise hacking skills legally?",
+    "options": [
+      "Your neighbour's Wi-Fi",
+      "Capture-the-flag (CTF) sites and intentionally vulnerable labs",
+      "Government websites",
+      "Your employer's network without approval"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Purpose-built labs give legal practice.",
+    "pools": [
+      "exam"
+    ]
+  }
+]

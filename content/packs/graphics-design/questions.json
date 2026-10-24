@@ -1,0 +1,7382 @@
+[
+  {
+    "key": "graphics-design-l108-01",
+    "lessonDriveFileId": "1vFBJMQ3y7eBzZeyE2p8mU-lMRH1HR6y7",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Visual hierarchy tells the viewer:",
+    "options": [
+      "What to look at first, second and third",
+      "Which printer to use",
+      "The file size and resolution of the artwork",
+      "The client's budget"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Size, colour, contrast and placement guide the eye.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l108-02",
+    "lessonDriveFileId": "1vFBJMQ3y7eBzZeyE2p8mU-lMRH1HR6y7",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Which change most increases an element's visual priority?",
+    "options": [
+      "Making it smaller and grey",
+      "Making it larger and higher in contrast",
+      "Moving it off the page",
+      "Using the same size as everything else"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Size and contrast draw attention.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l108-03",
+    "lessonDriveFileId": "1vFBJMQ3y7eBzZeyE2p8mU-lMRH1HR6y7",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "White space (negative space) in a design:",
+    "options": [
+      "Is wasted space to fill",
+      "Must always be white",
+      "Gives elements room to breathe and improves clarity",
+      "Slows printing because more ink is needed"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Space is an active design element.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l109-01",
+    "lessonDriveFileId": "11EPT8gW2KXIQweiqkK_6C8SWX43UqpMM",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Symmetrical balance creates a feeling of:",
+    "options": [
+      "Chaos, tension and constant movement",
+      "Speed",
+      "Confusion",
+      "Stability and formality"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Mirror-like layouts feel calm.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l109-02",
+    "lessonDriveFileId": "11EPT8gW2KXIQweiqkK_6C8SWX43UqpMM",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Asymmetrical balance is achieved by:",
+    "options": [
+      "Arranging different elements so their visual weights even out",
+      "Making both sides identical",
+      "Removing all elements except the headline",
+      "Using only one colour"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Dynamic but balanced.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l109-03",
+    "lessonDriveFileId": "11EPT8gW2KXIQweiqkK_6C8SWX43UqpMM",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Which element usually carries more visual weight?",
+    "options": [
+      "A small, light shape",
+      "A large, dark shape",
+      "Thin grey text",
+      "Empty space"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Darker and bigger feel heavier.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l110-01",
+    "lessonDriveFileId": "1DvXRfEZP-dJEVC5-d9AYiNoZKgSAIMmi",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "A style-scape is:",
+    "options": [
+      "A final printed brochure",
+      "A font file packaged with the final logo",
+      "A collage that explores the visual direction of a project",
+      "A printer setting"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It sets mood, colour and type before design.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l110-02",
+    "lessonDriveFileId": "1DvXRfEZP-dJEVC5-d9AYiNoZKgSAIMmi",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Why create a style-scape before designing?",
+    "options": [
+      "To skip client feedback",
+      "To replace the brief",
+      "To finish faster without thinking",
+      "To agree on look and feel with the client early"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Alignment avoids costly redesigns.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l108-04",
+    "lessonDriveFileId": "1vFBJMQ3y7eBzZeyE2p8mU-lMRH1HR6y7",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Contrast in design helps to:",
+    "options": [
+      "Make important elements stand out",
+      "Hide content",
+      "Merge everything together",
+      "Reduce readability"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Difference attracts attention.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l109-04",
+    "lessonDriveFileId": "11EPT8gW2KXIQweiqkK_6C8SWX43UqpMM",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Alignment in design creates:",
+    "options": [
+      "Randomness that keeps viewers guessing",
+      "Order and visual connection between elements",
+      "Larger file sizes",
+      "Colour changes"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Aligned elements look intentional.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l110-03",
+    "lessonDriveFileId": "1DvXRfEZP-dJEVC5-d9AYiNoZKgSAIMmi",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Which belongs on a style-scape?",
+    "options": [
+      "Invoices and payment terms for the client",
+      "Passwords",
+      "Colour swatches, fonts, textures and sample imagery",
+      "Spreadsheets of costs"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Visual ingredients of the brand.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l108-05",
+    "lessonDriveFileId": "1vFBJMQ3y7eBzZeyE2p8mU-lMRH1HR6y7",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Proximity means:",
+    "options": [
+      "Spreading related items far apart",
+      "Using one font",
+      "Making items bigger",
+      "Grouping related items close together"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Closeness implies relationship.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l108-06",
+    "lessonDriveFileId": "1vFBJMQ3y7eBzZeyE2p8mU-lMRH1HR6y7",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "A poster's headline, date and button all look the same size. What's missing?",
+    "options": [
+      "Visual hierarchy",
+      "Bleed",
+      "Resolution",
+      "A watermark"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Nothing tells the viewer what matters most.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l109-05",
+    "lessonDriveFileId": "11EPT8gW2KXIQweiqkK_6C8SWX43UqpMM",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "A large image on the left balanced by several small text blocks on the right is an example of:",
+    "options": [
+      "Symmetrical balance",
+      "Asymmetrical balance",
+      "Radial balance",
+      "No balance"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Different elements, equal weight.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l110-04",
+    "lessonDriveFileId": "1DvXRfEZP-dJEVC5-d9AYiNoZKgSAIMmi",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "What's the main purpose of a style-scape?",
+    "options": [
+      "To print final artwork",
+      "To store final logo files for the client",
+      "To set and agree a visual direction before full design",
+      "To price the project"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It prevents misaligned expectations.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l207-01",
+    "lessonDriveFileId": "10YqUD4ircFOYbDLD5KVBmpmGBBeFWCpR",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "The principle of repetition helps a design by:",
+    "options": [
+      "Making it boring always",
+      "Breaking alignment",
+      "Reducing contrast",
+      "Creating consistency and unity"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Repeated styles tie a design together.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l207-02",
+    "lessonDriveFileId": "10YqUD4ircFOYbDLD5KVBmpmGBBeFWCpR",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A grid in graphic design is used to:",
+    "options": [
+      "Organise content consistently",
+      "Add colour to every section of the layout",
+      "Print faster",
+      "Make text blurry"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Grids create structure.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l207-03",
+    "lessonDriveFileId": "10YqUD4ircFOYbDLD5KVBmpmGBBeFWCpR",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which principle is applied when a red button stands out on a grey page?",
+    "options": [
+      "Repetition",
+      "Contrast",
+      "Proximity",
+      "Alignment"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Colour contrast draws focus.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l208-01",
+    "lessonDriveFileId": "1d0ufJUPPT5id_tMOkU_5RrNw7E9oxEKe",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Gestalt principles describe:",
+    "options": [
+      "Printing standards",
+      "Software shortcuts",
+      "How people perceive visual elements as organised wholes",
+      "Colour codes only, such as HEX and RGB values"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "E.g. proximity, similarity, closure.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l208-02",
+    "lessonDriveFileId": "1d0ufJUPPT5id_tMOkU_5RrNw7E9oxEKe",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "The Gestalt principle of closure means:",
+    "options": [
+      "Shapes must always be closed",
+      "Designs must end with a logo",
+      "Lines must touch to form any shape at all",
+      "People fill in missing parts to see a complete shape"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Logos often use closure cleverly.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l208-03",
+    "lessonDriveFileId": "1d0ufJUPPT5id_tMOkU_5RrNw7E9oxEKe",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Similarity in Gestalt means:",
+    "options": [
+      "Elements that look alike are seen as related",
+      "All elements must be identical",
+      "Colour doesn't matter",
+      "Fonts should all differ"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Shared style implies grouping.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l209-01",
+    "lessonDriveFileId": "1jjtUDn6NeRxE5WrzJrIuihsJJpiee_1P",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Scale in design refers to:",
+    "options": [
+      "The file format",
+      "The relative size of elements",
+      "The printer's maximum paper size",
+      "The font licence"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Scale creates emphasis and depth.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l209-02",
+    "lessonDriveFileId": "1jjtUDn6NeRxE5WrzJrIuihsJJpiee_1P",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Texture in graphic design adds:",
+    "options": [
+      "Extra pages",
+      "File compression",
+      "A sense of surface and depth",
+      "Font kerning"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Even flat designs can suggest texture.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l207-04",
+    "lessonDriveFileId": "10YqUD4ircFOYbDLD5KVBmpmGBBeFWCpR",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Rhythm in a layout is created by:",
+    "options": [
+      "Random placement",
+      "Using one element only",
+      "Removing white space",
+      "Repeating elements with regular spacing"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Rhythm guides movement through a design.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l208-04",
+    "lessonDriveFileId": "1d0ufJUPPT5id_tMOkU_5RrNw7E9oxEKe",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Figure–ground relationship is about:",
+    "options": [
+      "How an object stands out from its background",
+      "Printing on both sides",
+      "Ground-level photography",
+      "Font weights used in the body text"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Clear separation aids recognition.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l209-03",
+    "lessonDriveFileId": "1jjtUDn6NeRxE5WrzJrIuihsJJpiee_1P",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Why learn from respected designers and writers?",
+    "options": [
+      "To copy their work",
+      "They explain principles that improve your judgement",
+      "To avoid practising",
+      "To skip briefs and start designing straight away"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Theory sharpens practice.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l207-05",
+    "lessonDriveFileId": "10YqUD4ircFOYbDLD5KVBmpmGBBeFWCpR",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Unity in a design means:",
+    "options": [
+      "Every element uses a different style",
+      "There is no layout",
+      "All elements feel like they belong together",
+      "Colours clash on purpose"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "A cohesive whole.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l207-06",
+    "lessonDriveFileId": "10YqUD4ircFOYbDLD5KVBmpmGBBeFWCpR",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which principle groups a product's name, price and button together?",
+    "options": [
+      "Contrast",
+      "Repetition",
+      "Scale",
+      "Proximity"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Related items sit close.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l208-05",
+    "lessonDriveFileId": "1d0ufJUPPT5id_tMOkU_5RrNw7E9oxEKe",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A logo shows a panda using only partial black shapes, yet viewers see the whole animal. This uses:",
+    "options": [
+      "Closure",
+      "Repetition",
+      "Hierarchy",
+      "Rhythm"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "The brain completes the shape.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l209-04",
+    "lessonDriveFileId": "1jjtUDn6NeRxE5WrzJrIuihsJJpiee_1P",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Making a headline much larger than body text applies which principle?",
+    "options": [
+      "Proximity",
+      "Scale",
+      "Closure",
+      "Texture"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Size differences create emphasis.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l305-01",
+    "lessonDriveFileId": "1QqYtUMAdCCqe6FJ1ZK9yUuGeVTIsNl-w",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "On the colour wheel, complementary colours are:",
+    "options": [
+      "Next to each other",
+      "The same hue",
+      "Opposite each other",
+      "Always black and white"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "E.g. blue and orange.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l305-02",
+    "lessonDriveFileId": "1QqYtUMAdCCqe6FJ1ZK9yUuGeVTIsNl-w",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Analogous colours are:",
+    "options": [
+      "Opposite each other",
+      "Only greys",
+      "Random colours chosen without any system",
+      "Next to each other on the colour wheel"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "They create harmony.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l305-03",
+    "lessonDriveFileId": "1QqYtUMAdCCqe6FJ1ZK9yUuGeVTIsNl-w",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "A monochromatic palette uses:",
+    "options": [
+      "Tints, tones and shades of one hue",
+      "Every colour",
+      "Only complementary colours",
+      "Black only"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Variations of a single hue.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l306-01",
+    "lessonDriveFileId": "1wzFkmTJDNA5WJ7Pem_OElcgOXUqOjrtr",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "RGB colour mode is used for:",
+    "options": [
+      "Offset printing",
+      "Screens and digital designs",
+      "Embroidery",
+      "Paper only"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Red, green and blue light.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l306-02",
+    "lessonDriveFileId": "1wzFkmTJDNA5WJ7Pem_OElcgOXUqOjrtr",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "CMYK colour mode is used for:",
+    "options": [
+      "Websites",
+      "Phone screens",
+      "Print",
+      "TV broadcasts"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Cyan, magenta, yellow and key (black) inks.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l306-03",
+    "lessonDriveFileId": "1wzFkmTJDNA5WJ7Pem_OElcgOXUqOjrtr",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "A tint is a colour mixed with:",
+    "options": [
+      "Black",
+      "Grey",
+      "Its complement",
+      "White"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Shades add black; tones add grey.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l306-04",
+    "lessonDriveFileId": "1wzFkmTJDNA5WJ7Pem_OElcgOXUqOjrtr",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Warm colours like red and orange often feel:",
+    "options": [
+      "Energetic and inviting",
+      "Cold and calm",
+      "Invisible",
+      "Neutral always"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Colour carries emotion.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l307-01",
+    "lessonDriveFileId": "1KVgKCgQFLn3_BVuSGQsYyz54v17RWKai",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Hex codes like #FF0000 represent colours for:",
+    "options": [
+      "Paint mixing only",
+      "Digital use",
+      "Thread",
+      "Ink density"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Hex codes are RGB values.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l305-04",
+    "lessonDriveFileId": "1QqYtUMAdCCqe6FJ1ZK9yUuGeVTIsNl-w",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "The 60-30-10 rule suggests:",
+    "options": [
+      "Using 60 colours across a single design",
+      "Three equal colours",
+      "A dominant colour, a secondary colour and an accent",
+      "Only black and white"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It keeps palettes balanced.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l306-05",
+    "lessonDriveFileId": "1wzFkmTJDNA5WJ7Pem_OElcgOXUqOjrtr",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Why can colours look different in print than on screen?",
+    "options": [
+      "Printers are always broken",
+      "Screens have no colour",
+      "Paper is always grey, which dulls every colour",
+      "Screens use light (RGB) while print uses ink (CMYK)"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Convert and proof for print.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l307-02",
+    "lessonDriveFileId": "1KVgKCgQFLn3_BVuSGQsYyz54v17RWKai",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "When building a brand palette, you should consider:",
+    "options": [
+      "Meaning, contrast and accessibility",
+      "Only personal favourites",
+      "Random picks",
+      "The printer's brand"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Good palettes are purposeful.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l305-05",
+    "lessonDriveFileId": "1QqYtUMAdCCqe6FJ1ZK9yUuGeVTIsNl-w",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "A triadic colour scheme uses:",
+    "options": [
+      "Three shades of one colour",
+      "Three colours evenly spaced around the wheel",
+      "Two opposites",
+      "Only neutrals"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Vibrant but balanced.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l306-06",
+    "lessonDriveFileId": "1wzFkmTJDNA5WJ7Pem_OElcgOXUqOjrtr",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which colour mode should you use for a flyer going to a commercial printer?",
+    "options": [
+      "RGB",
+      "Hex",
+      "CMYK",
+      "Grayscale only always"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Printers use ink-based CMYK.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l305-06",
+    "lessonDriveFileId": "1QqYtUMAdCCqe6FJ1ZK9yUuGeVTIsNl-w",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Blue and orange are an example of:",
+    "options": [
+      "Analogous colours",
+      "Monochromatic colours",
+      "Neutral colours",
+      "Complementary colours"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "They sit opposite each other.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l307-03",
+    "lessonDriveFileId": "1KVgKCgQFLn3_BVuSGQsYyz54v17RWKai",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Why check colour contrast between text and background?",
+    "options": [
+      "So text is readable for everyone",
+      "To make files smaller",
+      "To change fonts",
+      "It isn't necessary"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Good contrast supports accessibility.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l426-01",
+    "lessonDriveFileId": "1dFE_YvxtnSiKYaCnRokBn5fqLUi_yypQ",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Adobe Illustrator is mainly used for:",
+    "options": [
+      "Editing photos pixel by pixel",
+      "Vector graphics like logos, icons and illustrations",
+      "Video editing",
+      "Spreadsheets"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Vectors scale without losing quality.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l426-02",
+    "lessonDriveFileId": "1dFE_YvxtnSiKYaCnRokBn5fqLUi_yypQ",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Vector graphics are made of:",
+    "options": [
+      "Pixels only",
+      "Audio waves",
+      "Mathematical paths and points",
+      "Text files that list each colour used"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "That's why they scale infinitely.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l426-03",
+    "lessonDriveFileId": "1dFE_YvxtnSiKYaCnRokBn5fqLUi_yypQ",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "An artboard in Illustrator is:",
+    "options": [
+      "A brush",
+      "A layer style",
+      "A font used for labels on the canvas",
+      "The printable or exportable area of a design"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Documents can have many artboards.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l427-01",
+    "lessonDriveFileId": "1EKmXvf4YWbOs2dy5gGTlXJns6Q8JIQZM",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "The Selection Tool (V) is used to:",
+    "options": [
+      "Select and move whole objects",
+      "Edit individual anchor points",
+      "Draw curves",
+      "Add text"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Direct Selection (A) edits points.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l427-02",
+    "lessonDriveFileId": "1EKmXvf4YWbOs2dy5gGTlXJns6Q8JIQZM",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "The Direct Selection Tool (A) lets you:",
+    "options": [
+      "Move whole groups only",
+      "Select and edit individual anchor points",
+      "Add colour swatches",
+      "Export files in several formats at once"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Fine control over paths.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l427-03",
+    "lessonDriveFileId": "1EKmXvf4YWbOs2dy5gGTlXJns6Q8JIQZM",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Grouping objects (Ctrl/Cmd + G) lets you:",
+    "options": [
+      "Delete them",
+      "Change their file type",
+      "Move and transform them together",
+      "Rasterise them"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Groups keep parts together.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l428-01",
+    "lessonDriveFileId": "1Cot_lF1PCTDP5V0QY6HX2ZRhpPtNvyGK",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which format keeps a poster editable in Illustrator?",
+    "options": [
+      ".jpg",
+      ".png",
+      ".mp4",
+      ".ai"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": ".ai is the native file.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l428-02",
+    "lessonDriveFileId": "1Cot_lF1PCTDP5V0QY6HX2ZRhpPtNvyGK",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Exporting for screens usually uses:",
+    "options": [
+      "PNG or JPG",
+      "CMYK PDF only",
+      "TIFF for print only",
+      "EPS only"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Raster formats for digital use.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l428-03",
+    "lessonDriveFileId": "1Cot_lF1PCTDP5V0QY6HX2ZRhpPtNvyGK",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Bleed in print design is:",
+    "options": [
+      "A colour mode used only for screens",
+      "Extra artwork beyond the trim edge",
+      "A type of font",
+      "An export format"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Prevents white edges after cutting.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l426-04",
+    "lessonDriveFileId": "1dFE_YvxtnSiKYaCnRokBn5fqLUi_yypQ",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Fill and stroke in Illustrator refer to:",
+    "options": [
+      "File and save options in the menu",
+      "Front and back",
+      "The inside colour and the outline of a shape",
+      "Font and size"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Every shape can have both.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l427-04",
+    "lessonDriveFileId": "1EKmXvf4YWbOs2dy5gGTlXJns6Q8JIQZM",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Layers in Illustrator help you:",
+    "options": [
+      "Print faster by sending fewer layers",
+      "Compress files",
+      "Change language",
+      "Organise and lock parts of your artwork"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Layers keep complex art manageable.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l428-04",
+    "lessonDriveFileId": "1Cot_lF1PCTDP5V0QY6HX2ZRhpPtNvyGK",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Packaging an Illustrator file collects:",
+    "options": [
+      "Linked images and fonts into one folder",
+      "Only the .ai file",
+      "Only exported JPGs",
+      "Nothing, because files are embedded automatically"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Helpful when handing off to printers.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l426-05",
+    "lessonDriveFileId": "1dFE_YvxtnSiKYaCnRokBn5fqLUi_yypQ",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Why design logos in Illustrator rather than Photoshop?",
+    "options": [
+      "Photoshop can't open images",
+      "Vector logos scale to any size without blurring",
+      "Illustrator is a video editor",
+      "Logos must be pixel-based"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Scalability is essential for logos.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l428-05",
+    "lessonDriveFileId": "1Cot_lF1PCTDP5V0QY6HX2ZRhpPtNvyGK",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which file should you send a printer for a poster?",
+    "options": [
+      "A low-resolution PNG",
+      "A screenshot of the design taken on your phone",
+      "A high-resolution print PDF with bleed",
+      "A Word document"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Print PDFs keep quality and settings.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l427-05",
+    "lessonDriveFileId": "1EKmXvf4YWbOs2dy5gGTlXJns6Q8JIQZM",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which tool edits individual anchor points on a path?",
+    "options": [
+      "Selection Tool",
+      "Hand Tool",
+      "Zoom Tool",
+      "Direct Selection Tool"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Shortcut A.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l561-01",
+    "lessonDriveFileId": "18WbxAUTo9K8K5NUhyRYLIysaNqFVkbRi",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "The Spot Healing Brush is used to:",
+    "options": [
+      "Quickly remove small blemishes and spots",
+      "Draw vector shapes",
+      "Add text along a curved path",
+      "Change canvas size"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "It samples surrounding pixels automatically.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l561-02",
+    "lessonDriveFileId": "18WbxAUTo9K8K5NUhyRYLIysaNqFVkbRi",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "The Healing Brush differs from the Spot Healing Brush because:",
+    "options": [
+      "It only works on text",
+      "You choose the source area with Alt/Option-click",
+      "It can't remove anything",
+      "It deletes layers that contain blemishes"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Manual sampling gives control.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l562-01",
+    "lessonDriveFileId": "1MR9rLtJq9lc52-gcdI-EG-f3KzkQSpxV",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "The Patch Tool lets you:",
+    "options": [
+      "Add drop shadows",
+      "Create vector paths",
+      "Select an area and replace it with pixels from another area",
+      "Export GIFs of before-and-after edits"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Good for larger repairs.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l562-02",
+    "lessonDriveFileId": "1MR9rLtJq9lc52-gcdI-EG-f3KzkQSpxV",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Content-Aware Fill:",
+    "options": [
+      "Adds random colours",
+      "Deletes the image and starts a new canvas",
+      "Creates a new layer style",
+      "Fills a selected area using surrounding image content"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Great for removing objects.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l563-01",
+    "lessonDriveFileId": "1GiiCLz4pDdGl-hJJUYvbnhQaxRo6KZSV",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Before retouching, a good habit is to:",
+    "options": [
+      "Duplicate the layer or work on a new layer",
+      "Flatten everything first",
+      "Delete the original",
+      "Reduce resolution"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Non-destructive editing protects the original.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l563-02",
+    "lessonDriveFileId": "1GiiCLz4pDdGl-hJJUYvbnhQaxRo6KZSV",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Removing a distracting object from a product photo helps:",
+    "options": [
+      "Make the file larger",
+      "Keep the focus on the product",
+      "Lower quality",
+      "Add clutter"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Clean images sell better.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l561-03",
+    "lessonDriveFileId": "18WbxAUTo9K8K5NUhyRYLIysaNqFVkbRi",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which shortcut increases brush size in Photoshop?",
+    "options": [
+      "[ (left bracket)",
+      "Ctrl + B",
+      "] (right bracket)",
+      "Shift + Z"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "[ decreases, ] increases.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l562-03",
+    "lessonDriveFileId": "1MR9rLtJq9lc52-gcdI-EG-f3KzkQSpxV",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "The Clone Stamp tool:",
+    "options": [
+      "Blends automatically",
+      "Creates vectors from the copied pixels",
+      "Changes colour mode",
+      "Copies pixels exactly from one area to another"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Precise duplication.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l563-03",
+    "lessonDriveFileId": "1GiiCLz4pDdGl-hJJUYvbnhQaxRo6KZSV",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Why zoom in while removing objects?",
+    "options": [
+      "To see detail and avoid visible repairs",
+      "To make the file smaller",
+      "To change colour",
+      "To export faster"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Precision matters.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l561-04",
+    "lessonDriveFileId": "18WbxAUTo9K8K5NUhyRYLIysaNqFVkbRi",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Sample All Layers in healing tools lets you:",
+    "options": [
+      "Delete layers",
+      "Heal on an empty layer above the photo",
+      "Merge all layers",
+      "Lock layers so edits can't be undone"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Keeps edits non-destructive.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l562-04",
+    "lessonDriveFileId": "1MR9rLtJq9lc52-gcdI-EG-f3KzkQSpxV",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Content-Aware Fill works best when:",
+    "options": [
+      "The object fills the whole frame",
+      "The image is pure text",
+      "The surrounding area has a consistent pattern or texture",
+      "There's no background"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It needs source material.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l563-04",
+    "lessonDriveFileId": "1GiiCLz4pDdGl-hJJUYvbnhQaxRo6KZSV",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "After removing objects, you should check:",
+    "options": [
+      "Only the file name",
+      "Nothing, because Photoshop fixes everything automatically",
+      "The printer",
+      "Repeated patterns or smudges that look unnatural"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Fix tell-tale clone marks.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l562-05",
+    "lessonDriveFileId": "1MR9rLtJq9lc52-gcdI-EG-f3KzkQSpxV",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which tool is best for removing a large unwanted object from a simple background?",
+    "options": [
+      "Content-Aware Fill or the Patch Tool",
+      "Type Tool",
+      "Pen Tool paths drawn around the object",
+      "Zoom Tool"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "They fill using surrounding pixels.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l561-05",
+    "lessonDriveFileId": "18WbxAUTo9K8K5NUhyRYLIysaNqFVkbRi",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which tool quickly removes small skin blemishes?",
+    "options": [
+      "Gradient Tool",
+      "Spot Healing Brush",
+      "Crop Tool",
+      "Magic Wand"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "One click on each spot.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l563-05",
+    "lessonDriveFileId": "1GiiCLz4pDdGl-hJJUYvbnhQaxRo6KZSV",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Why retouch on a separate layer?",
+    "options": [
+      "It makes colours brighter",
+      "It's required to save",
+      "You can undo or adjust changes without damaging the original",
+      "It reduces file size when you save the PSD"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Non-destructive workflow.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l601-01",
+    "lessonDriveFileId": "1lvL_QUh7d1x3NOepAN20NzT1nfZ-FQYg",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A good logo is usually:",
+    "options": [
+      "Very detailed and complex",
+      "Full of gradients only",
+      "Different every time it's used",
+      "Simple, memorable and versatile"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "It must work at all sizes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l603-01",
+    "lessonDriveFileId": "17_8mwHXwB8VioD3BZeIZaSz6zrkQO5CC",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A wordmark logo is:",
+    "options": [
+      "The brand name set in a distinctive typeface",
+      "A picture only",
+      "A mascot",
+      "A photo of the founder used as the logo"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "E.g. Google, Coca-Cola.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l603-02",
+    "lessonDriveFileId": "17_8mwHXwB8VioD3BZeIZaSz6zrkQO5CC",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A lettermark logo uses:",
+    "options": [
+      "A full photo",
+      "Initials or a monogram",
+      "A slogan only",
+      "A pattern"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "E.g. IBM, HBO.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l603-03",
+    "lessonDriveFileId": "17_8mwHXwB8VioD3BZeIZaSz6zrkQO5CC",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A combination mark combines:",
+    "options": [
+      "Two photos",
+      "Two fonts only",
+      "A symbol and text",
+      "A video and audio"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Flexible across uses.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l603-04",
+    "lessonDriveFileId": "17_8mwHXwB8VioD3BZeIZaSz6zrkQO5CC",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Why test a logo in black and white?",
+    "options": [
+      "Colour is banned",
+      "Printers only print black",
+      "It looks more modern",
+      "A strong logo should work without colour"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Shape must carry the identity.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l629-01",
+    "lessonDriveFileId": "1coNC1TmbPVcWkUb0xFDYFvtJ6kopf6ur",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "The golden ratio is approximately:",
+    "options": [
+      "1.618",
+      "3.14",
+      "2.5",
+      "1.0"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Used to create pleasing proportions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l629-02",
+    "lessonDriveFileId": "1coNC1TmbPVcWkUb0xFDYFvtJ6kopf6ur",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Designers use the golden ratio in logos to:",
+    "options": [
+      "Choose colours that match the brand palette",
+      "Create harmonious proportions between shapes",
+      "Pick a font licence",
+      "Set printer margins"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Circles sized by the ratio guide curves.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l601-02",
+    "lessonDriveFileId": "1lvL_QUh7d1x3NOepAN20NzT1nfZ-FQYg",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A client questionnaire helps you:",
+    "options": [
+      "Skip research",
+      "Charge less by skipping the research stage",
+      "Understand the business, audience and goals before designing",
+      "Avoid revisions forever"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Good inputs lead to good logos.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l601-03",
+    "lessonDriveFileId": "1lvL_QUh7d1x3NOepAN20NzT1nfZ-FQYg",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "When delivering a logo, you should provide:",
+    "options": [
+      "One small JPG",
+      "A screenshot",
+      "A Word file with the logo pasted inside",
+      "Vector files plus versions for different backgrounds and uses"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Clients need flexible formats.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l603-05",
+    "lessonDriveFileId": "17_8mwHXwB8VioD3BZeIZaSz6zrkQO5CC",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Scalability matters for logos because:",
+    "options": [
+      "They appear on everything from favicons to billboards",
+      "They're only used once",
+      "Printers require tiny logos",
+      "It doesn't matter, because logos are only used online"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Test at tiny and huge sizes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l601-04",
+    "lessonDriveFileId": "1lvL_QUh7d1x3NOepAN20NzT1nfZ-FQYg",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Finding logo clients can start with:",
+    "options": [
+      "Waiting without promoting",
+      "A strong portfolio and reaching out to local businesses",
+      "Copying famous logos and changing the colours",
+      "Working without a brief"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Visibility brings clients.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l603-06",
+    "lessonDriveFileId": "17_8mwHXwB8VioD3BZeIZaSz6zrkQO5CC",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Negative space in a logo can be used to:",
+    "options": [
+      "Fill every gap",
+      "Increase file size",
+      "Hide a clever secondary image",
+      "Remove the brand name"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "E.g. the FedEx arrow.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l603-07",
+    "lessonDriveFileId": "17_8mwHXwB8VioD3BZeIZaSz6zrkQO5CC",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which logo type uses only the company's initials?",
+    "options": [
+      "Wordmark",
+      "Mascot",
+      "Emblem",
+      "Lettermark"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Monograms are lettermarks.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l601-05",
+    "lessonDriveFileId": "1lvL_QUh7d1x3NOepAN20NzT1nfZ-FQYg",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "What should happen before sketching a client's logo?",
+    "options": [
+      "Research the brand through a brief or questionnaire",
+      "Choose random fonts",
+      "Send final files so the client can approve them",
+      "Print business cards"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Understand before designing.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l629-03",
+    "lessonDriveFileId": "1coNC1TmbPVcWkUb0xFDYFvtJ6kopf6ur",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "The golden ratio value is closest to:",
+    "options": [
+      "0.5",
+      "1.618",
+      "2.718",
+      "4.0"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Phi ≈ 1.618.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l701-01",
+    "lessonDriveFileId": "17bqAMPpGhrxCCvxEf4qKFibywT3gPo88",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A social media campaign design should keep:",
+    "options": [
+      "Different styles every post",
+      "No branding",
+      "Consistent colours, fonts and style across posts",
+      "Random sizes"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Consistency builds recognition.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l704-01",
+    "lessonDriveFileId": "1Pdfnjd5eKIQkq-BCXDFlpTwHTugGe-zQ",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Why check platform-specific image sizes?",
+    "options": [
+      "Platforms accept any size perfectly",
+      "To increase file size",
+      "To avoid colours",
+      "So designs aren't cropped or blurry"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Each placement has ideal dimensions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l704-02",
+    "lessonDriveFileId": "1Pdfnjd5eKIQkq-BCXDFlpTwHTugGe-zQ",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A recommended Facebook/Instagram feed post ratio for maximum space is:",
+    "options": [
+      "4:5 (e.g. 1080 × 1350)",
+      "1:4, a tall and narrow vertical strip",
+      "16:1",
+      "3:1"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Portrait posts take more feed space.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l706-01",
+    "lessonDriveFileId": "1DeE3v_VOnqZMvmxEhqLiIolyT0gLV6T4",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Instagram Stories use which size?",
+    "options": [
+      "1920 × 1080",
+      "1080 × 1920 (9:16)",
+      "1080 × 1080 only",
+      "500 × 500"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Full-screen vertical.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l706-02",
+    "lessonDriveFileId": "1DeE3v_VOnqZMvmxEhqLiIolyT0gLV6T4",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Why keep important text away from the top and bottom of Stories?",
+    "options": [
+      "Text is banned there",
+      "It prints badly on the phone's screen",
+      "App interface elements can cover those areas",
+      "It changes colour"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Respect safe zones.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l701-02",
+    "lessonDriveFileId": "17bqAMPpGhrxCCvxEf4qKFibywT3gPo88",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A campaign's key visual is:",
+    "options": [
+      "A random stock photo",
+      "The printer settings",
+      "The invoice sent at the end of the campaign",
+      "The core image or style repeated across all assets"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "It ties the campaign together.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l704-03",
+    "lessonDriveFileId": "1Pdfnjd5eKIQkq-BCXDFlpTwHTugGe-zQ",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Text on social graphics should be:",
+    "options": [
+      "Short, large and easy to read on a phone",
+      "Long paragraphs",
+      "Tiny, so more information fits on each graphic",
+      "Low contrast"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Most viewers are on mobile.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l706-03",
+    "lessonDriveFileId": "1DeE3v_VOnqZMvmxEhqLiIolyT0gLV6T4",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A clear call to action on a social post:",
+    "options": [
+      "Is optional decoration",
+      "Tells viewers exactly what to do next",
+      "Hides the offer",
+      "Confuses viewers"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "E.g. 'Shop now', 'Register today'.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l701-03",
+    "lessonDriveFileId": "17bqAMPpGhrxCCvxEf4qKFibywT3gPo88",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Creating templates for a campaign helps:",
+    "options": [
+      "Make every post different",
+      "Slow down production",
+      "Produce consistent posts quickly",
+      "Avoid branding"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Reusable layouts save time.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l704-04",
+    "lessonDriveFileId": "1Pdfnjd5eKIQkq-BCXDFlpTwHTugGe-zQ",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Exporting social graphics as PNG is useful when:",
+    "options": [
+      "They are long videos",
+      "They need CMYK colours for printing",
+      "They're for embroidery",
+      "They contain sharp text and flat colours"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "PNG keeps edges crisp.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l706-04",
+    "lessonDriveFileId": "1DeE3v_VOnqZMvmxEhqLiIolyT0gLV6T4",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Animated or video Stories often perform better because:",
+    "options": [
+      "Motion grabs attention in a busy feed",
+      "Platforms ban images",
+      "They're always smaller files",
+      "They need no design"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Movement stops the scroll.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l701-04",
+    "lessonDriveFileId": "17bqAMPpGhrxCCvxEf4qKFibywT3gPo88",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Before designing a campaign, you should define:",
+    "options": [
+      "Only the font",
+      "The goal, audience and key message",
+      "Only the posting time",
+      "Nothing"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Strategy shapes design.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l704-05",
+    "lessonDriveFileId": "1Pdfnjd5eKIQkq-BCXDFlpTwHTugGe-zQ",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which size is best for a full-screen WhatsApp Status or Instagram Story graphic?",
+    "options": [
+      "1920 × 1080",
+      "800 × 600",
+      "1080 × 1920",
+      "1080 × 400"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Vertical 9:16.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l701-05",
+    "lessonDriveFileId": "17bqAMPpGhrxCCvxEf4qKFibywT3gPo88",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which keeps a multi-post campaign recognisable?",
+    "options": [
+      "A new style for every post",
+      "Random stock images",
+      "Changing the logo each time",
+      "Consistent brand colours, fonts and layout"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Consistency builds recognition.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l706-05",
+    "lessonDriveFileId": "1DeE3v_VOnqZMvmxEhqLiIolyT0gLV6T4",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Where should key text sit on a Story design?",
+    "options": [
+      "Within the central safe zone",
+      "At the very top edge",
+      "At the very bottom edge",
+      "Outside the canvas"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "UI elements cover the edges.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l801-01",
+    "lessonDriveFileId": "1xu0kAxMBvsy5uzt4qrAFpaLSw-QeInvU",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "An infographic's main job is to:",
+    "options": [
+      "Hide data",
+      "Make data or information quick and easy to understand",
+      "Replace all text with decoration",
+      "Be as complex as possible"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Clarity first.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l805-01",
+    "lessonDriveFileId": "1AnXTlWmfCMZYOBpQ1fVvd8WDbDb8BohW",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Using icons in an infographic helps by:",
+    "options": [
+      "Adding confusion so readers look more closely",
+      "Increasing file size only",
+      "Making information faster to scan and remember",
+      "Replacing all numbers"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Visual cues aid understanding.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l807-01",
+    "lessonDriveFileId": "1GBqCqiknlu3RDzNfN8v83VWVy1QDdXeU",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "When is a pie chart appropriate in an infographic?",
+    "options": [
+      "Showing trends over 20 years",
+      "Comparing 30 items with similar values",
+      "Showing a timeline",
+      "Showing parts of a whole with only a few categories"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Keep slices few and clear.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l801-02",
+    "lessonDriveFileId": "1xu0kAxMBvsy5uzt4qrAFpaLSw-QeInvU",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which is essential for a trustworthy infographic?",
+    "options": [
+      "Accurate data with a cited source",
+      "Made-up numbers",
+      "Hidden sources",
+      "3D effects on everything"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Credibility depends on accuracy.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l902-01",
+    "lessonDriveFileId": "1_R9nWX02WfP6NSxMAs7h0GDtTPebezFg",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Before designing food packaging, you should know:",
+    "options": [
+      "Only your favourite colour",
+      "The product, target customer and packaging size (dieline)",
+      "Nothing, because packaging sizes are standard",
+      "The printer's name only"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Research informs design.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l902-02",
+    "lessonDriveFileId": "1_R9nWX02WfP6NSxMAs7h0GDtTPebezFg",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "A dieline is:",
+    "options": [
+      "A type of font used for ingredient lists",
+      "A colour palette",
+      "A template showing cut and fold lines for packaging",
+      "A photo filter"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Artwork must follow it.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l904-01",
+    "lessonDriveFileId": "1at5zyDpP8xVFb0zD4WRW9pZZt3Z0kyps",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Adding shadows to packaging mockups helps:",
+    "options": [
+      "Reduce print quality",
+      "Change the dieline",
+      "Hide the brand so the product looks generic",
+      "Make them look realistic and three-dimensional"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Realistic previews impress clients.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l904-02",
+    "lessonDriveFileId": "1at5zyDpP8xVFb0zD4WRW9pZZt3Z0kyps",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Colour choices on food packaging often signal:",
+    "options": [
+      "Flavour, freshness or product type",
+      "Nothing at all",
+      "The printer used",
+      "The file format used to save the artwork"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Green for fresh, red for spicy, etc.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l905-01",
+    "lessonDriveFileId": "1_9QzR6UR0uNBjONL_nPrHctoTCvt_hee",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Setting up a packaging file correctly includes:",
+    "options": [
+      "RGB only and no bleed",
+      "Correct size, bleed and CMYK colour mode",
+      "Low resolution",
+      "Random sizes that the printer can adjust later"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Print-ready setup prevents errors.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l902-03",
+    "lessonDriveFileId": "1_R9nWX02WfP6NSxMAs7h0GDtTPebezFg",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which information is usually required on food packaging?",
+    "options": [
+      "Only the logo",
+      "Only a slogan",
+      "Product name, ingredients and nutritional or regulatory details",
+      "Nothing, because food packaging has no rules"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Legal requirements vary by country (e.g. NAFDAC in Nigeria).",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l904-03",
+    "lessonDriveFileId": "1at5zyDpP8xVFb0zD4WRW9pZZt3Z0kyps",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Shelf impact refers to:",
+    "options": [
+      "The shelf's weight",
+      "The price printed on the shelf label",
+      "The barcode",
+      "How well packaging stands out next to competitors"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Packaging must grab attention.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l905-02",
+    "lessonDriveFileId": "1_9QzR6UR0uNBjONL_nPrHctoTCvt_hee",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "A mockup is used to:",
+    "options": [
+      "Show how the design will look on the real product",
+      "Print the final product",
+      "Replace the dieline",
+      "Store fonts used in the packaging design"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Helps clients visualise.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l902-04",
+    "lessonDriveFileId": "1_R9nWX02WfP6NSxMAs7h0GDtTPebezFg",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Typography on packaging should be:",
+    "options": [
+      "Tiny and decorative",
+      "Legible at the distance shoppers view it",
+      "All different fonts",
+      "Hidden on the back so the front stays clean"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Readability drives sales.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l904-04",
+    "lessonDriveFileId": "1at5zyDpP8xVFb0zD4WRW9pZZt3Z0kyps",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Consistent branding across a product range helps shoppers:",
+    "options": [
+      "Get confused by too many similar products",
+      "Ignore the brand",
+      "Recognise all products from the same brand",
+      "Find competitors"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Family look builds trust.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l905-03",
+    "lessonDriveFileId": "1_9QzR6UR0uNBjONL_nPrHctoTCvt_hee",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Images on packaging for print should be:",
+    "options": [
+      "72 ppi",
+      "10 ppi",
+      "Any resolution",
+      "300 ppi at final size"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Prevents pixelation.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l902-05",
+    "lessonDriveFileId": "1_R9nWX02WfP6NSxMAs7h0GDtTPebezFg",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Researching competitors' packaging helps you:",
+    "options": [
+      "Find ways to stand out",
+      "Copy their design exactly",
+      "Avoid any research",
+      "Use their logo"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Differentiate.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l905-04",
+    "lessonDriveFileId": "1_9QzR6UR0uNBjONL_nPrHctoTCvt_hee",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which colour mode should a packaging file use for printing?",
+    "options": [
+      "RGB",
+      "CMYK",
+      "Indexed colour",
+      "Lab only"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Print uses ink.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l902-06",
+    "lessonDriveFileId": "1_R9nWX02WfP6NSxMAs7h0GDtTPebezFg",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "What is a dieline?",
+    "options": [
+      "A photo filter",
+      "A font style used for nutrition labels",
+      "The template of cut and fold lines for packaging",
+      "An export preset"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Design within it.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l904-05",
+    "lessonDriveFileId": "1at5zyDpP8xVFb0zD4WRW9pZZt3Z0kyps",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Why do designers present packaging on mockups?",
+    "options": [
+      "Mockups replace printing",
+      "They reduce cost to zero",
+      "They're required by law before printing",
+      "Clients can see how it will look in real life"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Visualisation aids approval.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1002-01",
+    "lessonDriveFileId": "1nO4WrpI80JV0l0YFBBvn5vWfhheRlPks",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "A layout grid helps designers:",
+    "options": [
+      "Align and organise content consistently",
+      "Choose colours",
+      "Add effects like shadows and glows",
+      "Reduce file size"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Grids bring order.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1002-02",
+    "lessonDriveFileId": "1nO4WrpI80JV0l0YFBBvn5vWfhheRlPks",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Margins in a layout:",
+    "options": [
+      "Are always zero so content fills the page",
+      "Frame the content and keep it away from edges",
+      "Contain the main text",
+      "Are only for print"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "They give breathing room.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1003-01",
+    "lessonDriveFileId": "1Vsjstt6iZYT1cl0YngORUeuqGfCtIESK",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "The Z-pattern describes:",
+    "options": [
+      "A zigzag font used for playful headlines",
+      "A type of grid line",
+      "How eyes often scan simple layouts from top-left to bottom-right",
+      "A colour scheme"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Place key elements along the path.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1003-02",
+    "lessonDriveFileId": "1Vsjstt6iZYT1cl0YngORUeuqGfCtIESK",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "The F-pattern is common for:",
+    "options": [
+      "Posters with one image",
+      "Logos and other single-image designs",
+      "Packaging",
+      "Text-heavy pages like articles and search results"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Readers scan the top and left side.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1009-01",
+    "lessonDriveFileId": "1f1ISYVEtrs-woU9_sXWxP5bb4IftBZCO",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "A UX review of a website layout checks:",
+    "options": [
+      "Whether users can easily find information and complete tasks",
+      "Only the colours",
+      "Only the logo and the colour palette",
+      "Only the server"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Usability, not just looks.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1003-03",
+    "lessonDriveFileId": "1Vsjstt6iZYT1cl0YngORUeuqGfCtIESK",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "A focal point in a layout is:",
+    "options": [
+      "The page number",
+      "The element that draws attention first",
+      "The margin",
+      "The background colour only"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Every layout needs one.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1002-03",
+    "lessonDriveFileId": "1nO4WrpI80JV0l0YFBBvn5vWfhheRlPks",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Columns in a layout help:",
+    "options": [
+      "Increase clutter",
+      "Hide content until the user scrolls down",
+      "Organise text and images for easier reading",
+      "Reduce contrast"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Structured reading.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1009-02",
+    "lessonDriveFileId": "1f1ISYVEtrs-woU9_sXWxP5bb4IftBZCO",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "On a website, navigation should be:",
+    "options": [
+      "Hidden",
+      "Different on every page",
+      "Text-free icons only",
+      "Clear, consistent and easy to find"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Users expect conventions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1003-04",
+    "lessonDriveFileId": "1Vsjstt6iZYT1cl0YngORUeuqGfCtIESK",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Consistent spacing between elements makes a layout feel:",
+    "options": [
+      "Organised and professional",
+      "Random, even when spacing is consistent",
+      "Crowded",
+      "Unfinished"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Rhythm and order.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1002-04",
+    "lessonDriveFileId": "1nO4WrpI80JV0l0YFBBvn5vWfhheRlPks",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Gutters are:",
+    "options": [
+      "Page edges",
+      "The spaces between columns",
+      "Headings",
+      "Footers at the bottom of each page"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "They separate content.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1009-03",
+    "lessonDriveFileId": "1f1ISYVEtrs-woU9_sXWxP5bb4IftBZCO",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "A call-to-action button on a website should be:",
+    "options": [
+      "Hidden in the footer",
+      "The same as body text",
+      "Visually prominent and clearly labelled",
+      "Tiny, so it doesn't distract from the content"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Make the next step obvious.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1003-05",
+    "lessonDriveFileId": "1Vsjstt6iZYT1cl0YngORUeuqGfCtIESK",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Placing a logo top-left on most websites follows:",
+    "options": [
+      "A random choice",
+      "A printing rule",
+      "A colour rule that logos must sit on white",
+      "User expectations and conventions"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Familiar patterns aid usability.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1003-06",
+    "lessonDriveFileId": "1Vsjstt6iZYT1cl0YngORUeuqGfCtIESK",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Which reading pattern is typical for a simple poster with an image and a call to action?",
+    "options": [
+      "Z-pattern",
+      "F-pattern",
+      "Spiral pattern",
+      "Random pattern"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Eyes move across and diagonally.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1002-05",
+    "lessonDriveFileId": "1nO4WrpI80JV0l0YFBBvn5vWfhheRlPks",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "What are gutters in a grid layout?",
+    "options": [
+      "The page margins",
+      "The spaces between columns",
+      "The headers",
+      "The images"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Gutters separate columns.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1009-04",
+    "lessonDriveFileId": "1f1ISYVEtrs-woU9_sXWxP5bb4IftBZCO",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "A website looks beautiful but visitors can't find the contact page. This is mainly a:",
+    "options": [
+      "Colour problem",
+      "Printing problem",
+      "UX problem",
+      "Font licence problem"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Usability failed.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1101-01",
+    "lessonDriveFileId": "1-XB_0eVOEO6VAS7cFVA3v6z1QQcScuQP",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "A serif typeface has:",
+    "options": [
+      "No strokes at all",
+      "Only uppercase letters",
+      "Handwritten letters",
+      "Small strokes at the ends of letters"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "E.g. Times New Roman.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1101-02",
+    "lessonDriveFileId": "1-XB_0eVOEO6VAS7cFVA3v6z1QQcScuQP",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "A sans-serif typeface:",
+    "options": [
+      "Lacks the small finishing strokes",
+      "Always looks handwritten",
+      "Is only for print",
+      "Has decorative strokes"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "E.g. Helvetica, Arial.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1103-01",
+    "lessonDriveFileId": "17yQHTSHudD0Yy62aEUAgrgj7dV3azzRg",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Kerning adjusts:",
+    "options": [
+      "Space between lines",
+      "Space between two specific letters",
+      "Font size",
+      "Letter colour"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Fine-tuning pairs like 'AV'.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1103-02",
+    "lessonDriveFileId": "17yQHTSHudD0Yy62aEUAgrgj7dV3azzRg",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Tracking adjusts:",
+    "options": [
+      "Space between two letters only",
+      "Line height",
+      "Spacing across a whole word or line",
+      "Font weight"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Uniform spacing change.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1104-01",
+    "lessonDriveFileId": "1DYpMffxlrtwFO0NfF_X9p0REiCTUqrr1",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Leading is:",
+    "options": [
+      "Space between letters",
+      "Text colour",
+      "The style of a font, such as italic or bold",
+      "The vertical space between lines of text"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Line height affects readability.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1104-02",
+    "lessonDriveFileId": "1DYpMffxlrtwFO0NfF_X9p0REiCTUqrr1",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "For long blocks of body text, it's best to:",
+    "options": [
+      "Use a readable font, comfortable line length and enough leading",
+      "Use all caps for every paragraph",
+      "Use decorative script fonts",
+      "Use very long lines so readers turn fewer pages"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Readability first.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1103-03",
+    "lessonDriveFileId": "17yQHTSHudD0Yy62aEUAgrgj7dV3azzRg",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Pairing typefaces works best when:",
+    "options": [
+      "They are nearly identical",
+      "They contrast clearly but share a similar mood",
+      "You use five or more typefaces on one page",
+      "They clash completely"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "E.g. a serif heading with a sans-serif body.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1104-03",
+    "lessonDriveFileId": "1DYpMffxlrtwFO0NfF_X9p0REiCTUqrr1",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "A comfortable line length for body text is roughly:",
+    "options": [
+      "5–10 characters",
+      "200 characters",
+      "45–75 characters",
+      "1,000 characters"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Too long or short tires the eye.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1101-03",
+    "lessonDriveFileId": "1-XB_0eVOEO6VAS7cFVA3v6z1QQcScuQP",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Typography anatomy terms include:",
+    "options": [
+      "Pixel, vector, raster",
+      "RGB, CMYK and other colour modes",
+      "Bleed, crop",
+      "Baseline, x-height, ascender and descender"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Understanding anatomy helps choose fonts.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1103-04",
+    "lessonDriveFileId": "17yQHTSHudD0Yy62aEUAgrgj7dV3azzRg",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Using all caps for long text tends to:",
+    "options": [
+      "Reduce readability",
+      "Increase readability",
+      "Make text smaller",
+      "Improve SEO"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Caps lack word-shape cues.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1104-04",
+    "lessonDriveFileId": "1DYpMffxlrtwFO0NfF_X9p0REiCTUqrr1",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Widows and orphans are:",
+    "options": [
+      "Font families that include only one weight",
+      "Single words or lines left alone at the end or start of a column",
+      "Colour modes used for printing text",
+      "Image formats"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Fix them for polished layouts.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1103-05",
+    "lessonDriveFileId": "17yQHTSHudD0Yy62aEUAgrgj7dV3azzRg",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Typography in a logo should:",
+    "options": [
+      "Be random",
+      "Use as many fonts as possible",
+      "Reflect the brand's personality",
+      "Be unreadable"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Type carries tone.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1101-04",
+    "lessonDriveFileId": "1-XB_0eVOEO6VAS7cFVA3v6z1QQcScuQP",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which typeface category is Helvetica?",
+    "options": [
+      "Serif",
+      "Script",
+      "Blackletter",
+      "Sans-serif"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "No serifs.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1103-06",
+    "lessonDriveFileId": "17yQHTSHudD0Yy62aEUAgrgj7dV3azzRg",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Adjusting the space between the letters 'A' and 'V' is called:",
+    "options": [
+      "Kerning",
+      "Leading",
+      "Tracking",
+      "Scaling"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Pair-specific spacing.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1104-05",
+    "lessonDriveFileId": "1DYpMffxlrtwFO0NfF_X9p0REiCTUqrr1",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which setting most improves readability of long paragraphs?",
+    "options": [
+      "Tight leading",
+      "Adequate leading (line spacing)",
+      "All caps",
+      "Very light grey text"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Lines need breathing room.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1201-01",
+    "lessonDriveFileId": "1ZhTuL4-xAJSxFrG8PEKVnWiMw7tOqGyT",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Natural portrait retouching aims to:",
+    "options": [
+      "Change the person's identity",
+      "Remove all skin texture",
+      "Enhance the photo while keeping the person looking real",
+      "Add heavy filters so skin looks perfectly smooth"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Subtle is professional.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1203-01",
+    "lessonDriveFileId": "10V0ZbxxWHQg-ycT267-FfcoIs9Ug_CU-",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Non-destructive retouching means:",
+    "options": [
+      "Deleting the original file",
+      "Flattening layers early to keep the file small",
+      "Saving as low-quality JPG",
+      "Edits can be adjusted or undone without damaging the original pixels"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Use layers and masks.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1207-01",
+    "lessonDriveFileId": "1K30uu2_iQHZNaCbbWhXthcJZrl5o4kRO",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Adjusting tones in a portrait usually involves:",
+    "options": [
+      "Balancing highlights, midtones and shadows with curves or levels",
+      "Changing the canvas size",
+      "Adding text over the darkest areas of the photo",
+      "Converting to vector"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Tone control shapes the image.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1203-02",
+    "lessonDriveFileId": "10V0ZbxxWHQg-ycT267-FfcoIs9Ug_CU-",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Frequency separation is used to:",
+    "options": [
+      "Change file format",
+      "Smooth skin tones while keeping texture",
+      "Create vector logos",
+      "Resize images for social media without losing quality"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Separates colour and detail.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1305-01",
+    "lessonDriveFileId": "1vYM_3dEsnWLoAZHjRn9TXbRKWAkzoLVe",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "A personal brand for a freelancer communicates:",
+    "options": [
+      "Only your favourite colour",
+      "Your passwords",
+      "Who you are, what you do and who you help",
+      "Nothing"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It positions you in the market.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1305-02",
+    "lessonDriveFileId": "1vYM_3dEsnWLoAZHjRn9TXbRKWAkzoLVe",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Brainstorming a logo should start with:",
+    "options": [
+      "Final colours and the exact logo shape",
+      "Random shapes",
+      "Copying others",
+      "Keywords about your values and audience"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Ideas grow from meaning.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1307-01",
+    "lessonDriveFileId": "1hVcJlW9fYY9pdlMLFoFr0yjLbaI-9lpn",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Brand assets typically include:",
+    "options": [
+      "Logo, colour palette, typography and templates",
+      "Only a business card",
+      "Only social media passwords",
+      "Only an invoice"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "A toolkit for consistency.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1307-02",
+    "lessonDriveFileId": "1hVcJlW9fYY9pdlMLFoFr0yjLbaI-9lpn",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "A brand style guide helps you:",
+    "options": [
+      "Change style every week",
+      "Apply your brand consistently everywhere",
+      "Hide your logo",
+      "Avoid design work"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Rules keep things cohesive.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1311-01",
+    "lessonDriveFileId": "1fSzl8xv4ggE3S_kcI6UZ_oUajislzOgv",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Your portfolio should show:",
+    "options": [
+      "Every sketch you've ever made",
+      "Other people's work",
+      "Your best, most relevant work with context",
+      "Only one piece"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Quality over quantity.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1305-03",
+    "lessonDriveFileId": "1vYM_3dEsnWLoAZHjRn9TXbRKWAkzoLVe",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Defining your niche helps freelancers:",
+    "options": [
+      "Get fewer clients always",
+      "Avoid branding",
+      "Charge nothing",
+      "Attract the right clients and stand out"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Specialists are memorable.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1307-03",
+    "lessonDriveFileId": "1hVcJlW9fYY9pdlMLFoFr0yjLbaI-9lpn",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Consistent visuals across your website and social profiles:",
+    "options": [
+      "Build recognition and trust",
+      "Confuse clients",
+      "Reduce enquiries",
+      "Slow your site"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Consistency signals professionalism.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1311-02",
+    "lessonDriveFileId": "1fSzl8xv4ggE3S_kcI6UZ_oUajislzOgv",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "A case study in a portfolio explains:",
+    "options": [
+      "Only the final image",
+      "The problem, your process and the result",
+      "Your hourly rate only",
+      "Unrelated hobbies and personal interests"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Shows how you think.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1305-04",
+    "lessonDriveFileId": "1vYM_3dEsnWLoAZHjRn9TXbRKWAkzoLVe",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "A memorable personal logo is usually:",
+    "options": [
+      "Highly detailed",
+      "Full of tiny text",
+      "Simple and distinctive",
+      "Copied from a famous brand"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Simplicity aids recall.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1307-04",
+    "lessonDriveFileId": "1hVcJlW9fYY9pdlMLFoFr0yjLbaI-9lpn",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Templates in a brand kit save time on:",
+    "options": [
+      "Coding websites",
+      "Accounting and tracking client payments",
+      "Video rendering",
+      "Repeated assets like social posts and proposals"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Reuse speeds work.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1311-03",
+    "lessonDriveFileId": "1fSzl8xv4ggE3S_kcI6UZ_oUajislzOgv",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Which platform is popular for showcasing design portfolios?",
+    "options": [
+      "Behance",
+      "Excel",
+      "Notepad",
+      "Calculator"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Also Dribbble or your own site.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1305-05",
+    "lessonDriveFileId": "1vYM_3dEsnWLoAZHjRn9TXbRKWAkzoLVe",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Your brand's tone of voice should match:",
+    "options": [
+      "Random moods depending on the day",
+      "Your audience and the services you offer",
+      "Competitors exactly",
+      "Nothing in particular"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Words and visuals align.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1307-05",
+    "lessonDriveFileId": "1hVcJlW9fYY9pdlMLFoFr0yjLbaI-9lpn",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Which item belongs in a freelancer's brand kit?",
+    "options": [
+      "Client passwords",
+      "Random stock photos",
+      "Logo files in several formats",
+      "Unlicensed fonts"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Ready-to-use assets.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1311-04",
+    "lessonDriveFileId": "1fSzl8xv4ggE3S_kcI6UZ_oUajislzOgv",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "What makes a portfolio piece more convincing to clients?",
+    "options": [
+      "Hiding the client's goals",
+      "Showing only sketches without finished work",
+      "Adding unrelated memes",
+      "Explaining the brief, your process and the outcome"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Context shows value.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1305-06",
+    "lessonDriveFileId": "1vYM_3dEsnWLoAZHjRn9TXbRKWAkzoLVe",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Why do freelancers benefit from a personal brand?",
+    "options": [
+      "It makes them recognisable and builds trust with clients",
+      "It replaces skills, so practice matters less",
+      "It guarantees income",
+      "It avoids marketing"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Branding supports credibility.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1400-01",
+    "lessonDriveFileId": "1COxZPKs4vhNOvmOgkH5ozrFirfMTSKB0",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "The Pen Tool in Illustrator creates:",
+    "options": [
+      "Pixels painted with a soft-edged brush",
+      "Precise paths with anchor points and curves",
+      "Text boxes only",
+      "Gradients only"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Essential for vector drawing.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1400-02",
+    "lessonDriveFileId": "1COxZPKs4vhNOvmOgkH5ozrFirfMTSKB0",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "The Shape Builder tool lets you:",
+    "options": [
+      "Add photos inside shapes automatically",
+      "Export files",
+      "Merge or delete overlapping shapes by clicking and dragging",
+      "Change languages"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Quick shape construction.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1406-01",
+    "lessonDriveFileId": "14-xl7FVC1LqXqzmylxW2fdThurqH-NFb",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Placing a photo in Illustrator can be done with:",
+    "options": [
+      "File > Print",
+      "Edit > Undo",
+      "View > Zoom",
+      "File > Place"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Linked or embedded images.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1406-02",
+    "lessonDriveFileId": "14-xl7FVC1LqXqzmylxW2fdThurqH-NFb",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "A clipping mask in Illustrator:",
+    "options": [
+      "Shows an image only inside a chosen shape",
+      "Deletes the image outside the artboard",
+      "Converts it to vector",
+      "Changes colour mode"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Top shape clips what's below.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1409-01",
+    "lessonDriveFileId": "1Z8LHyd7waPIyV91cHF1n7apvvo-yNs92",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "For print, Illustrator documents should use:",
+    "options": [
+      "RGB colour mode for brighter colours",
+      "CMYK colour mode",
+      "HSB",
+      "Indexed"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Print uses ink colours.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1409-02",
+    "lessonDriveFileId": "1Z8LHyd7waPIyV91cHF1n7apvvo-yNs92",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Exporting for web is commonly done with:",
+    "options": [
+      "Print only",
+      "Save as .ai only",
+      "Export As or Export for Screens to PNG, JPG or SVG",
+      "Package, which collects fonts and links"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Choose formats for screens.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1409-03",
+    "lessonDriveFileId": "1Z8LHyd7waPIyV91cHF1n7apvvo-yNs92",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "SVG files are useful because:",
+    "options": [
+      "They're always larger",
+      "They can't be edited after export",
+      "They're for print only",
+      "They're vectors that stay sharp on the web"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Scalable web graphics.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1400-03",
+    "lessonDriveFileId": "1COxZPKs4vhNOvmOgkH5ozrFirfMTSKB0",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Pathfinder operations include:",
+    "options": [
+      "Unite, Minus Front, Intersect and Exclude",
+      "Blur, Sharpen, Noise",
+      "Crop, Resize, Rotate only",
+      "Save, Open, Close"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Combine shapes precisely.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1406-03",
+    "lessonDriveFileId": "14-xl7FVC1LqXqzmylxW2fdThurqH-NFb",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Embedding an image means:",
+    "options": [
+      "The image is deleted",
+      "The image is stored inside the .ai file",
+      "The file is linked externally",
+      "The image becomes vector"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Linked files stay separate.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1409-04",
+    "lessonDriveFileId": "1Z8LHyd7waPIyV91cHF1n7apvvo-yNs92",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Resizing artwork for different formats is easier with:",
+    "options": [
+      "One giant canvas",
+      "Separate unrelated files only",
+      "Multiple artboards",
+      "Screenshots"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Artboards keep versions together.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1400-04",
+    "lessonDriveFileId": "1COxZPKs4vhNOvmOgkH5ozrFirfMTSKB0",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Swatches in Illustrator store:",
+    "options": [
+      "Fonts",
+      "Layers",
+      "Brushes only",
+      "Reusable colours"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Keep colours consistent.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1406-04",
+    "lessonDriveFileId": "14-xl7FVC1LqXqzmylxW2fdThurqH-NFb",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Image Trace converts:",
+    "options": [
+      "Raster images into vector paths",
+      "Vectors into pixels",
+      "Text into images",
+      "PDFs into videos"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Useful for logos from sketches.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1409-05",
+    "lessonDriveFileId": "1Z8LHyd7waPIyV91cHF1n7apvvo-yNs92",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Which file format best preserves a logo's vector quality on websites?",
+    "options": [
+      "JPG",
+      "SVG",
+      "BMP",
+      "GIF"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Vectors scale perfectly.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1406-05",
+    "lessonDriveFileId": "14-xl7FVC1LqXqzmylxW2fdThurqH-NFb",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Which feature shows a photo only within a circle shape?",
+    "options": [
+      "Image Trace",
+      "Pathfinder Unite",
+      "Clipping mask",
+      "Live Paint"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "The top shape defines visibility.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1400-05",
+    "lessonDriveFileId": "1COxZPKs4vhNOvmOgkH5ozrFirfMTSKB0",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Which tool merges overlapping shapes by dragging across them?",
+    "options": [
+      "Hand Tool",
+      "Eyedropper",
+      "Rotate Tool",
+      "Shape Builder"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Shift+M.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1603-01",
+    "lessonDriveFileId": "1o0qawxNsk77cQuO-akE7ZQS_SL8PceHY",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "A Photoshop workspace is:",
+    "options": [
+      "An arrangement of panels and tools",
+      "A type of file",
+      "A filter that changes the image's colours",
+      "A printer setting"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Customise it for your workflow.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1603-02",
+    "lessonDriveFileId": "1o0qawxNsk77cQuO-akE7ZQS_SL8PceHY",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Layers in Photoshop let you:",
+    "options": [
+      "Print faster",
+      "Edit parts of an image independently",
+      "Change file type",
+      "Add audio to an image for social media"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Stacked, editable elements.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1615-01",
+    "lessonDriveFileId": "13MS_-lavI-9TCp2FCWvRtd_F5tARlzkC",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "The quickest way to zoom in Photoshop is:",
+    "options": [
+      "Ctrl/Cmd + S",
+      "Ctrl/Cmd + P",
+      "Ctrl/Cmd + plus (+)",
+      "Ctrl/Cmd + Q"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Ctrl/Cmd + minus zooms out.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1615-02",
+    "lessonDriveFileId": "13MS_-lavI-9TCp2FCWvRtd_F5tARlzkC",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Holding the spacebar in Photoshop temporarily switches to:",
+    "options": [
+      "The Brush Tool",
+      "The Text Tool",
+      "The Crop Tool",
+      "The Hand Tool for panning"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Move around while zoomed.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1618-01",
+    "lessonDriveFileId": "1DZIahAWA-wEV_hl2svOCZanuB2hocoFi",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Good file naming helps you:",
+    "options": [
+      "Find and manage versions easily",
+      "Make files smaller",
+      "Change colours",
+      "Print automatically"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "E.g. client_project_v02.psd.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1603-03",
+    "lessonDriveFileId": "1o0qawxNsk77cQuO-akE7ZQS_SL8PceHY",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Photoshop's native file format is:",
+    "options": [
+      ".ai",
+      ".psd",
+      ".indd",
+      ".docx"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "It keeps layers editable.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1603-04",
+    "lessonDriveFileId": "1o0qawxNsk77cQuO-akE7ZQS_SL8PceHY",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Raster images are made of:",
+    "options": [
+      "Vectors",
+      "Audio",
+      "Pixels",
+      "Text code"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Photoshop is primarily raster-based.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1618-02",
+    "lessonDriveFileId": "1DZIahAWA-wEV_hl2svOCZanuB2hocoFi",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Saving a flattened JPG instead of a PSD means:",
+    "options": [
+      "Layers are preserved",
+      "Quality improves because the file is smaller",
+      "File becomes vector",
+      "Layers are lost and editing is harder"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Keep the PSD master.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1603-05",
+    "lessonDriveFileId": "1o0qawxNsk77cQuO-akE7ZQS_SL8PceHY",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "The Move Tool shortcut in Photoshop is:",
+    "options": [
+      "V",
+      "M",
+      "B",
+      "T"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "M is Marquee.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1615-03",
+    "lessonDriveFileId": "13MS_-lavI-9TCp2FCWvRtd_F5tARlzkC",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Viewing at 100% shows:",
+    "options": [
+      "A thumbnail of the whole document",
+      "The image at actual pixel size",
+      "Double size",
+      "The print layout"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Check sharpness at 100%.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1603-06",
+    "lessonDriveFileId": "1o0qawxNsk77cQuO-akE7ZQS_SL8PceHY",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Locking a layer prevents:",
+    "options": [
+      "It from being seen",
+      "It from being saved",
+      "Accidental changes to it",
+      "Colour changes elsewhere"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Protect finished elements.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1618-03",
+    "lessonDriveFileId": "1DZIahAWA-wEV_hl2svOCZanuB2hocoFi",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Version numbers in file names (v01, v02) help:",
+    "options": [
+      "Increase quality",
+      "Change colour mode",
+      "Print faster",
+      "Track progress and roll back"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Clear history.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1603-07",
+    "lessonDriveFileId": "1o0qawxNsk77cQuO-akE7ZQS_SL8PceHY",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Which file format keeps Photoshop layers editable?",
+    "options": [
+      "PSD",
+      "JPG",
+      "PNG",
+      "GIF"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Native Photoshop format.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1615-04",
+    "lessonDriveFileId": "13MS_-lavI-9TCp2FCWvRtd_F5tARlzkC",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "How do you quickly pan around a zoomed image in Photoshop?",
+    "options": [
+      "Press Delete",
+      "Hold the spacebar and drag",
+      "Use the Crop Tool",
+      "Press Ctrl/Cmd + S"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Temporary Hand Tool.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1618-04",
+    "lessonDriveFileId": "1DZIahAWA-wEV_hl2svOCZanuB2hocoFi",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Which file name is most professional?",
+    "options": [
+      "final_final_REAL2.psd",
+      "untitled-1.psd",
+      "acme_flyer_v03.psd",
+      "asdfgh.psd"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Clear, versioned names.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1702-01",
+    "lessonDriveFileId": "14jeg09899lEJ-ARLesS0tzwN_GAZf0L2",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Adjustment layers let you:",
+    "options": [
+      "Delete layers",
+      "Draw vectors on top of the photo",
+      "Export files in several sizes at the same time",
+      "Change colour and tone without permanently altering pixels"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Non-destructive edits.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1702-02",
+    "lessonDriveFileId": "14jeg09899lEJ-ARLesS0tzwN_GAZf0L2",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Which adjustment changes brightness and contrast precisely using a curve?",
+    "options": [
+      "Curves",
+      "Crop",
+      "Rotate",
+      "Free Transform"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Fine tonal control.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1706-01",
+    "lessonDriveFileId": "1GXzS-meXDXmHrAqIoduq8sFTBz4Q1Udt",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "The Marquee tool creates:",
+    "options": [
+      "Freehand paths only",
+      "Rectangular or elliptical selections",
+      "Text boxes with a dotted outline",
+      "Gradients"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Basic geometric selections.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1706-02",
+    "lessonDriveFileId": "1GXzS-meXDXmHrAqIoduq8sFTBz4Q1Udt",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "The Quick Selection tool:",
+    "options": [
+      "Draws vectors",
+      "Adds noise to the selected area",
+      "Selects areas by painting over them",
+      "Changes canvas size"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Detects edges automatically.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1702-03",
+    "lessonDriveFileId": "14jeg09899lEJ-ARLesS0tzwN_GAZf0L2",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "A layer mask:",
+    "options": [
+      "Deletes pixels permanently",
+      "Changes the font",
+      "Exports PNGs of each visible layer",
+      "Hides or reveals parts of a layer non-destructively"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Black hides, white reveals.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1702-04",
+    "lessonDriveFileId": "14jeg09899lEJ-ARLesS0tzwN_GAZf0L2",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "On a layer mask, painting with black:",
+    "options": [
+      "Hides that part of the layer",
+      "Reveals that part",
+      "Changes its colour to black",
+      "Deletes the mask"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "White reveals.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1706-03",
+    "lessonDriveFileId": "1GXzS-meXDXmHrAqIoduq8sFTBz4Q1Udt",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Select and Mask helps you:",
+    "options": [
+      "Add text that follows the selection edge",
+      "Refine selection edges such as hair",
+      "Rotate images",
+      "Change colour mode"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Precise edge refinement.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1706-04",
+    "lessonDriveFileId": "1GXzS-meXDXmHrAqIoduq8sFTBz4Q1Udt",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Feathering a selection:",
+    "options": [
+      "Makes edges sharper",
+      "Deletes it",
+      "Softens its edges",
+      "Inverts colours"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Smooth transitions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1702-05",
+    "lessonDriveFileId": "14jeg09899lEJ-ARLesS0tzwN_GAZf0L2",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Hue/Saturation adjustments change:",
+    "options": [
+      "Image size and resolution in pixels",
+      "File format",
+      "Layer order",
+      "Colour hue, intensity and lightness"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Colour control.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1706-05",
+    "lessonDriveFileId": "1GXzS-meXDXmHrAqIoduq8sFTBz4Q1Udt",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Inverting a selection (Ctrl/Cmd + Shift + I) selects:",
+    "options": [
+      "Everything except what was selected",
+      "Nothing",
+      "Only the background colour",
+      "The whole layer twice"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Useful for backgrounds.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1700-01",
+    "lessonDriveFileId": "1NGsTvkHDUpVvGuhLoo1buG26ViZuKHFC",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Drawing tools in Photoshop include:",
+    "options": [
+      "Only the Crop tool",
+      "Brush, Pencil and Shape tools",
+      "Only the Eyedropper",
+      "None"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Create and paint artwork.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1702-06",
+    "lessonDriveFileId": "14jeg09899lEJ-ARLesS0tzwN_GAZf0L2",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Clipping an adjustment layer to one layer means:",
+    "options": [
+      "It affects all layers",
+      "It deletes the layer",
+      "It affects only that layer",
+      "It changes the canvas"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Targeted adjustments.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1702-07",
+    "lessonDriveFileId": "14jeg09899lEJ-ARLesS0tzwN_GAZf0L2",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "What does painting white on a layer mask do?",
+    "options": [
+      "Hides it",
+      "Deletes the layer",
+      "Changes its colour",
+      "Reveals that part of the layer"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "White reveals; black hides.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1706-06",
+    "lessonDriveFileId": "1GXzS-meXDXmHrAqIoduq8sFTBz4Q1Udt",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Which feature best refines a selection around hair?",
+    "options": [
+      "Select and Mask",
+      "Crop Tool",
+      "Gradient Tool",
+      "Type Tool"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Edge detection for fine detail.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1702-08",
+    "lessonDriveFileId": "14jeg09899lEJ-ARLesS0tzwN_GAZf0L2",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Why use adjustment layers instead of direct adjustments?",
+    "options": [
+      "They're faster to print",
+      "They can be changed or removed later",
+      "They reduce file size",
+      "They're required to save"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Non-destructive editing.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1801-01",
+    "lessonDriveFileId": "1iFVQlI9Bxn561yk3yVQdvLwAO6pqnKis",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "The Pen Tool in Photoshop creates:",
+    "options": [
+      "Pixel brush strokes",
+      "Text only",
+      "Precise vector paths",
+      "Gradients"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Paths can become selections or shapes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1803-01",
+    "lessonDriveFileId": "1CpvwdJRPFr-BN1-EmXBdO3gdEdrBrepq",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "A path can be converted into:",
+    "options": [
+      "An audio file",
+      "A font that can be installed on your computer",
+      "A video",
+      "A selection, a vector mask or a shape"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Paths are flexible.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1803-02",
+    "lessonDriveFileId": "1CpvwdJRPFr-BN1-EmXBdO3gdEdrBrepq",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Dragging while clicking with the Pen Tool creates:",
+    "options": [
+      "A curved segment",
+      "A straight line",
+      "A text box",
+      "A new layer"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Handles control the curve.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1804-01",
+    "lessonDriveFileId": "184KDfeW-R-fU4u4m-gwkUqoC1dBgIcmu",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Type layers in Photoshop remain:",
+    "options": [
+      "Pixels immediately",
+      "Editable until rasterised",
+      "Locked forever",
+      "Hidden"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Keep them live for edits.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1804-02",
+    "lessonDriveFileId": "184KDfeW-R-fU4u4m-gwkUqoC1dBgIcmu",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Paragraph type is created by:",
+    "options": [
+      "Clicking once",
+      "Using the Pen Tool only",
+      "Dragging a text box with the Type Tool",
+      "Pressing Delete"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Text wraps inside the box.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1801-02",
+    "lessonDriveFileId": "1iFVQlI9Bxn561yk3yVQdvLwAO6pqnKis",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Cutting out a product photo precisely is best done with:",
+    "options": [
+      "The Blur Tool",
+      "The Sponge Tool",
+      "The Zoom Tool",
+      "The Pen Tool"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Clean edges for hard-edged objects.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1804-03",
+    "lessonDriveFileId": "184KDfeW-R-fU4u4m-gwkUqoC1dBgIcmu",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Text on a path means:",
+    "options": [
+      "Type follows the shape of a drawn path",
+      "Text is deleted and replaced with a shape",
+      "Text becomes an image",
+      "Text is centred only"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Great for curved headlines.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1803-03",
+    "lessonDriveFileId": "1CpvwdJRPFr-BN1-EmXBdO3gdEdrBrepq",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "The Paths panel stores:",
+    "options": [
+      "Fonts and type styles used in the document",
+      "Saved work paths and shape paths",
+      "Brushes",
+      "Colour swatches"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Reuse paths later.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1804-04",
+    "lessonDriveFileId": "184KDfeW-R-fU4u4m-gwkUqoC1dBgIcmu",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Character panel settings include:",
+    "options": [
+      "Layer opacity only",
+      "Canvas size and document resolution",
+      "Font, size, leading, tracking and kerning",
+      "Export format"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Detailed type control.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1801-03",
+    "lessonDriveFileId": "1iFVQlI9Bxn561yk3yVQdvLwAO6pqnKis",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Holding Shift with the Pen Tool:",
+    "options": [
+      "Deletes points",
+      "Changes colour",
+      "Rasterises the path",
+      "Constrains lines to 45° angles"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Straight, precise lines.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1804-05",
+    "lessonDriveFileId": "184KDfeW-R-fU4u4m-gwkUqoC1dBgIcmu",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Rasterising a type layer means:",
+    "options": [
+      "Converting text to pixels so it's no longer editable as text",
+      "Changing the font",
+      "Making it vector",
+      "Hiding it so it doesn't appear in exports"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Avoid unless necessary.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1803-04",
+    "lessonDriveFileId": "1CpvwdJRPFr-BN1-EmXBdO3gdEdrBrepq",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Converting a path to a selection uses:",
+    "options": [
+      "Ctrl/Cmd + T",
+      "Ctrl/Cmd + Enter",
+      "Ctrl/Cmd + J",
+      "Ctrl/Cmd + Z"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Quick conversion.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1801-04",
+    "lessonDriveFileId": "1iFVQlI9Bxn561yk3yVQdvLwAO6pqnKis",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Which tool gives the cleanest cut-out of a product with smooth curved edges?",
+    "options": [
+      "Magic Wand",
+      "Eraser",
+      "Pen Tool",
+      "Lasso freehand"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Precise paths.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1804-06",
+    "lessonDriveFileId": "184KDfeW-R-fU4u4m-gwkUqoC1dBgIcmu",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Why keep type layers unrasterised?",
+    "options": [
+      "It makes files smaller",
+      "It improves print colour",
+      "It's required for JPG export",
+      "So text can still be edited later"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Live text stays editable.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1803-05",
+    "lessonDriveFileId": "1CpvwdJRPFr-BN1-EmXBdO3gdEdrBrepq",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Which shortcut turns a Pen path into a selection?",
+    "options": [
+      "Ctrl/Cmd + Enter",
+      "Ctrl/Cmd + D",
+      "Ctrl/Cmd + N",
+      "Ctrl/Cmd + P"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Path to selection.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1901-01",
+    "lessonDriveFileId": "1_0DUmxGW_QtPDGinmXiJn3BQpCE2G66c",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "The Swatches panel stores:",
+    "options": [
+      "Layers",
+      "Saved colours for reuse",
+      "Fonts",
+      "History states"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Consistent colour use.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1901-02",
+    "lessonDriveFileId": "1_0DUmxGW_QtPDGinmXiJn3BQpCE2G66c",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "The Eyedropper tool:",
+    "options": [
+      "Draws lines",
+      "Erases pixels",
+      "Samples a colour from the image",
+      "Rotates the canvas"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Pick exact colours.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1906-01",
+    "lessonDriveFileId": "1fQabaJ9_N0BpdaDFZZRwI9KCqp7Pcs0t",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Opacity in Photoshop controls:",
+    "options": [
+      "Its colour mode",
+      "Its file name",
+      "Its size",
+      "How transparent a layer is"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "0% is invisible.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1906-02",
+    "lessonDriveFileId": "1fQabaJ9_N0BpdaDFZZRwI9KCqp7Pcs0t",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "The Multiply blend mode:",
+    "options": [
+      "Darkens by multiplying colours, keeping white transparent",
+      "Lightens everything",
+      "Inverts colours",
+      "Removes layers that are fully white"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Good for shadows and line art.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1906-03",
+    "lessonDriveFileId": "1fQabaJ9_N0BpdaDFZZRwI9KCqp7Pcs0t",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "The Screen blend mode:",
+    "options": [
+      "Darkens the image, making white areas opaque",
+      "Lightens, making black transparent",
+      "Sharpens",
+      "Deletes colours"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Good for light effects.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1910-01",
+    "lessonDriveFileId": "1GVNKkEdRCVIh62_HmX_9_-ch3dcTVdH7",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Brush hardness controls:",
+    "options": [
+      "Brush colour",
+      "Layer order",
+      "How soft or sharp the brush edges are",
+      "File size of the saved brush preset"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "0% is very soft.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1910-02",
+    "lessonDriveFileId": "1GVNKkEdRCVIh62_HmX_9_-ch3dcTVdH7",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Brush flow and opacity affect:",
+    "options": [
+      "The canvas size",
+      "The image format",
+      "The font",
+      "How much paint is applied"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Build up strokes gradually.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1906-04",
+    "lessonDriveFileId": "1fQabaJ9_N0BpdaDFZZRwI9KCqp7Pcs0t",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Fill differs from Opacity because:",
+    "options": [
+      "Fill doesn't affect layer styles like drop shadows",
+      "They are identical and change the same thing",
+      "Fill changes colour mode",
+      "Opacity only affects text"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Useful for effects.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1901-03",
+    "lessonDriveFileId": "1_0DUmxGW_QtPDGinmXiJn3BQpCE2G66c",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Foreground and background colours are swapped with:",
+    "options": [
+      "Z",
+      "X",
+      "C",
+      "Q"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "D resets to black and white.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1910-03",
+    "lessonDriveFileId": "1GVNKkEdRCVIh62_HmX_9_-ch3dcTVdH7",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Custom brushes can be used to:",
+    "options": [
+      "Edit vectors",
+      "Export PDFs with the brush strokes flattened",
+      "Add textures, patterns or effects quickly",
+      "Change resolution"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Brushes expand creative options.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1906-05",
+    "lessonDriveFileId": "1fQabaJ9_N0BpdaDFZZRwI9KCqp7Pcs0t",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Overlay blend mode is often used to:",
+    "options": [
+      "Delete layers that use the same colours",
+      "Convert to CMYK",
+      "Rasterise text",
+      "Increase contrast and add texture"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Combines Multiply and Screen.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1901-04",
+    "lessonDriveFileId": "1_0DUmxGW_QtPDGinmXiJn3BQpCE2G66c",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Colour libraries like Pantone are used to:",
+    "options": [
+      "Match specific brand colours for print",
+      "Edit video footage in Premiere Pro",
+      "Store fonts",
+      "Compress images"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Standardised colours.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l1906-06",
+    "lessonDriveFileId": "1fQabaJ9_N0BpdaDFZZRwI9KCqp7Pcs0t",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Which blend mode is ideal for placing a dark logo on white paper texture so the white disappears?",
+    "options": [
+      "Screen",
+      "Multiply",
+      "Normal",
+      "Dissolve"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "White becomes transparent.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1910-04",
+    "lessonDriveFileId": "1GVNKkEdRCVIh62_HmX_9_-ch3dcTVdH7",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "A brush with 0% hardness produces:",
+    "options": [
+      "Sharp, crisp edges",
+      "No marks",
+      "Very soft, feathered edges",
+      "Vector lines"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Soft edges for blending.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1901-05",
+    "lessonDriveFileId": "1_0DUmxGW_QtPDGinmXiJn3BQpCE2G66c",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Which tool samples an exact colour from a photo?",
+    "options": [
+      "Lasso",
+      "Dodge",
+      "Crop tool with a fixed colour ratio",
+      "Eyedropper"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Shortcut I.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l2001-01",
+    "lessonDriveFileId": "1AQABfuWZ9TOk6t4BeZAQo_08RX3r9cJk",
+    "chapterOrder": 19,
+    "type": "single",
+    "prompt": "The History panel lets you:",
+    "options": [
+      "Step back to earlier states of your work",
+      "Change fonts",
+      "Export files",
+      "Add layers automatically"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Undo beyond a single step.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l2003-01",
+    "lessonDriveFileId": "18VMNP_F-RAc7XWLlF9SHVU7EfC5k_dfw",
+    "chapterOrder": 19,
+    "type": "single",
+    "prompt": "Batch processing in Photoshop helps you:",
+    "options": [
+      "Draw vectors from many photos at once",
+      "Apply the same action to many files at once",
+      "Edit one pixel",
+      "Create fonts"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Saves hours on repetitive tasks.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l2008-01",
+    "lessonDriveFileId": "1UC3r95pMa4USWX1_nJjFEYCBDUAYRWbd",
+    "chapterOrder": 19,
+    "type": "single",
+    "prompt": "Saving a custom workspace helps you:",
+    "options": [
+      "Lower image quality",
+      "Delete tools you don't use from Photoshop",
+      "Keep your preferred panel layout for faster work",
+      "Print automatically"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Efficient workflows.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l2003-02",
+    "lessonDriveFileId": "18VMNP_F-RAc7XWLlF9SHVU7EfC5k_dfw",
+    "chapterOrder": 19,
+    "type": "single",
+    "prompt": "Photoshop Actions are:",
+    "options": [
+      "Brush presets saved with a custom name",
+      "Colour profiles",
+      "Font families",
+      "Recorded steps you can replay"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Automate repetitive edits.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3101-01",
+    "lessonDriveFileId": "1FvIjJjBoyhLwdB7OVYq-BwVFNyV7D-96",
+    "chapterOrder": 20,
+    "type": "single",
+    "prompt": "Why do many designers learn Illustrator?",
+    "options": [
+      "It's the industry standard for vector artwork like logos and icons",
+      "It's only for video editing and motion graphics",
+      "It replaces all other tools",
+      "It edits audio for video projects"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Vector skills are in demand.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3103-01",
+    "lessonDriveFileId": "1TDCrx0KTcfJ0jJoVvFUg2GKsAS_kb-gB",
+    "chapterOrder": 20,
+    "type": "single",
+    "prompt": "An Adobe Certified Professional credential shows:",
+    "options": [
+      "A university degree",
+      "Verified skill with Adobe software",
+      "A driving licence",
+      "A printing licence"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "It can boost credibility.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3204-01",
+    "lessonDriveFileId": "1p56bF3M4JD70-6EUesSltljFXB-ZEWgH",
+    "chapterOrder": 21,
+    "type": "single",
+    "prompt": "Pressing Ctrl/Cmd + 0 in Illustrator:",
+    "options": [
+      "Closes the file without saving changes",
+      "Opens preferences",
+      "Fits the artboard in the window",
+      "Deletes objects"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Quick navigation.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3204-02",
+    "lessonDriveFileId": "1p56bF3M4JD70-6EUesSltljFXB-ZEWgH",
+    "chapterOrder": 21,
+    "type": "single",
+    "prompt": "The Hand Tool in Illustrator is used to:",
+    "options": [
+      "Draw shapes",
+      "Select colours",
+      "Add text",
+      "Move around the canvas"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Hold spacebar for quick access.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3205-01",
+    "lessonDriveFileId": "1WIcslWM_COtZ6Iz1qT3jaNJERHJbXdr4",
+    "chapterOrder": 21,
+    "type": "single",
+    "prompt": "Anchor points define:",
+    "options": [
+      "Where paths change direction",
+      "Colour modes",
+      "File formats",
+      "Layer order in the Layers panel"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Paths connect anchor points.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3205-02",
+    "lessonDriveFileId": "1WIcslWM_COtZ6Iz1qT3jaNJERHJbXdr4",
+    "chapterOrder": 21,
+    "type": "single",
+    "prompt": "Direction handles on an anchor point control:",
+    "options": [
+      "The colour",
+      "The shape of the curve",
+      "The stroke width only",
+      "The layer"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Drag handles to adjust curves.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3205-03",
+    "lessonDriveFileId": "1WIcslWM_COtZ6Iz1qT3jaNJERHJbXdr4",
+    "chapterOrder": 21,
+    "type": "single",
+    "prompt": "A closed path:",
+    "options": [
+      "Can't be filled, only stroked",
+      "Has only one point",
+      "Has no open ends and can be filled",
+      "Is always a line"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "E.g. a circle.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3208-01",
+    "lessonDriveFileId": "1sFcpEAulti_TtxOW44lM2bhkomn-9b6F",
+    "chapterOrder": 21,
+    "type": "single",
+    "prompt": "Preferences in Illustrator let you:",
+    "options": [
+      "Print documents",
+      "Buy fonts from Adobe's font store",
+      "Edit photos",
+      "Customise units, guides and behaviour"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Tailor the app.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3208-02",
+    "lessonDriveFileId": "1sFcpEAulti_TtxOW44lM2bhkomn-9b6F",
+    "chapterOrder": 21,
+    "type": "single",
+    "prompt": "Setting units to pixels is useful when:",
+    "options": [
+      "Designing for screens",
+      "Designing for embroidery",
+      "Printing posters only",
+      "Writing text"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Match the output.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3204-03",
+    "lessonDriveFileId": "1p56bF3M4JD70-6EUesSltljFXB-ZEWgH",
+    "chapterOrder": 21,
+    "type": "single",
+    "prompt": "Outline mode (Ctrl/Cmd + Y) shows:",
+    "options": [
+      "A print preview",
+      "Only the paths without colour",
+      "A 3D view of the artwork from above",
+      "Layers panel"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Check structure.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3205-04",
+    "lessonDriveFileId": "1WIcslWM_COtZ6Iz1qT3jaNJERHJbXdr4",
+    "chapterOrder": 21,
+    "type": "single",
+    "prompt": "Raster images differ from vectors because they:",
+    "options": [
+      "Scale infinitely",
+      "Use paths",
+      "Lose quality when enlarged",
+      "Never pixelate"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Pixels stretch.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3208-03",
+    "lessonDriveFileId": "1sFcpEAulti_TtxOW44lM2bhkomn-9b6F",
+    "chapterOrder": 21,
+    "type": "single",
+    "prompt": "Smart Guides in Illustrator:",
+    "options": [
+      "Delete objects",
+      "Change colours",
+      "Export files for each artboard automatically",
+      "Help align objects with temporary guides"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Ctrl/Cmd + U toggles them.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3204-04",
+    "lessonDriveFileId": "1p56bF3M4JD70-6EUesSltljFXB-ZEWgH",
+    "chapterOrder": 21,
+    "type": "single",
+    "prompt": "Multiple artboards are useful for:",
+    "options": [
+      "Creating several sizes or pages in one file",
+      "Storing passwords",
+      "Recording audio for animated artwork",
+      "Rendering video"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "E.g. social media sizes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3205-05",
+    "lessonDriveFileId": "1WIcslWM_COtZ6Iz1qT3jaNJERHJbXdr4",
+    "chapterOrder": 21,
+    "type": "single",
+    "prompt": "Which tool adds an anchor point to a path?",
+    "options": [
+      "Eyedropper",
+      "Add Anchor Point Tool (+)",
+      "Zoom Tool clicked on the path",
+      "Rotate Tool"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Refine shapes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3205-06",
+    "lessonDriveFileId": "1WIcslWM_COtZ6Iz1qT3jaNJERHJbXdr4",
+    "chapterOrder": 21,
+    "type": "single",
+    "prompt": "Why do vector graphics stay sharp at any size?",
+    "options": [
+      "They use higher resolution pixels",
+      "They're compressed",
+      "They're built from mathematical paths, not pixels",
+      "They're always small"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Scalability.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3204-05",
+    "lessonDriveFileId": "1p56bF3M4JD70-6EUesSltljFXB-ZEWgH",
+    "chapterOrder": 21,
+    "type": "single",
+    "prompt": "Which view mode shows only paths without fills or strokes?",
+    "options": [
+      "Presentation mode",
+      "Pixel Preview",
+      "Trim view",
+      "Outline mode"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Ctrl/Cmd + Y.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3303-01",
+    "lessonDriveFileId": "1x0k9dgeNygegOok3NtI9rbPlpq1z4EUx",
+    "chapterOrder": 22,
+    "type": "single",
+    "prompt": "Pathfinder Unite:",
+    "options": [
+      "Merges selected shapes into one",
+      "Cuts holes",
+      "Keeps only overlaps",
+      "Deletes everything"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Combine shapes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3303-02",
+    "lessonDriveFileId": "1x0k9dgeNygegOok3NtI9rbPlpq1z4EUx",
+    "chapterOrder": 22,
+    "type": "single",
+    "prompt": "Pathfinder Minus Front:",
+    "options": [
+      "Merges shapes into one combined shape",
+      "Removes the top shape from the bottom one",
+      "Keeps the overlap",
+      "Colours shapes"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Cut-outs.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3303-03",
+    "lessonDriveFileId": "1x0k9dgeNygegOok3NtI9rbPlpq1z4EUx",
+    "chapterOrder": 22,
+    "type": "single",
+    "prompt": "Pathfinder Intersect keeps:",
+    "options": [
+      "Everything",
+      "Only the top shape",
+      "Only the overlapping area",
+      "Nothing"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Shared region.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3306-01",
+    "lessonDriveFileId": "1FZ_t1VwFx2JB7oKokSAYRRibxg70EduH",
+    "chapterOrder": 22,
+    "type": "single",
+    "prompt": "Align to Artboard centres objects:",
+    "options": [
+      "On the screen, regardless of the artboard",
+      "On another file",
+      "On the printer",
+      "On the artboard rather than relative to each other"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Choose the align target.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3306-02",
+    "lessonDriveFileId": "1FZ_t1VwFx2JB7oKokSAYRRibxg70EduH",
+    "chapterOrder": 22,
+    "type": "single",
+    "prompt": "Distribute Spacing ensures:",
+    "options": [
+      "Equal gaps between objects",
+      "Equal colours",
+      "Equal sizes for every selected object",
+      "Equal layers"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Even spacing.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3306-03",
+    "lessonDriveFileId": "1FZ_t1VwFx2JB7oKokSAYRRibxg70EduH",
+    "chapterOrder": 22,
+    "type": "single",
+    "prompt": "A key object in alignment is:",
+    "options": [
+      "The first layer",
+      "The object others align to",
+      "A locked file",
+      "The colour swatch"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Click once more to set it.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3308-01",
+    "lessonDriveFileId": "1LJX_s_M4GwhwA4V9Tdo9CosmVSphMVO3",
+    "chapterOrder": 22,
+    "type": "single",
+    "prompt": "Grouping objects lets you:",
+    "options": [
+      "Merge them permanently",
+      "Delete them",
+      "Move or scale them together",
+      "Rasterise them"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Ungroup any time.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3308-02",
+    "lessonDriveFileId": "1LJX_s_M4GwhwA4V9Tdo9CosmVSphMVO3",
+    "chapterOrder": 22,
+    "type": "single",
+    "prompt": "Arrange > Bring to Front changes:",
+    "options": [
+      "Colour",
+      "Size of the selected objects",
+      "Font",
+      "Stacking order"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Top objects cover lower ones.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3303-04",
+    "lessonDriveFileId": "1x0k9dgeNygegOok3NtI9rbPlpq1z4EUx",
+    "chapterOrder": 22,
+    "type": "single",
+    "prompt": "Compound paths are used to:",
+    "options": [
+      "Create holes in shapes, like the centre of an 'O'",
+      "Add text inside a shape automatically",
+      "Export files",
+      "Change colour mode"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Ctrl/Cmd + 8.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3306-04",
+    "lessonDriveFileId": "1FZ_t1VwFx2JB7oKokSAYRRibxg70EduH",
+    "chapterOrder": 22,
+    "type": "single",
+    "prompt": "Holding Shift while scaling an object:",
+    "options": [
+      "Rotates it",
+      "Keeps its proportions",
+      "Deletes it",
+      "Changes colour"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Constrain proportions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3308-03",
+    "lessonDriveFileId": "1LJX_s_M4GwhwA4V9Tdo9CosmVSphMVO3",
+    "chapterOrder": 22,
+    "type": "single",
+    "prompt": "Locking objects (Ctrl/Cmd + 2) prevents:",
+    "options": [
+      "Printing",
+      "Saving",
+      "Accidental selection or movement",
+      "Colour changes elsewhere"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Protect finished elements.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3303-05",
+    "lessonDriveFileId": "1x0k9dgeNygegOok3NtI9rbPlpq1z4EUx",
+    "chapterOrder": 22,
+    "type": "single",
+    "prompt": "Shape Builder is often faster than Pathfinder because:",
+    "options": [
+      "It exports files",
+      "It changes colour mode",
+      "It writes text along the merged shape",
+      "You merge or delete regions by clicking and dragging"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Direct, visual editing.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3303-06",
+    "lessonDriveFileId": "1x0k9dgeNygegOok3NtI9rbPlpq1z4EUx",
+    "chapterOrder": 22,
+    "type": "single",
+    "prompt": "Which Pathfinder option keeps only the area where shapes overlap?",
+    "options": [
+      "Intersect",
+      "Unite",
+      "Minus Front",
+      "Exclude"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Shared region only.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3306-05",
+    "lessonDriveFileId": "1FZ_t1VwFx2JB7oKokSAYRRibxg70EduH",
+    "chapterOrder": 22,
+    "type": "single",
+    "prompt": "Three icons need equal space between them. Use:",
+    "options": [
+      "Pathfinder Unite",
+      "Distribute Spacing",
+      "Image Trace",
+      "Envelope Distort"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Even gaps.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3308-04",
+    "lessonDriveFileId": "1LJX_s_M4GwhwA4V9Tdo9CosmVSphMVO3",
+    "chapterOrder": 22,
+    "type": "single",
+    "prompt": "Which shortcut groups selected objects?",
+    "options": [
+      "Ctrl/Cmd + B",
+      "Ctrl/Cmd + E",
+      "Ctrl/Cmd + G",
+      "Ctrl/Cmd + R"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Shift+Ctrl/Cmd+G ungroups.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3401-01",
+    "lessonDriveFileId": "1b9Gs097dGvGlWtQk76ta-pdFxOXobPBG",
+    "chapterOrder": 23,
+    "type": "single",
+    "prompt": "Stroke settings control:",
+    "options": [
+      "Fill colour",
+      "Layer order",
+      "Font size used for labels on the stroke",
+      "Outline weight, caps, corners and dashes"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Customise outlines.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3401-02",
+    "lessonDriveFileId": "1b9Gs097dGvGlWtQk76ta-pdFxOXobPBG",
+    "chapterOrder": 23,
+    "type": "single",
+    "prompt": "A dashed line is created in:",
+    "options": [
+      "The Stroke panel",
+      "The Swatches panel",
+      "The Layers panel",
+      "The Character panel"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Tick Dashed Line.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3403-01",
+    "lessonDriveFileId": "11iLjrB-IyugLh0WHLU7kUEnlrBqYDp6s",
+    "chapterOrder": 23,
+    "type": "single",
+    "prompt": "A linear gradient in Illustrator:",
+    "options": [
+      "Blends from the centre outward",
+      "Blends colours in a straight direction",
+      "Is one flat colour",
+      "Adds texture"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Radial blends from the centre.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3403-02",
+    "lessonDriveFileId": "11iLjrB-IyugLh0WHLU7kUEnlrBqYDp6s",
+    "chapterOrder": 23,
+    "type": "single",
+    "prompt": "Freeform gradients let you:",
+    "options": [
+      "Only blend two colours",
+      "Only blend vertically",
+      "Place colour points anywhere on a shape",
+      "Create text"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Organic blends.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3404-01",
+    "lessonDriveFileId": "1HQsnWk5BYfrTOaprMr1yuiB0BYP8nv63",
+    "chapterOrder": 23,
+    "type": "single",
+    "prompt": "The Appearance panel lets you:",
+    "options": [
+      "Rename files",
+      "Export PDFs for print with bleed",
+      "Install fonts",
+      "Stack multiple fills, strokes and effects on one object"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Powerful styling.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3404-02",
+    "lessonDriveFileId": "1HQsnWk5BYfrTOaprMr1yuiB0BYP8nv63",
+    "chapterOrder": 23,
+    "type": "single",
+    "prompt": "Graphic styles save:",
+    "options": [
+      "A set of appearance attributes to reuse",
+      "Fonts and paragraph settings for text",
+      "Layers",
+      "Artboards"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Apply consistent looks.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3401-03",
+    "lessonDriveFileId": "1b9Gs097dGvGlWtQk76ta-pdFxOXobPBG",
+    "chapterOrder": 23,
+    "type": "single",
+    "prompt": "Round caps on a stroke make line ends:",
+    "options": [
+      "Square",
+      "Rounded",
+      "Invisible",
+      "Dashed"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Softer line ends.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3403-03",
+    "lessonDriveFileId": "11iLjrB-IyugLh0WHLU7kUEnlrBqYDp6s",
+    "chapterOrder": 23,
+    "type": "single",
+    "prompt": "Gradient annotator in Illustrator lets you:",
+    "options": [
+      "Delete gradients",
+      "Change file type",
+      "Adjust a gradient directly on the object",
+      "Add text that follows the gradient direction"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "On-canvas control.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3404-03",
+    "lessonDriveFileId": "1HQsnWk5BYfrTOaprMr1yuiB0BYP8nv63",
+    "chapterOrder": 23,
+    "type": "single",
+    "prompt": "Effects like Drop Shadow in Illustrator are:",
+    "options": [
+      "Permanent pixels",
+      "Only for text",
+      "Unavailable once the file is saved",
+      "Live and editable through the Appearance panel"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Edit later.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3401-04",
+    "lessonDriveFileId": "1b9Gs097dGvGlWtQk76ta-pdFxOXobPBG",
+    "chapterOrder": 23,
+    "type": "single",
+    "prompt": "Variable width strokes are made with:",
+    "options": [
+      "The Width Tool",
+      "The Zoom Tool",
+      "The Hand Tool",
+      "The Type Tool"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Shift+W.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3404-04",
+    "lessonDriveFileId": "1HQsnWk5BYfrTOaprMr1yuiB0BYP8nv63",
+    "chapterOrder": 23,
+    "type": "single",
+    "prompt": "Expanding appearance converts:",
+    "options": [
+      "Paths into pixels",
+      "Effects and strokes into editable paths",
+      "Text into images that can't be edited",
+      "Colours into CMYK"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Useful for final output.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3403-04",
+    "lessonDriveFileId": "11iLjrB-IyugLh0WHLU7kUEnlrBqYDp6s",
+    "chapterOrder": 23,
+    "type": "single",
+    "prompt": "Gradient stops define:",
+    "options": [
+      "The file name used when exporting",
+      "The layer order",
+      "Where each colour sits in the gradient",
+      "The stroke cap"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Add stops for more colours.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3404-05",
+    "lessonDriveFileId": "1HQsnWk5BYfrTOaprMr1yuiB0BYP8nv63",
+    "chapterOrder": 23,
+    "type": "single",
+    "prompt": "Which panel lets one object have two strokes and three fills?",
+    "options": [
+      "Layers panel",
+      "Swatches panel",
+      "Info panel",
+      "Appearance panel"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Stack attributes.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3403-05",
+    "lessonDriveFileId": "11iLjrB-IyugLh0WHLU7kUEnlrBqYDp6s",
+    "chapterOrder": 23,
+    "type": "single",
+    "prompt": "Which gradient type blends colours outward from a centre point?",
+    "options": [
+      "Radial",
+      "Linear",
+      "Freeform only",
+      "Flat"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Circular blend.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3401-05",
+    "lessonDriveFileId": "1b9Gs097dGvGlWtQk76ta-pdFxOXobPBG",
+    "chapterOrder": 23,
+    "type": "single",
+    "prompt": "Which tool creates strokes that vary in thickness along a path?",
+    "options": [
+      "Pen Tool",
+      "Width Tool",
+      "Eyedropper",
+      "Scissors"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Variable width profiles.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3501-01",
+    "lessonDriveFileId": "1Is3BfKvEdALYGnO88jy63xoeexmRlriv",
+    "chapterOrder": 24,
+    "type": "single",
+    "prompt": "The Rectangle, Ellipse and Polygon tools are:",
+    "options": [
+      "Selection tools",
+      "Type tools",
+      "Basic shape tools",
+      "Export tools"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Building blocks of vector art.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3501-02",
+    "lessonDriveFileId": "1Is3BfKvEdALYGnO88jy63xoeexmRlriv",
+    "chapterOrder": 24,
+    "type": "single",
+    "prompt": "The Pencil Tool in Illustrator draws:",
+    "options": [
+      "Perfect circles only",
+      "Text",
+      "Gradients",
+      "Freehand paths"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Smoothed freehand lines.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3501-03",
+    "lessonDriveFileId": "1Is3BfKvEdALYGnO88jy63xoeexmRlriv",
+    "chapterOrder": 24,
+    "type": "single",
+    "prompt": "The Curvature Tool lets you:",
+    "options": [
+      "Draw smooth curves by clicking points",
+      "Erase pixels",
+      "Export files",
+      "Add effects like drop shadows to curves"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Easier than the Pen Tool for curves.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3502-01",
+    "lessonDriveFileId": "1R1T7zYubH1N36rM0JBOccG_fRlzouOxN",
+    "chapterOrder": 24,
+    "type": "single",
+    "prompt": "Drawing exercises help you:",
+    "options": [
+      "Avoid practice",
+      "Build confidence and speed with vector tools",
+      "Skip learning",
+      "Print faster by reducing the number of paths"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Practice makes precision.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3512-01",
+    "lessonDriveFileId": "1n0wuGaziS0EQJioV-78VwRGvWVP_iGkE",
+    "chapterOrder": 24,
+    "type": "single",
+    "prompt": "Concentric drawing techniques use:",
+    "options": [
+      "Random placement",
+      "Only straight lines",
+      "Shapes that share the same centre point",
+      "Raster brushes painted in Photoshop"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Useful for icons and targets.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3501-04",
+    "lessonDriveFileId": "1Is3BfKvEdALYGnO88jy63xoeexmRlriv",
+    "chapterOrder": 24,
+    "type": "single",
+    "prompt": "Holding Alt/Option while drawing a shape:",
+    "options": [
+      "Draws it upside down",
+      "Changes colour",
+      "Deletes it",
+      "Draws it from the centre"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Centre-out drawing.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3512-02",
+    "lessonDriveFileId": "1n0wuGaziS0EQJioV-78VwRGvWVP_iGkE",
+    "chapterOrder": 24,
+    "type": "single",
+    "prompt": "Offset Path creates:",
+    "options": [
+      "A copy of a path a set distance inside or outside",
+      "A new layer",
+      "A gradient between two coloured paths",
+      "A text box"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Great for concentric outlines.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3501-05",
+    "lessonDriveFileId": "1Is3BfKvEdALYGnO88jy63xoeexmRlriv",
+    "chapterOrder": 24,
+    "type": "single",
+    "prompt": "The Blob Brush tool creates:",
+    "options": [
+      "Strokes only",
+      "Filled shapes as you paint",
+      "Pixels",
+      "Text set in a brush-style font"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Merges overlapping strokes into shapes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3502-02",
+    "lessonDriveFileId": "1R1T7zYubH1N36rM0JBOccG_fRlzouOxN",
+    "chapterOrder": 24,
+    "type": "single",
+    "prompt": "Live Corners let you:",
+    "options": [
+      "Change colour",
+      "Export files",
+      "Round corners interactively",
+      "Add text inside rounded shapes"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Drag corner widgets.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3512-03",
+    "lessonDriveFileId": "1n0wuGaziS0EQJioV-78VwRGvWVP_iGkE",
+    "chapterOrder": 24,
+    "type": "single",
+    "prompt": "Using guides when drawing helps:",
+    "options": [
+      "Make art blurry",
+      "Change file type",
+      "Add noise to shapes drawn with guides",
+      "Keep shapes aligned and symmetrical"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Precision aids.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3501-06",
+    "lessonDriveFileId": "1Is3BfKvEdALYGnO88jy63xoeexmRlriv",
+    "chapterOrder": 24,
+    "type": "single",
+    "prompt": "The Line Segment tool draws:",
+    "options": [
+      "Straight lines",
+      "Curves",
+      "Circles",
+      "Text paths"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Hold Shift for 45° angles.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3502-03",
+    "lessonDriveFileId": "1R1T7zYubH1N36rM0JBOccG_fRlzouOxN",
+    "chapterOrder": 24,
+    "type": "single",
+    "prompt": "Reflect tool is useful for:",
+    "options": [
+      "Exporting PNGs of mirrored artwork",
+      "Creating symmetrical artwork",
+      "Changing fonts",
+      "Tracing images"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Mirror shapes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3501-07",
+    "lessonDriveFileId": "1Is3BfKvEdALYGnO88jy63xoeexmRlriv",
+    "chapterOrder": 24,
+    "type": "single",
+    "prompt": "Which tool draws smooth curves by simply clicking points?",
+    "options": [
+      "Scissors",
+      "Eraser",
+      "Curvature Tool",
+      "Zoom"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Shift+~ in Illustrator.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3512-04",
+    "lessonDriveFileId": "1n0wuGaziS0EQJioV-78VwRGvWVP_iGkE",
+    "chapterOrder": 24,
+    "type": "single",
+    "prompt": "Which command creates evenly spaced concentric outlines of a shape?",
+    "options": [
+      "Image Trace",
+      "Envelope Distort",
+      "Rasterize",
+      "Offset Path"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Object > Path > Offset Path.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3602-01",
+    "lessonDriveFileId": "1oVObQRb51HSGf_RPE1OmofXJsPBlt3pL",
+    "chapterOrder": 25,
+    "type": "single",
+    "prompt": "A scatter brush in Illustrator:",
+    "options": [
+      "Scatters copies of an object along a path",
+      "Paints pixels",
+      "Creates gradients",
+      "Adds text along the path in a repeating pattern"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Great for confetti or leaves.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3604-01",
+    "lessonDriveFileId": "1FcMJ0jP_7sQrz-ERpIAHysYdq3WuOq5X",
+    "chapterOrder": 25,
+    "type": "single",
+    "prompt": "Bristle brushes simulate:",
+    "options": [
+      "Pixel art",
+      "Natural paint strokes",
+      "Barcode lines",
+      "Text"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Realistic brush textures.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3606-01",
+    "lessonDriveFileId": "1mFkkMCyv1wGmJ7eoDJSxgWAHVZrj3LhH",
+    "chapterOrder": 25,
+    "type": "single",
+    "prompt": "Image brushes (now called pattern or art brushes) stretch:",
+    "options": [
+      "Pixels across the canvas",
+      "Text across a page",
+      "Artwork along the length of a path",
+      "Colours into gradients"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Art follows the path.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3703-01",
+    "lessonDriveFileId": "1LylU9j11dsMm98vUwT4XiYcc3n5fT9XN",
+    "chapterOrder": 26,
+    "type": "single",
+    "prompt": "Before using Image Trace on a complex photo, you should:",
+    "options": [
+      "Increase noise",
+      "Reduce resolution heavily",
+      "Add text",
+      "Simplify and adjust contrast in the image"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Cleaner input, cleaner vectors.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3704-01",
+    "lessonDriveFileId": "1so7RcEDdztzhH2PgBoj9N7BetbXXVMza",
+    "chapterOrder": 26,
+    "type": "single",
+    "prompt": "Image Trace in Illustrator:",
+    "options": [
+      "Converts raster images into editable vector paths",
+      "Converts vectors to pixels",
+      "Exports PDFs",
+      "Adds layers for each colour in the image"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Vectorise sketches or logos.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3705-01",
+    "lessonDriveFileId": "1kqt94Kc26AMOLs0-Js_0kj42xBjHJV_u",
+    "chapterOrder": 26,
+    "type": "single",
+    "prompt": "After tracing an image, Live Paint helps you:",
+    "options": [
+      "Delete the tracing",
+      "Fill enclosed regions with colour easily",
+      "Change file type",
+      "Add audio to animated vector artwork"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Colour traced artwork.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3801-01",
+    "lessonDriveFileId": "1hvU89OYqmqMQj7rKW9ghh828LNELGqeg",
+    "chapterOrder": 27,
+    "type": "single",
+    "prompt": "Character formatting includes:",
+    "options": [
+      "Layer order",
+      "Gradient stops",
+      "Font, size, tracking, kerning and leading",
+      "Brush type and pressure settings"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Control text appearance.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3801-02",
+    "lessonDriveFileId": "1hvU89OYqmqMQj7rKW9ghh828LNELGqeg",
+    "chapterOrder": 27,
+    "type": "single",
+    "prompt": "Area type in Illustrator:",
+    "options": [
+      "Places text on a curve",
+      "Converts text to pixels",
+      "Deletes text",
+      "Flows text inside a shape"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Text fills the shape.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3801-03",
+    "lessonDriveFileId": "1hvU89OYqmqMQj7rKW9ghh828LNELGqeg",
+    "chapterOrder": 27,
+    "type": "single",
+    "prompt": "Type on a Path:",
+    "options": [
+      "Makes text follow a line or curve",
+      "Fills a shape",
+      "Rasterises text",
+      "Exports text as a separate file"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Curved headlines.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3804-01",
+    "lessonDriveFileId": "1UnI2A6jNvqpdfE7NbuM28ioDK2eLs19u",
+    "chapterOrder": 27,
+    "type": "single",
+    "prompt": "Adobe Fonts provides:",
+    "options": [
+      "Free fonts with no licence terms",
+      "Licensed fonts you can activate with Creative Cloud",
+      "Only system fonts",
+      "Only images"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Check licences for client work.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3804-02",
+    "lessonDriveFileId": "1UnI2A6jNvqpdfE7NbuM28ioDK2eLs19u",
+    "chapterOrder": 27,
+    "type": "single",
+    "prompt": "Create Outlines on text:",
+    "options": [
+      "Makes text editable",
+      "Changes the font",
+      "Converts letters into vector shapes",
+      "Deletes text and keeps the empty frame"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Useful for logos; keep an editable copy.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3805-01",
+    "lessonDriveFileId": "1CIMzUodHkyY6Tite65BJacDdamIDbdgT",
+    "chapterOrder": 27,
+    "type": "single",
+    "prompt": "Variable fonts let you:",
+    "options": [
+      "Only use bold",
+      "Remove text from images automatically",
+      "Change colour mode",
+      "Adjust weight, width and other axes smoothly"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "One file, many styles.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3805-02",
+    "lessonDriveFileId": "1CIMzUodHkyY6Tite65BJacDdamIDbdgT",
+    "chapterOrder": 27,
+    "type": "single",
+    "prompt": "SVG (OpenType-SVG) fonts can include:",
+    "options": [
+      "Multiple colours and gradients in glyphs",
+      "Only black outlines",
+      "Audio that plays when the text is clicked",
+      "Video"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Colourful emoji-like fonts.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3801-04",
+    "lessonDriveFileId": "1hvU89OYqmqMQj7rKW9ghh828LNELGqeg",
+    "chapterOrder": 27,
+    "type": "single",
+    "prompt": "Paragraph formatting controls:",
+    "options": [
+      "Font colour only",
+      "Alignment, indents and spacing between paragraphs",
+      "Brush size used for hand lettering",
+      "Layer lock"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Layout of text blocks.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3804-03",
+    "lessonDriveFileId": "1UnI2A6jNvqpdfE7NbuM28ioDK2eLs19u",
+    "chapterOrder": 27,
+    "type": "single",
+    "prompt": "Font licensing matters because:",
+    "options": [
+      "All fonts are free for any use",
+      "It changes colours when the file is printed",
+      "Using fonts without the right licence can break the law",
+      "It slows Illustrator"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Check commercial terms.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3801-05",
+    "lessonDriveFileId": "1hvU89OYqmqMQj7rKW9ghh828LNELGqeg",
+    "chapterOrder": 27,
+    "type": "single",
+    "prompt": "Glyphs panel lets you:",
+    "options": [
+      "Change layers",
+      "Export files",
+      "Draw shapes using letter outlines",
+      "Insert special characters and alternates"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Access ligatures and symbols.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3805-03",
+    "lessonDriveFileId": "1CIMzUodHkyY6Tite65BJacDdamIDbdgT",
+    "chapterOrder": 27,
+    "type": "single",
+    "prompt": "Variable fonts were introduced in Illustrator CC 2018 to:",
+    "options": [
+      "Give flexible typographic control from one font file",
+      "Remove text tools",
+      "Replace Photoshop",
+      "Add audio to text in animated graphics"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Smooth style adjustments.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3804-04",
+    "lessonDriveFileId": "1UnI2A6jNvqpdfE7NbuM28ioDK2eLs19u",
+    "chapterOrder": 27,
+    "type": "single",
+    "prompt": "Why keep an editable copy before outlining text?",
+    "options": [
+      "Outlines improve spelling",
+      "Outlined text can't be edited as text later",
+      "It's required by printers always",
+      "Outlines add colour"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Preserve flexibility.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3804-05",
+    "lessonDriveFileId": "1UnI2A6jNvqpdfE7NbuM28ioDK2eLs19u",
+    "chapterOrder": 27,
+    "type": "single",
+    "prompt": "Why do designers convert logo text to outlines before sending final files?",
+    "options": [
+      "It makes text editable",
+      "It reduces quality so files are smaller",
+      "The logo displays correctly even if the font isn't installed",
+      "It changes the colour mode"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Fonts become shapes.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3801-06",
+    "lessonDriveFileId": "1hvU89OYqmqMQj7rKW9ghh828LNELGqeg",
+    "chapterOrder": 27,
+    "type": "single",
+    "prompt": "Which type option flows text inside a circle?",
+    "options": [
+      "Point type",
+      "Type on a Path",
+      "Vertical type only",
+      "Area type"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Text fills the shape.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3805-04",
+    "lessonDriveFileId": "1CIMzUodHkyY6Tite65BJacDdamIDbdgT",
+    "chapterOrder": 27,
+    "type": "single",
+    "prompt": "What can you adjust smoothly with a variable font?",
+    "options": [
+      "Weight and width along continuous axes",
+      "Only colour and transparency",
+      "Only file size",
+      "Only layers"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Axes replace fixed styles.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3907-01",
+    "lessonDriveFileId": "1EHIocQ7Qc5wOHxdAc2-phcaMl3V_WMWI",
+    "chapterOrder": 28,
+    "type": "single",
+    "prompt": "Envelope Distort lets you:",
+    "options": [
+      "Change file format",
+      "Warp artwork into a shape or mesh",
+      "Add text inside the distorted shape",
+      "Export PNGs"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Bend and reshape art.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3908-01",
+    "lessonDriveFileId": "1LbjwUH27EZHqDx6wwb5SwnPQqYcwE48j",
+    "chapterOrder": 28,
+    "type": "single",
+    "prompt": "Puppet Warp lets you:",
+    "options": [
+      "Delete artwork",
+      "Change colour mode",
+      "Bend parts of artwork using pins",
+      "Add layers"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Natural reshaping.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3914-01",
+    "lessonDriveFileId": "1v1o-LsMC0N0eLzL9h5X5BrEeChUJ21nw",
+    "chapterOrder": 28,
+    "type": "single",
+    "prompt": "Pattern Options let you:",
+    "options": [
+      "Export videos",
+      "Install fonts",
+      "Draw text that repeats across the canvas",
+      "Create and refine seamless repeating patterns"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Tile types, spacing and overlap.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3907-02",
+    "lessonDriveFileId": "1EHIocQ7Qc5wOHxdAc2-phcaMl3V_WMWI",
+    "chapterOrder": 28,
+    "type": "single",
+    "prompt": "Make with Warp offers presets like:",
+    "options": [
+      "Arc, Flag and Bulge",
+      "Blur, Sharpen, Noise",
+      "Crop, Rotate",
+      "Save, Print"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Quick distortions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3914-02",
+    "lessonDriveFileId": "1v1o-LsMC0N0eLzL9h5X5BrEeChUJ21nw",
+    "chapterOrder": 28,
+    "type": "single",
+    "prompt": "A seamless pattern:",
+    "options": [
+      "Has obvious edges",
+      "Repeats without visible joins",
+      "Never repeats",
+      "Is always one colour"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Tiles blend together.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3908-02",
+    "lessonDriveFileId": "1LbjwUH27EZHqDx6wwb5SwnPQqYcwE48j",
+    "chapterOrder": 28,
+    "type": "single",
+    "prompt": "Pins in Puppet Warp act as:",
+    "options": [
+      "Colour swatches",
+      "Text boxes that hold labels for each pin",
+      "Anchor points that you can move or keep fixed",
+      "Export settings"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Control deformation.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3907-03",
+    "lessonDriveFileId": "1EHIocQ7Qc5wOHxdAc2-phcaMl3V_WMWI",
+    "chapterOrder": 28,
+    "type": "single",
+    "prompt": "Envelope Distort with Top Object uses:",
+    "options": [
+      "The bottom shape as text",
+      "A random shape",
+      "A raster image only",
+      "The shape on top as the warp container"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Art takes the top shape.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3914-03",
+    "lessonDriveFileId": "1v1o-LsMC0N0eLzL9h5X5BrEeChUJ21nw",
+    "chapterOrder": 28,
+    "type": "single",
+    "prompt": "Patterns are stored in:",
+    "options": [
+      "The Swatches panel",
+      "The Layers panel",
+      "The Character panel",
+      "The History panel"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Apply as fills.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3907-04",
+    "lessonDriveFileId": "1EHIocQ7Qc5wOHxdAc2-phcaMl3V_WMWI",
+    "chapterOrder": 28,
+    "type": "single",
+    "prompt": "Blends in Illustrator create:",
+    "options": [
+      "Text effects only",
+      "Intermediate steps between two objects",
+      "Raster images",
+      "File backups saved between each step"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Smooth transitions or repeats.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3908-03",
+    "lessonDriveFileId": "1LbjwUH27EZHqDx6wwb5SwnPQqYcwE48j",
+    "chapterOrder": 28,
+    "type": "single",
+    "prompt": "Puppet Warp is best for:",
+    "options": [
+      "Exporting files",
+      "Making tables with even rows and columns",
+      "Posing illustrations like characters naturally",
+      "Changing fonts"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Organic adjustments.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3914-04",
+    "lessonDriveFileId": "1v1o-LsMC0N0eLzL9h5X5BrEeChUJ21nw",
+    "chapterOrder": 28,
+    "type": "single",
+    "prompt": "Hex-by-column tile types help with:",
+    "options": [
+      "Text alignment",
+      "Colour modes",
+      "Layer locking",
+      "Hexagonal pattern layouts"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Different repeat structures.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3907-05",
+    "lessonDriveFileId": "1EHIocQ7Qc5wOHxdAc2-phcaMl3V_WMWI",
+    "chapterOrder": 28,
+    "type": "single",
+    "prompt": "Expanding an envelope makes the distortion:",
+    "options": [
+      "Permanent, converting it into regular paths",
+      "Editable forever",
+      "Disappear",
+      "Raster, so it can be edited in Photoshop"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Finalise the shape.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "graphics-design-l3914-05",
+    "lessonDriveFileId": "1v1o-LsMC0N0eLzL9h5X5BrEeChUJ21nw",
+    "chapterOrder": 28,
+    "type": "single",
+    "prompt": "Which feature creates a seamless repeating background pattern?",
+    "options": [
+      "Image Trace on a photo of fabric",
+      "Pattern Options / Make Pattern",
+      "Puppet Warp",
+      "Clipping Mask"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Object > Pattern > Make.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3908-04",
+    "lessonDriveFileId": "1LbjwUH27EZHqDx6wwb5SwnPQqYcwE48j",
+    "chapterOrder": 28,
+    "type": "single",
+    "prompt": "Which tool bends a character's arm by moving pins?",
+    "options": [
+      "Envelope Distort Make with Mesh",
+      "Shape Builder",
+      "Puppet Warp",
+      "Eyedropper"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Pin-based deformation.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3907-06",
+    "lessonDriveFileId": "1EHIocQ7Qc5wOHxdAc2-phcaMl3V_WMWI",
+    "chapterOrder": 28,
+    "type": "single",
+    "prompt": "To bend text into an arc shape quickly, use:",
+    "options": [
+      "Image Trace",
+      "Pathfinder Unite",
+      "Live Paint applied to the text's fill",
+      "Envelope Distort > Make with Warp > Arc"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Warp presets.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l4005-01",
+    "lessonDriveFileId": "1okpqXOpVQ1j6jeRaBd0REOrZ4tKyuDuY",
+    "chapterOrder": 29,
+    "type": "single",
+    "prompt": "Adobe Bridge helps designers:",
+    "options": [
+      "Browse, organise and preview creative files",
+      "Draw vectors",
+      "Edit videos",
+      "Write code for websites and apps"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "File management across Adobe apps.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l4006-01",
+    "lessonDriveFileId": "1h5Xq33VQYf1bVTAmvGxSjqSuDT6uSRxa",
+    "chapterOrder": 29,
+    "type": "single",
+    "prompt": "Creative Cloud Libraries let you:",
+    "options": [
+      "Delete fonts that teams no longer use",
+      "Share colours, graphics and type styles across apps and teams",
+      "Print documents",
+      "Change file formats"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Consistent assets everywhere.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l4007-01",
+    "lessonDriveFileId": "14jnUJZR9z_oK0rXk1bGtlQA_Cwe1d3rP",
+    "chapterOrder": 29,
+    "type": "single",
+    "prompt": "Archiving a finished project helps:",
+    "options": [
+      "Make files disappear",
+      "Change colours across every archived file",
+      "Keep files organised and recoverable later",
+      "Edit faster now"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Package and store properly.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l4102-01",
+    "lessonDriveFileId": "1bMKxS0MnjXCeV4iigJpkoialnErRN7ih",
+    "chapterOrder": 30,
+    "type": "single",
+    "prompt": "Global Edit in Illustrator lets you:",
+    "options": [
+      "Edit one pixel",
+      "Export videos of the artwork's layers",
+      "Install plug-ins",
+      "Change all similar objects at once"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Edit repeated elements together.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l4104-01",
+    "lessonDriveFileId": "1eDeT2W5ApxGfoY-yhXkCu2y9Tf5D3FHh",
+    "chapterOrder": 30,
+    "type": "single",
+    "prompt": "Customisable toolbars in newer Illustrator versions help you:",
+    "options": [
+      "Show only the tools you use most",
+      "Remove all tools",
+      "Change file types",
+      "Print faster by hiding unused tools"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Cleaner workspace.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l4204-01",
+    "lessonDriveFileId": "1CiXvBbVPKhzbynqFdVRXxAo9dYnbs76H",
+    "chapterOrder": 31,
+    "type": "single",
+    "prompt": "Recolour Artwork lets you:",
+    "options": [
+      "Rasterise artwork",
+      "Change colour schemes across artwork quickly",
+      "Delete layers",
+      "Add text in the brand's colour palette"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Explore colour variations.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l4206-01",
+    "lessonDriveFileId": "1xlI8iiSoF6q2miQMsQPz_n7Ki8e7-Zq9",
+    "chapterOrder": 31,
+    "type": "single",
+    "prompt": "Background Save means:",
+    "options": [
+      "Files save to the background layer",
+      "Backgrounds are deleted",
+      "You can keep working while Illustrator saves",
+      "Saving is disabled"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Less waiting on large files.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l4301-01",
+    "lessonDriveFileId": "1t1tCFwp9m6-t25SskgFQv4W-jckYKSTG",
+    "chapterOrder": 32,
+    "type": "single",
+    "prompt": "A strong design portfolio should include:",
+    "options": [
+      "Every file you've made",
+      "Only unfinished work to show your process",
+      "Work you didn't create",
+      "Your best work with short explanations of each project"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Curate and explain.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l4302-01",
+    "lessonDriveFileId": "1vin54Z6i9goljcKn0UCSb25ktrespxNQ",
+    "chapterOrder": 32,
+    "type": "single",
+    "prompt": "Which habit helps designers keep improving after a course?",
+    "options": [
+      "Regular practice projects and seeking feedback",
+      "Stopping practice once the course is finished",
+      "Avoiding critique",
+      "Using one tool forever"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Consistent practice builds skill.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l207-07",
+    "lessonDriveFileId": "10YqUD4ircFOYbDLD5KVBmpmGBBeFWCpR",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which principle is at work when every heading in a brochure uses the same colour and font?",
+    "options": [
+      "Closure",
+      "Repetition",
+      "Proximity",
+      "Figure–ground"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Consistent styling repeats across pages.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l305-07",
+    "lessonDriveFileId": "1QqYtUMAdCCqe6FJ1ZK9yUuGeVTIsNl-w",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which palette uses colours next to each other on the colour wheel, like yellow, yellow-orange and orange?",
+    "options": [
+      "Complementary",
+      "Triadic",
+      "Analogous",
+      "Monochromatic"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Neighbouring hues feel harmonious.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l426-06",
+    "lessonDriveFileId": "1dFE_YvxtnSiKYaCnRokBn5fqLUi_yypQ",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "What happens when you enlarge a vector logo to billboard size?",
+    "options": [
+      "It becomes pixelated",
+      "It changes colour",
+      "It loses its paths",
+      "It stays perfectly sharp"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Vectors scale without quality loss.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l561-06",
+    "lessonDriveFileId": "18WbxAUTo9K8K5NUhyRYLIysaNqFVkbRi",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which tool copies pixels exactly from one area to another?",
+    "options": [
+      "Clone Stamp",
+      "Spot Healing Brush",
+      "Content-Aware Fill",
+      "Patch Tool"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Exact duplication, no blending.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l704-06",
+    "lessonDriveFileId": "1Pdfnjd5eKIQkq-BCXDFlpTwHTugGe-zQ",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which aspect ratio gives a feed post the most screen space on Instagram?",
+    "options": [
+      "16:9 landscape",
+      "4:5 portrait",
+      "1:2 landscape",
+      "3:1 banner"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Portrait posts fill more of the feed.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1003-07",
+    "lessonDriveFileId": "1Vsjstt6iZYT1cl0YngORUeuqGfCtIESK",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Which reading pattern is typical for text-heavy web pages?",
+    "options": [
+      "Z-pattern",
+      "Circular pattern",
+      "F-pattern",
+      "Bottom-up pattern"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Readers scan the top and left edge.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1101-05",
+    "lessonDriveFileId": "1-XB_0eVOEO6VAS7cFVA3v6z1QQcScuQP",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which typeface category is Times New Roman?",
+    "options": [
+      "Sans-serif",
+      "Script",
+      "Monospace",
+      "Serif"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "It has small finishing strokes.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1406-06",
+    "lessonDriveFileId": "14-xl7FVC1LqXqzmylxW2fdThurqH-NFb",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "What does Image Trace do in Illustrator?",
+    "options": [
+      "Converts a raster image into vector paths",
+      "Converts vectors into pixels",
+      "Exports a PDF",
+      "Adds a clipping mask"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Useful for vectorising sketches.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l1702-09",
+    "lessonDriveFileId": "14jeg09899lEJ-ARLesS0tzwN_GAZf0L2",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Which adjustment gives the most precise control over tones in a photo?",
+    "options": [
+      "Brightness/Contrast",
+      "Curves",
+      "Invert",
+      "Threshold"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Curves adjust specific tonal ranges.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3204-06",
+    "lessonDriveFileId": "1p56bF3M4JD70-6EUesSltljFXB-ZEWgH",
+    "chapterOrder": 21,
+    "type": "single",
+    "prompt": "Which shortcut fits the artboard in the Illustrator window?",
+    "options": [
+      "Ctrl/Cmd + S",
+      "Ctrl/Cmd + P",
+      "Ctrl/Cmd + 0",
+      "Ctrl/Cmd + D"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Fit Artboard in Window.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3501-08",
+    "lessonDriveFileId": "1Is3BfKvEdALYGnO88jy63xoeexmRlriv",
+    "chapterOrder": 24,
+    "type": "single",
+    "prompt": "Holding Shift while drawing an ellipse creates:",
+    "options": [
+      "A square",
+      "A star with five points",
+      "A line",
+      "A perfect circle"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Shift constrains proportions.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "graphics-design-l3602-02",
+    "lessonDriveFileId": "1oVObQRb51HSGf_RPE1OmofXJsPBlt3pL",
+    "chapterOrder": 25,
+    "type": "single",
+    "prompt": "Which brush type is best for scattering stars along a path?",
+    "options": [
+      "Scatter brush",
+      "Bristle brush",
+      "Calligraphic brush",
+      "Blob Brush"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Copies are scattered along the path.",
+    "pools": [
+      "exam"
+    ]
+  }
+]

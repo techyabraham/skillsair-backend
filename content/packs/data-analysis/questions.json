@@ -1,0 +1,3156 @@
+[
+  {
+    "key": "data-analysis-l001-01",
+    "lessonDriveFileId": "1wQVJ-q1emYHTXBkopG2V5Xgg8PU1mg1H",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "What is the main aim of data analysis in a spreadsheet?",
+    "options": [
+      "Turning raw data into information that supports a decision",
+      "Making a worksheet look colourful",
+      "Storing as many rows as possible",
+      "Replacing all formulas with typed values"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Analysis means organising, summarising and visualising data so you can draw conclusions and act on them.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l001-02",
+    "lessonDriveFileId": "1wQVJ-q1emYHTXBkopG2V5Xgg8PU1mg1H",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Which tool is used throughout this programme to analyse data?",
+    "options": [
+      "Adobe Photoshop",
+      "Microsoft Excel",
+      "Microsoft Word",
+      "Google Slides"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "The programme teaches data analysis with Excel: sorting, filtering, charts, tables and statistics.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l001-03",
+    "lessonDriveFileId": "1wQVJ-q1emYHTXBkopG2V5Xgg8PU1mg1H",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "A manager hands you 5,000 rows of sales records. What is a sensible first step before building charts?",
+    "options": [
+      "Delete every column you don't recognise",
+      "Print the sheet and read every row",
+      "Check and clean the data: sort, filter and remove duplicates",
+      "Change the font to make it easier to read"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Clean, well-organised data gives reliable charts and statistics. Sorting, filtering and removing duplicates come first.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l101-01",
+    "lessonDriveFileId": "1-3e_IkLGSVg1UiPVaVnPx68oBQ2a2YkT",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "You need to sort a list of months January to December in calendar order, not A to Z. Which option do you use?",
+    "options": [
+      "Sort Smallest to Largest on the month column",
+      "Sort Z to A",
+      "Sort by cell colour",
+      "A custom sort order using a custom list"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Alphabetical sorting would put April first. A custom list (Sort dialog, Order, Custom List) keeps the calendar order.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l101-02",
+    "lessonDriveFileId": "1-3e_IkLGSVg1UiPVaVnPx68oBQ2a2YkT",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Where do you choose a custom list when sorting?",
+    "options": [
+      "In the Sort dialog, under the Order drop-down",
+      "In the Font group on the Home tab",
+      "In Page Layout, under Margins",
+      "In the Insert tab, under Tables"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Open Data, Sort, then pick Custom List from the Order drop-down for the column you're sorting.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l101-03",
+    "lessonDriveFileId": "1-3e_IkLGSVg1UiPVaVnPx68oBQ2a2YkT",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A task list has priorities High, Medium and Low. Which sort keeps them in that order?",
+    "options": [
+      "Sort A to Z",
+      "A custom list: High, Medium, Low",
+      "Sort smallest to largest",
+      "Sort Z to A"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "A to Z gives High, Low, Medium. A custom list lets you define the exact order you want.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l101-04",
+    "lessonDriveFileId": "1-3e_IkLGSVg1UiPVaVnPx68oBQ2a2YkT",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Why would you create a custom list in Excel?",
+    "options": [
+      "To protect a sheet with a password",
+      "To make a chart update automatically",
+      "To sort data in an order that isn't alphabetical or numerical",
+      "To count how many cells are empty"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Custom lists define your own order (days, months, sizes, priorities) for sorting and auto-fill.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l101-05",
+    "lessonDriveFileId": "1-3e_IkLGSVg1UiPVaVnPx68oBQ2a2YkT",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Sizes S, M, L and XL sorted A to Z come out as L, M, S, XL. What fixes this?",
+    "options": [
+      "Sorting Z to A instead",
+      "Sorting by font colour",
+      "Removing duplicate sizes first",
+      "Sorting with a custom list S, M, L, XL"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Text sorts alphabetically by default. A custom list sorts by the logical order you define.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l102-01",
+    "lessonDriveFileId": "1BttaDNoFIpwtMxsE70yY6PLxMZ6WJFce",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "You've highlighted overdue invoices in red. How can you bring all red rows to the top?",
+    "options": [
+      "Sort on Cell Colour and put red on top",
+      "Sort A to Z on the invoice number",
+      "Use Remove Duplicates",
+      "Insert a pie chart"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "In the Sort dialog, choose Sort On: Cell Colour, pick red and set it to On Top.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l102-02",
+    "lessonDriveFileId": "1BttaDNoFIpwtMxsE70yY6PLxMZ6WJFce",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "When sorting by colour, what else can Excel sort on besides cell colour?",
+    "options": [
+      "Column width and row height",
+      "Font colour and conditional formatting icons",
+      "Cell comments only",
+      "The sheet tab colour"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Sort On offers Cell Values, Cell Colour, Font Colour and Conditional Formatting Icon.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l102-03",
+    "lessonDriveFileId": "1BttaDNoFIpwtMxsE70yY6PLxMZ6WJFce",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "You want green rows first, then yellow, then the rest. What do you do?",
+    "options": [
+      "Sort once by cell values",
+      "Sort A to Z twice",
+      "Add two sort levels: green on top, then yellow on top",
+      "Filter by colour and delete the others"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Each colour needs its own level in the Sort dialog. Levels are applied in order from top to bottom.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l102-04",
+    "lessonDriveFileId": "1BttaDNoFIpwtMxsE70yY6PLxMZ6WJFce",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which statement about sorting by colour is true?",
+    "options": [
+      "Excel always puts red first",
+      "It only works on numbers",
+      "It deletes rows without a colour",
+      "You choose which colour goes on top or at the bottom"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Sorting by colour lets you pick a colour and place it On Top or On Bottom; uncoloured rows stay in the list.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l103-01",
+    "lessonDriveFileId": "1F9Jh8m1wqydyTftXxMWR8T1iyQDJ9_Zt",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A quick way to reverse the order of a list is to:",
+    "options": [
+      "Add a helper column numbered 1, 2, 3… and sort it largest to smallest",
+      "Select the list and press Ctrl+Z repeatedly to undo the order",
+      "Use Remove Duplicates",
+      "Hide every other row"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Numbering rows in their current order and sorting that number descending flips the list.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l103-02",
+    "lessonDriveFileId": "1F9Jh8m1wqydyTftXxMWR8T1iyQDJ9_Zt",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "After reversing a list with a helper column, what was in the last row is now:",
+    "options": [
+      "Deleted",
+      "In the first row",
+      "In the middle",
+      "Still in the last row"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Sorting the helper column largest to smallest moves the last item to the top.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l103-03",
+    "lessonDriveFileId": "1F9Jh8m1wqydyTftXxMWR8T1iyQDJ9_Zt",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Why do you need a helper column to reverse a list of names?",
+    "options": [
+      "Names can't be sorted in Excel",
+      "Helper columns make the file smaller",
+      "Sorting the names themselves would order them A to Z, not reverse them",
+      "Excel can only reverse lists that contain numbers or dates"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "You want the original order flipped, not alphabetical order, so you sort a number that records the original position.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l104-01",
+    "lessonDriveFileId": "1GgknH4geLxHtilk_MQoL0H8NQDl23Gte",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "For a column of prices, which sort puts the cheapest item first?",
+    "options": [
+      "Largest to Smallest",
+      "Z to A",
+      "Sort by font colour",
+      "Smallest to Largest"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Ascending order (Smallest to Largest) starts with the lowest value.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l104-02",
+    "lessonDriveFileId": "1GgknH4geLxHtilk_MQoL0H8NQDl23Gte",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "You sort only the Name column and Excel asks whether to expand the selection. What should you usually choose?",
+    "options": [
+      "Expand the selection, so each row stays together",
+      "Continue with the current selection",
+      "Cancel and delete the column",
+      "Sort by colour instead"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Sorting one column alone breaks the link between names and the rest of each row. Expanding keeps records intact.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l104-03",
+    "lessonDriveFileId": "1GgknH4geLxHtilk_MQoL0H8NQDl23Gte",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Descending order for text means:",
+    "options": [
+      "A to Z",
+      "Z to A",
+      "Shortest to longest",
+      "By cell colour"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Descending text order runs from Z to A.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l104-04",
+    "lessonDriveFileId": "1GgknH4geLxHtilk_MQoL0H8NQDl23Gte",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which sort shows your top-selling products first?",
+    "options": [
+      "Sort the product names A to Z",
+      "Sort the sales column Smallest to Largest",
+      "Sort the sales column Largest to Smallest",
+      "Sort by the date column A to Z"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Descending order on the sales value puts the highest sellers at the top.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l104-05",
+    "lessonDriveFileId": "1GgknH4geLxHtilk_MQoL0H8NQDl23Gte",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "You need to sort by Region, then by Sales within each region. What do you use?",
+    "options": [
+      "Two separate sorts on Sales",
+      "A pie chart",
+      "Remove Duplicates on Region",
+      "A multi-level sort: Region first, then Sales"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "The Sort dialog lets you add levels. Excel sorts by the first level, then breaks ties with the next.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l104-06",
+    "lessonDriveFileId": "1GgknH4geLxHtilk_MQoL0H8NQDl23Gte",
+    "chapterOrder": 2,
+    "type": "true_false",
+    "prompt": "Sorting a column on its own without expanding the selection can mix up your data.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "This statement is true.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l101-06",
+    "lessonDriveFileId": "1-3e_IkLGSVg1UiPVaVnPx68oBQ2a2YkT",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which of these is a sensible use of a custom sort order?",
+    "options": [
+      "Days of the week, Monday to Sunday",
+      "Prices from lowest to highest",
+      "Names from A to Z",
+      "Dates from oldest to newest"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Days, months and sizes have a natural order that isn't alphabetical, so a custom list is needed.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l102-05",
+    "lessonDriveFileId": "1BttaDNoFIpwtMxsE70yY6PLxMZ6WJFce",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Sorting by colour is most useful when:",
+    "options": [
+      "The sheet has no formatting",
+      "Colours mark a status you've already applied, like overdue or paid",
+      "You want to remove duplicates",
+      "You want Excel to choose colours for each row automatically"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Colour sorting groups rows by a visual status, such as those highlighted manually or by conditional formatting.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l103-04",
+    "lessonDriveFileId": "1F9Jh8m1wqydyTftXxMWR8T1iyQDJ9_Zt",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "You reversed a list using a helper column. What can you do with the helper column afterwards?",
+    "options": [
+      "Keep it, or the list reverts",
+      "Sort it A to Z to finish",
+      "Delete it, because the list is already in the new order",
+      "Keep it, because deleting it will undo the reversed order"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Once sorted, the rows stay in their new order. The helper column is no longer needed.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l104-07",
+    "lessonDriveFileId": "1GgknH4geLxHtilk_MQoL0H8NQDl23Gte",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Dates sorted Oldest to Newest are in:",
+    "options": [
+      "Descending order",
+      "Custom list order",
+      "Colour order",
+      "Ascending order"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Oldest to Newest is ascending; Newest to Oldest is descending.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l201-01",
+    "lessonDriveFileId": "1YhPuZImfmF1jduYWF_MSUPIZoylAtXSA",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which number filter shows only orders worth more than 50,000?",
+    "options": [
+      "Greater Than 50000",
+      "Less Than 50000",
+      "Equals 50000",
+      "Top 10"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Number Filters, Greater Than, then enter 50000.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l201-02",
+    "lessonDriveFileId": "1YhPuZImfmF1jduYWF_MSUPIZoylAtXSA",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "You want the five highest scores in a class list. Which filter helps?",
+    "options": [
+      "Text Filters, Contains",
+      "Top 10, changed to show the top 5 items",
+      "Date Filters, This Month",
+      "Remove Duplicates"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "The Top 10 filter can be set to any number of top or bottom items, or a percentage.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l201-03",
+    "lessonDriveFileId": "1YhPuZImfmF1jduYWF_MSUPIZoylAtXSA",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "To list customers whose names start with 'Ola', you use:",
+    "options": [
+      "Number Filters, Greater Than",
+      "Date Filters, Before",
+      "Text Filters, Begins With",
+      "Sort Z to A"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Begins With matches text at the start of each cell.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l201-04",
+    "lessonDriveFileId": "1YhPuZImfmF1jduYWF_MSUPIZoylAtXSA",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which text filter finds every product with 'phone' anywhere in its name?",
+    "options": [
+      "Begins With",
+      "Ends With",
+      "Equals",
+      "Contains"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Contains matches the text anywhere in the cell, e.g. 'Smartphone' and 'Phone case'.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l201-05",
+    "lessonDriveFileId": "1YhPuZImfmF1jduYWF_MSUPIZoylAtXSA",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Filtering a list:",
+    "options": [
+      "Hides rows that don't match, without deleting them",
+      "Deletes rows that don't match",
+      "Sorts the rows A to Z",
+      "Moves rows to a new sheet"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Filters only hide rows. Clear the filter and every row comes back.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l201-06",
+    "lessonDriveFileId": "1YhPuZImfmF1jduYWF_MSUPIZoylAtXSA",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which filter shows values above the column's average?",
+    "options": [
+      "Top 10",
+      "Above Average",
+      "Equals",
+      "Greater Than Or Equal To 0"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Number Filters include Above Average and Below Average, calculated from the visible column.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l202-01",
+    "lessonDriveFileId": "15sagpPv0RIWq9GU7YXSx8al4qVtzXAMQ",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which date filter shows only records from the current month?",
+    "options": [
+      "Next Year",
+      "Before",
+      "This Month",
+      "Last Quarter"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Date Filters include dynamic options like Today, This Week, This Month and This Quarter.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l202-02",
+    "lessonDriveFileId": "15sagpPv0RIWq9GU7YXSx8al4qVtzXAMQ",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "To show sales between 1 March and 31 March, you use:",
+    "options": [
+      "Text Filters, Contains",
+      "Number Filters, Top 10",
+      "Sort Oldest to Newest",
+      "Date Filters, Between"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Between lets you set a start and end date.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l202-03",
+    "lessonDriveFileId": "15sagpPv0RIWq9GU7YXSx8al4qVtzXAMQ",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Why might Excel show text filters instead of date filters on a date column?",
+    "options": [
+      "The dates are stored as text, not real dates",
+      "The workbook was saved in an older Excel file format",
+      "The sheet is protected",
+      "There are too many rows"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Excel only offers Date Filters when the values are real dates. Text that looks like dates must be converted.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l202-04",
+    "lessonDriveFileId": "15sagpPv0RIWq9GU7YXSx8al4qVtzXAMQ",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "A 'This Month' date filter applied in March and reopened in April will show:",
+    "options": [
+      "March's records forever",
+      "April's records, because the filter is relative to today",
+      "March's records, because filters save the dates they were made on",
+      "All records"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Relative date filters like This Month are recalculated against today's date.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l202-05",
+    "lessonDriveFileId": "15sagpPv0RIWq9GU7YXSx8al4qVtzXAMQ",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which date filter groups records by three-month periods?",
+    "options": [
+      "This Week",
+      "Week filters, such as Last Week",
+      "Quarter filters, such as Last Quarter",
+      "Year to Date only"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Quarter filters (This, Last, Next Quarter, or Quarter 1–4) cover three-month periods.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l203-01",
+    "lessonDriveFileId": "1pxaLRbkx8qXeEFRcLS5ld1b_JkYBeERu",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "What does Remove Duplicates do?",
+    "options": [
+      "Hides repeated rows temporarily",
+      "Highlights repeated rows in red",
+      "Highlights repeated rows so you can review them before deleting",
+      "Permanently deletes repeated rows, keeping the first one"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Remove Duplicates deletes the extra copies. Work on a copy if you might need the original.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l203-02",
+    "lessonDriveFileId": "1pxaLRbkx8qXeEFRcLS5ld1b_JkYBeERu",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Where is Remove Duplicates found?",
+    "options": [
+      "On the Data tab, in the Data Tools group",
+      "On the Insert tab",
+      "On the Home tab, in the Editing group",
+      "On the Review tab"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Data, Data Tools, Remove Duplicates.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l203-03",
+    "lessonDriveFileId": "1pxaLRbkx8qXeEFRcLS5ld1b_JkYBeERu",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "In the Remove Duplicates dialog, ticking only the Email column means:",
+    "options": [
+      "All rows with any blank cell are removed",
+      "Rows with the same email are treated as duplicates, even if other columns differ",
+      "Every column must match exactly",
+      "Only the Email column is deleted and other columns stay unchanged"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Excel compares only the ticked columns when deciding what counts as a duplicate.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l203-04",
+    "lessonDriveFileId": "1pxaLRbkx8qXeEFRcLS5ld1b_JkYBeERu",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Before removing duplicates from important data, it's wise to:",
+    "options": [
+      "Change the font",
+      "Insert a chart",
+      "Make a copy of the data",
+      "Freeze the top row"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Remove Duplicates permanently deletes rows. A copy lets you recover if you chose the wrong columns.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l203-05",
+    "lessonDriveFileId": "1pxaLRbkx8qXeEFRcLS5ld1b_JkYBeERu",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "After Remove Duplicates, Excel shows a message. What does it tell you?",
+    "options": [
+      "Which cells contain formulas",
+      "How long the action took",
+      "Which rows were removed, listed by row number",
+      "How many duplicates were removed and how many unique values remain"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "The summary reports duplicates removed and unique values remaining.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l204-01",
+    "lessonDriveFileId": "1Ao_m549cCvl3LKSFnvbjsyraR9arYmNe",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "How can you list unique values without deleting any data?",
+    "options": [
+      "Use Advanced Filter with 'Unique records only' and copy to another location",
+      "Sort the column and delete repeats by hand",
+      "Delete repeated rows by hand",
+      "Use Remove Duplicates and then press Undo to restore the data"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Advanced Filter can copy unique records elsewhere, leaving the original list untouched.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l204-02",
+    "lessonDriveFileId": "1Ao_m549cCvl3LKSFnvbjsyraR9arYmNe",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "In Excel 365, which function returns the unique values from a range?",
+    "options": [
+      "COUNT",
+      "UNIQUE",
+      "VLOOKUP",
+      "CONCAT"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "=UNIQUE(range) returns each distinct value once, as a dynamic array.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l204-03",
+    "lessonDriveFileId": "1Ao_m549cCvl3LKSFnvbjsyraR9arYmNe",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "What does a 'spill' mean for a function like UNIQUE?",
+    "options": [
+      "The formula has an error",
+      "The cells are coloured",
+      "The results fill as many cells below as needed automatically",
+      "The formula returns an error because too many values match"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Dynamic array functions spill their results into neighbouring cells.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l204-04",
+    "lessonDriveFileId": "1Ao_m549cCvl3LKSFnvbjsyraR9arYmNe",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "What's the key difference between Remove Duplicates and listing unique values?",
+    "options": [
+      "Remove Duplicates keeps all the original rows",
+      "They give completely different results",
+      "Unique values only works on numbers",
+      "Unique values leaves the original data unchanged"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Remove Duplicates edits the data in place; Advanced Filter or UNIQUE produce a separate list.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l204-05",
+    "lessonDriveFileId": "1Ao_m549cCvl3LKSFnvbjsyraR9arYmNe",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "A list of 200 sales has only 12 different product names. =UNIQUE on the product column returns:",
+    "options": [
+      "12 product names",
+      "200 product names",
+      "1 product name",
+      "An error"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "UNIQUE returns each distinct value once.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l205-01",
+    "lessonDriveFileId": "1OuF4en2TmPAZRS0Qabq1N_72m-dUG52z",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "What does the FILTER function return?",
+    "options": [
+      "The sum of a range",
+      "The rows from a range that meet a condition you set",
+      "A sorted copy of the whole range",
+      "The number of empty cells"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "=FILTER(array, include, [if_empty]) returns matching rows as a dynamic array.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l205-02",
+    "lessonDriveFileId": "1OuF4en2TmPAZRS0Qabq1N_72m-dUG52z",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "In =FILTER(A2:C100, C2:C100>1000, \"None\"), what does \"None\" do?",
+    "options": [
+      "It hides empty cells",
+      "It names the result",
+      "It's shown if no rows match",
+      "It sorts the result"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "The optional third argument is what FILTER returns when nothing meets the condition.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l205-03",
+    "lessonDriveFileId": "1OuF4en2TmPAZRS0Qabq1N_72m-dUG52z",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Why might =FILTER(...) return a #SPILL! error?",
+    "options": [
+      "The condition is too simple",
+      "The data has no header",
+      "The file is saved as PDF",
+      "Cells where the results need to go aren't empty"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "FILTER needs empty cells to spill into. Clear the blocking cells and it works.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l205-04",
+    "lessonDriveFileId": "1OuF4en2TmPAZRS0Qabq1N_72m-dUG52z",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "An advantage of the FILTER function over the filter buttons is that:",
+    "options": [
+      "Results update automatically when the source data changes",
+      "It permanently deletes non-matching rows",
+      "It works without any data",
+      "It formats cells in colour"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "FILTER is a formula, so its output recalculates whenever the source data changes.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l205-05",
+    "lessonDriveFileId": "1OuF4en2TmPAZRS0Qabq1N_72m-dUG52z",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which formula returns sales rows where the region in column B is 'Lagos'?",
+    "options": [
+      "=FILTER(\"Lagos\", A2:D50)",
+      "=FILTER(A2:D50, B2:B50=\"Lagos\")",
+      "=SUM(B2:B50=\"Lagos\")",
+      "=SORT(B2:B50, \"Lagos\")"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "The second argument is the condition, here B2:B50=\"Lagos\".",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l205-06",
+    "lessonDriveFileId": "1OuF4en2TmPAZRS0Qabq1N_72m-dUG52z",
+    "chapterOrder": 3,
+    "type": "true_false",
+    "prompt": "The FILTER function is a dynamic array function available in Excel 365 and Excel 2021 or later.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "This statement is true.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l201-07",
+    "lessonDriveFileId": "1YhPuZImfmF1jduYWF_MSUPIZoylAtXSA",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "You applied a filter and the row numbers turned blue with gaps. What does this mean?",
+    "options": [
+      "The sheet is corrupted",
+      "The rows were deleted",
+      "Some rows are hidden by the filter",
+      "The data is sorted"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Blue row numbers and gaps show that a filter is hiding rows.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l203-06",
+    "lessonDriveFileId": "1pxaLRbkx8qXeEFRcLS5ld1b_JkYBeERu",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which tool should you use to permanently clean a mailing list of repeated email addresses?",
+    "options": [
+      "Conditional formatting colour scales",
+      "A text filter on the Email column",
+      "Sort by colour",
+      "Remove Duplicates on the Email column"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Remove Duplicates deletes repeated entries based on the columns you tick.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l202-06",
+    "lessonDriveFileId": "15sagpPv0RIWq9GU7YXSx8al4qVtzXAMQ",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "A date filter set to 'Before 1/1/2026' shows:",
+    "options": [
+      "Records dated earlier than 1 January 2026",
+      "Records dated after 1 January 2026",
+      "Only records on 1 January 2026",
+      "All records"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Before shows dates earlier than the one you enter.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l301-01",
+    "lessonDriveFileId": "1MdEXZsCpbWmFQc1m8q8oUHeE-4A4LPmU",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which chart is best for comparing sales of five products in one month?",
+    "options": [
+      "Line chart",
+      "Column chart",
+      "Scatter plot",
+      "Area chart"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Column charts compare values across categories side by side.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l301-02",
+    "lessonDriveFileId": "1MdEXZsCpbWmFQc1m8q8oUHeE-4A4LPmU",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "In a clustered column chart, each cluster usually represents:",
+    "options": [
+      "A single cell",
+      "A percentage of a whole",
+      "A category, with one column per data series",
+      "A data series, with one column per category"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Clusters group several series (e.g. 2025 and 2026 sales) for each category.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l301-03",
+    "lessonDriveFileId": "1MdEXZsCpbWmFQc1m8q8oUHeE-4A4LPmU",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "What does a stacked column chart show that a clustered one doesn't?",
+    "options": [
+      "Exact percentages only",
+      "A trend over time only",
+      "A relationship between two variables",
+      "How parts add up to a total in each category"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Stacked columns show the total and how each series contributes to it.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l302-01",
+    "lessonDriveFileId": "1FJ6HVb08TkqcrmlrzNZ93-KadGOuM6fB",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which chart best shows how monthly revenue changed over a year?",
+    "options": [
+      "Line chart",
+      "Pie chart",
+      "Bar chart",
+      "Gantt chart"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Line charts show trends and changes over time.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l302-02",
+    "lessonDriveFileId": "1FJ6HVb08TkqcrmlrzNZ93-KadGOuM6fB",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A line chart is a poor choice when:",
+    "options": [
+      "The data covers 12 months",
+      "The categories have no natural order, like product names",
+      "The data covers several months in order",
+      "You compare two years over time"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Lines imply continuity, so they suit ordered data like time, not unrelated categories.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l302-03",
+    "lessonDriveFileId": "1FJ6HVb08TkqcrmlrzNZ93-KadGOuM6fB",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Two lines on one chart show 2025 and 2026 sales by month. This lets you:",
+    "options": [
+      "See each month's share of the total",
+      "Show the relationship between price and sales",
+      "Compare the trends of both years at a glance",
+      "Plan a project timeline"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Multiple series on a line chart make it easy to compare trends.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l303-01",
+    "lessonDriveFileId": "1slV5s9ECo1Ip9fDJAo0saM6e9tpem_2E",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "When is a pie chart a good choice?",
+    "options": [
+      "Showing a trend over 24 months",
+      "Comparing 20 products",
+      "Showing the relationship between two numbers",
+      "Showing parts of a whole with a few categories"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Pie charts work for one series with a small number of slices that add up to a whole.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l303-02",
+    "lessonDriveFileId": "1slV5s9ECo1Ip9fDJAo0saM6e9tpem_2E",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "How many data series can a standard pie chart show?",
+    "options": [
+      "One",
+      "Two",
+      "Five",
+      "Unlimited"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "A pie chart shows a single series. Use a doughnut or column chart for more.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l303-03",
+    "lessonDriveFileId": "1slV5s9ECo1Ip9fDJAo0saM6e9tpem_2E",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which data label is most useful on a pie chart?",
+    "options": [
+      "Series name only",
+      "Percentage",
+      "Axis title",
+      "Gridlines"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Percentage labels show each slice's share of the whole.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l303-04",
+    "lessonDriveFileId": "1slV5s9ECo1Ip9fDJAo0saM6e9tpem_2E",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Why should you avoid a pie chart with 15 slices?",
+    "options": [
+      "Excel can't create it",
+      "Pie charts only accept 3 slices",
+      "Small slices become hard to read and compare",
+      "It deletes data"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Too many slices make a pie unreadable. A bar chart compares many categories better.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l304-01",
+    "lessonDriveFileId": "1kUiInBQM-_zgkkBCghClO7YMruoMoWri",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A bar chart is like a column chart, except that:",
+    "options": [
+      "It can only show one value",
+      "It shows trends over time",
+      "It has no axis",
+      "The bars run horizontally"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Bar charts are horizontal versions of column charts.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l304-02",
+    "lessonDriveFileId": "1kUiInBQM-_zgkkBCghClO7YMruoMoWri",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "When is a bar chart better than a column chart?",
+    "options": [
+      "When category names are long",
+      "When data is over time",
+      "When you need percentages",
+      "When there are only two values"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Horizontal bars leave room for long labels on the vertical axis.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l304-03",
+    "lessonDriveFileId": "1kUiInBQM-_zgkkBCghClO7YMruoMoWri",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "You want to rank 12 Nigerian states by number of customers. Which chart is clearest?",
+    "options": [
+      "A pie chart with a slice for each state",
+      "A bar chart sorted from largest to smallest",
+      "A line chart",
+      "An area chart"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Sorted horizontal bars make rankings easy to read, with room for state names.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l305-01",
+    "lessonDriveFileId": "1jZWYmLBSs06l5t8qLi7im8Dcj3yByZOr",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "An area chart is a line chart with:",
+    "options": [
+      "Bars instead of lines",
+      "Slices of a circle",
+      "The space below the line filled in",
+      "Dots only"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Filling under the line emphasises the volume or magnitude over time.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l305-02",
+    "lessonDriveFileId": "1jZWYmLBSs06l5t8qLi7im8Dcj3yByZOr",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A stacked area chart is useful for showing:",
+    "options": [
+      "The relationship between two variables",
+      "A single percentage",
+      "A project schedule",
+      "How several parts contribute to a total over time"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Stacked areas show each part's contribution to the total across time.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l305-03",
+    "lessonDriveFileId": "1jZWYmLBSs06l5t8qLi7im8Dcj3yByZOr",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "In a standard (non-stacked) area chart with several series, what can go wrong?",
+    "options": [
+      "Larger series can hide smaller ones behind them",
+      "Excel can't show dates",
+      "It only works with text",
+      "Excel can only show one series at a time"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Overlapping filled areas can cover each other. Use stacked areas or transparency.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l306-01",
+    "lessonDriveFileId": "1pLcybY8J_LkkTWeb-wTailvXW1ENnPGC",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which chart shows the relationship between advertising spend and sales?",
+    "options": [
+      "Pie chart",
+      "Scatter plot",
+      "Column chart",
+      "Area chart"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Scatter plots show how two numeric variables relate to each other.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l306-02",
+    "lessonDriveFileId": "1pLcybY8J_LkkTWeb-wTailvXW1ENnPGC",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "In a scatter plot, each dot represents:",
+    "options": [
+      "A category total",
+      "The total of one category of data",
+      "One pair of values, one on each axis",
+      "A time period only"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Each point plots an X value against a Y value.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l306-03",
+    "lessonDriveFileId": "1pLcybY8J_LkkTWeb-wTailvXW1ENnPGC",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "What does a trendline on a scatter plot help you see?",
+    "options": [
+      "The exact value of every point",
+      "The chart's colour scheme",
+      "The number of rows",
+      "The overall direction of the relationship"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "A trendline summarises the pattern, such as whether Y rises as X rises.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l306-04",
+    "lessonDriveFileId": "1pLcybY8J_LkkTWeb-wTailvXW1ENnPGC",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Dots on a scatter plot form a band rising from bottom left to top right. This suggests:",
+    "options": [
+      "A positive relationship between the two variables",
+      "A perfect straight-line relationship",
+      "No relationship",
+      "A negative relationship between the two variables"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "As one variable increases, the other tends to increase.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l307-01",
+    "lessonDriveFileId": "1zXkMsfry8dUH2Mg73f17el66AaS5An8U",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A Gantt chart is mainly used for:",
+    "options": [
+      "Comparing market shares",
+      "Showing a project schedule over time",
+      "Showing a statistical distribution",
+      "Showing relationships between variables"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Gantt charts show tasks as bars along a timeline.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l307-02",
+    "lessonDriveFileId": "1zXkMsfry8dUH2Mg73f17el66AaS5An8U",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Excel builds a Gantt chart from which chart type?",
+    "options": [
+      "A pie chart",
+      "A line chart",
+      "A stacked bar chart",
+      "A scatter plot"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "A stacked bar chart with start dates and durations is the usual starting point.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l307-03",
+    "lessonDriveFileId": "1zXkMsfry8dUH2Mg73f17el66AaS5An8U",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "In an Excel Gantt chart, why is the start-date series given no fill?",
+    "options": [
+      "To delete the start dates",
+      "To turn it into a pie chart",
+      "To sort the tasks",
+      "So only the task duration bars are visible"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "The invisible first series pushes each duration bar to its start date.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l307-04",
+    "lessonDriveFileId": "1zXkMsfry8dUH2Mg73f17el66AaS5An8U",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Why do you reverse the category order on a Gantt chart's vertical axis?",
+    "options": [
+      "So the first task appears at the top",
+      "To hide the dates",
+      "To change bar colours",
+      "To add percentages"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Bar charts list categories bottom-up by default; reversing puts task 1 at the top.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l307-05",
+    "lessonDriveFileId": "1zXkMsfry8dUH2Mg73f17el66AaS5An8U",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which two columns of data does a basic Excel Gantt chart need for each task?",
+    "options": [
+      "Price and quantity",
+      "Start date and duration",
+      "Name and email",
+      "Total and average"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Each task bar is positioned by its start date and sized by its duration.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l301-04",
+    "lessonDriveFileId": "1MdEXZsCpbWmFQc1m8q8oUHeE-4A4LPmU",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Your boss asks for a chart comparing this year's quarterly profits. Which is the most suitable?",
+    "options": [
+      "Scatter plot",
+      "Pie chart showing all four years",
+      "Column chart",
+      "Gantt chart"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Comparing a few category values (quarters) suits a column chart.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l302-04",
+    "lessonDriveFileId": "1FJ6HVb08TkqcrmlrzNZ93-KadGOuM6fB",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which chart would you use to show daily website visitors over 90 days?",
+    "options": [
+      "Pie chart",
+      "Gantt chart",
+      "Bar chart with 90 bars",
+      "Line chart"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Many points over time are clearest as a line.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l303-05",
+    "lessonDriveFileId": "1slV5s9ECo1Ip9fDJAo0saM6e9tpem_2E",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A pie chart shows four slices: 40%, 30%, 20% and 10%. What do these numbers add up to?",
+    "options": [
+      "100%",
+      "40%",
+      "90%",
+      "It depends on the data"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "A pie chart always represents a whole of 100%.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l304-04",
+    "lessonDriveFileId": "1kUiInBQM-_zgkkBCghClO7YMruoMoWri",
+    "chapterOrder": 4,
+    "type": "true_false",
+    "prompt": "Bar charts and column charts can show the same data; the difference is the direction of the bars.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "This statement is true.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l305-04",
+    "lessonDriveFileId": "1jZWYmLBSs06l5t8qLi7im8Dcj3yByZOr",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which chart best emphasises the total volume of rainfall building up over a season?",
+    "options": [
+      "Pie chart",
+      "Area chart",
+      "Scatter plot",
+      "Gantt chart"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Area charts emphasise magnitude and accumulation over time.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l306-05",
+    "lessonDriveFileId": "1pLcybY8J_LkkTWeb-wTailvXW1ENnPGC",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which pair of values suits a scatter plot?",
+    "options": [
+      "Region names and their sales",
+      "Months and their names",
+      "Hours studied and exam score for each student",
+      "Product names and colours"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Scatter plots need two numeric measures for each item.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l307-06",
+    "lessonDriveFileId": "1zXkMsfry8dUH2Mg73f17el66AaS5An8U",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "In a project Gantt chart, two task bars overlap in time. What does that mean?",
+    "options": [
+      "One task was cancelled",
+      "The chart has an error",
+      "Both tasks have the same name",
+      "The two tasks run at the same time"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Overlapping bars show tasks scheduled in parallel.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l301-05",
+    "lessonDriveFileId": "1MdEXZsCpbWmFQc1m8q8oUHeE-4A4LPmU",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which chart element explains what each colour represents?",
+    "options": [
+      "The legend",
+      "The gridlines",
+      "The plot area",
+      "The axis title"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "The legend maps colours to data series.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l306-06",
+    "lessonDriveFileId": "1pLcybY8J_LkkTWeb-wTailvXW1ENnPGC",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A scatter plot shows dots spread randomly with no pattern. This suggests:",
+    "options": [
+      "A strong positive relationship",
+      "Little or no relationship between the variables",
+      "A strong negative relationship",
+      "The data is sorted"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "No visible pattern means the variables don't move together.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l302-05",
+    "lessonDriveFileId": "1FJ6HVb08TkqcrmlrzNZ93-KadGOuM6fB",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "To add a chart, you first select the data and then go to:",
+    "options": [
+      "The Review tab",
+      "The View tab",
+      "The Insert tab",
+      "The Formulas tab"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Insert, Charts, then pick the chart type.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l401-01",
+    "lessonDriveFileId": "1A2N9i0VGRaSGPC3MeJhag7Z97s6qmcIY",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "What is a structured reference?",
+    "options": [
+      "A reference to a cell in another workbook, like [Book2]B2",
+      "A reference to another workbook",
+      "A picture inside a cell",
+      "A formula reference that uses table and column names, like Sales[Amount]"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Structured references use names instead of cell addresses, so formulas are easier to read.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l401-02",
+    "lessonDriveFileId": "1A2N9i0VGRaSGPC3MeJhag7Z97s6qmcIY",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "In a table, =[@Price]*[@Qty] calculates:",
+    "options": [
+      "Price times quantity for the same row",
+      "The total of both columns",
+      "Price times quantity for the first row only",
+      "An error"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "The @ symbol means 'this row'.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l401-03",
+    "lessonDriveFileId": "1A2N9i0VGRaSGPC3MeJhag7Z97s6qmcIY",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "What happens when you add a new row to a table used by =SUM(Sales[Amount])?",
+    "options": [
+      "The formula breaks",
+      "The new row is included automatically",
+      "You must edit the formula",
+      "The new row is ignored"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Structured references expand as the table grows.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l401-04",
+    "lessonDriveFileId": "1A2N9i0VGRaSGPC3MeJhag7Z97s6qmcIY",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which formula sums the Amount column of a table named Sales?",
+    "options": [
+      "=SUM(Amount)",
+      "=SUM(Sales)",
+      "=SUM(Sales[Amount])",
+      "=SUM(Table1)"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Table name, then the column name in square brackets.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l401-05",
+    "lessonDriveFileId": "1A2N9i0VGRaSGPC3MeJhag7Z97s6qmcIY",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A big advantage of structured references is that formulas:",
+    "options": [
+      "Run faster than any other formula",
+      "Can't be copied",
+      "Only work on text",
+      "Adjust automatically when the table grows or shrinks"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Because they refer to table columns, they always cover the current rows.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l401-06",
+    "lessonDriveFileId": "1A2N9i0VGRaSGPC3MeJhag7Z97s6qmcIY",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "When you type a formula in one cell of a table column, what usually happens?",
+    "options": [
+      "The formula fills down the whole column automatically",
+      "Excel shows an error until you press F9",
+      "Only that cell changes until you copy it down manually",
+      "The column is sorted"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Tables create calculated columns, copying the formula to every row.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l402-01",
+    "lessonDriveFileId": "1Y0WQGLgq7g92mGEjsJ3Bn22jq3sVz86J",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "How do you turn a range into an Excel table?",
+    "options": [
+      "Select the data and press Ctrl+B to format it",
+      "Select the data and press Ctrl+T (or Insert, Table)",
+      "Use Remove Duplicates",
+      "Insert a pie chart"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Ctrl+T or Insert, Table converts a range into a table.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l402-02",
+    "lessonDriveFileId": "1Y0WQGLgq7g92mGEjsJ3Bn22jq3sVz86J",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "What do 'banded rows' do in Table Design?",
+    "options": [
+      "Delete every other row",
+      "Lock rows from editing",
+      "Shade alternate rows to make them easier to read",
+      "Lock alternate rows so they can't be edited"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Banding alternates row colours for readability.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l402-03",
+    "lessonDriveFileId": "1Y0WQGLgq7g92mGEjsJ3Bn22jq3sVz86J",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which Table Design option adds a row that can show sums or averages?",
+    "options": [
+      "Header Row",
+      "Banded Columns",
+      "Filter Button",
+      "Total Row"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "The Total Row adds a row at the bottom where each cell can show a summary function.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l402-04",
+    "lessonDriveFileId": "1Y0WQGLgq7g92mGEjsJ3Bn22jq3sVz86J",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Why give your table a clear name like SalesData?",
+    "options": [
+      "So formulas and charts can refer to it clearly",
+      "To change its colour",
+      "To protect it with a password",
+      "To make it print faster"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Named tables make structured references readable and avoid confusion between tables.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l402-05",
+    "lessonDriveFileId": "1Y0WQGLgq7g92mGEjsJ3Bn22jq3sVz86J",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which feature appears automatically in an Excel table's header row?",
+    "options": [
+      "Data labels",
+      "Filter buttons",
+      "Page breaks",
+      "Comments"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Tables add filter and sort buttons to each header.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l402-06",
+    "lessonDriveFileId": "1Y0WQGLgq7g92mGEjsJ3Bn22jq3sVz86J",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Where do you rename a table?",
+    "options": [
+      "Home tab, Font box",
+      "File, Save As",
+      "Table Design tab, Table Name box",
+      "Review tab, Rename"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "The Table Name box sits at the left of the Table Design tab.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l403-01",
+    "lessonDriveFileId": "12TKZB6KHjX7hLlcH8_WIkBdRhElyCfNe",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "What is the Analysis ToolPak?",
+    "options": [
+      "A set of ready-made chart templates",
+      "A type of table style",
+      "A password manager",
+      "An Excel add-in with statistical analysis tools"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "It adds tools like Descriptive Statistics, Histogram, ANOVA and Correlation.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l403-02",
+    "lessonDriveFileId": "12TKZB6KHjX7hLlcH8_WIkBdRhElyCfNe",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "How do you enable the Analysis ToolPak on Windows?",
+    "options": [
+      "File, Options, Add-ins, Manage Excel Add-ins, Go, then tick Analysis ToolPak",
+      "Insert, Tables, ToolPak",
+      "Home, Styles, ToolPak",
+      "Insert, Get Add-ins, then search the Office Store"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Excel add-ins are switched on from File, Options, Add-ins.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l403-03",
+    "lessonDriveFileId": "12TKZB6KHjX7hLlcH8_WIkBdRhElyCfNe",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Once enabled, where does the Analysis ToolPak appear?",
+    "options": [
+      "Home tab, Font group",
+      "Data tab, as the Data Analysis button",
+      "Insert tab, Charts group",
+      "Formulas tab, Name Manager"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Look for Data Analysis on the right of the Data tab.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l403-04",
+    "lessonDriveFileId": "12TKZB6KHjX7hLlcH8_WIkBdRhElyCfNe",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "You can't find the Data Analysis button. What is the most likely reason?",
+    "options": [
+      "The worksheet is protected with a password",
+      "Your table has no name",
+      "The Analysis ToolPak add-in isn't enabled",
+      "The sheet is filtered"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Enable it in File, Options, Add-ins.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l403-05",
+    "lessonDriveFileId": "12TKZB6KHjX7hLlcH8_WIkBdRhElyCfNe",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which of these is NOT one of the Analysis ToolPak tools?",
+    "options": [
+      "Descriptive Statistics",
+      "Histogram",
+      "ANOVA",
+      "Remove Duplicates"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Remove Duplicates is a Data Tools command, not part of the ToolPak.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l402-07",
+    "lessonDriveFileId": "1Y0WQGLgq7g92mGEjsJ3Bn22jq3sVz86J",
+    "chapterOrder": 5,
+    "type": "true_false",
+    "prompt": "Converting a range to an Excel table makes it easier to sort, filter and add calculated columns.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "This statement is true.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l401-07",
+    "lessonDriveFileId": "1A2N9i0VGRaSGPC3MeJhag7Z97s6qmcIY",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Inside a table, what does the @ in [@Price] mean?",
+    "options": [
+      "The value from the current row",
+      "The whole Price column",
+      "The column header",
+      "The previous row"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "@ refers to the value in the same row as the formula.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l403-06",
+    "lessonDriveFileId": "12TKZB6KHjX7hLlcH8_WIkBdRhElyCfNe",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "The Analysis ToolPak's results usually appear:",
+    "options": [
+      "Only in a pop-up window that you can't save",
+      "In a new worksheet or an output range you choose",
+      "In the Excel title bar",
+      "In a separate program"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Each tool asks where to place the output: a range, new sheet or new workbook.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l402-08",
+    "lessonDriveFileId": "1Y0WQGLgq7g92mGEjsJ3Bn22jq3sVz86J",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Your data has a header row of column names. When creating a table, you should:",
+    "options": [
+      "Delete the header row",
+      "Sort the headers A to Z",
+      "Tick 'My table has headers'",
+      "Merge the header cells"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "This tells Excel to use the first row as column names.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l401-08",
+    "lessonDriveFileId": "1A2N9i0VGRaSGPC3MeJhag7Z97s6qmcIY",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Why are structured references easier to understand than =SUM(D2:D500)?",
+    "options": [
+      "They calculate faster than normal cell references",
+      "They don't need brackets",
+      "They work without a table",
+      "They describe what the data is, like Sales[Amount]"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Readable names show the meaning of a formula at a glance.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l402-09",
+    "lessonDriveFileId": "1Y0WQGLgq7g92mGEjsJ3Bn22jq3sVz86J",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "In a Total Row, how do you change a column's summary from Sum to Average?",
+    "options": [
+      "Click the Total Row cell and pick Average from its drop-down",
+      "Retype the whole table",
+      "Use Remove Duplicates",
+      "Type =AVERAGE in the header cell of the column"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Each Total Row cell has a drop-down with functions like Sum, Average, Count and Max.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l401-09",
+    "lessonDriveFileId": "1A2N9i0VGRaSGPC3MeJhag7Z97s6qmcIY",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which reference returns every data row in the Qty column of a table called Orders?",
+    "options": [
+      "Orders[#Headers]",
+      "Orders[Qty]",
+      "Qty!Orders",
+      "Orders[#Totals]"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "TableName[Column] covers all data rows in that column; [@Column] is just the current row.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l501-01",
+    "lessonDriveFileId": "15WMQffWUOa3863qzv4TrCXOS9CLBM5tr",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "What does a histogram show?",
+    "options": [
+      "The trend of a value over time",
+      "Parts of a whole",
+      "How often values fall within ranges (bins)",
+      "The relationship between two variables"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "A histogram shows the distribution of data by counting values in each bin.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l501-02",
+    "lessonDriveFileId": "15WMQffWUOa3863qzv4TrCXOS9CLBM5tr",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "In a histogram, what is a 'bin'?",
+    "options": [
+      "A deleted value",
+      "A chart title",
+      "A data series name",
+      "A range of values, such as 50–59"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Bins group values into intervals; the bars show how many values fall in each.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l501-03",
+    "lessonDriveFileId": "15WMQffWUOa3863qzv4TrCXOS9CLBM5tr",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Exam scores are mostly between 60 and 70, with few very high or low scores. A histogram would show:",
+    "options": [
+      "Tall bars in the middle and short bars at the ends",
+      "Tall bars at both ends and short bars in the middle",
+      "A pie slice for each score",
+      "Dots in a straight line"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Most values sit in the middle bins, so those bars are tallest.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l501-04",
+    "lessonDriveFileId": "15WMQffWUOa3863qzv4TrCXOS9CLBM5tr",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which question does a histogram answer best?",
+    "options": [
+      "What share of revenue comes from each region?",
+      "How are the customers' ages distributed?",
+      "How did sales change each month?",
+      "Which task starts first?"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Distributions are what histograms are designed to show.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l502-01",
+    "lessonDriveFileId": "1MB7ixr64QCZoflX0TO_2RWk2OpnJL4LD",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which measure is the middle value when data is sorted?",
+    "options": [
+      "Mean",
+      "Mode",
+      "Median",
+      "Range"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "The median splits sorted data into two equal halves.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l502-02",
+    "lessonDriveFileId": "1MB7ixr64QCZoflX0TO_2RWk2OpnJL4LD",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which measure is the value that appears most often?",
+    "options": [
+      "Median",
+      "Mean",
+      "Standard deviation",
+      "Mode"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "The mode is the most frequent value.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l502-03",
+    "lessonDriveFileId": "1MB7ixr64QCZoflX0TO_2RWk2OpnJL4LD",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "What does standard deviation tell you?",
+    "options": [
+      "How spread out the values are around the mean",
+      "The highest value",
+      "The total of all values",
+      "How many values there are"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "A low standard deviation means values cluster near the mean; a high one means they're spread out.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l502-04",
+    "lessonDriveFileId": "1MB7ixr64QCZoflX0TO_2RWk2OpnJL4LD",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "In the ToolPak's Descriptive Statistics tool, which option must you tick to get the full summary?",
+    "options": [
+      "Labels in second row",
+      "Summary statistics",
+      "Kth smallest only",
+      "Chart output"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Summary statistics outputs the mean, median, mode, standard deviation, range and more.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l502-05",
+    "lessonDriveFileId": "1MB7ixr64QCZoflX0TO_2RWk2OpnJL4LD",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Salaries in a small company are 80k, 85k, 90k, 95k and 2,000k. Which measure best describes a typical salary?",
+    "options": [
+      "Mean, because it uses every value",
+      "Range, because it shows the spread",
+      "Median, because the extreme value distorts the mean",
+      "Count, because there are five values"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "The median isn't pulled up by one very large value.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l502-06",
+    "lessonDriveFileId": "1MB7ixr64QCZoflX0TO_2RWk2OpnJL4LD",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Range is calculated as:",
+    "options": [
+      "Sum divided by count",
+      "The most frequent value",
+      "The middle value",
+      "Maximum minus minimum"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Range measures the spread between the largest and smallest values.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l503-01",
+    "lessonDriveFileId": "1mDFey5oDau0wdKVhlbd7vc8YzEReMDmy",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "What does ANOVA test?",
+    "options": [
+      "Whether the means of three or more groups differ significantly",
+      "Whether two variables are correlated",
+      "Whether a list has duplicates",
+      "How to forecast next month"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Analysis of variance compares group means.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l503-02",
+    "lessonDriveFileId": "1mDFey5oDau0wdKVhlbd7vc8YzEReMDmy",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "In an ANOVA result, a p-value below 0.05 usually means:",
+    "options": [
+      "All group means are identical",
+      "At least one group mean is significantly different",
+      "The data has errors",
+      "The test must be repeated"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "A p-value below the significance level (often 0.05) lets you reject the hypothesis that all means are equal.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l503-03",
+    "lessonDriveFileId": "1mDFey5oDau0wdKVhlbd7vc8YzEReMDmy",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which Analysis ToolPak option compares the average sales of three branches?",
+    "options": [
+      "Moving Average",
+      "Histogram",
+      "Anova: Single Factor",
+      "F-Test Two-Sample for Variances"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Single Factor ANOVA compares the means of several groups on one factor.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l503-04",
+    "lessonDriveFileId": "1mDFey5oDau0wdKVhlbd7vc8YzEReMDmy",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "In ANOVA output, if F is greater than F crit, you conclude:",
+    "options": [
+      "There is no difference between the groups",
+      "The data must be sorted",
+      "The groups have the same variance",
+      "The difference between group means is statistically significant"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "F above the critical value means you reject the null hypothesis of equal means.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l503-05",
+    "lessonDriveFileId": "1mDFey5oDau0wdKVhlbd7vc8YzEReMDmy",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "You test three teaching methods and get p = 0.40 in ANOVA. What does this suggest?",
+    "options": [
+      "No significant difference between the methods' average scores",
+      "Method 1 is clearly best",
+      "One method is clearly better than the other two",
+      "All three methods failed"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "A high p-value means the differences could easily be due to chance.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l504-01",
+    "lessonDriveFileId": "10xSt3zvFEsvNoESE13wu2EZa2v5Jdrck",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "An F-test (two-sample for variances) compares:",
+    "options": [
+      "The means of three groups",
+      "The variances of two groups",
+      "The correlation of two variables",
+      "Two moving averages"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "The F-test checks whether two samples have equal variance.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l504-02",
+    "lessonDriveFileId": "10xSt3zvFEsvNoESE13wu2EZa2v5Jdrck",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Why might you run an F-test before a t-test?",
+    "options": [
+      "To remove duplicates",
+      "To create a histogram",
+      "To check whether to assume equal or unequal variances",
+      "To check whether the data has any duplicate values"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "The F-test result tells you which t-test version to use.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l504-03",
+    "lessonDriveFileId": "10xSt3zvFEsvNoESE13wu2EZa2v5Jdrck",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Two machines fill bottles. An F-test shows a significant difference in variance. This means:",
+    "options": [
+      "Both machines fill the same average amount",
+      "The machines are identical",
+      "The data has no variance",
+      "One machine is more consistent than the other"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Variance measures consistency; a significant difference means one varies more.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l505-01",
+    "lessonDriveFileId": "1h5R-CJ51j7kZiBFn25UjEqp8hiQ9iCMH",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "What does a moving average do to a noisy sales series?",
+    "options": [
+      "Smooths out short-term ups and downs to show the trend",
+      "Removes all data",
+      "Turns it into a pie chart",
+      "Removes every value that is below the average"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Averaging over a window evens out fluctuations.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l505-02",
+    "lessonDriveFileId": "1h5R-CJ51j7kZiBFn25UjEqp8hiQ9iCMH",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A 3-month moving average for March uses which months?",
+    "options": [
+      "March only",
+      "January, February and March",
+      "March, April and May",
+      "The whole year"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Each value averages the current period and the previous ones in the interval.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l505-03",
+    "lessonDriveFileId": "1h5R-CJ51j7kZiBFn25UjEqp8hiQ9iCMH",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Increasing the moving-average interval from 3 to 12 makes the line:",
+    "options": [
+      "Identical to the original data",
+      "Exactly the same",
+      "Smoother but slower to react to changes",
+      "More jagged and quicker to react to changes"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Longer windows smooth more but lag behind recent changes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l505-04",
+    "lessonDriveFileId": "1h5R-CJ51j7kZiBFn25UjEqp8hiQ9iCMH",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Why do the first few periods of a 3-period moving average show #N/A in the ToolPak output?",
+    "options": [
+      "The data is wrong",
+      "The interval is too small",
+      "Excel can't calculate averages",
+      "There aren't yet enough earlier values to average"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "The first value appears only when a full interval of data is available.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l506-01",
+    "lessonDriveFileId": "1h3NAJlgKVsqEcp1bQOfEnQrvZUec_fCn",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "How does exponential smoothing differ from a simple moving average?",
+    "options": [
+      "It gives more weight to recent values",
+      "It ignores recent values",
+      "It uses only the first value",
+      "It deletes outliers"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Weights decrease exponentially for older observations.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l506-02",
+    "lessonDriveFileId": "1h3NAJlgKVsqEcp1bQOfEnQrvZUec_fCn",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "In Excel's Exponential Smoothing tool, the damping factor equals:",
+    "options": [
+      "The smoothing constant itself",
+      "1 minus the smoothing constant (alpha)",
+      "The number of periods",
+      "The average of the data"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Excel asks for the damping factor, which is 1 − α.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l506-03",
+    "lessonDriveFileId": "1h3NAJlgKVsqEcp1bQOfEnQrvZUec_fCn",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A smaller damping factor (higher alpha) makes the forecast:",
+    "options": [
+      "Ignore recent changes",
+      "Flatten completely",
+      "React more quickly to recent changes",
+      "Equal the first value forever"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "A higher alpha weights recent data more heavily.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l506-04",
+    "lessonDriveFileId": "1h3NAJlgKVsqEcp1bQOfEnQrvZUec_fCn",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Exponential smoothing is commonly used for:",
+    "options": [
+      "Removing duplicates",
+      "Building Gantt charts",
+      "Naming tables",
+      "Short-term forecasting"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "It produces a smoothed series useful for forecasting the next period.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l507-01",
+    "lessonDriveFileId": "1bTBN5lLZKTN1vABRjt7SkTjhInGd2-cH",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A correlation coefficient of +0.9 means:",
+    "options": [
+      "A strong positive relationship",
+      "A strong negative relationship",
+      "No relationship",
+      "A perfect negative relationship"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Values near +1 mean the variables rise together.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l507-02",
+    "lessonDriveFileId": "1bTBN5lLZKTN1vABRjt7SkTjhInGd2-cH",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Correlation coefficients range from:",
+    "options": [
+      "0 to 100",
+      "−1 to +1",
+      "−100 to +100",
+      "0 to 1 only"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "−1 is a perfect negative relationship, +1 a perfect positive one, and 0 none.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l507-03",
+    "lessonDriveFileId": "1bTBN5lLZKTN1vABRjt7SkTjhInGd2-cH",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which Excel function calculates the correlation between two ranges?",
+    "options": [
+      "COUNT",
+      "AVERAGE",
+      "CORREL",
+      "MEDIAN"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "=CORREL(range1, range2) returns the correlation coefficient.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "data-analysis-l507-04",
+    "lessonDriveFileId": "1bTBN5lLZKTN1vABRjt7SkTjhInGd2-cH",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Ice cream sales and drowning incidents are positively correlated. What should you conclude?",
+    "options": [
+      "Ice cream causes drowning",
+      "Drowning causes ice cream sales",
+      "Buying ice cream causes more drowning incidents to happen",
+      "Correlation doesn't prove one causes the other; a third factor like hot weather may explain both"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Correlation shows that variables move together, not that one causes the other.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l507-05",
+    "lessonDriveFileId": "1bTBN5lLZKTN1vABRjt7SkTjhInGd2-cH",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A correlation of −0.8 between price and units sold means:",
+    "options": [
+      "As price rises, units sold tend to fall",
+      "As price rises, units sold rise",
+      "Price has no effect on units sold",
+      "Price and units sold are equal"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "A strong negative correlation means the variables move in opposite directions.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l501-05",
+    "lessonDriveFileId": "15WMQffWUOa3863qzv4TrCXOS9CLBM5tr",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which ToolPak option counts how many values fall in each bin you define?",
+    "options": [
+      "Correlation",
+      "Histogram",
+      "Anova: Single Factor",
+      "Moving Average"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "The Histogram tool produces a frequency table and optional chart.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l502-07",
+    "lessonDriveFileId": "1MB7ixr64QCZoflX0TO_2RWk2OpnJL4LD",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which Excel function returns the arithmetic mean?",
+    "options": [
+      "MEDIAN",
+      "MODE",
+      "AVERAGE",
+      "COUNT"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "=AVERAGE(range) adds the values and divides by how many there are.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l503-06",
+    "lessonDriveFileId": "1mDFey5oDau0wdKVhlbd7vc8YzEReMDmy",
+    "chapterOrder": 6,
+    "type": "true_false",
+    "prompt": "ANOVA tells you whether group means differ significantly, but not which specific groups differ.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "This statement is true.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l505-05",
+    "lessonDriveFileId": "1h5R-CJ51j7kZiBFn25UjEqp8hiQ9iCMH",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which statement about moving averages is true?",
+    "options": [
+      "They predict the future exactly",
+      "They predict future values exactly",
+      "They increase the noise in data",
+      "They help reveal the underlying trend in fluctuating data"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Smoothing removes short-term noise so the trend is easier to see.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l506-05",
+    "lessonDriveFileId": "1h3NAJlgKVsqEcp1bQOfEnQrvZUec_fCn",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "With exponential smoothing, which observation has the most influence on the next forecast?",
+    "options": [
+      "The most recent one",
+      "The oldest one",
+      "The largest one",
+      "All observations equally"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Weights decline exponentially as observations get older.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l507-06",
+    "lessonDriveFileId": "1bTBN5lLZKTN1vABRjt7SkTjhInGd2-cH",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A scatter plot and a correlation coefficient are often used together because:",
+    "options": [
+      "They give completely unrelated information",
+      "The plot shows the pattern and the coefficient measures its strength",
+      "Both remove duplicates",
+      "Both are only for dates"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "The chart gives a visual sense; the number quantifies the strength and direction.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l504-04",
+    "lessonDriveFileId": "10xSt3zvFEsvNoESE13wu2EZa2v5Jdrck",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which result from an F-test helps you decide whether variances are equal?",
+    "options": [
+      "The chart title",
+      "The number of bins",
+      "The p-value compared with your significance level",
+      "The number of observations in each sample"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "If p is below the significance level (e.g. 0.05), the variances differ significantly.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l501-06",
+    "lessonDriveFileId": "15WMQffWUOa3863qzv4TrCXOS9CLBM5tr",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "In a histogram of delivery times, a long tail of bars to the right means:",
+    "options": [
+      "All deliveries were on time",
+      "Most deliveries were very slow",
+      "The data is sorted",
+      "A few deliveries took much longer than most"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "A right tail means some unusually high values.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l502-08",
+    "lessonDriveFileId": "1MB7ixr64QCZoflX0TO_2RWk2OpnJL4LD",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Mean = 50, standard deviation = 2 for test A; mean = 50, standard deviation = 15 for test B. What can you say?",
+    "options": [
+      "Scores on test B are much more spread out",
+      "Test B's average is higher",
+      "Test A's scores are more spread out",
+      "Both tests have identical scores"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Same average, but a larger standard deviation means more variation.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l505-06",
+    "lessonDriveFileId": "1h5R-CJ51j7kZiBFn25UjEqp8hiQ9iCMH",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A shop owner plots a 4-week moving average of daily sales. What is she most likely trying to see?",
+    "options": [
+      "The exact sales on one specific day",
+      "Whether sales are generally rising or falling",
+      "How many products she stocks",
+      "Her customers' names"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "The moving average smooths daily noise to reveal the trend.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l503-07",
+    "lessonDriveFileId": "1mDFey5oDau0wdKVhlbd7vc8YzEReMDmy",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which situation calls for ANOVA rather than a correlation?",
+    "options": [
+      "Seeing whether height and weight move together",
+      "Ranking products by sales",
+      "Comparing average exam scores across four schools",
+      "Listing unique customer names"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "ANOVA compares means of groups; correlation measures a relationship between two numeric variables.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "data-analysis-l507-07",
+    "lessonDriveFileId": "1bTBN5lLZKTN1vABRjt7SkTjhInGd2-cH",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A correlation of 0.05 between two variables suggests:",
+    "options": [
+      "A very strong relationship",
+      "A perfect negative relationship",
+      "An error in the formula",
+      "Almost no linear relationship"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Values close to zero indicate little or no linear relationship.",
+    "pools": [
+      "exam"
+    ]
+  }
+]

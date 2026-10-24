@@ -1,0 +1,1202 @@
+[
+  {
+    "key": "freelancers-academy-l201-01",
+    "lessonDriveFileId": "1ZyHXG0grTqpaGA59VJQijdLiZtGXGWhv",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "On Fiverr, a 'gig' is:",
+    "options": [
+      "A service you offer to buyers, with a set price and delivery time",
+      "A job advert posted by a company",
+      "A fixed monthly salary paid by Fiverr to approved sellers",
+      "A type of review"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Sellers list gigs; buyers order them.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l201-02",
+    "lessonDriveFileId": "1ZyHXG0grTqpaGA59VJQijdLiZtGXGWhv",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Why might a seller create several related gigs?",
+    "options": [
+      "Fiverr requires exactly ten gigs",
+      "To reach more buyer searches with different services or angles",
+      "Because Fiverr ranks sellers by how many gigs they have",
+      "To avoid getting orders"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Related gigs widen your visibility while staying focused.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l201-03",
+    "lessonDriveFileId": "1ZyHXG0grTqpaGA59VJQijdLiZtGXGWhv",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Scaling a Fiverr business usually means:",
+    "options": [
+      "Taking every order regardless of skill",
+      "Dropping prices to zero",
+      "Growing orders and income without lowering quality",
+      "Ignoring messages"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Sustainable growth protects your ratings.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l202-01",
+    "lessonDriveFileId": "1MJ2G3pEsmPgHGjx_2uxru1shuJ1Dnabj",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "When creating a Fiverr seller account, you should use:",
+    "options": [
+      "A nickname and a friend's ID to stay private",
+      "A joke username",
+      "Someone else's ID",
+      "Your real details and a professional username"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Accurate details build trust and avoid verification problems.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l202-02",
+    "lessonDriveFileId": "1MJ2G3pEsmPgHGjx_2uxru1shuJ1Dnabj",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Why is identity verification important on freelance platforms?",
+    "options": [
+      "It protects buyers and sellers and is often required to withdraw earnings",
+      "It slows you down for no reason",
+      "It's optional and has no effect on payments",
+      "It automatically raises your gig prices"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Verification builds trust.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l203-01",
+    "lessonDriveFileId": "1mB0GBCz5j_RudcAJV9Iq1Jd0ixYomk8J",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A strong Fiverr profile photo is:",
+    "options": [
+      "A cartoon or logo copied online",
+      "A clear, friendly, professional photo of you",
+      "A group photo",
+      "A blurry selfie"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Real faces build trust.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l203-02",
+    "lessonDriveFileId": "1mB0GBCz5j_RudcAJV9Iq1Jd0ixYomk8J",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Your profile description should focus on:",
+    "options": [
+      "Your personal problems",
+      "Your favourite films",
+      "How you help buyers and what results you deliver",
+      "Complaints about past clients"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Buyers care about outcomes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l203-03",
+    "lessonDriveFileId": "1mB0GBCz5j_RudcAJV9Iq1Jd0ixYomk8J",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Listing relevant skills and languages on your profile helps:",
+    "options": [
+      "Fiverr hide your gigs",
+      "Reduce your orders",
+      "Fiverr choose your prices for you automatically",
+      "Buyers understand what you can do and how you communicate"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Clear skills improve matching.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l201-04",
+    "lessonDriveFileId": "1ZyHXG0grTqpaGA59VJQijdLiZtGXGWhv",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Focusing your gigs on one niche helps because:",
+    "options": [
+      "Buyers trust specialists and it's easier to rank",
+      "Fiverr bans generalists",
+      "Fiverr only allows one skill per account",
+      "It reduces skill"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Specialists stand out.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l203-04",
+    "lessonDriveFileId": "1mB0GBCz5j_RudcAJV9Iq1Jd0ixYomk8J",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A portfolio on your profile is useful because:",
+    "options": [
+      "It replaces the need to create any gigs at all",
+      "Buyers can see examples of your work before ordering",
+      "It hides your skills",
+      "It's required to log in"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Proof of work builds confidence.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l202-03",
+    "lessonDriveFileId": "1MJ2G3pEsmPgHGjx_2uxru1shuJ1Dnabj",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which of these should you avoid on a freelance platform?",
+    "options": [
+      "Answering messages quickly",
+      "Asking buyers questions before you start work",
+      "Sharing personal contact details to move clients off the platform",
+      "Asking clarifying questions"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Platforms often forbid off-platform contact and may suspend accounts.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l203-05",
+    "lessonDriveFileId": "1mB0GBCz5j_RudcAJV9Iq1Jd0ixYomk8J",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A professional tone in your profile shows:",
+    "options": [
+      "That you're too busy",
+      "That you don't care",
+      "That you're unavailable",
+      "Reliability and respect for buyers' time"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Tone shapes first impressions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l301-01",
+    "lessonDriveFileId": "1d2Ozw_2gubzHsXQdj1BMxUl3Xq1y3lDA",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Fiverr SEO is about:",
+    "options": [
+      "Helping your gig appear higher in Fiverr's search results",
+      "Building websites for Google",
+      "Building websites that rank on Google search",
+      "Designing logos"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Ranking within Fiverr brings buyer views.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l301-02",
+    "lessonDriveFileId": "1d2Ozw_2gubzHsXQdj1BMxUl3Xq1y3lDA",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which factor typically affects Fiverr gig ranking?",
+    "options": [
+      "The number of followers you have on Instagram",
+      "Relevance to the search plus your performance, like ratings and response time",
+      "Your profile background colour",
+      "The time zone of the buyer only"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Relevance and seller performance matter.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l302-01",
+    "lessonDriveFileId": "1uf-TEK0YBvah5rPcwrwQAFTZkScK0ktK",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "A keyword is:",
+    "options": [
+      "The password you use to log in to Fiverr",
+      "Your gig price",
+      "A word or phrase buyers type to find a service",
+      "A Fiverr level"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Use the words buyers use.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l302-02",
+    "lessonDriveFileId": "1uf-TEK0YBvah5rPcwrwQAFTZkScK0ktK",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "A good place to discover buyer keywords is:",
+    "options": [
+      "Your email spam folder",
+      "Random dictionaries",
+      "Your phone contacts",
+      "Fiverr's search bar suggestions"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Autocomplete shows real searches.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l303-01",
+    "lessonDriveFileId": "1G6bUE4ZLHsK5-sRznP18aDlR_Fa0p-nv",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Studying top-ranking gigs in your niche helps you:",
+    "options": [
+      "See which keywords and formats work, then create your own original version",
+      "Copy their text exactly",
+      "Copy their title and description word for word",
+      "Lower your prices to zero"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Learn from them, don't copy.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l304-01",
+    "lessonDriveFileId": "1nJ9RlibBY4xGwszF96pSpfC1DI8ix4ZP",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Where should your main keyword appear?",
+    "options": [
+      "Only in your username",
+      "In your gig title, tags and description naturally",
+      "Nowhere",
+      "Repeated 50 times in the description"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Natural placement helps relevance.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l304-02",
+    "lessonDriveFileId": "1nJ9RlibBY4xGwszF96pSpfC1DI8ix4ZP",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Keyword stuffing means:",
+    "options": [
+      "Choosing one clear keyword for your gig title",
+      "Using one keyword once",
+      "Repeating keywords unnaturally, which hurts readability and trust",
+      "Writing a clear title"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Write for humans first.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l304-03",
+    "lessonDriveFileId": "1nJ9RlibBY4xGwszF96pSpfC1DI8ix4ZP",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Fast response times help your gig because:",
+    "options": [
+      "Fiverr hides fast sellers",
+      "Buyers prefer slow replies",
+      "It lowers ratings",
+      "Responsiveness is a seller performance signal"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Quick replies improve conversion and ranking.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l301-03",
+    "lessonDriveFileId": "1d2Ozw_2gubzHsXQdj1BMxUl3Xq1y3lDA",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Gig tags are used to:",
+    "options": [
+      "Tell Fiverr which searches your gig is relevant to",
+      "Set your price",
+      "Add pictures and videos to your gig gallery",
+      "Message buyers"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Tags support search matching.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l302-03",
+    "lessonDriveFileId": "1uf-TEK0YBvah5rPcwrwQAFTZkScK0ktK",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Long-tail keywords like 'logo design for restaurants' are useful because:",
+    "options": [
+      "They have no buyers",
+      "They face less competition and attract more specific buyers",
+      "Fiverr shows them to every buyer on the homepage",
+      "They lower quality"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Specific searches convert well.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l303-02",
+    "lessonDriveFileId": "1G6bUE4ZLHsK5-sRznP18aDlR_Fa0p-nv",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Why should a new seller target less competitive keywords first?",
+    "options": [
+      "Fiverr pays a bonus for less popular keywords",
+      "Fiverr requires it",
+      "It's easier to rank and get early orders",
+      "They're always longer"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Early wins build reviews.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l304-04",
+    "lessonDriveFileId": "1nJ9RlibBY4xGwszF96pSpfC1DI8ix4ZP",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which action best helps a new gig rank soon after publishing?",
+    "options": [
+      "Edit the title every hour to trigger a new review",
+      "Leave it untouched forever",
+      "Spam buyers with messages",
+      "Keep it active, respond quickly and deliver great first orders"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Performance signals drive ranking.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l401-01",
+    "lessonDriveFileId": "1wyRY04oyMGlGzH4HBFQ9n0LMJzwS1CVm",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A gig introduction should:",
+    "options": [
+      "Quickly state who you help and the result you deliver",
+      "Tell your life story",
+      "List every tool you've ever used",
+      "Complain about competitors"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Buyers skim; lead with value.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l402-01",
+    "lessonDriveFileId": "1GI03yFaxmNtHc9TqqpaVyGqHeec5JilK",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "AIDA stands for:",
+    "options": [
+      "Ask, Inform, Deliver, Approve",
+      "Attention, Interest, Desire, Action",
+      "Action, Idea, Detail, Answer",
+      "Audience, Image, Design, Ad"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "A classic copywriting structure.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l402-02",
+    "lessonDriveFileId": "1GI03yFaxmNtHc9TqqpaVyGqHeec5JilK",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "In AIDA, the 'Action' step means:",
+    "options": [
+      "Grabbing attention",
+      "Listing every feature and tool you use in detail",
+      "Telling the buyer exactly what to do next, like ordering",
+      "Describing your history"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "A clear call to action.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l403-01",
+    "lessonDriveFileId": "1GU13zgrh5SsyhHisGJlozHRyT1N8W05B",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Your gig title should be:",
+    "options": [
+      "Copied word for word from a top seller",
+      "Full of emojis",
+      "As vague as possible",
+      "Original, clear and relevant to what buyers search for"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Originality protects you and builds trust.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l404-01",
+    "lessonDriveFileId": "1g8xQq2EnMLuSlBqXdWNpPrfKrRpmbcZq",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A strong gig description focuses on:",
+    "options": [
+      "Buyer benefits, what's included and why choose you",
+      "Your life story and the hobbies you enjoy",
+      "Long technical jargon",
+      "Prices of competitors"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Benefits sell.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l405-01",
+    "lessonDriveFileId": "1ao2bjzxeTN0zdJwIF6U5KFzk36x4dQi2",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which item belongs on a gig description checklist?",
+    "options": [
+      "Your home address",
+      "Clear deliverables and delivery time",
+      "Your bank PIN",
+      "Your competitor's name"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Clarity reduces disputes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l406-01",
+    "lessonDriveFileId": "1mrkV14rv4s_F6YUEfqALxTQUzXkJrfR3",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Before publishing a gig, you should check:",
+    "options": [
+      "Nothing; publish immediately",
+      "Only the price",
+      "Title, pricing packages, description, images and requirements",
+      "Only the tags, because buyers don't read the rest"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "A complete gig converts better.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l406-02",
+    "lessonDriveFileId": "1mrkV14rv4s_F6YUEfqALxTQUzXkJrfR3",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Gig images should be:",
+    "options": [
+      "Stolen from Google",
+      "Downloaded from Google so they look professional",
+      "Unrelated stock photos",
+      "Clear, original and show what the buyer gets"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Good visuals increase clicks.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l402-03",
+    "lessonDriveFileId": "1GI03yFaxmNtHc9TqqpaVyGqHeec5JilK",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which line best grabs attention?",
+    "options": [
+      "Get a professional logo your customers will remember, in 48 hours",
+      "I am a designer",
+      "Hello, I am a designer and I do many things",
+      "Read below"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Specific benefit plus speed.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l404-02",
+    "lessonDriveFileId": "1g8xQq2EnMLuSlBqXdWNpPrfKrRpmbcZq",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Including an FAQ in your gig helps:",
+    "options": [
+      "Hide your prices until buyers send a message",
+      "Answer common buyer questions before they ask",
+      "Reduce trust",
+      "Avoid orders"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "FAQs reduce friction.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l405-02",
+    "lessonDriveFileId": "1ao2bjzxeTN0zdJwIF6U5KFzk36x4dQi2",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Why set clear buyer requirements?",
+    "options": [
+      "To confuse buyers",
+      "To slow down orders so you have more time",
+      "So you get the information you need to start work correctly",
+      "To reduce reviews"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Good inputs lead to good deliveries.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l406-03",
+    "lessonDriveFileId": "1mrkV14rv4s_F6YUEfqALxTQUzXkJrfR3",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Offering three packages (Basic, Standard, Premium) helps:",
+    "options": [
+      "Force every buyer to choose the most expensive option",
+      "Lower all prices",
+      "Hide features",
+      "Buyers choose the level of service that fits their budget"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Tiered options increase order value.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l501-01",
+    "lessonDriveFileId": "1zc_GUVYry7VOCLchJnnYQ3e1b-V2iQzC",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "As a new seller, a smart first step is to:",
+    "options": [
+      "Optimise your profile and gigs, then stay active and responsive",
+      "Wait silently for orders",
+      "Create 50 identical gigs",
+      "Lower your price to almost nothing forever"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Activity and quality build momentum.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l501-02",
+    "lessonDriveFileId": "1zc_GUVYry7VOCLchJnnYQ3e1b-V2iQzC",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Buyer requests (where available) let sellers:",
+    "options": [
+      "Read buyers' private data",
+      "Send offers to buyers who've posted what they need",
+      "Change ratings",
+      "Cancel orders they no longer want to deliver"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "A way to find early work.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l501-03",
+    "lessonDriveFileId": "1zc_GUVYry7VOCLchJnnYQ3e1b-V2iQzC",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Why might a new seller offer a slightly lower starter price?",
+    "options": [
+      "Fiverr requires it forever",
+      "Fiverr doesn't allow new sellers to charge more",
+      "To win first orders and reviews, then raise prices",
+      "It improves SEO directly"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Early reviews build credibility.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l502-01",
+    "lessonDriveFileId": "1Y4Dfr7_11k2TE2qNsQVODTYsgp5q9lf0",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Promoting your gig on social media helps:",
+    "options": [
+      "Lower your rating",
+      "Hide your gig",
+      "Break Fiverr rules automatically",
+      "Bring outside buyers to your Fiverr gig"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "External traffic can boost early sales.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l502-02",
+    "lessonDriveFileId": "1Y4Dfr7_11k2TE2qNsQVODTYsgp5q9lf0",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Fiverr's promoted gigs feature is:",
+    "options": [
+      "Paid advertising to show your gig higher in search",
+      "A free badge for everyone",
+      "A way to change reviews",
+      "A free badge given to every new seller"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Ads can increase visibility for eligible sellers.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l501-04",
+    "lessonDriveFileId": "1zc_GUVYry7VOCLchJnnYQ3e1b-V2iQzC",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which habit helps new sellers most?",
+    "options": [
+      "Ignoring messages for days",
+      "Replying to messages quickly and politely",
+      "Arguing with buyers",
+      "Delivering late"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Responsiveness drives conversion.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l502-03",
+    "lessonDriveFileId": "1Y4Dfr7_11k2TE2qNsQVODTYsgp5q9lf0",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Sharing your gig link in relevant online communities should be done:",
+    "options": [
+      "By spamming every group",
+      "By posting the same link in every group many times a day",
+      "Helpfully and within each community's rules",
+      "Without any context"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Spam damages your reputation.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l501-05",
+    "lessonDriveFileId": "1zc_GUVYry7VOCLchJnnYQ3e1b-V2iQzC",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Staying online on the Fiverr app helps because:",
+    "options": [
+      "Fiverr raises your gig prices while you're online",
+      "It hides your gig",
+      "It deletes reviews",
+      "You can respond quickly to new buyer messages"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Fast responses win orders.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l502-04",
+    "lessonDriveFileId": "1Y4Dfr7_11k2TE2qNsQVODTYsgp5q9lf0",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which tool helps you understand how buyers find and view your gig?",
+    "options": [
+      "Gig analytics (impressions, clicks, orders)",
+      "Your phone's calculator",
+      "A video editor",
+      "A spreadsheet of hobbies"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Analytics show what to improve.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l501-06",
+    "lessonDriveFileId": "1zc_GUVYry7VOCLchJnnYQ3e1b-V2iQzC",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "What should you do if you get no orders in your first weeks?",
+    "options": [
+      "Delete your account",
+      "Review your title, images and pricing, and keep improving",
+      "Copy another seller",
+      "Delete the gig and open a new account"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Iterate on your gig.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l502-05",
+    "lessonDriveFileId": "1Y4Dfr7_11k2TE2qNsQVODTYsgp5q9lf0",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Low impressions but high clicks on your gig suggest:",
+    "options": [
+      "Your gig images are putting buyers off",
+      "Your price is too high",
+      "Your gig appeals to buyers but needs better search visibility",
+      "Nothing can be done"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Work on keywords and tags.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l502-06",
+    "lessonDriveFileId": "1Y4Dfr7_11k2TE2qNsQVODTYsgp5q9lf0",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "High impressions but very few clicks suggest:",
+    "options": [
+      "Perfect performance",
+      "Your gig is ranking poorly in search results",
+      "Search problems only",
+      "Your title, image or price isn't attracting buyers"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Improve the thumbnail and title.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l601-01",
+    "lessonDriveFileId": "14WNUfMg4tjVKbCL4kB5WYHdZLbyc5yOS",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Gig extras (add-ons) let you:",
+    "options": [
+      "Offer optional services like faster delivery for an extra fee",
+      "Charge hidden fees",
+      "Change ratings",
+      "Add hidden charges after the buyer has paid"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Extras raise order value transparently.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l601-02",
+    "lessonDriveFileId": "14WNUfMg4tjVKbCL4kB5WYHdZLbyc5yOS",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which is a good gig extra for a logo designer?",
+    "options": [
+      "Free unlimited everything",
+      "Source files or extra revisions",
+      "A random unrelated service",
+      "Refund guarantee for no reason"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Relevant extras add value.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l601-03",
+    "lessonDriveFileId": "14WNUfMg4tjVKbCL4kB5WYHdZLbyc5yOS",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Upselling means:",
+    "options": [
+      "Tricking buyers",
+      "Adding fees to an order without telling the buyer",
+      "Offering buyers a higher-value option that better meets their needs",
+      "Lowering quality"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Upsells should genuinely help the buyer.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l602-01",
+    "lessonDriveFileId": "1faDuHHLlGlq55mHARVA3kIgh2uX0_lXS",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Before delivering an order, you should:",
+    "options": [
+      "Deliver unfinished work early",
+      "Ignore the brief",
+      "Deliver without a message",
+      "Check it meets every requirement the buyer gave"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Quality checks prevent revisions and bad reviews.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l602-02",
+    "lessonDriveFileId": "1faDuHHLlGlq55mHARVA3kIgh2uX0_lXS",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A professional delivery message:",
+    "options": [
+      "Summarises what you delivered and invites feedback",
+      "Demands a 5-star review",
+      "Asks the buyer to leave five stars before they check the work",
+      "Complains about the buyer"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Clear communication improves satisfaction.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l602-03",
+    "lessonDriveFileId": "1faDuHHLlGlq55mHARVA3kIgh2uX0_lXS",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Asking buyers to leave a review should be:",
+    "options": [
+      "Done by offering money for 5 stars",
+      "Polite and never pressuring or incentivised",
+      "Done with threats",
+      "Avoided completely"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Platforms forbid manipulating reviews.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l602-04",
+    "lessonDriveFileId": "1faDuHHLlGlq55mHARVA3kIgh2uX0_lXS",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Exceeding expectations, such as delivering slightly early, often leads to:",
+    "options": [
+      "Account suspension",
+      "Lower ratings",
+      "Better reviews and repeat buyers",
+      "Refund requests"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Delighted buyers come back.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l601-04",
+    "lessonDriveFileId": "14WNUfMg4tjVKbCL4kB5WYHdZLbyc5yOS",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Offering faster delivery as an extra works because:",
+    "options": [
+      "All buyers want slow delivery",
+      "It is free",
+      "It lowers ratings",
+      "Some buyers will pay more for urgency"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Speed has value.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l602-05",
+    "lessonDriveFileId": "1faDuHHLlGlq55mHARVA3kIgh2uX0_lXS",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "If a buyer is unhappy, the best response is:",
+    "options": [
+      "Listen calmly and offer a fair solution",
+      "Argue publicly",
+      "Reply publicly that the buyer is wrong",
+      "Ignore them"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Good service can save the relationship.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l601-05",
+    "lessonDriveFileId": "14WNUfMg4tjVKbCL4kB5WYHdZLbyc5yOS",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Upselling works best when:",
+    "options": [
+      "It's forced on everyone",
+      "The extra genuinely solves a buyer's next problem",
+      "The extra is added without asking the buyer",
+      "It's unrelated"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Value-based upsells feel helpful.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l602-06",
+    "lessonDriveFileId": "1faDuHHLlGlq55mHARVA3kIgh2uX0_lXS",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Repeat clients are valuable because:",
+    "options": [
+      "Fiverr pays sellers a bonus for every repeat client",
+      "They never review",
+      "They need less selling and often bring steady work",
+      "They break rules"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Retention is cheaper than acquisition.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "freelancers-academy-l602-07",
+    "lessonDriveFileId": "1faDuHHLlGlq55mHARVA3kIgh2uX0_lXS",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A 5-star reputation is built mainly through:",
+    "options": [
+      "Asking friends for fake reviews",
+      "Discounts only",
+      "Asking friends and family to buy and review your gigs",
+      "Consistent quality, clear communication and on-time delivery"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Consistency earns trust.",
+    "pools": [
+      "chapter"
+    ]
+  }
+]

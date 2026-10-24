@@ -1,0 +1,6162 @@
+[
+  {
+    "key": "cloud-engineering-l103-01",
+    "lessonDriveFileId": "1LhZaNqk3XnmbLEWp581SmPLqYmm8J5Wv",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Which AWS certification does this programme prepare you for?",
+    "options": [
+      "AWS Certified Solutions Architect – Associate",
+      "AWS Certified Cloud Practitioner only",
+      "Microsoft Azure Fundamentals",
+      "Google Professional Data Engineer"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "The modules follow the Solutions Architect Associate (SAA) exam domains.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l106-01",
+    "lessonDriveFileId": "1sNHqQ1lCIyiU9m9BmBBy6kFjTGRGQiyU",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Why create an AWS Budget before starting labs?",
+    "options": [
+      "To unlock free services",
+      "To get alerts before lab costs exceed what you planned",
+      "To speed up EC2 instances launched during labs",
+      "To create IAM users"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Budgets warn you about unexpected spending.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l105-01",
+    "lessonDriveFileId": "1OnRsgsaaCHRS_OBa7WIJDCM0ymMD1uzt",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "After creating a new AWS account, you should avoid daily use of:",
+    "options": [
+      "IAM users",
+      "IAM roles",
+      "The root user",
+      "The billing console"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Protect root with MFA and use IAM identities day to day.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l212-01",
+    "lessonDriveFileId": "1U7Ubpxj5mzkjdcZQP-JD_saU0Avy6yIn",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "The AWS CLI lets you:",
+    "options": [
+      "Design websites",
+      "Edit photos stored in S3 from your laptop",
+      "Write SQL only",
+      "Manage AWS services from a command line"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Scriptable access to AWS APIs.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l214-01",
+    "lessonDriveFileId": "1RiGawcqPD_d3NU5fdxYgojRoMIXIpkME",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Running 'aws configure' asks for:",
+    "options": [
+      "Access key ID, secret access key, default region and output format",
+      "Your credit card number and billing address",
+      "Your root password only",
+      "Your GitHub token"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "These set up CLI credentials and defaults.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l215-01",
+    "lessonDriveFileId": "1OWjHsmqYEuFRziy1IXcijbUBKsUZbCTC",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "AWS CloudShell is:",
+    "options": [
+      "A paid desktop app",
+      "A browser-based shell already authenticated to your AWS account",
+      "A database service that stores shell history",
+      "A firewall"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "No local installation required.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l216-01",
+    "lessonDriveFileId": "17EKCCvCM4XtMfa5rPwKtlO1mpzMssSkm",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "An AWS Region is:",
+    "options": [
+      "A single data centre",
+      "A pricing plan",
+      "A geographic area containing multiple Availability Zones",
+      "A user group that shares the same permissions"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "E.g. eu-west-1 (Ireland).",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l216-02",
+    "lessonDriveFileId": "17EKCCvCM4XtMfa5rPwKtlO1mpzMssSkm",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "An Availability Zone is:",
+    "options": [
+      "A whole continent",
+      "A billing account",
+      "A DNS record that points to a data centre",
+      "One or more isolated data centres within a Region"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "AZs provide fault isolation.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l216-03",
+    "lessonDriveFileId": "17EKCCvCM4XtMfa5rPwKtlO1mpzMssSkm",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Edge locations are mainly used by:",
+    "options": [
+      "CloudFront and Route 53 to serve users with low latency",
+      "EC2 instances",
+      "RDS databases",
+      "IAM to check user permissions close to users"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "They cache content close to users.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l216-04",
+    "lessonDriveFileId": "17EKCCvCM4XtMfa5rPwKtlO1mpzMssSkm",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Under the shared responsibility model, AWS is responsible for:",
+    "options": [
+      "Your IAM policies, security groups and stored data",
+      "Security of the cloud: physical facilities, hardware and the global infrastructure",
+      "Your application code",
+      "Your data encryption choices"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Customers handle security in the cloud.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l216-05",
+    "lessonDriveFileId": "17EKCCvCM4XtMfa5rPwKtlO1mpzMssSkm",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Under the shared responsibility model, the customer is responsible for:",
+    "options": [
+      "Data centre guards and physical hardware",
+      "Hardware replacement",
+      "Configuring security groups, IAM and data protection",
+      "Hypervisor patches"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Security in the cloud is yours.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l212-02",
+    "lessonDriveFileId": "1U7Ubpxj5mzkjdcZQP-JD_saU0Avy6yIn",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Access keys for the CLI should be:",
+    "options": [
+      "Shared in public repositories",
+      "Emailed to colleagues",
+      "Hard-coded in websites",
+      "Kept secret and rotated regularly"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Leaked keys lead to compromised accounts.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l214-02",
+    "lessonDriveFileId": "1RiGawcqPD_d3NU5fdxYgojRoMIXIpkME",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A CLI 'profile' lets you:",
+    "options": [
+      "Switch between different sets of credentials",
+      "Change your profile picture",
+      "Delete accounts",
+      "Encrypt S3"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Use --profile to target different accounts.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l216-06",
+    "lessonDriveFileId": "17EKCCvCM4XtMfa5rPwKtlO1mpzMssSkm",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which pricing benefit is a core feature of cloud computing?",
+    "options": [
+      "Large upfront hardware purchases",
+      "Pay only for what you use",
+      "Fixed yearly fees only",
+      "Free unlimited usage"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Pay-as-you-go replaces capital expense.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l215-02",
+    "lessonDriveFileId": "1OWjHsmqYEuFRziy1IXcijbUBKsUZbCTC",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which tool would you use for a quick CLI command without installing anything?",
+    "options": [
+      "Xcode",
+      "Android Studio",
+      "CloudShell",
+      "Excel"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It runs in the console.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l216-07",
+    "lessonDriveFileId": "17EKCCvCM4XtMfa5rPwKtlO1mpzMssSkm",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Deploying an application across multiple Availability Zones improves:",
+    "options": [
+      "Only cost",
+      "Only latency for one user",
+      "Nothing",
+      "Availability and fault tolerance"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "An AZ failure won't take the app down.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l214-03",
+    "lessonDriveFileId": "1RiGawcqPD_d3NU5fdxYgojRoMIXIpkME",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which output format option is valid for the AWS CLI?",
+    "options": [
+      "json",
+      "docx",
+      "mp4",
+      "psd"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "json, text, table and yaml are supported.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l212-03",
+    "lessonDriveFileId": "1U7Ubpxj5mzkjdcZQP-JD_saU0Avy6yIn",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which statement about the AWS Free Tier is true?",
+    "options": [
+      "Everything on AWS is free forever",
+      "Some services are free up to limits, but exceeding them is billed",
+      "It covers unlimited EC2",
+      "It requires no account and never bills you"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Watch the limits.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l328-01",
+    "lessonDriveFileId": "1jnrhjtgSoslfThgG4Np8zjYdiN6H12Tx",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "IAM stands for:",
+    "options": [
+      "Internet Access Manager",
+      "Instance Auto Monitoring",
+      "Identity and Access Management",
+      "Integrated API Module"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "IAM controls who can do what.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l328-02",
+    "lessonDriveFileId": "1jnrhjtgSoslfThgG4Np8zjYdiN6H12Tx",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "An IAM policy is:",
+    "options": [
+      "A billing report",
+      "A VPC setting that controls subnet routing",
+      "A database table",
+      "A JSON document that defines permissions"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Policies allow or deny actions on resources.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l328-03",
+    "lessonDriveFileId": "1jnrhjtgSoslfThgG4Np8zjYdiN6H12Tx",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "AWS Directory Service lets you:",
+    "options": [
+      "Use Microsoft Active Directory with AWS resources",
+      "Store files in a managed shared drive",
+      "Run containers",
+      "Send emails"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Managed AD integration.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l329-01",
+    "lessonDriveFileId": "17R-tricMQf9Oy3KnHP-grjnr7qZKmyV6",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "AWS IAM Identity Center (formerly SSO) provides:",
+    "options": [
+      "DDoS protection",
+      "Central sign-in to multiple AWS accounts and apps",
+      "Database backups",
+      "DNS hosting for domains across accounts"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "One login across accounts.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l330-01",
+    "lessonDriveFileId": "1eynNIaxK-h1Qb_oVf9hrHyeG0qx5t8O3",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "AWS Organizations lets you:",
+    "options": [
+      "Store objects across accounts in one bucket",
+      "Run serverless code",
+      "Manage multiple AWS accounts centrally with consolidated billing",
+      "Cache content"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Group accounts into organisational units.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l330-02",
+    "lessonDriveFileId": "1eynNIaxK-h1Qb_oVf9hrHyeG0qx5t8O3",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Service Control Policies (SCPs) in Organizations:",
+    "options": [
+      "Grant permissions directly to users",
+      "Encrypt data",
+      "Monitor metrics",
+      "Set the maximum permissions accounts can use"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "SCPs act as guardrails.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l331-01",
+    "lessonDriveFileId": "13z9ZpMaq5JGA0AhfTmNjdCrridDfs8vv",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "AWS Control Tower helps you:",
+    "options": [
+      "Set up and govern a secure multi-account environment",
+      "Write Lambda code that runs across accounts",
+      "Query S3 with SQL",
+      "Create DNS records"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "It automates landing zone setup.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l332-01",
+    "lessonDriveFileId": "1tCuiiqluffKSVyPMqdTWXiKJte-Gkb4D",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "An IAM role is best used to:",
+    "options": [
+      "Store passwords",
+      "Grant temporary permissions to services or users",
+      "Replace MFA for the root user and admins",
+      "Hold S3 objects"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Roles provide short-lived credentials.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l332-02",
+    "lessonDriveFileId": "1tCuiiqluffKSVyPMqdTWXiKJte-Gkb4D",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "The principle of least privilege means:",
+    "options": [
+      "Granting admin to everyone",
+      "Denying all access until someone complains",
+      "Granting only the permissions needed for a task",
+      "Sharing root credentials"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Limits damage from mistakes or compromise.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l332-03",
+    "lessonDriveFileId": "1tCuiiqluffKSVyPMqdTWXiKJte-Gkb4D",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "MFA should be enabled on:",
+    "options": [
+      "Only test accounts",
+      "No accounts, because passwords are enough",
+      "Only S3 buckets",
+      "The root user and privileged IAM users"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "MFA blocks most credential attacks.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l332-04",
+    "lessonDriveFileId": "1tCuiiqluffKSVyPMqdTWXiKJte-Gkb4D",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "An EC2 instance needs to read from S3. The best practice is to:",
+    "options": [
+      "Attach an IAM role to the instance",
+      "Store access keys on the instance",
+      "Make the bucket public",
+      "Use the root keys"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Roles avoid long-lived keys.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l330-03",
+    "lessonDriveFileId": "1eynNIaxK-h1Qb_oVf9hrHyeG0qx5t8O3",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Consolidated billing in AWS Organizations provides:",
+    "options": [
+      "Free services for every account in the group",
+      "One bill and combined volume discounts",
+      "Separate passwords",
+      "Automatic backups"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Usage aggregates for discounts.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l332-05",
+    "lessonDriveFileId": "1tCuiiqluffKSVyPMqdTWXiKJte-Gkb4D",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "In IAM policy evaluation, an explicit Deny:",
+    "options": [
+      "Is overridden by Allow",
+      "Is ignored",
+      "Always overrides any Allow",
+      "Only applies to root"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Explicit deny wins.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l330-04",
+    "lessonDriveFileId": "1eynNIaxK-h1Qb_oVf9hrHyeG0qx5t8O3",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which feature prevents member accounts from using services outside approved Regions?",
+    "options": [
+      "Security groups",
+      "NACLs",
+      "S3 lifecycle rules",
+      "Service Control Policies"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "SCPs restrict what accounts can do.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l329-02",
+    "lessonDriveFileId": "17R-tricMQf9Oy3KnHP-grjnr7qZKmyV6",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "A company wants staff to log into many AWS accounts with one set of credentials. Use:",
+    "options": [
+      "IAM Identity Center",
+      "CloudFront",
+      "Kinesis streams shared between the accounts",
+      "Route 53"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Centralised workforce access.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l328-04",
+    "lessonDriveFileId": "1jnrhjtgSoslfThgG4Np8zjYdiN6H12Tx",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "IAM users, groups and roles are:",
+    "options": [
+      "Regional",
+      "Global, not tied to a Region",
+      "Per Availability Zone",
+      "Per VPC"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "IAM is a global service.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l456-01",
+    "lessonDriveFileId": "1rQN3diACNL48BPf3n9IPcyE0rWqdl7fz",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Amazon ECS is:",
+    "options": [
+      "A relational database",
+      "A DNS service",
+      "A container orchestration service",
+      "An object store"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "ECS runs and manages Docker containers.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l456-02",
+    "lessonDriveFileId": "1rQN3diACNL48BPf3n9IPcyE0rWqdl7fz",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "AWS Fargate lets you:",
+    "options": [
+      "Store files on a managed network drive",
+      "Run SQL queries",
+      "Create VPNs",
+      "Run containers without managing servers"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Serverless compute for containers.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l456-03",
+    "lessonDriveFileId": "1rQN3diACNL48BPf3n9IPcyE0rWqdl7fz",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Amazon ECR is used to:",
+    "options": [
+      "Store container images",
+      "Run virtual machines",
+      "Send messages",
+      "Monitor logs"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "A private Docker registry.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l456-04",
+    "lessonDriveFileId": "1rQN3diACNL48BPf3n9IPcyE0rWqdl7fz",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Amazon EKS provides:",
+    "options": [
+      "Managed Oracle",
+      "Managed Kubernetes",
+      "Managed DNS",
+      "Managed email"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Run Kubernetes without managing the control plane.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l457-01",
+    "lessonDriveFileId": "17U8WD_xRAATEDfvM8QqVcTfZhCR0gqzV",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "In ECS, a task definition describes:",
+    "options": [
+      "The VPC CIDR range used by the cluster's subnets",
+      "The billing plan",
+      "Which containers to run and their settings",
+      "The DNS zone"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It's like a blueprint for tasks.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l458-01",
+    "lessonDriveFileId": "1SmS_fRN9RwI7HQcM5S7w1r84Y0ha2Ify",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "An ECS cluster is:",
+    "options": [
+      "A database cluster",
+      "An S3 bucket that stores container images",
+      "An IAM group",
+      "A logical group of compute capacity for tasks and services"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Tasks run within clusters.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l459-01",
+    "lessonDriveFileId": "1nhFKiGNGpEtEjtl49KIsKWAS9RXf52IQ",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "An ECS service ensures that:",
+    "options": [
+      "A desired number of tasks keep running",
+      "Logs are deleted",
+      "Costs are zero",
+      "DNS resolves the service's domain name"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "It replaces failed tasks.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l460-01",
+    "lessonDriveFileId": "1dmXeTd5pmXC2ZvfLxyBOgK5BWfGG8CK3",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which EC2 purchase option is cheapest for interruptible workloads?",
+    "options": [
+      "On-Demand",
+      "Spot Instances",
+      "Dedicated Hosts",
+      "Reserved for one hour"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Spot uses spare capacity at large discounts.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l460-02",
+    "lessonDriveFileId": "1dmXeTd5pmXC2ZvfLxyBOgK5BWfGG8CK3",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "AWS Lambda runs code:",
+    "options": [
+      "Only on dedicated hardware",
+      "Only once a year",
+      "In response to events without provisioning servers",
+      "Only inside RDS as a stored procedure"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Serverless functions billed per execution.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l460-03",
+    "lessonDriveFileId": "1dmXeTd5pmXC2ZvfLxyBOgK5BWfGG8CK3",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Lambda functions have a maximum execution time of:",
+    "options": [
+      "24 hours",
+      "1 second",
+      "Unlimited",
+      "15 minutes"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Long jobs need other services.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l460-04",
+    "lessonDriveFileId": "1dmXeTd5pmXC2ZvfLxyBOgK5BWfGG8CK3",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "An AMI is:",
+    "options": [
+      "A template for launching EC2 instances",
+      "A monitoring dashboard",
+      "A billing alert",
+      "A message queue"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Amazon Machine Image.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l460-05",
+    "lessonDriveFileId": "1dmXeTd5pmXC2ZvfLxyBOgK5BWfGG8CK3",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "EC2 instance types are grouped by:",
+    "options": [
+      "Colour and the size of the instance's label",
+      "Optimised resources such as compute, memory or storage",
+      "Country",
+      "Customer name"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Choose families to fit workloads.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l457-02",
+    "lessonDriveFileId": "17U8WD_xRAATEDfvM8QqVcTfZhCR0gqzV",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which ECS launch type removes the need to manage EC2 instances?",
+    "options": [
+      "EC2 launch type",
+      "Dedicated Hosts",
+      "Fargate",
+      "Outposts only"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Fargate is serverless.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l460-06",
+    "lessonDriveFileId": "1dmXeTd5pmXC2ZvfLxyBOgK5BWfGG8CK3",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A batch job runs for 40 minutes. Which compute option should you avoid?",
+    "options": [
+      "EC2",
+      "ECS on Fargate",
+      "AWS Batch",
+      "AWS Lambda"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Lambda's 15-minute limit is too short.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l456-05",
+    "lessonDriveFileId": "1rQN3diACNL48BPf3n9IPcyE0rWqdl7fz",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Where should you store Docker images for ECS deployments?",
+    "options": [
+      "Amazon ECR",
+      "Amazon SQS",
+      "Route 53",
+      "CloudTrail"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "ECR integrates with ECS.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l460-07",
+    "lessonDriveFileId": "1dmXeTd5pmXC2ZvfLxyBOgK5BWfGG8CK3",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which EC2 option gives the biggest discount for steady, long-term usage with commitment?",
+    "options": [
+      "On-Demand Instances billed by the second",
+      "Reserved Instances or Savings Plans",
+      "Spot only",
+      "Free Tier"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Commitment lowers price.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l459-02",
+    "lessonDriveFileId": "1nhFKiGNGpEtEjtl49KIsKWAS9RXf52IQ",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "If an ECS task in a service crashes, the service will:",
+    "options": [
+      "Delete the cluster",
+      "Stop all tasks",
+      "Start a replacement to maintain the desired count",
+      "Ignore it until an engineer restarts the task"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Services self-heal.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l562-01",
+    "lessonDriveFileId": "11ORtkOVRg6ont66YUX3fUDi0gfkY8AMv",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "An Application Load Balancer works at:",
+    "options": [
+      "Layer 3, routing packets by IP address only",
+      "Layer 1",
+      "Layer 2",
+      "Layer 7 (HTTP/HTTPS)"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "ALB routes by paths, hosts and headers.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l562-02",
+    "lessonDriveFileId": "11ORtkOVRg6ont66YUX3fUDi0gfkY8AMv",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A Network Load Balancer is best for:",
+    "options": [
+      "Very high-performance TCP/UDP traffic",
+      "Path-based HTTP routing",
+      "Static websites",
+      "Email"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "NLB works at layer 4.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l562-03",
+    "lessonDriveFileId": "11ORtkOVRg6ont66YUX3fUDi0gfkY8AMv",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Load balancers use health checks to:",
+    "options": [
+      "Encrypt data",
+      "Send traffic only to healthy targets",
+      "Store logs from every request that passes through",
+      "Create backups"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Unhealthy targets are removed from rotation.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l569-01",
+    "lessonDriveFileId": "1AJRdBZCCTPWdiiGh4PIf-wUMAyhwjva9",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "An Auto Scaling group:",
+    "options": [
+      "Changes instance types automatically",
+      "Backs up databases",
+      "Adjusts the number of EC2 instances based on demand",
+      "Sends notifications only"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Scale out and in automatically.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l569-02",
+    "lessonDriveFileId": "1AJRdBZCCTPWdiiGh4PIf-wUMAyhwjva9",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A launch template defines:",
+    "options": [
+      "The VPC peering",
+      "Billing alerts",
+      "DNS records that point to each instance",
+      "The configuration for instances an Auto Scaling group creates"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "AMI, instance type, security groups and more.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l569-03",
+    "lessonDriveFileId": "1AJRdBZCCTPWdiiGh4PIf-wUMAyhwjva9",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Target tracking scaling policies:",
+    "options": [
+      "Keep a metric, like average CPU, at a target value",
+      "Run at fixed times only",
+      "Never change capacity",
+      "Delete instances at a fixed time each night"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "E.g. keep CPU around 50%.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l571-01",
+    "lessonDriveFileId": "19VYBmKpa3gNMxnGRf0DNr5JeiX5JbmTC",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Placing an ALB in front of an ECS service lets you:",
+    "options": [
+      "Store images",
+      "Distribute traffic across tasks",
+      "Encrypt S3 buckets used by the service",
+      "Query logs"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "The ALB routes to healthy tasks.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l573-01",
+    "lessonDriveFileId": "1-soQrBKOTOVgVhGZOCZxwNtF2dH1YAfS",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "DynamoDB auto scaling adjusts:",
+    "options": [
+      "The table name",
+      "The Region the table is stored in",
+      "Read and write capacity based on traffic",
+      "The partition key"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Provisioned capacity follows demand.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l574-01",
+    "lessonDriveFileId": "1cguSWYeNHLcxR3EjN37cWfGkp5qmSVOD",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Minimum, desired and maximum capacity in an Auto Scaling group control:",
+    "options": [
+      "Instance prices",
+      "Disk sizes",
+      "Region selection",
+      "The range of instance counts"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Scaling stays within limits.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l574-02",
+    "lessonDriveFileId": "1cguSWYeNHLcxR3EjN37cWfGkp5qmSVOD",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Spreading an Auto Scaling group across multiple AZs provides:",
+    "options": [
+      "High availability",
+      "Lower security",
+      "Single point of failure",
+      "No scaling"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "An AZ outage won't stop the app.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l562-04",
+    "lessonDriveFileId": "11ORtkOVRg6ont66YUX3fUDi0gfkY8AMv",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which load balancer supports path-based routing like /api and /images?",
+    "options": [
+      "Network Load Balancer",
+      "Application Load Balancer",
+      "Classic only",
+      "Gateway Load Balancer"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "ALB routes by URL path.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l569-04",
+    "lessonDriveFileId": "1AJRdBZCCTPWdiiGh4PIf-wUMAyhwjva9",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Scheduled scaling is useful when:",
+    "options": [
+      "Traffic is random",
+      "You never scale and keep capacity fixed",
+      "Traffic changes predictably, such as business hours",
+      "You use Lambda only"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Scale ahead of known peaks.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l562-05",
+    "lessonDriveFileId": "11ORtkOVRg6ont66YUX3fUDi0gfkY8AMv",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which load balancer should front a web app needing host-based routing?",
+    "options": [
+      "Network Load Balancer",
+      "No load balancer",
+      "Route 53 only",
+      "Application Load Balancer"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Layer 7 features.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l569-05",
+    "lessonDriveFileId": "1AJRdBZCCTPWdiiGh4PIf-wUMAyhwjva9",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "CPU usage stays at 90% during peaks. What helps automatically?",
+    "options": [
+      "An Auto Scaling policy to add instances",
+      "Deleting the load balancer",
+      "Lowering the max capacity to 1",
+      "Disabling health checks"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Scale out to share load.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l574-03",
+    "lessonDriveFileId": "1cguSWYeNHLcxR3EjN37cWfGkp5qmSVOD",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Combining ELB and Auto Scaling across AZs creates:",
+    "options": [
+      "A single-server setup",
+      "A highly available, elastic architecture",
+      "A static website hosted from a single bucket",
+      "A data warehouse"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Traffic spreads and capacity adapts.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l573-02",
+    "lessonDriveFileId": "1-soQrBKOTOVgVhGZOCZxwNtF2dH1YAfS",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Aurora can scale read traffic by adding:",
+    "options": [
+      "S3 buckets",
+      "NAT gateways",
+      "Aurora Replicas",
+      "IAM roles"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Read replicas share read load.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l683-01",
+    "lessonDriveFileId": "1fky5TSrebaVhXx8IhGcWTqy4bjtied0I",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A VPC is:",
+    "options": [
+      "A physical server",
+      "A storage class for archived S3 objects",
+      "A monitoring tool",
+      "A logically isolated virtual network in AWS"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "You control IP ranges, subnets and routing.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l683-02",
+    "lessonDriveFileId": "1fky5TSrebaVhXx8IhGcWTqy4bjtied0I",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "An Internet Gateway allows:",
+    "options": [
+      "Resources in public subnets to reach the internet",
+      "Private databases to be public automatically",
+      "DNS resolution only",
+      "VPN connections"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Route 0.0.0.0/0 to the IGW.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l683-03",
+    "lessonDriveFileId": "1fky5TSrebaVhXx8IhGcWTqy4bjtied0I",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A subnet is public when its route table:",
+    "options": [
+      "Has no routes to any other network",
+      "Routes internet traffic to an Internet Gateway",
+      "Points to a NAT Gateway",
+      "Has an S3 endpoint"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "The IGW route makes it public.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l688-01",
+    "lessonDriveFileId": "1zivi23VO-HGo13jYvNNKu7ETOBqOwuSY",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Network ACLs are:",
+    "options": [
+      "Stateful and applied to instances",
+      "Global firewalls",
+      "Stateless and applied at the subnet level",
+      "IAM policies"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Return traffic must be explicitly allowed.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l688-02",
+    "lessonDriveFileId": "1zivi23VO-HGo13jYvNNKu7ETOBqOwuSY",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Security groups are:",
+    "options": [
+      "Stateless at subnet level",
+      "Only for S3 buckets and their objects",
+      "Only for billing",
+      "Stateful and applied to network interfaces/instances"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Return traffic is automatically allowed.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l689-01",
+    "lessonDriveFileId": "1ykSh_FHIwBvg8z10qFHPkosGafTSzeb1",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "NACL rules are evaluated:",
+    "options": [
+      "In order by rule number, lowest first",
+      "Randomly",
+      "Highest number first",
+      "All at once with Deny winning"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "The first matching rule applies.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l692-01",
+    "lessonDriveFileId": "1sQ5ROecWksTAlebmPB5waO66c1EIX8FI",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A NAT Gateway allows:",
+    "options": [
+      "Inbound internet access to private instances",
+      "Instances in private subnets to reach the internet outbound only",
+      "DNS hosting",
+      "Load balancing"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Outbound-only internet access.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l692-02",
+    "lessonDriveFileId": "1sQ5ROecWksTAlebmPB5waO66c1EIX8FI",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A NAT Gateway must be placed in:",
+    "options": [
+      "A private subnet",
+      "An S3 bucket",
+      "A public subnet",
+      "Route 53"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It needs the IGW route.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l701-01",
+    "lessonDriveFileId": "1ZE2AdbwIwLvgUvSBPh-mIeZFb0TQxYkj",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A Site-to-Site VPN connects:",
+    "options": [
+      "Two S3 buckets",
+      "Lambda functions to SQS queues in another Region",
+      "Users to CloudFront",
+      "An on-premises network to a VPC over an encrypted internet tunnel"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Quick hybrid connectivity.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l701-02",
+    "lessonDriveFileId": "1ZE2AdbwIwLvgUvSBPh-mIeZFb0TQxYkj",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "AWS Direct Connect provides:",
+    "options": [
+      "A dedicated private connection from on-premises to AWS",
+      "A free VPN over the public internet",
+      "DNS hosting",
+      "A firewall"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Consistent bandwidth and latency.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l683-04",
+    "lessonDriveFileId": "1fky5TSrebaVhXx8IhGcWTqy4bjtied0I",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "VPC peering lets two VPCs:",
+    "options": [
+      "Share IAM users",
+      "Communicate privately using private IPs",
+      "Merge into one",
+      "Share billing between two accounts"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Peering is non-transitive.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l688-03",
+    "lessonDriveFileId": "1zivi23VO-HGo13jYvNNKu7ETOBqOwuSY",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which can explicitly DENY traffic?",
+    "options": [
+      "Security groups",
+      "Both cannot",
+      "Network ACLs",
+      "IAM roles only"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Security groups only allow.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l683-05",
+    "lessonDriveFileId": "1fky5TSrebaVhXx8IhGcWTqy4bjtied0I",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A web server must be reachable from the internet; its database must not. Where should the database go?",
+    "options": [
+      "A public subnet",
+      "An edge location",
+      "S3",
+      "A private subnet"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Keep databases private.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l692-03",
+    "lessonDriveFileId": "1sQ5ROecWksTAlebmPB5waO66c1EIX8FI",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Private instances need to download OS updates from the internet. Use:",
+    "options": [
+      "A NAT Gateway",
+      "An Internet Gateway attached directly to them",
+      "CloudFront",
+      "Route 53"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "NAT allows outbound only.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l688-04",
+    "lessonDriveFileId": "1zivi23VO-HGo13jYvNNKu7ETOBqOwuSY",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "You allow inbound port 443 in a security group. Do you need an outbound rule for responses?",
+    "options": [
+      "Yes, always, because security groups are stateless",
+      "No, security groups are stateful",
+      "Only on Tuesdays",
+      "Only for UDP"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Return traffic is allowed automatically.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l701-03",
+    "lessonDriveFileId": "1ZE2AdbwIwLvgUvSBPh-mIeZFb0TQxYkj",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which option gives a dedicated, consistent connection between a data centre and AWS?",
+    "options": [
+      "Site-to-Site VPN over the internet",
+      "Internet Gateway",
+      "Direct Connect",
+      "NAT Gateway"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Dedicated lines avoid internet variability.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l689-02",
+    "lessonDriveFileId": "1ykSh_FHIwBvg8z10qFHPkosGafTSzeb1",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which statement about NACLs is true?",
+    "options": [
+      "They are stateful, so return traffic is allowed automatically",
+      "They attach to instances",
+      "They can't deny traffic",
+      "They are stateless, so return traffic needs rules"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Plan both directions.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l683-06",
+    "lessonDriveFileId": "1fky5TSrebaVhXx8IhGcWTqy4bjtied0I",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "VPC peering is non-transitive. This means:",
+    "options": [
+      "If A peers with B and B with C, A can't reach C through B",
+      "All peered VPCs share traffic automatically",
+      "Peering only works in one Region",
+      "Peering needs the internet"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Use Transit Gateway for hub-and-spoke.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l7107-01",
+    "lessonDriveFileId": "1YhwI4_icl-y_NzpWUFr1yOxnLho5oWmX",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Amazon S3 stores data as:",
+    "options": [
+      "Blocks attached to EC2",
+      "Objects in buckets",
+      "Files on a shared drive only",
+      "Rows in tables"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "S3 is object storage.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l7107-02",
+    "lessonDriveFileId": "1YhwI4_icl-y_NzpWUFr1yOxnLho5oWmX",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "S3 bucket names must be:",
+    "options": [
+      "Unique per Region only",
+      "Unique per account only",
+      "Globally unique",
+      "Any duplicate name"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Names are part of the global namespace.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l7108-01",
+    "lessonDriveFileId": "1VgEwQ8EKi8nUJEq_BfLopBulzzi-jakx",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "S3 Standard is designed for durability of:",
+    "options": [
+      "90%, so some data loss each year is expected",
+      "99%",
+      "50%",
+      "99.999999999% (11 nines)"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Data is stored redundantly across AZs.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l7108-02",
+    "lessonDriveFileId": "1VgEwQ8EKi8nUJEq_BfLopBulzzi-jakx",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which S3 class suits long-term archives rarely accessed?",
+    "options": [
+      "S3 Glacier Deep Archive",
+      "S3 Standard",
+      "S3 Express One Zone",
+      "EBS gp3"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Lowest cost, slow retrieval.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l7115-01",
+    "lessonDriveFileId": "1LZr2_XgTQrM7FRROvvBrw2G-NERYgFos",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A presigned URL lets someone:",
+    "options": [
+      "Delete the bucket",
+      "Access a private S3 object temporarily",
+      "Change IAM",
+      "Read all buckets forever"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Time-limited access without public buckets.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l7116-01",
+    "lessonDriveFileId": "15BCOoLj7-aI-tjaHIKHEp3xEmjj8T4_F",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "An S3 bucket policy is:",
+    "options": [
+      "An IAM user that owns the bucket's objects",
+      "A lifecycle rule",
+      "A resource-based policy attached to the bucket",
+      "An encryption key"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Controls access to the bucket and objects.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l7116-02",
+    "lessonDriveFileId": "15BCOoLj7-aI-tjaHIKHEp3xEmjj8T4_F",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "S3 Block Public Access helps:",
+    "options": [
+      "Speed up uploads from distant Regions",
+      "Lower storage costs",
+      "Enable versioning",
+      "Prevent accidental public exposure of data"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "It overrides public grants.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l7124-01",
+    "lessonDriveFileId": "1-1YAmrZuHoH0ILt3_pNuktMK4qoql9Ai",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "S3 versioning lets you:",
+    "options": [
+      "Keep and restore previous versions of objects",
+      "Encrypt automatically",
+      "Make objects public",
+      "Reduce costs by deleting old objects automatically"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Protects against overwrites and deletes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l7124-02",
+    "lessonDriveFileId": "1-1YAmrZuHoH0ILt3_pNuktMK4qoql9Ai",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "S3 lifecycle rules can:",
+    "options": [
+      "Create EC2 instances",
+      "Move objects to cheaper classes or delete them over time",
+      "Change DNS records when objects are moved",
+      "Rotate IAM keys"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Automate cost management.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l7124-03",
+    "lessonDriveFileId": "1-1YAmrZuHoH0ILt3_pNuktMK4qoql9Ai",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Amazon EBS provides:",
+    "options": [
+      "Object storage",
+      "DNS resolution for EC2 instance names",
+      "Block storage volumes for EC2 instances",
+      "Queues"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "EBS volumes attach to instances in one AZ.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l7124-04",
+    "lessonDriveFileId": "1-1YAmrZuHoH0ILt3_pNuktMK4qoql9Ai",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Amazon EFS provides:",
+    "options": [
+      "Object storage",
+      "Block storage for one instance only",
+      "Archive storage",
+      "A shared file system many EC2 instances can mount"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "NFS file storage across AZs.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l7124-05",
+    "lessonDriveFileId": "1-1YAmrZuHoH0ILt3_pNuktMK4qoql9Ai",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "S3 Cross-Region Replication requires:",
+    "options": [
+      "Versioning enabled on source and destination buckets",
+      "Public buckets",
+      "A NAT Gateway in each Region's public subnet",
+      "An RDS instance"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Versioning is a prerequisite.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l7107-03",
+    "lessonDriveFileId": "1YhwI4_icl-y_NzpWUFr1yOxnLho5oWmX",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which service is best for storing website images and backups?",
+    "options": [
+      "Amazon EBS",
+      "Amazon S3",
+      "Amazon SQS",
+      "AWS KMS"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Durable, scalable object storage.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l7108-03",
+    "lessonDriveFileId": "1VgEwQ8EKi8nUJEq_BfLopBulzzi-jakx",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Data accessed unpredictably should use which S3 class to optimise cost automatically?",
+    "options": [
+      "S3 Glacier Deep Archive",
+      "S3 Standard only",
+      "S3 Intelligent-Tiering",
+      "EBS io2"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It moves objects between tiers based on access.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l7116-03",
+    "lessonDriveFileId": "15BCOoLj7-aI-tjaHIKHEp3xEmjj8T4_F",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "How do you allow another AWS account to read a bucket?",
+    "options": [
+      "Make it public so the other account can read it",
+      "Share your root keys",
+      "Use a NAT Gateway",
+      "Add a bucket policy granting that account access"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Resource policies grant cross-account access.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l7124-06",
+    "lessonDriveFileId": "1-1YAmrZuHoH0ILt3_pNuktMK4qoql9Ai",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Several EC2 instances need to share the same files. Use:",
+    "options": [
+      "Amazon EFS",
+      "One EBS volume attached to all",
+      "S3 Glacier",
+      "Route 53"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "EFS supports concurrent mounts.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l7124-07",
+    "lessonDriveFileId": "1-1YAmrZuHoH0ILt3_pNuktMK4qoql9Ai",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "How can you protect S3 data from accidental deletion?",
+    "options": [
+      "Disable encryption",
+      "Enable versioning (and MFA Delete if needed)",
+      "Use public access so others can restore files",
+      "Shorten bucket names"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Previous versions can be restored.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l8126-01",
+    "lessonDriveFileId": "1YCOQSZKLrTIdQc9ZovZH4R9UBNxJernv",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Relational databases organise data in:",
+    "options": [
+      "Key–value pairs only",
+      "Graphs only, with nodes and edges between them",
+      "Tables with rows and columns linked by keys",
+      "Files in folders"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "SQL databases use structured tables.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l8128-01",
+    "lessonDriveFileId": "1siNQg1XVHUCQA9I00Vsq7XsZw3llXYll",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Amazon RDS is:",
+    "options": [
+      "A NoSQL key-value store",
+      "A data warehouse only",
+      "A file system",
+      "A managed relational database service"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "RDS handles patching, backups and more.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l8128-02",
+    "lessonDriveFileId": "1siNQg1XVHUCQA9I00Vsq7XsZw3llXYll",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "RDS Multi-AZ deployments provide:",
+    "options": [
+      "Automatic failover to a standby in another AZ",
+      "Read scaling",
+      "Lower costs by running on a single instance",
+      "Global tables"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Multi-AZ is for high availability.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l8128-03",
+    "lessonDriveFileId": "1siNQg1XVHUCQA9I00Vsq7XsZw3llXYll",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "RDS read replicas are used to:",
+    "options": [
+      "Provide synchronous failover only",
+      "Scale read traffic",
+      "Encrypt data",
+      "Store logs"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Asynchronous replicas offload reads.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l8129-01",
+    "lessonDriveFileId": "15_eKglsqyz77HpZBr0CRt5oGbIJCsiLx",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "To connect to an RDS database from an EC2 instance, you need:",
+    "options": [
+      "A public bucket",
+      "A CloudFront distribution",
+      "Security group rules allowing the database port",
+      "An SQS queue between the instance and the database"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Allow the app's security group on port 3306 for MySQL.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l8131-01",
+    "lessonDriveFileId": "1qUPW8niU-zH99D_SmD6fRW2wOyjIp_dK",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Amazon DynamoDB is:",
+    "options": [
+      "A relational SQL database",
+      "A data warehouse",
+      "A cache only, with no permanent storage",
+      "A fully managed NoSQL key-value and document database"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Single-digit millisecond performance at scale.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l8131-02",
+    "lessonDriveFileId": "1qUPW8niU-zH99D_SmD6fRW2wOyjIp_dK",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "DynamoDB on-demand capacity mode is best for:",
+    "options": [
+      "Unpredictable traffic",
+      "Steady, predictable traffic only",
+      "Archives",
+      "DNS"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Pay per request without capacity planning.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l8134-01",
+    "lessonDriveFileId": "1kYQ_zCk3-XlBY1wHgKCbSkfLK1imq55M",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Amazon Neptune is a:",
+    "options": [
+      "Time-series database",
+      "Graph database",
+      "Ledger database",
+      "Object store"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Great for relationships like social networks.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l8128-04",
+    "lessonDriveFileId": "1siNQg1XVHUCQA9I00Vsq7XsZw3llXYll",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Amazon Aurora is:",
+    "options": [
+      "A NoSQL database",
+      "A message queue",
+      "A MySQL- and PostgreSQL-compatible database built for the cloud",
+      "A CDN that caches database queries at the edge"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "High performance with storage across AZs.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l8131-03",
+    "lessonDriveFileId": "1qUPW8niU-zH99D_SmD6fRW2wOyjIp_dK",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "DynamoDB Accelerator (DAX) provides:",
+    "options": [
+      "SQL joins across several DynamoDB tables",
+      "Backups only",
+      "Encryption keys",
+      "An in-memory cache for DynamoDB"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Microsecond read performance.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l8128-05",
+    "lessonDriveFileId": "1siNQg1XVHUCQA9I00Vsq7XsZw3llXYll",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Amazon Redshift is mainly used for:",
+    "options": [
+      "Data warehousing and analytics",
+      "Transactional web apps",
+      "Key-value caching",
+      "Messaging"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Columnar storage for analytics.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l8126-02",
+    "lessonDriveFileId": "1YCOQSZKLrTIdQc9ZovZH4R9UBNxJernv",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Amazon ElastiCache provides:",
+    "options": [
+      "Object storage",
+      "Managed Redis or Memcached caching",
+      "DNS caching for private hosted zones",
+      "VPN"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Caches reduce database load.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l8128-06",
+    "lessonDriveFileId": "1siNQg1XVHUCQA9I00Vsq7XsZw3llXYll",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which RDS feature protects against an AZ failure?",
+    "options": [
+      "Read replicas only",
+      "Snapshots only",
+      "Multi-AZ deployment",
+      "Parameter groups"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Automatic failover to standby.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l8131-04",
+    "lessonDriveFileId": "1qUPW8niU-zH99D_SmD6fRW2wOyjIp_dK",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "A mobile game needs single-digit millisecond reads at massive scale. Choose:",
+    "options": [
+      "RDS MySQL on a micro instance",
+      "S3 Glacier",
+      "Redshift",
+      "DynamoDB"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Built for low-latency scale.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l8134-02",
+    "lessonDriveFileId": "1kYQ_zCk3-XlBY1wHgKCbSkfLK1imq55M",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which database best stores and queries complex relationships, like 'friends of friends'?",
+    "options": [
+      "Amazon Neptune",
+      "Amazon S3",
+      "Amazon Redshift",
+      "Amazon SQS"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Graph databases excel at relationships.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l8128-07",
+    "lessonDriveFileId": "1siNQg1XVHUCQA9I00Vsq7XsZw3llXYll",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Your reporting queries slow down the main RDS database. A good fix is to:",
+    "options": [
+      "Turn off backups",
+      "Add a read replica for reporting",
+      "Delete indexes so writes finish faster",
+      "Use a NAT Gateway"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Offload reads.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l8126-03",
+    "lessonDriveFileId": "1YCOQSZKLrTIdQc9ZovZH4R9UBNxJernv",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which service reduces database load by caching frequent queries?",
+    "options": [
+      "CloudTrail",
+      "Route 53",
+      "ElastiCache",
+      "AWS Shield"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "In-memory caching speeds responses.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l9136-01",
+    "lessonDriveFileId": "1JPRZIXQfas5y7dD9wS4oMCLsA9ucxEdR",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Moving data into AWS can be done:",
+    "options": [
+      "Only by email",
+      "Only by printing",
+      "Only via DNS records that point to S3 buckets",
+      "Online over the network or offline with physical devices"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Choose based on size and time.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l9138-01",
+    "lessonDriveFileId": "1eN-Up5nokqOsQFdkDCqQcNMNQjnXYkkf",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "AWS DataSync is used to:",
+    "options": [
+      "Automate and accelerate data transfer between on-premises storage and AWS",
+      "Run containers",
+      "Monitor costs across all your AWS accounts",
+      "Host websites"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Online transfer for NFS, SMB and more.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l9140-01",
+    "lessonDriveFileId": "14DDRwq8rJ2AtLM3_GY6DriEZF-lEp3E8",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "AWS Transfer Family provides:",
+    "options": [
+      "Video transcoding",
+      "Managed SFTP, FTPS and FTP into S3 or EFS",
+      "Machine learning",
+      "DNS hosting for file transfer domains"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Keep existing file transfer workflows.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l9142-01",
+    "lessonDriveFileId": "1mfIbJaar1kTVsWJo2Jz8jafzln1UhJRc",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "The AWS Snow Family is used for:",
+    "options": [
+      "Live video",
+      "DNS failover",
+      "Offline transfer of very large datasets using physical devices",
+      "Email delivery for large attachments"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Snowball devices are shipped to you.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l9142-02",
+    "lessonDriveFileId": "1mfIbJaar1kTVsWJo2Jz8jafzln1UhJRc",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "AWS Database Migration Service (DMS) helps:",
+    "options": [
+      "Migrate DNS records between registrars",
+      "Create users",
+      "Back up laptops",
+      "Migrate databases to AWS with minimal downtime"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Supports homogeneous and heterogeneous migrations.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l9142-03",
+    "lessonDriveFileId": "1mfIbJaar1kTVsWJo2Jz8jafzln1UhJRc",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "The AWS Schema Conversion Tool is used when:",
+    "options": [
+      "Migrating between different database engines, e.g. Oracle to Aurora",
+      "Copying S3 objects",
+      "Creating VPCs that span on-premises sites",
+      "Setting up IAM"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "It converts schemas and code.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l9138-02",
+    "lessonDriveFileId": "1eN-Up5nokqOsQFdkDCqQcNMNQjnXYkkf",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "DataSync is best when you have:",
+    "options": [
+      "No network at all",
+      "Good network bandwidth and need recurring transfers",
+      "Only one small file",
+      "Only DNS records and small configuration files"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Online, scheduled transfers.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l9142-04",
+    "lessonDriveFileId": "1mfIbJaar1kTVsWJo2Jz8jafzln1UhJRc",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Choosing Snowball over network transfer makes sense when:",
+    "options": [
+      "Moving 1 MB",
+      "You have a fast fibre link and little data",
+      "Transferring petabytes would take too long over the internet",
+      "You need real-time sync"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Physical shipping beats slow links.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l9140-02",
+    "lessonDriveFileId": "14DDRwq8rJ2AtLM3_GY6DriEZF-lEp3E8",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "A partner sends files via SFTP. To land them directly in S3, use:",
+    "options": [
+      "CloudFront",
+      "Kinesis",
+      "Lambda only",
+      "AWS Transfer Family"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Managed SFTP endpoint.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l9136-02",
+    "lessonDriveFileId": "1JPRZIXQfas5y7dD9wS4oMCLsA9ucxEdR",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Before migrating data, you should consider:",
+    "options": [
+      "Data size, available bandwidth and acceptable downtime",
+      "Only the logo",
+      "Only the region name",
+      "Nothing, because AWS handles all migrations"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "These drive the method.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l9142-05",
+    "lessonDriveFileId": "1mfIbJaar1kTVsWJo2Jz8jafzln1UhJRc",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Storage Gateway lets on-premises applications:",
+    "options": [
+      "Run Lambda locally",
+      "Use AWS cloud storage through standard protocols",
+      "Replace IAM",
+      "Host DNS zones for the on-premises network"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Hybrid storage bridge.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l9142-06",
+    "lessonDriveFileId": "1mfIbJaar1kTVsWJo2Jz8jafzln1UhJRc",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "DMS can keep source and target in sync using:",
+    "options": [
+      "Daily emails",
+      "Manual copying",
+      "Change data capture (CDC)",
+      "DNS updates"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Ongoing replication minimises downtime.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l9138-03",
+    "lessonDriveFileId": "1eN-Up5nokqOsQFdkDCqQcNMNQjnXYkkf",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which service moves NFS file shares to Amazon EFS on a schedule?",
+    "options": [
+      "AWS Shield",
+      "Route 53",
+      "CloudTrail",
+      "AWS DataSync"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "DataSync handles file transfers.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l9142-07",
+    "lessonDriveFileId": "1mfIbJaar1kTVsWJo2Jz8jafzln1UhJRc",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "You must move 500 TB with a slow internet connection. Best option?",
+    "options": [
+      "AWS Snowball",
+      "Upload over the internet",
+      "Email attachments",
+      "Route 53"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Physical transfer is faster here.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l9142-08",
+    "lessonDriveFileId": "1mfIbJaar1kTVsWJo2Jz8jafzln1UhJRc",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which service migrates an on-premises MySQL database to RDS with minimal downtime?",
+    "options": [
+      "AWS Transfer Family",
+      "AWS Database Migration Service",
+      "Amazon Macie",
+      "AWS Budgets"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "DMS with ongoing replication.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l10144-01",
+    "lessonDriveFileId": "1cDtvfXdhRABLF6ZyPdBgxENYQaJDAUUW",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Amazon Athena lets you:",
+    "options": [
+      "Run containers",
+      "Send messages",
+      "Query data in S3 using SQL without managing servers",
+      "Host DNS zones for query results"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Serverless, pay per query.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l10144-02",
+    "lessonDriveFileId": "1cDtvfXdhRABLF6ZyPdBgxENYQaJDAUUW",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Athena charges are based on:",
+    "options": [
+      "Number of users",
+      "Hours of server uptime",
+      "Number of buckets",
+      "The amount of data scanned per query"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Compress and partition data to save money.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l10145-01",
+    "lessonDriveFileId": "1ewQ-jxmB1oH-MoAgpwc5bZNDVBfkx6KT",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Storing data in columnar formats like Parquet helps Athena because:",
+    "options": [
+      "It scans less data, reducing cost and time",
+      "It makes data public",
+      "It deletes duplicates",
+      "It encrypts automatically"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Columnar formats read only needed columns.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l10146-01",
+    "lessonDriveFileId": "18U7jHAkJBAVISKD-n4z3dke2WdsQRoAj",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Amazon Kinesis Data Streams is used for:",
+    "options": [
+      "Monthly batch reports only",
+      "Real-time streaming data ingestion",
+      "Object storage",
+      "Static websites"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Process data as it arrives.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l10146-02",
+    "lessonDriveFileId": "18U7jHAkJBAVISKD-n4z3dke2WdsQRoAj",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Amazon Data Firehose (Kinesis Firehose) is used to:",
+    "options": [
+      "Run SQL on RDS",
+      "Manage IAM users who send streaming data",
+      "Load streaming data into destinations like S3 or Redshift",
+      "Create AMIs"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Fully managed delivery.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l10147-01",
+    "lessonDriveFileId": "1rYSUCgW-Y8JXp55QdX7O9V5zpRtw0qWH",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Amazon QuickSight is:",
+    "options": [
+      "A database",
+      "A VPN for connecting dashboards to data centres",
+      "A CDN",
+      "A business intelligence and dashboard service"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Build interactive dashboards.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l10144-03",
+    "lessonDriveFileId": "1cDtvfXdhRABLF6ZyPdBgxENYQaJDAUUW",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "AWS Glue is used for:",
+    "options": [
+      "Serverless ETL and a data catalogue",
+      "DDoS protection",
+      "DNS routing",
+      "Email campaigns sent from a data catalogue"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Prepare and catalogue data for analytics.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l10146-03",
+    "lessonDriveFileId": "18U7jHAkJBAVISKD-n4z3dke2WdsQRoAj",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Which service is best for real-time clickstream analysis?",
+    "options": [
+      "S3 Glacier",
+      "Kinesis",
+      "Route 53",
+      "CloudFormation"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Streaming ingestion and processing.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l10147-02",
+    "lessonDriveFileId": "1rYSUCgW-Y8JXp55QdX7O9V5zpRtw0qWH",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "QuickSight can visualise data from:",
+    "options": [
+      "Only Excel files",
+      "Only email",
+      "S3, Athena, RDS, Redshift and other sources",
+      "Only DNS logs stored in Route 53"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Many AWS data sources.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l10144-04",
+    "lessonDriveFileId": "1cDtvfXdhRABLF6ZyPdBgxENYQaJDAUUW",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Partitioning S3 data by date helps Athena:",
+    "options": [
+      "Scan everything every time",
+      "Make data public",
+      "Use more storage",
+      "Scan only relevant partitions"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Less data scanned, lower cost.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l10146-04",
+    "lessonDriveFileId": "18U7jHAkJBAVISKD-n4z3dke2WdsQRoAj",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Amazon EMR is used for:",
+    "options": [
+      "Big data processing with frameworks like Spark and Hadoop",
+      "Sending SMS",
+      "DNS resolution for big data clusters",
+      "IAM"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Managed clusters for big data.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l10144-05",
+    "lessonDriveFileId": "1cDtvfXdhRABLF6ZyPdBgxENYQaJDAUUW",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Which service would you choose for occasional ad-hoc SQL queries on logs in S3?",
+    "options": [
+      "Redshift with a 24/7 cluster",
+      "Athena",
+      "DynamoDB",
+      "ElastiCache"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "No infrastructure to manage.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l10144-06",
+    "lessonDriveFileId": "1cDtvfXdhRABLF6ZyPdBgxENYQaJDAUUW",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "How can you reduce Athena query costs?",
+    "options": [
+      "Store data as huge uncompressed text",
+      "Query everything with SELECT * always",
+      "Use compressed, columnar, partitioned data",
+      "Disable partitions"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Less data scanned = lower cost.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l10146-05",
+    "lessonDriveFileId": "18U7jHAkJBAVISKD-n4z3dke2WdsQRoAj",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "IoT sensors send readings every second for live dashboards. Which service ingests this best?",
+    "options": [
+      "S3 Glacier",
+      "AWS Budgets",
+      "Route 53 health checks on each sensor",
+      "Amazon Kinesis Data Streams"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Real-time streaming.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l10147-03",
+    "lessonDriveFileId": "1rYSUCgW-Y8JXp55QdX7O9V5zpRtw0qWH",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "A manager wants interactive sales dashboards from AWS data. Use:",
+    "options": [
+      "Amazon QuickSight",
+      "Amazon SQS",
+      "AWS KMS",
+      "AWS DataSync"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "BI dashboards.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l10144-07",
+    "lessonDriveFileId": "1cDtvfXdhRABLF6ZyPdBgxENYQaJDAUUW",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Which service catalogues datasets so Athena knows their schema?",
+    "options": [
+      "AWS Shield",
+      "AWS Glue Data Catalog",
+      "CloudFront",
+      "IAM Identity Center"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Glue stores table definitions.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l11150-01",
+    "lessonDriveFileId": "1EVxoVoaYf77GMBCXbJ0omcDmMrz8Ipmm",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Amazon CloudWatch is used to:",
+    "options": [
+      "Record API calls for auditing",
+      "Store objects",
+      "Collect metrics and logs and create alarms",
+      "Route DNS"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "CloudWatch monitors performance.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l11153-01",
+    "lessonDriveFileId": "1tENuC9r9DAjqR_NICXRWm7j5iv1J77Pj",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "A CloudWatch alarm can:",
+    "options": [
+      "Create IAM users",
+      "Delete S3 buckets automatically",
+      "Change Regions when an instance fails",
+      "Trigger notifications or actions when a metric crosses a threshold"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "E.g. notify when CPU > 80%.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l11153-02",
+    "lessonDriveFileId": "1tENuC9r9DAjqR_NICXRWm7j5iv1J77Pj",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "By default, EC2 doesn't send which metric to CloudWatch?",
+    "options": [
+      "Memory utilisation (needs the CloudWatch agent)",
+      "CPU utilisation",
+      "Network traffic in and out of the instance",
+      "Disk read ops"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Memory requires the agent.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l11158-01",
+    "lessonDriveFileId": "1IKB9kzDDYPfCyXtzeResj_ZDtYKJJfHU",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "CloudWatch Dashboards provide:",
+    "options": [
+      "Billing invoices",
+      "Custom visual views of metrics",
+      "IAM policies",
+      "DNS records for each monitored resource"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Monitor at a glance.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l11162-01",
+    "lessonDriveFileId": "10WpRRPKc7ztvB4nzlNBlwmQ8tk0V9eYi",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "AWS CloudTrail records:",
+    "options": [
+      "CPU metrics for every EC2 instance",
+      "Web page caches",
+      "API calls and account activity for auditing",
+      "Container images"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Who did what, when.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l11162-02",
+    "lessonDriveFileId": "10WpRRPKc7ztvB4nzlNBlwmQ8tk0V9eYi",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "To keep CloudTrail logs long-term, deliver them to:",
+    "options": [
+      "An SQS queue",
+      "Route 53",
+      "An EBS volume only",
+      "An S3 bucket"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Durable storage for audit trails.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l11150-02",
+    "lessonDriveFileId": "1EVxoVoaYf77GMBCXbJ0omcDmMrz8Ipmm",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "CloudWatch Logs can collect:",
+    "options": [
+      "Application and system logs from instances and services",
+      "Only emails sent by the application",
+      "Only images",
+      "Only DNS queries"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Central log storage and search.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l11153-03",
+    "lessonDriveFileId": "1tENuC9r9DAjqR_NICXRWm7j5iv1J77Pj",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Amazon SNS is often used with CloudWatch alarms to:",
+    "options": [
+      "Store data",
+      "Send email or SMS notifications",
+      "Run SQL queries against the alarm history",
+      "Encrypt keys"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Alarm → SNS topic → subscribers.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l11162-03",
+    "lessonDriveFileId": "10WpRRPKc7ztvB4nzlNBlwmQ8tk0V9eYi",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "AWS Config is used to:",
+    "options": [
+      "Run containers",
+      "Cache content at edge locations near users",
+      "Track resource configuration changes and compliance",
+      "Send messages"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Configuration history and rules.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l11158-02",
+    "lessonDriveFileId": "1IKB9kzDDYPfCyXtzeResj_ZDtYKJJfHU",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which service answers 'Who deleted this security group?'",
+    "options": [
+      "CloudWatch metrics",
+      "QuickSight",
+      "Glue",
+      "CloudTrail"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "API activity history.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l11153-04",
+    "lessonDriveFileId": "1tENuC9r9DAjqR_NICXRWm7j5iv1J77Pj",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Detailed monitoring for EC2 sends metrics every:",
+    "options": [
+      "1 minute",
+      "5 minutes",
+      "1 hour",
+      "1 day"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Basic monitoring is 5 minutes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l11150-03",
+    "lessonDriveFileId": "1EVxoVoaYf77GMBCXbJ0omcDmMrz8Ipmm",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "CloudWatch Logs Insights lets you:",
+    "options": [
+      "Create VPCs",
+      "Query and analyse logs interactively",
+      "Launch EC2 instances from saved log queries",
+      "Delete accounts"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Search logs with a query language.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l11162-04",
+    "lessonDriveFileId": "10WpRRPKc7ztvB4nzlNBlwmQ8tk0V9eYi",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which service would an auditor use to see every API call made in an account?",
+    "options": [
+      "Amazon CloudWatch Dashboards",
+      "AWS Budgets",
+      "AWS CloudTrail",
+      "Amazon Athena only"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "CloudTrail logs API activity.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l11153-05",
+    "lessonDriveFileId": "1tENuC9r9DAjqR_NICXRWm7j5iv1J77Pj",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "You want an email when an instance's CPU stays above 80%. Use:",
+    "options": [
+      "CloudTrail only",
+      "Route 53 health checks only",
+      "S3 lifecycle rules",
+      "A CloudWatch alarm with an SNS notification"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Alarm plus notification.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l11162-05",
+    "lessonDriveFileId": "10WpRRPKc7ztvB4nzlNBlwmQ8tk0V9eYi",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which service checks whether resources comply with rules like 'all buckets encrypted'?",
+    "options": [
+      "AWS Config",
+      "AWS Shield",
+      "Amazon SQS",
+      "AWS DataSync"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Config rules evaluate compliance.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l11153-06",
+    "lessonDriveFileId": "1tENuC9r9DAjqR_NICXRWm7j5iv1J77Pj",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "To monitor memory usage on EC2, you must:",
+    "options": [
+      "Enable CloudTrail",
+      "Install the CloudWatch agent",
+      "Use a NAT Gateway",
+      "Nothing; it's automatic"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Memory is an OS-level metric.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l12169-01",
+    "lessonDriveFileId": "14GQMQGl7u1LPtPu7LNLYb-MfpaH8Gczd",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "AWS Shield Standard protects against:",
+    "options": [
+      "SQL injection only",
+      "Data loss caused by deleting S3 objects",
+      "Common DDoS attacks, automatically and at no extra cost",
+      "Billing fraud"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Shield Advanced adds more protection and support.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l12169-02",
+    "lessonDriveFileId": "14GQMQGl7u1LPtPu7LNLYb-MfpaH8Gczd",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "AWS WAF protects web applications from:",
+    "options": [
+      "Power cuts in the AWS data centres",
+      "Disk failures",
+      "Billing errors",
+      "Common exploits like SQL injection and XSS"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Rules filter HTTP requests.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l12173-01",
+    "lessonDriveFileId": "1EZ4GQYky6eZnB5wTEPB3vGECjb3cVaH0",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "AWS KMS is used to:",
+    "options": [
+      "Create and manage encryption keys",
+      "Store files in encrypted S3 buckets",
+      "Monitor CPU",
+      "Route traffic"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Central key management.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l12173-02",
+    "lessonDriveFileId": "1EZ4GQYky6eZnB5wTEPB3vGECjb3cVaH0",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Encryption at rest protects data:",
+    "options": [
+      "Travelling over networks only",
+      "Stored on disk",
+      "In memory only",
+      "In DNS only"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "E.g. S3 or EBS encryption.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l12176-01",
+    "lessonDriveFileId": "1xuP3mDFxpBzam5qnCXtXEcFV6h9anoei",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "AWS Secrets Manager is used to:",
+    "options": [
+      "Host websites behind CloudFront",
+      "Store large videos",
+      "Store and automatically rotate secrets like database passwords",
+      "Run analytics queries against encrypted data stores"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Avoid hard-coding credentials.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l12177-01",
+    "lessonDriveFileId": "1unmYGw3mwGiSkC07E-Z14YiSQDgNOiK4",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Amazon Macie helps:",
+    "options": [
+      "Run containers",
+      "Scale EC2 instances based on data volume",
+      "Cache pages",
+      "Discover and protect sensitive data like PII in S3"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Uses ML to find sensitive data.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l12177-02",
+    "lessonDriveFileId": "1unmYGw3mwGiSkC07E-Z14YiSQDgNOiK4",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Amazon GuardDuty provides:",
+    "options": [
+      "Intelligent threat detection from logs and network activity",
+      "DNS hosting with built-in threat blocking",
+      "Database backups",
+      "Video streaming"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Detects suspicious behaviour.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l12177-03",
+    "lessonDriveFileId": "1unmYGw3mwGiSkC07E-Z14YiSQDgNOiK4",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Amazon Inspector:",
+    "options": [
+      "Hosts DNS zones for scanned workloads",
+      "Scans workloads for software vulnerabilities",
+      "Stores secrets",
+      "Creates budgets"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Automated vulnerability management.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l12173-03",
+    "lessonDriveFileId": "1EZ4GQYky6eZnB5wTEPB3vGECjb3cVaH0",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Encryption in transit is typically provided by:",
+    "options": [
+      "S3 lifecycle rules",
+      "Auto Scaling",
+      "TLS/HTTPS",
+      "IAM groups"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Protects data moving over networks.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l12176-02",
+    "lessonDriveFileId": "1xuP3mDFxpBzam5qnCXtXEcFV6h9anoei",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "How does Secrets Manager differ from SSM Parameter Store for passwords?",
+    "options": [
+      "It can't store passwords",
+      "It's only for images",
+      "It's for DNS",
+      "It supports built-in automatic rotation"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Rotation is a key feature.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l12169-03",
+    "lessonDriveFileId": "14GQMQGl7u1LPtPu7LNLYb-MfpaH8Gczd",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "AWS Certificate Manager (ACM) provides:",
+    "options": [
+      "Free public SSL/TLS certificates for AWS services",
+      "Paid antivirus",
+      "DNS hosting for domains you register",
+      "Database engines"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Use with ALB and CloudFront.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l12177-04",
+    "lessonDriveFileId": "1unmYGw3mwGiSkC07E-Z14YiSQDgNOiK4",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "AWS Security Hub:",
+    "options": [
+      "Stores files",
+      "Aggregates security findings across services",
+      "Runs Lambda functions on security events",
+      "Creates VPCs"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "A central security view.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l12169-04",
+    "lessonDriveFileId": "14GQMQGl7u1LPtPu7LNLYb-MfpaH8Gczd",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Which service blocks SQL injection attempts against a web app behind an ALB?",
+    "options": [
+      "AWS Shield Standard only",
+      "Amazon Macie",
+      "AWS WAF",
+      "AWS Budgets"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "WAF filters malicious requests.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l12176-03",
+    "lessonDriveFileId": "1xuP3mDFxpBzam5qnCXtXEcFV6h9anoei",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Where should an application fetch its database password from?",
+    "options": [
+      "Hard-coded source code",
+      "A public S3 file",
+      "An email",
+      "AWS Secrets Manager"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Centralised, rotated secrets.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l12177-05",
+    "lessonDriveFileId": "1unmYGw3mwGiSkC07E-Z14YiSQDgNOiK4",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Which service detects unusual API calls that may indicate a compromised account?",
+    "options": [
+      "Amazon GuardDuty",
+      "Amazon QuickSight",
+      "AWS DataSync",
+      "Amazon ECR"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Threat detection.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l12173-04",
+    "lessonDriveFileId": "1EZ4GQYky6eZnB5wTEPB3vGECjb3cVaH0",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Who controls customer managed keys in KMS?",
+    "options": [
+      "AWS only",
+      "The customer, through key policies",
+      "Nobody, because AWS rotates them automatically",
+      "The internet"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "You set who can use and manage them.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l13188-01",
+    "lessonDriveFileId": "1xALVAYIUioNMcMCWepGLwCyR-cCd01cv",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Infrastructure as Code (IaC) means:",
+    "options": [
+      "Clicking in the console every time",
+      "Writing apps only, with no infrastructure involved",
+      "Defining infrastructure in code templates you can version and reuse",
+      "Printing diagrams"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Repeatable, reviewable deployments.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l13189-01",
+    "lessonDriveFileId": "1sYxnVClsjIp8e59V-Cm9q_5hBQwy-r47",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "AWS CloudFormation templates are written in:",
+    "options": [
+      "HTML",
+      "CSS",
+      "Markdown only",
+      "JSON or YAML"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Templates describe resources.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l13189-02",
+    "lessonDriveFileId": "1sYxnVClsjIp8e59V-Cm9q_5hBQwy-r47",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "A CloudFormation stack is:",
+    "options": [
+      "A set of resources created and managed together from a template",
+      "A queue of messages",
+      "A list of users allowed to edit the template",
+      "A storage class"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Update or delete as a unit.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l13190-01",
+    "lessonDriveFileId": "1OlQRUtIJiFYGjo4iJ166urthpC-Pe9vG",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "CloudFormation change sets let you:",
+    "options": [
+      "Delete accounts",
+      "Preview changes before updating a stack",
+      "Encrypt data",
+      "Monitor CPU usage of each stack resource"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Review the impact first.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l13190-02",
+    "lessonDriveFileId": "1OlQRUtIJiFYGjo4iJ166urthpC-Pe9vG",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "If a CloudFormation stack creation fails, by default it:",
+    "options": [
+      "Leaves everything half-built forever",
+      "Deletes your account",
+      "Rolls back the resources it created",
+      "Charges double"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Rollback keeps environments clean.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l13191-01",
+    "lessonDriveFileId": "1TZA5n90rLfW-KK4UoRs-BbJa6XJvV00u",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "AWS Service Catalog lets organisations:",
+    "options": [
+      "Sell products to the public",
+      "Host DNS zones for every product",
+      "Analyse logs from every account in the organisation",
+      "Offer approved, pre-configured products for teams to launch"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Governance with self-service.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l13189-03",
+    "lessonDriveFileId": "1sYxnVClsjIp8e59V-Cm9q_5hBQwy-r47",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Drift detection in CloudFormation shows:",
+    "options": [
+      "Resources changed outside the template",
+      "Billing changes",
+      "DNS updates",
+      "New AMIs released since the stack was created"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Detects manual changes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l13188-02",
+    "lessonDriveFileId": "1xALVAYIUioNMcMCWepGLwCyR-cCd01cv",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "AWS Systems Manager helps you:",
+    "options": [
+      "Create logos",
+      "Manage and patch fleets of instances",
+      "Host videos for training the operations team",
+      "Run payroll"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Operational management at scale.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l13189-04",
+    "lessonDriveFileId": "1sYxnVClsjIp8e59V-Cm9q_5hBQwy-r47",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "The 'Parameters' section of a CloudFormation template allows:",
+    "options": [
+      "Running SQL",
+      "Changing Regions",
+      "Passing input values when creating a stack",
+      "Creating users automatically"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Reusable templates.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l13189-05",
+    "lessonDriveFileId": "1sYxnVClsjIp8e59V-Cm9q_5hBQwy-r47",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "The 'Outputs' section of a template is used to:",
+    "options": [
+      "Delete stacks",
+      "Encrypt data",
+      "Send email to the stack's owner on failure",
+      "Return values like URLs or IDs after creation"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Share useful information.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l13188-03",
+    "lessonDriveFileId": "1xALVAYIUioNMcMCWepGLwCyR-cCd01cv",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "The AWS CDK lets you define infrastructure using:",
+    "options": [
+      "Familiar programming languages like TypeScript or Python",
+      "Only Excel",
+      "Only HTML and CSS files",
+      "Only Bash scripts run from the AWS CLI"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "CDK synthesises CloudFormation.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l13191-02",
+    "lessonDriveFileId": "1TZA5n90rLfW-KK4UoRs-BbJa6XJvV00u",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Elastic Beanstalk is best described as:",
+    "options": [
+      "A database",
+      "A platform service that deploys and manages web apps for you",
+      "A message queue for decoupling services",
+      "A firewall"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Upload code; AWS handles capacity and deployment.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l13189-06",
+    "lessonDriveFileId": "1sYxnVClsjIp8e59V-Cm9q_5hBQwy-r47",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Why use CloudFormation instead of manual console setup?",
+    "options": [
+      "It's always free, unlike console-created resources",
+      "It removes the need for IAM",
+      "Deployments become repeatable, consistent and version-controlled",
+      "It's faster to click"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "IaC reduces human error.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l13190-03",
+    "lessonDriveFileId": "1OlQRUtIJiFYGjo4iJ166urthpC-Pe9vG",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Before updating a production stack, you should:",
+    "options": [
+      "Delete the stack",
+      "Disable rollback",
+      "Skip testing because change sets are automatic",
+      "Create and review a change set"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Know what will change.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l13191-03",
+    "lessonDriveFileId": "1TZA5n90rLfW-KK4UoRs-BbJa6XJvV00u",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Which service lets a central team publish approved architectures for developers to launch?",
+    "options": [
+      "AWS Service Catalog",
+      "AWS Shield",
+      "Amazon Kinesis",
+      "AWS DataSync"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Governed self-service.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l13189-07",
+    "lessonDriveFileId": "1sYxnVClsjIp8e59V-Cm9q_5hBQwy-r47",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Someone manually changed a security group created by CloudFormation. What detects this?",
+    "options": [
+      "Cost Explorer",
+      "Drift detection",
+      "Macie",
+      "Athena"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Drift compares actual vs template.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l14195-01",
+    "lessonDriveFileId": "16XDq5Tn5l_ejdefX7ChM2X65qq1IblRD",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "DNS translates:",
+    "options": [
+      "IP addresses into images",
+      "Emails into SMS",
+      "Domain names into IP addresses",
+      "Code into apps"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "The internet's phone book.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l14195-02",
+    "lessonDriveFileId": "16XDq5Tn5l_ejdefX7ChM2X65qq1IblRD",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "An A record maps a name to:",
+    "options": [
+      "An IPv6 address",
+      "Another domain name",
+      "A mail server",
+      "An IPv4 address"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "AAAA is for IPv6.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l14196-01",
+    "lessonDriveFileId": "19u1Vaq3zwvQ71eJSOoSz56FQPm8eBTTA",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Amazon Route 53 is:",
+    "options": [
+      "AWS's scalable DNS and domain registration service",
+      "A load balancer",
+      "A database",
+      "A CDN that caches content at edge locations"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Also supports health checks and routing policies.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l14197-01",
+    "lessonDriveFileId": "1BodCvsVtOwZoxqVunzv9ohR7sj0NPeDo",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "A CNAME record:",
+    "options": [
+      "Points to an IPv4 address",
+      "Points one domain name to another domain name",
+      "Stores text only",
+      "Defines mail servers"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Can't be used at the zone apex.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l14197-02",
+    "lessonDriveFileId": "1BodCvsVtOwZoxqVunzv9ohR7sj0NPeDo",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "A Route 53 Alias record can point the root domain to:",
+    "options": [
+      "Only IP addresses",
+      "Only email servers",
+      "AWS resources like an ALB or CloudFront distribution",
+      "Nothing, because root domains can't use aliases"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Alias works at the zone apex and is free for AWS targets.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l14197-03",
+    "lessonDriveFileId": "1BodCvsVtOwZoxqVunzv9ohR7sj0NPeDo",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "An MX record defines:",
+    "options": [
+      "Web servers",
+      "Name servers",
+      "Text verification",
+      "Mail servers for a domain"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Email routing.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l14196-02",
+    "lessonDriveFileId": "19u1Vaq3zwvQ71eJSOoSz56FQPm8eBTTA",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Route 53 latency-based routing sends users to:",
+    "options": [
+      "The Region with the lowest latency for them",
+      "A random Region",
+      "The cheapest Region",
+      "Only us-east-1, where most services start"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Improves performance.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l14196-03",
+    "lessonDriveFileId": "19u1Vaq3zwvQ71eJSOoSz56FQPm8eBTTA",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Route 53 failover routing:",
+    "options": [
+      "Splits traffic evenly",
+      "Sends traffic to a standby when health checks fail on the primary",
+      "Blocks all traffic",
+      "Deletes records when health checks fail"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Active-passive setups.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l14196-04",
+    "lessonDriveFileId": "19u1Vaq3zwvQ71eJSOoSz56FQPm8eBTTA",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Weighted routing is useful for:",
+    "options": [
+      "Encrypting traffic",
+      "Blocking IPs that send too many requests",
+      "Sending a percentage of traffic to different resources, e.g. testing a new version",
+      "Storing logs from each version in separate buckets"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Gradual rollouts.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l14199-01",
+    "lessonDriveFileId": "1EgcjMdQP5kYF5oDT2RcX_dqUea5dYNwn",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Amazon CloudFront is:",
+    "options": [
+      "A relational database",
+      "A message queue",
+      "A VPN that connects offices to the edge",
+      "A content delivery network that caches content at edge locations"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Speeds up delivery worldwide.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l14199-02",
+    "lessonDriveFileId": "1EgcjMdQP5kYF5oDT2RcX_dqUea5dYNwn",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Origin Access Control (OAC) with CloudFront ensures:",
+    "options": [
+      "Users can reach S3 content only through CloudFront",
+      "Buckets become public",
+      "DNS stops working for the bucket's domain",
+      "Caching is disabled"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Keeps the bucket private.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l14195-03",
+    "lessonDriveFileId": "16XDq5Tn5l_ejdefX7ChM2X65qq1IblRD",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "TTL on a DNS record controls:",
+    "options": [
+      "The record's price",
+      "How long resolvers cache the answer",
+      "The server's CPU usage during busy periods",
+      "The domain's expiry"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Lower TTL means faster changes, more queries.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l14197-04",
+    "lessonDriveFileId": "1BodCvsVtOwZoxqVunzv9ohR7sj0NPeDo",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "You want example.com (root) to point to an ALB. Which record type?",
+    "options": [
+      "CNAME at the apex",
+      "MX",
+      "Route 53 Alias A record",
+      "TXT"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "CNAMEs aren't allowed at the zone apex.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l14199-03",
+    "lessonDriveFileId": "1EgcjMdQP5kYF5oDT2RcX_dqUea5dYNwn",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Users in Lagos and London load images slowly from a US bucket. The best fix is:",
+    "options": [
+      "Make the bucket public",
+      "Use a bigger EC2 instance",
+      "Add more IAM users",
+      "Serve them through CloudFront"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Edge caching reduces latency.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l14196-05",
+    "lessonDriveFileId": "19u1Vaq3zwvQ71eJSOoSz56FQPm8eBTTA",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Which Route 53 routing policy supports disaster recovery to a secondary site?",
+    "options": [
+      "Failover routing",
+      "Simple routing",
+      "Weighted routing only",
+      "Geoproximity without health checks"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Health checks trigger failover.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l14196-06",
+    "lessonDriveFileId": "19u1Vaq3zwvQ71eJSOoSz56FQPm8eBTTA",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "To send 10% of users to a new app version, use:",
+    "options": [
+      "Failover routing",
+      "Weighted routing",
+      "Simple routing",
+      "MX records"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Weights split traffic.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l15204-01",
+    "lessonDriveFileId": "1pFTtX5NkIUzHxYqT_oeM9lP4Tm1tlfNm",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Amazon API Gateway is used to:",
+    "options": [
+      "Store objects",
+      "Run SQL queries against backend databases",
+      "Create, publish and secure APIs",
+      "Host DNS"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Front door for serverless backends.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l15204-02",
+    "lessonDriveFileId": "1pFTtX5NkIUzHxYqT_oeM9lP4Tm1tlfNm",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "A common serverless API pattern is:",
+    "options": [
+      "S3 triggering Route 53",
+      "RDS triggering IAM",
+      "CloudTrail triggering EBS",
+      "API Gateway triggering Lambda functions"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Fully managed request handling.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l15205-01",
+    "lessonDriveFileId": "1gT5uZESTUE-_4L1F7h32f5OTNmn5KzUt",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Amazon SQS is:",
+    "options": [
+      "A managed message queue that decouples components",
+      "A DNS service",
+      "A CDN that delivers messages at the edge",
+      "A key store"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Producers send; consumers poll.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l15205-02",
+    "lessonDriveFileId": "1gT5uZESTUE-_4L1F7h32f5OTNmn5KzUt",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "SQS FIFO queues guarantee:",
+    "options": [
+      "Unlimited throughput with random order",
+      "Ordered, exactly-once processing",
+      "No delivery",
+      "Email delivery"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Standard queues are at-least-once, best-effort order.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l15207-01",
+    "lessonDriveFileId": "1Mi-FnnA5PW5lKVv8ufI9sKazMVCKTpiR",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "The SQS visibility timeout:",
+    "options": [
+      "Deletes messages instantly",
+      "Encrypts messages",
+      "Hides a message from other consumers while it's being processed",
+      "Sends email to the message's original sender"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Prevents duplicate processing.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l15207-02",
+    "lessonDriveFileId": "1Mi-FnnA5PW5lKVv8ufI9sKazMVCKTpiR",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "A dead-letter queue stores:",
+    "options": [
+      "All successful messages",
+      "Logs from every consumer that read the queue",
+      "Images",
+      "Messages that failed processing several times"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Isolate problem messages.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l15212-01",
+    "lessonDriveFileId": "1kpMfg-g-l3b1nLmSQmkzZ3iMva6X_l95",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Amazon SNS uses which model?",
+    "options": [
+      "Publish/subscribe (push to many subscribers)",
+      "Polling only",
+      "Request/response only",
+      "Batch files processed once a day"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "One message fans out to many.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l15212-02",
+    "lessonDriveFileId": "1kpMfg-g-l3b1nLmSQmkzZ3iMva6X_l95",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Combining SNS with multiple SQS queues is called:",
+    "options": [
+      "Fan-in",
+      "Fan-out",
+      "Throttling",
+      "Sharding"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "One event, many independent consumers.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l15212-03",
+    "lessonDriveFileId": "1kpMfg-g-l3b1nLmSQmkzZ3iMva6X_l95",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Amazon EventBridge is:",
+    "options": [
+      "A database for storing event history",
+      "A load balancer",
+      "A serverless event bus for routing events between services",
+      "A storage class"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Rules route events to targets.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l15212-04",
+    "lessonDriveFileId": "1kpMfg-g-l3b1nLmSQmkzZ3iMva6X_l95",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "AWS Step Functions coordinates:",
+    "options": [
+      "DNS records",
+      "IAM users and their group memberships",
+      "S3 storage classes",
+      "Multi-step workflows across services"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Visual state machines.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l15205-03",
+    "lessonDriveFileId": "1gT5uZESTUE-_4L1F7h32f5OTNmn5KzUt",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Decoupling with SQS helps because:",
+    "options": [
+      "Components can fail or scale independently",
+      "It removes the need for code",
+      "It makes systems slower always",
+      "It replaces databases"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Queues absorb spikes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l15204-03",
+    "lessonDriveFileId": "1pFTtX5NkIUzHxYqT_oeM9lP4Tm1tlfNm",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "API Gateway throttling helps:",
+    "options": [
+      "Store data",
+      "Protect backends from too many requests",
+      "Encrypt keys",
+      "Send SMS alerts to API consumers"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Rate limits prevent overload.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l15205-04",
+    "lessonDriveFileId": "1gT5uZESTUE-_4L1F7h32f5OTNmn5KzUt",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Orders arrive in bursts faster than the backend can process. Which service helps smooth the load?",
+    "options": [
+      "Route 53",
+      "CloudFront",
+      "Amazon SQS",
+      "AWS Budgets"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Queue work and process at a steady rate.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l15212-05",
+    "lessonDriveFileId": "1kpMfg-g-l3b1nLmSQmkzZ3iMva6X_l95",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "One order event must trigger email, inventory and analytics separately. Use:",
+    "options": [
+      "One EBS volume",
+      "A NAT Gateway that forwards the event to each service",
+      "Route 53 failover",
+      "SNS fan-out to multiple SQS queues"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Fan-out decouples consumers.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l15207-03",
+    "lessonDriveFileId": "1Mi-FnnA5PW5lKVv8ufI9sKazMVCKTpiR",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "A message keeps failing processing. Where should it end up?",
+    "options": [
+      "A dead-letter queue",
+      "Deleted silently",
+      "Back in the queue forever",
+      "In Route 53"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Inspect and fix later.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l15204-04",
+    "lessonDriveFileId": "1pFTtX5NkIUzHxYqT_oeM9lP4Tm1tlfNm",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Which pair builds a serverless REST API?",
+    "options": [
+      "EBS and NAT Gateway",
+      "API Gateway and Lambda",
+      "Route 53 and Shield",
+      "Glacier and Kinesis"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "No servers to manage.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l16213-01",
+    "lessonDriveFileId": "1fZmps3zVwZDe31ZnQRCg1S_xt3Im5KxK",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Amazon SageMaker is used to:",
+    "options": [
+      "Host DNS zones for model endpoints",
+      "Store backups",
+      "Build, train and deploy machine learning models",
+      "Route traffic"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "End-to-end ML platform.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l16214-01",
+    "lessonDriveFileId": "1N-bLZNBsyltFyeAqoyXweTVCbRl5xvmc",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Amazon Rekognition provides:",
+    "options": [
+      "Text translation",
+      "Speech to text",
+      "Database hosting",
+      "Image and video analysis"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Detect objects, faces and text in images.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l16214-02",
+    "lessonDriveFileId": "1N-bLZNBsyltFyeAqoyXweTVCbRl5xvmc",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Which service converts speech to text?",
+    "options": [
+      "Amazon Transcribe",
+      "Amazon Polly",
+      "Amazon Rekognition",
+      "Amazon Comprehend"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Polly is text to speech.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l16215-01",
+    "lessonDriveFileId": "1w809z5F8cUG3hYtd6MKD3Xlxq-FoZE_Y",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Amazon Comprehend is used for:",
+    "options": [
+      "Image tagging and object detection in photos",
+      "Natural language processing, such as sentiment analysis",
+      "DDoS protection",
+      "Data transfer"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Analyse text.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l16214-03",
+    "lessonDriveFileId": "1N-bLZNBsyltFyeAqoyXweTVCbRl5xvmc",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Amazon Bedrock provides:",
+    "options": [
+      "A file system",
+      "A CDN for serving AI-generated images",
+      "Access to foundation models for generative AI applications",
+      "A VPN"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Build generative AI apps via API.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l17217-01",
+    "lessonDriveFileId": "1Px_c-vErjin2o3vhBvVcMlEAMqHIP4F0",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "RPO (Recovery Point Objective) is:",
+    "options": [
+      "The time to restore service",
+      "The cost of recovery after an outage",
+      "The number of backups",
+      "The maximum acceptable data loss measured in time"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "E.g. RPO of 1 hour = lose at most 1 hour of data.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l17217-02",
+    "lessonDriveFileId": "1Px_c-vErjin2o3vhBvVcMlEAMqHIP4F0",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "RTO (Recovery Time Objective) is:",
+    "options": [
+      "The maximum acceptable time to restore service",
+      "Acceptable data loss",
+      "Backup size measured in gigabytes",
+      "Storage class"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "How long you can be down.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l17217-03",
+    "lessonDriveFileId": "1Px_c-vErjin2o3vhBvVcMlEAMqHIP4F0",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Which DR strategy is cheapest but slowest to recover?",
+    "options": [
+      "Multi-site active-active",
+      "Backup and restore",
+      "Warm standby",
+      "Pilot light"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Restore everything from backups when needed.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l17217-04",
+    "lessonDriveFileId": "1Px_c-vErjin2o3vhBvVcMlEAMqHIP4F0",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Pilot light keeps:",
+    "options": [
+      "Everything fully running in two Regions",
+      "Nothing running",
+      "Core components (like databases) running minimally, ready to scale up",
+      "Only DNS"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Faster than backup-and-restore.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l17217-05",
+    "lessonDriveFileId": "1Px_c-vErjin2o3vhBvVcMlEAMqHIP4F0",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Warm standby means:",
+    "options": [
+      "No copy exists until disaster strikes",
+      "Only backups exist",
+      "Two full production sites",
+      "A scaled-down but fully functional copy is always running"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Scale up during failover.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l17217-06",
+    "lessonDriveFileId": "1Px_c-vErjin2o3vhBvVcMlEAMqHIP4F0",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Multi-site active-active offers:",
+    "options": [
+      "The lowest RTO and RPO at the highest cost",
+      "The highest RTO",
+      "No redundancy, but the lowest cost",
+      "The cheapest option"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Both sites serve traffic.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l17222-01",
+    "lessonDriveFileId": "1Lxw6y8hmkFRaPp8EA1KwxbVDu-t69-jm",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Restoring an RDS snapshot creates:",
+    "options": [
+      "An overwrite of the existing instance",
+      "A new database instance",
+      "An S3 bucket",
+      "An IAM user"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Update your app to use the new endpoint.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l17224-01",
+    "lessonDriveFileId": "1Epx3s4Z3KK7t5q2MQu-2NZqKTRPrKVoA",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Aurora Global Database supports DR by:",
+    "options": [
+      "Deleting backups older than a set age",
+      "Using a single AZ",
+      "Replicating to secondary Regions with fast failover",
+      "Disabling replication"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Cross-Region recovery in about a minute.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l17226-01",
+    "lessonDriveFileId": "1VtVx85v4A3TVf2jAM_0FaLw5nRRUAkQh",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "AWS Backup provides:",
+    "options": [
+      "DNS management",
+      "Container hosting",
+      "Analytics on how often backups are used",
+      "Centralised, policy-based backups across services"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "One place to manage backups.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l17226-02",
+    "lessonDriveFileId": "1VtVx85v4A3TVf2jAM_0FaLw5nRRUAkQh",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Copying backups to another Region protects against:",
+    "options": [
+      "A Regional outage or disaster",
+      "Typos in code",
+      "Slow CPUs on the primary Region's instances",
+      "Billing errors"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Geographic separation.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l17222-02",
+    "lessonDriveFileId": "1Lxw6y8hmkFRaPp8EA1KwxbVDu-t69-jm",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "RDS automated backups enable:",
+    "options": [
+      "Unlimited retention",
+      "Point-in-time recovery within the retention period",
+      "Public access to the database from the internet",
+      "Cross-account billing"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Restore to a specific second.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l17226-03",
+    "lessonDriveFileId": "1VtVx85v4A3TVf2jAM_0FaLw5nRRUAkQh",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Testing your backups regularly ensures:",
+    "options": [
+      "Backups cost less",
+      "Data becomes public",
+      "You can actually restore when needed",
+      "Faster CPUs on the backup servers"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Untested backups may fail.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l17217-07",
+    "lessonDriveFileId": "1Px_c-vErjin2o3vhBvVcMlEAMqHIP4F0",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "A business can tolerate 24 hours of downtime and wants the lowest cost. Choose:",
+    "options": [
+      "Multi-site active-active",
+      "Warm standby",
+      "Pilot light with full capacity",
+      "Backup and restore"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Cheapest when RTO is long.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l17217-08",
+    "lessonDriveFileId": "1Px_c-vErjin2o3vhBvVcMlEAMqHIP4F0",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "An RPO of 5 minutes means:",
+    "options": [
+      "At most 5 minutes of data may be lost",
+      "The system restores in 5 minutes",
+      "Backups run every 5 days",
+      "Downtime is 5 hours"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "RPO is about data loss.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l17226-04",
+    "lessonDriveFileId": "1VtVx85v4A3TVf2jAM_0FaLw5nRRUAkQh",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Which service centralises backups for EBS, RDS, DynamoDB and EFS?",
+    "options": [
+      "AWS Shield",
+      "AWS Backup",
+      "Amazon Kinesis",
+      "AWS Glue"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Unified backup management.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l17224-02",
+    "lessonDriveFileId": "1Epx3s4Z3KK7t5q2MQu-2NZqKTRPrKVoA",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Which strategy gives near-zero downtime during a Regional failure?",
+    "options": [
+      "Backup and restore",
+      "Pilot light",
+      "Multi-site active-active",
+      "Cold storage"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Traffic already flows to both Regions.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l18229-01",
+    "lessonDriveFileId": "1NW21S9OlTJ4ZFa_K_GTJjCIP56UwpSP6",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Savings Plans offer discounts in exchange for:",
+    "options": [
+      "Paying nothing until usage exceeds the Free Tier",
+      "Using only Spot",
+      "Using only one Region",
+      "Committing to a consistent amount of usage ($/hour) for 1 or 3 years"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Flexible commitment-based pricing.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l18229-02",
+    "lessonDriveFileId": "1NW21S9OlTJ4ZFa_K_GTJjCIP56UwpSP6",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Spot Instances can be interrupted when:",
+    "options": [
+      "AWS needs the capacity back",
+      "You log out",
+      "It rains near the data centre",
+      "You use S3"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "You get a two-minute warning.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l18229-03",
+    "lessonDriveFileId": "1NW21S9OlTJ4ZFa_K_GTJjCIP56UwpSP6",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Reserved Instances are best for:",
+    "options": [
+      "Short experiments",
+      "Steady-state workloads running continuously",
+      "Interruptible batch jobs",
+      "One-hour tests"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Long-term commitment saves money.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l18231-01",
+    "lessonDriveFileId": "1jDy7lhX3KqCiukJyPKciGBGnp0eIHWDc",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "The Billing Dashboard shows:",
+    "options": [
+      "CPU metrics for every running instance",
+      "DNS records",
+      "Month-to-date spend and cost trends",
+      "IAM policies"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "An overview of charges.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l18232-01",
+    "lessonDriveFileId": "1CNczX6vAfMWqh3hfKzbDrhmUBqByIwnj",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "AWS Cost Explorer lets you:",
+    "options": [
+      "Create VPCs",
+      "Store files",
+      "Run Lambda functions on a schedule",
+      "Visualise and forecast costs and usage"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Analyse spending patterns.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l18234-01",
+    "lessonDriveFileId": "1ZyPpsPhJN7MlmgWF1BDp3MFFiMcdW7fP",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "AWS Budgets can:",
+    "options": [
+      "Alert you when costs or usage exceed thresholds",
+      "Lower prices automatically",
+      "Delete resources by default",
+      "Change Regions"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Proactive cost control.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l18232-02",
+    "lessonDriveFileId": "1CNczX6vAfMWqh3hfKzbDrhmUBqByIwnj",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Cost allocation tags help you:",
+    "options": [
+      "Encrypt data stored in tagged resources",
+      "Track costs by project, team or environment",
+      "Speed up instances",
+      "Route traffic"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Tag resources to group spending.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l18229-04",
+    "lessonDriveFileId": "1NW21S9OlTJ4ZFa_K_GTJjCIP56UwpSP6",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Which pricing model has no commitment and is billed per second or hour?",
+    "options": [
+      "Reserved",
+      "Savings Plans",
+      "On-Demand",
+      "Dedicated contract"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Flexible but most expensive.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l18234-02",
+    "lessonDriveFileId": "1ZyPpsPhJN7MlmgWF1BDp3MFFiMcdW7fP",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "AWS Pricing Calculator is used to:",
+    "options": [
+      "Pay invoices directly from the console",
+      "Create users",
+      "Monitor logs",
+      "Estimate costs before deploying"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Plan budgets in advance.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l18231-02",
+    "lessonDriveFileId": "1jDy7lhX3KqCiukJyPKciGBGnp0eIHWDc",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Data transfer INTO AWS from the internet is generally:",
+    "options": [
+      "Free",
+      "Very expensive",
+      "Charged per GB at high rates",
+      "Banned"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Outbound transfer is charged.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l18232-03",
+    "lessonDriveFileId": "1CNczX6vAfMWqh3hfKzbDrhmUBqByIwnj",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "AWS Trusted Advisor helps with costs by:",
+    "options": [
+      "Hosting websites",
+      "Recommending ways to save, like idle resources",
+      "Encrypting keys",
+      "Sending SMS alerts when bills arrive"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Best-practice checks.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l18229-05",
+    "lessonDriveFileId": "1NW21S9OlTJ4ZFa_K_GTJjCIP56UwpSP6",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Rightsizing means:",
+    "options": [
+      "Always using the largest instance",
+      "Using only Spot",
+      "Matching instance sizes to actual workload needs",
+      "Deleting all backups"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Avoid paying for unused capacity.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l18234-03",
+    "lessonDriveFileId": "1ZyPpsPhJN7MlmgWF1BDp3MFFiMcdW7fP",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "You want an email when monthly spend is forecast to exceed $100. Use:",
+    "options": [
+      "CloudTrail",
+      "Route 53",
+      "Amazon SQS",
+      "AWS Budgets"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Budgets support forecast alerts.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l18229-06",
+    "lessonDriveFileId": "1NW21S9OlTJ4ZFa_K_GTJjCIP56UwpSP6",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "A fault-tolerant image-processing batch job should use which instances to minimise cost?",
+    "options": [
+      "Spot Instances",
+      "Dedicated Hosts",
+      "On-Demand only",
+      "Reserved for 3 years"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Interruptible work suits Spot.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l18232-04",
+    "lessonDriveFileId": "1CNczX6vAfMWqh3hfKzbDrhmUBqByIwnj",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Which tool shows which service drove last month's cost increase?",
+    "options": [
+      "AWS Shield",
+      "AWS Cost Explorer",
+      "Amazon Macie",
+      "AWS Transfer Family"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Break down costs by service.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l18231-03",
+    "lessonDriveFileId": "1jDy7lhX3KqCiukJyPKciGBGnp0eIHWDc",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Which data transfer usually costs money?",
+    "options": [
+      "Data into AWS from the internet",
+      "Data within the same AZ on private IPs in many cases",
+      "Data out from AWS to the internet",
+      "Uploading to S3"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Egress is charged.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l19241-01",
+    "lessonDriveFileId": "1Gy3foFxVrIuVS5W87HEzmiEHT0KBmzDb",
+    "chapterOrder": 19,
+    "type": "single",
+    "prompt": "How many pillars does the AWS Well-Architected Framework have?",
+    "options": [
+      "Three",
+      "Ten",
+      "Two",
+      "Six"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Operational excellence, security, reliability, performance efficiency, cost optimisation, sustainability.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l19241-02",
+    "lessonDriveFileId": "1Gy3foFxVrIuVS5W87HEzmiEHT0KBmzDb",
+    "chapterOrder": 19,
+    "type": "single",
+    "prompt": "A design principle of the Security pillar is:",
+    "options": [
+      "Apply security at all layers",
+      "Use root for daily tasks",
+      "Disable logging",
+      "Open all ports"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Defence in depth.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l19241-03",
+    "lessonDriveFileId": "1Gy3foFxVrIuVS5W87HEzmiEHT0KBmzDb",
+    "chapterOrder": 19,
+    "type": "single",
+    "prompt": "Enabling traceability in the Security pillar means:",
+    "options": [
+      "Hiding logs so attackers can't read them",
+      "Logging and monitoring actions and changes",
+      "Deleting audit trails",
+      "Disabling CloudTrail"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Know who did what.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l19242-01",
+    "lessonDriveFileId": "1J3XJEJfqKhuGFmdqltBrwuTl2SCeDBLj",
+    "chapterOrder": 19,
+    "type": "single",
+    "prompt": "The Cost Optimisation pillar encourages:",
+    "options": [
+      "Over-provisioning everything",
+      "Ignoring bills until the end of the year",
+      "Paying only for what you need and measuring efficiency",
+      "Using the largest instances"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Match supply to demand.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l19243-01",
+    "lessonDriveFileId": "1Rm71jNlTkYEBeq5usFeBn_V8u3vLd_KK",
+    "chapterOrder": 19,
+    "type": "single",
+    "prompt": "Operational Excellence focuses on:",
+    "options": [
+      "Only encryption",
+      "Only pricing and choosing the cheapest instance types",
+      "Only DNS and domain management",
+      "Running and monitoring systems and continually improving processes"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Operations as code, small changes, learning from failures.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l19243-02",
+    "lessonDriveFileId": "1Rm71jNlTkYEBeq5usFeBn_V8u3vLd_KK",
+    "chapterOrder": 19,
+    "type": "single",
+    "prompt": "'Perform operations as code' means:",
+    "options": [
+      "Automating operational tasks with scripts and templates",
+      "Writing manuals only",
+      "Doing everything by hand",
+      "Avoiding automation so changes stay manual"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Reduces human error.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l19244-01",
+    "lessonDriveFileId": "1RGLqA8dQFzGPy9UV4aW_JgQxufu6Ro7s",
+    "chapterOrder": 19,
+    "type": "single",
+    "prompt": "The Sustainability pillar aims to:",
+    "options": [
+      "Maximise resource use regardless of need",
+      "Minimise the environmental impact of workloads",
+      "Ignore efficiency",
+      "Only reduce cost"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Use resources efficiently.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l19241-04",
+    "lessonDriveFileId": "1Gy3foFxVrIuVS5W87HEzmiEHT0KBmzDb",
+    "chapterOrder": 19,
+    "type": "single",
+    "prompt": "The Reliability pillar focuses on:",
+    "options": [
+      "Choosing fonts and colours for dashboards",
+      "Writing marketing",
+      "Recovering from failures and meeting demand",
+      "Lowering security"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Automatic recovery and scaling.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l19242-02",
+    "lessonDriveFileId": "1J3XJEJfqKhuGFmdqltBrwuTl2SCeDBLj",
+    "chapterOrder": 19,
+    "type": "single",
+    "prompt": "Turning off development environments outside working hours supports:",
+    "options": [
+      "Security",
+      "Reliability",
+      "Nothing",
+      "Cost optimisation"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Stop paying for idle resources.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l19243-03",
+    "lessonDriveFileId": "1Rm71jNlTkYEBeq5usFeBn_V8u3vLd_KK",
+    "chapterOrder": 19,
+    "type": "single",
+    "prompt": "Making frequent, small, reversible changes reduces:",
+    "options": [
+      "The risk and impact of failures",
+      "Learning",
+      "Speed of delivery and the number of releases",
+      "Visibility"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Small changes are easier to roll back.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l19244-02",
+    "lessonDriveFileId": "1RGLqA8dQFzGPy9UV4aW_JgQxufu6Ro7s",
+    "chapterOrder": 19,
+    "type": "single",
+    "prompt": "Choosing Regions with renewable energy and right-sizing resources support:",
+    "options": [
+      "Cost only",
+      "Sustainability",
+      "Security only",
+      "DNS"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Efficiency reduces impact.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l19241-05",
+    "lessonDriveFileId": "1Gy3foFxVrIuVS5W87HEzmiEHT0KBmzDb",
+    "chapterOrder": 19,
+    "type": "single",
+    "prompt": "The Performance Efficiency pillar encourages:",
+    "options": [
+      "Never changing architecture",
+      "Using one instance type for all",
+      "Using the right resource types and experimenting often",
+      "Ignoring metrics"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Use advanced technologies as services.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l19241-06",
+    "lessonDriveFileId": "1Gy3foFxVrIuVS5W87HEzmiEHT0KBmzDb",
+    "chapterOrder": 19,
+    "type": "single",
+    "prompt": "Which pillar covers protecting data with encryption and least privilege?",
+    "options": [
+      "Sustainability",
+      "Cost optimisation",
+      "Operational excellence",
+      "Security"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Security pillar.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l19242-03",
+    "lessonDriveFileId": "1J3XJEJfqKhuGFmdqltBrwuTl2SCeDBLj",
+    "chapterOrder": 19,
+    "type": "single",
+    "prompt": "Which pillar is most concerned with avoiding unnecessary spending?",
+    "options": [
+      "Cost optimisation",
+      "Reliability",
+      "Security",
+      "Performance efficiency"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Cost pillar.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l19243-04",
+    "lessonDriveFileId": "1Rm71jNlTkYEBeq5usFeBn_V8u3vLd_KK",
+    "chapterOrder": 19,
+    "type": "single",
+    "prompt": "Using CloudFormation and runbooks to standardise operations supports which pillar?",
+    "options": [
+      "Sustainability",
+      "Operational excellence",
+      "Cost optimisation only",
+      "None"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Operations as code.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l19244-03",
+    "lessonDriveFileId": "1RGLqA8dQFzGPy9UV4aW_JgQxufu6Ro7s",
+    "chapterOrder": 19,
+    "type": "single",
+    "prompt": "Which pillar was added most recently to the Well-Architected Framework?",
+    "options": [
+      "Security",
+      "Reliability",
+      "Sustainability",
+      "Cost optimisation"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Added in 2021.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l20246-01",
+    "lessonDriveFileId": "1no_XwH1CiVzVRM5Y5FGT5LM5izU70S2E",
+    "chapterOrder": 20,
+    "type": "single",
+    "prompt": "The exam guide for an AWS certification lists:",
+    "options": [
+      "Your score in advance",
+      "The exact questions",
+      "Free vouchers for all",
+      "The domains and their weightings"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Study by domain weighting.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l20247-01",
+    "lessonDriveFileId": "1s1X_rcqDL82YR_mJpE7BvWqkd9SuWJqu",
+    "chapterOrder": 20,
+    "type": "single",
+    "prompt": "A good tactic for long scenario questions is to:",
+    "options": [
+      "Identify key requirements like cost, availability or performance first",
+      "Pick the longest answer",
+      "Guess immediately to save time for later questions",
+      "Skip all questions"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Requirements point to the right service.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l20248-01",
+    "lessonDriveFileId": "19gSSAovYNhWTkdktu7RpFyL_rrIHlo85",
+    "chapterOrder": 20,
+    "type": "single",
+    "prompt": "AWS certification exams can be taken:",
+    "options": [
+      "Only by email, with answers sent to AWS",
+      "At a test centre or online with remote proctoring",
+      "Only on paper",
+      "Only in the USA"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Choose what suits you.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l20249-01",
+    "lessonDriveFileId": "1ZRKs2mIlNKGinDPIqoTEAdBigPmPmrfM",
+    "chapterOrder": 20,
+    "type": "single",
+    "prompt": "On exam day, unanswered questions are:",
+    "options": [
+      "Ignored when calculating the final score",
+      "Given half marks",
+      "Scored as incorrect, so always answer",
+      "Penalised extra"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "There's no penalty for guessing.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l20250-01",
+    "lessonDriveFileId": "13NGY4eHlF2ZZdetWBMw7yCbVNpacCG06",
+    "chapterOrder": 20,
+    "type": "single",
+    "prompt": "After passing the associate exam, a sensible next step is to:",
+    "options": [
+      "Stop learning, since the certification lasts forever",
+      "Delete your AWS account",
+      "Only collect badges",
+      "Build real projects and consider a professional or specialty certification"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Hands-on experience matters to employers.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l20245-01",
+    "lessonDriveFileId": "169cXBkpSOMhsmhEIbjUcgJfvNQbKcrPQ",
+    "chapterOrder": 20,
+    "type": "single",
+    "prompt": "Which study approach best prepares you for scenario-based exam questions?",
+    "options": [
+      "Hands-on labs plus practice questions",
+      "Memorising service names only",
+      "Reading marketing pages",
+      "Watching videos at 3× speed"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Practice applies knowledge.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l22251-01",
+    "lessonDriveFileId": "1OzePUxsVhbBlHbl4ZULoC-AVnZ-RvO7I",
+    "chapterOrder": 21,
+    "type": "single",
+    "prompt": "Which habit keeps cloud skills current after the programme?",
+    "options": [
+      "Avoiding new services until they are years old",
+      "Following AWS updates and building projects regularly",
+      "Never logging in again",
+      "Only reading old notes"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Cloud services evolve quickly.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l22251-02",
+    "lessonDriveFileId": "1OzePUxsVhbBlHbl4ZULoC-AVnZ-RvO7I",
+    "chapterOrder": 21,
+    "type": "single",
+    "prompt": "Why should you delete lab resources when you've finished practising?",
+    "options": [
+      "To lose your account",
+      "To slow down AWS",
+      "To avoid unexpected charges",
+      "It's required to pass exams"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Idle resources still cost money.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l215-03",
+    "lessonDriveFileId": "1OWjHsmqYEuFRziy1IXcijbUBKsUZbCTC",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which statement about AWS Regions is true?",
+    "options": [
+      "All data is copied to every Region automatically",
+      "Regions share one network with no isolation",
+      "Regions are the same as edge locations",
+      "Most services and data stay in the Region you choose unless you replicate them"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Regions are isolated for resilience and data residency.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l214-04",
+    "lessonDriveFileId": "1RiGawcqPD_d3NU5fdxYgojRoMIXIpkME",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which approach is safest for giving a CI/CD pipeline access to AWS?",
+    "options": [
+      "An IAM role with temporary credentials",
+      "The root user's access keys",
+      "A shared admin password",
+      "Public bucket access"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Short-lived credentials limit exposure.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l331-02",
+    "lessonDriveFileId": "13z9ZpMaq5JGA0AhfTmNjdCrridDfs8vv",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which service quickly sets up a governed multi-account landing zone?",
+    "options": [
+      "Amazon Athena",
+      "AWS Control Tower",
+      "AWS DataSync",
+      "Amazon SQS"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Control Tower automates best-practice account setup.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l458-02",
+    "lessonDriveFileId": "1SmS_fRN9RwI7HQcM5S7w1r84Y0ha2Ify",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which service runs Kubernetes on AWS without managing the control plane?",
+    "options": [
+      "Amazon ECS",
+      "AWS Lambda",
+      "Amazon EKS",
+      "Amazon SQS"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "EKS is managed Kubernetes.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l571-02",
+    "lessonDriveFileId": "19VYBmKpa3gNMxnGRf0DNr5JeiX5JbmTC",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A Network Load Balancer is the best choice when you need:",
+    "options": [
+      "Path-based routing between microservices",
+      "Cookie-based sessions only",
+      "Static website hosting",
+      "Static IP addresses and ultra-low latency TCP traffic"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "NLB supports Elastic IPs per AZ.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l692-04",
+    "lessonDriveFileId": "1sQ5ROecWksTAlebmPB5waO66c1EIX8FI",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which component lets private-subnet instances reach S3 without going over the internet?",
+    "options": [
+      "A VPC gateway endpoint for S3",
+      "An Internet Gateway",
+      "A public IP on each instance",
+      "CloudFront"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Endpoints keep traffic on the AWS network.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l7108-04",
+    "lessonDriveFileId": "1VgEwQ8EKi8nUJEq_BfLopBulzzi-jakx",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which storage class stores data in a single AZ at lower cost, for easily re-creatable data?",
+    "options": [
+      "S3 Standard",
+      "S3 One Zone-IA",
+      "S3 Glacier Deep Archive",
+      "S3 Intelligent-Tiering"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Less resilient but cheaper.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l8129-02",
+    "lessonDriveFileId": "15_eKglsqyz77HpZBr0CRt5oGbIJCsiLx",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which RDS feature lets you recover a database to 10:42 this morning?",
+    "options": [
+      "Read replicas in the same Availability Zone",
+      "Parameter groups",
+      "Point-in-time recovery from automated backups",
+      "Option groups"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "PITR restores to a specific time.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l9140-03",
+    "lessonDriveFileId": "14DDRwq8rJ2AtLM3_GY6DriEZF-lEp3E8",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which service suits a hybrid setup where on-premises apps keep using NFS but data lives in S3?",
+    "options": [
+      "Amazon Kinesis",
+      "AWS Shield Advanced with DDoS response",
+      "Amazon Neptune",
+      "AWS Storage Gateway (File Gateway)"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "File Gateway presents S3 as NFS/SMB.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l10146-06",
+    "lessonDriveFileId": "18U7jHAkJBAVISKD-n4z3dke2WdsQRoAj",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Which service loads streaming data into S3 with no code to manage?",
+    "options": [
+      "Amazon Data Firehose",
+      "Amazon Athena",
+      "AWS Budgets",
+      "Amazon Macie"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Firehose handles delivery and batching.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l11158-03",
+    "lessonDriveFileId": "1IKB9kzDDYPfCyXtzeResj_ZDtYKJJfHU",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Which service tracks configuration history, such as how a security group looked last week?",
+    "options": [
+      "CloudWatch Dashboards",
+      "AWS Config",
+      "Amazon SNS",
+      "Amazon ECR"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Config records resource configurations over time.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l12173-05",
+    "lessonDriveFileId": "1EZ4GQYky6eZnB5wTEPB3vGECjb3cVaH0",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Which statement about S3 server-side encryption is true?",
+    "options": [
+      "S3 can't encrypt data",
+      "Encryption must be done by the client only",
+      "New objects are encrypted at rest by default with SSE-S3",
+      "Encryption makes objects public"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Default encryption applies to new objects.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l13190-04",
+    "lessonDriveFileId": "1OlQRUtIJiFYGjo4iJ166urthpC-Pe9vG",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Which tool lets developers define AWS infrastructure in TypeScript or Python?",
+    "options": [
+      "AWS Shield",
+      "Amazon Athena",
+      "AWS Budgets",
+      "AWS CDK"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "CDK synthesises CloudFormation templates.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l14199-04",
+    "lessonDriveFileId": "1EgcjMdQP5kYF5oDT2RcX_dqUea5dYNwn",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "How do you keep an S3 origin private while serving it via CloudFront?",
+    "options": [
+      "Use Origin Access Control and block public access on the bucket",
+      "Make the bucket public",
+      "Disable CloudFront caching",
+      "Use a NAT Gateway in front of the bucket"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Only CloudFront can read the bucket.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l15207-04",
+    "lessonDriveFileId": "1Mi-FnnA5PW5lKVv8ufI9sKazMVCKTpiR",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Which SQS queue type preserves the exact order of messages?",
+    "options": [
+      "Standard queue",
+      "FIFO queue",
+      "Dead-letter queue only",
+      "Delay queue only"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "FIFO guarantees order.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l16214-04",
+    "lessonDriveFileId": "1N-bLZNBsyltFyeAqoyXweTVCbRl5xvmc",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Which AWS service converts text into lifelike speech?",
+    "options": [
+      "Amazon Transcribe",
+      "Amazon Rekognition",
+      "Amazon Polly",
+      "Amazon Comprehend"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Polly is text to speech.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "cloud-engineering-l19242-04",
+    "lessonDriveFileId": "1J3XJEJfqKhuGFmdqltBrwuTl2SCeDBLj",
+    "chapterOrder": 19,
+    "type": "single",
+    "prompt": "Which action best supports the Reliability pillar?",
+    "options": [
+      "Run everything on one instance",
+      "Disable health checks",
+      "Skip backups",
+      "Deploy across multiple AZs with automatic recovery"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Redundancy and self-healing improve reliability.",
+    "pools": [
+      "exam"
+    ]
+  }
+]

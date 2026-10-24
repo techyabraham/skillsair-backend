@@ -1,0 +1,3822 @@
+[
+  {
+    "key": "uiux-l101-01",
+    "lessonDriveFileId": "1JtwlPkFPHjxbanit7LMOSyB_QCJRJUsr",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Adobe XD is mainly used for:",
+    "options": [
+      "Designing and prototyping user interfaces for websites and apps",
+      "Editing and colour grading videos for social media",
+      "Writing back-end code",
+      "Managing spreadsheets"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "XD is a UI/UX design and prototyping tool.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l104-01",
+    "lessonDriveFileId": "1tR6MD00eFH-TXvAGseTOQgNiATCvQ0Qk",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Why use a UI tool like XD instead of Photoshop for app screens?",
+    "options": [
+      "Photoshop can't open images",
+      "It's built for layouts, components and clickable prototypes",
+      "XD has more advanced photo retouching tools than Photoshop",
+      "Photoshop is only for video"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Photoshop excels at image editing; XD is built for interface design.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l105-01",
+    "lessonDriveFileId": "1ToDHpiyrfeOfxZGDgl3KVnRYS-3OxLiP",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "In Adobe XD, a single screen of your design lives on:",
+    "options": [
+      "A timeline",
+      "A spreadsheet tab",
+      "An artboard",
+      "A layer mask"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Artboards represent screens or pages.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l105-02",
+    "lessonDriveFileId": "1ToDHpiyrfeOfxZGDgl3KVnRYS-3OxLiP",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "When creating a new XD file, you can choose a preset size such as:",
+    "options": [
+      "A4 paper only",
+      "A4 paper or a billboard",
+      "Billboard only",
+      "iPhone, Android or Web 1920"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Presets match common device screen sizes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l106-01",
+    "lessonDriveFileId": "1I05uP9zg_LtGKbEq5EjyLAXh5hruv70D",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "In XD, which mode lets you switch from designing to linking screens?",
+    "options": [
+      "Prototype mode",
+      "Print mode",
+      "Audio mode",
+      "Slideshow mode"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "XD has Design, Prototype and Share modes.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l107-01",
+    "lessonDriveFileId": "1YHHt0Mt2REV-dJqULf0V39E6DGqoNrva",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "The Layers panel in XD helps you:",
+    "options": [
+      "Record audio",
+      "See and organise every element on an artboard",
+      "Export to Word",
+      "Run and test the code behind your design"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Layers show structure and stacking order.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l107-02",
+    "lessonDriveFileId": "1YHHt0Mt2REV-dJqULf0V39E6DGqoNrva",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "The Property Inspector on the right side of XD shows:",
+    "options": [
+      "Your email inbox",
+      "The project's version history and comments from reviewers",
+      "Settings for the selected element, such as size, colour and border",
+      "Spreadsheet formulas"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It's where you adjust properties.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l108-01",
+    "lessonDriveFileId": "15ffxwKvdizCqHsE62pCbrs8-u_pTaZKt",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "To select a layer inside a group directly in XD, you can:",
+    "options": [
+      "Delete the group",
+      "Ungroup everything and delete the group first",
+      "Export the file",
+      "Double-click into the group or Cmd/Ctrl-click the element"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Direct selection avoids ungrouping.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l110-01",
+    "lessonDriveFileId": "1qKt1Jv02e7rnsBV_Yk3R9adUSW39wgp8",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Bringing assets from Photoshop or Illustrator into XD lets you:",
+    "options": [
+      "Reuse existing artwork in your UI designs",
+      "Convert XD to video",
+      "Convert your whole design into a single flat image",
+      "Make files private"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "XD can import and paste content from other Adobe apps.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l111-01",
+    "lessonDriveFileId": "1me4ADZ4tlgjI4dG-OrFCtqAsXJ_fDmic",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Saving as a cloud document in XD allows you to:",
+    "options": [
+      "Make the file unreadable",
+      "Access your file across devices and share it easily",
+      "Print it automatically",
+      "Lock the file so no one, including you, can edit it"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Cloud documents sync and support collaboration.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l112-01",
+    "lessonDriveFileId": "1j1AA26Zp1qR_N3HD66Q1SQ-o9mmKOvvM",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Why learn a tool's quirks early?",
+    "options": [
+      "Quirks make tools faster",
+      "It's required to export",
+      "It saves time and frustration when something behaves unexpectedly",
+      "Quirks only appear when you export to PDF"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Knowing limitations helps you work around them.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l102-01",
+    "lessonDriveFileId": "1arD4lts4HzY4LKJPXXbvJ6pyMAZzOX-x",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "The best way to learn a design tool is to:",
+    "options": [
+      "Only watch videos without trying",
+      "Read the manual once",
+      "Wait for a project at work",
+      "Follow along and practise each technique yourself"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Hands-on practice builds skill.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l101-02",
+    "lessonDriveFileId": "1JtwlPkFPHjxbanit7LMOSyB_QCJRJUsr",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "UI design is mainly concerned with:",
+    "options": [
+      "How an interface looks and how its elements are arranged",
+      "How the server stores data",
+      "How fast the database runs",
+      "How the server stores and processes user data"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "UI covers visual design and layout.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l104-02",
+    "lessonDriveFileId": "1tR6MD00eFH-TXvAGseTOQgNiATCvQ0Qk",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Which task suits Photoshop better than XD?",
+    "options": [
+      "Linking app screens into a prototype",
+      "Retouching a photograph",
+      "Creating reusable button components",
+      "Setting up a design system"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Photoshop is a photo editor.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l105-03",
+    "lessonDriveFileId": "1ToDHpiyrfeOfxZGDgl3KVnRYS-3OxLiP",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "An artboard sized 375 × 812 is most likely designed for:",
+    "options": [
+      "A desktop monitor",
+      "A printed poster",
+      "A mobile phone screen",
+      "A TV screen"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "That's a common iPhone viewport size.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l106-02",
+    "lessonDriveFileId": "1I05uP9zg_LtGKbEq5EjyLAXh5hruv70D",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "What are XD's three main workspaces?",
+    "options": [
+      "Edit, Render and Print",
+      "Code, Test and Deploy",
+      "Draw, Paint and Animate",
+      "Design, Prototype and Share"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "You design, wire interactions, then share.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l107-03",
+    "lessonDriveFileId": "1YHHt0Mt2REV-dJqULf0V39E6DGqoNrva",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Renaming layers clearly in a design file helps:",
+    "options": [
+      "You and developers find elements quickly",
+      "Make the file smaller",
+      "Make the exported file size much smaller",
+      "Export videos"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Organised layers make handoff easier.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l110-02",
+    "lessonDriveFileId": "1qKt1Jv02e7rnsBV_Yk3R9adUSW39wgp8",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "A logo was made in Illustrator. The simplest way to use it in an XD design is:",
+    "options": [
+      "Redraw it pixel by pixel",
+      "Copy and paste or import it as a vector",
+      "Take a phone photo of the screen",
+      "Retype it as text"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "XD accepts vector content from Illustrator.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l111-02",
+    "lessonDriveFileId": "1me4ADZ4tlgjI4dG-OrFCtqAsXJ_fDmic",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Why are cloud documents useful for teams?",
+    "options": [
+      "They can't be shared",
+      "They only work offline",
+      "Everyone works from the latest version",
+      "They delete comments"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Cloud files reduce version confusion.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l112-02",
+    "lessonDriveFileId": "1j1AA26Zp1qR_N3HD66Q1SQ-o9mmKOvvM",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "If a feature in your design tool behaves strangely, a good first step is:",
+    "options": [
+      "Delete your design",
+      "Buy a faster computer",
+      "Reinstall your operating system immediately",
+      "Check the tool's documentation or community for known issues"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Many quirks have known workarounds.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l202-01",
+    "lessonDriveFileId": "1JwAXddUjJecAZqvNhVa-RRCvQUCN2-Bu",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "In XD, how do you round the corners of a rectangle?",
+    "options": [
+      "Drag the corner handles or set the corner radius in the Property Inspector",
+      "Use the Pen tool only",
+      "Apply a drop shadow and increase its blur",
+      "Use the Pen tool to redraw each corner as a curve"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Corner radius controls rounded corners.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l203-01",
+    "lessonDriveFileId": "1S61eRH4kMVSIO8L9F2zrCcREdl66ZHpf",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Holding Shift while drawing an ellipse creates:",
+    "options": [
+      "A square",
+      "A perfect circle",
+      "A triangle",
+      "A line"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Shift constrains proportions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l204-01",
+    "lessonDriveFileId": "1S_dPRIs-WhYYt40qqMoSnb2DKUWNEp_R",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Combining two shapes into one using union, subtract, intersect or exclude is called:",
+    "options": [
+      "Layer grouping",
+      "Kerning",
+      "Boolean operations",
+      "Exporting"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Boolean operations build complex shapes from simple ones.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l205-01",
+    "lessonDriveFileId": "1giCgB35lyhR3TXvnHVn52mhvlh5iE7HX",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "The Pen tool is used to:",
+    "options": [
+      "Type paragraphs",
+      "Fill colour only",
+      "Crop and resize imported photos",
+      "Draw custom paths and shapes point by point"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Click to make straight lines; drag to make curves.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l207-01",
+    "lessonDriveFileId": "13T9arFFFOs3fYC53i2fy5PBBMR3nD2LY",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A linear gradient:",
+    "options": [
+      "Blends colours along a straight line",
+      "Is a single flat colour",
+      "Blends from a centre point outward",
+      "Adds a drop shadow"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Radial gradients blend outwards from a centre.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l208-01",
+    "lessonDriveFileId": "1q3yLUpe0qikxEW2JHRmEaNfbOFTXPf-l",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A layout grid helps designers:",
+    "options": [
+      "Change file formats",
+      "Align content consistently across a design",
+      "Add animation between artboards",
+      "Compress images"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Grids create order and rhythm.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l208-02",
+    "lessonDriveFileId": "1q3yLUpe0qikxEW2JHRmEaNfbOFTXPf-l",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Smart guides in XD:",
+    "options": [
+      "Remove hidden layers from the file",
+      "Translate text",
+      "Appear automatically to show alignment and spacing",
+      "Export assets"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "They help you place elements precisely.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l209-01",
+    "lessonDriveFileId": "1GcFqkfsZDHknIYr3ke6r2UqiBp5DHhzT",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "The alignment tools help you:",
+    "options": [
+      "Change fonts",
+      "Record audio",
+      "Change the font of selected text",
+      "Line up elements by their edges or centres"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Align left, centre, right, top, middle, bottom.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l209-02",
+    "lessonDriveFileId": "1GcFqkfsZDHknIYr3ke6r2UqiBp5DHhzT",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "'Distribute horizontally' makes elements:",
+    "options": [
+      "Evenly spaced from left to right",
+      "The same colour",
+      "The same width and height",
+      "Stack vertically"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Distribution equalises gaps.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l211-01",
+    "lessonDriveFileId": "117-BLBYUGalJcAzHHgqhPic7tDHjlHTH",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Point text and area text in XD differ because:",
+    "options": [
+      "Point text can't be edited",
+      "Area text wraps within a fixed box",
+      "Area text is always bold",
+      "They are identical"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Click once for point text; drag a box for area text.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l212-01",
+    "lessonDriveFileId": "1wsCR7TlUgjOeAxoUlsbFkzYc-L_-FrzA",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "The easiest way to place a photo inside a shape in XD is:",
+    "options": [
+      "Trace the photo with the Pen tool",
+      "Use the Pen tool",
+      "Drag the image onto the shape to fill it",
+      "Type its file name"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "XD masks the image to the shape.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l213-01",
+    "lessonDriveFileId": "1QhEjKKRh-r54S3tMt3qFoQ04pvrFjFEy",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A mask in design software:",
+    "options": [
+      "Deletes the image permanently",
+      "Changes the file format",
+      "Permanently deletes the parts of the image you don't need",
+      "Shows part of an image through a shape and hides the rest"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Masks are non-destructive.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l201-01",
+    "lessonDriveFileId": "13XUggZHOohkIO1_8ad0l4NFs1i1kMtgf",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Which shape tool would you use for a circular profile picture frame?",
+    "options": [
+      "Ellipse tool",
+      "Pen tool",
+      "Line tool",
+      "Text tool"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Hold Shift for a perfect circle.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l202-02",
+    "lessonDriveFileId": "1JwAXddUjJecAZqvNhVa-RRCvQUCN2-Bu",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "A button with rounded corners is created by:",
+    "options": [
+      "Drawing four lines and curving them by hand",
+      "Adjusting a rectangle's corner radius",
+      "Applying a gradient",
+      "Changing the opacity"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Rounded rectangles are common in UI.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l204-02",
+    "lessonDriveFileId": "1S_dPRIs-WhYYt40qqMoSnb2DKUWNEp_R",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "To cut a circle out of a square in XD, use:",
+    "options": [
+      "Union",
+      "Intersect",
+      "Subtract",
+      "Group"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Subtract removes the top shape from the one below.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l205-02",
+    "lessonDriveFileId": "1giCgB35lyhR3TXvnHVn52mhvlh5iE7HX",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Clicking and dragging with the Pen tool creates:",
+    "options": [
+      "A straight line only",
+      "A text box",
+      "A new artboard",
+      "A curved path"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Dragging pulls out curve handles.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l207-02",
+    "lessonDriveFileId": "13T9arFFFOs3fYC53i2fy5PBBMR3nD2LY",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Why should UI designers check colour contrast?",
+    "options": [
+      "So text and controls are readable for everyone, including people with low vision",
+      "To make files smaller",
+      "To speed up loading",
+      "So the design uses as many brand colours as possible"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Good contrast is essential for accessibility.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l208-03",
+    "lessonDriveFileId": "1q3yLUpe0qikxEW2JHRmEaNfbOFTXPf-l",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "An 8-point spacing system means:",
+    "options": [
+      "Using exactly 8 colours",
+      "Spacing values are multiples of 8, like 8, 16, 24",
+      "Every screen uses exactly eight colours",
+      "Each page has 8 elements"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Consistent spacing makes layouts feel orderly.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l209-03",
+    "lessonDriveFileId": "1GcFqkfsZDHknIYr3ke6r2UqiBp5DHhzT",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "You want three cards evenly spaced across a row. Which tool helps most?",
+    "options": [
+      "Boolean subtract",
+      "Pen tool",
+      "Distribute horizontally",
+      "Gradient"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Distribution equalises gaps between objects.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l211-02",
+    "lessonDriveFileId": "117-BLBYUGalJcAzHHgqhPic7tDHjlHTH",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "For a long product description that should wrap neatly, use:",
+    "options": [
+      "Point text",
+      "An image of text",
+      "A shape",
+      "Area text"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Area text wraps inside its box.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l212-02",
+    "lessonDriveFileId": "1wsCR7TlUgjOeAxoUlsbFkzYc-L_-FrzA",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Large, unoptimised images in a design can cause:",
+    "options": [
+      "Slow-loading websites when built",
+      "Better accessibility",
+      "Smaller files",
+      "Faster prototypes"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Optimise images for performance.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l213-02",
+    "lessonDriveFileId": "1QhEjKKRh-r54S3tMt3qFoQ04pvrFjFEy",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Why are masks described as non-destructive?",
+    "options": [
+      "They permanently crop the image",
+      "The hidden parts of the image are kept and can be revealed later",
+      "They merge every layer into one image",
+      "They change the colours"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "You can adjust the mask anytime.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l301-01",
+    "lessonDriveFileId": "1Blo4CQDqK87UNfIaLQVz3pPajm9MQXj0",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "PNG is a good export format when you need:",
+    "options": [
+      "The smallest photo size",
+      "The smallest possible file for large photos",
+      "Transparency and sharp edges, such as icons",
+      "Editable text"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "PNG supports transparency and is lossless.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l301-02",
+    "lessonDriveFileId": "1Blo4CQDqK87UNfIaLQVz3pPajm9MQXj0",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Exporting at 2x or 3x is used for:",
+    "options": [
+      "Making files two or three times smaller",
+      "Making files private",
+      "Reducing quality",
+      "High-resolution screens like Retina displays"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Higher multiples keep images crisp on dense screens.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l302-01",
+    "lessonDriveFileId": "16ZsxrVTuw5q74ZeTWZb5W5nOLURyuCxd",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Sharing a design for review in XD gives stakeholders:",
+    "options": [
+      "A link where they can view and comment",
+      "Full editing rights by default",
+      "A printed copy",
+      "The source code"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Review links collect feedback.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l303-01",
+    "lessonDriveFileId": "1q1sC_fF4HOikxCddQNs66FVOhMwxN1TB",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Saving a design presentation as a PDF is useful because:",
+    "options": [
+      "It keeps prototypes interactive",
+      "Almost anyone can open it without design software",
+      "It's editable in XD",
+      "It's always smaller than PNG"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "PDFs are universal.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l304-01",
+    "lessonDriveFileId": "1NbXVfpr2ImAtJQWSzDexObv0iuLCycIG",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "'Share for development' in XD provides developers with:",
+    "options": [
+      "The finished code",
+      "A video of the design",
+      "Measurements, colours, fonts and downloadable assets",
+      "The finished, working code for the app"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Design specs support accurate builds.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l305-01",
+    "lessonDriveFileId": "1pgpVlyRTknqIaz0KrDkuOzrSs27QwaQ4",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Compressing images before publishing helps:",
+    "options": [
+      "Increase file size",
+      "Remove colours",
+      "Add transparency",
+      "Pages load faster"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Smaller images improve performance.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l301-03",
+    "lessonDriveFileId": "1Blo4CQDqK87UNfIaLQVz3pPajm9MQXj0",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "JPG is usually best for:",
+    "options": [
+      "Photographs",
+      "Icons with transparency",
+      "Line drawings",
+      "Logos needing transparency"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "JPG compresses photos well but has no transparency.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l305-02",
+    "lessonDriveFileId": "1pgpVlyRTknqIaz0KrDkuOzrSs27QwaQ4",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Lossy compression:",
+    "options": [
+      "Keeps every pixel unchanged",
+      "Reduces file size by discarding some data",
+      "Adds data",
+      "Only works on text"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "JPG is lossy; PNG is lossless.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l304-02",
+    "lessonDriveFileId": "1NbXVfpr2ImAtJQWSzDexObv0iuLCycIG",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Why mark assets for export in a design file?",
+    "options": [
+      "To stop anyone else from seeing them",
+      "To animate them",
+      "So developers can download exactly the images they need",
+      "To delete them"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Marked assets appear in the developer handoff.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l302-02",
+    "lessonDriveFileId": "16ZsxrVTuw5q74ZeTWZb5W5nOLURyuCxd",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "When asking for feedback on a design, you should:",
+    "options": [
+      "Ask only whether they like it or not",
+      "Ask only 'Do you like it?'",
+      "Share only the final version",
+      "Explain the goal and the specific questions you want answered"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Focused questions get useful feedback.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l303-02",
+    "lessonDriveFileId": "1q1sC_fF4HOikxCddQNs66FVOhMwxN1TB",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "A presentation PDF of your screens is useful for:",
+    "options": [
+      "Showing designs to clients who don't use XD",
+      "Testing interactions",
+      "Testing clickable interactions with users",
+      "Developer specs"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "It's a simple way to share static screens.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l301-04",
+    "lessonDriveFileId": "1Blo4CQDqK87UNfIaLQVz3pPajm9MQXj0",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "SVG is a good format for:",
+    "options": [
+      "Scanned paintings",
+      "Icons and logos that must scale without losing quality",
+      "Photographs with millions of colours",
+      "High-quality photographs"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "SVG is a vector format.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l301-05",
+    "lessonDriveFileId": "1Blo4CQDqK87UNfIaLQVz3pPajm9MQXj0",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which export format should you use for an app icon with a transparent background?",
+    "options": [
+      "JPG",
+      "BMP without alpha",
+      "PNG",
+      "GIF photo"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "PNG keeps transparency.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l302-03",
+    "lessonDriveFileId": "16ZsxrVTuw5q74ZeTWZb5W5nOLURyuCxd",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "A share link set to 'comments allowed' lets reviewers:",
+    "options": [
+      "Rewrite the design",
+      "Delete artboards",
+      "Download the source file automatically",
+      "Leave feedback pinned to parts of the design"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Comments keep feedback in context.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l304-03",
+    "lessonDriveFileId": "1NbXVfpr2ImAtJQWSzDexObv0iuLCycIG",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Design handoff is:",
+    "options": [
+      "Passing designs and specifications to developers to build",
+      "Deleting old designs",
+      "Printing designs",
+      "Sending the design to the client for payment"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Clear handoff prevents mistakes.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l305-03",
+    "lessonDriveFileId": "1pgpVlyRTknqIaz0KrDkuOzrSs27QwaQ4",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which action improves a website's loading speed most directly?",
+    "options": [
+      "Adding more fonts",
+      "Compressing large images",
+      "Using bigger photos",
+      "Embedding raw design files"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Images are often the heaviest assets.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l301-06",
+    "lessonDriveFileId": "1Blo4CQDqK87UNfIaLQVz3pPajm9MQXj0",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Why export assets at multiple resolutions?",
+    "options": [
+      "To use more storage",
+      "Developers prefer large files",
+      "Different screens have different pixel densities",
+      "It makes images blurry"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "1x, 2x and 3x cover common devices.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l303-03",
+    "lessonDriveFileId": "1q1sC_fF4HOikxCddQNs66FVOhMwxN1TB",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "A client wants to see your screens on a laptop without any design software. Send:",
+    "options": [
+      "The .xd source file",
+      "A Photoshop brush",
+      "A spreadsheet",
+      "A PDF or a share link"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "PDFs and links open anywhere.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l402-01",
+    "lessonDriveFileId": "1u1SServIXY7V8V4Qa6ls3J-8imOErdhN",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Repeat Grid in XD lets you:",
+    "options": [
+      "Duplicate an element into rows or columns and edit them all at once",
+      "Record your screen",
+      "Translate text",
+      "Repeat the same animation on every screen"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Great for lists and card grids.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l402-02",
+    "lessonDriveFileId": "1u1SServIXY7V8V4Qa6ls3J-8imOErdhN",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Dropping a text file onto a Repeat Grid text element will:",
+    "options": [
+      "Delete the grid",
+      "Fill each item with a line from the file",
+      "Replace every item with the same first line",
+      "Change the font"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Fast way to add realistic content.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l403-01",
+    "lessonDriveFileId": "1EodqqogJBXwGWLlTdsWzDkNYRJxym1C6",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Dragging several images onto a Repeat Grid image shape:",
+    "options": [
+      "Replaces only the first",
+      "Deletes the grid",
+      "Fills each item with a different image",
+      "Creates a video"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "XD distributes the images across the grid.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l404-01",
+    "lessonDriveFileId": "1BhpiDTVJtNeMiH6Ifw2ft3F6HHPHUEQY",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A component in XD is:",
+    "options": [
+      "A type of export file",
+      "An export preset that saves assets as PNG files",
+      "A single-use shape that can't be reused",
+      "A reusable element where changes to the main component update all instances"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Components keep designs consistent.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l404-02",
+    "lessonDriveFileId": "1BhpiDTVJtNeMiH6Ifw2ft3F6HHPHUEQY",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Component states allow a button to have:",
+    "options": [
+      "Different looks such as default, hover and pressed",
+      "Different artboard sizes",
+      "Different file formats when exported",
+      "Different fonts only"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "States show interaction variations.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l406-01",
+    "lessonDriveFileId": "1pnYJGJMvqYTOvvL-YxscQhih70zXu5-P",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A style guide documents:",
+    "options": [
+      "The project's budget",
+      "Colours, typography, spacing and components for a product",
+      "The team's holidays",
+      "The project budget and delivery timeline"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "It keeps design consistent.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l407-01",
+    "lessonDriveFileId": "1gpdClghiBA2_dxMjuZdopffxBYXnfjcs",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Saving colours in the Assets panel helps you:",
+    "options": [
+      "Delete colours",
+      "Hide colours you no longer want to use",
+      "Reuse and update brand colours consistently",
+      "Export videos"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Change a saved colour once to update everywhere.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l408-01",
+    "lessonDriveFileId": "1utN6RlFvnjmz9UiaJwqpds46PyZXDiNj",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Character styles store:",
+    "options": [
+      "Image filters",
+      "Animations and transitions for text",
+      "Export settings",
+      "Font, size, weight and spacing settings for text"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Text styles keep typography consistent.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l409-01",
+    "lessonDriveFileId": "1XPSjEmvBUcZS3ruod89-yayfI86kM8Jt",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "The Assets panel in XD holds:",
+    "options": [
+      "Colours, character styles and components",
+      "Video clips",
+      "Spreadsheets",
+      "Comments and feedback from clients"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "It's your document's design library.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l410-01",
+    "lessonDriveFileId": "1DzcYzl5aofQau4O1AfxyAWOX1w5l1aji",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Linked assets from a shared library mean that:",
+    "options": [
+      "Files can't be edited",
+      "Updates to the library can be pushed to every file using it",
+      "Assets are deleted",
+      "Each file has its own separate copy forever"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Libraries keep teams in sync.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l411-01",
+    "lessonDriveFileId": "1zTej6wiz2rYootykVHF1WRKMkhH0Yz6T",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Keeping multiple design versions helps when:",
+    "options": [
+      "You want fewer options",
+      "Files need to be smaller",
+      "You want to compare options or roll back",
+      "You're exporting icons"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Version history protects work.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l412-01",
+    "lessonDriveFileId": "1jNjN4mm8PigDcGVW_GS66j2xJgRpxFWf",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Coediting in XD lets:",
+    "options": [
+      "Only one person open a file",
+      "Developers write code inside XD",
+      "Only one person open the file at a time",
+      "Several designers work on the same file at the same time"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Real-time collaboration speeds teamwork.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l401-01",
+    "lessonDriveFileId": "1fnYFx3Z__oogxKIIn-K7PqSWlSuIrh29",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Which XD feature is best for building a product listing of 12 identical cards quickly?",
+    "options": [
+      "Repeat Grid",
+      "Pen tool",
+      "Boolean union",
+      "Export PNG"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Repeat Grid duplicates and keeps items in sync.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l404-03",
+    "lessonDriveFileId": "1BhpiDTVJtNeMiH6Ifw2ft3F6HHPHUEQY",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "You change the main button component's colour. What happens to its instances?",
+    "options": [
+      "Only the first instance changes colour",
+      "They update to match, unless overridden",
+      "They are deleted",
+      "They turn black"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "That's the power of components.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l406-02",
+    "lessonDriveFileId": "1pnYJGJMvqYTOvvL-YxscQhih70zXu5-P",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Why does a style guide matter as a product grows?",
+    "options": [
+      "It replaces user research",
+      "It makes files smaller",
+      "It keeps new screens consistent and speeds up design",
+      "It's only needed for printed brochures"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Consistency improves usability and efficiency.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l408-02",
+    "lessonDriveFileId": "1utN6RlFvnjmz9UiaJwqpds46PyZXDiNj",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "You need every heading in a design to use the same font and size. Use:",
+    "options": [
+      "A Repeat Grid",
+      "A mask",
+      "An artboard preset",
+      "A character style"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Apply the style to each heading.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l410-02",
+    "lessonDriveFileId": "1DzcYzl5aofQau4O1AfxyAWOX1w5l1aji",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "A design team keeps one shared library of components. The main benefit is:",
+    "options": [
+      "Every product uses the same up-to-date elements",
+      "Each designer invents their own buttons",
+      "Files become private",
+      "No one can update designs"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Shared libraries create a single source of truth.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l411-02",
+    "lessonDriveFileId": "1zTej6wiz2rYootykVHF1WRKMkhH0Yz6T",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Before a big redesign, it's wise to:",
+    "options": [
+      "Delete the old design",
+      "Save a version you can return to",
+      "Turn off autosave",
+      "Rename every layer to 'Layer'"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Versions protect against mistakes.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l403-02",
+    "lessonDriveFileId": "1EodqqogJBXwGWLlTdsWzDkNYRJxym1C6",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Using realistic content in designs (not just 'lorem ipsum') helps because:",
+    "options": [
+      "It makes files smaller",
+      "Developers prefer it blank",
+      "You see how real text lengths and images affect the layout",
+      "It makes the design file load faster"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Real content reveals layout issues.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l407-02",
+    "lessonDriveFileId": "1gpdClghiBA2_dxMjuZdopffxBYXnfjcs",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Brand colours should be stored as:",
+    "options": [
+      "Screenshots",
+      "Random hex codes typed each time",
+      "Layer names",
+      "Named swatches in the assets library"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Named swatches are easy to reuse and update.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l501-01",
+    "lessonDriveFileId": "14DHNRJ-neehtmtjQcuzn8LMvAUtDMAih",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "What should you define before designing the first web page?",
+    "options": [
+      "The page's purpose, its users and the content it needs",
+      "The final logo animation",
+      "The hosting company and server type",
+      "The company's tax rate"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Purpose and content shape the layout.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l502-01",
+    "lessonDriveFileId": "1wuIMt0VmGQ4WncV1_0lV6GeRB740tzhd",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A website header usually contains:",
+    "options": [
+      "The copyright notice and privacy policy links",
+      "Logo, main navigation and key actions like search or cart",
+      "The full product catalogue",
+      "The full terms and conditions"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Headers help users orient and navigate.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l503-01",
+    "lessonDriveFileId": "1_AMzuFpwW_KM8o0H27LWAaEXdGuWLGQE",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Social media icons in a design should be:",
+    "options": [
+      "Different sizes for variety",
+      "Placed randomly",
+      "Consistent in size and style",
+      "Large and colourful everywhere"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Consistency looks professional.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l504-01",
+    "lessonDriveFileId": "1HGAZoOktuwPcSs2PRsfql9b43W8g_Spj",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Setting typography early helps:",
+    "options": [
+      "Avoid using any headings on the page",
+      "Increase file size",
+      "Speed up the server",
+      "Create clear hierarchy and consistency across pages"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Type scale defines headings, body and captions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l504-02",
+    "lessonDriveFileId": "1HGAZoOktuwPcSs2PRsfql9b43W8g_Spj",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A typographic hierarchy uses differences in:",
+    "options": [
+      "Size, weight and spacing to show importance",
+      "File formats and export settings",
+      "Server locations",
+      "Image filters"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Hierarchy guides the reader's eye.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l505-01",
+    "lessonDriveFileId": "1IaD4azs5VoKEDEHgx9WA-nrvF_heCWew",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A search bar on an online shop should be:",
+    "options": [
+      "Hidden in the footer",
+      "Easy to find, usually near the top",
+      "Only on the About page",
+      "Very small"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Users expect search near the top.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l507-01",
+    "lessonDriveFileId": "1lOd9PiLQT40posy9DeslybVX_d9fiMjx",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Product cards in a grid should show:",
+    "options": [
+      "Only the product code",
+      "Only a long description",
+      "Image, name, price and a clear action",
+      "Nothing but the logo"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Key decision information at a glance.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l508-01",
+    "lessonDriveFileId": "1Yk6rkkUPfXjSECA17sHI-v2aWAKaraaK",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Pagination helps users:",
+    "options": [
+      "Change the site colour",
+      "Log in and reset their password",
+      "Print the page",
+      "Move through long lists of content in pages"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Pagination breaks long lists into manageable chunks.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l509-01",
+    "lessonDriveFileId": "19D9I7WBPJ0pK640c5fm4sxRTTutZ71qi",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A website footer typically includes:",
+    "options": [
+      "Contact details, secondary links and legal information",
+      "The main hero image",
+      "The product checkout and payment form",
+      "The search results"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Footers hold supporting links.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l511-01",
+    "lessonDriveFileId": "1H5XyO9lOiAnhbA-SvfQ2GHVp_Pey5MC9",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A product details page must make it easy to:",
+    "options": [
+      "Find the company's history",
+      "See key information and add the item to the cart",
+      "Read the company's full history first",
+      "Change the language only"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "The page's job is to support the buying decision.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l502-02",
+    "lessonDriveFileId": "1wuIMt0VmGQ4WncV1_0lV6GeRB740tzhd",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Why is the logo usually linked to the homepage?",
+    "options": [
+      "It's required by law",
+      "Search engines require every logo to be a link",
+      "Users expect clicking the logo to take them home",
+      "It hides the menu"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It's a widely understood web convention.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l507-02",
+    "lessonDriveFileId": "1lOd9PiLQT40posy9DeslybVX_d9fiMjx",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Why use a Repeat Grid for product cards?",
+    "options": [
+      "It turns cards into a single flat image",
+      "It animates them",
+      "It exports them as video",
+      "Cards stay identical in layout and are fast to update"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Consistency and speed.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l501-02",
+    "lessonDriveFileId": "14DHNRJ-neehtmtjQcuzn8LMvAUtDMAih",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which page section is usually seen first by visitors?",
+    "options": [
+      "The header and hero area at the top",
+      "The footer and privacy policy",
+      "The privacy policy",
+      "The 404 page"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "The top of the page creates the first impression.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l504-03",
+    "lessonDriveFileId": "1HGAZoOktuwPcSs2PRsfql9b43W8g_Spj",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "How many typefaces should most websites use?",
+    "options": [
+      "As many as possible",
+      "One or two, used consistently",
+      "Exactly seven",
+      "A different one per paragraph"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Too many fonts look messy.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l505-02",
+    "lessonDriveFileId": "1IaD4azs5VoKEDEHgx9WA-nrvF_heCWew",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Why place search prominently on an e-commerce site?",
+    "options": [
+      "It makes the page longer",
+      "Search is only for admins",
+      "Many users arrive knowing what they want to find",
+      "It replaces navigation completely"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Search speeds up finding products.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l508-02",
+    "lessonDriveFileId": "1Yk6rkkUPfXjSECA17sHI-v2aWAKaraaK",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which is an alternative to pagination for long product lists?",
+    "options": [
+      "Removing products",
+      "Using smaller fonts",
+      "Showing only the first product",
+      "Infinite scroll or a 'Load more' button"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Each has trade-offs for usability.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l509-02",
+    "lessonDriveFileId": "19D9I7WBPJ0pK640c5fm4sxRTTutZ71qi",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Where would most users look for a company's contact details on a website?",
+    "options": [
+      "The footer",
+      "The hero image",
+      "The search bar",
+      "The product card"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Footers commonly hold contact information.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l511-02",
+    "lessonDriveFileId": "1H5XyO9lOiAnhbA-SvfQ2GHVp_Pey5MC9",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "On a product page, the 'Add to cart' button should be:",
+    "options": [
+      "Hidden below the reviews",
+      "Highly visible and close to price and options",
+      "The same colour as the background",
+      "Very small"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "The primary action must stand out.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l503-02",
+    "lessonDriveFileId": "1_AMzuFpwW_KM8o0H27LWAaEXdGuWLGQE",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which approach makes icons look professional?",
+    "options": [
+      "Mixing outline, filled and 3D icons",
+      "Using random sizes",
+      "A consistent set with the same style and stroke weight",
+      "Using photos as icons"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Consistency is key.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l502-03",
+    "lessonDriveFileId": "1wuIMt0VmGQ4WncV1_0lV6GeRB740tzhd",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "A sticky header that stays visible while scrolling helps users:",
+    "options": [
+      "Download pages faster on slow networks",
+      "Print pages",
+      "Change language",
+      "Navigate at any point on a long page"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Navigation stays within reach.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l601-01",
+    "lessonDriveFileId": "1bNpUbVJDFIFxaR2dADEEbljU5Z-CoROm",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Responsive design means:",
+    "options": [
+      "Layouts adapt to different screen sizes",
+      "The site responds to emails",
+      "The site loads in one second",
+      "Only mobile apps are designed"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "One design adapts across devices.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l601-02",
+    "lessonDriveFileId": "1bNpUbVJDFIFxaR2dADEEbljU5Z-CoROm",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A breakpoint is:",
+    "options": [
+      "A bug in the code",
+      "A screen width at which the layout changes",
+      "A bug that breaks the layout",
+      "An export setting"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "E.g. switching to one column below 768px.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l602-01",
+    "lessonDriveFileId": "1d8a4nGfoP_1uFFKe0fGu_K-DOwSkvIEz",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Why can designers create responsive layouts without coding?",
+    "options": [
+      "Code is never needed",
+      "Browsers design automatically",
+      "Design tools let them plan layouts for each screen size for developers to build",
+      "Browsers automatically design every screen size for them"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Designers specify layouts; developers implement them.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l603-01",
+    "lessonDriveFileId": "1K7iEuVY7t_q7C1LMWmxTjahU66DLA8br",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "On a mobile homepage, a multi-column desktop grid usually becomes:",
+    "options": [
+      "Five columns",
+      "A horizontal scroll of everything",
+      "Hidden",
+      "A single column"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Narrow screens favour stacked content.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l604-01",
+    "lessonDriveFileId": "1m1vgoIWXltxVQbfoWPO90nPDGb0VEdw7",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Navigation menus on mobile are often:",
+    "options": [
+      "Collapsed into a menu icon or bottom bar",
+      "Shown as a large table",
+      "Removed entirely",
+      "Placed in the footer only"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Space is limited on phones.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l604-02",
+    "lessonDriveFileId": "1m1vgoIWXltxVQbfoWPO90nPDGb0VEdw7",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Touch targets on mobile should be:",
+    "options": [
+      "Exactly 10 pixels wide",
+      "Large enough to tap easily, around 44–48 pixels",
+      "Exactly 5 pixels",
+      "As small as possible to fit more on screen"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Small targets cause mistakes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l607-01",
+    "lessonDriveFileId": "1jQt9gAs8yw2Ra1e2Izv313bykjveYB9M",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Exploring colour variations of a design helps you:",
+    "options": [
+      "Make files smaller",
+      "Avoid having to show the client any options",
+      "Compare moods and choose what best fits the brand",
+      "Remove typography"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Variations support better decisions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l608-01",
+    "lessonDriveFileId": "1k1m-UJYAzQgC4-r1FE9xTVNaNBnMxCST",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Changing the typeface in a design variation mainly changes:",
+    "options": [
+      "The server speed",
+      "The page's loading speed and server",
+      "The database",
+      "The personality and readability of the design"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Typography strongly affects tone.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l609-01",
+    "lessonDriveFileId": "1NTYFJN1_ZPIOIx3tWWR7HhMXA1y0rDd0",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A layout variation might change:",
+    "options": [
+      "The arrangement and hierarchy of content",
+      "The company name",
+      "The website's domain name and hosting",
+      "The payment provider"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Layout affects scanning and focus.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l610-01",
+    "lessonDriveFileId": "159F5B-XRAbZplGRIiX_yFLszEFhmQVxy",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Before presenting a design, it helps to explain:",
+    "options": [
+      "Only the tools you used",
+      "The key decisions and why you made them",
+      "Nothing at all",
+      "Your typing speed"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Rationale builds confidence in the design.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l603-02",
+    "lessonDriveFileId": "1K7iEuVY7t_q7C1LMWmxTjahU66DLA8br",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "'Mobile-first' design means:",
+    "options": [
+      "Designing the desktop version first, then shrinking it",
+      "Designing desktop first",
+      "Designing for small screens first, then enhancing for larger ones",
+      "Only building apps"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It forces focus on essential content.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l604-03",
+    "lessonDriveFileId": "1m1vgoIWXltxVQbfoWPO90nPDGb0VEdw7",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "On mobile, body text should generally be:",
+    "options": [
+      "8px to fit more",
+      "Around 10px so more text fits on screen",
+      "Always uppercase",
+      "At least around 16px for readability"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Small text is hard to read on phones.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l601-03",
+    "lessonDriveFileId": "1bNpUbVJDFIFxaR2dADEEbljU5Z-CoROm",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Why is responsive design especially important in Nigeria?",
+    "options": [
+      "Most people browse the web on mobile phones",
+      "Few people use phones",
+      "Desktops are banned",
+      "Most websites in Nigeria are only viewed on desktops"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Mobile is the main way many users go online.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l603-03",
+    "lessonDriveFileId": "1K7iEuVY7t_q7C1LMWmxTjahU66DLA8br",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which content should appear first on a mobile homepage?",
+    "options": [
+      "The full footer",
+      "The most important message and action",
+      "Legal disclaimers",
+      "Every product at once"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Prioritise essentials on small screens.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l604-04",
+    "lessonDriveFileId": "1m1vgoIWXltxVQbfoWPO90nPDGb0VEdw7",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A 'hamburger' icon usually represents:",
+    "options": [
+      "A food order",
+      "A shopping cart",
+      "A hidden navigation menu",
+      "A search box"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Three lines signal a menu.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l607-02",
+    "lessonDriveFileId": "1jQt9gAs8yw2Ra1e2Izv313bykjveYB9M",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Why create several design variations before choosing one?",
+    "options": [
+      "It wastes time",
+      "Clients prefer one option only",
+      "It's required by XD",
+      "Comparing options leads to a stronger final decision"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Exploration reduces the risk of settling early.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l610-02",
+    "lessonDriveFileId": "159F5B-XRAbZplGRIiX_yFLszEFhmQVxy",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "When presenting design variations to a client, you should:",
+    "options": [
+      "Explain how each supports the goals, and recommend one",
+      "Hide your preference",
+      "Show them all without any explanation",
+      "Let them pick without context"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Guide the decision with reasoning.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l602-02",
+    "lessonDriveFileId": "1d8a4nGfoP_1uFFKe0fGu_K-DOwSkvIEz",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Designers communicate responsive behaviour to developers by:",
+    "options": [
+      "Sending one desktop screen",
+      "Providing layouts for key breakpoints with notes",
+      "Writing the code themselves always",
+      "Sending a logo"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Breakpoint designs show how layouts adapt.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l609-02",
+    "lessonDriveFileId": "1NTYFJN1_ZPIOIx3tWWR7HhMXA1y0rDd0",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "Which layout change best improves scanning on a busy product page?",
+    "options": [
+      "More borders and colours everywhere",
+      "Smaller text",
+      "Clear sections with strong headings and white space",
+      "Fewer headings"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "White space and hierarchy aid scanning.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l701-01",
+    "lessonDriveFileId": "1EM6-gcVHO58QLq7BRE3WwiS2cpf74BhI",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A prototype is used to:",
+    "options": [
+      "Write the final code",
+      "Print the design",
+      "Store user data before the app launches",
+      "Simulate how users move through a product before it's built"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Prototypes let you test flows early.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l702-01",
+    "lessonDriveFileId": "1rlHXzYr-METtgPxA-6cJqXMPz1ZaKB5F",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Wiring in XD's Prototype mode means:",
+    "options": [
+      "Connecting an element to a destination artboard",
+      "Adding electrical cables",
+      "Grouping layers into folders",
+      "Exporting assets"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Drag the blue handle to link screens.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l702-02",
+    "lessonDriveFileId": "1rlHXzYr-METtgPxA-6cJqXMPz1ZaKB5F",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "The 'home' artboard in a prototype is:",
+    "options": [
+      "The screen with the most elements",
+      "The screen where the prototype starts",
+      "A hidden screen",
+      "The developer's page"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Set it with the home icon.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l703-01",
+    "lessonDriveFileId": "1bQR2PyFtrKzoLzhhwepy8n9ooZPbAjJG",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which is an XD trigger type?",
+    "options": [
+      "Print",
+      "Compile",
+      "Tap",
+      "Save"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Triggers include Tap, Drag, Time, Hover and Voice.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l703-02",
+    "lessonDriveFileId": "1bQR2PyFtrKzoLzhhwepy8n9ooZPbAjJG",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A 'Time' trigger is useful for:",
+    "options": [
+      "Detecting when the user types text",
+      "Downloading files",
+      "Changing fonts",
+      "Moving automatically after a delay, like a splash screen"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "It fires without user action.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l704-01",
+    "lessonDriveFileId": "13igw8d7bKfVodMpIjNxlDWY0QvdmuFdc",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Easing in animation controls:",
+    "options": [
+      "How the speed changes during a transition",
+      "The colour of the button",
+      "The file size",
+      "The font weight"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Ease-in, ease-out and others make motion feel natural.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l705-01",
+    "lessonDriveFileId": "13N0WQsUOr_90MbJp2-Gz6hw1pye_9tcN",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Auto-animate in XD:",
+    "options": [
+      "Deletes layers",
+      "Animates matching layers between two artboards smoothly",
+      "Exports a video automatically",
+      "Writes the animation code for developers"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Layers with the same name animate between states.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l705-02",
+    "lessonDriveFileId": "13N0WQsUOr_90MbJp2-Gz6hw1pye_9tcN",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "For auto-animate to work, layers on both artboards should:",
+    "options": [
+      "Be different colours",
+      "Be in different files",
+      "Have the same names",
+      "Be locked"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "XD matches layers by name.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l706-01",
+    "lessonDriveFileId": "1YNCoe_hSFUqgGIy60Hg8Q-D-A6cfYQXO",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A drag trigger with auto-animate can simulate:",
+    "options": [
+      "A printed page",
+      "A phone call",
+      "An email",
+      "A swipeable carousel"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Drag interactions mimic swiping.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l707-01",
+    "lessonDriveFileId": "1CvKEYjcBj1Nrg5IQJLJu0mrh5KcHzzJB",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "The 'Previous Artboard' action is useful for:",
+    "options": [
+      "Back buttons that return to wherever the user came from",
+      "Deleting screens",
+      "Duplicating the current artboard",
+      "Exporting PNGs"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "It avoids wiring many back links manually.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l708-01",
+    "lessonDriveFileId": "17gRGftAVEomUTqhigRC4rOfZVI0HfYIg",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Overlays in XD are used to show:",
+    "options": [
+      "A completely new prototype file",
+      "Menus and pop-ups on top of the current screen",
+      "Developer code",
+      "Audio clips"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Overlays keep the background screen visible.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l709-01",
+    "lessonDriveFileId": "1qjBsbt5FIjJ9pb5q7_iWxuWDEXB6dbWu",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "'Scroll To' lets a link:",
+    "options": [
+      "Open an external website in the browser",
+      "Delete content",
+      "Jump to a section on the same artboard",
+      "Change the font"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Useful for one-page navigation.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l701-02",
+    "lessonDriveFileId": "1EM6-gcVHO58QLq7BRE3WwiS2cpf74BhI",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Why test a prototype with users before development?",
+    "options": [
+      "Users can't test prototypes",
+      "Prototypes replace developers",
+      "It guarantees the app will succeed after launch",
+      "It's much cheaper to fix problems before code is written"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Early testing saves time and money.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l702-03",
+    "lessonDriveFileId": "1rlHXzYr-METtgPxA-6cJqXMPz1ZaKB5F",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which action creates a link from a button to another screen in XD?",
+    "options": [
+      "Drag the connector from the button to the target artboard in Prototype mode",
+      "Double-click the button in Design mode",
+      "Export the artboard",
+      "Rename the button layer to match the screen name"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Wiring happens in Prototype mode.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l703-03",
+    "lessonDriveFileId": "1bQR2PyFtrKzoLzhhwepy8n9ooZPbAjJG",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A hover trigger is most relevant for:",
+    "options": [
+      "Phone apps using touch",
+      "Desktop websites using a mouse",
+      "Printed brochures",
+      "Voice assistants only"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Touch screens don't have hover.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l704-02",
+    "lessonDriveFileId": "13igw8d7bKfVodMpIjNxlDWY0QvdmuFdc",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A transition that starts fast and slows to a stop uses:",
+    "options": [
+      "Ease-in",
+      "Linear",
+      "Ease-out",
+      "Snap"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Ease-out decelerates at the end.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l705-03",
+    "lessonDriveFileId": "13N0WQsUOr_90MbJp2-Gz6hw1pye_9tcN",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "You move a card's position between two artboards with the same layer names and use auto-animate. What happens in the prototype?",
+    "options": [
+      "The prototype stops working",
+      "The card disappears and reappears instantly",
+      "XD shows an error",
+      "The card glides smoothly to its new position"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Auto-animate tweens matching layers.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l708-02",
+    "lessonDriveFileId": "17gRGftAVEomUTqhigRC4rOfZVI0HfYIg",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "A mobile menu that slides over the page is best built with:",
+    "options": [
+      "An overlay",
+      "A new file",
+      "A PDF",
+      "A Repeat Grid"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Overlays appear on top of the current screen.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l710-01",
+    "lessonDriveFileId": "1BsaNNPIgYOwVZfvExXrRhENqpfjJtWuT",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Why can animations 'not matter' if the basics are wrong?",
+    "options": [
+      "Users can't see animations on most phones",
+      "Motion can't fix confusing structure or unclear content",
+      "Users can't see animation",
+      "Animations slow designers"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Get structure and clarity right first.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l706-02",
+    "lessonDriveFileId": "1YNCoe_hSFUqgGIy60Hg8Q-D-A6cfYQXO",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which interaction best mimics swiping through photos on a phone?",
+    "options": [
+      "Time trigger with a dissolve transition",
+      "Voice trigger",
+      "Drag trigger with auto-animate",
+      "Hover trigger"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Drag simulates swipe gestures.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l801-01",
+    "lessonDriveFileId": "1DXDJVZqLYq80bfF8XXpm4LohNxMbO_kG",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Good UI animation helps users by:",
+    "options": [
+      "Making screens slower",
+      "Making screens take longer to load",
+      "Replacing text",
+      "Showing what changed and where things went"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Motion provides feedback and context.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l802-01",
+    "lessonDriveFileId": "1qUdDvleam8RvR3gMOn4qxTt2HmEwvDIr",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which should you generally avoid animating?",
+    "options": [
+      "Things that slow users down during frequent tasks",
+      "Hover feedback on buttons",
+      "Loading indicators",
+      "Brief feedback when a button is pressed"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Excess motion on repeated actions frustrates users.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l803-01",
+    "lessonDriveFileId": "1fmASLizqfLVqE_uDvU-xOzSKsFP-yLU6",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "A hover state on a button:",
+    "options": [
+      "Deletes the button",
+      "Changes its look when the mouse is over it",
+      "Plays a sound when the page loads",
+      "Changes the font file"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Hover states signal interactivity.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l803-02",
+    "lessonDriveFileId": "1fmASLizqfLVqE_uDvU-xOzSKsFP-yLU6",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Why give menu items hover states?",
+    "options": [
+      "To hide the menu",
+      "To reduce contrast",
+      "To show users which item they're about to choose",
+      "To make the menu harder to read"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Visual feedback reduces mistakes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l804-01",
+    "lessonDriveFileId": "10vAxOyBWqi-U1SlQaKp8LRxEvmcdxrnC",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "A search box usually needs which states?",
+    "options": [
+      "Only a hover state",
+      "Only one state that never changes",
+      "Hidden state only",
+      "Default, hover, focused/active, and showing results"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "States show the box is interactive.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l805-01",
+    "lessonDriveFileId": "1N9dhNoAk-7s9iuG-Mr1NdO2b0_JwpwDK",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Adding a hover state to items in a Repeat Grid means:",
+    "options": [
+      "Each card shows feedback when hovered",
+      "The grid is deleted",
+      "Only the first card changes",
+      "The cards print"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Components inside grids keep states consistent.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l807-01",
+    "lessonDriveFileId": "1qb8by5_wmnvQ5itgLqW1rI_ui8k_WSJu",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Stacks in XD let you:",
+    "options": [
+      "Record audio",
+      "Rearrange and space items automatically",
+      "Export the design as HTML code",
+      "Change file formats"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Stacks keep consistent spacing as you reorder.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l808-01",
+    "lessonDriveFileId": "1FsvF30L9qRPxAg6D15G6p4xNSTV6Ej8-",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Making navigation work in a prototype means:",
+    "options": [
+      "Removing links so testers stay on one screen",
+      "Exporting the menu as PDF",
+      "Linking every menu item to its destination screen",
+      "Changing the font"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "A working nav lets testers explore freely.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l801-02",
+    "lessonDriveFileId": "1DXDJVZqLYq80bfF8XXpm4LohNxMbO_kG",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Animation duration for most UI transitions is typically:",
+    "options": [
+      "10 seconds",
+      "Around 3–5 seconds",
+      "1 millisecond",
+      "Around 200–500 milliseconds"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Quick transitions feel responsive.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l802-02",
+    "lessonDriveFileId": "1qUdDvleam8RvR3gMOn4qxTt2HmEwvDIr",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which animation is most helpful?",
+    "options": [
+      "A brief highlight when an item is added to the cart",
+      "A 5-second logo spin before every page",
+      "Shaking text while reading",
+      "Constantly flashing banners"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Purposeful motion gives feedback.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l804-02",
+    "lessonDriveFileId": "10vAxOyBWqi-U1SlQaKp8LRxEvmcdxrnC",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "A drop-down showing suggestions under a search box helps users:",
+    "options": [
+      "Type more",
+      "Find results faster with fewer keystrokes",
+      "Hide results",
+      "Type longer search queries"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Suggestions reduce effort.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l807-02",
+    "lessonDriveFileId": "1qb8by5_wmnvQ5itgLqW1rI_ui8k_WSJu",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Why use stacks when designing lists?",
+    "options": [
+      "They lock items so they can't be moved",
+      "They animate the page",
+      "Spacing stays consistent when items are added or moved",
+      "They export assets"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Automatic spacing saves time.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l801-03",
+    "lessonDriveFileId": "1DXDJVZqLYq80bfF8XXpm4LohNxMbO_kG",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which statement about UI animation is true?",
+    "options": [
+      "More animation is always better",
+      "Animation replaces content",
+      "It must last several seconds",
+      "It should support understanding, not just decorate"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Purpose first.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l803-03",
+    "lessonDriveFileId": "1fmASLizqfLVqE_uDvU-xOzSKsFP-yLU6",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "On touch devices, what replaces hover feedback?",
+    "options": [
+      "Pressed or tapped states",
+      "Nothing at all",
+      "Sound only",
+      "Larger fonts"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Touch screens use press states.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l804-03",
+    "lessonDriveFileId": "10vAxOyBWqi-U1SlQaKp8LRxEvmcdxrnC",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "A focused state on a search field is shown when:",
+    "options": [
+      "The page first loads, before any interaction",
+      "The user clicks or taps into it to type",
+      "The user scrolls",
+      "The page prints"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Focus indicates where input will go.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l805-02",
+    "lessonDriveFileId": "1N9dhNoAk-7s9iuG-Mr1NdO2b0_JwpwDK",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Which tool helps add the same hover state to every product card at once?",
+    "options": [
+      "Drawing each hover state by hand with the Pen tool",
+      "Boolean union",
+      "A component with a hover state inside the Repeat Grid",
+      "Export dialog"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Components share states.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l808-02",
+    "lessonDriveFileId": "1FsvF30L9qRPxAg6D15G6p4xNSTV6Ej8-",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Why should a usability-test prototype have working navigation?",
+    "options": [
+      "It looks prettier",
+      "It's required by XD",
+      "It hides navigation problems from testers",
+      "Testers can move naturally and reveal real navigation problems"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Realistic prototypes give realistic feedback.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l807-03",
+    "lessonDriveFileId": "1qb8by5_wmnvQ5itgLqW1rI_ui8k_WSJu",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "You add a new item to a stacked list. What happens?",
+    "options": [
+      "The other items shift to keep spacing even",
+      "The new item overlaps the others",
+      "The item is deleted",
+      "Spacing doubles"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Stacks manage spacing automatically.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l902-01",
+    "lessonDriveFileId": "18jhY33PWH3T7uITXkPScOHKpNVQut5zB",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "What's the difference between UI and UX?",
+    "options": [
+      "UX is the visual style; UI is the user research",
+      "UI is how the interface looks; UX is how the whole experience works and feels",
+      "UX is only colours",
+      "UI is only research"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "UX covers usefulness, ease and satisfaction.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l903-01",
+    "lessonDriveFileId": "1cAhHZmpwo_pZLTQAYTVK4v_jXdq1-Pea",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Why is bad UX expensive?",
+    "options": [
+      "It makes servers slower",
+      "It makes servers and hosting more expensive",
+      "Confused users abandon tasks, and fixing issues after launch costs more",
+      "It isn't expensive"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Lost sales and rework add up.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l904-01",
+    "lessonDriveFileId": "1J2fZnASgfXnKkNek7jpTKQdjmvsuG5M1",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Icons work best when:",
+    "options": [
+      "They are unique and unlabelled",
+      "They are unique and never paired with text labels",
+      "They replace all text",
+      "They are familiar and paired with labels where meaning could be unclear"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Unlabelled icons often confuse users.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l905-01",
+    "lessonDriveFileId": "14LXjnGXUMrRrBd2goglGjlEnDzYgWlsT",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "A primary button should:",
+    "options": [
+      "Stand out more than secondary actions",
+      "Look the same as every other button",
+      "Be hidden",
+      "Be grey and small"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Visual priority guides users to the main action.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l905-02",
+    "lessonDriveFileId": "14LXjnGXUMrRrBd2goglGjlEnDzYgWlsT",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Button labels like 'Buy now' or 'Create account' are better than 'Submit' because:",
+    "options": [
+      "They are shorter",
+      "They tell users exactly what will happen",
+      "Shorter labels always load faster",
+      "They load faster"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Specific labels reduce uncertainty.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l906-01",
+    "lessonDriveFileId": "1Lye9cBsq3UOTq4uCWQv6bFGetfuP4yNo",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "A good form design practice is:",
+    "options": [
+      "Ask for everything possible",
+      "Hide labels",
+      "Ask only for information you truly need",
+      "Use tiny input fields"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Fewer fields mean more completions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l906-02",
+    "lessonDriveFileId": "1Lye9cBsq3UOTq4uCWQv6bFGetfuP4yNo",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Form error messages should:",
+    "options": [
+      "Appear only after the user leaves the page",
+      "Appear only at the top",
+      "Clear the whole form",
+      "Explain what went wrong and how to fix it, near the field"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Helpful, specific errors reduce frustration.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l907-01",
+    "lessonDriveFileId": "1WQEXqkmVyBRYw585i5IwFQRcJAGyS-WJ",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "A 'vague action' is a problem because:",
+    "options": [
+      "Users can't predict what a button or link will do",
+      "It's too colourful",
+      "It loads slowly",
+      "It makes the button too colourful"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Clear actions build confidence.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l908-01",
+    "lessonDriveFileId": "1oRgkFHnBghXmRK2rkyyWZ8SBtjueHFEH",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Visual hierarchy helps users:",
+    "options": [
+      "Install the app",
+      "Know what to look at first and what matters most",
+      "Change languages",
+      "Download files and images faster"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Size, contrast and position signal importance.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l909-01",
+    "lessonDriveFileId": "1oN48sVhKzIklyYbMpd2Hay9OkvV2CN3z",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Why can 'fake' placeholder content mislead a design?",
+    "options": [
+      "Placeholder text is illegal",
+      "Real content is always shorter",
+      "Real content may be longer or messier and break the layout",
+      "Placeholder text is not allowed in prototypes"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Design with realistic content.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l901-01",
+    "lessonDriveFileId": "1fpWhz9EN3Kv2gNguyrqRY483LHH2V0Su",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "UX design starts with:",
+    "options": [
+      "Writing the code",
+      "Picking a font",
+      "Choosing colours and fonts for the brand",
+      "Understanding users and their goals"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "User understanding drives good experiences.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l908-02",
+    "lessonDriveFileId": "1oRgkFHnBghXmRK2rkyyWZ8SBtjueHFEH",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which technique creates hierarchy?",
+    "options": [
+      "Making headings larger and bolder than body text",
+      "Using the same size for everything",
+      "Using random colours",
+      "Removing white space"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Contrast in size and weight signals importance.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l902-02",
+    "lessonDriveFileId": "18jhY33PWH3T7uITXkPScOHKpNVQut5zB",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which question is mainly a UX question?",
+    "options": [
+      "Which shade of blue looks best?",
+      "Can users complete checkout quickly without confusion?",
+      "Which icon set is prettiest?",
+      "What font size is the logo?"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "UX focuses on the overall experience and task success.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l903-02",
+    "lessonDriveFileId": "1cAhHZmpwo_pZLTQAYTVK4v_jXdq1-Pea",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "An online shop's checkout is confusing and many users abandon their carts. This shows:",
+    "options": [
+      "The UI is too colourful",
+      "The server is slow",
+      "Bad UX directly costs money",
+      "Users don't want products"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Friction loses sales.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l904-02",
+    "lessonDriveFileId": "1J2fZnASgfXnKkNek7jpTKQdjmvsuG5M1",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which icon is most universally understood?",
+    "options": [
+      "An abstract triangle for settings",
+      "A star for delete",
+      "A cloud for checkout",
+      "A magnifying glass for search"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Familiar icons need little explanation.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l905-03",
+    "lessonDriveFileId": "14LXjnGXUMrRrBd2goglGjlEnDzYgWlsT",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "A form has 'Cancel' and 'Save' buttons. Which should be visually stronger?",
+    "options": [
+      "Save, the primary action",
+      "Cancel",
+      "Both identical",
+      "Neither"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Emphasise the likely next step.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l906-03",
+    "lessonDriveFileId": "1Lye9cBsq3UOTq4uCWQv6bFGetfuP4yNo",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which form improvement usually increases sign-ups?",
+    "options": [
+      "Adding more required fields",
+      "Removing unnecessary fields",
+      "Hiding labels",
+      "Using CAPTCHA on every field"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Shorter forms convert better.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l907-02",
+    "lessonDriveFileId": "1WQEXqkmVyBRYw585i5IwFQRcJAGyS-WJ",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Which label is clearest for a button that sends payment?",
+    "options": [
+      "OK",
+      "Continue",
+      "Pay ₦5,000",
+      "Click here"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Specific labels set expectations.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l908-03",
+    "lessonDriveFileId": "1oRgkFHnBghXmRK2rkyyWZ8SBtjueHFEH",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "On a landing page, what should usually be most prominent?",
+    "options": [
+      "The privacy policy",
+      "The copyright notice and legal links",
+      "The copyright year",
+      "The main headline and primary call to action"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Hierarchy guides users to the key message and action.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l909-02",
+    "lessonDriveFileId": "1oN48sVhKzIklyYbMpd2Hay9OkvV2CN3z",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Testing a layout with a very long product name helps you:",
+    "options": [
+      "Find out whether the design handles real-world content",
+      "Make the font smaller everywhere",
+      "Hide the name",
+      "Avoid testing"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Edge cases reveal layout issues.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l901-02",
+    "lessonDriveFileId": "1fpWhz9EN3Kv2gNguyrqRY483LHH2V0Su",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Usability testing means:",
+    "options": [
+      "Asking your team if they like it",
+      "Watching real users try to complete tasks with your design",
+      "Asking teammates whether they like the colours",
+      "Measuring file size"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Observation reveals real problems.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1001-01",
+    "lessonDriveFileId": "14hs2OJJ0lF8ISYZ1vI7VcVc9dgC5ItPO",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "After finishing this programme, a strong next step for a UI/UX designer is:",
+    "options": [
+      "Collect certificates without building any projects",
+      "Only collect certificates",
+      "Build a portfolio of case studies showing your process",
+      "Copy other designers' work"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Case studies show how you think and solve problems.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1001-02",
+    "lessonDriveFileId": "14hs2OJJ0lF8ISYZ1vI7VcVc9dgC5ItPO",
+    "chapterOrder": 10,
+    "type": "single",
+    "prompt": "Which tool skills transfer most easily from Adobe XD?",
+    "options": [
+      "Nothing, because every design tool works completely differently",
+      "Only XD shortcuts",
+      "Only Photoshop filters",
+      "Components, auto layout and prototyping concepts used in Figma and other tools"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Core UI concepts are shared across modern tools.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l106-03",
+    "lessonDriveFileId": "1I05uP9zg_LtGKbEq5EjyLAXh5hruv70D",
+    "chapterOrder": 1,
+    "type": "single",
+    "prompt": "Your first XD design should start with:",
+    "options": [
+      "Choosing an artboard size for the target device",
+      "Publishing the app",
+      "Exporting assets for developers",
+      "Adding animations"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "The artboard defines the canvas for your screen.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l208-04",
+    "lessonDriveFileId": "1q3yLUpe0qikxEW2JHRmEaNfbOFTXPf-l",
+    "chapterOrder": 2,
+    "type": "single",
+    "prompt": "Why do designers use a column grid on web layouts?",
+    "options": [
+      "It adds colour and texture to the background",
+      "It creates consistent alignment and makes responsive adaptation easier",
+      "It makes text bigger",
+      "It speeds up exports"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Grids give structure that scales across breakpoints.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l304-04",
+    "lessonDriveFileId": "1NbXVfpr2ImAtJQWSzDexObv0iuLCycIG",
+    "chapterOrder": 3,
+    "type": "single",
+    "prompt": "Which detail should developers be able to get from a design handoff?",
+    "options": [
+      "The designer's password",
+      "The client's payment details and invoice",
+      "Exact spacing, font sizes and colour values",
+      "The server's IP address"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Specs prevent guesswork in the build.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l404-04",
+    "lessonDriveFileId": "1BhpiDTVJtNeMiH6Ifw2ft3F6HHPHUEQY",
+    "chapterOrder": 4,
+    "type": "single",
+    "prompt": "Overriding a component instance means:",
+    "options": [
+      "Changing every instance of the component at once",
+      "Deleting the main component",
+      "Exporting the component",
+      "Changing that one instance without affecting the main component"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Overrides allow local variations.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l507-03",
+    "lessonDriveFileId": "1lOd9PiLQT40posy9DeslybVX_d9fiMjx",
+    "chapterOrder": 5,
+    "type": "single",
+    "prompt": "Which information on a product card most helps a shopper decide quickly?",
+    "options": [
+      "A clear image, name and price",
+      "The SKU code only",
+      "The supplier's address",
+      "The warehouse location"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Key decision details belong on the card.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l601-04",
+    "lessonDriveFileId": "1bNpUbVJDFIFxaR2dADEEbljU5Z-CoROm",
+    "chapterOrder": 6,
+    "type": "single",
+    "prompt": "A layout that shows 4 columns on desktop, 2 on tablet and 1 on mobile is an example of:",
+    "options": [
+      "Fixed-width design",
+      "Responsive design using breakpoints",
+      "A fixed-width layout for all screens",
+      "Motion design"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Columns adapt to screen width.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l705-04",
+    "lessonDriveFileId": "13N0WQsUOr_90MbJp2-Gz6hw1pye_9tcN",
+    "chapterOrder": 7,
+    "type": "single",
+    "prompt": "Which XD feature creates smooth movement between two screens without manual keyframes?",
+    "options": [
+      "Repeat Grid",
+      "Character styles",
+      "Auto-animate",
+      "Boolean union"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Auto-animate tweens matching layers.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l802-03",
+    "lessonDriveFileId": "1qUdDvleam8RvR3gMOn4qxTt2HmEwvDIr",
+    "chapterOrder": 8,
+    "type": "single",
+    "prompt": "Respecting users who prefer reduced motion means:",
+    "options": [
+      "Making animations faster",
+      "Using flashing effects",
+      "Adding more animation to keep them engaged",
+      "Keeping essential animations subtle or optional"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Some users experience discomfort from motion.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l906-04",
+    "lessonDriveFileId": "1Lye9cBsq3UOTq4uCWQv6bFGetfuP4yNo",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "Placing form labels above input fields generally:",
+    "options": [
+      "Improves readability and completion speed",
+      "Makes forms slower to complete",
+      "Hides the fields",
+      "Breaks mobile layouts"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Top-aligned labels are easy to scan.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l903-03",
+    "lessonDriveFileId": "1cAhHZmpwo_pZLTQAYTVK4v_jXdq1-Pea",
+    "chapterOrder": 9,
+    "type": "single",
+    "prompt": "When is fixing a UX problem cheapest?",
+    "options": [
+      "After launch",
+      "During design, before development",
+      "After a year in production",
+      "Never"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Changes in design cost far less than in code.",
+    "pools": [
+      "exam"
+    ]
+  }
+]
