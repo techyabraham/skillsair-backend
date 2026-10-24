@@ -268,11 +268,24 @@ question bank and learning-quality panels; and the scale work below. Programme l
 `20261023_090000_learning_quality_foundations` (drops `courses.level`: the old values are printed in
 the migration log first), `20261023_100000_lesson_captions`, `20261023_110000_certificate_exam`,
 `20261023_120000_scale_indexes`. Existing quiz questions become approved; existing quizzes become chapter
-quizzes. Then, per programme imported from Drive:
+quizzes. Back up the database first.
+
+Apply them with `npm run migrate`, then check `npm run migrate:status`. **If `payload migrate` exits without
+applying anything** (it has done this on the Coolify runner), use the fallback. It runs the same migration
+files directly against `DATABASE_URI`, in one transaction (all or nothing), and records them so Payload
+treats them as run:
 
 ```bash
-npm run captions:import -- --course <slug>            # dry run: coverage report and CSV in tmp/
-npm run captions:import -- --course <slug> --execute
+npm run migrate:fallback -- --test   # runs everything pending, reports, then rolls back: changes nothing
+npm run migrate:fallback             # applies and commits
+npm run migrate:status               # all four should now show "Yes"
+```
+
+Running it again is safe: it only applies what isn't recorded yet. Then, per programme imported from Drive:
+
+```bash
+npm run captions:import -- --course <slug> --dry-run  # coverage report and CSV in tmp/, nothing written
+npm run captions:import -- --course <slug>            # imports (or --all for every Drive-imported programme)
 ```
 
 Content packs (questions and programme copy, in `content/packs/<slug>/`) are imported with
