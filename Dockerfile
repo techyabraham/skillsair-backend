@@ -1,14 +1,21 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
+# Retry dropped registry connections (ECONNRESET) instead of failing the deployment.
+ENV npm_config_fetch_retries=5 \
+    npm_config_fetch_retry_mintimeout=20000 \
+    npm_config_fetch_retry_maxtimeout=120000
 COPY package*.json ./
 RUN npm ci --include=dev
 COPY . .
 RUN npm run build
+# The runtime stage reuses these packages (without the build-only ones) instead of
+# downloading everything a second time.
+RUN npm prune --omit=dev && npm cache clean --force
 
 FROM node:20-alpine AS production
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci --omit=dev && npm cache clean --force
+COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/tsconfig.json ./tsconfig.json
 ENV PAYLOAD_CONFIG_PATH=/app/dist/payload.config.js

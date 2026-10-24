@@ -1,5 +1,9 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
+# Retry dropped registry connections (ECONNRESET) instead of failing the deployment.
+ENV npm_config_fetch_retries=5 \
+    npm_config_fetch_retry_mintimeout=20000 \
+    npm_config_fetch_retry_maxtimeout=120000
 COPY package*.json ./
 RUN npm ci --include=dev --no-audit
 COPY . .
@@ -8,11 +12,14 @@ COPY . .
 ENV NODE_ENV=production
 RUN npm run build
 RUN npm run admin:build
+# The runtime stage reuses these packages (without the build-only ones) instead of
+# downloading everything a second time.
+RUN npm prune --omit=dev --no-audit && npm cache clean --force
 
 FROM node:20-alpine AS production
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci --omit=dev --no-audit && npm cache clean --force
+COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder --chown=node:node /app/.next ./.next
 COPY --from=builder --chown=node:node /app/src/app ./src/app
 COPY --from=builder --chown=node:node /app/next.config.mjs ./next.config.mjs
