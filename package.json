@@ -18,6 +18,7 @@
     "migrate": "payload migrate",
     "migrate:create": "payload migrate:create",
     "migrate:status": "payload migrate:status",
+    "migrate:fallback": "node --loader ts-node/esm scripts/migrate-fallback.ts",
     "generate:types": "payload generate:types",
     "generate:importmap": "payload generate:importmap",
     "migrate:import:users": "node --loader ts-node/esm src/migrations/import-users.ts",
