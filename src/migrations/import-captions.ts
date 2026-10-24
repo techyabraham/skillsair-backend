@@ -60,6 +60,10 @@ export async function importCaptionsForCourse(payload: Payload, slug: string, op
     console.log(`\n### ${course.title}: no Drive folder recorded. Run import:drive-curriculum for it first (or pass --course ${slug}=<folderId>).`)
     return null
   }
+  // Remember a folder passed on the command line, so --all and Studio's "Re-import captions" find it next time.
+  if (execute && options.folderId && !course.driveFolderId) {
+    await payload.update({ collection: 'courses', id: course.id, data: { driveFolderId: options.folderId } as never, overrideAccess: true, context: { skipContentLint: true } })
+  }
   if (!options.tree) {
     console.log(`\n### ${course.title} (${slug})`)
     progress('reading the Drive folder...')
