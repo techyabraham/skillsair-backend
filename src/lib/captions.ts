@@ -45,7 +45,8 @@ export function isUrlOnly(text: string): boolean {
 
 /** Parses SRT (tolerant of missing numbers, CRLF, "." or "," milliseconds and blank-line noise). */
 export function parseSrt(input: string): Cue[] {
-  const text = input.replace(/^﻿/, '').replace(/\r\n?/g, '\n')
+  // Line endings: \n, \r\n, old-Mac \r, and the doubled \r\r\n some converted files have.
+  const text = input.replace(/^﻿/, '').replace(/\r+\n?/g, '\n')
   const cues: Cue[] = []
   for (const block of text.split(/\n\s*\n/)) {
     const lines = block.split('\n').map((line) => line.trimEnd())

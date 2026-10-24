@@ -12,6 +12,13 @@ test('captions: SRT parsing is tolerant of BOM, CRLF, missing numbers and dot mi
   assert.equal(cues[3]?.text, 'Next we & you')
 })
 
+test('captions: doubled carriage returns (\\r\\r\\n) still give one cue per subtitle', () => {
+  const cues = parseSrt('1\r\r\n00:00:04,110 --> 00:00:07,190\r\r\nHey Guys welcome\r\r\n\r\r\n2\r\r\n00:00:07,200 --> 00:00:11,580\r\r\nWe are going to talk,\r\r\nwhy we made it,\r\r\n')
+  assert.equal(cues.length, 2)
+  assert.equal(cues[0]?.text, 'Hey Guys welcome')
+  assert.equal(cues[1]?.text, 'We are going to talk,\nwhy we made it,')
+})
+
 test('captions: web addresses are dropped and very short cues merged', () => {
   assert.ok(isUrlOnly('www.tutflix.org'))
   assert.ok(isUrlOnly('Visit: https://example.com/x'.replace('Visit: ', '')))
