@@ -175,6 +175,10 @@ export interface MessageData {
   billingUrl: string
   updateCardUrl: string
   certificateCheckoutUrl: string
+  /** The programme has a published final exam: the certificate fee unlocks it, passing issues the certificate. */
+  hasFinalExam: boolean
+  /** The final exam intro page (the dashboard card links here too). */
+  examUrl: string
   laptopUrl: string
   // Window and prices
   windowOpen: boolean
@@ -369,6 +373,9 @@ export async function buildMessageData(payload: Payload, person: LoadedPerson, s
     ? ((await payload.find({ collection: 'certificates', where: { and: [{ student: { equals: userId } }, { course: { equals: stage.courseId } }] }, limit: 1, depth: 0, overrideAccess: true })).docs[0] as unknown as { certificateCode?: string } | undefined)
     : undefined
   const certificateUrl = certificate?.certificateCode ? site(`/certificates/verify/${certificate.certificateCode}`) : ''
+  const hasFinalExam = stage.courseId
+    ? (await payload.count({ collection: 'quizzes', where: { and: [{ course: { equals: stage.courseId } }, { kind: { equals: 'final_exam' } }, { isPublished: { equals: true } }] }, overrideAccess: true })).totalDocs > 0
+    : false
   const completedOn = lagosDate(enrollment?.completedAt)
   const nextLockEnds = enrollment?.completedAt ? Date.parse(enrollment.completedAt) + nextProgrammeLockDays() * 86_400_000 : null
 
@@ -405,6 +412,8 @@ export async function buildMessageData(payload: Payload, person: LoadedPerson, s
     billingUrl: site('/dashboard/subscription'),
     updateCardUrl: site(`/billing/update-card${subscription ? `?subscription=${subscription.id}` : ''}`),
     certificateCheckoutUrl: slug ? site(`/checkout?certificate=${encodeURIComponent(slug)}`) : site('/dashboard/certificates'),
+    hasFinalExam,
+    examUrl: slug ? site(`/dashboard/courses/${encodeURIComponent(slug)}/exam`) : site('/dashboard/certificates'),
     laptopUrl: site('/dashboard/laptop-support'),
     windowOpen: window.open,
     closesOn: window.closesAt !== null ? formatLagosDate(new Date(window.closesAt).toISOString()) : '',

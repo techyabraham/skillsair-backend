@@ -10,6 +10,7 @@ import { PlanKindValueCell as PlanKindValueCell_f40fc5d0ba3cc363cd851ece4d6c26dd
 import { PaystackCodeCell as PaystackCodeCell_f40fc5d0ba3cc363cd851ece4d6c26dd } from '../../../../src/admin/cells/cells'
 import { CompletenessCell as CompletenessCell_f40fc5d0ba3cc363cd851ece4d6c26dd } from '../../../../src/admin/cells/cells'
 import { CourseReadyChecklist as CourseReadyChecklist_6880adde813ca3797ceed1257c16dc97 } from '../../../../src/admin/edit/course'
+import { CourseLearningQuality as CourseLearningQuality_7bcb52f93c74ac85cd1f360e32f699a5 } from '../../../../src/admin/edit/learning'
 import { PublishStatusCell as PublishStatusCell_f40fc5d0ba3cc363cd851ece4d6c26dd } from '../../../../src/admin/cells/cells'
 import { ProgrammeTitleCell as ProgrammeTitleCell_f40fc5d0ba3cc363cd851ece4d6c26dd } from '../../../../src/admin/cells/cells'
 import { RscEntryLexicalCell as RscEntryLexicalCell_44fe37237e0ebf4470c9990d8cb7b07e } from '@payloadcms/richtext-lexical/rsc'
@@ -35,6 +36,7 @@ import { StrikethroughFeatureClient as StrikethroughFeatureClient_e70f5e05f09f93
 import { UnderlineFeatureClient as UnderlineFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { BoldFeatureClient as BoldFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { ItalicFeatureClient as ItalicFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
+import { CourseContentHistory as CourseContentHistory_7bcb52f93c74ac85cd1f360e32f699a5 } from '../../../../src/admin/edit/learning'
 import { CourseOutline as CourseOutline_6880adde813ca3797ceed1257c16dc97 } from '../../../../src/admin/edit/course'
 import { CoursePricing as CoursePricing_6880adde813ca3797ceed1257c16dc97 } from '../../../../src/admin/edit/course'
 import { ProgrammePricesCell as ProgrammePricesCell_f40fc5d0ba3cc363cd851ece4d6c26dd } from '../../../../src/admin/cells/cells'
@@ -93,6 +95,7 @@ import { QueueView as QueueView_a4919283bf10749d5f84f42b2f399169 } from '../../.
 import { GuideView as GuideView_0b3b9ba85933044ef6a40fac6797b777 } from '../../../../src/admin/views/guide/GuideView'
 import { StudioKitView as StudioKitView_e5c9b8b1a7c0c1f3d6823b8cf57710b6 } from '../../../../src/admin/views/StudioKitView'
 import { LifecycleView as LifecycleView_8389331d8dbad3bd35abf993e8aa0675 } from '../../../../src/admin/views/lifecycle/LifecycleView'
+import { QuestionBankView as QuestionBankView_3e1490a096eea7f7e5c85fbeb6f35442 } from '../../../../src/admin/views/question-bank/QuestionBankView'
 import { CollectionCards as CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1 } from '@payloadcms/next/rsc'
 
 /** @type import('payload').ImportMap */
@@ -109,6 +112,7 @@ export const importMap = {
   "/src/admin/cells/cells#PaystackCodeCell": PaystackCodeCell_f40fc5d0ba3cc363cd851ece4d6c26dd,
   "/src/admin/cells/cells#CompletenessCell": CompletenessCell_f40fc5d0ba3cc363cd851ece4d6c26dd,
   "/src/admin/edit/course#CourseReadyChecklist": CourseReadyChecklist_6880adde813ca3797ceed1257c16dc97,
+  "/src/admin/edit/learning#CourseLearningQuality": CourseLearningQuality_7bcb52f93c74ac85cd1f360e32f699a5,
   "/src/admin/cells/cells#PublishStatusCell": PublishStatusCell_f40fc5d0ba3cc363cd851ece4d6c26dd,
   "/src/admin/cells/cells#ProgrammeTitleCell": ProgrammeTitleCell_f40fc5d0ba3cc363cd851ece4d6c26dd,
   "@payloadcms/richtext-lexical/rsc#RscEntryLexicalCell": RscEntryLexicalCell_44fe37237e0ebf4470c9990d8cb7b07e,
@@ -134,6 +138,7 @@ export const importMap = {
   "@payloadcms/richtext-lexical/client#UnderlineFeatureClient": UnderlineFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
   "@payloadcms/richtext-lexical/client#BoldFeatureClient": BoldFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
   "@payloadcms/richtext-lexical/client#ItalicFeatureClient": ItalicFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
+  "/src/admin/edit/learning#CourseContentHistory": CourseContentHistory_7bcb52f93c74ac85cd1f360e32f699a5,
   "/src/admin/edit/course#CourseOutline": CourseOutline_6880adde813ca3797ceed1257c16dc97,
   "/src/admin/edit/course#CoursePricing": CoursePricing_6880adde813ca3797ceed1257c16dc97,
   "/src/admin/cells/cells#ProgrammePricesCell": ProgrammePricesCell_f40fc5d0ba3cc363cd851ece4d6c26dd,
@@ -192,5 +197,6 @@ export const importMap = {
   "/src/admin/views/guide/GuideView#GuideView": GuideView_0b3b9ba85933044ef6a40fac6797b777,
   "/src/admin/views/StudioKitView#StudioKitView": StudioKitView_e5c9b8b1a7c0c1f3d6823b8cf57710b6,
   "/src/admin/views/lifecycle/LifecycleView#LifecycleView": LifecycleView_8389331d8dbad3bd35abf993e8aa0675,
+  "/src/admin/views/question-bank/QuestionBankView#QuestionBankView": QuestionBankView_3e1490a096eea7f7e5c85fbeb6f35442,
   "@payloadcms/next/rsc#CollectionCards": CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1
 }

@@ -3,6 +3,8 @@ import type { Readable } from 'node:stream'
 import { AppError } from '../types/index.js'
 import type { DriveFileMetadata, GoogleServiceAccountKey, ParsedRange } from '../types/google-drive.js'
 import { logger } from './logger.js'
+import { CACHE_KEYS, cachedJson } from './cache.js'
+import { noteQuotaError } from './drive-health.js'
 
 const DRIVE_SCOPE = 'https://www.googleapis.com/auth/drive.readonly'
 
@@ -26,6 +28,22 @@ function getDriveClient(): drive_v3.Drive {
   return driveClient
 }
 
+/** Drive's per-file download quota ("download quota exceeded") is a 403 with these reasons. */
+function isQuotaError(err: unknown): boolean {
+  const e = err as { code?: number; status?: number; errors?: Array<{ reason?: string }>; message?: string; response?: { status?: number } }
+  const status = e?.code ?? e?.status ?? e?.response?.status
+  const reasons = (e?.errors ?? []).map((item) => item.reason ?? '')
+  return status === 403 && (reasons.some((reason) => /quota|rateLimit|userRateLimit/i.test(reason)) || /quota/i.test(e?.message ?? ''))
+}
+
+/** Only server errors and network failures are worth retrying (not 403/404). */
+function isRetryable(err: unknown): boolean {
+  const e = err as { code?: number | string; status?: number; response?: { status?: number } }
+  const status = Number(e?.response?.status ?? e?.status ?? (typeof e?.code === 'number' ? e.code : NaN))
+  if (Number.isFinite(status)) return status >= 500 || status === 429
+  return true
+}
+
 async function withRetry<T>(fn: () => Promise<T>, attempts = 3): Promise<T> {
   let lastError: unknown
   for (let attempt = 0; attempt < attempts; attempt++) {
@@ -33,8 +51,13 @@ async function withRetry<T>(fn: () => Promise<T>, attempts = 3): Promise<T> {
       return await fn()
     } catch (err) {
       lastError = err
+      if (isQuotaError(err)) {
+        logger.warn({ err: (err as Error)?.message }, 'drive_quota_exceeded')
+        await noteQuotaError()
+        throw new AppError('SERVICE_BUSY', 'This video is busy, please try again in a few minutes.')
+      }
       const isLastAttempt = attempt === attempts - 1
-      if (isLastAttempt) break
+      if (isLastAttempt || !isRetryable(err)) break
       const backoffMs = 2 ** attempt * 250
       logger.warn({ attempt, backoffMs }, 'google_drive_retry')
       await new Promise((resolve) => setTimeout(resolve, backoffMs))
@@ -43,7 +66,12 @@ async function withRetry<T>(fn: () => Promise<T>, attempts = 3): Promise<T> {
   throw lastError
 }
 
+/** File size and type, cached in Redis for an hour so each video request calls Drive once (the bytes). */
 export async function getFileMetadata(fileId: string): Promise<DriveFileMetadata> {
+  return cachedJson(CACHE_KEYS.driveMeta(fileId), 3600, () => fetchFileMetadata(fileId))
+}
+
+async function fetchFileMetadata(fileId: string): Promise<DriveFileMetadata> {
   return withRetry(async () => {
     const response = await getDriveClient().files.get({
       fileId,

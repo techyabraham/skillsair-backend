@@ -13,6 +13,10 @@ export type LifecycleTemplate = EmailTemplate<MessageData>
 export const naira = (amount: number) => `₦${Math.round(amount).toLocaleString('en-NG')}`
 export const monthly = (data: Pick<MessageData, 'price'>) => `${naira(data.price)} a month`
 export const certificate = (data: Pick<MessageData, 'certificatePrice'>) => naira(data.certificatePrice)
+/** Programmes with a final exam: pay first, then the exam (the fee covers retakes and the certificate). */
+export const examNote = (data: Pick<MessageData, 'certificatePrice' | 'hasFinalExam'>) =>
+  data.hasFinalExam ? `Your ${naira(data.certificatePrice)} covers your final exam (retakes included) and your certificate when you pass.` : ''
+export const certificateCta = (data: Pick<MessageData, 'hasFinalExam'>) => (data.hasFinalExam ? 'Get my certificate' : 'Claim my certificate')
 export const standardFee = (data: Pick<MessageData, 'standardPrice' | 'standardMonthlyPrice'>) =>
   data.standardMonthlyPrice ? `${naira(data.standardPrice)} (or ${naira(data.standardMonthlyPrice)} a month)` : naira(data.standardPrice)
 export const LOCK_LINE = (data: MessageData) => `Your rate is locked at ${monthly(data)}, because you joined during the Access Scholarship.`
@@ -52,6 +56,8 @@ export const SAMPLE: MessageData = {
   billingUrl: 'https://skillsair.com/dashboard/subscription',
   updateCardUrl: 'https://skillsair.com/billing/update-card?subscription=9',
   certificateCheckoutUrl: 'https://skillsair.com/checkout?certificate=data-analysis',
+  hasFinalExam: true,
+  examUrl: 'https://skillsair.com/dashboard/courses/data-analysis/exam',
   laptopUrl: 'https://skillsair.com/dashboard/laptop-support',
   windowOpen: true,
   closesOn: 'Saturday 31 October',

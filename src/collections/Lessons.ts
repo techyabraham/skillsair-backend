@@ -4,6 +4,8 @@ import { slugify } from '../utils/slugify.js'
 import { resolveAuthUser } from '../middleware/authenticate.js'
 import { requireCourseAccess } from '../lib/course-access.js'
 import { STUDIO_GROUP } from '../admin/studio-config.js'
+import { lessonTranscriptEndpoint } from '../endpoints/stream/captions.js'
+import { bumpCourseCache } from '../lib/cache.js'
 
 interface SectionWithCourse {
   course: number | string | { id: number | string }
@@ -37,6 +39,8 @@ export async function recalculateCourseStats(
   courseId: number | string,
   payload: PayloadLocalApi,
 ): Promise<void> {
+  // Lesson changes (and the once-per-course recalculation after imports) retire cached curricula.
+  await bumpCourseCache(courseId)
   const sections = await payload.find({
     collection: 'sections',
     where: { course: { equals: courseId } },
@@ -90,6 +94,7 @@ async function syncCourseStatsForLesson(
 
 export const Lessons: CollectionConfig = {
   slug: 'lessons', labels: { singular: 'Lesson', plural: 'Lessons' },
+  endpoints: [lessonTranscriptEndpoint],
   admin: {
     group: STUDIO_GROUP.learning,
     useAsTitle: 'title',
@@ -190,6 +195,28 @@ export const Lessons: CollectionConfig = {
       editor: lexicalEditor({}),
     },
     { name: 'driveFileId', type: 'text' },
+    {
+      // Set by captions:import from the subtitle file next to the video in Drive. Captions and the
+      // transcript are served through access-checked endpoints, never the public lesson API.
+      name: 'captions',
+      type: 'array',
+      access: { read: ({ req }) => req.user?.role === 'admin' || req.user?.role === 'instructor' },
+      admin: { readOnly: true, description: 'Imported from the .srt next to the video (captions:import).' },
+      fields: [
+        { name: 'language', type: 'text', required: true, defaultValue: 'en' },
+        { name: 'label', type: 'text', required: true, defaultValue: 'English' },
+        { name: 'vtt', type: 'textarea', required: true },
+        { name: 'sourceFileId', type: 'text' },
+        { name: 'sourceModifiedTime', type: 'text' },
+      ],
+    },
+    {
+      name: 'transcript',
+      type: 'textarea',
+      access: { read: ({ req }) => req.user?.role === 'admin' || req.user?.role === 'instructor' },
+      admin: { readOnly: true, description: 'Plain text with [mm:ss] markers, from the captions.' },
+    },
+    { name: 'hasCaptions', type: 'checkbox', defaultValue: false, admin: { readOnly: true } },
     {
       // Documents kept in Google Drive (PDFs, worksheets, design files), streamed through the
       // backend with the same access checks as the lesson video.

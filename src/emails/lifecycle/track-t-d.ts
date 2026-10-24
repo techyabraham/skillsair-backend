@@ -180,7 +180,9 @@ export const T8 = lifecycleEmail({
       `Hi ${d.firstName},`,
       `You've completed ${d.programme}. Seriously, well done. Finishing is the hard part, and you did it.`,
       d.stopBillingOnComplete ? "Your monthly plan has stopped, so you won't be charged again for this programme." : '',
-      `Your next step: claim your verifiable certificate for ${certificate(d)}. It gives you:`,
+      d.hasFinalExam
+        ? `Your next step: get your verifiable certificate. Pay ${certificate(d)}, then take your final exam; the fee covers the exam (retakes included) and your certificate when you pass. It gives you:`
+        : `Your next step: claim your verifiable certificate for ${certificate(d)}. It gives you:`,
       {
         list: [
           'A unique link employers can click to check it’s real',
@@ -194,7 +196,7 @@ export const T8 = lifecycleEmail({
         ? `One more thing: because you joined on the Access Scholarship, you can start another programme at ${monthly(d)} until ${d.nextProgrammeLockEnds}${d.nextProgramme ? `. ${d.nextProgramme.title} is a good next step: ${d.nextProgramme.checkoutUrl}` : `: ${d.dashboardUrl}`}. After that, a new programme costs whatever the fee is at the time.`
         : '',
     ]),
-    button: { label: 'Claim my certificate', url: d.certificateCheckoutUrl },
+    button: { label: d.hasFinalExam ? 'Get my certificate' : 'Claim my certificate', url: d.certificateCheckoutUrl },
   }),
 })
 
@@ -322,4 +324,32 @@ export const T11 = lifecycleEmail({
   }),
 })
 
-export const TRACK_T_D = [T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, D1, D2, D3]
+/** T12: the certificate fee is paid, so the final exam is open (passing it issues the certificate). */
+export const T12 = lifecycleEmail({
+  id: 'T12',
+  kind: 'transactional',
+  track: 'T',
+  stepId: 'T12',
+  subject: () => 'Your final exam is ready',
+  preheader: (d) => `Your certificate for ${d.programme} is paid for. Pass the exam to receive it.`,
+  body: (d) => ({
+    blocks: blocks([
+      `Hi ${d.firstName},`,
+      `Your certificate for ${d.programme} is paid for. The last step is your final exam: pass it and your certificate is issued straight away.`,
+      'How it works:',
+      {
+        list: [
+          'Questions from every chapter of the programme, with a time limit shown before you start.',
+          'Pass mark: 70%. Your answers save as you go, and the timer runs on our side.',
+          'Your fee covers retakes: 3 attempts, then a 48-hour break before 3 more, as many times as you need.',
+          'Use Wi-Fi or a stable connection, and set aside the full time.',
+        ],
+      },
+      d.reference ? '**Receipt**' : '',
+      d.reference ? receipt(d, [{ label: 'For', value: `Certificate and final exam: ${d.programme}` }]) : '',
+    ]),
+    button: { label: 'Start my final exam', url: d.examUrl },
+  }),
+})
+
+export const TRACK_T_D = [T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, D1, D2, D3]

@@ -10,6 +10,7 @@ import { getLessonCourse, requireCourseAccess } from '../../lib/course-access.js
 import { AppError } from '../../types/index.js'
 import { logger } from '../../lib/logger.js'
 import { legacyDriveFileId } from '../../lib/legacy-video.js'
+import { notePlay } from '../../lib/drive-health.js'
 
 async function handler(req: PayloadRequest): Promise<Response> {
   const user = await resolveAuthUser(req)
@@ -37,6 +38,8 @@ async function handler(req: PayloadRequest): Promise<Response> {
   const metadata = await getFileMetadata(driveFileId)
   const totalSize = Number(metadata.size)
   const range = parseRangeHeader(req.headers.get('range') ?? undefined, totalSize)
+  // A request from the first byte is a new play (seeks start later): counted for the quota alert.
+  if (range.start === 0) void notePlay()
   const { stream, status } = await streamFileRange(driveFileId, range)
 
   const headers = new Headers()

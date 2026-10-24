@@ -2,11 +2,32 @@ import type { CollectionConfig, PayloadRequest } from 'payload'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { slugify } from '../utils/slugify.js'
 import { courseCurriculumEndpoint } from '../endpoints/courses/curriculum.js'
+import { courseAssessmentsEndpoint } from '../endpoints/assessments/index.js'
 import { STUDIO_GROUP } from '../admin/studio-config.js'
+import { copyFromCourse, lintErrors, lintProgrammeCopy } from '../lib/content-lint.js'
+import { bumpCourseCacheHook } from '../lib/cache.js'
+
+const staffOnly = ({ req }: { req: PayloadRequest }) => req.user?.role === 'admin' || req.user?.role === 'instructor'
 
 export const Courses: CollectionConfig = {
   slug: 'courses', labels: { singular: 'Programme', plural: 'Programmes' },
-  endpoints: [courseCurriculumEndpoint],
+  // Root endpoints under /courses/... are added here by mountPrefixedEndpoints (payload.config.ts).
+  endpoints: [courseCurriculumEndpoint, courseAssessmentsEndpoint],
+  hooks: {
+    beforeChange: [
+      ({ data, originalDoc, req, context }) => {
+        // Programme copy managed by content packs (it has a primary keyword) must pass the SEO and
+        // copy lint before it's published from Studio. Imports keep their own report.
+        if (!req.user || (context as { skipContentLint?: boolean } | undefined)?.skipContentLint) return data
+        const merged = { ...(originalDoc ?? {}), ...(data ?? {}) } as Record<string, unknown>
+        if (merged.status !== 'published' || !merged.primaryKeyword) return data
+        const errors = lintErrors(lintProgrammeCopy(copyFromCourse(merged)))
+        if (errors.length) throw new Error(`Fix the programme copy before publishing: ${errors.slice(0, 5).map((issue) => `${issue.field}: ${issue.message}`).join(' ')}${errors.length > 5 ? ` (and ${errors.length - 5} more)` : ''}`)
+        return data
+      },
+    ],
+    afterChange: [bumpCourseCacheHook('id')],
+  },
   admin: {
     group: STUDIO_GROUP.learning,
     useAsTitle: 'title',
@@ -28,6 +49,12 @@ export const Courses: CollectionConfig = {
       type: 'ui',
       label: 'Ready to publish',
       admin: { position: 'sidebar', components: { Cell: '/src/admin/cells/cells#CompletenessCell', Field: '/src/admin/edit/course#CourseReadyChecklist' } },
+    },
+    {
+      name: 'learningQuality',
+      type: 'ui',
+      label: 'Learning quality',
+      admin: { position: 'sidebar', disableListColumn: true, components: { Field: '/src/admin/edit/learning#CourseLearningQuality' } },
     },
     {
       name: 'status',
@@ -103,16 +130,6 @@ export const Courses: CollectionConfig = {
             },
             { name: 'thumbnail', type: 'relationship', relationTo: 'media' },
             { name: 'previewVideo', type: 'text' },
-            {
-              name: 'level',
-              type: 'select',
-              required: true,
-              options: [
-                { label: 'Beginner', value: 'beginner' },
-                { label: 'Intermediate', value: 'intermediate' },
-                { label: 'Advanced', value: 'advanced' },
-              ],
-            },
             { name: 'categories', type: 'relationship', relationTo: 'categories', hasMany: true, label: 'Schools' },
           ],
         },
@@ -122,12 +139,83 @@ export const Courses: CollectionConfig = {
             {
               name: 'objectives',
               type: 'array',
-              fields: [{ name: 'objective', type: 'text', required: true }],
+              admin: { description: '6–8 items: action verb + skill + "so you can" + outcome, each up to 120 characters.' },
+              fields: [{ name: 'objective', type: 'text', required: true, maxLength: 160 }],
             },
             {
               name: 'requirements',
               type: 'array',
+              admin: { description: '3–6 items: device, internet, software (free tiers first), prior knowledge ("None: we start from zero"), time.' },
               fields: [{ name: 'requirement', type: 'text', required: true }],
+            },
+            {
+              name: 'whoItsFor',
+              type: 'array',
+              label: "Who it's for",
+              admin: { description: '3–4 audience lines, e.g. "Graduates and NYSC members who…".' },
+              fields: [{ name: 'item', type: 'text', required: true, maxLength: 200 }],
+            },
+            {
+              name: 'toolsCovered',
+              type: 'array',
+              label: 'Tools covered',
+              admin: { description: 'Tools and technologies actually taught in the chapters.' },
+              fields: [{ name: 'tool', type: 'text', required: true, maxLength: 80 }],
+            },
+            {
+              name: 'careerPaths',
+              type: 'array',
+              label: 'Career paths',
+              admin: { description: '3–5 honest role titles this prepares learners to pursue. No salary promises.' },
+              fields: [{ name: 'role', type: 'text', required: true, maxLength: 100 }],
+            },
+            {
+              name: 'faq',
+              type: 'array',
+              label: 'FAQ',
+              admin: { description: '4–6 questions and answers, shown on the programme page and as FAQPage structured data.' },
+              fields: [
+                { name: 'question', type: 'text', required: true, maxLength: 200 },
+                { name: 'answer', type: 'textarea', required: true, maxLength: 1200 },
+              ],
+            },
+            {
+              name: 'primaryKeyword',
+              type: 'text',
+              maxLength: 120,
+              access: { read: staffOnly },
+              admin: { description: 'Admin only. The search phrase this page targets; the content lint checks the copy against it.' },
+            },
+            {
+              name: 'secondaryKeywords',
+              type: 'array',
+              access: { read: staffOnly },
+              admin: { description: 'Admin only.' },
+              fields: [{ name: 'keyword', type: 'text', required: true, maxLength: 120 }],
+            },
+          ],
+        },
+        {
+          label: 'History',
+          fields: [
+            {
+              name: 'historyPanel',
+              type: 'ui',
+              label: 'Earlier versions',
+              admin: { disableListColumn: true, components: { Field: '/src/admin/edit/learning#CourseContentHistory' } },
+            },
+            {
+              // Previous programme copy, saved by content:import before it overwrites the live fields.
+              // Shown through historyPanel (with Restore); the raw snapshots stay out of the form.
+              name: 'contentHistory',
+              type: 'array',
+              access: { read: staffOnly },
+              admin: { hidden: true, readOnly: true, description: 'Earlier versions of the programme copy, saved automatically before each content import.' },
+              fields: [
+                { name: 'savedAt', type: 'date', required: true },
+                { name: 'source', type: 'text' },
+                { name: 'snapshot', type: 'json', required: true },
+              ],
             },
           ],
         },
@@ -142,6 +230,13 @@ export const Courses: CollectionConfig = {
               on: 'course',
               defaultSort: 'order',
               admin: { allowCreate: true, defaultColumns: ['title', 'order', 'updatedAt'] },
+            },
+            {
+              // Set by import:drive-curriculum; captions:import and content:export-sources read the folder.
+              name: 'driveFolderId',
+              type: 'text',
+              access: { read: staffOnly },
+              admin: { description: 'Google Drive folder this programme is imported from (set by the importer).' },
             },
             { name: 'totalDuration', type: 'number', defaultValue: 0, admin: { readOnly: true } },
             { name: 'totalLessons', type: 'number', defaultValue: 0, admin: { readOnly: true } },

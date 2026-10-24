@@ -1,3 +1,4 @@
+import { captureError } from '../lib/observability.js'
 import crypto from 'node:crypto'
 import type { PayloadRequest } from 'payload'
 import type { ZodSchema, ZodError } from 'zod'
@@ -56,6 +57,7 @@ export function sendErrorResponse(err: unknown): Response {
     )
   }
   logger.error({ err }, 'unhandled_endpoint_error')
+  captureError(err, { source: 'endpoint' })
   return jsonResponse(
     { success: false, error: { code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' } },
     500,

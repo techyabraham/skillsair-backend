@@ -60,6 +60,12 @@ async function handler(req: PayloadRequest): Promise<Response> {
   if (body.isCompleted && duration > 0 && watchedSeconds < Math.max(0, duration - 5)) {
     throw new AppError('VALIDATION_ERROR', 'Lesson viewing requirement has not been met')
   }
+  // Player heartbeats (every 30 s while a video plays, isCompleted false) only move watchedSeconds
+  // forward: no write when nothing changed and no enrolment recalculation, which completions do.
+  const heartbeat = !body.isCompleted
+  if (heartbeat && existingProgress.docs[0] && (existingProgress.docs[0].isCompleted || watchedSeconds <= previousSeconds)) {
+    return sendSuccess({ progress: existingProgress.docs[0], enrollment: null })
+  }
   const progressData = {
     watchedSeconds,
     lastWatchedAt: now,
@@ -80,15 +86,15 @@ async function handler(req: PayloadRequest): Promise<Response> {
       collection: 'lesson-progress',
       data: {
         student: user.id,
-        lesson: lessonId,
-        course: courseId,
+        lesson: Number(lessonId),
+        course: Number(courseId),
         ...progressData,
       },
       overrideAccess: true,
     })
   }
 
-  const updatedEnrollment = await refreshEnrollmentProgress(payload, enrollment.id, user.id, courseId)
+  const updatedEnrollment = heartbeat ? null : await refreshEnrollmentProgress(payload, enrollment.id, user.id, courseId)
 
   return sendSuccess({ progress: progressDoc, enrollment: updatedEnrollment })
 }

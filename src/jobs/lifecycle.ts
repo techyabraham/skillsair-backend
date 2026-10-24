@@ -1,4 +1,6 @@
-import cron from 'node-cron'
+import { jobScheduler } from './scheduler.js'
+
+const cron = jobScheduler('lifecycle')
 import { getPayload } from 'payload'
 import type { Payload, SanitizedConfig } from 'payload'
 import { logger } from '../lib/logger.js'

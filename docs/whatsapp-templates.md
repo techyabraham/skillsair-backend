@@ -182,12 +182,14 @@ Your free CV & LinkedIn and Freelancing courses are waiting in your dashboard. Q
 ```
 Congratulations, {{1}}! 🎓 You've completed {{2}}.
 
-Your verifiable certificate is ready to claim for ₦10,000. It gives you a link employers can check, access to internship openings from our partner firms, and the right to apply for this cohort's laptop support.
+Get your verifiable certificate: pay ₦10,000, then take your final exam. The fee covers the exam (retakes included) and your certificate when you pass. It gives you a link employers can check, access to internship openings from our partner firms, and the right to apply for this cohort's laptop support.
 
-Tap below to claim it whenever you're ready.
+Tap below whenever you're ready.
 ```
 
-**Buttons:** URL `Claim my certificate` → `https://skillsair.com/checkout?certificate={{1}}`
+**Buttons:** URL `Get my certificate` → `https://skillsair.com/checkout?certificate={{1}}`
+
+> **Resubmit to Meta (October 2026):** the body and button changed for the pay-then-exam certificate flow. Keep the old approved version live until the new one is approved.
 
 **Samples:** Tobi · Data Analysis · URL `data-analysis`
 
@@ -270,12 +272,14 @@ Your rate is locked at ₦2,000 a month, even though new learners pay more. Rest
 ```
 Hi {{1}}, congratulations again on finishing {{2}} 🎓
 
-Your certificate is ready to claim for ₦10,000. It's your key to internship openings from our partner firms and to laptop support applications.
+Your certificate is waiting: pay ₦10,000, then pass your final exam (retakes included). It's your key to internship openings from our partner firms and to laptop support applications.
 ```
 
 **Footer:** `Reply STOP to opt out`
 
-**Buttons:** URL `Claim my certificate` → `https://skillsair.com/{{1}}`
+**Buttons:** URL `Get my certificate` → `https://skillsair.com/{{1}}`
+
+> **Resubmit to Meta (October 2026):** body and button changed for the pay-then-exam certificate flow.
 
 **Samples:** Tobi · Data Analysis · URL `checkout?certificate=data-analysis`
 

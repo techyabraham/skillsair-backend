@@ -3,7 +3,7 @@
  *
  * Expected CSV columns (one row per lesson, or one course-only row for an empty course):
  *   course_title, course_slug (optional), instructor_email (optional),
- *   price (optional, default 0), level (optional: beginner|intermediate|advanced, default beginner),
+ *   price (optional, default 0),
  *   status (optional: draft|published, default draft), category (optional),
  *   section_title, section_order,
  *   lesson_title, lesson_order, lesson_duration (optional seconds), lesson_drive_file_id (optional),
@@ -30,7 +30,6 @@ interface CourseCsvRow {
   course_slug?: string
   instructor_email?: string
   price?: string
-  level?: string
   status?: string
   category?: string
   section_title: string
@@ -49,7 +48,6 @@ interface CourseCsvRow {
   lesson_attachment_source_urls_json?: string
 }
 
-const VALID_LEVELS = new Set(['beginner', 'intermediate', 'advanced'])
 const VALID_STATUSES = new Set(['draft', 'published'])
 
 interface Summary {
@@ -136,8 +134,6 @@ async function run(): Promise<void> {
       if (hasLesson && !Number.isFinite(lessonOrder)) throw new Error('invalid lesson_order')
       if (!hasLesson && sectionTitle) throw new Error('section_title requires lesson_title')
 
-      const level = row.level?.trim().toLowerCase() || 'beginner'
-      if (!VALID_LEVELS.has(level)) throw new Error(`invalid level: "${row.level ?? ''}"`)
       const status = row.status?.trim().toLowerCase() || 'draft'
       if (!VALID_STATUSES.has(status)) throw new Error(`invalid status: "${row.status ?? ''}"`)
       const price = row.price ? Number(row.price) : 0
@@ -208,7 +204,6 @@ async function run(): Promise<void> {
               title: courseTitle,
               slug: courseSlug,
               price,
-              level: level as 'beginner' | 'intermediate' | 'advanced',
               status: status as 'draft' | 'published',
               ...(row.course_short_description ? { shortDescription: sanitizeText(row.course_short_description) } : {}),
               ...(courseDescription ? { description: courseDescription } : {}),

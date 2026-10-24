@@ -96,7 +96,9 @@ export async function courseCompletion(payload: Payload, studentId: number | str
   const lessons = sectionIds.length ? await payload.find({ collection: 'lessons', where: { and: [{ section: { in: sectionIds } }, { isPublished: { equals: true } }] }, limit: 5000, depth: 0, overrideAccess: true }) : { docs: [], totalDocs: 0 }
   const lessonIds = lessons.docs.map((lesson) => lesson.id)
   const progress = lessonIds.length ? await payload.find({ collection: 'lesson-progress', where: { and: [{ student: { equals: studentId } }, { lesson: { in: lessonIds } }, { isCompleted: { equals: true } }] }, limit: 5000, depth: 0, overrideAccess: true }) : { docs: [] }
-  const quizzes = await payload.find({ collection: 'quizzes', where: { and: [{ course: { equals: courseId } }, { isPublished: { equals: true } }] }, limit: 1000, depth: 0, overrideAccess: true })
+  // Completion = every published lesson + every published chapter quiz passed (knowledge checks are
+  // optional; the final exam comes after completion, once the certificate is paid for).
+  const quizzes = await payload.find({ collection: 'quizzes', where: { and: [{ course: { equals: courseId } }, { isPublished: { equals: true } }, { kind: { equals: 'chapter' } }] }, limit: 1000, depth: 0, overrideAccess: true })
   const quizIds = quizzes.docs.map((quiz) => quiz.id)
   const attempts = quizIds.length ? await payload.find({ collection: 'quiz-attempts', where: { and: [{ student: { equals: studentId } }, { quiz: { in: quizIds } }, { passed: { equals: true } }] }, limit: 5000, depth: 0, overrideAccess: true }) : { docs: [] }
   return {

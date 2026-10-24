@@ -21,6 +21,25 @@ const { registerOrderFulfillmentJob } = await import('./src/jobs/order-fulfillme
 const { registerLeadDailySummaryJob } = await import('./src/jobs/lead-daily-summary.js')
 const { registerLifecycleJob } = await import('./src/jobs/lifecycle.js')
 const { registerScholarshipWindowJob } = await import('./src/jobs/scholarship-window.js')
+const { registerAssessmentJobs } = await import('./src/jobs/assessments.js')
+const { registerMonitoringJob } = await import('./src/jobs/monitoring.js')
+const { registerWorkQueueJob } = await import('./src/jobs/work-queue.js')
+const { runsScheduledJobs } = await import('./src/jobs/scheduler.js')
+
+// APP_ROLE=worker runs the scheduled jobs and serves only /health; APP_ROLE=api serves the API with
+// no jobs (any number of replicas). Unset: one process does both, as before.
+const APP_ROLE = (process.env.APP_ROLE ?? '').toLowerCase()
+const { initObservability, captureError, flushObservability } = await import('./src/lib/observability.js')
+initObservability(APP_ROLE)
+process.on('unhandledRejection', (reason) => {
+  logger.error({ err: reason }, 'unhandled_rejection')
+  captureError(reason, { source: 'unhandledRejection' })
+})
+process.on('uncaughtException', (err) => {
+  logger.fatal({ err }, 'uncaught_exception')
+  captureError(err, { source: 'uncaughtException' })
+  void flushObservability().finally(() => process.exit(1))
+})
 
 const app = express()
 const PORT = Number(process.env.PORT ?? 3001)
@@ -49,8 +68,14 @@ app.use((req: ExpressRequest, _res: ExpressResponse, next: NextFunction) => {
 })
 
 app.get('/health', (_req: ExpressRequest, res: ExpressResponse) => {
-  res.json({ status: 'ok' })
+  res.json({ status: 'ok', role: APP_ROLE || 'api+jobs' })
 })
+
+if (APP_ROLE === 'worker') {
+  app.use((_req: ExpressRequest, res: ExpressResponse) => {
+    res.status(404).json({ success: false, error: { code: 'NOT_FOUND', message: 'This is the worker; the API runs on the API service.' } })
+  })
+}
 
 function buildFetchHeaders(expressReq: ExpressRequest): Headers {
   const headers = new Headers()
@@ -120,7 +145,7 @@ app.use((err: unknown, _req: ExpressRequest, res: ExpressResponse, _next: NextFu
 
 app.listen(PORT, () => {
   logger.info({ port: PORT }, 'server_started')
-  if (process.env.NODE_ENV === 'production') {
+  if (runsScheduledJobs()) {
     registerSubscriptionRenewalJob(config)
     registerAccessExpiryJob(config)
     registerCertificateCleanupJob(config)
@@ -128,6 +153,9 @@ app.listen(PORT, () => {
     registerLeadDailySummaryJob(config)
     registerLifecycleJob(config)
     registerScholarshipWindowJob(config)
-    logger.info({}, 'background_jobs_registered')
+    registerAssessmentJobs(config)
+    registerMonitoringJob(config)
+    registerWorkQueueJob(config)
+    logger.info({ role: APP_ROLE || 'api+jobs' }, 'background_jobs_registered')
   }
 })

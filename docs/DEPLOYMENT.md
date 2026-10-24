@@ -255,3 +255,63 @@ Optional extra checks:
 6. Optional content in the admin: Email content (founder anecdote, approved proof), each school's free exercise, each programme's next programmes, the laptop-application deadline.
 
 The full switch-on procedure and acceptance checks are in `docs/lifecycle-switch-on.md`; results are in **Admin → Lifecycle emails** (`/admin/lifecycle`).
+
+## 10. Learning quality (learning-quality/phase-1)
+
+What it adds: chapter quizzes, knowledge checks and a final exam taken after paying for the
+certificate; captions, transcripts and durations from the Drive `.srt` files; a new video player;
+programme copy fields with a content lint; structured data and generated share images; Studio's
+question bank and learning-quality panels; and the scale work below. Programme levels are removed.
+
+### Migrations (in order)
+
+`20261023_090000_learning_quality_foundations` (drops `courses.level`: the old values are printed in
+the migration log first), `20261023_100000_lesson_captions`, `20261023_110000_certificate_exam`,
+`20261023_120000_scale_indexes`. Existing quiz questions become approved; existing quizzes become chapter
+quizzes. Then, per programme imported from Drive:
+
+```bash
+npm run captions:import -- --course <slug>            # dry run: coverage report and CSV in tmp/
+npm run captions:import -- --course <slug> --execute
+```
+
+Content packs (questions and programme copy, in `content/packs/<slug>/`) are imported with
+`npm run content:import -- --course <slug>` (dry run first, then `--execute`; `--all` for every pack);
+`npm run content:lint` checks programme copy. Sources for the pack
+writer: `npm run content:export-sources -- --all`, committed to the `content-sources` branch.
+
+### New environment variables
+
+| Variable | Service | Value | Notes |
+|---|---|---|---|
+| `APP_ROLE` | API / worker | `api` or `worker` | Unset = one service does both (as before). `worker` runs every scheduled job and the work queue and serves only `/health`; `api` runs no jobs. Jobs also take a Redis lock, so two workers never run the same job twice. |
+| `PGBOUNCER_URL` | API | `postgres://…@pgbouncer:6432/skillsair` | Optional. Transaction pooling. Migrations still use `DATABASE_URI` directly. |
+| `DB_POOL_MAX` | API / worker | `10` | Connections per instance. With PgBouncer, instances × this must stay under PgBouncer's `max_client_conn`. |
+| `SENTRY_DSN` | API / worker | Sentry or GlitchTip DSN | Optional. Unexpected errors from endpoints, jobs and the work queue. No request bodies, cookies or auth headers are sent. |
+| `SENTRY_ENVIRONMENT`, `SENTRY_TRACES_SAMPLE_RATE` | API / worker | `production`, `0` | Optional. |
+| `EXAM_DEFAULTS` | API / worker | JSON, e.g. `{"final_exam":{"cooldownHours":24}}` | Optional overrides of the quiz and exam defaults (draw count, time limit, attempts, cooldown, pass mark). |
+| `ALERT_EMAIL` | worker | an owner inbox | Drive quota alerts (over 1% of plays failing in an hour). Falls back to `LEAD_SUMMARY_EMAIL`. |
+
+### Running at scale
+
+1. **Split the roles.** One `APP_ROLE=worker` service (same image), and as many `APP_ROLE=api` replicas
+   as the traffic needs behind Coolify's proxy. Check `GET /health` on each: it reports the role.
+2. **PgBouncer** between the API replicas and Postgres: `pool_mode = transaction`,
+   `default_pool_size` about 20–40, `max_client_conn` at least replicas × `DB_POOL_MAX`. Set `PGBOUNCER_URL`
+   on the API replicas only; the worker and the migration runner keep `DATABASE_URI`.
+3. **Redis** is now required for the curriculum and quiz-pool caches (10 minutes, retired on any
+   programme change), captions, the job locks and the work queue. If Redis is down, requests still
+   work (the cache falls back to the database) but jobs pause.
+4. **Load test** staging with `load/` (k6) before a big intake: see `load/README.md`.
+5. **Monitoring.** Set `SENTRY_DSN`. Studio's Overview lists flagged questions, lessons without
+   subtitles, copy errors and failed background tasks under "Needs attention".
+
+### After deploying
+
+- Resubmit the changed WhatsApp templates (`skillsair_course_complete`, `skillsair_certificate_reminder`)
+  to Meta: `docs/whatsapp-templates.md`.
+- Smoke test: a chapter quiz (start, autosave, submit, result with explanations); the final exam page
+  for a learner without a certificate (shows "Get your certificate"); captions toggle and transcript on a
+  lesson with subtitles; a programme page's JSON-LD (Google's Rich Results Test) and its share image
+  (`/programmes/<slug>/opengraph-image`); Studio → Question bank.
+- Certificates for programmes with no published final exam are still issued straight after payment.

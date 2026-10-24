@@ -19,6 +19,7 @@ import { Enrollments } from './src/collections/Enrollments.js'
 import { LessonProgress } from './src/collections/LessonProgress.js'
 import { Orders } from './src/collections/Orders.js'
 import { Certificates } from './src/collections/Certificates.js'
+import { CertificateEntitlements } from './src/collections/CertificateEntitlements.js'
 import { Subscriptions } from './src/collections/Subscriptions.js'
 import { Affiliates } from './src/collections/Affiliates.js'
 import { Referrals } from './src/collections/Referrals.js'
@@ -46,10 +47,13 @@ import { resetPasswordEndpoint } from './src/endpoints/auth/reset-password.js'
 import { enrollEndpoint } from './src/endpoints/courses/enroll.js'
 import { progressEndpoint } from './src/endpoints/courses/progress.js'
 import { completeEndpoint } from './src/endpoints/courses/complete.js'
-import { quizSubmitEndpoint } from './src/endpoints/courses/quiz-submit.js'
 import { reviewEndpoint } from './src/endpoints/courses/review.js'
 import { discussEndpoint } from './src/endpoints/courses/discuss.js'
+import { mountPrefixedEndpoints } from './src/lib/endpoint-mounting.js'
+import { quizSubmitEndpoint } from './src/endpoints/courses/quiz-submit.js'
 import { lessonResourceEndpoint, videoStreamEndpoint } from './src/endpoints/stream/video.js'
+import { lessonCaptionsEndpoint } from './src/endpoints/stream/captions.js'
+import { queueCaptionsImportEndpoint, restoreContentHistoryEndpoint, retryWorkTaskEndpoint } from './src/endpoints/admin/learning.js'
 import { initiatePaymentEndpoint } from './src/endpoints/payments/initiate.js'
 import { paystackWebhookEndpoint } from './src/endpoints/payments/webhook.js'
 import { verifyPaymentEndpoint } from './src/endpoints/payments/verify.js'
@@ -64,6 +68,7 @@ import { trackAffiliateEndpoint } from './src/endpoints/affiliates/track.js'
 import { extendAccessEndpoint } from './src/endpoints/admin/extend-access.js'
 import { graphqlGetEndpoint, graphqlPostEndpoint } from './src/endpoints/graphql/handler.js'
 import { updateProfileEndpoint } from './src/endpoints/profile/update.js'
+import { getPreferencesEndpoint, updatePreferencesEndpoint } from './src/endpoints/profile/preferences.js'
 import { changePasswordEndpoint } from './src/endpoints/profile/password.js'
 import { uploadAvatarEndpoint } from './src/endpoints/profile/avatar.js'
 import { newsletterSubscribeEndpoint } from './src/endpoints/newsletter/subscribe.js'
@@ -87,7 +92,8 @@ function corsOrigins(): string[] {
     .filter((origin) => origin.length > 0)
 }
 
-export default buildConfig({
+// Endpoints under a collection's slug (e.g. /courses/..., /certificates/...) are mounted on that collection.
+export default buildConfig(mountPrefixedEndpoints({
   admin: {
     user: 'users',
     meta: {
@@ -131,6 +137,11 @@ export default buildConfig({
           path: '/lifecycle',
           meta: { title: 'Lifecycle emails' },
         },
+        questionBank: {
+          Component: '/src/admin/views/question-bank/QuestionBankView#QuestionBankView',
+          path: '/question-bank',
+          meta: { title: 'Question bank' },
+        },
       },
     },
   },
@@ -141,7 +152,10 @@ export default buildConfig({
   csrf: corsOrigins(),
   db: postgresAdapter({
     pool: {
-      connectionString: process.env.DATABASE_URI,
+      // At scale the API instances connect through PgBouncer (transaction pooling); migrations
+      // (PAYLOAD_MIGRATING / `payload migrate`) always use the direct DATABASE_URI.
+      connectionString: process.env.PGBOUNCER_URL && !process.env.PAYLOAD_MIGRATING && !process.argv.some((arg) => /migrate/.test(arg)) ? process.env.PGBOUNCER_URL : process.env.DATABASE_URI,
+      max: Number(process.env.DB_POOL_MAX ?? 10),
     },
     migrationDir: path.resolve(dirname, 'src/payload-migrations'),
   }),
@@ -163,6 +177,7 @@ export default buildConfig({
     LessonProgress,
     Orders,
     Certificates,
+    CertificateEntitlements,
     Subscriptions,
     Affiliates,
     Referrals,
@@ -195,6 +210,10 @@ export default buildConfig({
     discussEndpoint,
     videoStreamEndpoint,
     lessonResourceEndpoint,
+    lessonCaptionsEndpoint,
+    queueCaptionsImportEndpoint,
+    restoreContentHistoryEndpoint,
+    retryWorkTaskEndpoint,
     initiatePaymentEndpoint,
     paystackWebhookEndpoint,
     verifyPaymentEndpoint,
@@ -210,6 +229,8 @@ export default buildConfig({
     graphqlGetEndpoint,
     graphqlPostEndpoint,
     updateProfileEndpoint,
+    getPreferencesEndpoint,
+    updatePreferencesEndpoint,
     changePasswordEndpoint,
     uploadAvatarEndpoint,
     newsletterSubscribeEndpoint,
@@ -253,4 +274,4 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
-})
+}))

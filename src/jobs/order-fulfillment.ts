@@ -1,4 +1,6 @@
-import cron from 'node-cron'
+import { jobScheduler } from './scheduler.js'
+
+const cron = jobScheduler('order-fulfillment')
 import { getPayload } from 'payload'
 import type { SanitizedConfig } from 'payload'
 import { fulfillOrder } from '../lib/order-fulfillment.js'

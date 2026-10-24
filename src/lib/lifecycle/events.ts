@@ -29,6 +29,8 @@ export type LifecycleEvent =
   | { type: 'access_ended'; userId: number; courseId?: number; subscriptionId?: number; reason: 'lapsed' | 'grace_expired' | 'legacy_access_expired' }
   | { type: 'enrollment_completed'; userId: number; courseId: number; enrollmentId: number; billingStopped: boolean }
   | { type: 'certificate_issued'; userId: number; courseId: number; receipt?: { reference: string; amount: number; paidAt: string } }
+  /** The certificate fee is paid and the programme has a final exam: the exam is open. */
+  | { type: 'exam_ready'; userId: number; courseId: number; receipt?: { reference: string; amount: number; paidAt: string } }
   | { type: 'lesson_completed'; userId: number; courseId: number }
 
 /** Bumps the cycle on unfinished enrolments, so a learner who lapses again gets the win-back emails again. */
@@ -205,10 +207,16 @@ async function sendForEvent(payload: Payload, event: LifecycleEvent): Promise<vo
       await sendEventStep(payload, person, 'T8', t8, { channel: 'whatsapp', template: 'skillsair_course_complete' })
       return
     }
+    case 'exam_ready': {
+      const person = await forUser(event.userId)
+      const receipt = event.receipt ? { ...event.receipt, paidAt: lagosDay(Date.parse(event.receipt.paidAt)) } : {}
+      if (person) await sendEventStep(payload, person, 'T12', stage(`exam:${event.userId}:${event.courseId}`, 0, event.courseId), undefined, receipt)
+      return
+    }
     case 'certificate_issued': {
       await attributeConversion(payload, event.userId, 'certificate')
       const person = await forUser(event.userId)
-      if (person) await sendEventStep(payload, person, 'T9', stage(`cert:${event.courseId}`, 0, event.courseId), undefined, event.receipt ?? {})
+      if (person) await sendEventStep(payload, person, 'T9', stage(`cert:${event.userId}:${event.courseId}`, 0, event.courseId), undefined, event.receipt ?? {})
       return
     }
   }

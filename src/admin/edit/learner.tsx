@@ -11,6 +11,7 @@ import { Callout, Money, ProgressBar, StatusPill } from '../ui/primitives'
 import { isAdmin } from '../data/auth'
 import { accessGraceDays } from '../../lib/billing'
 import { formatDay, formatRelative } from '../format'
+import { ExtraTimeControl } from './LearningActions'
 
 type Props = UIFieldServerProps
 
@@ -19,19 +20,25 @@ export async function Learner360(props: Props) {
   const userId = props.id
   const find = (collection: string, where: object, select: Record<string, true>, sort?: string) =>
     props.payload.find({ collection: collection as never, where: where as never, limit: 100, depth: 0, pagination: false, overrideAccess: true, select: select as never, sort })
-  const [enrolments, subscriptions, orders, certificates, lastMessage] = await Promise.all([
+  const [enrolments, subscriptions, orders, certificates, lastMessage, attempts, entitlements] = await Promise.all([
     find('enrollments', { student: { equals: userId } }, { course: true, status: true, progressPercent: true, enrolledAt: true }, '-enrolledAt'),
     find('subscriptions', { user: { equals: userId } }, { course: true, status: true, currentPeriodEnd: true, lastFailedAt: true, priceLocked: true, displayTitle: true }, '-createdAt'),
     find('orders', { and: [{ user: { equals: userId } }, { status: { equals: 'success' } }] }, { amount: true }),
     find('certificates', { student: { equals: userId } }, { course: true, certificateCode: true, issuedAt: true }, '-issuedAt'),
     find('messages', { personKey: { equals: `user:${userId}` } }, { track: true, stepId: true, sentAt: true }, '-sentAt'),
+    find('quiz-attempts', { student: { equals: userId } }, { quiz: true, status: true, attemptNumber: true, score: true, passed: true, startedAt: true, submittedAt: true }, '-startedAt'),
+    find('certificate-entitlements', { student: { equals: userId } }, { course: true, status: true, paidAt: true }, '-paidAt'),
   ])
-  const courseIds = [...new Set([...enrolments.docs, ...subscriptions.docs, ...certificates.docs].map((d) => (d as { course?: number }).course).filter(Boolean))] as number[]
+  const quizIds = [...new Set((attempts.docs as unknown as Array<{ quiz?: number }>).map((a) => a.quiz).filter(Boolean))] as number[]
+  const quizzes = quizIds.length
+    ? new Map(((await props.payload.find({ collection: 'quizzes', where: { id: { in: quizIds } }, limit: quizIds.length, depth: 0, pagination: false, overrideAccess: true, select: { title: true, kind: true } as never })).docs as unknown as Array<{ id: number; title: string; kind?: string }>).map((q) => [q.id, q]))
+    : new Map<number, { id: number; title: string; kind?: string }>()
+  const courseIds = [...new Set([...enrolments.docs, ...subscriptions.docs, ...certificates.docs, ...entitlements.docs].map((d) => (d as { course?: number }).course).filter(Boolean))] as number[]
   const courses = courseIds.length
     ? new Map(((await props.payload.find({ collection: 'courses', where: { id: { in: courseIds } }, limit: courseIds.length, depth: 0, pagination: false, overrideAccess: true, select: { title: true } as never })).docs as unknown as Array<{ id: number; title: string }>).map((c) => [c.id, c.title]))
     : new Map<number, string>()
   const title = (id?: number) => (id ? courses.get(id) ?? 'Programme' : 'Programme')
-  const user = (props.data ?? {}) as { lifecycle?: { lastLearningAt?: string } }
+  const user = (props.data ?? {}) as { lifecycle?: { lastLearningAt?: string }; examTimeMultiplier?: number | null }
   const lastLearning = user.lifecycle?.lastLearningAt
   const inactiveDays = lastLearning ? Math.floor((Date.now() - new Date(lastLearning).getTime()) / 86_400_000) : null
   const total = (orders.docs as unknown as Array<{ amount: number }>).reduce((sum, o) => sum + Number(o.amount), 0)
@@ -105,6 +112,37 @@ export async function Learner360(props: Props) {
             <p className="sa-muted">No certificates yet.</p>
           )}
           <p className="sa-muted sa-learner360__lifecycle">{last ? `Lifecycle: track ${last.track}, last ${last.stepId} ${formatRelative(last.sentAt)}` : 'Lifecycle: no messages yet'}</p>
+        </div>
+        <div className="sa-learner360__block">
+          <h3 className="sa-learner360__title">Quizzes and exams</h3>
+          {(entitlements.docs as unknown as Array<{ id: number; course: number; status: string }>)
+            .filter((e) => e.status === 'awaiting_exam')
+            .map((e) => (
+              <p key={e.id} className="sa-muted">
+                Certificate paid for {title(e.course)}: final exam not passed yet
+              </p>
+            ))}
+          {attempts.docs.length ? (
+            <ul className="sa-learner360__list">
+              {(attempts.docs as unknown as Array<{ id: number; quiz: number; status: string; attemptNumber?: number; score?: number | null; passed?: boolean | null; startedAt?: string; submittedAt?: string }>).slice(0, 20).map((a) => {
+                const quiz = quizzes.get(a.quiz)
+                return (
+                  <li key={a.id}>
+                    <a href={`/admin/collections/quiz-attempts/${a.id}`}>
+                      {quiz?.kind === 'final_exam' ? 'Final exam' : quiz?.title ?? 'Quiz'} · attempt {a.attemptNumber ?? 1}
+                    </a>
+                    <span className="sa-cell__chips">
+                      {a.status === 'in_progress' ? <StatusPill tone="info">In progress</StatusPill> : <StatusPill tone={a.passed ? 'positive' : 'caution'}>{a.score ?? 0}%{a.passed ? ' passed' : ''}</StatusPill>}
+                      <span className="sa-muted">{formatRelative(a.submittedAt ?? a.startedAt)}</span>
+                    </span>
+                  </li>
+                )
+              })}
+            </ul>
+          ) : (
+            <p className="sa-muted">No quiz attempts yet.</p>
+          )}
+          <ExtraTimeControl userId={Number(userId)} initial={Number(user.examTimeMultiplier ?? 1)} />
         </div>
       </div>
     </section>

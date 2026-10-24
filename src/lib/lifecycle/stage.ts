@@ -103,7 +103,7 @@ export function computeStages(snapshot: PersonSnapshot, window: WindowState, now
   if (latestCertificate) {
     const startedAnother = snapshot.enrollments.some((enrollment) => enrollment.courseId !== latestCertificate.courseId && enrollment.enrolledAt > latestCertificate.issuedAt)
     if (!startedAnother && now - latestCertificate.issuedAt <= COMPLETION_LOOKBACK_MS) {
-      stages.push({ track: 'G', subjectId: `cert:${latestCertificate.courseId}`, enteredAt: latestCertificate.issuedAt, cycle: 0, courseId: latestCertificate.courseId })
+      stages.push({ track: 'G', subjectId: `cert:${snapshot.key}:${latestCertificate.courseId}`, enteredAt: latestCertificate.issuedAt, cycle: 0, courseId: latestCertificate.courseId })
     }
   }
 

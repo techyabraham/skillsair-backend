@@ -16,7 +16,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
   await requireCourseAccess(req.payload, user.id, courseId)
   const existing = await req.payload.find({ collection: 'reviews', where: { and: [{ student: { equals: user.id } }, { course: { equals: courseId } }] }, limit: 1, overrideAccess: true })
   if (existing.totalDocs) throw new AppError('ALREADY_EXISTS', 'You already reviewed this course')
-  const review = await req.payload.create({ collection: 'reviews', data: { student: user.id, course: courseId, ...body }, overrideAccess: true })
+  const review = await req.payload.create({ collection: 'reviews', data: { student: user.id, course: Number(courseId), ...body }, overrideAccess: true })
   return sendSuccess(review, undefined, 201)
 }
 

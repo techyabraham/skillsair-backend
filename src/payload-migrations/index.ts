@@ -11,6 +11,10 @@ import * as migration_20261019_090000_display_titles from './20261019_090000_dis
 import * as migration_20261020_090000_subscription_billing from './20261020_090000_subscription_billing.js';
 import * as migration_20261022_090000_lesson_resources from './20261022_090000_lesson_resources.js';
 import * as migration_20261022_100000_bonus_courses from './20261022_100000_bonus_courses.js';
+import * as migration_20261023_090000_learning_quality_foundations from './20261023_090000_learning_quality_foundations.js';
+import * as migration_20261023_100000_lesson_captions from './20261023_100000_lesson_captions.js';
+import * as migration_20261023_110000_certificate_exam from './20261023_110000_certificate_exam.js';
+import * as migration_20261023_120000_scale_indexes from './20261023_120000_scale_indexes.js';
 
 export const migrations = [
   {
@@ -77,5 +81,25 @@ export const migrations = [
     up: migration_20261022_100000_bonus_courses.up,
     down: migration_20261022_100000_bonus_courses.down,
     name: '20261022_100000_bonus_courses'
+  },
+  {
+    up: migration_20261023_090000_learning_quality_foundations.up,
+    down: migration_20261023_090000_learning_quality_foundations.down,
+    name: '20261023_090000_learning_quality_foundations'
+  },
+  {
+    up: migration_20261023_100000_lesson_captions.up,
+    down: migration_20261023_100000_lesson_captions.down,
+    name: '20261023_100000_lesson_captions'
+  },
+  {
+    up: migration_20261023_110000_certificate_exam.up,
+    down: migration_20261023_110000_certificate_exam.down,
+    name: '20261023_110000_certificate_exam'
+  },
+  {
+    up: migration_20261023_120000_scale_indexes.up,
+    down: migration_20261023_120000_scale_indexes.down,
+    name: '20261023_120000_scale_indexes'
   },
 ];

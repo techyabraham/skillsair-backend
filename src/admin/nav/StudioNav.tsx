@@ -103,6 +103,9 @@ export async function StudioNav(props: NavProps) {
             { id: 'nav-lifecycle', href: `${ADMIN_ROUTE}/lifecycle`, label: 'Lifecycle emails', icon: <EntityIcon slug="lifecycle" size={18} /> },
           ]
         : []),
+      ...(role === 'admin' || role === 'instructor'
+        ? [{ id: 'nav-question-bank', href: `${ADMIN_ROUTE}/question-bank`, label: 'Question bank', icon: <EntityIcon slug="quiz-questions" size={18} /> }]
+        : []),
       { id: 'nav-guide', href: `${ADMIN_ROUTE}/guide`, label: 'Studio guide', icon: <EntityIcon slug="pages" size={18} /> },
     ],
   }

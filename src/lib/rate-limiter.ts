@@ -59,6 +59,10 @@ function createPayloadRateLimiter(name: string, limit: number, windowSeconds: nu
 export const authRateLimiter = createPayloadRateLimiter('auth', 10, 15 * 60)
 export const paymentRateLimiter = createPayloadRateLimiter('payment', 20, 60 * 60)
 export const streamRateLimiter = createPayloadRateLimiter('stream', 100, 60 * 60)
+export const captionsRateLimiter = createPayloadRateLimiter('captions', 600, 60 * 60)
+// Quizzes: starts and submits are rare; autosave runs about every 5 seconds during an exam.
+export const quizStartRateLimiter = createPayloadRateLimiter('quiz-start', 30, 15 * 60)
+export const quizSaveRateLimiter = createPayloadRateLimiter('quiz-save', 1200, 60 * 60)
 export const adminRateLimiter = createPayloadRateLimiter('admin', 60, 15 * 60)
 export const leadRateLimiter = createPayloadRateLimiter('lead', 10, 15 * 60)
 export const leadResumeRateLimiter = createPayloadRateLimiter('lead-resume', 30, 15 * 60)

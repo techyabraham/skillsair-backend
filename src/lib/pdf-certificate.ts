@@ -12,6 +12,8 @@ export interface CertificatePdfInput {
   completionDate: string
   certificateCode: string
   verificationUrl: string
+  /** Final exam result: "Passed" or "Passed with distinction" (none for certificates issued before exams). */
+  resultLabel?: string
 }
 
 function getS3Client(): S3Client {
@@ -82,6 +84,14 @@ export async function generateCertificatePdf(input: CertificatePdfInput): Promis
       .fontSize(12)
       .text(`Completed on ${input.completionDate}`, 0, 365, { align: 'center' })
 
+    if (input.resultLabel) {
+      doc
+        .fillColor(BRAND_PRIMARY)
+        .font('Helvetica-Bold')
+        .fontSize(13)
+        .text(`Final exam: ${input.resultLabel}`, 0, 388, { align: 'center' })
+    }
+
     const signatureY = pageHeight - 130
     doc
       .moveTo(pageWidth / 2 - 140, signatureY)
@@ -124,6 +134,15 @@ export async function uploadCertificatePdf(
   pdfBuffer: Buffer,
 ): Promise<string> {
   const bucket = process.env.R2_BUCKET
+  if (!bucket && process.env.NODE_ENV !== 'production' && process.env.LOCAL_CERTIFICATE_DIR) {
+    // Local development only: no R2, so the PDF is written to disk.
+    const fs = await import('node:fs')
+    const path = await import('node:path')
+    const file = path.join(process.env.LOCAL_CERTIFICATE_DIR, `${userId}-${certificateCode}.pdf`)
+    fs.mkdirSync(path.dirname(file), { recursive: true })
+    fs.writeFileSync(file, pdfBuffer)
+    return `file://${file}`
+  }
   if (!bucket) throw new Error('R2_BUCKET is not configured')
   const key = `certificates/${userId}/${certificateCode}.pdf`
 

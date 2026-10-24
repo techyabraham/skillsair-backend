@@ -28,6 +28,7 @@ import { accessGraceDays } from '../../lib/billing.js'
 import { HOUR } from '../../lib/lifecycle/timing.js'
 import { assertAdmin, assertStaff } from './auth.js'
 import { cached } from './cache.js'
+import { learningAttention } from './learning.js'
 import { dayKeys, fillSeries, lastDays, monthlyValue, rate, stepHealth, workingMsBetween, type PeriodRange } from './metrics-core.js'
 
 type Row = Record<string, unknown>
@@ -313,7 +314,7 @@ export async function getLearning(req: PayloadRequest, range: PeriodRange): Prom
 export interface AttentionItem {
   id: string
   tone: 'caution' | 'critical'
-  kind: 'queue' | 'past_due' | 'failed_order' | 'lifecycle' | 'programme' | 'laptop'
+  kind: 'queue' | 'past_due' | 'failed_order' | 'lifecycle' | 'programme' | 'laptop' | 'learning'
   text: string
   href: string
   fixLabel: string
@@ -400,6 +401,24 @@ export async function getAttention(req: PayloadRequest, range: PeriodRange): Pro
     const laptops = num(row?.laptops)
     if (laptops) {
       items.push({ id: 'laptops', tone: 'caution', kind: 'laptop', text: `${laptops} laptop application${laptops === 1 ? '' : 's'} awaiting review`, href: '/admin/collections/laptop-applications?where[status][equals]=submitted', fixLabel: 'Review' })
+    }
+    const learning = await learningAttention(req.payload).catch(() => null)
+    for (const item of learning?.flaggedQuestions ?? []) {
+      items.push({ id: `flagged-${item.courseId}`, tone: 'caution', kind: 'learning', text: `${item.title}: ${item.count} question${item.count === 1 ? '' : 's'} flagged by item analysis`, href: `/admin/question-bank?course=${item.courseId}&filter=flagged`, fixLabel: 'Review' })
+    }
+    const missingSubtitles = learning?.missingSubtitles ?? []
+    if (missingSubtitles.length > 2) {
+      const lessons = missingSubtitles.reduce((sum, item) => sum + item.count, 0)
+      items.push({ id: 'captions', tone: 'caution', kind: 'learning', text: `${missingSubtitles.length} programmes have lessons without subtitles (${lessons} lessons in all)`, href: '/admin/collections/lessons?where[hasCaptions][not_equals]=true', fixLabel: 'Review' })
+    }
+    for (const item of missingSubtitles.length > 2 ? [] : missingSubtitles) {
+      items.push({ id: `captions-${item.courseId}`, tone: 'caution', kind: 'learning', text: `${item.title}: ${item.count} of ${item.total} lessons have no subtitles`, href: `/admin/collections/courses/${item.courseId}`, fixLabel: 'Re-import' })
+    }
+    for (const item of learning?.lintErrors ?? []) {
+      items.push({ id: `lint-${item.courseId}`, tone: 'caution', kind: 'learning', text: `${item.title}: ${item.count} programme copy error${item.count === 1 ? '' : 's'}`, href: `/admin/collections/courses/${item.courseId}`, fixLabel: 'Fix' })
+    }
+    if (learning?.deadTasks) {
+      items.push({ id: 'dead-tasks', tone: 'critical', kind: 'learning', text: `${learning.deadTasks} background task${learning.deadTasks === 1 ? '' : 's'} failed 3 times (caption imports)`, href: '/admin/question-bank#tasks', fixLabel: 'Retry' })
     }
     // The headline count is the money-and-people problems (not content housekeeping).
     const count = waiting.length + pastDue.length + failed.length

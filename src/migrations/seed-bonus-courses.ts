@@ -45,7 +45,7 @@ async function run(): Promise<void> {
       await payload.create({
         collection: 'courses',
         overrideAccess: true,
-        data: { title: spec.title, slug: spec.slug, shortDescription: spec.shortDescription, status: 'published', level: 'beginner', price: 0, isBonus: true, ...(admin ? { instructor: admin.id } : {}) } as never,
+        data: { title: spec.title, slug: spec.slug, shortDescription: spec.shortDescription, status: 'published', price: 0, isBonus: true, ...(admin ? { instructor: admin.id } : {}) } as never,
       })
     }
   }

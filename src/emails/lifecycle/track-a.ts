@@ -177,7 +177,7 @@ export const A5 = lifecycleEmail({
         list: [
           `Start your scholarship plan: ${monthly(d)} by bank transfer, OPay or card.`,
           'Watch your first lesson today. About 8 hours a week gets you through in about 3 months.',
-          'When you finish, claim your verifiable certificate and unlock internship openings.',
+          'When you finish, pass the final exam to earn your verifiable certificate and unlock internship openings.',
         ],
       },
       'Picture yourself a few months from now, with a skill you can show, a certificate an employer can check, and a CV that says so.',

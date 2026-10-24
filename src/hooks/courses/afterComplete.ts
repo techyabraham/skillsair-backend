@@ -58,6 +58,15 @@ export async function stopBillingForCompletedProgramme(payload: Payload, student
   return stopped
 }
 
+/** "distinction" from 85%, otherwise "passed" (the pass mark itself is 70%). */
+export function scoreBand(score: number): 'passed' | 'distinction' {
+  return score >= 85 ? 'distinction' : 'passed'
+}
+
+export function scoreBandLabel(band: 'passed' | 'distinction'): string {
+  return band === 'distinction' ? 'Passed with distinction' : 'Passed'
+}
+
 /** Generates and uploads a course-completion certificate PDF, records it, and emails the student. */
 export async function issueCertificate(
   payload: Payload,
@@ -65,6 +74,8 @@ export async function issueCertificate(
   courseId: number | string,
   /** The paid certificate order, shown as a receipt in the certificate email (T9). */
   receipt?: { reference: string; amount: number; paidAt: string },
+  /** The final exam that earned it (certificates issued after an exam show the result band). */
+  exam?: { score: number },
 ): Promise<unknown> {
   const existing = await payload.find({
     collection: 'certificates',
@@ -113,6 +124,7 @@ export async function issueCertificate(
     completionDate,
     certificateCode,
     verificationUrl,
+    ...(exam ? { resultLabel: scoreBandLabel(scoreBand(exam.score)) } : {}),
   })
   const pdfUrl = await uploadCertificatePdf(Number(studentId), certificateCode, pdfBuffer)
 
@@ -124,6 +136,7 @@ export async function issueCertificate(
       certificateCode,
       pdfUrl,
       issuedAt: new Date().toISOString(),
+      ...(exam ? { scoreBand: scoreBand(exam.score), examScore: exam.score } : {}),
     },
     overrideAccess: true,
   })

@@ -24,7 +24,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
     const parent = await req.payload.findByID({ collection: 'discussions', id: body.parentId, depth: 0, overrideAccess: true }).catch(() => null)
     if (!parent || String(relationId(parent.course)) !== String(courseId)) throw new AppError('VALIDATION_ERROR', 'Reply must belong to this course')
   }
-  const post = await req.payload.create({ collection: 'discussions', data: { author: user.id, course: courseId, body: body.body, lesson: body.lessonId, parent: body.parentId }, overrideAccess: true })
+  const post = await req.payload.create({ collection: 'discussions', data: { author: user.id, course: Number(courseId), body: body.body, lesson: body.lessonId, parent: body.parentId }, overrideAccess: true })
   return sendSuccess(post, undefined, 201)
 }
 

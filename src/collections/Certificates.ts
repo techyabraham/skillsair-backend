@@ -26,6 +26,17 @@ export const Certificates: CollectionConfig = {
     { name: 'certificateCode', type: 'text', required: true, unique: true },
     { name: 'pdfUrl', type: 'text', required: true },
     { name: 'issuedAt', type: 'date', defaultValue: () => new Date().toISOString() },
+    {
+      // Final exam result shown on the certificate and the verification page (never the answers).
+      name: 'scoreBand',
+      type: 'select',
+      label: 'Result',
+      options: [
+        { label: 'Passed (70–84%)', value: 'passed' },
+        { label: 'Passed with distinction (85%+)', value: 'distinction' },
+      ],
+    },
+    { name: 'examScore', type: 'number', min: 0, max: 100, access: { read: ({ req }) => req.user?.role === 'admin' } },
   ],
   timestamps: true,
 }

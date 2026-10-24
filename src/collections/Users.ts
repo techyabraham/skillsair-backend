@@ -181,6 +181,23 @@ export const Users: CollectionConfig = {
               access: { create: isAdmin, update: isAdmin },
             },
             {
+              // Accessibility accommodation: timed quizzes and exams allow this many times the time limit.
+              name: 'examTimeMultiplier',
+              type: 'number',
+              min: 1,
+              max: 3,
+              defaultValue: 1,
+              label: 'Exam time (×)',
+              access: { create: isAdmin, update: isAdmin },
+              admin: { description: 'Extra time for timed quizzes and exams, e.g. 1.5 for half as much again. Granted by an admin.' },
+            },
+            {
+              // Video player choices (captions on/off, caption size, speed), set from the player.
+              name: 'preferences',
+              type: 'json',
+              admin: { readOnly: true },
+            },
+            {
               name: 'accessExtensions',
               type: 'array',
               admin: { readOnly: true },

@@ -7,6 +7,7 @@ interface CertificateDoc {
   issuedAt: string
   student: { firstName: string; lastName: string } | number | string
   course: { title: string } | number | string
+  scoreBand?: 'passed' | 'distinction' | null
 }
 
 async function handler(req: PayloadRequest): Promise<Response> {
@@ -33,6 +34,8 @@ async function handler(req: PayloadRequest): Promise<Response> {
     issuedAt: certificate.issuedAt,
     studentName: typeof student === 'object' ? `${student.firstName} ${student.lastName}` : undefined,
     courseTitle: typeof course === 'object' ? course.title : undefined,
+    // The final exam result band (never the answers or the raw score).
+    result: certificate.scoreBand === 'distinction' ? 'Passed with distinction' : certificate.scoreBand === 'passed' ? 'Passed' : null,
   })
 }
 

@@ -35,7 +35,7 @@ export interface TrackStats {
 /** Display order (same as src/lib/lifecycle/sequences.ts). */
 export const STEP_ORDER = [
   'A0', 'A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'W1', 'P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'B1', 'B1-WA', 'B2', 'B3',
-  'T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8', 'T9', 'T10', 'T11', 'D1', 'D2', 'D3', 'I0', 'I1', 'I2', 'I3',
+  'T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8', 'T9', 'T10', 'T11', 'T12', 'D1', 'D2', 'D3', 'I0', 'I1', 'I2', 'I3',
   'R1', 'R2', 'R3', 'R4', 'R5', 'C1', 'C2', 'C2L', 'C3', 'C4', 'C5', 'G1', 'G2', 'G3', 'G4', 'X1',
 ]
 

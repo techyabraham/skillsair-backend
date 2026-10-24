@@ -8,6 +8,10 @@ export type ErrorCode =
   | 'ACCESS_EXPIRED'
   | 'RATE_LIMITED'
   | 'INTERNAL_ERROR'
+  | 'SERVICE_BUSY'
+  | 'CERTIFICATE_PURCHASE_REQUIRED'
+  | 'QUIZ_COOLDOWN'
+  | 'QUIZ_CLOSED'
 
 const ERROR_CODE_STATUS: Record<ErrorCode, number> = {
   VALIDATION_ERROR: 400,
@@ -19,6 +23,10 @@ const ERROR_CODE_STATUS: Record<ErrorCode, number> = {
   ACCESS_EXPIRED: 403,
   RATE_LIMITED: 429,
   INTERNAL_ERROR: 500,
+  SERVICE_BUSY: 503,
+  CERTIFICATE_PURCHASE_REQUIRED: 402,
+  QUIZ_COOLDOWN: 429,
+  QUIZ_CLOSED: 409,
 }
 
 export class AppError extends Error {

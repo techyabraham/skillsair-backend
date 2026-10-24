@@ -144,8 +144,21 @@ async function fulfillLockedOrder(payload: Payload, orderId: number | string): P
     if (courseId === undefined) throw new Error('Paid certificate order has no course')
     const enrollment = await payload.find({ collection: 'enrollments', where: { and: [{ student: { equals: userId } }, { course: { equals: courseId } }, { status: { equals: 'completed' } }] }, limit: 1, overrideAccess: true })
     if (!enrollment.totalDocs) throw new Error('Certificate course is not complete')
-    // The certificate email (T9) carries the receipt.
-    await issueCertificate(payload, userId, courseId, { reference: String(doc.reference), amount: Number(doc.amount), paidAt: String(doc.paidAt ?? new Date().toISOString()) })
+    const receipt = { reference: String(doc.reference), amount: Number(doc.amount), paidAt: String(doc.paidAt ?? new Date().toISOString()) }
+    const exam = await payload.find({ collection: 'quizzes', where: { and: [{ course: { equals: courseId } }, { kind: { equals: 'final_exam' } }, { isPublished: { equals: true } }] }, limit: 1, depth: 0, overrideAccess: true })
+    if (!exam.totalDocs) {
+      // No final exam published for this programme yet: the certificate is issued straight away
+      // (T9 carries the receipt), so nobody pays and then waits for an exam that doesn't exist.
+      await issueCertificate(payload, userId, courseId, receipt)
+    } else {
+      // Pay first, then the exam: the fee unlocks the final exam (retakes included); passing it issues
+      // the certificate. The exam-ready email (T12) carries the receipt.
+      const existing = await payload.find({ collection: 'certificate-entitlements', where: { and: [{ student: { equals: userId } }, { course: { equals: courseId } }, { status: { not_equals: 'refunded' } }] }, limit: 1, depth: 0, overrideAccess: true })
+      if (!existing.totalDocs) {
+        await payload.create({ collection: 'certificate-entitlements', data: { student: userId, course: courseId, order: doc.id, status: 'awaiting_exam', paidAt: receipt.paidAt }, overrideAccess: true })
+        await onLifecycleEvent(payload, { type: 'exam_ready', userId: Number(userId), courseId: Number(courseId), receipt })
+      }
+    }
   }
 
   await payload.update({ collection: 'orders', id: doc.id, data: { fulfilledAt: new Date().toISOString() }, overrideAccess: true })

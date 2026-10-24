@@ -29,10 +29,12 @@
 import { loadEnv } from 'payload/node'
 import { getPayload } from 'payload'
 import type { Payload } from 'payload'
-import { google, type drive_v3 } from 'googleapis'
+import type { drive_v3 } from 'googleapis'
+import { progress, serviceAccountDrive, walkFolder as walk, type DriveItem } from '../lib/drive-folders.js'
 import { slugify } from '../utils/slugify.js'
 import { recalculateCourseStats } from '../collections/Lessons.js'
 import { ext, leadingNumber, lessonKey, sectionKey, similar, tidyName, words } from '../lib/drive-names.js'
+import { importCaptionsForCourse } from './import-captions.js'
 
 const VIDEO = new Set(['mp4', 'mov', 'mkv', 'webm', 'm4v'])
 const RESOURCE = new Set(['pdf', 'doc', 'docx', 'xls', 'xlsx', 'csv', 'ppt', 'pptx', 'ai', 'psd', 'eps', 'svg', 'jpg', 'jpeg', 'png', 'zip', 'fig', 'sketch', 'xd'])
@@ -46,7 +48,6 @@ const MIME: Record<string, string> = {
   jpg: 'image/jpeg', jpeg: 'image/jpeg', png: 'image/png', zip: 'application/zip',
 }
 
-interface DriveItem { id: string; name: string; folder: boolean; children?: DriveItem[] }
 interface PlannedLesson { title: string; rawName: string; order: number; driveFileId: string; mimeType: string }
 interface PlannedResource { title: string; rawName: string; driveFileId: string; mimeType: string }
 interface PlannedSection { title: string; rawName: string; key: string; lessons: PlannedLesson[]; resources: PlannedResource[] }
@@ -67,55 +68,6 @@ interface LessonDoc {
 }
 
 // ---------- Drive ----------
-
-const decode = (s: string) => s.replace(/&amp;/g, '&').replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
-
-/** Progress lines, so a long run never looks frozen. */
-const progress = (line: string) => console.log(`  [${new Date().toISOString().slice(11, 19)}] ${line}`)
-
-async function listPublicFolder(id: string): Promise<DriveItem[]> {
-  for (let attempt = 0; attempt < 4; attempt++) {
-    // A request Google never answers is abandoned after 30 seconds and retried.
-    const response = await fetch(`https://drive.google.com/embeddedfolderview?id=${encodeURIComponent(id)}`, {
-      headers: { 'User-Agent': 'Mozilla/5.0 SkillsAir-curriculum-import' },
-      signal: AbortSignal.timeout(30_000),
-    }).catch((err: unknown) => {
-      progress(`Drive folder ${id}: ${err instanceof Error ? err.message : String(err)}; retrying`)
-      return null
-    })
-    if (response?.ok) {
-      const html = await response.text()
-      const items: DriveItem[] = []
-      const pattern = /<div class="flip-entry" id="entry-([^"]+)"[\s\S]*?<a href="([^"]+)"[\s\S]*?<div class="flip-entry-title">([^<]*)<\/div>/g
-      let match: RegExpExecArray | null
-      while ((match = pattern.exec(html))) items.push({ id: match[1] ?? '', name: decode(match[3] ?? '').trim(), folder: (match[2] ?? '').includes('/folders/') })
-      return items.sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }))
-    }
-    await new Promise((resolve) => setTimeout(resolve, 1000 * (attempt + 1)))
-  }
-  throw new Error(`Could not list Drive folder ${id}. Is it shared as "anyone with the link"?`)
-}
-
-async function walk(id: string, stats = { folders: 0, files: 0 }): Promise<DriveItem[]> {
-  const items = await listPublicFolder(id)
-  stats.folders++
-  stats.files += items.filter((item) => !item.folder).length
-  if (stats.folders % 10 === 0) progress(`read ${stats.folders} folders, ${stats.files} files so far`)
-  for (const item of items) if (item.folder) item.children = await walk(item.id, stats)
-  return items
-}
-
-function serviceAccountDrive(): drive_v3.Drive | null {
-  const raw = process.env.GOOGLE_SERVICE_ACCOUNT_KEY
-  if (!raw) return null
-  try {
-    const key = JSON.parse(raw) as { client_email: string; private_key: string }
-    const auth = new google.auth.JWT({ email: key.client_email, key: key.private_key, scopes: ['https://www.googleapis.com/auth/drive.readonly'] })
-    return google.drive({ version: 'v3', auth })
-  } catch {
-    return null
-  }
-}
 
 /** Checks each file through the Drive API (the access streaming uses) and reads video durations. */
 async function checkFiles(drive: drive_v3.Drive, ids: string[]): Promise<{ durations: Map<string, number>; unreachable: Set<string> }> {
@@ -252,10 +204,10 @@ const hasLegacyLink = (content: unknown, fileId: string) => {
 
 // ---------- apply ----------
 
-async function importCourse(payload: Payload, slug: string, folderId: string, options: { execute: boolean; publish: boolean; drive: drive_v3.Drive | null }): Promise<boolean> {
+async function importCourse(payload: Payload, slug: string, folderId: string, options: { execute: boolean; publish: boolean; drive: drive_v3.Drive | null; captions: boolean }): Promise<boolean> {
   const out = (line = '') => console.log(line)
   const courses = await payload.find({ collection: 'courses', where: { slug: { equals: slug } }, limit: 1, depth: 0, overrideAccess: true })
-  const course = courses.docs[0] as unknown as { id: number; title: string } | undefined
+  const course = courses.docs[0] as unknown as { id: number; title: string; driveFolderId?: string | null } | undefined
   if (!course) { out(`\n### ${slug}: no course with this slug. Skipped.`); return false }
 
   out(`\n### ${course.title} (${slug})`)
@@ -417,7 +369,12 @@ async function importCourse(payload: Payload, slug: string, folderId: string, op
     out(`      ${plan.lessons.length} videos: ${added} new, ${linked} linked to Drive${kept.length ? `; ${kept.length} site-only lessons kept` : ''}${plan.resources.length ? `; ${plan.resources.length} documents in "${RESOURCES_LESSON_TITLE}"` : ''}`)
   }
 
-  if (options.execute) await recalculateCourseStats(course.id, payload as unknown as Parameters<typeof recalculateCourseStats>[1])
+  if (options.execute) {
+    if (course.driveFolderId !== folderId) await payload.update({ collection: 'courses', id: course.id, data: { driveFolderId: folderId }, overrideAccess: true })
+    await recalculateCourseStats(course.id, payload as unknown as Parameters<typeof recalculateCourseStats>[1])
+    // New lessons get their captions straight away (reuses the folder listing).
+    if (options.captions) await importCaptionsForCourse(payload, slug, { execute: true, folderId, tree })
+  }
 
   out(`\n  Summary: ${planned.length} chapters (${counts.newSections} new, ${counts.matchedSections} existing); lessons: ${counts.newLessons} new${counts.newLessons ? options.publish ? ' (published)' : ' (unpublished)' : ''}, ${counts.linkedLessons} existing linked to Drive, ${counts.unchangedLessons} existing already up to date; ${counts.legacyLinksRemoved} old WordPress links removed; ${counts.resources} documents.`)
   if (renamed.length) out(`  Tidied names (${renamed.length}):\n${[...new Set(renamed)].map((line) => `    - ${line}`).join('\n')}`)
@@ -445,6 +402,8 @@ async function run(): Promise<void> {
   const publish = !args.includes('--unpublished')
   // Skips the per-file service-account check: faster, but durations stay empty and access isn't verified.
   const skipDriveCheck = args.includes('--skip-drive-check')
+  // Captions are imported after each course unless --skip-captions.
+  const captions = !args.includes('--skip-captions')
   const courses: Array<[string, string]> = []
   args.forEach((arg, index) => {
     const value = args[index + 1]
@@ -468,7 +427,7 @@ async function run(): Promise<void> {
   let failed = 0
   for (const [slug, folderId] of courses) {
     try {
-      if (!(await importCourse(payload, slug, folderId, { execute, publish, drive }))) failed++
+      if (!(await importCourse(payload, slug, folderId, { execute, publish, drive, captions }))) failed++
     } catch (err) {
       failed++
       console.error(`\n### ${slug}: FAILED (${err instanceof Error ? err.message : String(err)})`)

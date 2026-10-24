@@ -1,5 +1,6 @@
 import type { CollectionConfig } from 'payload'
 import { STUDIO_GROUP } from '../admin/studio-config.js'
+import { bumpCourseCacheHook } from '../lib/cache.js'
 
 export const Sections: CollectionConfig = {
   slug: 'sections', labels: { singular: 'Section', plural: 'Sections' },
@@ -13,6 +14,11 @@ export const Sections: CollectionConfig = {
     create: ({ req }) => req.user?.role === 'admin' || req.user?.role === 'instructor',
     update: ({ req }) => req.user?.role === 'admin' || req.user?.role === 'instructor',
     delete: ({ req }) => req.user?.role === 'admin' || req.user?.role === 'instructor',
+  },
+  hooks: {
+    // Cached curricula and exam weights for the programme are retired on any change.
+    afterChange: [bumpCourseCacheHook()],
+    afterDelete: [bumpCourseCacheHook()],
   },
   fields: [
     { name: 'title', type: 'text', required: true },

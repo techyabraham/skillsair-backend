@@ -127,6 +127,8 @@ export const SEQUENCES: Step[] = [
   // Month-by-month (transfer/OPay) plans: next month due soon (T10) and in grace (T11).
   { id: 'T10', track: 'T', ...transactionalEmail, template: 'T10', anchor: 'event', offsetHours: 0 },
   { id: 'T11', track: 'T', ...transactionalEmail, template: 'T11', anchor: 'event', offsetHours: 0 },
+  // Certificate paid: the final exam is open (T12).
+  { id: 'T12', track: 'T', ...transactionalEmail, template: 'T12', anchor: 'event', offsetHours: 0 },
 
   // Track D: failed payment. D1 goes on the event; access pauses when the grace days end.
   { id: 'D1', track: 'D', ...transactionalEmail, template: 'D1', anchor: 'event', offsetHours: 0 },

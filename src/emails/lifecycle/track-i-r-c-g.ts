@@ -1,4 +1,4 @@
-import { blocks, certificate, lifecycleEmail, monthly, naira, proofSlot, standardFee } from './shared.js'
+import { blocks, certificate, lifecycleEmail, monthly, naira, proofSlot, standardFee, certificateCta, examNote } from './shared.js'
 import type { MessageData } from '../../lib/lifecycle/context.js'
 
 /** Track I: learning nudges (service). No selling: only the next lesson, and an honest word about renewals. */
@@ -184,7 +184,7 @@ export const R5 = lifecycleEmail({
           `Hi ${d.firstName},`,
           'A half-finished course is hard to put on a CV. A finished one, with a certificate an employer can check, is something you can point to.',
           `You're ${d.progressPercent}% of the way there. Restart, give it about 8 hours a week, and finish.${lockSentence(d)}`,
-          'Then claim your certificate and unlock internship openings.',
+          'Then earn your certificate and unlock internship openings.',
         ]),
         button: { label: restartLabel(d), url: d.resumeCheckoutUrl },
       }
@@ -215,8 +215,9 @@ export const C1 = lifecycleEmail({
       `When you put "${d.programme}, SkillsAir" on your CV, an employer's first thought is: "Can I check that?"`,
       'With your SkillsAir certificate, they can. They click your link and see your name, the programme, the date you finished and a unique certificate number. No PDFs that anyone could edit.',
       `You've done the hard part. Claiming it is ${certificate(d)}, once, and it's yours for good.`,
+      examNote(d),
     ]),
-    button: { label: 'Claim my certificate', url: d.certificateCheckoutUrl },
+    button: { label: certificateCta(d), url: d.certificateCheckoutUrl },
   }),
 })
 
@@ -240,8 +241,9 @@ export const C2 = lifecycleEmail({
         ],
       },
       `It's ${certificate(d)}, once.`,
+      examNote(d),
     ]),
-    button: { label: 'Claim my certificate', url: d.certificateCheckoutUrl },
+    button: { label: certificateCta(d), url: d.certificateCheckoutUrl },
   }),
 })
 
@@ -256,9 +258,9 @@ export const C2L = lifecycleEmail({
     blocks: blocks([
       `Hi ${d.firstName},`,
       `Applications for this cohort's laptop support close on ${d.laptopDeadline}. Only certified graduates can apply, and 2 laptops go to those who need one most.`,
-      `Claim your certificate (${certificate(d)}) first, then apply from your dashboard with your story.`,
+      `Get your certificate (${certificate(d)}) first, then apply from your dashboard with your story.`,
     ]),
-    button: { label: 'Claim my certificate', url: d.certificateCheckoutUrl },
+    button: { label: certificateCta(d), url: d.certificateCheckoutUrl },
   }),
 })
 
@@ -278,7 +280,7 @@ export const C3 = lifecycleEmail({
       proofSlot(d),
       `${certificate(d)} once, against what a first role or a few freelance clients could pay you. That's the trade.`,
     ]),
-    button: { label: 'Claim my certificate', url: d.certificateCheckoutUrl },
+    button: { label: certificateCta(d), url: d.certificateCheckoutUrl },
   }),
 })
 
@@ -293,8 +295,9 @@ export const C4 = lifecycleEmail({
     blocks: blocks([
       `Hi ${d.firstName},`,
       `A short reminder that your certificate for ${d.programme} is ready to claim for ${certificate(d)}.${d.completedOn ? ` You finished the programme on ${d.completedOn}; the certificate will show that date.` : ''}`,
+      examNote(d),
     ]),
-    button: { label: 'Claim my certificate', url: d.certificateCheckoutUrl },
+    button: { label: certificateCta(d), url: d.certificateCheckoutUrl },
   }),
 })
 
@@ -310,12 +313,12 @@ export const C5 = lifecycleEmail({
     blocks: blocks([
       `Hi ${d.firstName},`,
       [
-        `Your ${d.programme} certificate is still waiting. When you claim it (${certificate(d)}), you get a link employers can check, plus access to internship openings and laptop support applications.`,
-        `Before you apply for an internship or a job with your ${d.programme} skills, claim your certificate (${certificate(d)}). It's how an employer checks your skills in one click, and it's required for internship openings.`,
+        `Your ${d.programme} certificate is still waiting. Get it (${certificate(d)}${d.hasFinalExam ? ', which covers your final exam and any retakes' : ''}) and you get a link employers can check, plus access to internship openings and laptop support applications.`,
+        `Before you apply for an internship or a job with your ${d.programme} skills, get your certificate (${certificate(d)}). It's how an employer checks your skills in one click, and it's required for internship openings.`,
         `One link on your CV: your verified ${d.programme} certificate. It's ${certificate(d)}, once, and it's yours for good.`,
       ][d.occurrence % 3] as string,
     ]),
-    button: { label: 'Claim my certificate', url: d.certificateCheckoutUrl },
+    button: { label: certificateCta(d), url: d.certificateCheckoutUrl },
   }),
 })
 

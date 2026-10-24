@@ -77,7 +77,7 @@ if (!payerExists.totalDocs) {
   console.log(`Created demo payer ${DEMO_PAYER.email}.`)
 }
 
-const existing = await payload.count({ collection: 'users', where: { email: { like: `%@${DEMO_DOMAIN}` } }, overrideAccess: true })
+const existing = await payload.count({ collection: 'users', where: { and: [{ email: { like: `%@${DEMO_DOMAIN}` } }, { role: { equals: 'student' } }] }, overrideAccess: true })
 if (existing.totalDocs > 0) {
   console.log(`Demo data already present (${existing.totalDocs} demo users). Nothing to do.`)
   process.exit(0)
