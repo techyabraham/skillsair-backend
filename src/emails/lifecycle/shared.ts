@@ -1,6 +1,9 @@
 import type { MessageData } from '../../lib/lifecycle/context.js'
-import { defineEmail, type EmailDefinition, type EmailTemplate } from '../define.js'
+import { defineEmail, makeResolver, type CopyResolver, type EmailDefinition, type EmailTemplate } from '../define.js'
 import type { Block } from '../layout.js'
+import type { CopySlot } from '../copy.js'
+import { LIFECYCLE_VAR_DOCS, certificate, lifecycleVars, monthly, naira, standardFee } from '../copy-vars.js'
+import { SHARED_ID } from '../override-store.js'
 
 /**
  * Shared pieces for the lifecycle emails (brief section 13). House style: from Imisi, one
@@ -10,17 +13,41 @@ import type { Block } from '../layout.js'
  */
 export type LifecycleTemplate = EmailTemplate<MessageData>
 
-export const naira = (amount: number) => `₦${Math.round(amount).toLocaleString('en-NG')}`
-export const monthly = (data: Pick<MessageData, 'price'>) => `${naira(data.price)} a month`
-export const certificate = (data: Pick<MessageData, 'certificatePrice'>) => naira(data.certificatePrice)
+export { naira, monthly, certificate, standardFee }
+
+/**
+ * Shared phrases ("Shared phrases" in Studio, template id `_shared`): edited once, used by every
+ * lifecycle email that shows them.
+ */
+export const SHARED_COPY = {
+  greeting: { label: 'Greeting (every lifecycle email)', default: 'Hi {{firstName}},', help: 'The first line of every lifecycle email.' },
+  lockLine: { label: 'Locked-rate sentence', default: 'Your rate is locked at {{monthly}}, because you joined during the Access Scholarship.', required: ['monthly'] },
+  rateLocked: { label: 'Locked-rate reminder (short)', default: 'Your rate is locked at {{monthly}}.', required: ['monthly'], help: 'Added after a sentence in the win-back emails (R1, R5) for people who joined on the scholarship.' },
+  designed: { label: 'How long a programme takes', default: 'designed to take about 3 months at about 8 hours a week', help: 'Used mid-sentence, so it starts with a small letter (A0 capitalises it).' },
+  examNote: { label: 'What the certificate fee covers (programmes with a final exam)', default: 'Your {{certificatePrice}} covers your final exam (retakes included) and your certificate when you pass.', required: ['certificatePrice'] },
+  certificateCtaExam: { label: 'Certificate button (with a final exam)', default: 'Get my certificate', kind: 'button' },
+  certificateCtaNoExam: { label: 'Certificate button (no final exam)', default: 'Claim my certificate', kind: 'button' },
+  restartLocked: { label: 'Restart button (joined on the scholarship)', default: 'Restart for {{monthly}}', kind: 'button', required: ['monthly'] },
+  restartPlain: { label: 'Restart button (standard fee)', default: 'Restart my programme', kind: 'button' },
+  priceTodayOpen: { label: 'Today’s price, window open (graduates)', default: "While the Access Scholarship is open (until {{closesOn}}), it's {{monthly}}.", required: ['monthly'] },
+  priceTodayClosed: { label: 'Today’s price, window closed (graduates)', default: "Right now it's the standard fee, {{standardFee}}, or you can wait for the next Access Scholarship window.", required: ['standardFee'] },
+} satisfies Record<string, CopySlot>
+
+export type SharedKey = keyof typeof SHARED_COPY
+
+/** The shared phrases for one person's data. */
+export function phrases(data: MessageData): CopyResolver<SharedKey> {
+  return makeResolver(SHARED_ID, SHARED_COPY, lifecycleVars(data), LIFECYCLE_VAR_DOCS) as CopyResolver<SharedKey>
+}
+
 /** Programmes with a final exam: pay first, then the exam (the fee covers retakes and the certificate). */
-export const examNote = (data: Pick<MessageData, 'certificatePrice' | 'hasFinalExam'>) =>
-  data.hasFinalExam ? `Your ${naira(data.certificatePrice)} covers your final exam (retakes included) and your certificate when you pass.` : ''
-export const certificateCta = (data: Pick<MessageData, 'hasFinalExam'>) => (data.hasFinalExam ? 'Get my certificate' : 'Claim my certificate')
-export const standardFee = (data: Pick<MessageData, 'standardPrice' | 'standardMonthlyPrice'>) =>
-  data.standardMonthlyPrice ? `${naira(data.standardPrice)} (or ${naira(data.standardMonthlyPrice)} a month)` : naira(data.standardPrice)
-export const LOCK_LINE = (data: MessageData) => `Your rate is locked at ${monthly(data)}, because you joined during the Access Scholarship.`
-export const DESIGNED = 'designed to take about 3 months at about 8 hours a week'
+export const examNote = (data: MessageData) => (data.hasFinalExam ? phrases(data).examNote() : '')
+export const certificateCta = (data: MessageData) => (data.hasFinalExam ? phrases(data).certificateCtaExam() : phrases(data).certificateCtaNoExam())
+export const LOCK_LINE = (data: MessageData) => phrases(data).lockLine()
+export const designed = (data: MessageData) => phrases(data).designed()
+export const greeting = (data: MessageData) => phrases(data).greeting()
+export const restartLabel = (data: MessageData) => (data.joinedOnScholarship ? phrases(data).restartLocked() : phrases(data).restartPlain())
+export const priceToday = (data: MessageData) => (data.windowOpen ? phrases(data).priceTodayOpen() : phrases(data).priceTodayClosed())
 
 /** Drops empty conditional blocks: blocks(['a', cond && 'b']). */
 export function blocks(items: Array<Block | false | null | undefined | ''>): Block[] {
@@ -112,6 +139,8 @@ export const SAMPLE: MessageData = {
   orderReference: 'SA-SUB-48213',
 }
 
-export function lifecycleEmail(definition: Omit<EmailDefinition<MessageData>, 'sample'> & { sample?: Partial<MessageData> }): LifecycleTemplate {
-  return defineEmail<MessageData>({ ...definition, sample: { ...SAMPLE, ...(definition.sample ?? {}) } })
+export function lifecycleEmail<K extends string = never>(
+  definition: Omit<EmailDefinition<MessageData, K>, 'sample' | 'vars' | 'varDocs'> & { sample?: Partial<MessageData> },
+): LifecycleTemplate {
+  return defineEmail<MessageData, K>({ ...definition, vars: lifecycleVars, varDocs: LIFECYCLE_VAR_DOCS, sample: { ...SAMPLE, ...(definition.sample ?? {}) } })
 }

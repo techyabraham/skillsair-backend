@@ -4,6 +4,8 @@
  * logo and no images, so it reads like a note from Imisi and stays dark-mode safe.
  * Every email has a hidden preheader and a plain-text part.
  */
+import { getSettings } from './override-store.js'
+
 export type EmailKind = 'transactional' | 'service' | 'marketing'
 
 /** A paragraph (plain text; **bold** allowed), a list, a table of label/value rows, or small print. */
@@ -40,6 +42,10 @@ export interface LayoutInput extends EmailBody, FooterLinks {
 export const COMPANY_LINE = 'SKILLS AIR LIMITED (RC 9272398), Osifila Street, Anifowose, Ikeja, Lagos.'
 export const SIGN_OFF_NAME = 'Imisi, SkillsAir'
 export const SIGN_OFF_HELP = 'Questions? Reply to this email, or WhatsApp me on +234 818 212 6524 (Mon–Sat, 9am–6pm).'
+/** The sign-off and company line, as set in Studio (Email settings), else the constants above. */
+export const signOffName = () => getSettings().signOffName || SIGN_OFF_NAME
+export const signOffHelp = () => getSettings().signOffHelp || SIGN_OFF_HELP
+export const companyLine = () => getSettings().companyLine || COMPANY_LINE
 const CTA = '#c2410c'
 const INK = '#1f2937'
 const MUTED = '#6b7280'
@@ -116,7 +122,7 @@ function footerHtml(input: LayoutInput): string {
   const link = (href: string, label: string) => `<a href="${escapeHtml(href)}" style="color:${MUTED};text-decoration:underline;">${label}</a>`
   const privacy = link(`${frontendOrigin()}/privacy`, 'Privacy notice')
   if (input.kind === 'transactional') {
-    return `This is an account email about your SkillsAir application, payments or learning.<br />${escapeHtml(COMPANY_LINE)} We never sell your data. ${privacy}`
+    return `This is an account email about your SkillsAir application, payments or learning.<br />${escapeHtml(companyLine())} We never sell your data. ${privacy}`
   }
   const links = [
     input.preferencesUrl ? link(input.preferencesUrl, 'Email preferences') : '',
@@ -126,7 +132,7 @@ function footerHtml(input: LayoutInput): string {
     input.kind === 'service'
       ? "You're getting this because you're learning with SkillsAir."
       : "You're getting this because you applied for a SkillsAir programme and said yes to updates."
-  return `${why} ${links}<br />${escapeHtml(COMPANY_LINE)} We never sell your data. ${privacy}`
+  return `${why} ${links}<br />${escapeHtml(companyLine())} We never sell your data. ${privacy}`
 }
 
 export function renderHtml(input: LayoutInput): string {
@@ -159,8 +165,8 @@ ${preheader}
       <tr><td>
         ${input.blocks.map(blockHtml).join('\n        ')}
         ${button}
-        <p style="margin:0 0 4px;font-size:16px;line-height:1.6;color:${INK};">${escapeHtml(SIGN_OFF_NAME)}</p>
-        <p style="margin:0 0 20px;font-size:14px;line-height:1.5;color:${MUTED};">${escapeHtml(SIGN_OFF_HELP)}</p>
+        <p style="margin:0 0 4px;font-size:16px;line-height:1.6;color:${INK};">${escapeHtml(signOffName())}</p>
+        <p style="margin:0 0 20px;font-size:14px;line-height:1.5;color:${MUTED};">${escapeHtml(signOffHelp())}</p>
         ${ps}
         ${fallbackLink}
       </td></tr>
@@ -175,7 +181,7 @@ ${preheader}
 export function renderText(input: LayoutInput): string {
   const parts = input.blocks.map(blockText)
   if (input.button) parts.push(`${input.button.label}: ${input.button.url}`)
-  parts.push(`${SIGN_OFF_NAME}\n${SIGN_OFF_HELP}`)
+  parts.push(`${signOffName()}\n${signOffHelp()}`)
   if (input.ps) parts.push(`P.S. ${plain(input.ps)}`)
   const footer: string[] = []
   if (input.kind === 'transactional') {
@@ -189,7 +195,7 @@ export function renderText(input: LayoutInput): string {
     if (input.preferencesUrl) footer.push(`Email preferences: ${input.preferencesUrl}`)
     if (input.unsubscribeUrl) footer.push(`Unsubscribe: ${input.unsubscribeUrl}`)
   }
-  footer.push(`${COMPANY_LINE} We never sell your data. Privacy notice: ${frontendOrigin()}/privacy`)
+  footer.push(`${companyLine()} We never sell your data. Privacy notice: ${frontendOrigin()}/privacy`)
   parts.push(`--\n${footer.join('\n')}`)
   return parts.join('\n\n')
 }
