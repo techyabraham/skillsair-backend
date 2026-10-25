@@ -26,7 +26,7 @@ export const STUDIO_NAV_ORDER: Array<{ group: StudioGroup; slugs: string[] }> = 
     group: STUDIO_GROUP.learners,
     slugs: ['users', 'enrollments', 'lesson-progress', 'quiz-attempts', 'access-extensions', 'reviews', 'discussions'],
   },
-  { group: STUDIO_GROUP.messaging, slugs: ['messages', 'email-content', 'newsletter-subscribers'] },
+  { group: STUDIO_GROUP.messaging, slugs: ['messages', 'email-content', 'email-overrides', 'email-override-history', 'newsletter-subscribers'] },
   { group: STUDIO_GROUP.website, slugs: ['categories', 'pages', 'posts', 'media'] },
 ]
 

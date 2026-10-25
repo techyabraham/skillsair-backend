@@ -4,14 +4,16 @@ import { requireAdmin } from '../../middleware/authorize.js'
 import { emailTemplates } from '../../emails/index.js'
 import { escapeHtml } from '../../emails/layout.js'
 import { AppError } from '../../types/index.js'
+import { ensureOverrideStore } from '../../emails/override-store.js'
 
 /**
  * GET /api/email/preview/:template (admins only): renders a template with its sample data.
  * ?format=text returns the plain-text part; ?format=json returns subject, preheader and text;
- * "index" lists every template.
+ * "index" lists every template. Shows the published wording (Studio → Emails).
  */
 async function preview(req: PayloadRequest): Promise<Response> {
   await requireAdmin(req)
+  await ensureOverrideStore(req.payload)
   const id = getParam(req, 'template')
   const format = new URL(req.url ?? '', 'http://localhost').searchParams.get('format') ?? 'html'
   if (id === 'index') {

@@ -71,3 +71,5 @@ export const leadUpdateRateLimiter = createPayloadRateLimiter('lead-update', 60,
 export const emailPrefsRateLimiter = createPayloadRateLimiter('email-prefs', 30, 15 * 60)
 /** Webhooks from email providers, per source IP (Resend sends in bursts). */
 export const emailWebhookRateLimiter = createPayloadRateLimiter('email-webhook', 600, 60)
+/** For endpoint files that define their own bucket (e.g. the Studio email editor). */
+export const createPayloadRateLimiterFor = createPayloadRateLimiter

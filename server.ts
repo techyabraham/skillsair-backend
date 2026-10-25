@@ -4,7 +4,7 @@ import helmet from 'helmet'
 import cors from 'cors'
 import { Readable } from 'node:stream'
 import { loadEnv } from 'payload/node'
-import { handleEndpoints } from 'payload'
+import { getPayload, handleEndpoints } from 'payload'
 
 import { generalApiRateLimiter } from './src/lib/rate-limiter.js'
 import { securityHeaders } from './src/middleware/security-headers.js'
@@ -25,6 +25,7 @@ const { registerAssessmentJobs } = await import('./src/jobs/assessments.js')
 const { registerMonitoringJob } = await import('./src/jobs/monitoring.js')
 const { registerWorkQueueJob } = await import('./src/jobs/work-queue.js')
 const { runsScheduledJobs } = await import('./src/jobs/scheduler.js')
+const { ensureOverrideStore } = await import('./src/emails/override-store.js')
 
 // APP_ROLE=worker runs the scheduled jobs and serves only /health; APP_ROLE=api serves the API with
 // no jobs (any number of replicas). Unset: one process does both, as before.
@@ -145,6 +146,10 @@ app.use((err: unknown, _req: ExpressRequest, res: ExpressResponse, _next: NextFu
 
 app.listen(PORT, () => {
   logger.info({ port: PORT }, 'server_started')
+  // Studio-edited email wording, held in memory (API and jobs render from it synchronously).
+  void getPayload({ config })
+    .then((payload) => ensureOverrideStore(payload))
+    .catch((err: unknown) => logger.error({ err }, 'email_overrides_store_start_failed'))
   if (runsScheduledJobs()) {
     registerSubscriptionRenewalJob(config)
     registerAccessExpiryJob(config)

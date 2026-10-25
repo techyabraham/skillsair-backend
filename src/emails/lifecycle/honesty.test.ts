@@ -2,7 +2,7 @@ import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { LIFECYCLE_TEMPLATES, SAMPLE } from './index.js'
-import type { MessageData } from '../../lib/lifecycle/context.js'
+import { AFTER_FINISHING, BANNED, HONESTY_VARIANTS, bareMonthly, claims, honestyProblems } from '../honesty-rules.js'
 import { variantFor } from '../../lib/lifecycle/templates.js'
 
 /**
@@ -11,16 +11,7 @@ import { variantFor } from '../../lib/lifecycle/templates.js'
  *   certificate (receipts and dunning emails, which state an amount charged, are exempt).
  * - None of the banned phrases appear in email or WhatsApp copy.
  */
-const VARIANTS: Array<Partial<MessageData>> = [
-  {},
-  { windowOpen: false, closesOn: '', closesDay: '', closesAt: null },
-  { joinedOnScholarship: false, priceLocked: false },
-  { occurrence: 1 }, { occurrence: 2 }, { occurrence: 3 },
-  { proof: null, founderAnecdote: 'A true memory.', renewalSoon: true },
-  { manualBilling: true },
-]
-const EXEMPT = new Set(['T1', 'T2', 'T3', 'T4', 'T7', 'T9', 'T10', 'T11', 'T12', 'D1', 'D2', 'D3', 'B1'])
-const BANNED = ['one time', 'one-time', '₦2,000 once', '3 months to finish', 'up to 3 months', 'most learners', 'limited seats', 'guaranteed']
+const VARIANTS = HONESTY_VARIANTS
 
 function renders() {
   const links = { preferencesUrl: 'https://skillsair.com/email-preferences?token=t', unsubscribeUrl: 'https://skillsair.com/email-preferences?token=t' }
@@ -41,11 +32,16 @@ test('every lifecycle email renders a subject, preheader, html and text for ever
 
 test('₦2,000 always says "a month" (offers and marketing)', () => {
   for (const { template, rendered } of renders()) {
-    if (EXEMPT.has(template.id)) continue
-    const copy = `${rendered.subject}\n${rendered.preheader}\n${rendered.text}`
-    const bare = copy.match(/₦2,000(?!(\s|-)a(\s|-)month|\/month)/g)
-    assert.equal(bare, null, `${template.id} mentions ₦2,000 without "a month": ${copy.slice(copy.search(/₦2,000(?!(\s|-)a(\s|-)month)/), copy.search(/₦2,000(?!(\s|-)a(\s|-)month)/) + 60)}`)
+    assert.deepEqual(bareMonthly(template.id, rendered), [], `${template.id} mentions ₦2,000 without "a month"`)
   }
+})
+
+test('every render passes the shared honesty rules (the same ones Studio runs on publish)', () => {
+  for (const { template, rendered } of renders()) assert.deepEqual(honestyProblems(template.id, rendered), [], template.id)
+})
+
+test('no job or income guarantees and no level words', () => {
+  for (const { template, rendered } of renders()) assert.deepEqual(claims(`${rendered.subject} ${rendered.preheader} ${rendered.text}`), [], template.id)
 })
 
 test('no banned phrases in email or WhatsApp copy', () => {
@@ -89,9 +85,6 @@ test('A/B: each person always gets the same version; only A0, A1, A6, B1 and T6 
   assert.deepEqual([...seen].sort(), [0, 1])
   assert.equal(variantFor('A2', 'user:1'), 0)
 })
-
-/** Owner, 2026-10-18: the certificate fee is shown only once a learner has finished and goes to claim it. */
-const AFTER_FINISHING = new Set(['T8', 'T9', 'C1', 'C2', 'C2L', 'C3', 'C4', 'C5'])
 
 test('the certificate fee only appears after someone has finished', () => {
   for (const { template, rendered } of renders()) {

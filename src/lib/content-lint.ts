@@ -26,8 +26,8 @@ export interface LintIssue {
   message: string
 }
 
-const LEVEL_WORDS = /\b(beginners?|intermediate|advanced|expert|experts|expert-level)\b/i
-const BANNED: Array<[RegExp, string]> = [
+export const LEVEL_WORDS = /\b(beginners?|intermediate|advanced|expert|experts|expert-level)\b/i
+export const BANNED_CLAIMS: Array<[RegExp, string]> = [
   // "no job guarantees" is the honest disclaimer; promising one is banned.
   [/(?<!\bno\s)(?<!\bnot\s)\bguarantee(d)?\s+(a\s+)?job\b|(?<!\bno\s)\bjob\s+guarantee/i, '"guaranteed job" (no job guarantees)'],
   [/\bbecome an expert\b/i, '"become an expert…"'],
@@ -36,7 +36,7 @@ const BANNED: Array<[RegExp, string]> = [
 ]
 const PRICE = /₦\s?\d|\bNGN\s?\d|\b\d[\d,]*\s?naira\b|\bnaira\b|\b\d+k\s+(a|per)\s+month\b/i
 // American spellings to flag (British English): US form -> UK form.
-const SPELLING: Record<string, string> = {
+export const SPELLING: Record<string, string> = {
   color: 'colour', colors: 'colours', colored: 'coloured', favorite: 'favourite', behavior: 'behaviour', behaviors: 'behaviours',
   center: 'centre', centers: 'centres', analyze: 'analyse', analyzes: 'analyses', analyzing: 'analysing', analyzed: 'analysed',
   optimize: 'optimise', optimizing: 'optimising', optimized: 'optimised', organize: 'organise', organizing: 'organising', organized: 'organised',
@@ -55,7 +55,7 @@ function checkWords(field: string, text: string, issues: LintIssue[]): void {
   if (!text) return
   const level = LEVEL_WORDS.exec(text)
   if (level) issues.push({ level: 'error', field, message: `Level word "${level[0]}": programmes have no levels (say "start from zero").` })
-  for (const [pattern, label] of BANNED) if (pattern.test(text)) issues.push({ level: 'error', field, message: `Banned claim: ${label}.` })
+  for (const [pattern, label] of BANNED_CLAIMS) if (pattern.test(text)) issues.push({ level: 'error', field, message: `Banned claim: ${label}.` })
   if (PRICE.test(text)) issues.push({ level: 'error', field, message: 'Prices never appear in programme copy (the offer page shows them).' })
   for (const word of text.match(/[A-Za-z]+/g) ?? []) {
     const uk = SPELLING[word.toLowerCase()]

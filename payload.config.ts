@@ -35,6 +35,7 @@ import { NewsletterSubscribers } from './src/collections/NewsletterSubscribers.j
 import { Leads } from './src/collections/Leads.js'
 import { LaptopApplications } from './src/collections/LaptopApplications.js'
 import { Messages } from './src/collections/Messages.js'
+import { EmailOverrideHistory, EmailOverrides } from './src/collections/EmailOverrides.js'
 import { ScholarshipWindow } from './src/globals/ScholarshipWindow.js'
 import { EmailContent } from './src/globals/EmailContent.js'
 
@@ -76,6 +77,7 @@ import { getOfferEndpoint } from './src/endpoints/offers/get.js'
 import { getEmailPreferencesEndpoint, saveEmailPreferencesEndpoint, oneClickUnsubscribeEndpoint, unsubscribeLandingEndpoint } from './src/endpoints/email/preferences.js'
 import { resendWebhookEndpoint } from './src/endpoints/email/webhook.js'
 import { emailPreviewEndpoint } from './src/endpoints/email/preview.js'
+import { emailEditorEndpoints } from './src/endpoints/email/editor.js'
 import { updateCardEndpoint } from './src/endpoints/billing/update-card.js'
 import { whatsappVerifyEndpoint, whatsappWebhookEndpoint } from './src/endpoints/whatsapp/webhook.js'
 
@@ -137,6 +139,11 @@ export default buildConfig(mountPrefixedEndpoints({
           path: '/lifecycle',
           meta: { title: 'Lifecycle emails' },
         },
+        emails: {
+          Component: '/src/admin/views/emails/EmailsView#EmailsView',
+          path: '/emails',
+          meta: { title: 'Emails' },
+        },
         questionBank: {
           Component: '/src/admin/views/question-bank/QuestionBankView#QuestionBankView',
           path: '/question-bank',
@@ -193,6 +200,8 @@ export default buildConfig(mountPrefixedEndpoints({
     Leads,
     LaptopApplications,
     Messages,
+    EmailOverrides,
+    EmailOverrideHistory,
   ],
   globals: [ScholarshipWindow, EmailContent],
   endpoints: [
@@ -243,6 +252,7 @@ export default buildConfig(mountPrefixedEndpoints({
     unsubscribeLandingEndpoint,
     resendWebhookEndpoint,
     emailPreviewEndpoint,
+    ...emailEditorEndpoints,
     updateCardEndpoint,
   ],
   graphQL: {

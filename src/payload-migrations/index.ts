@@ -15,6 +15,7 @@ import * as migration_20261023_090000_learning_quality_foundations from './20261
 import * as migration_20261023_100000_lesson_captions from './20261023_100000_lesson_captions.js';
 import * as migration_20261023_110000_certificate_exam from './20261023_110000_certificate_exam.js';
 import * as migration_20261023_120000_scale_indexes from './20261023_120000_scale_indexes.js';
+import * as migration_20261025_100000_email_overrides from './20261025_100000_email_overrides.js';
 
 export const migrations = [
   {
@@ -101,5 +102,10 @@ export const migrations = [
     up: migration_20261023_120000_scale_indexes.up,
     down: migration_20261023_120000_scale_indexes.down,
     name: '20261023_120000_scale_indexes'
+  },
+  {
+    up: migration_20261025_100000_email_overrides.up,
+    down: migration_20261025_100000_email_overrides.down,
+    name: '20261025_100000_email_overrides'
   },
 ];
