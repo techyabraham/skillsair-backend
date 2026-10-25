@@ -31,6 +31,8 @@ export const SHARED_COPY = {
   restartPlain: { label: 'Restart button (standard fee)', default: 'Restart my programme', kind: 'button' },
   priceTodayOpen: { label: 'Today’s price, window open (graduates)', default: "While the Access Scholarship is open (until {{closesOn}}), it's {{monthly}}.", required: ['monthly'] },
   priceTodayClosed: { label: 'Today’s price, window closed (graduates)', default: "Right now it's the standard fee, {{standardFee}}, or you can wait for the next Access Scholarship window.", required: ['standardFee'] },
+  progressLine: { label: 'Progress line (receipts and account emails)', default: "You're {{progressPercent}}% through.", help: 'Shown only when they have started.' },
+  receiptHeading: { label: 'Receipt heading', default: '**Receipt**' },
 } satisfies Record<string, CopySlot>
 
 export type SharedKey = keyof typeof SHARED_COPY
@@ -47,6 +49,9 @@ export const LOCK_LINE = (data: MessageData) => phrases(data).lockLine()
 export const designed = (data: MessageData) => phrases(data).designed()
 export const greeting = (data: MessageData) => phrases(data).greeting()
 export const restartLabel = (data: MessageData) => (data.joinedOnScholarship ? phrases(data).restartLocked() : phrases(data).restartPlain())
+/** "You're 45% through." once they've started, else empty. */
+export const progressLine = (data: MessageData) => (data.lessonsLeft > 0 || data.progressPercent > 0 ? phrases(data).progressLine() : '')
+export const receiptHeading = (data: MessageData) => phrases(data).receiptHeading()
 export const priceToday = (data: MessageData) => (data.windowOpen ? phrases(data).priceTodayOpen() : phrases(data).priceTodayClosed())
 
 /** Drops empty conditional blocks: blocks(['a', cond && 'b']). */
