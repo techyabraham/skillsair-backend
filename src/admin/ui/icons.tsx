@@ -36,6 +36,8 @@ import {
   Timer,
   Users,
   Workflow,
+  MailOpen,
+  History,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -63,6 +65,9 @@ export const ENTITY_ICONS: Record<string, LucideIcon> = {
   discussions: MessagesSquare,
   messages: Mail,
   'email-content': PenLine,
+  emails: MailOpen,
+  'email-overrides': MailOpen,
+  'email-override-history': History,
   'newsletter-subscribers': Newspaper,
   pages: FileText,
   posts: Newspaper,

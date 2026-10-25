@@ -11,6 +11,7 @@ const { unsubscribeToken } = await import('./leads.js')
 const { verifySvixSignature } = await import('./svix.js')
 const { renderHtml, renderText, withUtm } = await import('../emails/layout.js')
 const { emailTemplates } = await import('../emails/index.js')
+const { ACCOUNT_EMAIL_IDS } = await import('../emails/baseline-cases.js')
 
 test('email tokens round-trip for users and leads, and reject tampering', () => {
   const token = createEmailToken({ type: 'user', id: 42 }, 'unsub', 'learning')
@@ -87,7 +88,9 @@ test('UTM tags only go on SkillsAir links', () => {
 test('every template renders its sample with a subject, preheader, html and text', () => {
   for (const template of Object.values(emailTemplates)) {
     const rendered = template.renderSample()
-    assert.ok(rendered.subject && rendered.preheader && rendered.html.includes('<html') && rendered.text.length > 20, template.id)
+    // The account emails keep their original wrapper, which never had a preview text.
+    const legacyWrapper = (ACCOUNT_EMAIL_IDS as readonly string[]).includes(template.id)
+    assert.ok(rendered.subject && (rendered.preheader || legacyWrapper) && rendered.html.includes('<html') && rendered.text.length > 20, template.id)
     assert.notEqual(rendered.subject, rendered.preheader, template.id)
   }
 })

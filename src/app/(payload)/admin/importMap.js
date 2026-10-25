@@ -95,6 +95,7 @@ import { QueueView as QueueView_a4919283bf10749d5f84f42b2f399169 } from '../../.
 import { GuideView as GuideView_0b3b9ba85933044ef6a40fac6797b777 } from '../../../../src/admin/views/guide/GuideView'
 import { StudioKitView as StudioKitView_e5c9b8b1a7c0c1f3d6823b8cf57710b6 } from '../../../../src/admin/views/StudioKitView'
 import { LifecycleView as LifecycleView_8389331d8dbad3bd35abf993e8aa0675 } from '../../../../src/admin/views/lifecycle/LifecycleView'
+import { EmailsView as EmailsView_c93131d6ab8977f2b30bf179f11197f2 } from '../../../../src/admin/views/emails/EmailsView'
 import { QuestionBankView as QuestionBankView_3e1490a096eea7f7e5c85fbeb6f35442 } from '../../../../src/admin/views/question-bank/QuestionBankView'
 import { CollectionCards as CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1 } from '@payloadcms/next/rsc'
 
@@ -197,6 +198,7 @@ export const importMap = {
   "/src/admin/views/guide/GuideView#GuideView": GuideView_0b3b9ba85933044ef6a40fac6797b777,
   "/src/admin/views/StudioKitView#StudioKitView": StudioKitView_e5c9b8b1a7c0c1f3d6823b8cf57710b6,
   "/src/admin/views/lifecycle/LifecycleView#LifecycleView": LifecycleView_8389331d8dbad3bd35abf993e8aa0675,
+  "/src/admin/views/emails/EmailsView#EmailsView": EmailsView_c93131d6ab8977f2b30bf179f11197f2,
   "/src/admin/views/question-bank/QuestionBankView#QuestionBankView": QuestionBankView_3e1490a096eea7f7e5c85fbeb6f35442,
   "@payloadcms/next/rsc#CollectionCards": CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1
 }

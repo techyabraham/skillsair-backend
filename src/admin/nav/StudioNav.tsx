@@ -87,6 +87,14 @@ export async function StudioNav(props: NavProps) {
     }))
     .sort((a, b) => (order.get(a.label) ?? 999) - (order.get(b.label) ?? 999))
 
+  // Emails (the Studio email editor, a custom view) sits first in Messaging, for admins.
+  if (role === 'admin') {
+    const emails = { id: 'nav-emails', href: `${ADMIN_ROUTE}/emails`, label: 'Emails', icon: <EntityIcon slug="emails" size={18} /> }
+    const messaging = entityGroups.find((group) => group.label === STUDIO_GROUP.messaging)
+    if (messaging) messaging.items.unshift(emails)
+    else entityGroups.push({ label: STUDIO_GROUP.messaging, items: [emails] })
+  }
+
   const overview: StudioNavGroupData = {
     label: STUDIO_GROUP.overview,
     items: [
