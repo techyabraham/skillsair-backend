@@ -12,7 +12,8 @@ import { ensureOverrideStore } from '../../emails/override-store.js'
  * "index" lists every template. Shows the published wording (Studio → Emails).
  */
 async function preview(req: PayloadRequest): Promise<Response> {
-  await requireAdmin(req)
+  // Studio opens this with its session cookie; API clients use a bearer token.
+  if ((req.user as { role?: string } | null | undefined)?.role !== 'admin') await requireAdmin(req)
   await ensureOverrideStore(req.payload)
   const id = getParam(req, 'template')
   const format = new URL(req.url ?? '', 'http://localhost').searchParams.get('format') ?? 'html'

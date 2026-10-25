@@ -3,17 +3,34 @@
  * <id>.html, <id>.txt and an index.html listing subjects and preheaders.
  *
  * Usage: npm run emails:preview
+ *        npm run emails:preview -- --override edits.json
+ *
+ * edits.json previews edited wording without publishing it: { "<template id, _shared or _settings>":
+ * { "subject": "...", "slots": { "intro": "..." } } }. Problems are printed (errors would block publishing).
  */
-import { mkdir, writeFile } from 'node:fs/promises'
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { emailTemplates } from '../src/emails/index.js'
 import { escapeHtml } from '../src/emails/layout.js'
+import { withOverrides } from '../src/emails/override-store.js'
+import { validateOverride } from '../src/emails/validate-override.js'
+import type { EmailOverride } from '../src/emails/copy.js'
+
+const args = process.argv.slice(2)
+const overrideIndex = args.indexOf('--override')
+const overrideFile = overrideIndex >= 0 ? args[overrideIndex + 1] : undefined
+const overrides: Record<string, EmailOverride | null> = overrideFile ? JSON.parse(await readFile(path.resolve(overrideFile), 'utf8')) : {}
+for (const [id, override] of Object.entries(overrides)) {
+  const { errors, warnings } = validateOverride(id, override)
+  for (const issue of errors) console.log(`ERROR   ${id}.${issue.field}: ${issue.message}`)
+  for (const issue of warnings) console.log(`warning ${id}.${issue.field}: ${issue.message}`)
+}
 
 const outDir = path.resolve('tmp/email-previews')
 await mkdir(outDir, { recursive: true })
 const rows: string[] = []
 for (const template of Object.values(emailTemplates)) {
-  const rendered = template.renderSample()
+  const rendered = withOverrides(overrides, () => template.renderSample())
   await writeFile(path.join(outDir, `${template.id}.html`), rendered.html, 'utf8')
   await writeFile(path.join(outDir, `${template.id}.txt`), `Subject: ${rendered.subject}\nPreheader: ${rendered.preheader}\n\n${rendered.text}\n`, 'utf8')
   rows.push(
@@ -25,4 +42,4 @@ await writeFile(
   `<!DOCTYPE html><html><head><meta charset="utf-8"><title>SkillsAir email previews</title><style>body{font-family:system-ui;margin:24px}td{padding:8px;border-bottom:1px solid #ddd;vertical-align:top}</style></head><body><h1>SkillsAir email previews</h1><table>${rows.join('')}</table></body></html>`,
   'utf8',
 )
-console.log(`Wrote ${rows.length} templates to ${outDir}`)
+console.log(`Wrote ${rows.length} templates to ${outDir}${overrideFile ? ` (with overrides from ${overrideFile})` : ''}`)

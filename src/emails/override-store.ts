@@ -208,10 +208,16 @@ export function createOverrideStore(payload: Payload, options: StoreOptions = {}
 let shared: StoreHandle | null = null
 
 /** Starts the process-wide store once (server start, worker, the Studio process) and waits for the first load. */
-export async function ensureOverrideStore(payload: Payload): Promise<StoreHandle> {
-  if (!shared) shared = createOverrideStore(payload)
+export async function ensureOverrideStore(payload: Payload, options?: StoreOptions): Promise<StoreHandle> {
+  if (!shared) shared = createOverrideStore(payload, options)
   await shared.ready
   return shared
+}
+
+/** Stops and forgets the process-wide store (tests). */
+export function stopOverrideStore(): void {
+  shared?.stop()
+  shared = null
 }
 
 /** The running store, if this process started one. */

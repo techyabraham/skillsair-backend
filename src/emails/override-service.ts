@@ -60,8 +60,11 @@ async function writeSettings(payload: Payload, override: EmailOverride | null): 
   await payload.updateGlobal({ slug: 'email-content', data: { emailSettings: values } as never, depth: 0, overrideAccess: true })
 }
 
+/** Replaceable in tests (no Redis). */
+export const serviceDeps = { bumpVersion: bumpOverrideVersion }
+
 async function afterPublish(): Promise<void> {
-  await bumpOverrideVersion()
+  await serviceDeps.bumpVersion()
   await currentOverrideStore()?.reload()
 }
 

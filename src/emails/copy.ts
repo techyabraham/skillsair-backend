@@ -71,28 +71,29 @@ export function interpolate(text: string, vars: Vars, onUnknown?: (name: string)
 const VARIANT_KEY = /^variant(\d+)(Subject|Preheader)$/
 
 export function overrideText(override: EmailOverride | null | undefined, key: string): string | undefined {
-  if (!override) return undefined
+  if (!override || typeof override !== 'object') return undefined
   if (key === 'subject') return override.subject
   if (key === 'preheader') return override.preheader
   const variant = VARIANT_KEY.exec(key)
   if (variant) {
-    const item = override.variants?.[Number(variant[1]) - 1]
+    const item = Array.isArray(override.variants) ? override.variants[Number(variant[1]) - 1] : undefined
     return variant[2] === 'Subject' ? item?.subject : item?.preheader
   }
-  return override.slots?.[key]
+  return override.slots && typeof override.slots === 'object' ? override.slots[key] : undefined
 }
 
 /** Every field an override sets, as slot key → text (the inverse of fromFields). */
 export function overrideFields(override: EmailOverride | null | undefined): Record<string, string> {
   const fields: Record<string, string> = {}
-  if (!override) return fields
+  if (!override || typeof override !== 'object') return fields
   if (typeof override.subject === 'string') fields.subject = override.subject
   if (typeof override.preheader === 'string') fields.preheader = override.preheader
-  override.variants?.forEach((item, index) => {
+  if (Array.isArray(override.variants)) override.variants.forEach((item, index) => {
     if (typeof item?.subject === 'string') fields[`variant${index + 1}Subject`] = item.subject
     if (typeof item?.preheader === 'string') fields[`variant${index + 1}Preheader`] = item.preheader
   })
-  for (const [key, value] of Object.entries(override.slots ?? {})) if (typeof value === 'string') fields[key] = value
+  const slots = override.slots && typeof override.slots === 'object' ? override.slots : {}
+  for (const [key, value] of Object.entries(slots)) if (typeof value === 'string') fields[key] = value
   return fields
 }
 

@@ -18,8 +18,13 @@ import { discardDraft, findRow, normalise, publish, resetToOriginal, restoreToDr
  * Studio email editor API (brief section 6), admins only and rate-limited. Studio calls these with
  * its session cookie; a bearer token works too. Writes go through override-service.ts.
  */
-const editorLimiter = createPayloadRateLimiterFor('email-editor', 600, 15 * 60)
-const testLimiter = createPayloadRateLimiterFor('email-editor-test', 10, 60 * 60)
+/** Replaceable in tests (no Redis, no Resend). */
+export const editorDeps = {
+  editorLimiter: createPayloadRateLimiterFor('email-editor', 600, 15 * 60),
+  /** 10 test sends per admin per hour. */
+  testLimiter: createPayloadRateLimiterFor('email-editor-test', 10, 60 * 60),
+  sendEmail,
+}
 
 interface Editor {
   id: number
@@ -29,7 +34,7 @@ interface Editor {
 async function requireEditor(req: PayloadRequest): Promise<Editor> {
   const sessionUser = req.user as { id?: number | string; email?: string; role?: string } | null | undefined
   const user = sessionUser?.role === 'admin' ? { id: Number(sessionUser.id), email: String(sessionUser.email ?? '') } : await requireAdmin(req)
-  await editorLimiter.check(req, user.id)
+  await editorDeps.editorLimiter.check(req, user.id)
   await ensureOverrideStore(req.payload)
   return { id: user.id, email: user.email }
 }
@@ -227,13 +232,13 @@ export const sendTestEmailEndpoint: Endpoint = {
     if (to !== editor.email.trim().toLowerCase() && !testRecipients().includes(to)) {
       throw new AppError('INSUFFICIENT_PERMISSION', 'Tests go to your own address, or one listed in EMAIL_TEST_RECIPIENTS.')
     }
-    await testLimiter.check(req, editor.id)
+    await editorDeps.testLimiter.check(req, editor.id)
     const row = await findRow(req.payload, entry.id)
     const override = body.override !== undefined ? normalise(body.override) : (row?.draft ?? row?.published ?? null)
     const templateId = previewTemplateFor(entry.id, body.previewTemplate)
     const rendered = renderPreview(templateId, { [entry.id]: override }, body.dataVariant, body.abVariant ?? 0)
     if (!rendered) throw new AppError('NOT_FOUND', 'No email with that name')
-    const providerId = await sendEmail(to, { subject: `[TEST] ${rendered.subject}`, html: rendered.html, text: rendered.text }, { stream: 'transactional', tags: { test: 'true', template: templateId } })
+    const providerId = await editorDeps.sendEmail(to, { subject: `[TEST] ${rendered.subject}`, html: rendered.html, text: rendered.text }, { stream: 'transactional', tags: { test: 'true', template: templateId } })
     logger.info({ templateId, editor: editor.id }, 'email_editor_test_sent')
     return sendSuccess({ sent: true, to, providerId })
   }),
