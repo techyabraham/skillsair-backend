@@ -234,10 +234,28 @@ export interface MessageData {
   // WhatsApp helpers
   resumeCode: string | null
   orderReference: string | null
+  /** Guided 12-week plan emails (L1, L2) only; null elsewhere. */
+  plan: PlanEmailData | null
+}
+
+/** This week of a learner's guided plan, for the plan emails (built by the guided-plan job). */
+export interface PlanEmailData {
+  week: number
+  weeks: number
+  /** This week's items still to do (all of them when nothing is done yet). */
+  items: Array<{ title: string; minutes: number }>
+  /** Time for those items, e.g. "2 h 10 min". */
+  timeLabel: string
+  behind: boolean
+  overdueCount: number
+  nextTitle: string
+  nextMinutes: number
+  nextUrl: string
+  planUrl: string
 }
 
 /** Values an event already knows (a receipt's reference, the card on a renewal notice...). */
-export type EventData = Partial<Pick<MessageData, 'reference' | 'amount' | 'paidAt' | 'chargeDate' | 'cardLast4' | 'cardExpiry'>>
+export type EventData = Partial<Pick<MessageData, 'reference' | 'amount' | 'paidAt' | 'chargeDate' | 'cardLast4' | 'cardExpiry' | 'plan'>>
 
 const FRONTEND_URL = (process.env.FRONTEND_URL ?? 'https://skillsair.com').replace(/\/+$/, '')
 const site = (path: string) => `${FRONTEND_URL}${path}`
@@ -460,5 +478,6 @@ export async function buildMessageData(payload: Payload, person: LoadedPerson, s
     occurrence: Number(/#(\d+)$/.exec(stage.subjectId)?.[1] ?? 0),
     resumeCode,
     orderReference,
+    plan: extra.plan ?? null,
   }
 }

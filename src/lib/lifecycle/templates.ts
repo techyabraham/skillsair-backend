@@ -30,6 +30,8 @@ const REQUIRES: Record<string, (data: MessageData) => boolean> = {
   G3: (data) => Boolean(data.nextProgramme),
   A1: (data) => Boolean(data.programmeSlug),
   A3: (data) => Boolean(data.programmeSlug),
+  L1: (data) => Boolean(data.plan),
+  L2: (data) => Boolean(data.plan?.nextTitle),
 }
 
 /**

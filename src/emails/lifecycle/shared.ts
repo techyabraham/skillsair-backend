@@ -23,7 +23,7 @@ export const SHARED_COPY = {
   greeting: { label: 'Greeting (every lifecycle email)', default: 'Hi {{firstName}},', help: 'The first line of every lifecycle email.' },
   lockLine: { label: 'Locked-rate sentence', default: 'Your rate is locked at {{monthly}}, because you joined during the Access Scholarship.', required: ['monthly'] },
   rateLocked: { label: 'Locked-rate reminder (short)', default: 'Your rate is locked at {{monthly}}.', required: ['monthly'], help: 'Added after a sentence in the win-back emails (R1, R5) for people who joined on the scholarship.' },
-  designed: { label: 'How long a programme takes', default: 'designed to take about 3 months at about 8 hours a week', help: 'Used mid-sentence, so it starts with a small letter (A0 capitalises it).' },
+  designed: { label: 'How long a programme takes', default: 'a guided 12-week plan at about 8 hours a week', help: 'Used mid-sentence, so it starts with a small letter (A0 capitalises it).' },
   examNote: { label: 'What the certificate fee covers (programmes with a final exam)', default: 'Your {{certificatePrice}} covers your final exam (retakes included) and your certificate when you pass.', required: ['certificatePrice'] },
   certificateCtaExam: { label: 'Certificate button (with a final exam)', default: 'Get my certificate', kind: 'button' },
   certificateCtaNoExam: { label: 'Certificate button (no final exam)', default: 'Claim my certificate', kind: 'button' },
@@ -142,6 +142,22 @@ export const SAMPLE: MessageData = {
   occurrence: 0,
   resumeCode: 'ABC123',
   orderReference: 'SA-SUB-48213',
+  plan: {
+    week: 3,
+    weeks: 12,
+    items: [
+      { title: 'Cleaning messy data', minutes: 19 },
+      { title: 'Formulas that save time', minutes: 22 },
+      { title: 'Chapter quiz: Cleaning data', minutes: 15 },
+    ],
+    timeLabel: '56 min',
+    behind: true,
+    overdueCount: 2,
+    nextTitle: 'Cleaning messy data',
+    nextMinutes: 19,
+    nextUrl: 'https://skillsair.com/dashboard/courses/data-analysis/learn?lesson=41',
+    planUrl: 'https://skillsair.com/dashboard/courses/data-analysis/plan',
+  },
 }
 
 export function lifecycleEmail<K extends string = never>(

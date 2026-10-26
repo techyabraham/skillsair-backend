@@ -96,3 +96,18 @@ test('the certificate fee only appears after someone has finished', () => {
     assert.ok(!readFileSync(file, 'utf8').includes('₦10,000'), `${file} quotes the certificate fee`)
   }
 })
+
+test('the learning-plan emails (L1, L2): no prices, guarantees, level words or "own pace", behind or not', () => {
+  for (const id of ['L1', 'L2']) {
+    for (const plan of [SAMPLE.plan!, { ...SAMPLE.plan!, behind: false, overdueCount: 0 }]) {
+      for (const variant of VARIANTS) {
+        const rendered = LIFECYCLE_TEMPLATES[id]!.render({ ...SAMPLE, ...variant, plan }, { preferencesUrl: 'https://skillsair.com/p', unsubscribeUrl: 'https://skillsair.com/u' })
+        const copy = `${rendered.subject}\n${rendered.preheader}\n${rendered.text}`
+        assert.ok(!copy.includes('₦'), `${id} mentions a price`)
+        assert.ok(!/own pace|self[- ]?paced/i.test(copy), `${id} sells self-pacing`)
+        assert.deepEqual(claims(copy), [], id)
+        assert.deepEqual(honestyProblems(id, rendered), [], id)
+      }
+    }
+  }
+})

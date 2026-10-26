@@ -8,7 +8,7 @@ import { redis } from './redis.js'
 import { logger } from './logger.js'
 import { captureError } from './observability.js'
 
-export type TaskType = 'captions-import'
+export type TaskType = 'captions-import' | 'guided-plan-email'
 
 export interface Task {
   id: string

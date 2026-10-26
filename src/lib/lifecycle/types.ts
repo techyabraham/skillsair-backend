@@ -5,8 +5,9 @@
 export type Channel = 'email' | 'whatsapp'
 export type Kind = 'transactional' | 'service' | 'marketing'
 /** A: before the first payment (window open) · Apost: after the window closes · B: checkout not finished ·
- *  T: transactional · D: failed payment · I: inactivity · R: lapsed · C: certificate · G: next programme · X: re-permission */
-export type Track = 'A' | 'Apost' | 'B' | 'T' | 'D' | 'I' | 'R' | 'C' | 'G' | 'X'
+ *  T: transactional · D: failed payment · I: inactivity · R: lapsed · C: certificate · G: next programme · X: re-permission ·
+ *  L: learning plan (guided 12-week plan emails, sent by the guided-plan job) */
+export type Track = 'A' | 'Apost' | 'B' | 'T' | 'D' | 'I' | 'R' | 'C' | 'G' | 'X' | 'L'
 
 export interface Stage {
   track: Track

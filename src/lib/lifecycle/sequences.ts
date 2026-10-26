@@ -151,6 +151,11 @@ export const SEQUENCES: Step[] = [
   },
   { id: 'I3', track: 'I', ...serviceEmail, template: 'I3', anchor: 'stage_entered', offsetHours: 18 * 24 },
 
+  // Track L: the guided 12-week plan (service). Sent by the guided-plan job (src/jobs/guided-plan.ts):
+  // L1 every Monday 07:30 Lagos (this week's goals), L2 Thursday 18:00 to learners who are behind.
+  { id: 'L1', track: 'L', ...serviceEmail, template: 'L1', anchor: 'event', offsetHours: 0 },
+  { id: 'L2', track: 'L', ...serviceEmail, template: 'L2', anchor: 'event', offsetHours: 0 },
+
   // Track R: lapsed before finishing, at the locked ₦2,000 a month. T6 goes on the event.
   { id: 'R1', track: 'R', ...marketingEmail, template: 'R1', anchor: 'stage_entered', offsetHours: 3 * 24 },
   {

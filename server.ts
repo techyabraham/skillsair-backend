@@ -24,6 +24,7 @@ const { registerScholarshipWindowJob } = await import('./src/jobs/scholarship-wi
 const { registerAssessmentJobs } = await import('./src/jobs/assessments.js')
 const { registerMonitoringJob } = await import('./src/jobs/monitoring.js')
 const { registerWorkQueueJob } = await import('./src/jobs/work-queue.js')
+const { registerGuidedPlanJob } = await import('./src/jobs/guided-plan.js')
 const { runsScheduledJobs } = await import('./src/jobs/scheduler.js')
 const { ensureOverrideStore } = await import('./src/emails/override-store.js')
 
@@ -161,6 +162,7 @@ app.listen(PORT, () => {
     registerAssessmentJobs(config)
     registerMonitoringJob(config)
     registerWorkQueueJob(config)
+    registerGuidedPlanJob(config)
     logger.info({ role: APP_ROLE || 'api+jobs' }, 'background_jobs_registered')
   }
 })
