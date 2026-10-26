@@ -1,0 +1,389 @@
+{
+ "title": "Data Analysis",
+ "sections": [
+  {
+   "id": 101,
+   "title": "Getting started with data",
+   "order": 1,
+   "lessons": [
+    {
+     "id": 1,
+     "title": "What a data analyst does",
+     "duration": 780,
+     "order": 1
+    },
+    {
+     "id": 2,
+     "title": "Setting up Excel and Google Sheets",
+     "duration": 1260,
+     "order": 2
+    },
+    {
+     "id": 3,
+     "title": "Your first dataset",
+     "duration": 540,
+     "order": 3
+    },
+    {
+     "id": 4,
+     "title": "Rows, columns and data types",
+     "duration": 960,
+     "order": 4
+    }
+   ],
+   "quiz": {
+    "id": 901,
+    "title": "Chapter quiz: Getting started with data"
+   }
+  },
+  {
+   "id": 102,
+   "title": "Cleaning data",
+   "order": 2,
+   "lessons": [
+    {
+     "id": 5,
+     "title": "Spotting messy data",
+     "duration": 1500,
+     "order": 1
+    },
+    {
+     "id": 6,
+     "title": "Removing duplicates",
+     "duration": 660,
+     "order": 2
+    },
+    {
+     "id": 7,
+     "title": "Text functions for cleaning",
+     "duration": 2400,
+     "order": 3
+    },
+    {
+     "id": 8,
+     "title": "Dates and times that behave",
+     "duration": 840,
+     "order": 4
+    },
+    {
+     "id": 9,
+     "title": "Cleaning a real sales file",
+     "duration": 1080,
+     "order": 5
+    }
+   ],
+   "quiz": {
+    "id": 902,
+    "title": "Chapter quiz: Cleaning data"
+   }
+  },
+  {
+   "id": 103,
+   "title": "Formulas that save time",
+   "order": 3,
+   "lessons": [
+    {
+     "id": 10,
+     "title": "Cell references",
+     "duration": 300,
+     "order": 1
+    },
+    {
+     "id": 11,
+     "title": "IF and nested logic",
+     "duration": 1320,
+     "order": 2
+    },
+    {
+     "id": 12,
+     "title": "XLOOKUP and VLOOKUP",
+     "duration": 420,
+     "order": 3
+    },
+    {
+     "id": 13,
+     "title": "SUMIFS and COUNTIFS",
+     "duration": 780,
+     "order": 4
+    },
+    {
+     "id": 14,
+     "title": "Error handling",
+     "duration": 1260,
+     "order": 5
+    }
+   ],
+   "quiz": {
+    "id": 903,
+    "title": "Chapter quiz: Formulas that save time"
+   }
+  },
+  {
+   "id": 104,
+   "title": "Pivot tables",
+   "order": 4,
+   "lessons": [
+    {
+     "id": 15,
+     "title": "Your first pivot table",
+     "duration": 540,
+     "order": 1
+    },
+    {
+     "id": 16,
+     "title": "Grouping and filtering",
+     "duration": 960,
+     "order": 2
+    },
+    {
+     "id": 17,
+     "title": "Calculated fields",
+     "duration": 1500,
+     "order": 3
+    },
+    {
+     "id": 18,
+     "title": "Pivot charts",
+     "duration": 660,
+     "order": 4
+    }
+   ],
+   "quiz": {
+    "id": 904,
+    "title": "Chapter quiz: Pivot tables"
+   }
+  },
+  {
+   "id": 105,
+   "title": "Charts that tell a story",
+   "order": 5,
+   "lessons": [
+    {
+     "id": 19,
+     "title": "Choosing the right chart",
+     "duration": 2400,
+     "order": 1
+    },
+    {
+     "id": 20,
+     "title": "Bar and line charts",
+     "duration": 840,
+     "order": 2
+    },
+    {
+     "id": 21,
+     "title": "Formatting for clarity",
+     "duration": 1080,
+     "order": 3
+    },
+    {
+     "id": 22,
+     "title": "Common chart mistakes",
+     "duration": 300,
+     "order": 4
+    }
+   ],
+   "quiz": {
+    "id": 905,
+    "title": "Chapter quiz: Charts that tell a story"
+   }
+  },
+  {
+   "id": 106,
+   "title": "Statistics for analysts",
+   "order": 6,
+   "lessons": [
+    {
+     "id": 23,
+     "title": "Averages and spread",
+     "duration": 1320,
+     "order": 1
+    },
+    {
+     "id": 24,
+     "title": "Distributions",
+     "duration": 420,
+     "order": 2
+    },
+    {
+     "id": 25,
+     "title": "Correlation",
+     "duration": 780,
+     "order": 3
+    },
+    {
+     "id": 26,
+     "title": "Sampling and confidence",
+     "duration": 1260,
+     "order": 4
+    },
+    {
+     "id": 27,
+     "title": "Desktop Excel: the Analysis ToolPak",
+     "duration": 540,
+     "order": 5
+    }
+   ],
+   "quiz": {
+    "id": 906,
+    "title": "Chapter quiz: Statistics for analysts"
+   }
+  },
+  {
+   "id": 107,
+   "title": "SQL basics",
+   "order": 7,
+   "lessons": [
+    {
+     "id": 28,
+     "title": "What a database is",
+     "duration": 960,
+     "order": 1
+    },
+    {
+     "id": 29,
+     "title": "SELECT and WHERE",
+     "duration": 1500,
+     "order": 2
+    },
+    {
+     "id": 30,
+     "title": "Sorting and limiting",
+     "duration": 660,
+     "order": 3
+    },
+    {
+     "id": 31,
+     "title": "GROUP BY",
+     "duration": 2400,
+     "order": 4
+    },
+    {
+     "id": 32,
+     "title": "Joining tables",
+     "duration": 840,
+     "order": 5
+    }
+   ],
+   "quiz": {
+    "id": 907,
+    "title": "Chapter quiz: SQL basics"
+   }
+  },
+  {
+   "id": 108,
+   "title": "Dashboards",
+   "order": 8,
+   "lessons": [
+    {
+     "id": 33,
+     "title": "Planning a dashboard",
+     "duration": 1080,
+     "order": 1
+    },
+    {
+     "id": 34,
+     "title": "Slicers and interactivity",
+     "duration": 300,
+     "order": 2
+    },
+    {
+     "id": 35,
+     "title": "Layout and colour",
+     "duration": 1320,
+     "order": 3
+    },
+    {
+     "id": 36,
+     "title": "Sharing your dashboard",
+     "duration": 0,
+     "order": 4
+    }
+   ],
+   "quiz": {
+    "id": 908,
+    "title": "Chapter quiz: Dashboards"
+   }
+  },
+  {
+   "id": 109,
+   "title": "Power BI",
+   "order": 9,
+   "lessons": [
+    {
+     "id": 37,
+     "title": "Getting data into Power BI",
+     "duration": 780,
+     "order": 1
+    },
+    {
+     "id": 38,
+     "title": "Data modelling",
+     "duration": 1260,
+     "order": 2
+    },
+    {
+     "id": 39,
+     "title": "DAX measures",
+     "duration": 540,
+     "order": 3
+    },
+    {
+     "id": 40,
+     "title": "Building a report",
+     "duration": 960,
+     "order": 4
+    }
+   ],
+   "quiz": {
+    "id": 909,
+    "title": "Chapter quiz: Power BI"
+   }
+  },
+  {
+   "id": 110,
+   "title": "Your portfolio project",
+   "order": 10,
+   "lessons": [
+    {
+     "id": 41,
+     "title": "Choosing a question",
+     "duration": 1500,
+     "order": 1
+    },
+    {
+     "id": 42,
+     "title": "Finding the data",
+     "duration": 660,
+     "order": 2
+    },
+    {
+     "id": 43,
+     "title": "Analysis walkthrough",
+     "duration": 2400,
+     "order": 3
+    },
+    {
+     "id": 44,
+     "title": "Writing up your findings",
+     "duration": 840,
+     "order": 4
+    },
+    {
+     "id": 45,
+     "title": "Presenting your project",
+     "duration": 1080,
+     "order": 5
+    }
+   ],
+   "quiz": {
+    "id": 910,
+    "title": "Chapter quiz: Your portfolio project"
+   }
+  }
+ ],
+ "finalExam": {
+  "id": 999,
+  "title": "Data Analysis final exam"
+ }
+}
