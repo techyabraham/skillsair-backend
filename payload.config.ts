@@ -78,6 +78,7 @@ import { getEmailPreferencesEndpoint, saveEmailPreferencesEndpoint, oneClickUnsu
 import { resendWebhookEndpoint } from './src/endpoints/email/webhook.js'
 import { emailPreviewEndpoint } from './src/endpoints/email/preview.js'
 import { emailEditorEndpoints } from './src/endpoints/email/editor.js'
+import { myPlansEndpoint, studioPlanResetEndpoint } from './src/endpoints/courses/plan.js'
 import { updateCardEndpoint } from './src/endpoints/billing/update-card.js'
 import { whatsappVerifyEndpoint, whatsappWebhookEndpoint } from './src/endpoints/whatsapp/webhook.js'
 
@@ -254,6 +255,8 @@ export default buildConfig(mountPrefixedEndpoints({
     emailPreviewEndpoint,
     ...emailEditorEndpoints,
     updateCardEndpoint,
+    myPlansEndpoint,
+    studioPlanResetEndpoint,
   ],
   graphQL: {
     queries: graphQLQueries,

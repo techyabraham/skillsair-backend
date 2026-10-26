@@ -32,6 +32,8 @@ export type LifecycleEvent =
   /** The certificate fee is paid and the programme has a final exam: the exam is open. */
   | { type: 'exam_ready'; userId: number; courseId: number; receipt?: { reference: string; amount: number; paidAt: string } }
   | { type: 'lesson_completed'; userId: number; courseId: number }
+  /** Guided 12-week plan or self-paced (recorded; self-paced learners get no plan emails). */
+  | { type: 'plan_pace_changed'; userId: number; courseId: number; enrollmentId: number; from: 'guided' | 'self_paced'; to: 'guided' | 'self_paced' }
 
 /** Bumps the cycle on unfinished enrolments, so a learner who lapses again gets the win-back emails again. */
 async function bumpLapseCycle(payload: Payload, userId: number, courseId?: number): Promise<number> {
@@ -79,11 +81,11 @@ async function orderReceipt(payload: Payload, orderId: number): Promise<EventDat
 }
 
 /**
- * Sends one event step (T1–T9, D1 and their WhatsApp versions) through the same sender as the
+ * Sends one event step (T1–T12, D1, L1–L2 and the WhatsApp versions) through the same sender as the
  * engine, so it's logged, idempotent and respects dry-run. Transactional steps go regardless of
  * marketing consent; service steps (T3, T4) respect "Learning reminders".
  */
-async function sendEventStep(
+export async function sendEventStep(
   payload: Payload,
   person: LoadedPerson,
   stepId: string,
@@ -124,6 +126,9 @@ async function sendForEvent(payload: Payload, event: LifecycleEvent): Promise<vo
   switch (event.type) {
     case 'lesson_completed':
       await attributeConversion(payload, event.userId, 'lesson')
+      return
+    case 'plan_pace_changed':
+      // Logged by onLifecycleEvent; the plan emails read the pace on every run.
       return
     case 'first_payment_success': {
       await attributeConversion(payload, event.userId, 'subscribed')

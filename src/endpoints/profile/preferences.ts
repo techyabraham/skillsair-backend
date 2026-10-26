@@ -3,11 +3,12 @@ import { z } from 'zod'
 import { asyncHandler, parseBody, readJsonBody, sendSuccess } from '../../middleware/validate.js'
 import { requireAuth } from '../../middleware/authenticate.js'
 
-/** Learner preferences the site remembers across devices (the video player's captions, size and speed). */
+/** Learner preferences the site remembers across devices (the video player's captions, size and speed; the player's curriculum view). */
 const preferencesSchema = z.object({
   captions: z.boolean().optional(),
   captionSize: z.enum(['s', 'm', 'l']).optional(),
   playbackRate: z.number().min(0.5).max(2).optional(),
+  curriculumView: z.enum(['week', 'chapter']).optional(),
 }).strict()
 
 type Preferences = z.infer<typeof preferencesSchema>

@@ -2,6 +2,7 @@ import type { CollectionConfig, PayloadRequest } from 'payload'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { slugify } from '../utils/slugify.js'
 import { courseCurriculumEndpoint } from '../endpoints/courses/curriculum.js'
+import { coursePlanEndpoint, coursePlanPaceEndpoint, coursePlanResetEndpoint } from '../endpoints/courses/plan.js'
 import { courseAssessmentsEndpoint } from '../endpoints/assessments/index.js'
 import { STUDIO_GROUP } from '../admin/studio-config.js'
 import { copyFromCourse, lintErrors, lintProgrammeCopy } from '../lib/content-lint.js'
@@ -12,7 +13,7 @@ const staffOnly = ({ req }: { req: PayloadRequest }) => req.user?.role === 'admi
 export const Courses: CollectionConfig = {
   slug: 'courses', labels: { singular: 'Programme', plural: 'Programmes' },
   // Root endpoints under /courses/... are added here by mountPrefixedEndpoints (payload.config.ts).
-  endpoints: [courseCurriculumEndpoint, courseAssessmentsEndpoint],
+  endpoints: [courseCurriculumEndpoint, courseAssessmentsEndpoint, coursePlanEndpoint, coursePlanPaceEndpoint, coursePlanResetEndpoint],
   hooks: {
     beforeChange: [
       ({ data, originalDoc, req, context }) => {

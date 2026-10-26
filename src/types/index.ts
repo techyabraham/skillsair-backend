@@ -12,6 +12,9 @@ export type ErrorCode =
   | 'CERTIFICATE_PURCHASE_REQUIRED'
   | 'QUIZ_COOLDOWN'
   | 'QUIZ_CLOSED'
+  | 'FEATURE_DISABLED'
+  | 'PLAN_RESET_COOLDOWN'
+  | 'PLAN_FINISHED'
 
 const ERROR_CODE_STATUS: Record<ErrorCode, number> = {
   VALIDATION_ERROR: 400,
@@ -27,6 +30,9 @@ const ERROR_CODE_STATUS: Record<ErrorCode, number> = {
   CERTIFICATE_PURCHASE_REQUIRED: 402,
   QUIZ_COOLDOWN: 429,
   QUIZ_CLOSED: 409,
+  FEATURE_DISABLED: 404,
+  PLAN_RESET_COOLDOWN: 429,
+  PLAN_FINISHED: 409,
 }
 
 export class AppError extends Error {

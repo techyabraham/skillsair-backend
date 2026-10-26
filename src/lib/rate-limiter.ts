@@ -63,6 +63,9 @@ export const captionsRateLimiter = createPayloadRateLimiter('captions', 600, 60 
 // Quizzes: starts and submits are rare; autosave runs about every 5 seconds during an exam.
 export const quizStartRateLimiter = createPayloadRateLimiter('quiz-start', 30, 15 * 60)
 export const quizSaveRateLimiter = createPayloadRateLimiter('quiz-save', 1200, 60 * 60)
+/** Guided plan: reads from the dashboard, plan page and player; pace changes and resets are rare. */
+export const planReadRateLimiter = createPayloadRateLimiter('plan', 300, 15 * 60)
+export const planWriteRateLimiter = createPayloadRateLimiter('plan-write', 20, 60 * 60)
 export const adminRateLimiter = createPayloadRateLimiter('admin', 60, 15 * 60)
 export const leadRateLimiter = createPayloadRateLimiter('lead', 10, 15 * 60)
 export const leadResumeRateLimiter = createPayloadRateLimiter('lead-resume', 30, 15 * 60)
