@@ -11,7 +11,10 @@ import { Callout, Money, ProgressBar, StatusPill } from '../ui/primitives'
 import { isAdmin } from '../data/auth'
 import { accessGraceDays } from '../../lib/billing'
 import { formatDay, formatRelative } from '../format'
-import { ExtraTimeControl } from './LearningActions'
+import { ExtraTimeControl, PlanResetButton } from './LearningActions'
+import { sql } from '@payloadcms/db-postgres'
+import { coursePlans, guidedPlanEnabled, learnerRowsSql, progressFor, query, type LearnerRow } from '../../lib/guided-plan-service'
+import type { PlanProgress } from '../../lib/guided-plan'
 
 type Props = UIFieldServerProps
 
@@ -44,6 +47,7 @@ export async function Learner360(props: Props) {
   const total = (orders.docs as unknown as Array<{ amount: number }>).reduce((sum, o) => sum + Number(o.amount), 0)
   const last = (lastMessage.docs as unknown as Array<{ track: string; stepId: string; sentAt: string }>)[0]
   const enrolled = enrolments.docs as unknown as Array<{ id: number; course: number; status: string; progressPercent?: number }>
+  const plans = guidedPlanEnabled() ? await planSummaries(props.payload, Number(userId)) : new Map<number, PlanSummary>()
 
   return (
     <section className="sa-learner360" aria-label="Learner overview">
@@ -61,6 +65,7 @@ export async function Learner360(props: Props) {
                 <li key={e.id}>
                   <a href={`/admin/collections/enrollments/${e.id}`}>{title(e.course)}</a>
                   {e.status === 'completed' ? <StatusPill tone="positive">Completed</StatusPill> : <ProgressBar value={Number(e.progressPercent ?? 0)} label={`${title(e.course)} progress`} />}
+                  {plans.get(e.id) ? <PlanLine plan={plans.get(e.id)!} enrollmentId={e.id} /> : null}
                 </li>
               ))}
             </ul>
@@ -146,5 +151,50 @@ export async function Learner360(props: Props) {
         </div>
       </div>
     </section>
+  )
+}
+
+interface PlanSummary {
+  pace: 'guided' | 'self_paced'
+  resetCount: number
+  progress: PlanProgress
+}
+
+/** Each enrolment's guided plan: pace, week, status and resets (one statement plus the cached plans). */
+async function planSummaries(payload: Props['payload'], userId: number): Promise<Map<number, PlanSummary>> {
+  try {
+    const rows = await query<LearnerRow>(payload, learnerRowsSql(sql`e.student_id = ${userId} AND e.status <> 'refunded' AND c.is_bonus IS NOT TRUE`))
+    const plans = await coursePlans(payload, rows.map((row) => Number(row.course_id)))
+    const out = new Map<number, PlanSummary>()
+    for (const row of rows) {
+      const plan = plans.get(Number(row.course_id))
+      if (!plan?.schedule.some((week) => week.items.length)) continue
+      out.set(Number(row.id), { pace: row.pace === 'self_paced' ? 'self_paced' : 'guided', resetCount: Number(row.plan_reset_count ?? 0), progress: progressFor(plan, row, Date.now()) })
+    }
+    return out
+  } catch {
+    return new Map()
+  }
+}
+
+const STATUS_LABEL: Record<string, { label: string; tone: 'positive' | 'info' | 'caution' | 'neutral' }> = {
+  finished: { label: 'Finished', tone: 'positive' },
+  ahead: { label: 'Ahead', tone: 'info' },
+  on_track: { label: 'On track', tone: 'positive' },
+  behind: { label: 'Behind', tone: 'caution' },
+  overrun: { label: 'Past week 12', tone: 'caution' },
+}
+
+function PlanLine({ plan, enrollmentId }: { plan: PlanSummary; enrollmentId: number }) {
+  const status = plan.progress.status ? STATUS_LABEL[plan.progress.status] : undefined
+  return (
+    <span className="sa-cell__chips">
+      <span className="sa-muted">
+        {plan.pace === 'self_paced' ? 'Self-paced' : 'Guided plan'} · week {plan.progress.currentWeek} of {plan.progress.weeks}
+        {plan.progress.weeksBehind ? ` · ${plan.progress.weeksBehind} week${plan.progress.weeksBehind === 1 ? '' : 's'} behind` : ''} · {plan.resetCount} reset{plan.resetCount === 1 ? '' : 's'}
+      </span>
+      {status ? <StatusPill tone={status.tone}>{status.label}</StatusPill> : null}
+      {plan.pace === 'guided' && plan.progress.status !== 'finished' ? <PlanResetButton enrollmentId={enrollmentId} /> : null}
+    </span>
   )
 }

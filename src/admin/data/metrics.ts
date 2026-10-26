@@ -29,6 +29,7 @@ import { HOUR } from '../../lib/lifecycle/timing.js'
 import { assertAdmin, assertStaff } from './auth.js'
 import { cached } from './cache.js'
 import { learningAttention } from './learning.js'
+import { readPaceSnapshot, type PaceSnapshot } from '../../lib/guided-plan-service.js'
 import { dayKeys, fillSeries, lastDays, monthlyValue, rate, stepHealth, workingMsBetween, type PeriodRange } from './metrics-core.js'
 
 type Row = Record<string, unknown>
@@ -43,6 +44,7 @@ export const METRIC_DEFINITIONS = {
   attention: 'Past-due subscriptions, failed payments in this period and applicants waiting over an hour in working hours.',
   completions: 'Enrolments marked completed in this period.',
   inactive: 'Learners with an active enrolment who have not opened a lesson in 10 days or more.',
+  planPace: 'Guided 12-week plan, from last night’s snapshot: guided learners on track or ahead, guided learners behind, and the share of learners who chose self-paced.',
 } as const
 
 /** Runs one SQL statement through the Postgres adapter. */
@@ -257,6 +259,8 @@ export interface LearningMetrics {
   completionRate: number | null
   enrolmentStatus: Array<{ status: string; count: number }>
   topProgrammes: Array<{ id: number; title: string; applicants: number; paid: number; conversion: number | null; activeLearners: number; completions: number }>
+  /** Guided 12-week plan: nightly snapshot (src/jobs/guided-plan.ts), never computed live. */
+  planPace: PaceSnapshot | null
 }
 
 export async function getLearning(req: PayloadRequest, range: PeriodRange): Promise<LearningMetrics> {
@@ -304,7 +308,7 @@ export async function getLearning(req: PayloadRequest, range: PeriodRange): Prom
         .slice(0, 8),
     }
   })
-  return value
+  return { ...value, planPace: await readPaceSnapshot() }
 }
 
 /* ------------------------------------------------------------------------ */

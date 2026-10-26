@@ -378,6 +378,24 @@ export async function LearningHealthPanel({ req, range }: PanelProps) {
           <dt>Certificates sold</dt>
           <dd>{revenue ? formatNumber(revenue.certificatesSold) : '–'}</dd>
         </div>
+        {learning.planPace ? (
+          <>
+            <div>
+              <dt>
+                On track or ahead <InfoTip text={METRIC_DEFINITIONS.planPace} />
+              </dt>
+              <dd>{formatPercent(learning.planPace.onTrackShare)}</dd>
+            </div>
+            <div>
+              <dt>Behind their plan</dt>
+              <dd className={(learning.planPace.behindShare ?? 0) > 0.4 ? 'sa-overview__fact--caution' : undefined}>{formatPercent(learning.planPace.behindShare)}</dd>
+            </div>
+            <div>
+              <dt>Self-paced</dt>
+              <dd>{formatPercent(learning.planPace.selfPacedShare)}</dd>
+            </div>
+          </>
+        ) : null}
       </dl>
       {learning.enrolmentStatus.length ? (
         <Donut

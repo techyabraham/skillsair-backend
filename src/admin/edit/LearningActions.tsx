@@ -1,6 +1,6 @@
 'use client'
 
-/** Buttons for the programme's learning-quality panels: queue a caption re-import, restore history. */
+/** Buttons for the programme's learning-quality panels (caption re-import, restore history) and Learner 360 (plan reset). */
 import React, { useState } from 'react'
 
 type State = 'idle' | 'busy' | 'done' | 'failed'
@@ -98,5 +98,33 @@ export function ExtraTimeControl({ userId, initial }: { userId: number; initial:
         {message}
       </span>
     </label>
+  )
+}
+
+/** Learner 360: move a learner's guided plan so their first unfinished step is this week (no cooldown for admins). */
+export function PlanResetButton({ enrollmentId }: { enrollmentId: number }) {
+  const [state, setState] = useState<State>('idle')
+  const [message, setMessage] = useState('')
+  return (
+    <span className="sa-learning__action">
+      <button
+        type="button"
+        className="sa-button sa-button--ghost sa-button--sm"
+        disabled={state === 'busy'}
+        onClick={async () => {
+          if (!window.confirm('Reset this plan? Their first unfinished step becomes this week. The learner’s own 14-day limit does not apply.')) return
+          setState('busy')
+          const result = await post(`/api/studio/enrollments/${enrollmentId}/plan-reset`)
+          setState(result.ok ? 'done' : 'failed')
+          setMessage(result.ok ? 'Plan reset.' : result.message ?? 'That didn’t work. Try again.')
+          if (result.ok) window.location.reload()
+        }}
+      >
+        {state === 'busy' ? 'Resetting…' : 'Reset plan'}
+      </button>
+      <span className="sa-muted" role="status" aria-live="polite">
+        {message}
+      </span>
+    </span>
   )
 }
