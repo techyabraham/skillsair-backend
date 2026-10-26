@@ -187,7 +187,7 @@ export const P6 = lifecycleEmail({
     },
     plan: {
       label: 'The plan',
-      default: "The plan to get there is simpler than it looks: learn the basics, practise on small real tasks, then build one project you can show. That's how {{programme}} is laid out, at your own pace.",
+      default: "The plan to get there is simpler than it looks: learn the basics, practise on small real tasks, then build one project you can show. That's how {{programme}} is laid out, as a guided 12-week plan with weekly goals.",
     },
     closing: { label: 'Closing line', default: 'A few months from now, you could be showing an employer what you can do, not just telling them.' },
     ps: { label: 'P.S. (the waitlist link follows)', kind: 'ps', default: "Waiting for the next scholarship window? I'll tell you first:" },

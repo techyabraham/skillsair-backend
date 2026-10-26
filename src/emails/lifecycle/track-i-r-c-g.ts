@@ -468,7 +468,7 @@ export const G2 = lifecycleEmail({
   stepId: 'G2',
   copy: {
     subject: { label: 'Subject', kind: 'subject', default: 'Two certificates beat one' },
-    preheader: { label: 'Preview text', kind: 'preheader', default: '{{nextProgrammeTitle}}, at your own pace.' },
+    preheader: { label: 'Preview text', kind: 'preheader', default: '{{nextProgrammeTitle}}, with a guided 12-week plan.' },
     intro: {
       label: 'Opening line',
       default: 'One skill can get you noticed. Two make you hard to ignore. {{nextProgrammeTitle}} is {{designed}}, like {{programme}}.',

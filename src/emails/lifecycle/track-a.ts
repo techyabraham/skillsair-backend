@@ -32,7 +32,7 @@ export const A0 = lifecycleEmail({
       label: 'What you get (one item per line)',
       kind: 'list',
       default: [
-        'The full {{programme}} programme, at your own pace, for as long as you study',
+        'The full {{programme}} programme, with a guided 12-week plan and weekly goals, for as long as you study',
         'When you finish: a verifiable certificate employers can check online (optional, paid separately)',
         'Free bonus courses: CV & LinkedIn, and Freelancing',
         "Access to internship openings from our partner firms once you're certified",
@@ -180,7 +180,7 @@ export const A3 = lifecycleEmail({
       label: 'Nobody starts out ready',
       default: "Here's the thing most people miss. Nobody starts out feeling ready. The people doing this work today didn't wait until they were confident. They learned one skill, then the next, and the confidence came from doing it.",
     },
-    built: { label: 'How the programme is built', default: "That's how {{programme}} is built. You start from the basics, at your own pace, about 8 hours a week. It's designed to take about 3 months." },
+    built: { label: 'How the programme is built', default: "That's how {{programme}} is built. You start from the basics and follow a guided 12-week plan with weekly goals, about 8 hours a week." },
     closing: { label: 'Closing line', default: 'If you can give it 8 hours a week, you can do this.' },
     ctaLabel: { label: 'Button', kind: 'button', default: 'See my offer' },
     ps: { label: 'P.S.', kind: 'ps', default: 'Your scholarship price is {{monthly}} until {{closesOn}}. The certificate is optional, paid separately when you finish.' },
