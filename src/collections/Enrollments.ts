@@ -57,9 +57,41 @@ export const Enrollments: CollectionConfig = {
     },
     { name: 'orderId', type: 'text' },
     { name: 'subscription', type: 'relationship', relationTo: 'subscriptions' },
+    {
+      // Guided 12-week plan (src/lib/guided-plan.ts). Guidance only: it never locks anything.
+      type: 'collapsible',
+      label: 'Learning plan',
+      admin: { initCollapsed: true },
+      fields: [
+        {
+          name: 'pace',
+          type: 'select',
+          defaultValue: 'guided',
+          index: true,
+          options: [
+            { label: 'Guided 12-week plan', value: 'guided' },
+            { label: 'Self-paced', value: 'self_paced' },
+          ],
+          admin: { description: 'Learners change this from their plan settings.' },
+        },
+        { name: 'planStartedAt', type: 'date', admin: { description: 'Week 1 of the plan starts on this day (Lagos midnight).' } },
+        { name: 'planResetCount', type: 'number', defaultValue: 0, min: 0, admin: { readOnly: true } },
+        { name: 'planResetAt', type: 'date', admin: { readOnly: true } },
+        { name: 'paceChangedAt', type: 'date', admin: { readOnly: true } },
+      ],
+    },
   ],
   hooks: {
     afterChange: [afterEnroll, afterComplete],
+    beforeChange: [
+      ({ data, operation }) => {
+        // Week 1 of the guided plan starts the day the enrolment is activated.
+        if (operation === 'create' && data && !data.planStartedAt && (data.status ?? 'active') === 'active') {
+          data.planStartedAt = new Date().toISOString()
+        }
+        return data
+      },
+    ],
     beforeValidate: [
       async ({ data, req, operation, originalDoc }) => {
         if (operation !== 'create' || !data) return data
