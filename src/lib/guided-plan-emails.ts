@@ -1,11 +1,11 @@
 /**
  * Guided 12-week plan emails and the nightly pace snapshot (run by src/jobs/guided-plan.ts).
  *
- * - L1 (Monday 07:30 Lagos): this week's goals, to guided learners whose plan isn't finished.
+ * - L1 (Monday 07:30 Lagos): this week day by day, to guided learners whose plan isn't finished.
  *   Not in week 1 when the plan started under 48 hours ago.
- * - L2 (Thursday 18:00 Lagos): to guided learners who are behind with 2+ overdue items and no
- *   lesson progress in 7 days; at most once every 14 days per enrolment.
- * Never to self-paced learners, bonus courses or learners without access right now.
+ * - L2 (Thursday 18:00 Lagos): to guided learners at least 2 weekdays behind with no lesson
+ *   progress in 7 days; at most once every 14 days per enrolment.
+ * Never to chapter-view learners, bonus courses or learners without access right now.
  *
  * The scan pages active enrolments 500 at a time (keyset on id), one statement per page plus the
  * cached plans, and queues the chosen enrolments on the work queue; the worker sends them through
@@ -22,8 +22,8 @@ import { lagosDayNumber } from './lifecycle/timing.js'
 import { loadPerson, type PlanEmailData } from './lifecycle/context.js'
 import { sendEventStep } from './lifecycle/events.js'
 import type { Stage } from './lifecycle/types.js'
-import type { GuidedPlan, PlanProgress } from './guided-plan.js'
-import { coursePlans, guidedPlanEnabled, itemHref, learnerRowsSql, PACE_SNAPSHOT_KEY, progressFor, query, type LearnerRow, type PaceSnapshot } from './guided-plan-service.js'
+import { dayGap, type DayKey, type GuidedPlan, type PlanProgress } from './guided-plan.js'
+import { coursePlans, guidedPlanEnabled, itemHref, learnerRowsSql, PACE_SNAPSHOT_KEY, paceOf, progressFor, query, type LearnerRow, type PaceSnapshot } from './guided-plan-service.js'
 
 export type PlanStep = 'L1' | 'L2'
 
@@ -42,41 +42,37 @@ const hasItems = (plan: GuidedPlan | undefined): plan is GuidedPlan => Boolean(p
 
 /** Pure: should this enrolment get this step now? */
 export function planEmailDue(step: PlanStep, row: Pick<LearnerRow, 'pace' | 'plan_started_at' | 'last_progress_at' | 'is_bonus' | 'status'>, progress: PlanProgress, now: number): boolean {
-  if (row.is_bonus || row.status !== 'active' || row.pace === 'self_paced' || progress.pace !== 'guided') return false
+  if (row.is_bonus || row.status !== 'active' || paceOf(row) !== 'guided' || progress.pace !== 'guided') return false
   if (!progress.status || progress.status === 'finished') return false
   if (step === 'L1') {
     const started = ms(row.plan_started_at)
     return !(progress.currentWeek === 1 && started !== null && now - started < 48 * HOUR)
   }
+  // L2: at least 2 weekdays behind and no lesson progress for 7 days.
   const lastProgress = ms(row.last_progress_at)
-  return progress.status === 'behind' && (progress.overdue?.length ?? 0) >= 2 && (lastProgress === null || now - lastProgress >= 7 * DAY)
-}
-
-/** "2 h 10 min", "45 min". */
-export function timeLabel(minutes: number): string {
-  const hours = Math.floor(minutes / 60)
-  const rest = minutes % 60
-  return hours ? `${hours} h${rest ? ` ${rest} min` : ''}` : `${rest} min`
+  return (progress.status === 'behind' || progress.status === 'overrun') && (progress.daysBehind ?? 0) >= 2 && (lastProgress === null || now - lastProgress >= 7 * DAY)
 }
 
 const FRONTEND_URL = () => (process.env.FRONTEND_URL ?? 'https://skillsair.com').replace(/\/+$/, '')
+const SHORT_DAY: Record<DayKey, string> = { mon: 'Mon', tue: 'Tue', wed: 'Wed', thu: 'Thu', fri: 'Fri' }
 
-/** What the plan emails show. This week's steps still to do (an ahead learner: the next week's). */
+/** What the plan emails show: this week, Monday to Friday, with each day's lessons and minutes. */
 export function planEmailData(row: Pick<LearnerRow, 'slug'>, progress: PlanProgress): PlanEmailData | null {
-  const pending = (week: PlanProgress['thisWeek']) => week.items.filter((item) => !item.done)
-  const week = pending(progress.thisWeek).length ? progress.thisWeek : progress.plan.find((candidate) => candidate.week > progress.currentWeek && pending(candidate).length) ?? progress.thisWeek
-  const items = pending(week)
   const next = progress.nextItem
   if (!next) return null
-  const minutes = items.reduce((sum, item) => sum + item.minutes, 0)
+  const week = progress.plan[progress.currentWeek - 1]!
+  const days = week.days.filter((day) => day.items.length).map((day) => ({ label: SHORT_DAY[day.day], titles: day.items.map((item) => item.title).join(', '), minutes: day.minutes }))
   const site = FRONTEND_URL()
+  const daysBehind = progress.daysBehind ?? 0
   return {
     week: progress.currentWeek,
     weeks: progress.weeks,
-    items: items.map((item) => ({ title: item.title, minutes: item.minutes })),
-    timeLabel: minutes ? timeLabel(minutes) : '',
+    days,
+    dailyMinutes: Math.round(week.minutes / 5),
     behind: progress.status === 'behind' || progress.status === 'overrun',
-    overdueCount: progress.overdue?.length ?? 0,
+    daysBehind,
+    daysBehindLabel: dayGap(daysBehind),
+    ahead: progress.status === 'ahead',
     nextTitle: next.title,
     nextMinutes: next.minutes,
     nextUrl: `${site}${itemHref(row.slug, next.type, next.id)}`,
@@ -156,16 +152,16 @@ export async function sendPlanEmails(payload: Payload, task: { step: PlanStep; e
   }
 }
 
-/** Nightly: the share of guided learners on track or ahead, behind, and self-paced (Studio Overview). */
+/** Nightly: the share of guided learners on track or ahead, behind, and of learners in chapter view (Studio Overview). */
 export async function computePaceSnapshot(payload: Payload, now = Date.now()): Promise<PaceSnapshot> {
-  const counts = { total: 0, guided: 0, onTrackOrAhead: 0, behind: 0, selfPaced: 0 }
+  const counts = { total: 0, guided: 0, onTrackOrAhead: 0, behind: 0, chapters: 0 }
   await eachPage(payload, true, async (rows, plans) => {
     for (const row of rows) {
       const plan = plans.get(Number(row.course_id))
       if (!hasItems(plan)) continue
       counts.total++
-      if (row.pace === 'self_paced') {
-        counts.selfPaced++
+      if (paceOf(row) === 'chapters') {
+        counts.chapters++
         continue
       }
       counts.guided++
@@ -180,7 +176,7 @@ export async function computePaceSnapshot(payload: Payload, now = Date.now()): P
     ...counts,
     onTrackShare: share(counts.onTrackOrAhead, counts.guided),
     behindShare: share(counts.behind, counts.guided),
-    selfPacedShare: share(counts.selfPaced, counts.total),
+    chaptersShare: share(counts.chapters, counts.total),
   }
   // Kept for 8 days, so a missed night still shows the last snapshot.
   await cacheSet(PACE_SNAPSHOT_KEY, JSON.stringify(snapshot), 8 * 24 * 60 * 60)

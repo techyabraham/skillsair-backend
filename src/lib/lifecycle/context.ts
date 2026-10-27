@@ -238,16 +238,20 @@ export interface MessageData {
   plan: PlanEmailData | null
 }
 
-/** This week of a learner's guided plan, for the plan emails (built by the guided-plan job). */
+/** This week of a learner's guided plan, day by day, for the plan emails (built by the guided-plan job). */
 export interface PlanEmailData {
   week: number
   weeks: number
-  /** This week's items still to do (all of them when nothing is done yet). */
-  items: Array<{ title: string; minutes: number }>
-  /** Time for those items, e.g. "2 h 10 min". */
-  timeLabel: string
+  /** This week's weekdays that have lessons: "Mon", the titles ("Date filters, Chapter quiz: Filtering") and minutes. */
+  days: Array<{ label: string; titles: string; minutes: number }>
+  /** Average minutes a weekday this week, e.g. 15. */
+  dailyMinutes: number
   behind: boolean
-  overdueCount: number
+  /** Weekdays behind, e.g. 2 (0 when on track), and as words: "2 days", "1 week". */
+  daysBehind: number
+  daysBehindLabel: string
+  /** Already ahead of the class (the button says Keep going). */
+  ahead: boolean
   nextTitle: string
   nextMinutes: number
   nextUrl: string

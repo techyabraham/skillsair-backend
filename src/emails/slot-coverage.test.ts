@@ -34,6 +34,9 @@ const COVERAGE_DATA: Array<Partial<typeof SAMPLE>> = [
   { ...BARE, lesson1Title: '', joinedOnScholarship: false, renewalSoon: true },
   { progressPercent: 85 },
   { windowOpen: false, priceLocked: false },
+  // The learning-plan emails: behind, and already ahead.
+  { plan: { ...SAMPLE.plan!, behind: true } },
+  { plan: { ...SAMPLE.plan!, ahead: true } },
 ]
 
 function coverageRenders(id: string): string[] {
