@@ -4,6 +4,7 @@ import { afterComplete } from '../hooks/courses/afterComplete.js'
 import { resolveAuthUser } from '../middleware/authenticate.js'
 import { STUDIO_GROUP } from '../admin/studio-config.js'
 import { DISPLAY_TITLES } from '../hooks/display-title.js'
+import { planDayStart } from '../lib/guided-plan.js'
 
 function relationId(value: unknown): number | string | undefined {
   if (value === null || value === undefined) return undefined
@@ -58,7 +59,7 @@ export const Enrollments: CollectionConfig = {
     { name: 'orderId', type: 'text' },
     { name: 'subscription', type: 'relationship', relationTo: 'subscriptions' },
     {
-      // Guided 12-week plan (src/lib/guided-plan.ts). Guidance only: it never locks anything.
+      // Guided 12-week plan, Monday to Friday (src/lib/guided-plan.ts). Guidance only: it never locks anything.
       type: 'collapsible',
       label: 'Learning plan',
       admin: { initCollapsed: true },
@@ -70,11 +71,11 @@ export const Enrollments: CollectionConfig = {
           index: true,
           options: [
             { label: 'Guided 12-week plan', value: 'guided' },
-            { label: 'Self-paced', value: 'self_paced' },
+            { label: 'Chapter view (no daily plan)', value: 'chapters' },
           ],
           admin: { description: 'Learners change this from their plan settings.' },
         },
-        { name: 'planStartedAt', type: 'date', admin: { description: 'Week 1 of the plan starts on this day (Lagos midnight).' } },
+        { name: 'planStartedAt', type: 'date', admin: { description: 'The weekday the plan started (Lagos midnight): its first lesson is planned for this day. Week 1 is the Monday-to-Sunday week containing it.' } },
         { name: 'planResetCount', type: 'number', defaultValue: 0, min: 0, admin: { readOnly: true } },
         { name: 'planResetAt', type: 'date', admin: { readOnly: true } },
         { name: 'paceChangedAt', type: 'date', admin: { readOnly: true } },
@@ -85,9 +86,10 @@ export const Enrollments: CollectionConfig = {
     afterChange: [afterEnroll, afterComplete],
     beforeChange: [
       ({ data, operation }) => {
-        // Week 1 of the guided plan starts the day the enrolment is activated.
+        // The guided plan starts the day the enrolment is activated (a weekend start counts from
+        // Monday); the days of that week already past are free.
         if (operation === 'create' && data && !data.planStartedAt && (data.status ?? 'active') === 'active') {
-          data.planStartedAt = new Date().toISOString()
+          data.planStartedAt = new Date(planDayStart(Date.now())).toISOString()
         }
         return data
       },

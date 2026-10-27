@@ -5,7 +5,7 @@
  * `plansFromRows` turns those rows into plans with the pure allocator.
  */
 import { sql } from '@payloadcms/db-postgres'
-import { buildGuidedPlan, planItems, type GuidedPlan, type SourceLesson, type SourceQuiz } from './guided-plan.js'
+import { buildGuidedPlan, firstIncompleteSlot, planItems, type GuidedPlan, type SourceLesson, type SourceQuiz } from './guided-plan.js'
 
 export interface PlanSourceRow {
   kind: 'lesson' | 'chapter' | 'final_exam'
@@ -64,25 +64,11 @@ export function plansFromRows(courseIds: Array<number | string>, rows: PlanSourc
   return plans
 }
 
-/** Week number of every item in a plan. */
-export function itemWeeks(plan: GuidedPlan): Map<string, number> {
-  const out = new Map<string, number>()
-  for (const week of plan.schedule) for (const item of week.items) out.set(`${item.type}:${item.id}`, week.week)
-  return out
-}
-
 /**
- * Week of the first incomplete item for a learner (1 when nothing is done; the last week
- * when everything is): used by the migration backfill to place existing learners on track.
+ * Slot (weekday from the plan's start) of a learner's first unfinished item: 0 when nothing is
+ * done or the programme has no plan. Used to place learners so nobody starts "behind".
  */
-export function firstIncompleteWeek(plan: GuidedPlan, completedLessons: Set<number>, passedQuizzes: Set<number>): number {
-  // No plan (a bonus course, or no published lessons): week 1.
-  if (!plan.schedule.some((week) => week.items.length)) return 1
-  for (const week of plan.schedule) {
-    for (const item of week.items) {
-      const done = item.type === 'lesson' ? completedLessons.has(item.id) : passedQuizzes.has(item.id)
-      if (!done) return week.week
-    }
-  }
-  return Math.max(1, plan.weeks)
+export function firstIncompleteSlotFor(plan: GuidedPlan, completedLessons: Set<number>, passedQuizzes: Set<number>): number {
+  if (!plan.schedule.some((week) => week.items.length)) return 0
+  return firstIncompleteSlot(plan, (item) => (item.type === 'lesson' ? completedLessons.has(item.id) : passedQuizzes.has(item.id)))
 }
