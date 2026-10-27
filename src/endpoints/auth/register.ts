@@ -1,7 +1,7 @@
 import type { Endpoint, PayloadRequest } from 'payload'
 import { z } from 'zod'
 import { parseBody, sendSuccess, asyncHandler, readJsonBody } from '../../middleware/validate.js'
-import { authRateLimiter } from '../../lib/rate-limiter.js'
+import { accountIdentity, authAccountRateLimiter, authIpRateLimiter } from '../../lib/rate-limiter.js'
 import { sanitizeText, isStrongPassword, isValidE164Phone } from '../../utils/sanitize.js'
 import { generateAuthTokenPair, verifyLeadToken } from '../../lib/jwt.js'
 import { findLeadByEmail, normalizePhone, scoreLeadEvent, type LeadDoc } from '../../lib/leads.js'
@@ -31,8 +31,9 @@ interface UserDoc {
 }
 
 async function handler(req: PayloadRequest): Promise<Response> {
-  await authRateLimiter.check(req)
   const body = parseBody(registerSchema, await readJsonBody(req))
+  await authAccountRateLimiter.check(req, accountIdentity(body.email))
+  await authIpRateLimiter.check(req)
 
   const phone = normalizePhone(body.phone)
   if (!phone || !isValidE164Phone(phone)) {

@@ -1,7 +1,7 @@
 import type { Endpoint, PayloadRequest } from 'payload'
 import { z } from 'zod'
 import { parseBody, sendSuccess, asyncHandler, readJsonBody } from '../../middleware/validate.js'
-import { authRateLimiter } from '../../lib/rate-limiter.js'
+import { accountIdentity, authAccountRateLimiter, authIpRateLimiter } from '../../lib/rate-limiter.js'
 import { generateAuthTokenPair } from '../../lib/jwt.js'
 import { recordFailedLogin, getLoginLockStatus, clearFailedLogins } from '../../lib/redis.js'
 import { AppError } from '../../types/index.js'
@@ -22,9 +22,10 @@ interface UserDoc {
 }
 
 async function handler(req: PayloadRequest): Promise<Response> {
-  await authRateLimiter.check(req)
   const body = parseBody(loginSchema, await readJsonBody(req))
   const email = body.email.toLowerCase()
+  await authAccountRateLimiter.check(req, accountIdentity(email))
+  await authIpRateLimiter.check(req)
 
   const lockStatus = await getLoginLockStatus(email)
   if (lockStatus.locked) {

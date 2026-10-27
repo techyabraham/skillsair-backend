@@ -1,3 +1,4 @@
+import crypto from 'node:crypto'
 import type { NextFunction, Request, Response } from 'express'
 import type { PayloadRequest } from 'payload'
 import { checkRateLimit } from './redis.js'
@@ -56,7 +57,22 @@ function createPayloadRateLimiter(name: string, limit: number, windowSeconds: nu
   }
 }
 
-export const authRateLimiter = createPayloadRateLimiter('auth', 10, 15 * 60)
+/**
+ * Sign-in, sign-up and session refresh. Counted per account first, so one shared IP (the frontend
+ * server, when BFF_SHARED_SECRET is missing or doesn't match) can never lock every learner out:
+ * - per account: 10 sign-ins or sign-ups per email in 15 minutes (with the failed-login lock in
+ *   redis.ts on top), 30 refreshes per user in 15 minutes;
+ * - per visitor IP: a looser cap against one machine trying many accounts.
+ */
+export const authAccountRateLimiter = createPayloadRateLimiter('auth-account', 10, 15 * 60)
+export const authIpRateLimiter = createPayloadRateLimiter('auth-ip', 100, 15 * 60)
+export const refreshUserRateLimiter = createPayloadRateLimiter('auth-refresh', 30, 15 * 60)
+export const refreshIpRateLimiter = createPayloadRateLimiter('auth-refresh-ip', 300, 15 * 60)
+
+/** An email as a rate-limit identity: hashed, so addresses never appear in Redis keys or logs. */
+export function accountIdentity(email: string): string {
+  return `email:${crypto.createHash('sha256').update(email.trim().toLowerCase()).digest('hex').slice(0, 24)}`
+}
 export const paymentRateLimiter = createPayloadRateLimiter('payment', 20, 60 * 60)
 export const streamRateLimiter = createPayloadRateLimiter('stream', 100, 60 * 60)
 export const captionsRateLimiter = createPayloadRateLimiter('captions', 600, 60 * 60)

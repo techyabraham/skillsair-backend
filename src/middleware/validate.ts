@@ -73,6 +73,19 @@ export function getParam(req: PayloadRequest, name: string): string {
   return value
 }
 
+let lastBffWarning = 0
+
+/**
+ * The frontend sent a BFF key that doesn't match this service's BFF_SHARED_SECRET (or this
+ * service has none): every visitor then shares the frontend server's rate limits. Logged at most
+ * once every 10 minutes; the key itself is never logged.
+ */
+function warnBffMismatch(reason: string): void {
+  if (Date.now() - lastBffWarning < 10 * 60 * 1000) return
+  lastBffWarning = Date.now()
+  logger.warn({ reason }, 'bff_shared_secret_mismatch')
+}
+
 /**
  * The SkillsAir frontend calls this API server-to-server on behalf of browsers. When it
  * presents the shared BFF key, its X-SkillsAir-Client-IP header names the real visitor, so
@@ -80,10 +93,16 @@ export function getParam(req: PayloadRequest, name: string): string {
  */
 export function trustedBffClientIp(headers: { get(name: string): string | null }): string | null {
   const secret = process.env.BFF_SHARED_SECRET
-  if (!secret || secret.length < 32) return null
   const presented = headers.get('x-skillsair-bff-key')
-  if (!presented || presented.length !== secret.length) return null
-  if (!crypto.timingSafeEqual(Buffer.from(presented), Buffer.from(secret))) return null
+  if (!secret || secret.length < 32) {
+    if (presented) warnBffMismatch('backend_secret_missing_or_short')
+    return null
+  }
+  if (!presented) return null
+  if (presented.length !== secret.length || !crypto.timingSafeEqual(Buffer.from(presented), Buffer.from(secret))) {
+    warnBffMismatch('secret_mismatch')
+    return null
+  }
   const ip = headers.get('x-skillsair-client-ip')?.trim()
   return ip && ip.length <= 64 ? ip : null
 }

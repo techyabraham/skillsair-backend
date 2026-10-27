@@ -1,7 +1,7 @@
 import type { Endpoint, PayloadRequest } from 'payload'
 import { z } from 'zod'
 import { parseBody, sendSuccess, asyncHandler, readJsonBody } from '../../middleware/validate.js'
-import { authRateLimiter } from '../../lib/rate-limiter.js'
+import { refreshIpRateLimiter, refreshUserRateLimiter } from '../../lib/rate-limiter.js'
 import { verifyRefreshToken, decodeTokenExpirySeconds, generateAuthTokenPair } from '../../lib/jwt.js'
 import { isTokenBlacklisted, blacklistToken } from '../../lib/redis.js'
 import { AppError } from '../../types/index.js'
@@ -17,7 +17,7 @@ interface UserDoc {
 }
 
 async function handler(req: PayloadRequest): Promise<Response> {
-  await authRateLimiter.check(req)
+  await refreshIpRateLimiter.check(req)
   const body = parseBody(refreshSchema, await readJsonBody(req))
 
   if (await isTokenBlacklisted(body.refreshToken)) {
@@ -30,6 +30,8 @@ async function handler(req: PayloadRequest): Promise<Response> {
   } catch {
     throw new AppError('AUTH_REQUIRED', 'Invalid or expired refresh token')
   }
+  // Counted per learner once the token is known to be genuine.
+  await refreshUserRateLimiter.check(req, `user:${payloadToken.userId}`)
 
   const payload = req.payload
   const user = (await payload.findByID({
