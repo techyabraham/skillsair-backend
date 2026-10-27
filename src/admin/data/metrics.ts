@@ -44,7 +44,7 @@ export const METRIC_DEFINITIONS = {
   attention: 'Past-due subscriptions, failed payments in this period and applicants waiting over an hour in working hours.',
   completions: 'Enrolments marked completed in this period.',
   inactive: 'Learners with an active enrolment who have not opened a lesson in 10 days or more.',
-  planPace: 'Guided 12-week plan, from last night’s snapshot: guided learners on track or ahead, guided learners behind, and the share of learners who chose self-paced.',
+  planPace: 'Guided 12-week plan, from last night’s snapshot: guided learners on track or ahead, guided learners behind, and the share of learners who chose chapter view.',
 } as const
 
 /** Runs one SQL statement through the Postgres adapter. */

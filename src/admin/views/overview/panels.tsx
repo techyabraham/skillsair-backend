@@ -391,8 +391,8 @@ export async function LearningHealthPanel({ req, range }: PanelProps) {
               <dd className={(learning.planPace.behindShare ?? 0) > 0.4 ? 'sa-overview__fact--caution' : undefined}>{formatPercent(learning.planPace.behindShare)}</dd>
             </div>
             <div>
-              <dt>Self-paced</dt>
-              <dd>{formatPercent(learning.planPace.selfPacedShare)}</dd>
+              <dt>Chapter view</dt>
+              <dd>{formatPercent(learning.planPace.chaptersShare)}</dd>
             </div>
           </>
         ) : null}

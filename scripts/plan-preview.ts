@@ -1,6 +1,6 @@
 /**
- * Prints a programme's guided 12-week plan: which lessons and chapter quizzes fall in which week,
- * with minutes per item and per week.
+ * Prints a programme's guided 12-week plan: which lessons and chapter quizzes fall on which weekday
+ * of which week, with minutes per item and per week.
  *
  * Usage:
  *   npm run plan:preview -- --fixture scripts/fixtures/plan-data-analysis.json
@@ -16,7 +16,7 @@ import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 import pg from 'pg'
 import { PgDialect } from 'drizzle-orm/pg-core'
-import { buildGuidedPlan, planItems, type GuidedPlan, type SourceLesson, type SourceQuiz } from '../src/lib/guided-plan.js'
+import { buildGuidedPlan, DAY_NAMES, planItems, type GuidedPlan, type SourceLesson, type SourceQuiz } from '../src/lib/guided-plan.js'
 import { planSourceSql, plansFromRows, type PlanSourceRow } from '../src/lib/guided-plan-source.js'
 
 interface Fixture {
@@ -69,12 +69,17 @@ const hours = (minutes: number) => `${Math.floor(minutes / 60)} h ${String(minut
 
 function print(title: string, plan: GuidedPlan): void {
   const target = plan.totalMinutes / plan.weeks
-  console.log(`${title}: guided plan, ${plan.weeks} weeks, ${plan.schedule.flatMap((week) => week.items).length} items, ${hours(plan.totalMinutes)} in all (target ${hours(Math.round(target))} a week)`)
-  console.log(`planVersion ${plan.planVersion}\n`)
+  console.log(`${title}: guided plan, ${plan.weeks} weeks, Monday to Friday, ${plan.schedule.flatMap((week) => week.items).length} items, ${hours(plan.totalMinutes)} in all (target ${hours(Math.round(target))} a week)`)
+  console.log(`planVersion ${plan.planVersion}
+`)
   for (const week of plan.schedule) {
-    console.log(`Week ${String(week.week).padStart(2)}  ${hours(week.minutes)}  (${week.items.length} item${week.items.length === 1 ? '' : 's'})`)
-    for (const item of week.items) console.log(`    ${item.type === 'lesson' ? 'lesson' : 'quiz  '}  ${String(item.minutes).padStart(3)} min  ${item.title}`)
-    if (week.week === plan.weeks && plan.finalExam) console.log(`    exam            ${plan.finalExam.title} (opens once every lesson and chapter quiz is done)`)
+    console.log(`Week ${String(week.week).padStart(2)}  ${hours(week.minutes)}  ${week.title}`)
+    for (const day of week.days) {
+      const label = DAY_NAMES[day.day].padEnd(9)
+      if (!day.items.length) console.log(`    ${label}  ---      No new lesson: practise or catch up`)
+      day.items.forEach((item, index) => console.log(`    ${index ? ' '.repeat(9) : label}  ${String(item.minutes).padStart(3)} min  ${item.type === 'lesson' ? '' : '[quiz] '}${item.title}`))
+    }
+    if (week.week === plan.weeks && plan.finalExam) console.log(`    Exam       ${plan.finalExam.title} (opens once every lesson and chapter quiz is done)`)
   }
 }
 

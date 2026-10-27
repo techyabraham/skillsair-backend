@@ -13,8 +13,8 @@ import { accessGraceDays } from '../../lib/billing'
 import { formatDay, formatRelative } from '../format'
 import { ExtraTimeControl, PlanResetButton } from './LearningActions'
 import { sql } from '@payloadcms/db-postgres'
-import { coursePlans, guidedPlanEnabled, learnerRowsSql, progressFor, query, type LearnerRow } from '../../lib/guided-plan-service'
-import type { PlanProgress } from '../../lib/guided-plan'
+import { coursePlans, guidedPlanEnabled, learnerRowsSql, paceOf, progressFor, query, type LearnerRow } from '../../lib/guided-plan-service'
+import { dayGap, type PlanProgress } from '../../lib/guided-plan'
 
 type Props = UIFieldServerProps
 
@@ -155,7 +155,7 @@ export async function Learner360(props: Props) {
 }
 
 interface PlanSummary {
-  pace: 'guided' | 'self_paced'
+  pace: 'guided' | 'chapters'
   resetCount: number
   progress: PlanProgress
 }
@@ -169,7 +169,7 @@ async function planSummaries(payload: Props['payload'], userId: number): Promise
     for (const row of rows) {
       const plan = plans.get(Number(row.course_id))
       if (!plan?.schedule.some((week) => week.items.length)) continue
-      out.set(Number(row.id), { pace: row.pace === 'self_paced' ? 'self_paced' : 'guided', resetCount: Number(row.plan_reset_count ?? 0), progress: progressFor(plan, row, Date.now()) })
+      out.set(Number(row.id), { pace: paceOf(row), resetCount: Number(row.plan_reset_count ?? 0), progress: progressFor(plan, row, Date.now()) })
     }
     return out
   } catch {
@@ -190,8 +190,8 @@ function PlanLine({ plan, enrollmentId }: { plan: PlanSummary; enrollmentId: num
   return (
     <span className="sa-cell__chips">
       <span className="sa-muted">
-        {plan.pace === 'self_paced' ? 'Self-paced' : 'Guided plan'} · week {plan.progress.currentWeek} of {plan.progress.weeks}
-        {plan.progress.weeksBehind ? ` · ${plan.progress.weeksBehind} week${plan.progress.weeksBehind === 1 ? '' : 's'} behind` : ''} · {plan.resetCount} reset{plan.resetCount === 1 ? '' : 's'}
+        {plan.pace === 'chapters' ? 'Chapter view' : 'Guided plan'} · week {plan.progress.currentWeek} of {plan.progress.weeks}
+        {plan.progress.daysBehind ? ` · ${dayGap(plan.progress.daysBehind)} behind` : plan.progress.daysAhead ? ` · ${dayGap(plan.progress.daysAhead)} ahead` : ''} · {plan.resetCount} reset{plan.resetCount === 1 ? '' : 's'}
       </span>
       {status ? <StatusPill tone={status.tone}>{status.label}</StatusPill> : null}
       {plan.pace === 'guided' && plan.progress.status !== 'finished' ? <PlanResetButton enrollmentId={enrollmentId} /> : null}

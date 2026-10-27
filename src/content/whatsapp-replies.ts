@@ -32,7 +32,7 @@ export function howItWorksReply({ date, offerLink, windowOpen, price, standardPr
   return [
     "Here's how SkillsAir works 👇",
     '',
-    '📚 A guided 12-week plan: start today, about 8 hours a week, with weekly goals',
+    '📚 A guided 12-week plan: start today, a lesson or two each weekday, about 8 hours a week',
     priceLine,
     '🎓 When you finish: an optional verifiable certificate (paid separately)',
     '🎁 Free CV & LinkedIn and Freelancing courses',
