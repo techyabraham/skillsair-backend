@@ -32,8 +32,8 @@ export type LifecycleEvent =
   /** The certificate fee is paid and the programme has a final exam: the exam is open. */
   | { type: 'exam_ready'; userId: number; courseId: number; receipt?: { reference: string; amount: number; paidAt: string } }
   | { type: 'lesson_completed'; userId: number; courseId: number }
-  /** Guided 12-week plan or self-paced (recorded; self-paced learners get no plan emails). */
-  | { type: 'plan_pace_changed'; userId: number; courseId: number; enrollmentId: number; from: 'guided' | 'self_paced'; to: 'guided' | 'self_paced' }
+  /** The guided plan or chapter view (recorded; chapter-view learners get no plan emails). */
+  | { type: 'plan_pace_changed'; userId: number; courseId: number; enrollmentId: number; from: 'guided' | 'chapters'; to: 'guided' | 'chapters' }
 
 /** Bumps the cycle on unfinished enrolments, so a learner who lapses again gets the win-back emails again. */
 async function bumpLapseCycle(payload: Payload, userId: number, courseId?: number): Promise<number> {

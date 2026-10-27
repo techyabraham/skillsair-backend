@@ -1,5 +1,5 @@
 /**
- * Guided 12-week plan, service side: the plan for a learner's programme (GET /api/courses/:id/plan),
+ * Guided 12-week plan (Monday to Friday), service side: one week of a learner's plan (GET /api/courses/:id/plan),
  * the dashboard summary (GET /api/plans/me), the pace setting and "Move my plan".
  *
  * Queries:
@@ -15,13 +15,14 @@ import { sql } from '@payloadcms/db-postgres'
 import { AppError, type AuthUser } from '../types/index.js'
 import { cacheGet, cacheSet, courseCacheGeneration } from './cache.js'
 import { logger } from './logger.js'
-import { movedPlanStart, planProgress, type GuidedPlan, type ItemProgress, type Pace, type PlanProgress, type PlanStatus, type WeekProgress } from './guided-plan.js'
+import { firstIncompleteSlot, planProgress, startForSlotToday, type DayKey, type DayState, type GuidedPlan, type ItemProgress, type Pace, type PlanProgress, type PlanStatus, type Today, type WeekProgress } from './guided-plan.js'
 import { planSourceSql, plansFromRows, type PlanSourceRow } from './guided-plan-source.js'
 
 type SQLQuery = ReturnType<typeof sql>
 
 const PLAN_TTL_SECONDS = 24 * 60 * 60
-const planKey = (courseId: number, generation: string) => `guided-plan:${courseId}:${generation}`
+// v2: plans carry Monday-to-Friday days (an older cached shape is never read).
+const planKey = (courseId: number, generation: string) => `guided-plan:v2:${courseId}:${generation}`
 
 /** GUIDED_PLAN_ENABLED=false switches every plan surface off (endpoints answer 404 FEATURE_DISABLED). */
 export function guidedPlanEnabled(): boolean {
@@ -73,7 +74,8 @@ export interface LearnerRow {
   student_id: number
   course_id: number
   status: string
-  pace: Pace | null
+  /** 'self_paced' only before 20261027_090000_guided_plan_days renames it to 'chapters'. */
+  pace: Pace | 'self_paced' | null
   plan_started_at: string | null
   enrolled_at: string | null
   plan_reset_count: number | string | null
@@ -111,9 +113,11 @@ const ms = (value: string | null | undefined): number | null => {
   return Number.isFinite(parsed) ? parsed : null
 }
 
-export function progressFor(plan: GuidedPlan, row: LearnerRow, now: number): PlanProgress {
+export const paceOf = (row: Pick<LearnerRow, 'pace'>): Pace => (row.pace === 'chapters' || row.pace === 'self_paced' ? 'chapters' : 'guided')
+
+export function progressFor(plan: GuidedPlan, row: LearnerRow, now: number, pace: Pace = paceOf(row)): PlanProgress {
   return planProgress(plan, {
-    pace: row.pace === 'self_paced' ? 'self_paced' : 'guided',
+    pace,
     startedAt: ms(row.plan_started_at) ?? ms(row.enrolled_at) ?? now,
     completedLessons: new Map((row.lessons ?? []).map((lesson) => [Number(lesson.id), ms(lesson.at)])),
     passedQuizzes: new Map((row.quizzes ?? []).map((quiz) => [Number(quiz.id), ms(quiz.at)])),
@@ -133,17 +137,30 @@ export interface PlanItemView {
   sectionTitle: string
   minutes: number
   done: boolean
+  plannedDay: DayKey
+  plannedWeek: number
   href: string
+}
+
+export interface PlanDayView {
+  day: DayKey
+  date: string
+  minutes: number
+  state: DayState
+  doneCount: number
+  totalCount: number
+  items: PlanItemView[]
 }
 
 export interface PlanWeekView {
   week: number
+  title: string
   startsOn: string
   endsOn: string
   minutes: number
   doneCount: number
   totalCount: number
-  items: PlanItemView[]
+  days: PlanDayView[]
 }
 
 /** Frontend paths into the existing course player (?lesson= and ?quiz=) and the exam page. */
@@ -154,16 +171,28 @@ export function itemHref(slug: string, type: PlanItemView['type'], id: number): 
 }
 
 const itemView = (slug: string) => (item: ItemProgress): PlanItemView => ({
-  type: item.type, id: item.id, title: item.title, sectionId: item.sectionId, sectionTitle: item.sectionTitle, minutes: item.minutes, done: item.done, href: itemHref(slug, item.type, item.id),
+  type: item.type, id: item.id, title: item.title, sectionId: item.sectionId, sectionTitle: item.sectionTitle, minutes: item.minutes,
+  done: item.done, plannedDay: item.plannedDay, plannedWeek: item.plannedWeek, href: itemHref(slug, item.type, item.id),
 })
 
 function weekView(slug: string, week: WeekProgress, progress: PlanProgress): PlanWeekView {
-  const items = week.items.map(itemView(slug))
-  // The final exam is pointed to in the last week (informational, not counted).
+  const days = week.days.map((day): PlanDayView => ({ day: day.day, date: day.date, minutes: day.minutes, state: day.state, doneCount: day.doneCount, totalCount: day.totalCount, items: day.items.map(itemView(slug)) }))
+  // The final exam is pointed to on the last week's Friday (informational, not counted).
   if (progress.finalExam && week.week === progress.weeks) {
-    items.push({ type: 'final_exam', id: progress.finalExam.id, title: progress.finalExam.title, sectionId: null, sectionTitle: '', minutes: 0, done: progress.finalExam.done, href: itemHref(slug, 'final_exam', progress.finalExam.id) })
+    days[4]!.items.push({ type: 'final_exam', id: progress.finalExam.id, title: progress.finalExam.title, sectionId: null, sectionTitle: '', minutes: 0, done: progress.finalExam.done, plannedDay: 'fri', plannedWeek: week.week, href: itemHref(slug, 'final_exam', progress.finalExam.id) })
   }
-  return { week: week.week, startsOn: week.startsOn, endsOn: week.endsOn, minutes: week.minutes, doneCount: week.doneCount, totalCount: week.totalCount, items }
+  return { week: week.week, title: week.title, startsOn: week.startsOn, endsOn: week.endsOn, minutes: week.minutes, doneCount: week.doneCount, totalCount: week.totalCount, days }
+}
+
+function nextItemView(slug: string, progress: PlanProgress): PlanItemView | null {
+  if (progress.nextItem) return itemView(slug)(progress.nextItem)
+  const exam = progress.finalExam
+  return exam && !exam.done ? { type: 'final_exam', id: exam.id, title: exam.title, sectionId: null, sectionTitle: '', minutes: 0, done: false, plannedDay: 'fri', plannedWeek: progress.weeks, href: itemHref(slug, 'final_exam', exam.id) } : null
+}
+
+/** Status fields: guided learners only (chapter view has no plan surfaces). */
+function statusFields(progress: PlanProgress) {
+  return progress.pace === 'guided' ? { status: progress.status, daysAhead: progress.daysAhead, daysBehind: progress.daysBehind } : {}
 }
 
 export interface CoursePlanView {
@@ -175,29 +204,28 @@ export interface CoursePlanView {
   planVersion: string
   startedAt: string
   currentWeek: number
+  today: Today
   status?: PlanStatus
-  weeksBehind?: number
+  daysAhead?: number
+  daysBehind?: number
   finishBy: string
   projectedFinish?: string | null
-  thisWeek: PlanWeekView
+  /** One week only: the current week, or ?week=N. */
+  week: PlanWeekView
+  weeksSummary: PlanProgress['weeksSummary']
   overdue?: PlanItemView[]
+  todayItems: PlanItemView[]
   nextItem: PlanItemView | null
-  plan: PlanWeekView[]
   resetAvailableAt: string | null
   canReset: boolean
   resetCount: number
 }
 
-function nextItemView(slug: string, progress: PlanProgress): PlanItemView | null {
-  if (progress.nextItem) return itemView(slug)(progress.nextItem)
-  const exam = progress.finalExam
-  return exam && !exam.done ? { type: 'final_exam', id: exam.id, title: exam.title, sectionId: null, sectionTitle: '', minutes: 0, done: false, href: itemHref(slug, 'final_exam', exam.id) } : null
-}
-
-export function coursePlanView(plan: GuidedPlan, row: LearnerRow, now: number): CoursePlanView {
+export function coursePlanView(plan: GuidedPlan, row: LearnerRow, now: number, weekNumber?: number): CoursePlanView {
   const progress = progressFor(plan, row, now)
   const slug = row.slug
   const guided = progress.pace === 'guided'
+  const shown = Math.min(progress.weeks, Math.max(1, Math.floor(weekNumber ?? progress.currentWeek)))
   return {
     courseId: Number(row.course_id),
     slug,
@@ -207,13 +235,15 @@ export function coursePlanView(plan: GuidedPlan, row: LearnerRow, now: number): 
     planVersion: plan.planVersion,
     startedAt: progress.startedOn,
     currentWeek: progress.currentWeek,
-    ...(guided ? { status: progress.status, weeksBehind: progress.weeksBehind } : {}),
+    today: progress.today,
+    ...statusFields(progress),
     finishBy: progress.finishBy,
     ...(guided && progress.projectedFinish !== undefined ? { projectedFinish: progress.projectedFinish } : {}),
-    thisWeek: weekView(slug, progress.thisWeek, progress),
+    week: weekView(slug, progress.plan[shown - 1]!, progress),
+    weeksSummary: progress.weeksSummary,
     ...(guided ? { overdue: (progress.overdue ?? []).map(itemView(slug)) } : {}),
+    todayItems: progress.todayItems.map(itemView(slug)),
     nextItem: nextItemView(slug, progress),
-    plan: progress.plan.map((week) => weekView(slug, week, progress)),
     resetAvailableAt: progress.resetAvailableAt,
     canReset: progress.canReset,
     resetCount: Number(row.plan_reset_count ?? 0),
@@ -227,18 +257,27 @@ export interface PlanSummaryView {
   pace: Pace
   currentWeek: number
   weeks: number
+  today: Today
   status?: PlanStatus
-  weeksBehind?: number
-  thisWeek: { week: number; doneCount: number; totalCount: number; minutesLeft: number }
+  daysAhead?: number
+  daysBehind?: number
+  /** This week, Monday to Friday. */
+  days: Array<{ day: DayKey; state: DayState; minutes: number; count: number; doneCount: number }>
+  todayItems: PlanItemView[]
+  /** Overdue items (guided learners who are behind), for "Catch up". */
+  overdue: PlanItemView[]
   nextItem: PlanItemView | null
+  finishBy: string
   resetAvailableAt: string | null
   canReset: boolean
+  /** Last lesson progress, for ordering the dashboard. */
+  lastActivityAt: string | null
 }
 
 export function planSummaryView(plan: GuidedPlan, row: LearnerRow, now: number): PlanSummaryView {
   const progress = progressFor(plan, row, now)
-  const week = progress.thisWeek
-  const guided = progress.pace === 'guided'
+  const view = itemView(row.slug)
+  const week = progress.plan[progress.currentWeek - 1]!
   return {
     courseId: Number(row.course_id),
     slug: row.slug,
@@ -246,11 +285,16 @@ export function planSummaryView(plan: GuidedPlan, row: LearnerRow, now: number):
     pace: progress.pace,
     currentWeek: progress.currentWeek,
     weeks: progress.weeks,
-    ...(guided ? { status: progress.status, weeksBehind: progress.weeksBehind } : {}),
-    thisWeek: { week: week.week, doneCount: week.doneCount, totalCount: week.totalCount, minutesLeft: week.items.filter((item) => !item.done).reduce((sum, item) => sum + item.minutes, 0) },
+    today: progress.today,
+    ...statusFields(progress),
+    days: week.days.map((day) => ({ day: day.day, state: day.state, minutes: day.minutes, count: day.totalCount, doneCount: day.doneCount })),
+    todayItems: progress.todayItems.map(view),
+    overdue: (progress.overdue ?? []).map(view),
     nextItem: nextItemView(row.slug, progress),
+    finishBy: progress.finishBy,
     resetAvailableAt: progress.resetAvailableAt,
     canReset: progress.canReset,
+    lastActivityAt: row.last_progress_at,
   }
 }
 
@@ -290,12 +334,12 @@ async function planFor(payload: Payload, courseId: number): Promise<GuidedPlan> 
   return plan
 }
 
-export async function getCoursePlan(payload: Payload, user: AuthUser, courseId: number, now = Date.now()): Promise<CoursePlanView> {
+export async function getCoursePlan(payload: Payload, user: AuthUser, courseId: number, weekNumber?: number, now = Date.now()): Promise<CoursePlanView> {
   const row = await requirePlanRow(payload, user, courseId)
-  return coursePlanView(await planFor(payload, courseId), row, now)
+  return coursePlanView(await planFor(payload, courseId), row, now, weekNumber)
 }
 
-/** Every active, non-bonus enrolment: three statements at most, whatever the number of programmes. */
+/** Every active, non-bonus enrolment: two statements at most, whatever the number of programmes. */
 export async function getMyPlans(payload: Payload, userId: number, now = Date.now()): Promise<PlanSummaryView[]> {
   const rows = await query<LearnerRow>(payload, learnerRowsSql(sql`e.student_id = ${userId} AND e.status = 'active' AND c.is_bonus IS NOT TRUE`))
   if (!rows.length) return []
@@ -307,19 +351,16 @@ export async function getMyPlans(payload: Payload, userId: number, now = Date.no
 }
 
 /**
- * Guided or self-paced. Switching (back) to guided places the plan so the learner's first
- * incomplete item falls in the current week, so nobody comes back to "behind".
+ * Guided plan or chapter view. The plan dates are kept either way, so switching back resumes the
+ * plan where it was (a learner who fell behind meanwhile is offered Move my plan).
  */
 export async function setPace(payload: Payload, user: AuthUser, courseId: number, pace: Pace, now = Date.now()): Promise<CoursePlanView> {
   const row = await requirePlanRow(payload, user, courseId)
   if (!row.id) throw new AppError('INSUFFICIENT_PERMISSION', 'You are not enrolled in this programme')
   const plan = await planFor(payload, courseId)
-  const current: Pace = row.pace === 'self_paced' ? 'self_paced' : 'guided'
+  const current = paceOf(row)
   if (current !== pace) {
-    const at = new Date(now).toISOString()
-    const data: Record<string, unknown> = { pace, paceChangedAt: at }
-    if (pace === 'guided') data.planStartedAt = new Date(movedPlanStart(progressFor(plan, row, now).firstIncompleteWeek, now)).toISOString()
-    await payload.update({ collection: 'enrollments', id: row.id, data: data as never, depth: 0, overrideAccess: true })
+    await payload.update({ collection: 'enrollments', id: row.id, data: { pace, paceChangedAt: new Date(now).toISOString() } as never, depth: 0, overrideAccess: true })
     const { onLifecycleEvent } = await import('./lifecycle/events.js')
     await onLifecycleEvent(payload, { type: 'plan_pace_changed', userId: Number(row.student_id), courseId, enrollmentId: row.id, from: current, to: pace })
   }
@@ -328,31 +369,34 @@ export async function setPace(payload: Payload, user: AuthUser, courseId: number
 }
 
 /**
- * "Move my plan": the week of the first incomplete item becomes this week. Learners who are
- * behind (or past the last week) only, once every 14 days; never for a finished plan. Admins
- * (Studio, Learner 360) bypass the cooldown and the "behind" check.
+ * "Move my plan": the first unfinished item's day becomes today (the start moves forward by the
+ * weekdays they were behind, weekends skipped). Learners who are behind (or past the last week)
+ * only, once every 14 days; never for a finished plan. Admins (Learner 360) bypass the cooldown
+ * and the "behind" check.
  */
 export async function resetPlanForRow(payload: Payload, row: LearnerRow, options: { admin?: boolean } = {}, now = Date.now()): Promise<CoursePlanView> {
   if (row.is_bonus) throw new AppError('NOT_FOUND', 'This course has no learning plan')
   const plan = await planFor(payload, Number(row.course_id))
-  const progress = progressFor(plan, { ...row, pace: 'guided' }, now)
+  const progress = progressFor(plan, row, now, 'guided')
   if (progress.status === 'finished') throw new AppError('PLAN_FINISHED', "You've finished every week of your plan.")
   if (!options.admin) {
-    if (row.pace === 'self_paced') throw new AppError('VALIDATION_ERROR', 'Switch to the guided plan first.')
+    if (paceOf(row) !== 'guided') throw new AppError('VALIDATION_ERROR', 'Go back to your guided plan first.')
     if (progress.status !== 'behind' && progress.status !== 'overrun') throw new AppError('VALIDATION_ERROR', "Your plan is on track. There's nothing to move.")
     if (!progress.canReset) {
       throw new AppError('PLAN_RESET_COOLDOWN', 'You moved your plan recently. You can move it again soon.', { retryAt: progress.resetAvailableAt ?? new Date(now).toISOString() })
     }
   }
-  const at = new Date(now).toISOString()
+  const completedLessons = new Set((row.lessons ?? []).map((lesson) => Number(lesson.id)))
+  const passedQuizzes = new Set((row.quizzes ?? []).map((quiz) => Number(quiz.id)))
+  const slot = firstIncompleteSlot(plan, (item) => (item.type === 'lesson' ? completedLessons.has(item.id) : passedQuizzes.has(item.id)))
   await payload.update({
     collection: 'enrollments',
     id: row.id,
-    data: { planStartedAt: new Date(movedPlanStart(progress.firstIncompleteWeek, now)).toISOString(), planResetCount: Number(row.plan_reset_count ?? 0) + 1, planResetAt: at } as never,
+    data: { planStartedAt: new Date(startForSlotToday(slot, now)).toISOString(), planResetCount: Number(row.plan_reset_count ?? 0) + 1, planResetAt: new Date(now).toISOString() } as never,
     depth: 0,
     overrideAccess: true,
   })
-  logger.info({ enrollmentId: row.id, week: progress.firstIncompleteWeek, admin: Boolean(options.admin) }, 'guided_plan_reset')
+  logger.info({ enrollmentId: row.id, slot, daysBehind: progress.daysBehind, admin: Boolean(options.admin) }, 'guided_plan_reset')
   const fresh = await enrolmentRowById(payload, row.id)
   return coursePlanView(plan, fresh ?? row, now)
 }
@@ -383,11 +427,12 @@ export interface PaceSnapshot {
   guided: number
   onTrackOrAhead: number
   behind: number
-  selfPaced: number
-  /** Shares of all enrolments counted (0..1). */
+  /** Learners in chapter view. */
+  chapters: number
+  /** Shares (0..1): of guided learners on track or ahead / behind; of all learners in chapter view. */
   onTrackShare: number | null
   behindShare: number | null
-  selfPacedShare: number | null
+  chaptersShare: number | null
 }
 
 export async function readPaceSnapshot(): Promise<PaceSnapshot | null> {

@@ -9,7 +9,7 @@ import { adminResetPlan, assertGuidedPlanEnabled, getCoursePlan, getMyPlans, res
 
 /** Guided 12-week plan endpoints (src/lib/guided-plan-service.ts). Guidance only: nothing is locked. */
 
-const paceSchema = z.object({ pace: z.enum(['guided', 'self_paced']) }).strict()
+const paceSchema = z.object({ pace: z.enum(['guided', 'chapters']) }).strict()
 
 function idParam(req: PayloadRequest, name: string): number {
   const value = getParam(req, name)
@@ -17,7 +17,7 @@ function idParam(req: PayloadRequest, name: string): number {
   return Number(value)
 }
 
-/** GET /api/courses/:id/plan: the learner's plan for a programme, with their progress. */
+/** GET /api/courses/:id/plan(?week=N): one week of the learner's plan (the current week by default), with their progress. */
 export const coursePlanEndpoint: Endpoint = {
   path: '/:id/plan',
   method: 'get',
@@ -25,11 +25,12 @@ export const coursePlanEndpoint: Endpoint = {
     assertGuidedPlanEnabled()
     const user = await requireAuth(req)
     await planReadRateLimiter.check(req, user.id)
-    return sendSuccess(await getCoursePlan(req.payload, user, idParam(req, 'id')))
+    const week = Number(new URL(req.url ?? '', 'http://localhost').searchParams.get('week'))
+    return sendSuccess(await getCoursePlan(req.payload, user, idParam(req, 'id'), Number.isInteger(week) && week > 0 && week <= 60 ? week : undefined))
   }),
 }
 
-/** PATCH /api/courses/:id/plan { pace }: guided or self-paced. */
+/** PATCH /api/courses/:id/plan { pace }: the guided plan or chapter view. */
 export const coursePlanPaceEndpoint: Endpoint = {
   path: '/:id/plan',
   method: 'patch',
@@ -42,7 +43,7 @@ export const coursePlanPaceEndpoint: Endpoint = {
   }),
 }
 
-/** POST /api/courses/:id/plan/reset: "Move my plan" (once every 14 days, learners who are behind). */
+/** POST /api/courses/:id/plan/reset: "Move my plan" (once every 14 days, learners who are behind): the first unfinished item's day becomes today. */
 export const coursePlanResetEndpoint: Endpoint = {
   path: '/:id/plan/reset',
   method: 'post',
