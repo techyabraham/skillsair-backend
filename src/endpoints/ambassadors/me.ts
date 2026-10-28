@@ -14,6 +14,7 @@ import { getAmbassadorSettings } from '../../lib/ambassadors/settings.js'
 import { ambassadorSQL } from '../../lib/ambassadors/db.js'
 import { writeAudit } from '../../lib/ambassadors/audit.js'
 import { ambassadorBankChangedEmail } from '../../lib/ambassadors/emails.js'
+import { ambassadorCodeLink } from '../../lib/ambassadors/links.js'
 import type { AmbassadorDoc, LedgerDoc } from '../../lib/ambassadors/types.js'
 
 const bankChangeLimiter = createPayloadRateLimiterFor('ambassador-bank-change', 20, 60 * 60)
@@ -79,7 +80,7 @@ export const ambassadorMeEndpoint: Endpoint = {
         createdAt: ambassador.createdAt,
         ...(ambassador.status === 'blocked' && ambassador.blockedReason ? { blockedReason: ambassador.blockedReason } : {}),
       },
-      link: `${process.env.MAIN_SITE_URL ?? 'https://skillsair.com'}/?ref=${ambassador.code}`,
+      link: ambassadorCodeLink(ambassador.code),
       bank: current ? { bankName: current.bankName, accountName: current.accountName, accountLast4: current.accountLast4, holdUntil: current.holdUntil ?? null } : null,
     })
   }),

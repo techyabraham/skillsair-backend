@@ -11,7 +11,7 @@ Phase 2 connects referral links to verified payments. Phase 3 (portal) begins on
 
 ## Behaviour
 
-- `?ref=` works on every page handled by the existing middleware. It preserves the homepage experiment assignment on ordinary requests. Tracking times out after 1.5 seconds, then falls back to a code cookie. All referral cookies are host-only and HttpOnly.
+- `?skr=` works on every page handled by the existing middleware; legacy WordPress `?ref=<numeric user id>` links remain accepted. It preserves the homepage experiment assignment on ordinary requests. Tracking times out after 1.5 seconds, then falls back to a code cookie. All referral cookies are host-only and HttpOnly.
 - The tracking endpoint counts unique visitor/user-agent pairs once per ambassador per UTC day. Only the referrer hostname is stored. Bots and link previews do not count.
 - Registration forwards `attribution`, clears its cookie after success, and never fails because attribution failed. The legacy `referralCode` request field temporarily resolves ambassador codes or WordPress IDs. Ordinary users no longer receive referral codes.
 - Course, subscription and certificate checkout forward attribution and snapshot the ambassador and attribution IDs in order metadata. Reassignment cannot move an existing order's commission.

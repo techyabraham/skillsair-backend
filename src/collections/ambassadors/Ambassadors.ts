@@ -20,7 +20,7 @@ export const Ambassadors: CollectionConfig = {
       unique: true,
       index: true,
       validate: matches(AMBASSADOR_CODE, 'Code must be 8 capital letters or digits', true),
-      admin: { description: 'Referral code: https://skillsair.com/?ref=<code>' },
+      admin: { description: 'Referral code: https://skillsair.com/?skr=<code>' },
     },
     {
       name: 'username',
