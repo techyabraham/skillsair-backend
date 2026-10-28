@@ -1,5 +1,6 @@
 import type { CollectionConfig } from 'payload'
 import { encryptField, decryptField } from '../utils/sanitize.js'
+import { resolveAuthUser } from '../middleware/authenticate.js'
 import { STUDIO_GROUP } from '../admin/studio-config.js'
 import { DISPLAY_TITLES } from '../hooks/display-title.js'
 
@@ -17,10 +18,10 @@ export const Affiliates: CollectionConfig = {
       return false
     },
     create: ({ req }) => req.user?.role === 'admin',
-    update: ({ req, id }) => {
-      if (req.user?.role === 'admin') return true
-      if (req.user && String(req.user.id) === String(id)) return true
-      return false
+    // Admins only: payout details and earnings are never edited by the affiliate themselves.
+    update: async ({ req }) => {
+      const user = req.user ?? await resolveAuthUser(req)
+      return user?.role === 'admin'
     },
     delete: ({ req }) => req.user?.role === 'admin',
   },
