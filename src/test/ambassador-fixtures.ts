@@ -16,6 +16,7 @@ export async function createTestAmbassador(
     collection: 'ambassadors',
     data: { user: userId, code, username: `amb_${userId}_${seq}`, status: data.status ?? 'active', source: 'admin' },
     overrideAccess: true,
+    depth: 0,
   })
   return doc as unknown as AmbassadorDoc
 }
