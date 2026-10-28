@@ -19,3 +19,17 @@ export async function createTestAmbassador(
   })
   return doc as unknown as AmbassadorDoc
 }
+
+let orderSeq = 0
+
+/** A paid course order (naira amount, as orders store it). */
+export async function createTestOrder(payload: Payload, data: { userId?: number; amountNaira?: number } = {}): Promise<{ id: number }> {
+  orderSeq += 1
+  const userId = data.userId ?? (await createTestUser(payload)).id
+  const doc = await payload.create({
+    collection: 'orders',
+    data: { user: userId, type: 'course', amount: data.amountNaira ?? 25_000, currency: 'NGN', status: 'success', reference: `TEST-${Date.now()}-${orderSeq}` },
+    overrideAccess: true,
+  })
+  return { id: Number(doc.id) }
+}
