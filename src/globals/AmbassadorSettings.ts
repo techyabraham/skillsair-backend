@@ -1,31 +1,12 @@
 import type { GlobalConfig } from 'payload'
 import { STUDIO_GROUP } from '../admin/studio-config.js'
 import { adminOnly, integerBetween, koboAtLeast, rateBps } from '../collections/ambassadors/shared.js'
+import { AMBASSADOR_SETTINGS_DEFAULTS, clearAmbassadorSettingsCache } from '../lib/ambassadors/settings.js'
 
 /**
  * Ambassador programme settings (AMBASSADORS.md section 4). Read through getAmbassadorSettings()
- * in src/lib/ambassadors/settings.ts, which applies these defaults to any empty field.
+ * in src/lib/ambassadors/settings.ts, which applies the same defaults to any empty field.
  */
-export const AMBASSADOR_SETTINGS_DEFAULTS = {
-  programOpen: true,
-  defaultApplicationStatus: 'pending',
-  commissionRateBps: 5000,
-  commissionableTypes: ['course', 'subscription', 'renewal'],
-  approvalDelayDays: 7,
-  cookieDays: 30,
-  attributionModel: 'first_click',
-  attributionLifetimeDays: null,
-  minPayoutKobo: 500_000,
-  payoutsEnabled: true,
-  payoutMode: 'manual_review',
-  perTransferCapKobo: 20_000_000,
-  dailyCapKobo: 100_000_000,
-  newBankHoldHours: 48,
-  showReferredEmails: true,
-  heardAboutOptions: ['Instagram', 'Facebook', 'WhatsApp', 'X (Twitter)', 'TikTok', 'YouTube', 'A friend', 'Other'],
-  shareMessage: "I'm learning job-ready tech skills on SkillsAir. Start here: {link}",
-} as const
-
 const D = AMBASSADOR_SETTINGS_DEFAULTS
 
 export const AmbassadorSettings: GlobalConfig = {
@@ -33,6 +14,7 @@ export const AmbassadorSettings: GlobalConfig = {
   label: 'Ambassador settings',
   admin: { group: STUDIO_GROUP.ambassadors },
   access: { read: adminOnly, update: adminOnly },
+  hooks: { afterChange: [() => clearAmbassadorSettingsCache()] },
   fields: [
     {
       type: 'row',
