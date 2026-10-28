@@ -6,7 +6,7 @@
 import type { Payload } from 'payload'
 import type { AmbassadorSettings, CommissionableType } from './types.js'
 
-export const AMBASSADOR_SETTINGS_DEFAULTS: Readonly<AmbassadorSettings> = Object.freeze({
+export const AMBASSADOR_SETTINGS_DEFAULTS: Readonly<AmbassadorSettings> = Object.freeze<AmbassadorSettings>({
   programOpen: true,
   defaultApplicationStatus: 'pending',
   commissionRateBps: 5000,
