@@ -9,6 +9,7 @@ import { logger } from '../../lib/logger.js'
 
 const forgotPasswordSchema = z.object({
   email: z.string().email(),
+  app: z.enum(['student', 'ambassador']).optional().default('student'),
 })
 
 interface UserDoc {
@@ -18,6 +19,7 @@ interface UserDoc {
 }
 
 const FRONTEND_URL = process.env.FRONTEND_URL ?? 'https://skillsair.com'
+const AMBASSADOR_PORTAL_URL = process.env.AMBASSADOR_PORTAL_URL ?? 'https://ambassador.skillsair.com'
 
 async function handler(req: PayloadRequest): Promise<Response> {
   const body = parseBody(forgotPasswordSchema, await readJsonBody(req))
@@ -39,7 +41,8 @@ async function handler(req: PayloadRequest): Promise<Response> {
     const user = found.docs[0] as unknown as UserDoc
     const token = generateSecureToken()
     await storePasswordResetToken(hashToken(token), user.id)
-    const resetUrl = `${FRONTEND_URL}/reset-password?token=${token}`
+    const resetBase = body.app === 'ambassador' ? AMBASSADOR_PORTAL_URL : FRONTEND_URL
+    const resetUrl = `${resetBase.replace(/\/$/, '')}/reset-password?token=${token}`
     try {
       await sendEmail(user.email, passwordResetEmail(user.firstName, resetUrl))
     } catch (err) {

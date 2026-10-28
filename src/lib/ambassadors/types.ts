@@ -9,7 +9,7 @@ export type AmbassadorStatus = 'pending' | 'active' | 'blocked'
 export type AmbassadorSource = 'self' | 'admin' | 'wp_import'
 export type CommissionableType = 'course' | 'subscription' | 'renewal' | 'certificate'
 
-export type LedgerType = 'commission' | 'reversal' | 'adjustment' | 'payout'
+export type LedgerType = 'commission' | 'reversal' | 'adjustment' | 'payout' | 'payout_reversal'
 export type LedgerStatus = 'pending' | 'approved' | 'void' | 'reserved' | 'paid'
 export type LedgerProductType = CommissionableType | 'none'
 

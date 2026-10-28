@@ -29,7 +29,13 @@ SkillsAir's own affiliate programme. [AMBASSADORS.md](AMBASSADORS.md) is the bri
 - `src/lib/locks.ts`: `withLock(key, ttlSeconds, fn)`, the Redis lock also used by order fulfilment.
 - `src/lib/ambassadors/`: `settings.ts` (defaults, 60-second cache), `codes.ts` (unique referral codes), `ledger.ts` (append-only ledger, wallet figures, transitions, `withTransaction`), `access.ts` (`requireAmbassador`, `loadAmbassadorForUser`, `requireAdmin`), `audit.ts` (`writeAudit`), `types.ts` (hand-written types: `payload-types.ts` is gitignored and not generated in the image).
 
-Migration `20261028_045139_ambassadors_foundation` creates the tables. Apply it like any other: `npm run migrate:fallback -- --test`, then `npm run migrate:fallback` on the migration runner. No endpoints, jobs or emails yet.
+Migration `20261028_045139_ambassadors_foundation` creates the tables. Apply it like any other: `npm run migrate:fallback -- --test`, then `npm run migrate:fallback` on the migration runner. It is the schema baseline for the earning engine below.
+
+## Ambassador earning engine
+
+Phase 2 adds public referral tracking (`POST /api/ambassadors/track`), first/last-click attribution, payment commissions, refunds and scheduled approval. Configure `AMBASSADOR_ATTRIBUTION_SECRET` as a separate random secret of at least 32 characters on the API and worker; keep the same value on both services. Do not expose it to the student site. Rotating it expires signed referral cookies. See [the Phase 2 runbook](docs/ambassador-phase-2.md) for test-mode staging checks and cases that require manual refund review.
+
+Phase 3 adds the ambassador application and portal API (`/api/ambassadors/config`, `/banks`, `/apply`, `/verify-email`, `/me/*`). Set `AMBASSADOR_PORTAL_URL` to the portal origin, `AMBASSADOR_ADMIN_EMAIL` to the application-review inbox, and `MAIN_SITE_URL` to the student-site origin. The portal origin `https://ambassador.skillsair.com` is included in API CORS/CSRF origins automatically. Nigerian bank data is fetched from Paystack and cached in Redis for 24 hours; the WordPress bank-directory fallback still needs the source `NigerianBankDirectory.php` before it can be added.
 
 Generating a migration: the committed snapshots used to stop at `20261010_224035_initial_schema.json`, so `migrate:create` would have repeated every hand-written migration since. `20261028_045139_ambassadors_foundation.json` is now the current snapshot; the next generated migration diffs against it. Review the generated SQL by hand, keep it registered in `src/payload-migrations/index.ts`, and check it with `migrate:fallback -- --test` on a disposable local database.
 
@@ -43,3 +49,9 @@ pg_ctl -D ./.local-dev/pg -o "-p 55432" start
 createdb -h localhost -p 55432 -U postgres amb_test
 TEST_DATABASE_URI=postgres://postgres@localhost:55432/amb_test npm test
 ```
+
+## Ambassador payouts and Studio administration
+
+Phase 4 adds manual-review withdrawals by default and Paystack Transfers for approved requests. Set `PAYSTACK_SECRET_KEY` to a test key on staging, keep transfer OTP disabled for that Paystack test account, and set `AMBASSADOR_ADMIN_EMAIL` to the private operations inbox for OTP-required and unresolved-transfer alerts. Do not enable automatic payouts until the transfer and reconciliation checks pass. Automatic requests also require the configured per-transfer and daily caps and no open risk flag.
+
+The portal sends a UUID v4 `Idempotency-Key` for each confirmed withdrawal; retries reuse it. A transfer timeout is treated as ambiguous and reconciled against the original `amb_` reference. Do not retry it with a new reference. If Paystack later reverses a transfer that was recorded as paid, the paid payout ledger row remains unchanged and an approved positive `payout_reversal` row restores the returned balance. Repeated partial refunds use one stable refund ID per ledger key; a pending commission is replaced by the latest cumulative remainder, and each approved partial refund adds its own proportional reversal. Details and the staging gate are in [docs/ambassador-phase-4.md](docs/ambassador-phase-4.md).

@@ -56,6 +56,7 @@ import { MoneyCell as MoneyCell_f40fc5d0ba3cc363cd851ece4d6c26dd } from '../../.
 import { OrderStatusCell as OrderStatusCell_f40fc5d0ba3cc363cd851ece4d6c26dd } from '../../../../src/admin/cells/cells'
 import { ReferenceCell as ReferenceCell_f40fc5d0ba3cc363cd851ece4d6c26dd } from '../../../../src/admin/cells/cells'
 import { OrdersStrip as OrdersStrip_83ee6b7913fb20ba4a0a0ed59ec2014d } from '../../../../src/admin/lists/strips'
+import { AmbassadorOrderRefund as AmbassadorOrderRefund_fde2efabd7584087f4578d38a0a1f01f } from '../../../../src/admin/edit/AmbassadorOrderRefund'
 import { PlanKindCell as PlanKindCell_f40fc5d0ba3cc363cd851ece4d6c26dd } from '../../../../src/admin/cells/cells'
 import { SubscriptionStatusCell as SubscriptionStatusCell_f40fc5d0ba3cc363cd851ece4d6c26dd } from '../../../../src/admin/cells/cells'
 import { RenewalCell as RenewalCell_f40fc5d0ba3cc363cd851ece4d6c26dd } from '../../../../src/admin/cells/cells'
@@ -97,6 +98,10 @@ import { StudioKitView as StudioKitView_e5c9b8b1a7c0c1f3d6823b8cf57710b6 } from 
 import { LifecycleView as LifecycleView_8389331d8dbad3bd35abf993e8aa0675 } from '../../../../src/admin/views/lifecycle/LifecycleView'
 import { EmailsView as EmailsView_c93131d6ab8977f2b30bf179f11197f2 } from '../../../../src/admin/views/emails/EmailsView'
 import { QuestionBankView as QuestionBankView_3e1490a096eea7f7e5c85fbeb6f35442 } from '../../../../src/admin/views/question-bank/QuestionBankView'
+import { ApplicationsView as ApplicationsView_7cdd44119e1383ec227a45191758a197 } from '../../../../src/admin/views/ambassadors/ApplicationsView'
+import { PayoutsView as PayoutsView_7948f0008d085fc19a89304976a9b3ed } from '../../../../src/admin/views/ambassadors/PayoutsView'
+import { DirectoryView as DirectoryView_96d301982a966116b3ba465ba9f1f758 } from '../../../../src/admin/views/ambassadors/DirectoryView'
+import { WalletView as WalletView_83727ca5edb52a201861c55ef7f7c758 } from '../../../../src/admin/views/ambassadors/WalletView'
 import { CollectionCards as CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1 } from '@payloadcms/next/rsc'
 
 /** @type import('payload').ImportMap */
@@ -159,6 +164,7 @@ export const importMap = {
   "/src/admin/cells/cells#OrderStatusCell": OrderStatusCell_f40fc5d0ba3cc363cd851ece4d6c26dd,
   "/src/admin/cells/cells#ReferenceCell": ReferenceCell_f40fc5d0ba3cc363cd851ece4d6c26dd,
   "/src/admin/lists/strips#OrdersStrip": OrdersStrip_83ee6b7913fb20ba4a0a0ed59ec2014d,
+  "/src/admin/edit/AmbassadorOrderRefund#AmbassadorOrderRefund": AmbassadorOrderRefund_fde2efabd7584087f4578d38a0a1f01f,
   "/src/admin/cells/cells#PlanKindCell": PlanKindCell_f40fc5d0ba3cc363cd851ece4d6c26dd,
   "/src/admin/cells/cells#SubscriptionStatusCell": SubscriptionStatusCell_f40fc5d0ba3cc363cd851ece4d6c26dd,
   "/src/admin/cells/cells#RenewalCell": RenewalCell_f40fc5d0ba3cc363cd851ece4d6c26dd,
@@ -200,5 +206,9 @@ export const importMap = {
   "/src/admin/views/lifecycle/LifecycleView#LifecycleView": LifecycleView_8389331d8dbad3bd35abf993e8aa0675,
   "/src/admin/views/emails/EmailsView#EmailsView": EmailsView_c93131d6ab8977f2b30bf179f11197f2,
   "/src/admin/views/question-bank/QuestionBankView#QuestionBankView": QuestionBankView_3e1490a096eea7f7e5c85fbeb6f35442,
+  "/src/admin/views/ambassadors/ApplicationsView#ApplicationsView": ApplicationsView_7cdd44119e1383ec227a45191758a197,
+  "/src/admin/views/ambassadors/PayoutsView#PayoutsView": PayoutsView_7948f0008d085fc19a89304976a9b3ed,
+  "/src/admin/views/ambassadors/DirectoryView#DirectoryView": DirectoryView_96d301982a966116b3ba465ba9f1f758,
+  "/src/admin/views/ambassadors/WalletView#WalletView": WalletView_83727ca5edb52a201861c55ef7f7c758,
   "@payloadcms/next/rsc#CollectionCards": CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1
 }

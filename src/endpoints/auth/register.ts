@@ -1,3 +1,4 @@
+import { attributeUser } from '../../lib/ambassadors/attribution.js'
 import type { Endpoint, PayloadRequest } from 'payload'
 import { z } from 'zod'
 import { parseBody, sendSuccess, asyncHandler, readJsonBody } from '../../middleware/validate.js'
@@ -16,7 +17,8 @@ const registerSchema = z.object({
   firstName: z.string().min(1).max(100),
   lastName: z.string().min(1).max(100),
   phone: z.string().min(7).max(25),
-  referralCode: z.string().optional(),
+  referralCode: z.string().max(16).optional(),
+  attribution: z.string().max(1000).optional(),
   marketingConsent: z.boolean().optional(),
   marketingConsentText: z.string().max(1000).optional(),
   leadToken: z.string().max(2000).optional(),
@@ -72,18 +74,6 @@ async function handler(req: PayloadRequest): Promise<Response> {
     throw new AppError('ALREADY_EXISTS', 'An account with this email already exists')
   }
 
-  let referredBy: number | undefined
-  if (body.referralCode) {
-    const referrer = await payload.find({
-      collection: 'users',
-      where: { referralCode: { equals: body.referralCode.toUpperCase() } },
-      limit: 1,
-    })
-    if (referrer.totalDocs > 0) {
-      referredBy = referrer.docs[0]?.id as number
-    }
-  }
-
   const created = (await payload.create({
     collection: 'users',
     data: {
@@ -94,7 +84,6 @@ async function handler(req: PayloadRequest): Promise<Response> {
       phone,
       role: 'student',
       isStudent: true,
-      referredBy,
       ...(consent
         ? {
             marketingConsent: 'opted_in',
@@ -107,17 +96,10 @@ async function handler(req: PayloadRequest): Promise<Response> {
     overrideAccess: true,
   })) as unknown as UserDoc
 
-  if (referredBy) {
-    await payload.create({
-      collection: 'referrals',
-      data: {
-        referrer: referredBy,
-        referredUser: created.id,
-        referralCode: body.referralCode?.toUpperCase() ?? '',
-        status: 'registered',
-      },
-      overrideAccess: true,
-    })
+  try {
+    await attributeUser(payload, { userId: created.id, value: body.attribution ?? (body.referralCode ? 'code:' + body.referralCode : undefined), source: 'cookie_register' })
+  } catch {
+    logger.error({ userId: created.id }, 'ambassador_registration_attribution_failed')
   }
 
   if (lead) {

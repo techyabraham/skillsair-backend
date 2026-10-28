@@ -83,6 +83,7 @@ export const quizSaveRateLimiter = createPayloadRateLimiter('quiz-save', 1200, 6
 export const planReadRateLimiter = createPayloadRateLimiter('plan', 300, 15 * 60)
 export const planWriteRateLimiter = createPayloadRateLimiter('plan-write', 20, 60 * 60)
 export const adminRateLimiter = createPayloadRateLimiter('admin', 60, 15 * 60)
+export const ambassadorWithdrawRateLimiter = createPayloadRateLimiter('ambassador-withdraw', 5, 60 * 60)
 export const leadRateLimiter = createPayloadRateLimiter('lead', 10, 15 * 60)
 export const leadResumeRateLimiter = createPayloadRateLimiter('lead-resume', 30, 15 * 60)
 export const leadUpdateRateLimiter = createPayloadRateLimiter('lead-update', 60, 15 * 60)

@@ -50,25 +50,33 @@ M5  Ledger row types, signs and allowed statuses:
       reversal    (-)  approved (counts immediately)
       adjustment  (+/-) approved (admin-only, note required)
       payout      (-)  reserved -> paid | void   (void = transfer failed or rejected; the money returns)
+      payout_reversal (+) approved (Paystack confirms a previously paid transfer was returned)
+    A paid payout is never changed to void. A transfer reversal appends payout_reversal for the
+    same amount; the paid payout and its ledger row remain immutable. A reversal before success
+    voids the still-reserved payout instead.
 M6  Wallet figures are DERIVED from the ledger on every read; never store balances or counters:
       pendingKobo     = SUM(amountKobo) WHERE type='commission' AND status='pending'
-      availableKobo   = SUM(amountKobo) WHERE (type IN ('commission','reversal','adjustment') AND status='approved')
+      availableKobo   = SUM(amountKobo) WHERE (type IN ('commission','reversal','adjustment','payout_reversal') AND status='approved')
                                          OR (type='payout' AND status IN ('reserved','paid'))
       inFlightKobo    = -SUM(amountKobo) WHERE type='payout' AND status='reserved'
       paidOutKobo     = -SUM(amountKobo) WHERE type='payout' AND status='paid'
       totalEarnedKobo = SUM(amountKobo) WHERE (type='commission' AND status IN ('pending','approved'))
                                          OR type IN ('reversal','adjustment')
+    payout_reversal restores available money and does not count as earnings.
     availableKobo can be negative. Compute all five in ONE SQL aggregate query.
 M7  Every ledger row has a unique idempotencyKey. Formats (exact):
       commission:order:<orderId>
-      commission:order:<orderId>:partial   (remainder after a partial refund before approval)
+      commission:order:<orderId>:partial:<refundId> (current remainder after each distinct partial refund before approval)
       commission:invoice:<paystackInvoiceCode>
+      commission:invoice:<paystackInvoiceCode>:partial:<refundId> (renewal remainder after a partial refund before approval)
       reversal:order:<orderId>:<paystackRefundIdOrAdminActionId>
+      reversal:invoice:<paystackInvoiceCode>:<paystackRefundIdOrAdminActionId>
       payout:<payoutId>
+      payout-reversal:<payoutId>
       adjustment:<uuid v4>
       import:wp-commission:<wpCommissionId>
       import:wp-withdrawal:<wpWithdrawalId>
-    Insert with the key. A unique-violation on the key means "already done": return the existing row as success. That is how webhooks, retries and jobs stay safe to run twice.
+    Insert with the key. A unique-violation on the key means "already done": return the existing row as success. That is how webhooks, retries and jobs stay safe to run twice. Each partial refund has its own stable provider refund ID in the replacement key; successive replacements void the prior pending remainder and create one new current remainder.
 M8  Display: whole naira as "₦12,500" using Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN', maximumFractionDigits: 0 }); balances with 2 decimals. One formatter, src/lib/money.ts in each repo.
 
 ====================================================================

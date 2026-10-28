@@ -19,6 +19,7 @@ import * as migration_20261025_090000_guided_plan from './20261025_090000_guided
 import * as migration_20261025_100000_email_overrides from './20261025_100000_email_overrides.js';
 import * as migration_20261027_090000_guided_plan_days from './20261027_090000_guided_plan_days.js';
 import * as migration_20261028_045139_ambassadors_foundation from './20261028_045139_ambassadors_foundation.js';
+import * as migration_20261028_120000_ambassadors_payout_reversal from './20261028_120000_ambassadors_payout_reversal.js';
 
 export const migrations = [
   {
@@ -125,5 +126,10 @@ export const migrations = [
     up: migration_20261028_045139_ambassadors_foundation.up,
     down: migration_20261028_045139_ambassadors_foundation.down,
     name: '20261028_045139_ambassadors_foundation'
+  },
+  {
+    up: migration_20261028_120000_ambassadors_payout_reversal.up,
+    down: migration_20261028_120000_ambassadors_payout_reversal.down,
+    name: '20261028_120000_ambassadors_payout_reversal'
   },
 ];

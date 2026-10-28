@@ -90,3 +90,36 @@ export type PaystackWebhookEvent =
   | PaystackSubscriptionDisableEvent
   | PaystackInvoicePaymentFailedEvent
   | { event: string; data: Record<string, unknown> }
+
+/** https://paystack.com/docs/payments/refunds/ — refund webhook, not the Refund API object. */
+export interface PaystackRefundProcessedData {
+  status: 'processed'
+  transaction_reference: string
+  refund_reference?: string | null
+  id?: number
+  amount: string | number
+  currency: string
+}
+
+export interface PaystackTransferRecipientData {
+  recipient_code: string
+  active: boolean
+  currency: string
+}
+
+export interface PaystackTransferData {
+  id: number
+  reference: string
+  transfer_code?: string | null
+  amount: number
+  currency: string
+  status: 'success' | 'pending' | 'otp' | 'failed' | 'reversed' | 'received' | 'blocked' | 'abandoned' | 'rejected' | string
+  createdAt?: string
+  updatedAt?: string
+}
+
+export interface PaystackTransferEventData extends PaystackTransferData {
+  reason?: string | null
+}
+
+export type PaystackTransferEventName = 'transfer.success' | 'transfer.failed' | 'transfer.reversed'

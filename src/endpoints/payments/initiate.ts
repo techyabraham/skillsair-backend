@@ -1,3 +1,4 @@
+import { attributeUser, attributionSnapshot } from '../../lib/ambassadors/attribution.js'
 import type { Endpoint, PayloadRequest } from 'payload'
 import { z } from 'zod'
 import { parseBody, sendSuccess, asyncHandler, readJsonBody } from '../../middleware/validate.js'
@@ -15,6 +16,7 @@ import { billingFor, PAYMENT_METHODS, paystackChannels, paystackFee, withPaystac
 import { closeReplacedOrder } from '../../lib/order-replace.js'
 
 const initiateSchema = z.object({
+  attribution: z.string().max(1000).optional(),
   type: z.enum(['course', 'subscription']),
   courseId: z.string().optional(),
   planId: z.string().optional(),
@@ -139,6 +141,8 @@ async function handler(req: PayloadRequest): Promise<Response> {
   const fee = paystackFee(price)
   amount = price + fee
 
+  await attributeUser(payload, { userId: user.id, value: body.attribution, source: 'cookie_checkout' })
+  const snapshot = await attributionSnapshot(payload, user.id)
   const reference = generatePaystackReference(body.type, user.id)
 
   const order = await payload.create({
@@ -152,7 +156,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
       currency: 'NGN',
       status: 'pending',
       reference,
-      metadata: { paymentMethod, price, paystackFee: fee, ...(body.type === 'subscription' ? { billing } : {}), ...(renewsSubscriptionId ? { renewsSubscriptionId } : {}) },
+      metadata: { ...snapshot, paymentMethod, price, paystackFee: fee, ...(body.type === 'subscription' ? { billing } : {}), ...(renewsSubscriptionId ? { renewsSubscriptionId } : {}) },
     },
     overrideAccess: true,
   })

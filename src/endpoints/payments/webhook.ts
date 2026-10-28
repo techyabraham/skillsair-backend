@@ -1,3 +1,5 @@
+import { handleAmbassadorRefund } from '../ambassadors/refund-webhook.js'
+import type { PaystackRefundProcessedData } from '../../types/paystack.js'
 import type { Endpoint, Payload, PayloadRequest } from 'payload'
 import { asyncHandler, sendSuccess } from '../../middleware/validate.js'
 import { verifyWebhookSignature } from '../../lib/paystack.js'
@@ -8,6 +10,8 @@ import { logger } from '../../lib/logger.js'
 import { linkSubscription, applyPaidInvoice } from '../../lib/subscription-events.js'
 import { findSubscriptionByCode, graceEndsAt } from '../../lib/billing.js'
 import { onLifecycleEvent } from '../../lib/lifecycle/events.js'
+import { applyPayoutTransferEvent } from '../../lib/ambassadors/payouts.js'
+import type { PaystackTransferEventName } from '../../types/paystack.js'
 
 interface OrderDoc {
   id: number
@@ -203,6 +207,24 @@ async function handleExpiringCards(data: unknown, payload: Payload): Promise<voi
   }
 }
 
+async function handleAmbassadorTransfer(eventName: PaystackTransferEventName, data: unknown, payload: Payload): Promise<void> {
+  if (!data || typeof data !== 'object') return
+  const event = data as Record<string, unknown>
+  if (typeof event.reference !== 'string' || !event.reference.startsWith('amb_')) return
+  if (typeof event.amount !== 'number' || typeof event.currency !== 'string') {
+    logger.warn({ reference: event.reference }, 'ambassador_payout_webhook_payload_invalid')
+    return
+  }
+  await applyPayoutTransferEvent(payload, {
+    event: eventName,
+    reference: event.reference,
+    amount: event.amount,
+    currency: event.currency,
+    status: typeof event.status === 'string' ? event.status : eventName.slice('transfer.'.length),
+    transferCode: typeof event.transfer_code === 'string' ? event.transfer_code : null,
+  })
+}
+
 export async function handlePaystackWebhook(req: PayloadRequest): Promise<Response> {
   const signature = req.headers.get('x-paystack-signature') ?? undefined
   const rawBody = typeof req.text === 'function' ? await req.text() : ''
@@ -226,6 +248,10 @@ export async function handlePaystackWebhook(req: PayloadRequest): Promise<Respon
     // The receipt shows what Paystack actually charged (the plan price plus the Paystack fee).
     const charged = (event.data as { amount?: unknown }).amount
     if (applied) await onLifecycleEvent(payload, { type: 'renewal_success', subscriptionId: applied.subscriptionId, recovered: applied.recovered, ...(typeof charged === 'number' ? { amount: charged / 100 } : {}) })
+  } else if (event.event === 'refund.processed') {
+    await handleAmbassadorRefund(payload, event.data as unknown as PaystackRefundProcessedData)
+  } else if (event.event === 'transfer.success' || event.event === 'transfer.failed' || event.event === 'transfer.reversed') {
+    await handleAmbassadorTransfer(event.event, event.data, payload)
   } else if (event.event === 'invoice.payment_failed') {
     await handlePaymentFailed(event.data as SubscriptionRefData, payload)
   } else if (event.event === 'invoice.create') {

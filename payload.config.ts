@@ -47,6 +47,24 @@ import { ScholarshipWindow } from './src/globals/ScholarshipWindow.js'
 import { AmbassadorSettings } from './src/globals/AmbassadorSettings.js'
 import { EmailContent } from './src/globals/EmailContent.js'
 
+import { ambassadorTrackEndpoint } from './src/endpoints/ambassadors/track.js'
+import { ambassadorAdminEndpoints } from './src/endpoints/ambassadors/admin.js'
+import { ambassadorPayoutListEndpoint, ambassadorPayoutRequestEndpoint } from './src/endpoints/ambassadors/payouts.js'
+import {
+  ambassadorApplyEndpoint,
+  ambassadorBanksEndpoint,
+  ambassadorConfigEndpoint,
+  ambassadorResendVerificationEndpoint,
+  ambassadorResolveBankEndpoint,
+  ambassadorVerifyEmailEndpoint,
+} from './src/endpoints/ambassadors/public.js'
+import {
+  ambassadorBankAccountEndpoint,
+  ambassadorEarningsEndpoint,
+  ambassadorMeEndpoint,
+  ambassadorReferralsEndpoint,
+  ambassadorSummaryEndpoint,
+} from './src/endpoints/ambassadors/me.js'
 import { registerEndpoint } from './src/endpoints/auth/register.js'
 import { loginEndpoint } from './src/endpoints/auth/login.js'
 import { logoutEndpoint } from './src/endpoints/auth/logout.js'
@@ -97,10 +115,11 @@ const dirname = path.dirname(filename)
 
 function corsOrigins(): string[] {
   const raw = process.env.CORS_ORIGINS ?? process.env.FRONTEND_URL ?? ''
-  return raw
+  const configured = raw
     .split(',')
     .map((origin) => origin.trim())
     .filter((origin) => origin.length > 0)
+  return [...new Set([...configured, 'https://ambassador.skillsair.com'])]
 }
 
 // Endpoints under a collection's slug (e.g. /courses/..., /certificates/...) are mounted on that collection.
@@ -157,6 +176,26 @@ export default buildConfig(mountPrefixedEndpoints({
           Component: '/src/admin/views/question-bank/QuestionBankView#QuestionBankView',
           path: '/question-bank',
           meta: { title: 'Question bank' },
+        },
+        ambassadorApplications: {
+          Component: '/src/admin/views/ambassadors/ApplicationsView#ApplicationsView',
+          path: '/ambassadors/applications',
+          meta: { title: 'Ambassador applications · SkillsAir Studio' },
+        },
+        ambassadorPayouts: {
+          Component: '/src/admin/views/ambassadors/PayoutsView#PayoutsView',
+          path: '/ambassadors/payouts',
+          meta: { title: 'Ambassador payouts · SkillsAir Studio' },
+        },
+        ambassadorDirectory: {
+          Component: '/src/admin/views/ambassadors/DirectoryView#DirectoryView',
+          path: '/ambassadors/directory',
+          meta: { title: 'Ambassadors · SkillsAir Studio' },
+        },
+        ambassadorWallet: {
+          Component: '/src/admin/views/ambassadors/WalletView#WalletView',
+          path: '/ambassadors/wallet',
+          meta: { title: 'Ambassador wallet · SkillsAir Studio' },
         },
       },
     },
@@ -221,6 +260,21 @@ export default buildConfig(mountPrefixedEndpoints({
   ],
   globals: [ScholarshipWindow, EmailContent, AmbassadorSettings],
   endpoints: [
+    ambassadorTrackEndpoint,
+    ambassadorConfigEndpoint,
+    ambassadorBanksEndpoint,
+    ambassadorResolveBankEndpoint,
+    ambassadorApplyEndpoint,
+    ambassadorVerifyEmailEndpoint,
+    ambassadorResendVerificationEndpoint,
+    ambassadorMeEndpoint,
+    ambassadorSummaryEndpoint,
+    ambassadorEarningsEndpoint,
+    ambassadorReferralsEndpoint,
+    ambassadorBankAccountEndpoint,
+    ambassadorPayoutRequestEndpoint,
+    ambassadorPayoutListEndpoint,
+    ...ambassadorAdminEndpoints,
     registerEndpoint,
     loginEndpoint,
     logoutEndpoint,

@@ -1,3 +1,5 @@
+import { recordCommissionForInvoice } from './ambassadors/commissions.js'
+import { logger } from './logger.js'
 import type { Payload } from 'payload'
 import { AppError } from '../types/index.js'
 
@@ -32,6 +34,7 @@ interface InvoiceEvent {
   invoice_code?: string
   paid?: boolean
   status?: string
+  paid_at?: string
   period_start?: string
   period_end?: string
   subscription?: { subscription_code?: string; next_payment_date?: string | null }
@@ -51,21 +54,27 @@ export async function applyPaidInvoice(payload: Payload, event: InvoiceEvent): P
   const found = await payload.find({ collection: 'subscriptions', where: { paystackSubscriptionCode: { equals: code } }, limit: 1, depth: 0, overrideAccess: true })
   const subscription = found.docs[0]
   if (!subscription) throw new AppError('NOT_FOUND', 'Subscription has not been linked yet')
-  if (subscription.lastInvoiceCode === event.invoice_code) return null
   if (event.transaction.currency !== 'NGN' || !event.transaction.amount || event.transaction.amount <= 0) {
     throw new AppError('VALIDATION_ERROR', 'Invoice payment is invalid')
   }
+  const recordInvoiceCommission = async (): Promise<void> => {
+    try { await recordCommissionForInvoice(payload, { subscriptionId: Number(subscription.id), invoiceCode: event.invoice_code!, amountKobo: event.transaction!.amount!, paidAt: event.paid_at ?? event.period_start ?? new Date().toISOString(), transactionReference: event.transaction!.reference! }) }
+    catch { logger.error({ subscriptionId: subscription.id, invoiceCode: event.invoice_code }, 'ambassador_invoice_commission_failed') }
+  }
+  if (subscription.lastInvoiceCode === event.invoice_code) { await recordInvoiceCommission(); return null }
   const candidateDates = [event.period_end, event.subscription?.next_payment_date]
     .filter((value): value is string => Boolean(value))
     .map((value) => new Date(value))
     .filter((value) => !Number.isNaN(value.getTime()))
   const nextEnd = candidateDates.sort((a, b) => b.getTime() - a.getTime())[0]
-  if (!nextEnd || nextEnd.getTime() <= new Date(subscription.currentPeriodEnd ?? 0).getTime()) return null
+  if (!nextEnd) return null
+  if (nextEnd.getTime() <= new Date(subscription.currentPeriodEnd ?? 0).getTime()) { await recordInvoiceCommission(); return null }
   const recovered = subscription.status === 'past_due' || subscription.status === 'expired'
   await payload.update({ collection: 'subscriptions', id: subscription.id, data: {
     status: 'active', currentPeriodStart: event.period_start ?? new Date().toISOString(),
     currentPeriodEnd: nextEnd.toISOString(), lastInvoiceCode: event.invoice_code,
     ...(recovered ? { failedAttempts: 0 } : {}),
   }, overrideAccess: true })
+  await recordInvoiceCommission()
   return { subscriptionId: Number(subscription.id), recovered }
 }

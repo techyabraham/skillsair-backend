@@ -1,3 +1,5 @@
+import { registerAmbassadorCommissionsJob } from './src/jobs/ambassador-commissions.js'
+import { registerAmbassadorPayoutsJob } from './src/jobs/ambassador-payouts.js'
 import express from 'express'
 import type { NextFunction, Request as ExpressRequest, Response as ExpressResponse } from 'express'
 import helmet from 'helmet'
@@ -156,6 +158,8 @@ app.listen(PORT, () => {
     registerAccessExpiryJob(config)
     registerCertificateCleanupJob(config)
     registerOrderFulfillmentJob(config)
+    registerAmbassadorCommissionsJob(config)
+    registerAmbassadorPayoutsJob(config)
     registerLeadDailySummaryJob(config)
     registerLifecycleJob(config)
     registerScholarshipWindowJob(config)

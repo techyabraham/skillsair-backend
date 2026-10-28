@@ -87,6 +87,15 @@ export async function StudioNav(props: NavProps) {
     }))
     .sort((a, b) => (order.get(a.label) ?? 999) - (order.get(b.label) ?? 999))
 
+  if (role === 'admin') {
+    const ambassadors = entityGroups.find((group) => group.label === STUDIO_GROUP.ambassadors)
+    if (ambassadors) ambassadors.items.unshift(
+      { id: 'nav-ambassador-directory', href: `${ADMIN_ROUTE}/ambassadors/directory`, label: 'Directory', icon: <EntityIcon slug="ambassadors" size={18} /> },
+      { id: 'nav-ambassador-applications', href: `${ADMIN_ROUTE}/ambassadors/applications`, label: 'Applications', icon: <EntityIcon slug="leads" size={18} /> },
+      { id: 'nav-ambassador-payouts', href: `${ADMIN_ROUTE}/ambassadors/payouts`, label: 'Payout review', icon: <EntityIcon slug="ambassador-payouts" size={18} /> },
+    )
+  }
+
   // Emails (the Studio email editor, a custom view) sits first in Messaging, for admins.
   if (role === 'admin') {
     const emails = { id: 'nav-emails', href: `${ADMIN_ROUTE}/emails`, label: 'Emails', icon: <EntityIcon slug="emails" size={18} /> }

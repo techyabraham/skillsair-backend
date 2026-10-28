@@ -27,6 +27,7 @@ export const AmbassadorLedger: CollectionConfig = {
         { label: 'Reversal', value: 'reversal' },
         { label: 'Adjustment', value: 'adjustment' },
         { label: 'Payout', value: 'payout' },
+        { label: 'Payout reversal', value: 'payout_reversal' },
       ],
     },
     {

@@ -1,3 +1,4 @@
+import { recordCommissionForOrder } from './ambassadors/commissions.js'
 import type { Payload } from 'payload'
 import { logger } from './logger.js'
 import { addDays } from '../utils/date-helpers.js'
@@ -154,6 +155,8 @@ async function fulfillLockedOrder(payload: Payload, orderId: number | string): P
   }
 
   await payload.update({ collection: 'orders', id: doc.id, data: { fulfilledAt: new Date().toISOString() }, overrideAccess: true })
+  try { await recordCommissionForOrder(payload, Number(doc.id)) }
+  catch { logger.error({ orderId: doc.id }, 'ambassador_order_commission_failed') }
   if (doc.type === 'course' || doc.type === 'subscription') {
     const paidCourseId = relationId(doc.course)
     if (renewal) {

@@ -8,7 +8,7 @@ export const Orders: CollectionConfig = {
     group: STUDIO_GROUP.revenue,
     useAsTitle: 'reference',
     defaultColumns: ['reference', 'user', 'type', 'amount', 'status', 'createdAt'],
-    components: { beforeListTable: ['/src/admin/lists/strips#OrdersStrip'] },
+    components: { beforeListTable: ['/src/admin/lists/strips#OrdersStrip'], edit: { beforeDocumentControls: ['/src/admin/edit/AmbassadorOrderRefund#AmbassadorOrderRefund'] } },
   },
   access: {
     read: async ({ req }) => {

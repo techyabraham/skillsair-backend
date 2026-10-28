@@ -37,6 +37,7 @@ const INSERT_STATUSES: Record<LedgerType, readonly LedgerStatus[]> = {
   reversal: ['approved'],
   adjustment: ['approved'],
   payout: ['reserved', 'paid'],
+  payout_reversal: ['approved'],
 }
 
 /** M5 transitions: type -> target status -> statuses it may come from. */
@@ -45,16 +46,18 @@ const TRANSITIONS: Record<LedgerType, Partial<Record<LedgerStatus, readonly Ledg
   reversal: {},
   adjustment: {},
   payout: { paid: ['reserved'], void: ['reserved'] },
+  payout_reversal: {},
 }
 
 const UUID_V4 = '[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}'
 
 /** M7 key formats, by type. */
 const KEY_FORMATS: Record<LedgerType, RegExp> = {
-  commission: /^(commission:order:\d+(:partial)?|commission:invoice:[A-Za-z0-9_-]+|import:wp-commission:[A-Za-z0-9_-]+)$/,
-  reversal: /^reversal:order:\d+:[A-Za-z0-9_:.-]+$/,
+  commission: /^(commission:order:\d+(?::partial:[A-Za-z0-9_:.-]+)?|commission:invoice:[A-Za-z0-9_-]+(?::partial:[A-Za-z0-9_:.-]+)?|import:wp-commission:[A-Za-z0-9_-]+)$/,
+  reversal: /^(reversal:order:\d+:[A-Za-z0-9_:.-]+|reversal:invoice:[A-Za-z0-9_-]+:[A-Za-z0-9_:.-]+)$/,
   adjustment: new RegExp(`^adjustment:${UUID_V4}$`),
   payout: /^(payout:\d+|import:wp-withdrawal:[A-Za-z0-9_-]+)$/,
+  payout_reversal: /^payout-reversal:\d+$/,
 }
 
 export interface NewLedgerEntry {
@@ -126,6 +129,7 @@ function validateEntry(entry: NewLedgerEntry): void {
   const amount = entry.amountKobo
   if (entry.type === 'commission' && amount <= 0) fail('A commission must be positive')
   if ((entry.type === 'reversal' || entry.type === 'payout') && amount >= 0) fail(`A ${entry.type} must be negative`)
+  if (entry.type === 'payout_reversal' && amount <= 0) fail('A payout reversal must be positive')
   if (entry.type === 'adjustment' && amount === 0) fail('An adjustment cannot be zero')
   if (entry.saleKobo !== undefined && entry.saleKobo !== null && (!Number.isSafeInteger(entry.saleKobo) || entry.saleKobo < 0)) fail('saleKobo must be a non-negative integer')
   if (entry.rateBps !== undefined && entry.rateBps !== null && (!Number.isInteger(entry.rateBps) || entry.rateBps < 0 || entry.rateBps > 10_000)) fail('rateBps must be an integer from 0 to 10000')
@@ -227,7 +231,7 @@ export async function getWallet(payload: Payload, ambassadorId: number, req?: Re
     SELECT
       COALESCE(SUM("amount_kobo") FILTER (WHERE "type" = 'commission' AND "status" = 'pending'), 0) AS "pending",
       COALESCE(SUM("amount_kobo") FILTER (
-        WHERE ("type" IN ('commission', 'reversal', 'adjustment') AND "status" = 'approved')
+        WHERE ("type" IN ('commission', 'reversal', 'adjustment', 'payout_reversal') AND "status" = 'approved')
            OR ("type" = 'payout' AND "status" IN ('reserved', 'paid'))
       ), 0) AS "available",
       COALESCE(-SUM("amount_kobo") FILTER (WHERE "type" = 'payout' AND "status" = 'reserved'), 0) AS "in_flight",
@@ -311,10 +315,51 @@ export async function recordReversal(
   }, req)
 }
 
+/** An invoice refund reversal uses the immutable invoice code and provider refund ID as its key. */
+export async function recordInvoiceReversal(
+  payload: Payload,
+  args: { ambassadorId: number; subscriptionId: number; invoiceCode: string; amountKobo: number; key: string; note?: string | null },
+  req?: Req,
+): Promise<{ entry: LedgerDoc; created: boolean }> {
+  if (!args.key.startsWith(`reversal:invoice:${args.invoiceCode}:`)) {
+    throw new LedgerError('invalid_entry', `A reversal key for invoice ${args.invoiceCode} must start with reversal:invoice:${args.invoiceCode}:`)
+  }
+  return insertLedgerEntry(payload, {
+    ambassadorId: args.ambassadorId,
+    type: 'reversal',
+    status: 'approved',
+    amountKobo: args.amountKobo,
+    subscriptionId: args.subscriptionId,
+    invoiceCode: args.invoiceCode,
+    idempotencyKey: args.key,
+    note: args.note ?? null,
+  }, req)
+}
+
+/** A returned Paystack payout restores spendable funds without rewriting the original paid row. */
+export async function recordPayoutReversal(
+  payload: Payload,
+  args: { ambassadorId: number; payoutId: number; amountKobo: number; note: string },
+  req?: Req,
+): Promise<{ entry: LedgerDoc; created: boolean }> {
+  if (!Number.isSafeInteger(args.amountKobo) || args.amountKobo <= 0 || args.note.trim().length < 10) {
+    throw new LedgerError('invalid_entry', 'A payout reversal needs a positive integer amount and an explanatory note')
+  }
+  return insertLedgerEntry(payload, {
+    ambassadorId: args.ambassadorId,
+    type: 'payout_reversal',
+    status: 'approved',
+    amountKobo: args.amountKobo,
+    payoutId: args.payoutId,
+    note: args.note,
+    idempotencyKey: `payout-reversal:${args.payoutId}`,
+  }, req)
+}
+
 /** An admin's correction (positive or negative), approved at once. Needs a note of 10 characters or more. */
 export async function recordAdjustment(
   payload: Payload,
-  args: { ambassadorId: number; amountKobo: number; note: string; createdBy: number },
+  args: { ambassadorId: number; amountKobo: number; note: string; createdBy: number; idempotencyKey?: string },
   req?: Req,
 ): Promise<LedgerDoc> {
   const { entry } = await insertLedgerEntry(payload, {
@@ -324,7 +369,7 @@ export async function recordAdjustment(
     amountKobo: args.amountKobo,
     note: args.note,
     createdById: args.createdBy,
-    idempotencyKey: `adjustment:${randomUUID()}`,
+    idempotencyKey: args.idempotencyKey ?? `adjustment:${randomUUID()}`,
   }, req)
   return entry
 }

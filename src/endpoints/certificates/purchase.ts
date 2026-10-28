@@ -1,3 +1,4 @@
+import { attributeUser, attributionSnapshot } from '../../lib/ambassadors/attribution.js'
 import type { Endpoint, PayloadRequest } from 'payload'
 import { z } from 'zod'
 import { parseBody, sendSuccess, asyncHandler, readJsonBody } from '../../middleware/validate.js'
@@ -12,6 +13,7 @@ import { PAYMENT_METHODS, paystackChannels } from '../../lib/billing.js'
 import { closeReplacedOrder } from '../../lib/order-replace.js'
 
 const purchaseSchema = z.object({
+  attribution: z.string().max(1000).optional(),
   courseId: z.string().min(1),
   // Bank transfer is the default; see PAYMENT_METHODS in billing.ts.
   paymentMethod: z.enum(PAYMENT_METHODS).optional(),
@@ -78,6 +80,8 @@ async function handler(req: PayloadRequest): Promise<Response> {
   })) as unknown as UserDoc
 
   const amount = certificatePrice()
+  await attributeUser(payload, { userId: user.id, value: body.attribution, source: 'cookie_checkout' })
+  const snapshot = await attributionSnapshot(payload, user.id)
   const reference = generatePaystackReference('certificate', user.id)
 
   const order = await payload.create({
@@ -90,7 +94,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
       currency: 'NGN',
       status: 'pending',
       reference,
-      metadata: { paymentMethod: body.paymentMethod ?? 'bank_transfer' },
+      metadata: { ...snapshot, paymentMethod: body.paymentMethod ?? 'bank_transfer' },
     },
     overrideAccess: true,
   })

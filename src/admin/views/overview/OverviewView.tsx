@@ -19,6 +19,7 @@ import { getAdmissions, getInstructorOverview } from '../../data/metrics'
 import { PERIODS, parsePeriod, periodRange } from '../../data/metrics-core'
 import { formatClock, formatDay, formatDuration, formatLongDate, formatPercent, formatWhen, greeting } from '../../format'
 import { ActivityPanel, AdmissionsFunnelPanel, KpiRow, LearningHealthPanel, NeedsAttentionPanel, RevenuePanel, SchoolsPanel, TopProgrammesPanel } from './panels'
+import { AmbassadorOverview } from '../ambassadors/AmbassadorOverview'
 
 const param = (value: unknown) => (Array.isArray(value) ? value[0] : value) as string | undefined
 
@@ -116,6 +117,8 @@ export async function OverviewView(props: AdminViewServerProps) {
       </div>
 
       <KpiRow req={req} range={range} />
+
+      <AmbassadorOverview req={req} />
 
       <div className="sa-overview__grid">
         <AdmissionsFunnelPanel req={req} range={range} school={school} />

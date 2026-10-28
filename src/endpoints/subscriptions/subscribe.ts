@@ -1,3 +1,4 @@
+import { attributeUser, attributionSnapshot } from '../../lib/ambassadors/attribution.js'
 import type { Endpoint, PayloadRequest } from 'payload'
 import { z } from 'zod'
 import { parseBody, sendSuccess, asyncHandler, readJsonBody } from '../../middleware/validate.js'
@@ -13,6 +14,7 @@ import { assertCanStartPlan, assertNoCurrentSubscription } from '../../lib/subsc
 import { paystackFee, withPaystackFee } from '../../lib/billing.js'
 
 const subscribeSchema = z.object({
+  attribution: z.string().max(1000).optional(),
   planId: z.string().min(1),
 })
 
@@ -75,6 +77,8 @@ async function handler(req: PayloadRequest): Promise<Response> {
     depth: 0,
   })) as unknown as UserDoc
 
+  await attributeUser(payload, { userId: user.id, value: body.attribution, source: 'cookie_checkout' })
+  const snapshot = await attributionSnapshot(payload, user.id)
   const reference = generatePaystackReference('subscription', user.id)
   const order = await payload.create({
     collection: 'orders',
@@ -87,7 +91,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
       currency: 'NGN',
       status: 'pending',
       reference,
-      metadata: { paymentMethod: 'paystack', billing: 'card', price: plan.price, paystackFee: paystackFee(plan.price) },
+      metadata: { ...snapshot, paymentMethod: 'paystack', billing: 'card', price: plan.price, paystackFee: paystackFee(plan.price) },
     },
     overrideAccess: true,
   })

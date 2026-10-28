@@ -152,6 +152,22 @@
   font-size: 13px;
 }
 
+.sa-input {
+  min-height: 42px;
+  max-width: 100%;
+  border: 1px solid var(--sa-line, #cbd5e1);
+  border-radius: 10px;
+  background: var(--theme-input-bg, #fff);
+  color: var(--theme-text, #0f172a);
+  padding: 8px 11px;
+  font: inherit;
+}
+
+.sa-input:focus-visible {
+  outline: 2px solid var(--sa-primary, #1e3a8a);
+  outline-offset: 2px;
+}
+
 /* ---------- Cards ---------- */
 .sa-card {
   min-width: 0;
@@ -765,4 +781,67 @@ a.sa-timeline__link:hover { background: var(--sa-surface-sunken); }
   text-transform: none;
   white-space: normal;
   border-bottom: 1px solid var(--sa-line);
+}
+
+/* Small, scoped layout utilities used by the ambassador Studio views. The admin
+   app does not load Tailwind, so these keep those views responsive and legible. */
+.sa-view .flex { display: flex; }
+.sa-view .grid { display: grid; }
+.sa-view .block { display: block; }
+.sa-view .inline { display: inline; }
+.sa-view .flex-wrap { flex-wrap: wrap; }
+.sa-view .items-start { align-items: flex-start; }
+.sa-view .items-end { align-items: flex-end; }
+.sa-view .items-center { align-items: center; }
+.sa-view .justify-between { justify-content: space-between; }
+.sa-view .justify-end { justify-content: flex-end; }
+.sa-view .gap-1 { gap: 4px; }
+.sa-view .gap-2 { gap: 8px; }
+.sa-view .gap-3 { gap: 12px; }
+.sa-view .gap-4 { gap: 16px; }
+.sa-view .space-y-3 > :not([hidden]) ~ :not([hidden]) { margin-block-start: 12px; }
+.sa-view .space-y-4 > :not([hidden]) ~ :not([hidden]) { margin-block-start: 16px; }
+.sa-view .space-y-5 > :not([hidden]) ~ :not([hidden]) { margin-block-start: 20px; }
+.sa-view .p-4 { padding: 16px; }
+.sa-view .p-5 { padding: 20px; }
+.sa-view .p-8 { padding: 32px; }
+.sa-view .px-3 { padding-inline: 12px; }
+.sa-view .py-3 { padding-block: 12px; }
+.sa-view .mt-1 { margin-block-start: 4px; }
+.sa-view .mt-2 { margin-block-start: 8px; }
+.sa-view .mt-3 { margin-block-start: 12px; }
+.sa-view .ml-3 { margin-inline-start: 12px; }
+.sa-view .mr-2 { margin-inline-end: 8px; }
+.sa-view .min-h-11 { min-height: 44px; }
+.sa-view .min-w-52 { min-width: 208px; }
+.sa-view .max-w-xl { max-width: 576px; }
+.sa-view .rounded-lg { border-radius: 12px; }
+.sa-view .rounded-xl { border-radius: 16px; }
+.sa-view .border { border: 1px solid var(--sa-line); }
+.sa-view .border-t { border-top: 1px solid var(--sa-line); }
+.sa-view .border-line { border-color: var(--sa-line); }
+.sa-view .bg-white { background: var(--sa-surface); }
+.sa-view .bg-transparent { background: transparent; }
+.sa-view .text-center { text-align: center; }
+.sa-view .text-xs { font-size: 12px; }
+.sa-view .text-sm { font-size: 14px; }
+.sa-view .text-lg { font-size: 18px; }
+.sa-view .text-xl { font-size: 20px; }
+.sa-view .font-semibold { font-weight: 600; }
+.sa-view .text-ink { color: var(--sa-ink); }
+.sa-view .text-amber-700 { color: #92400e; }
+.sa-view .no-underline { text-decoration: none; }
+.sa-view .underline { text-decoration: underline; }
+.sa-view .whitespace-pre-wrap { white-space: pre-wrap; }
+.sa-view .outline-none { outline: none; }
+.sa-view .sa-segmented { display: flex; flex-wrap: wrap; gap: 6px; }
+@media (min-width: 640px) {
+  .sa-view [class~="sm:grid-cols-2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 768px) {
+  .sa-view [class~="md:grid-cols-2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1280px) {
+  .sa-view [class~="xl:grid-cols-3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .sa-view [class~="xl:grid-cols-5"] { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 }
