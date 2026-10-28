@@ -9,6 +9,7 @@ export const STUDIO_GROUP = {
   overview: 'Overview',
   admissions: 'Admissions',
   revenue: 'Revenue',
+  ambassadors: 'Ambassadors',
   learning: 'Learning',
   learners: 'Learners',
   messaging: 'Messaging',
@@ -21,6 +22,13 @@ export type StudioGroup = (typeof STUDIO_GROUP)[keyof typeof STUDIO_GROUP]
 export const STUDIO_NAV_ORDER: Array<{ group: StudioGroup; slugs: string[] }> = [
   { group: STUDIO_GROUP.admissions, slugs: ['leads', 'scholarship-window', 'laptop-applications'] },
   { group: STUDIO_GROUP.revenue, slugs: ['orders', 'subscriptions', 'plans', 'affiliates', 'referrals'] },
+  {
+    group: STUDIO_GROUP.ambassadors,
+    slugs: [
+      'ambassadors', 'ambassador-payouts', 'ambassador-ledger', 'referral-attributions', 'referral-clicks',
+      'ambassador-bank-accounts', 'ambassador-audit-log', 'ambassador-settings',
+    ],
+  },
   { group: STUDIO_GROUP.learning, slugs: ['courses', 'sections', 'lessons', 'quizzes', 'quiz-questions', 'certificates'] },
   {
     group: STUDIO_GROUP.learners,

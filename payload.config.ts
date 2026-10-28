@@ -36,7 +36,15 @@ import { Leads } from './src/collections/Leads.js'
 import { LaptopApplications } from './src/collections/LaptopApplications.js'
 import { Messages } from './src/collections/Messages.js'
 import { EmailOverrideHistory, EmailOverrides } from './src/collections/EmailOverrides.js'
+import { Ambassadors } from './src/collections/ambassadors/Ambassadors.js'
+import { AmbassadorBankAccounts } from './src/collections/ambassadors/AmbassadorBankAccounts.js'
+import { ReferralClicks } from './src/collections/ambassadors/ReferralClicks.js'
+import { ReferralAttributions } from './src/collections/ambassadors/ReferralAttributions.js'
+import { AmbassadorLedger } from './src/collections/ambassadors/AmbassadorLedger.js'
+import { AmbassadorPayouts } from './src/collections/ambassadors/AmbassadorPayouts.js'
+import { AmbassadorAuditLog } from './src/collections/ambassadors/AmbassadorAuditLog.js'
 import { ScholarshipWindow } from './src/globals/ScholarshipWindow.js'
+import { AmbassadorSettings } from './src/globals/AmbassadorSettings.js'
 import { EmailContent } from './src/globals/EmailContent.js'
 
 import { registerEndpoint } from './src/endpoints/auth/register.js'
@@ -203,8 +211,15 @@ export default buildConfig(mountPrefixedEndpoints({
     Messages,
     EmailOverrides,
     EmailOverrideHistory,
+    Ambassadors,
+    AmbassadorBankAccounts,
+    ReferralClicks,
+    ReferralAttributions,
+    AmbassadorLedger,
+    AmbassadorPayouts,
+    AmbassadorAuditLog,
   ],
-  globals: [ScholarshipWindow, EmailContent],
+  globals: [ScholarshipWindow, EmailContent, AmbassadorSettings],
   endpoints: [
     registerEndpoint,
     loginEndpoint,

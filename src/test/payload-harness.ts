@@ -25,7 +25,7 @@ interface Migration {
 export const TEST_DATABASE_URI = process.env.TEST_DATABASE_URI ?? ''
 
 /** describe() for specs that need the database; skipped (with a note) when TEST_DATABASE_URI is unset. */
-export const describeWithDb: typeof describe = TEST_DATABASE_URI ? describe : describe.skip
+export const describeWithDb = describe.skipIf(!TEST_DATABASE_URI)
 
 if (!TEST_DATABASE_URI) {
   console.warn('[integration] TEST_DATABASE_URI is not set: database specs are skipped. See src/test/payload-harness.ts.')
