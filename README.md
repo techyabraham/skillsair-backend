@@ -19,3 +19,14 @@ The Payload admin panel is a separate Next.js service. See [ADMIN-DEPLOYMENT.md]
 Successful orders carry `fulfilledAt`. The webhook and verification endpoint fulfill orders immediately. A job retries successful orders without `fulfilledAt` every five minutes. Set the Paystack webhook URL to `/payments/webhook`; the `/subscriptions/webhook` alias handles the same events. Paystack subscription creation and paid invoice events link and extend the matching course subscription.
 
 Run `npm run typecheck` after making changes. Schema changes require applying the corresponding Payload database migration before deploying the new code. Set `BACKEND_URL` to the public API origin.
+
+## Tests
+
+`npm test` runs the Vitest specs (`src/**/*.spec.ts`) and then the older node:test files (`npm run test:legacy`). Integration specs boot Payload's local API against a disposable local Postgres named by `TEST_DATABASE_URI`, apply every registered migration the way `npm run migrate:fallback` does, and empty tables between tests. Without `TEST_DATABASE_URI` they are skipped with a message. Never point it at staging or production: the harness refuses any host other than localhost. Redis is replaced by an in-memory fake in specs (`src/test/fake-redis.ts`).
+
+```sh
+initdb -D ./.local-dev/pg -U postgres --auth=trust
+pg_ctl -D ./.local-dev/pg -o "-p 55432" start
+createdb -h localhost -p 55432 -U postgres amb_test
+TEST_DATABASE_URI=postgres://postgres@localhost:55432/amb_test npm test
+```
