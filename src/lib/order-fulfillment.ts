@@ -3,8 +3,7 @@ import { logger } from './logger.js'
 import { addDays } from '../utils/date-helpers.js'
 import { issueCertificate } from '../hooks/courses/afterComplete.js'
 import { relationId } from './course-access.js'
-import { redis } from './redis.js'
-import { randomUUID } from 'node:crypto'
+import { withLock } from './locks.js'
 import { applyLeadEvent, findLeadForUser } from './leads.js'
 import { disableAtPaystack } from './billing.js'
 import { findRenewableManualSubscription } from './subscription-guards.js'
@@ -63,14 +62,7 @@ async function markLeadPaid(payload: Payload, userId: number, email: string): Pr
 
 /** Can be retried safely after an order is marked paid. */
 export async function fulfillOrder(payload: Payload, orderId: number | string): Promise<void> {
-  const lockKey = `order-fulfillment:${orderId}`
-  const token = randomUUID()
-  if (await redis.set(lockKey, token, 'EX', 600, 'NX') !== 'OK') return
-  try {
-    await fulfillLockedOrder(payload, orderId)
-  } finally {
-    await redis.eval("if redis.call('get', KEYS[1]) == ARGV[1] then return redis.call('del', KEYS[1]) else return 0 end", 1, lockKey, token)
-  }
+  await withLock(`order-fulfillment:${orderId}`, 600, () => fulfillLockedOrder(payload, orderId))
 }
 
 async function fulfillLockedOrder(payload: Payload, orderId: number | string): Promise<void> {
