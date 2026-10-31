@@ -94,7 +94,7 @@ export const Courses: CollectionConfig = {
       validate: async (value: unknown, { req }: { req: PayloadRequest }): Promise<string | true> => {
         if (!value) return true
         const instructorId = typeof value === 'object' ? (value as { id: unknown }).id : value
-        const user = await req.payload.findByID({ collection: 'users', id: instructorId as string | number })
+        const user = await req.payload.findByID({ collection: 'users', id: instructorId as string | number, req })
         if (!user || (user.role !== 'instructor' && user.role !== 'admin')) {
           return 'Instructor must have the instructor or admin role'
         }

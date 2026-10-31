@@ -1,6 +1,6 @@
 import type { CollectionAfterChangeHook } from 'payload'
 import { enrollmentConfirmationEmail, sendEmail } from '../../lib/resend.js'
-import { logger } from '../../lib/logger.js'
+import { afterCommit } from '../../lib/after-commit.js'
 
 interface UserDoc {
   email: string
@@ -26,16 +26,17 @@ export const afterEnroll: CollectionAfterChangeHook = async ({ context, doc, ope
   if (operation !== 'create' || context?.skipEnrollmentEmail === true) return doc
   // Paid enrolments get the welcome-and-receipt email (T1) instead.
   if (doc.orderId) return doc
-  try {
+  const { payload } = req
+  afterCommit('enrollment_confirmation_email', async () => {
     const studentId = relationId(doc.student)
     const courseId = relationId(doc.course)
-    if (studentId === undefined || courseId === undefined) return doc
-    const student = (await req.payload.findByID({
+    if (studentId === undefined || courseId === undefined) return
+    const student = (await payload.findByID({
       collection: 'users',
       id: studentId,
       depth: 0,
     })) as unknown as UserDoc
-    const course = (await req.payload.findByID({
+    const course = (await payload.findByID({
       collection: 'courses',
       id: courseId,
       depth: 0,
@@ -46,8 +47,6 @@ export const afterEnroll: CollectionAfterChangeHook = async ({ context, doc, ope
       `${FRONTEND_URL}/courses/${course.slug}`,
     )
     await sendEmail(student.email, content)
-  } catch (err) {
-    logger.error({ err, enrollmentId: doc.id }, 'enrollment_confirmation_email_failed')
-  }
+  })
   return doc
 }

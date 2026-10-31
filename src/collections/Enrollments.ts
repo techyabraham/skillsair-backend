@@ -104,6 +104,7 @@ export const Enrollments: CollectionConfig = {
           collection: 'enrollments',
           where: { and: [{ student: { equals: studentId } }, { course: { equals: courseId } }] },
           limit: 1,
+          req,
         })
         const isDuplicate = existing.docs.some((doc) => doc.id !== originalDoc?.id)
         if (isDuplicate) {

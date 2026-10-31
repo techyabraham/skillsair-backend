@@ -6,6 +6,7 @@ import { requireCourseAccess } from '../lib/course-access.js'
 import { STUDIO_GROUP } from '../admin/studio-config.js'
 import { lessonTranscriptEndpoint } from '../endpoints/stream/captions.js'
 import { bumpCourseCache } from '../lib/cache.js'
+import { afterCommit } from '../lib/after-commit.js'
 
 interface SectionWithCourse {
   course: number | string | { id: number | string }
@@ -244,12 +245,12 @@ export const Lessons: CollectionConfig = {
       async ({ doc, req }) => {
         // Bulk imports skip this per lesson and recalculate once per course at the end.
         if ((req.context as { skipCourseStats?: boolean } | undefined)?.skipCourseStats) return
-        await syncCourseStatsForLesson(doc, req.payload as unknown as PayloadLocalApi)
+        afterCommit('course_stats', () => syncCourseStatsForLesson(doc, req.payload as unknown as PayloadLocalApi))
       },
     ],
     afterDelete: [
       async ({ doc, req }) => {
-        await syncCourseStatsForLesson(doc, req.payload as unknown as PayloadLocalApi)
+        afterCommit('course_stats', () => syncCourseStatsForLesson(doc, req.payload as unknown as PayloadLocalApi))
       },
     ],
   },

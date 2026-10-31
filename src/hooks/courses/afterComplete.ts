@@ -5,6 +5,7 @@ import { logger } from '../../lib/logger.js'
 import { certificatePrice } from '../../lib/pricing.js'
 import { disableAtPaystack, stopBillingOnComplete } from '../../lib/billing.js'
 import { onLifecycleEvent } from '../../lib/lifecycle/events.js'
+import { afterCommit } from '../../lib/after-commit.js'
 
 interface UserDoc {
   email: string
@@ -151,33 +152,36 @@ export const afterComplete: CollectionAfterChangeHook = async ({ doc, previousDo
   if (operation !== 'update') return doc
   if (doc.status !== 'completed' || previousDoc?.status === 'completed') return doc
 
-  const completedStudentId = relationId(doc.student)
-  const completedCourseId = relationId(doc.course)
-  if (completedStudentId !== undefined && completedCourseId !== undefined) {
-    let billingStopped = false
-    try {
-      billingStopped = await stopBillingForCompletedProgramme(req.payload, completedStudentId, completedCourseId)
-    } catch (err) {
-      logger.error({ err, enrollmentId: doc.id }, 'stop_billing_on_complete_failed')
+  const { payload } = req
+  afterCommit('enrollment_completed', async () => {
+    const completedStudentId = relationId(doc.student)
+    const completedCourseId = relationId(doc.course)
+    if (completedStudentId !== undefined && completedCourseId !== undefined) {
+      let billingStopped = false
+      try {
+        billingStopped = await stopBillingForCompletedProgramme(payload, completedStudentId, completedCourseId)
+      } catch (err) {
+        logger.error({ err, enrollmentId: doc.id }, 'stop_billing_on_complete_failed')
+      }
+      await onLifecycleEvent(payload, {
+        type: 'enrollment_completed',
+        userId: Number(completedStudentId),
+        courseId: Number(completedCourseId),
+        enrollmentId: Number(doc.id),
+        billingStopped,
+      })
     }
-    await onLifecycleEvent(req.payload, {
-      type: 'enrollment_completed',
-      userId: Number(completedStudentId),
-      courseId: Number(completedCourseId),
-      enrollmentId: Number(doc.id),
-      billingStopped,
-    })
-  }
 
-  // With a certificate fee, the completion email (T8, sent through the completion event above) offers it.
-  if (certificatePrice() > 0) return doc
-  try {
-    const studentId = relationId(doc.student)
-    const courseId = relationId(doc.course)
-    if (studentId === undefined || courseId === undefined) return doc
-    await issueCertificate(req.payload, studentId, courseId)
-  } catch (err) {
-    logger.error({ err, enrollmentId: doc.id }, 'course_completion_certificate_failed')
-  }
+    // With a certificate fee, the completion email (T8, sent through the completion event above) offers it.
+    if (certificatePrice() > 0) return
+    try {
+      const studentId = relationId(doc.student)
+      const courseId = relationId(doc.course)
+      if (studentId === undefined || courseId === undefined) return
+      await issueCertificate(payload, studentId, courseId)
+    } catch (err) {
+      logger.error({ err, enrollmentId: doc.id }, 'course_completion_certificate_failed')
+    }
+  })
   return doc
 }

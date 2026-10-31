@@ -35,7 +35,7 @@ export const Quizzes: CollectionConfig = {
             ? { and: [{ kind: { equals: 'final_exam' } }, { course: { equals: relationId(merged.course) as number } }] }
             : null
         if (!where) return data
-        const existing = await req.payload.find({ collection: 'quizzes', where: originalDoc?.id ? { and: [where, { id: { not_equals: originalDoc.id } }] } : where, limit: 1, depth: 0, overrideAccess: true })
+        const existing = await req.payload.find({ collection: 'quizzes', where: originalDoc?.id ? { and: [where, { id: { not_equals: originalDoc.id } }] } : where, limit: 1, depth: 0, overrideAccess: true, req })
         if (existing.totalDocs) throw new Error(kind === 'chapter' ? 'This chapter already has a chapter quiz.' : 'This programme already has a final exam.')
         return data
       },

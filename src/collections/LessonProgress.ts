@@ -2,6 +2,7 @@ import type { CollectionConfig } from 'payload'
 import { resolveAuthUser } from '../middleware/authenticate.js'
 import { STUDIO_GROUP } from '../admin/studio-config.js'
 import { DISPLAY_TITLES } from '../hooks/display-title.js'
+import { afterCommit } from '../lib/after-commit.js'
 
 function relationId(value: unknown): number | string | undefined {
   if (value === null || value === undefined) return undefined
@@ -45,15 +46,18 @@ export const LessonProgress: CollectionConfig = {
         const studentId = relationId(doc.student)
         if (studentId === undefined) return doc
         if (doc.isCompleted && !previousDoc?.isCompleted) {
-          const { onLifecycleEvent } = await import('../lib/lifecycle/events.js')
-          await onLifecycleEvent(req.payload, { type: 'lesson_completed', userId: Number(studentId), courseId: Number(relationId(doc.course)) })
+          const { payload } = req
+          afterCommit('lesson_completed', async () => {
+            const { onLifecycleEvent } = await import('../lib/lifecycle/events.js')
+            await onLifecycleEvent(payload, { type: 'lesson_completed', userId: Number(studentId), courseId: Number(relationId(doc.course)) })
+          })
         }
         try {
-          const student = await req.payload.findByID({ collection: 'users', id: studentId, depth: 0, overrideAccess: true })
+          const student = await req.payload.findByID({ collection: 'users', id: studentId, depth: 0, overrideAccess: true, req })
           const last = Date.parse(String((student as { lifecycle?: { lastLearningAt?: string | null } }).lifecycle?.lastLearningAt ?? ''))
           // Progress saves often while a video plays; one update every 15 minutes is enough.
           if (!Number.isFinite(last) || Date.now() - last > 15 * 60 * 1000) {
-            await req.payload.update({ collection: 'users', id: studentId, data: { lifecycle: { lastLearningAt: new Date().toISOString() } }, depth: 0, overrideAccess: true })
+            await req.payload.update({ collection: 'users', id: studentId, data: { lifecycle: { lastLearningAt: new Date().toISOString() } }, depth: 0, overrideAccess: true, req })
           }
         } catch (err) {
           req.payload.logger.error({ err, studentId }, 'last_learning_update_failed')
@@ -71,6 +75,7 @@ export const LessonProgress: CollectionConfig = {
           collection: 'lesson-progress',
           where: { and: [{ student: { equals: studentId } }, { lesson: { equals: lessonId } }] },
           limit: 1,
+          req,
         })
         const isDuplicate = existing.docs.some((doc) => doc.id !== originalDoc?.id)
         if (isDuplicate) {

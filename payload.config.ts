@@ -122,6 +122,9 @@ function corsOrigins(): string[] {
   return [...new Set([...configured, 'https://ambassador.skillsair.com'])]
 }
 
+const migrating = Boolean(process.env.PAYLOAD_MIGRATING) || process.argv.some((arg) => /migrate/.test(arg))
+const viaPgBouncer = Boolean(process.env.PGBOUNCER_URL) && !migrating
+
 // Endpoints under a collection's slug (e.g. /courses/..., /certificates/...) are mounted on that collection.
 export default buildConfig(mountPrefixedEndpoints({
   admin: {
@@ -209,8 +212,19 @@ export default buildConfig(mountPrefixedEndpoints({
     pool: {
       // At scale the API instances connect through PgBouncer (transaction pooling); migrations
       // (PAYLOAD_MIGRATING / `payload migrate`) always use the direct DATABASE_URI.
-      connectionString: process.env.PGBOUNCER_URL && !process.env.PAYLOAD_MIGRATING && !process.argv.some((arg) => /migrate/.test(arg)) ? process.env.PGBOUNCER_URL : process.env.DATABASE_URI,
+      connectionString: viaPgBouncer ? process.env.PGBOUNCER_URL : process.env.DATABASE_URI,
       max: Number(process.env.DB_POOL_MAX ?? 10),
+      // Never wait forever: a request that can't get a connection fails with an error instead of
+      // leaving the visitor on a spinner. pg's default is to wait with no limit.
+      connectionTimeoutMillis: Number(process.env.DB_CONNECT_TIMEOUT_MS ?? 10_000),
+      // A stuck query or forgotten transaction gives its connection back. PgBouncer in transaction
+      // mode rejects these as start-up settings, and migrations can legitimately run for longer.
+      ...(viaPgBouncer || migrating
+        ? {}
+        : {
+            statement_timeout: Number(process.env.DB_STATEMENT_TIMEOUT_MS ?? 30_000),
+            idle_in_transaction_session_timeout: Number(process.env.DB_IDLE_TRANSACTION_TIMEOUT_MS ?? 60_000),
+          }),
     },
     migrationDir: path.resolve(dirname, 'src/payload-migrations'),
   }),
