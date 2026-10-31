@@ -2,6 +2,18 @@ import type { Payload } from 'payload'
 import { AppError } from '../types/index.js'
 import { subscriptionGivesAccess, type AccessSubscription } from './billing.js'
 
+/**
+ * orderId on an enrolment an admin gave from Studio (manual-enrolment.ts). Unlike a paid one-off
+ * enrolment it has no end of its own: access runs only while an access extension for the course
+ * is live, so it can't turn into permanent access, and the learner can still buy the programme.
+ */
+export const MANUAL_ENROLLMENT_REF = 'admin-grant'
+
+/** Bought outright (or free): nothing more to pay for. A Studio enrolment isn't, and neither is a plan. */
+export function ownsCourseOutright(enrollment: Record<string, unknown> | undefined): boolean {
+  return Boolean(enrollment) && !enrollment?.subscription && enrollment?.orderId !== MANUAL_ENROLLMENT_REF
+}
+
 export function relationId(value: unknown): number | string | undefined {
   if (value == null) return undefined
   if (typeof value === 'object' && 'id' in value) return (value as { id: number | string }).id
@@ -86,7 +98,8 @@ export async function requireCourseAccess(payload: Payload, studentId: number | 
     }
     return
   }
-  if (!user.accessExpiresAt || new Date(user.accessExpiresAt).getTime() > Date.now()) return
+  const open = user.accessExpiresAt ? new Date(user.accessExpiresAt).getTime() > Date.now() : enrollments.docs[0]?.orderId !== MANUAL_ENROLLMENT_REF
+  if (open) return
   if (!extended) throw new AppError('ACCESS_EXPIRED', 'Your access to this course has expired')
 }
 

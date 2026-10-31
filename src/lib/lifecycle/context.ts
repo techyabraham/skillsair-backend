@@ -8,6 +8,7 @@ import { careerExplainer } from '../../content/career-explainers.js'
 import { offerFor } from './templates.js'
 import { isDeliverableEmail } from '../lead-messaging.js'
 import type { LogEntry, PersonSnapshot, Stage, WindowState } from './types.js'
+import { leadAllowsMarketing, userAllowsMarketing, type MarketingUser } from '../marketing-permission.js'
 
 /**
  * Loads what the planner needs from the database: a person's snapshot, their message log and
@@ -42,10 +43,6 @@ export interface LoadedPerson {
   snapshot: PersonSnapshot
   user: UserRow | null
   lead: LeadDoc | null
-}
-
-function leadAllowsMarketing(lead: LeadDoc | null): boolean {
-  return Boolean(lead?.marketingConsent) && !lead?.optedOutAt
 }
 
 export async function loadPerson(payload: Payload, ref: PersonRef): Promise<LoadedPerson | null> {
@@ -83,15 +80,16 @@ export async function loadPerson(payload: Payload, ref: PersonRef): Promise<Load
     }
   }
 
-  const [orders, subscriptions, enrollments, certificates] = await Promise.all([
+  const [orders, subscriptions, enrollments, certificates, extensions] = await Promise.all([
     payload.find({ collection: 'orders', where: { user: { equals: user.id } }, limit: 200, depth: 0, overrideAccess: true }),
     payload.find({ collection: 'subscriptions', where: { user: { equals: user.id } }, limit: 200, depth: 0, overrideAccess: true }),
     payload.find({ collection: 'enrollments', where: { student: { equals: user.id } }, limit: 200, depth: 0, overrideAccess: true }),
     payload.find({ collection: 'certificates', where: { student: { equals: user.id } }, limit: 200, depth: 0, overrideAccess: true }),
+    payload.find({ collection: 'access-extensions', where: { student: { equals: user.id } }, sort: '-newExpiryDate', limit: 200, depth: 0, overrideAccess: true }),
   ])
   const life = user.lifecycle ?? {}
   const email = isDeliverableEmail(user.email) ? user.email : null
-  const consented = user.marketingConsent === 'opted_in'
+  const allowed = userAllowsMarketing(user as MarketingUser, lead)
   return {
     user,
     lead,
@@ -99,9 +97,9 @@ export async function loadPerson(payload: Payload, ref: PersonRef): Promise<Load
       key: `user:${user.id}`, kind: 'user', id: user.id, createdAt: ms(user.createdAt) ?? Date.now(),
       email, phone: user.phone || lead?.phone || null,
       emailSuppressed: Boolean(life.emailSuppressed),
-      marketingEmailAllowed: consented && life.emailPrefs?.offers === true,
+      marketingEmailAllowed: allowed,
       // WhatsApp marketing consent lives on the lead (STOP/START there).
-      marketingWhatsAppAllowed: lead ? leadAllowsMarketing(lead) : consented,
+      marketingWhatsAppAllowed: allowed,
       learningReminders: life.emailPrefs?.learningReminders !== false,
       sunsetAt: ms(life.sunsetAt),
       lastEngagedAt: Math.max(ms(life.lastEngagedAt) ?? 0, ms((lead as unknown as { lastEngagedAt?: string | null } | null)?.lastEngagedAt) ?? 0) || null,
@@ -120,6 +118,7 @@ export async function loadPerson(payload: Payload, ref: PersonRef): Promise<Load
         completedAt: ms((doc as { completedAt?: string | null }).completedAt),
         cycle: Number((doc as { lifecycleCycle?: number | null }).lifecycleCycle ?? 0),
         subscriptionBased: Boolean(relationId(doc.subscription)) || subscriptions.docs.some((sub) => Number(relationId(sub.course)) === Number(relationId(doc.course))),
+        accessExtendedUntil: ms(extensions.docs.find((extension) => Number(relationId(extension.course)) === Number(relationId(doc.course)))?.newExpiryDate),
       })),
       certificates: certificates.docs.map((doc) => ({ courseId: Number(relationId(doc.course)), issuedAt: ms((doc as { issuedAt?: string | null }).issuedAt) ?? ms(doc.createdAt) ?? 0 })),
     },

@@ -1,6 +1,7 @@
 import type { Payload } from 'payload'
 import { relationId, type LeadDoc } from './leads.js'
 import type { EmailAudience, EmailCategory } from './email-tokens.js'
+import { leadAllowsMarketing, userAllowsMarketing } from './marketing-permission.js'
 
 /**
  * Email preferences for the preference centre and one-click unsubscribe (NDPA 2023 / GAID 2025).
@@ -57,7 +58,7 @@ export async function loadEmailPreferences(payload: Payload, audience: EmailAudi
     return {
       firstName: user.firstName ?? '',
       email: maskEmail(user.email),
-      offers: user.marketingConsent === 'opted_in' && prefs.offers === true,
+      offers: userAllowsMarketing(user, lead),
       learningReminders: prefs.learningReminders !== false,
       hasLearningReminders: true,
     }
@@ -66,7 +67,7 @@ export async function loadEmailPreferences(payload: Payload, audience: EmailAudi
   return {
     firstName: lead.firstName ?? '',
     email: maskEmail(lead.email),
-    offers: lead.marketingConsent === true && !lead.optedOutAt,
+    offers: leadAllowsMarketing(lead),
     learningReminders: false,
     hasLearningReminders: false,
   }
@@ -112,7 +113,14 @@ export async function saveEmailPreferences(
     if (offers && user.marketingConsent !== 'opted_in') {
       Object.assign(data, { marketingConsent: 'opted_in', marketingConsentAt: now, marketingConsentSource: source })
     }
-    if (change.unsubscribeAll) {
+    // Turning offers back on undoes an earlier opt-out on their application too.
+    if (change.offers === true) {
+      for (const id of await leadIdsForUser(payload, user.id)) {
+        await payload.update({ collection: 'leads', id, data: { optedOutAt: null }, depth: 0, overrideAccess: true })
+      }
+    }
+    // Offers off, by any route, is an opt-out: on-by-default means nothing else would record it.
+    if (!offers) {
       Object.assign(data, { marketingConsent: 'opted_out', marketingConsentAt: now, marketingConsentSource: source })
       await withdrawLeadConsent(payload, await leadIdsForUser(payload, user.id), now)
     }
@@ -121,8 +129,8 @@ export async function saveEmailPreferences(
   }
 
   if (!lead) return null
-  const offers = change.unsubscribeAll ? false : change.offers ?? (lead.marketingConsent === true && !lead.optedOutAt)
-  if (offers && !(lead.marketingConsent === true && !lead.optedOutAt)) {
+  const offers = change.unsubscribeAll ? false : change.offers ?? leadAllowsMarketing(lead)
+  if (offers && !leadAllowsMarketing(lead)) {
     await payload.update({
       collection: 'leads',
       id: lead.id,

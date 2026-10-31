@@ -220,3 +220,125 @@
   border: 1px solid var(--sa-line);
   border-radius: var(--style-radius-m);
 }
+
+/* Enrol learners (src/admin/views/enrol). */
+
+.sa-enrol {
+  display: grid;
+  gap: 20px;
+}
+
+.sa-enrol__section {
+  display: grid;
+  gap: 14px;
+}
+
+.sa-enrol__section h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.sa-enrol__section p {
+  margin: 0;
+}
+
+.sa-enrol__field {
+  display: grid;
+  flex: 1 1 260px;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.sa-enrol__field--short {
+  flex: 0 1 120px;
+}
+
+.sa-enrol__field input,
+.sa-enrol__field select,
+.sa-enrol__field textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--sa-line-strong);
+  border-radius: var(--style-radius-m);
+  background: var(--sa-surface-raised);
+  color: var(--sa-ink);
+  font: inherit;
+  font-weight: 400;
+}
+
+.sa-enrol__row,
+.sa-enrol__search,
+.sa-enrol__submit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.sa-enrol__submit {
+  align-items: center;
+}
+
+.sa-enrol__found-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.sa-enrol__found {
+  display: grid;
+  gap: 2px;
+  max-height: 280px;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.sa-enrol__found label,
+.sa-enrol__check {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 4px;
+  font-size: 13px;
+}
+
+.sa-enrol__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sa-enrol__chips button {
+  padding: 3px 10px;
+  border: 1px solid var(--sa-line-strong);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--sa-ink);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.sa-enrol__status {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sa-enrol__status--positive { background: var(--sa-positive-soft); color: var(--sa-positive-ink); }
+.sa-enrol__status--caution { background: var(--sa-caution-soft); color: var(--sa-caution-ink); }
+.sa-enrol__status--critical { background: var(--sa-critical-soft); color: var(--sa-critical-ink); }
+
+.sa-enrol__error {
+  color: var(--sa-critical-ink);
+}

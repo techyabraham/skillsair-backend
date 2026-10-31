@@ -15,6 +15,7 @@ import { TRACKS, getLifecycleStats, type StepStats } from '../../data/lifecycle'
 import { formatNumber, formatPercent } from '../../format'
 import { LIFECYCLE_TEMPLATES, SAMPLE } from '../../../emails/lifecycle/index'
 import { EmailPreviewButton } from './EmailPreviewButton'
+import { isDryRun, liveTracks } from '../../../lib/lifecycle/live'
 
 const HEALTH_LABEL = { positive: 'Healthy', caution: 'Watch', critical: 'Over the limit', neutral: 'No sends yet' } as const
 
@@ -89,8 +90,8 @@ function StepRow({ stats }: { stats: StepStats }) {
 
 export async function LifecycleView(props: AdminViewServerProps) {
   if (!isAdmin(props.initPageResult.req)) return <NotAvailable props={props} title="Lifecycle emails" />
-  const dryRun = process.env.LIFECYCLE_DRY_RUN !== 'false'
-  const live = (process.env.LIFECYCLE_LIVE_TRACKS ?? '').trim()
+  const dryRun = isDryRun()
+  const live = liveTracks().join(', ').toUpperCase()
   let data: Awaited<ReturnType<typeof getLifecycleStats>> | null = null
   try {
     data = await getLifecycleStats(props.initPageResult.req)

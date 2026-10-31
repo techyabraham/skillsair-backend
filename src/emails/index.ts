@@ -6,6 +6,7 @@ import { LIFECYCLE_TEMPLATES } from './lifecycle/index.js'
 import { accountWelcome } from './account-welcome.js'
 import { accountEnrolment } from './account-enrolment.js'
 import { accountAccessExtended } from './account-access-extended.js'
+import { accountAdminEnrolment } from './account-admin-enrolment.js'
 import { leadDailySummary } from './account-lead-summary.js'
 
 export { defineEmail, firstNameOf, type EmailTemplate, type RenderedEmail } from './define.js'
@@ -25,8 +26,9 @@ export const emailTemplates: Record<string, PreviewableTemplate> = {
   [accountWelcome.id]: accountWelcome,
   [accountEnrolment.id]: accountEnrolment,
   [accountAccessExtended.id]: accountAccessExtended,
+  [accountAdminEnrolment.id]: accountAdminEnrolment,
   [leadDailySummary.id]: leadDailySummary,
   ...LIFECYCLE_TEMPLATES,
 }
 
-export { emailVerification, passwordReset, accountWelcome, accountEnrolment, accountAccessExtended, leadDailySummary }
+export { emailVerification, passwordReset, accountWelcome, accountEnrolment, accountAccessExtended, accountAdminEnrolment, leadDailySummary }

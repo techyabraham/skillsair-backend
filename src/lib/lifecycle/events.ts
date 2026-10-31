@@ -227,11 +227,18 @@ async function sendForEvent(payload: Payload, event: LifecycleEvent): Promise<vo
   }
 }
 
+/** A plan can lapse while an admin's extension keeps the programme open: that isn't the end of access. */
+async function accessStillExtended(payload: Payload, userId: number, courseId: number): Promise<boolean> {
+  const live = await payload.count({ collection: 'access-extensions', where: { and: [{ student: { equals: userId } }, { course: { equals: courseId } }, { newExpiryDate: { greater_than: new Date().toISOString() } }] }, overrideAccess: true })
+  return live.totalDocs > 0
+}
+
 /** Never throws: a lifecycle side effect must not fail a payment webhook or a lesson save. */
 export async function onLifecycleEvent(payload: Payload, event: LifecycleEvent): Promise<void> {
   try {
     logger.info({ lifecycleEvent: event }, 'lifecycle_event')
     if (event.type === 'access_ended') {
+      if (event.courseId && (await accessStillExtended(payload, event.userId, event.courseId))) return
       const bumped = await bumpLapseCycle(payload, event.userId, event.courseId)
       logger.info({ userId: event.userId, courseId: event.courseId, enrolments: bumped }, 'lifecycle_lapse_recorded')
     }

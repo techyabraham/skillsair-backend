@@ -149,7 +149,7 @@ export const Users: CollectionConfig = {
                 { label: 'Opted in', value: 'opted_in' },
                 { label: 'Opted out', value: 'opted_out' },
               ],
-              admin: { description: 'Imported preference only. Unknown is not permission to send marketing email.' },
+              admin: { description: 'Everyone receives marketing until they opt out. Opted out stops it; Unknown does not.' },
               access: { create: isAdmin, update: isAdmin },
             },
             {

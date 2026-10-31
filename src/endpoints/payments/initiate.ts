@@ -9,7 +9,7 @@ import { initializeTransaction, verifyPlanConfiguration } from '../../lib/paysta
 import { generatePaystackReference } from '../../utils/generate-code.js'
 import { AppError } from '../../types/index.js'
 import { requirePrerequisites } from '../../lib/prerequisites.js'
-import { relationId } from '../../lib/course-access.js'
+import { ownsCourseOutright, relationId } from '../../lib/course-access.js'
 import { oneOffCoursePrice } from '../../lib/pricing.js'
 import { assertCanStartPlan, assertManualRenewalAllowed, assertNoCurrentSubscription, findRenewableManualSubscription } from '../../lib/subscription-guards.js'
 import { billingFor, PAYMENT_METHODS, paystackChannels, paystackFee, withPaystackFee } from '../../lib/billing.js'
@@ -88,7 +88,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
     courseId = course.id
     await requirePrerequisites(payload, user.id, course.id)
     const existingEnrollment = await payload.find({ collection: 'enrollments', where: { and: [{ student: { equals: user.id } }, { course: { equals: course.id } }] }, limit: 1, overrideAccess: true })
-    if (existingEnrollment.docs[0] && !existingEnrollment.docs[0].subscription) throw new AppError('ALREADY_EXISTS', 'You already own this course')
+    if (ownsCourseOutright(existingEnrollment.docs[0])) throw new AppError('ALREADY_EXISTS', 'You already own this course')
     description = course.title
   } else {
     if (!body.planId || !isValidPayloadId(body.planId)) {
@@ -107,7 +107,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
     if (!subscribedCourse || subscribedCourse.status !== 'published') throw new AppError('NOT_FOUND', 'Subscription course is unavailable')
     await requirePrerequisites(payload, user.id, subscribedCourseId)
     const existingEnrollment = await payload.find({ collection: 'enrollments', where: { and: [{ student: { equals: user.id } }, { course: { equals: subscribedCourseId } }] }, limit: 1, overrideAccess: true })
-    if (existingEnrollment.docs[0] && !existingEnrollment.docs[0].subscription) throw new AppError('ALREADY_EXISTS', 'You already own this course')
+    if (ownsCourseOutright(existingEnrollment.docs[0])) throw new AppError('ALREADY_EXISTS', 'You already own this course')
     const renewable = await findRenewableManualSubscription(payload, user.id, Number(subscribedCourseId))
     if (renewable) {
       assertManualRenewalAllowed(renewable, billing)

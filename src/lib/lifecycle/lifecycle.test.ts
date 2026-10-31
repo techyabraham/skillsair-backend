@@ -2,6 +2,8 @@ import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { computeStages, pickActiveTrack, TRACK_PRIORITY } from './stage.js'
 import { planPerson, idempotencyKey } from './plan.js'
+import { isDryRun, isLive, liveTracks } from './live.js'
+import { leadAllowsMarketing, userAllowsMarketing } from '../marketing-permission.js'
 import { DAY, HOUR, inQuietHours, isSundayInLagos } from './timing.js'
 import type { LogEntry, PersonSnapshot, Stage, WindowState } from './types.js'
 
@@ -257,4 +259,60 @@ test('integration: the full journey sends exactly the expected messages, in orde
   // Selling (A, R, C, G) never went out while a programme was being studied (I or D active).
   const sellingWhileLearning = marketing.filter((entry) => ['A', 'R', 'C', 'G'].includes(entry.track) && log.some((other) => other.track === 'I' && Math.abs(other.sentAt - entry.sentAt) < HOUR))
   assert.deepEqual(sellingWhileLearning.map((entry) => entry.stepId), [])
+})
+
+test('live settings: hand-typed values are forgiven, and anything but "false" stays dry-run', () => {
+  const before = { dry: process.env.LIFECYCLE_DRY_RUN, tracks: process.env.LIFECYCLE_LIVE_TRACKS }
+  const set = (dry: string | undefined, tracks: string | undefined) => {
+    if (dry === undefined) delete process.env.LIFECYCLE_DRY_RUN
+    else process.env.LIFECYCLE_DRY_RUN = dry
+    if (tracks === undefined) delete process.env.LIFECYCLE_LIVE_TRACKS
+    else process.env.LIFECYCLE_LIVE_TRACKS = tracks
+  }
+  try {
+    for (const dry of ['false', 'False', 'FALSE', ' false ', '"false"', "'false'"]) {
+      set(dry, 'T,D,B,A')
+      assert.equal(isDryRun(), false, `"${dry}" should turn dry-run off`)
+      assert.equal(isLive('T'), true)
+    }
+    for (const dry of [undefined, '', 'true', 'no', '0', 'flase']) {
+      set(dry, 'all')
+      assert.equal(isDryRun(), true, `"${dry}" should stay dry-run`)
+      assert.equal(isLive('T'), false)
+    }
+    for (const tracks of ['T,D,B,A', 'T,D.B.A', 't, d, b, a', '"T,D,B,A"', 'T D;B,A']) {
+      set('false', tracks)
+      assert.deepEqual(liveTracks(), ['t', 'd', 'b', 'a'], tracks)
+      for (const track of ['T', 'D', 'B', 'A']) assert.equal(isLive(track), true, `${track} in "${tracks}"`)
+      assert.equal(isLive('Apost'), false)
+      assert.equal(isLive('R'), false)
+    }
+    set('false', 'T,Apost')
+    assert.equal(isLive('Apost'), true)
+    set('false', 'all')
+    assert.equal(isLive('X'), true)
+    set('false', '')
+    assert.equal(isLive('T'), false)
+  } finally {
+    set(before.dry, before.tracks)
+  }
+})
+
+test('marketing is on by default, and an opt-out always wins', () => {
+  const OUT = '2026-10-20T10:00:00.000Z'
+  // Anyone who gave an email or number, ticked or not.
+  assert.equal(leadAllowsMarketing({}), true)
+  assert.equal(leadAllowsMarketing({ optedOutAt: null }), true)
+  assert.equal(userAllowsMarketing({}), true)
+  assert.equal(userAllowsMarketing({ marketingConsent: 'unknown', lifecycle: { emailPrefs: { offers: false } } }), true)
+  assert.equal(userAllowsMarketing({ marketingConsent: 'opted_in', lifecycle: { emailPrefs: { offers: true } } }), true)
+  // Unsubscribe, STOP or the preference centre.
+  assert.equal(leadAllowsMarketing({ optedOutAt: OUT }), false)
+  assert.equal(leadAllowsMarketing(null), false)
+  assert.equal(userAllowsMarketing({ marketingConsent: 'opted_out' }), false)
+  assert.equal(userAllowsMarketing({ marketingConsent: 'opted_out', lifecycle: { emailPrefs: { offers: true } } }), false)
+  assert.equal(userAllowsMarketing({ marketingConsent: 'opted_in', lifecycle: { emailPrefs: { offers: false } } }), false)
+  // A STOP on the application still counts after they create an account.
+  assert.equal(userAllowsMarketing({ marketingConsent: 'unknown' }, { optedOutAt: OUT }), false)
+  assert.equal(userAllowsMarketing({ marketingConsent: 'opted_in', lifecycle: { emailPrefs: { offers: true } } }, { optedOutAt: OUT }), false)
 })

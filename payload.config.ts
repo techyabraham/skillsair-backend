@@ -93,6 +93,7 @@ import { subscriptionWebhookEndpoint } from './src/endpoints/subscriptions/webho
 import { affiliateDashboardEndpoint } from './src/endpoints/affiliates/dashboard.js'
 import { trackAffiliateEndpoint } from './src/endpoints/affiliates/track.js'
 import { extendAccessEndpoint } from './src/endpoints/admin/extend-access.js'
+import { manualEnrolEndpoint } from './src/endpoints/admin/manual-enrol.js'
 import { graphqlGetEndpoint, graphqlPostEndpoint } from './src/endpoints/graphql/handler.js'
 import { updateProfileEndpoint } from './src/endpoints/profile/update.js'
 import { getPreferencesEndpoint, updatePreferencesEndpoint } from './src/endpoints/profile/preferences.js'
@@ -179,6 +180,11 @@ export default buildConfig(mountPrefixedEndpoints({
           Component: '/src/admin/views/question-bank/QuestionBankView#QuestionBankView',
           path: '/question-bank',
           meta: { title: 'Question bank' },
+        },
+        enrolLearners: {
+          Component: '/src/admin/views/enrol/EnrolView#EnrolView',
+          path: '/enrol',
+          meta: { title: 'Enrol learners' },
         },
         ambassadorApplications: {
           Component: '/src/admin/views/ambassadors/ApplicationsView#ApplicationsView',
@@ -319,6 +325,7 @@ export default buildConfig(mountPrefixedEndpoints({
     affiliateDashboardEndpoint,
     trackAffiliateEndpoint,
     extendAccessEndpoint,
+    manualEnrolEndpoint,
     graphqlGetEndpoint,
     graphqlPostEndpoint,
     updateProfileEndpoint,

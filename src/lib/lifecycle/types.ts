@@ -60,6 +60,8 @@ export interface SnapshotEnrollment {
   cycle: number
   /** On a monthly plan (only those get learning nudges and win-back emails). */
   subscriptionBased: boolean
+  /** When an admin's access extension for this programme ends (Studio enrolments have one). */
+  accessExtendedUntil?: number | null
 }
 
 export interface PersonSnapshot {

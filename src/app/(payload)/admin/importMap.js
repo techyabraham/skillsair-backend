@@ -98,6 +98,7 @@ import { StudioKitView as StudioKitView_e5c9b8b1a7c0c1f3d6823b8cf57710b6 } from 
 import { LifecycleView as LifecycleView_8389331d8dbad3bd35abf993e8aa0675 } from '../../../../src/admin/views/lifecycle/LifecycleView'
 import { EmailsView as EmailsView_c93131d6ab8977f2b30bf179f11197f2 } from '../../../../src/admin/views/emails/EmailsView'
 import { QuestionBankView as QuestionBankView_3e1490a096eea7f7e5c85fbeb6f35442 } from '../../../../src/admin/views/question-bank/QuestionBankView'
+import { EnrolView as EnrolView_4848e1893e2fa109da40b60bb566e63f } from '../../../../src/admin/views/enrol/EnrolView'
 import { ApplicationsView as ApplicationsView_7cdd44119e1383ec227a45191758a197 } from '../../../../src/admin/views/ambassadors/ApplicationsView'
 import { PayoutsView as PayoutsView_7948f0008d085fc19a89304976a9b3ed } from '../../../../src/admin/views/ambassadors/PayoutsView'
 import { DirectoryView as DirectoryView_96d301982a966116b3ba465ba9f1f758 } from '../../../../src/admin/views/ambassadors/DirectoryView'
@@ -206,6 +207,7 @@ export const importMap = {
   "/src/admin/views/lifecycle/LifecycleView#LifecycleView": LifecycleView_8389331d8dbad3bd35abf993e8aa0675,
   "/src/admin/views/emails/EmailsView#EmailsView": EmailsView_c93131d6ab8977f2b30bf179f11197f2,
   "/src/admin/views/question-bank/QuestionBankView#QuestionBankView": QuestionBankView_3e1490a096eea7f7e5c85fbeb6f35442,
+  "/src/admin/views/enrol/EnrolView#EnrolView": EnrolView_4848e1893e2fa109da40b60bb566e63f,
   "/src/admin/views/ambassadors/ApplicationsView#ApplicationsView": ApplicationsView_7cdd44119e1383ec227a45191758a197,
   "/src/admin/views/ambassadors/PayoutsView#PayoutsView": PayoutsView_7948f0008d085fc19a89304976a9b3ed,
   "/src/admin/views/ambassadors/DirectoryView#DirectoryView": DirectoryView_96d301982a966116b3ba465ba9f1f758,

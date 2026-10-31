@@ -3,7 +3,7 @@ import type { Payload } from 'payload'
 import { logger } from './logger.js'
 import { addDays } from '../utils/date-helpers.js'
 import { issueCertificate } from '../hooks/courses/afterComplete.js'
-import { relationId } from './course-access.js'
+import { MANUAL_ENROLLMENT_REF, relationId } from './course-access.js'
 import { withLock } from './locks.js'
 import { applyLeadEvent, findLeadForUser } from './leads.js'
 import { disableAtPaystack } from './billing.js'
@@ -84,7 +84,7 @@ async function fulfillLockedOrder(payload: Payload, orderId: number | string): P
     const course = await payload.findByID({ collection: 'courses', id: courseId, depth: 0, overrideAccess: true })
     const existing = await payload.find({ collection: 'enrollments', where: { and: [{ student: { equals: userId } }, { course: { equals: courseId } }] }, limit: 1, overrideAccess: true })
     if (!existing.totalDocs) await payload.create({ collection: 'enrollments', data: { student: userId, course: courseId, status: 'active', orderId: doc.reference }, overrideAccess: true })
-    else if (existing.docs[0]?.subscription) await payload.update({ collection: 'enrollments', id: existing.docs[0].id, data: { subscription: null, orderId: doc.reference }, overrideAccess: true })
+    else if (existing.docs[0]?.subscription || existing.docs[0]?.orderId === MANUAL_ENROLLMENT_REF) await payload.update({ collection: 'enrollments', id: existing.docs[0].id, data: { subscription: null, orderId: doc.reference }, overrideAccess: true })
   } else if (doc.type === 'subscription') {
     const planId = relationId(doc.plan)
     if (planId === undefined) throw new Error('Paid subscription order has no plan')
@@ -131,7 +131,7 @@ async function fulfillLockedOrder(payload: Payload, orderId: number | string): P
     const enrollments = await payload.find({ collection: 'enrollments', where: { and: [{ student: { equals: userId } }, { course: { equals: courseId } }] }, limit: 1, overrideAccess: true })
     const enrollment = enrollments.docs[0]
     if (!enrollment) await payload.create({ collection: 'enrollments', data: { student: userId, course: courseId, status: 'active', orderId: doc.reference, subscription: subscriptionId }, overrideAccess: true })
-    else if (enrollment.subscription) await payload.update({ collection: 'enrollments', id: enrollment.id, data: { subscription: subscriptionId }, overrideAccess: true })
+    else if (enrollment.subscription || enrollment.orderId === MANUAL_ENROLLMENT_REF) await payload.update({ collection: 'enrollments', id: enrollment.id, data: { subscription: subscriptionId, ...(enrollment.orderId === MANUAL_ENROLLMENT_REF ? { orderId: doc.reference } : {}) }, overrideAccess: true })
   } else if (doc.type === 'certificate') {
     const courseId = relationId(doc.course)
     if (courseId === undefined) throw new Error('Paid certificate order has no course')

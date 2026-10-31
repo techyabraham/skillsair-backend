@@ -83,7 +83,7 @@ export async function LeadProfile(props: Props) {
               ? `Opted out ${formatDay(lead.optedOutAt as string)}`
               : lead.marketingConsent
                 ? `Marketing: yes${consentAt ? `, ${formatDay(consentAt)}` : ''}, ${String(lead.source ?? 'apply').replace(/_/g, ' ')} form`
-                : 'Marketing: no'}
+                : 'Marketing: on by default'}
           </span>
         </div>
       </div>

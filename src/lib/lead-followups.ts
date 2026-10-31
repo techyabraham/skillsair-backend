@@ -22,6 +22,7 @@ import { idempotencyKey, type PlannedStep } from './lifecycle/plan.js'
 import { windowCycle } from './lifecycle/stage.js'
 import type { Stage } from './lifecycle/types.js'
 import { QUICK_REPLY_PAYLOADS } from '../content/whatsapp-replies.js'
+import { leadAllowsMarketing } from './marketing-permission.js'
 
 const FRONTEND_URL = process.env.FRONTEND_URL ?? 'https://skillsair.com'
 const HOUR = 60 * 60 * 1000
@@ -43,9 +44,9 @@ interface CourseLite {
   durationMonths?: number | null
 }
 
-/** Marketing needs explicit consent, no opt-out, and a lead still in the funnel. */
+/** Marketing needs no opt-out and a lead still in the funnel. */
 export function canMarket(lead: LeadDoc): boolean {
-  return Boolean(lead.marketingConsent) && !lead.optedOutAt && lead.status !== 'paid' && lead.status !== 'lost'
+  return leadAllowsMarketing(lead) && lead.status !== 'paid' && lead.status !== 'lost'
 }
 
 function marketingSentThisWindow(lead: Pick<LeadDoc, 'followUpsSent'>, windowKey: string): number {

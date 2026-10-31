@@ -117,6 +117,7 @@ export async function StudioNav(props: NavProps) {
               icon: <EntityIcon slug="queue" size={18} />,
               badge: counts?.queue ? { count: counts.queue, tone: 'accent' as const, label: `${counts.queue} waiting` } : undefined,
             },
+            { id: 'nav-enrol', href: `${ADMIN_ROUTE}/enrol`, label: 'Enrol learners', icon: <EntityIcon slug="enrollments" size={18} /> },
             { id: 'nav-lifecycle', href: `${ADMIN_ROUTE}/lifecycle`, label: 'Lifecycle emails', icon: <EntityIcon slug="lifecycle" size={18} /> },
           ]
         : []),

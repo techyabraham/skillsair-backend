@@ -7,7 +7,8 @@ import { maskEmail } from '../email-preferences.js'
 import { buildMessageData, type EventData, type LoadedPerson } from './context.js'
 import { LIFECYCLE_EMAILS, LIFECYCLE_WHATSAPP, offerFor, variantFor, variantLabel } from './templates.js'
 import type { PlannedStep } from './plan.js'
-import type { Kind, Track, WindowState } from './types.js'
+import { isLive } from './live.js'
+import type { Kind, WindowState } from './types.js'
 
 /**
  * The only code that sends lifecycle messages. The planner has already applied consent,
@@ -20,11 +21,7 @@ import type { Kind, Track, WindowState } from './types.js'
  */
 export type SendOutcome = 'sent' | 'skipped' | 'failed' | 'deferred'
 
-export function isLive(track: Track | string): boolean {
-  if (process.env.LIFECYCLE_DRY_RUN !== 'false') return false
-  const live = (process.env.LIFECYCLE_LIVE_TRACKS ?? '').split(',').map((item) => item.trim()).filter(Boolean)
-  return live.includes('all') || live.includes(track)
-}
+export { isLive }
 
 const MAX_SEND_ATTEMPTS = 3
 
@@ -68,7 +65,8 @@ export async function recordMessage(payload: Payload, record: MessageRecord): Pr
   const existing = await payload.find({ collection: 'messages', where: { idempotencyKey: { equals: record.idempotencyKey } }, limit: 1, depth: 0, overrideAccess: true })
   const row = existing.docs[0] as unknown as { id: number; skipReason?: string | null } | undefined
   if (row) {
-    if (row.skipReason === 'dry_run' && record.skipReason !== 'dry_run') {
+    // A rehearsal or an old consent skip gives way to what really happened, so the step isn't repeated.
+    if ((row.skipReason === 'dry_run' || row.skipReason === 'no_consent') && record.skipReason !== row.skipReason) {
       await payload.update({ collection: 'messages', id: row.id, data: data as never, depth: 0, overrideAccess: true })
     }
     return

@@ -2,6 +2,7 @@ import { Resend } from 'resend'
 import { logger } from './logger.js'
 import { emailVerification, passwordReset } from '../emails/index.js'
 import { accountAccessExtended } from '../emails/account-access-extended.js'
+import { accountAdminEnrolment, type AccountAdminEnrolmentData } from '../emails/account-admin-enrolment.js'
 import { accountEnrolment } from '../emails/account-enrolment.js'
 import { accountWelcome } from '../emails/account-welcome.js'
 import { leadDailySummary, type LeadSummaryInput } from '../emails/account-lead-summary.js'
@@ -95,6 +96,10 @@ export function enrollmentConfirmationEmail(firstName: string, courseName: strin
 
 export function accessExtendedEmail(firstName: string, newExpiryDate: string, daysAdded: number, reason: string): EmailContent {
   return content(accountAccessExtended.render({ firstName, newExpiryDate, daysAdded, reason }))
+}
+
+export function adminEnrolmentEmail(data: AccountAdminEnrolmentData): EmailContent {
+  return content(accountAdminEnrolment.render(data))
 }
 
 /** Internal daily summary for the team. Contains first names only, no contact details. */

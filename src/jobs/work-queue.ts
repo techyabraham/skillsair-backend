@@ -5,10 +5,14 @@ import { logger } from '../lib/logger.js'
 import { processQueue } from '../lib/work-queue.js'
 import { importCaptionsForCourse } from '../migrations/import-captions.js'
 import { sendPlanEmails, type PlanStep } from '../lib/guided-plan-emails.js'
+import { sendManualEnrolmentEmail, type ManualEnrolmentEmail } from '../lib/manual-enrolment.js'
 
 const cron = jobScheduler('work-queue')
 
-/** Every minute: slow tasks (caption re-imports from Studio, guided plan emails), never inside an API request. */
+/** A large Studio batch goes out at about 1.5 emails a second, inside the email provider's rate limit. */
+const EMAIL_SPACING_MS = 600
+
+/** Every minute: slow tasks (caption re-imports from Studio, guided plan emails, Studio enrolment emails), never inside an API request. */
 export function registerWorkQueueJob(config: Promise<SanitizedConfig> | SanitizedConfig): void {
   cron.schedule('* * * * *', async () => {
     const payload = await getPayload({ config })
@@ -24,6 +28,10 @@ export function registerWorkQueueJob(config: Promise<SanitizedConfig> | Sanitize
           enrollmentIds: (task.payload.enrollmentIds as number[] | undefined) ?? [],
           cycle: Number(task.payload.cycle),
         })
+      },
+      'manual-enrol-email': async (task) => {
+        await sendManualEnrolmentEmail(payload, task.payload as unknown as ManualEnrolmentEmail)
+        await new Promise((resolve) => setTimeout(resolve, EMAIL_SPACING_MS))
       },
     })
     if (processed) logger.info({ processed }, 'work_queue_processed')

@@ -6,6 +6,7 @@ import type { Payload, SanitizedConfig } from 'payload'
 import { logger } from '../lib/logger.js'
 import { currentWindowContext, scoreLead } from '../lib/lead-followups.js'
 import { runLifecycle, type LifecycleSummary } from '../lib/lifecycle/engine.js'
+import { isDryRun, liveTracks } from '../lib/lifecycle/live.js'
 import type { LeadDoc } from '../lib/leads.js'
 
 /**
@@ -36,6 +37,8 @@ export async function runLifecycleJob(payload: Payload, now = Date.now()): Promi
 }
 
 export function registerLifecycleJob(config: Promise<SanitizedConfig> | SanitizedConfig): void {
+  // What this process will really do: check this line in the API logs after changing the settings.
+  logger.info({ dryRun: isDryRun(), liveTracks: liveTracks() }, 'lifecycle_settings')
   cron.schedule('5 * * * *', async () => {
     try {
       await runLifecycleJob(await getPayload({ config }))

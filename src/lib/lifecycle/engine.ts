@@ -5,6 +5,7 @@ import { accessGraceDays } from '../billing.js'
 import { loadLog, loadPerson, loadWindow, type LoadedPerson, type PersonRef } from './context.js'
 import { planPerson, type PlannedAction } from './plan.js'
 import { executeStep, isLive, type SendOutcome } from './send.js'
+import { isDryRun } from './live.js'
 import { COMPLETION_LOOKBACK_MS } from './stage.js'
 import { DAY } from './timing.js'
 import type { LogEntry, WindowState } from './types.js'
@@ -63,9 +64,13 @@ export async function enumeratePeople(payload: Payload, now = Date.now()): Promi
   return [...refs.values()]
 }
 
-/** Dry-run rows stop a step repeating while its track is in dry-run; once live, they're ignored. */
+/**
+ * Dry-run rows stop a step repeating while its track is in dry-run; once live, they're ignored.
+ * no_consent rows never block a step: people are on the list by default now, and anyone who has
+ * opted out is stopped again by the planner.
+ */
 function effectiveLog(log: LogEntry[]): LogEntry[] {
-  return log.filter((entry) => !(entry.skipReason === 'dry_run' && isLive(entry.track)))
+  return log.filter((entry) => !(entry.skipReason === 'dry_run' && isLive(entry.track)) && entry.skipReason !== 'no_consent')
 }
 
 async function contentFlags(): Promise<{ freeExercise?: boolean; laptopDeadlineSoon?: boolean }> {
@@ -119,7 +124,7 @@ export async function processPerson(
 export async function runLifecycle(payload: Payload, now = Date.now(), refs?: PersonRef[]): Promise<LifecycleSummary> {
   const summary: LifecycleSummary = {
     people: 0, sent: 0, skipped: 0, failed: 0, deferred: 0, sunset: 0,
-    dryRun: process.env.LIFECYCLE_DRY_RUN !== 'false', byStep: {}, deferredReasons: {},
+    dryRun: isDryRun(), byStep: {}, deferredReasons: {},
   }
   const window = await loadWindow(payload, now)
   const people = refs ?? (await enumeratePeople(payload, now))

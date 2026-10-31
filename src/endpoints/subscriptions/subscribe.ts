@@ -8,7 +8,7 @@ import { isValidPayloadId } from '../../utils/sanitize.js'
 import { initializeTransaction, verifyPlanConfiguration } from '../../lib/paystack.js'
 import { generatePaystackReference } from '../../utils/generate-code.js'
 import { AppError } from '../../types/index.js'
-import { relationId } from '../../lib/course-access.js'
+import { ownsCourseOutright, relationId } from '../../lib/course-access.js'
 import { requirePrerequisites } from '../../lib/prerequisites.js'
 import { assertCanStartPlan, assertNoCurrentSubscription } from '../../lib/subscription-guards.js'
 import { paystackFee, withPaystackFee } from '../../lib/billing.js'
@@ -69,7 +69,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
 
   await assertNoCurrentSubscription(payload, user.id, Number(courseId))
   const existingEnrollment = await payload.find({ collection: 'enrollments', where: { and: [{ student: { equals: user.id } }, { course: { equals: courseId } }] }, limit: 1, overrideAccess: true })
-  if (existingEnrollment.docs[0] && !existingEnrollment.docs[0].subscription) throw new AppError('ALREADY_EXISTS', 'You already own this course')
+  if (ownsCourseOutright(existingEnrollment.docs[0])) throw new AppError('ALREADY_EXISTS', 'You already own this course')
 
   const userDoc = (await payload.findByID({
     collection: 'users',

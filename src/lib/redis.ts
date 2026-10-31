@@ -35,8 +35,8 @@ export async function isTokenBlacklisted(token: string): Promise<boolean> {
   return result !== null
 }
 
-export async function storePasswordResetToken(hashedToken: string, userId: number): Promise<void> {
-  await redis.set(`${PREFIX.passwordReset}${hashedToken}`, String(userId), 'EX', 3600)
+export async function storePasswordResetToken(hashedToken: string, userId: number, ttlSeconds = 3600): Promise<void> {
+  await redis.set(`${PREFIX.passwordReset}${hashedToken}`, String(userId), 'EX', ttlSeconds)
 }
 
 export async function getPasswordResetUserId(hashedToken: string): Promise<number | null> {

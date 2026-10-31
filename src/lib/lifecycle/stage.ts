@@ -43,6 +43,8 @@ function hasPaid(snapshot: PersonSnapshot): boolean {
 
 export function computeStages(snapshot: PersonSnapshot, window: WindowState, now: number, graceDays = 3): Stage[] {
   const stages: Stage[] = []
+  // An admin gave these programmes (or more time on them): no selling them, and no win-back while it runs.
+  const extendedCourses = new Set(snapshot.enrollments.filter((enrollment) => enrollment.status !== 'refunded' && (enrollment.accessExtendedUntil ?? 0) > now).map((enrollment) => enrollment.courseId))
 
   // D: a renewal failed and the learner is in (or just past) the grace period.
   for (const subscription of snapshot.subscriptions) {
@@ -61,7 +63,7 @@ export function computeStages(snapshot: PersonSnapshot, window: WindowState, now
   }
   for (const [courseId, order] of latestPendingByCourse) {
     const paidSince = snapshot.orders.some((other) => other.status === 'success' && other.courseId === courseId && other.createdAt >= order.createdAt)
-    if (paidSince || now - order.createdAt > CHECKOUT_STAGE_MS) continue
+    if (paidSince || extendedCourses.has(courseId) || now - order.createdAt > CHECKOUT_STAGE_MS) continue
     stages.push({ track: 'B', subjectId: `order:${order.id}`, enteredAt: order.createdAt, cycle: 0, courseId })
   }
 
@@ -88,6 +90,8 @@ export function computeStages(snapshot: PersonSnapshot, window: WindowState, now
       continue
     }
 
+    if (extendedCourses.has(enrollment.courseId)) continue
+
     // R: access has ended before they finished.
     const ended = snapshot.subscriptions
       .filter((subscription) => subscription.courseId === enrollment.courseId && subscription.status === 'expired')
@@ -109,7 +113,7 @@ export function computeStages(snapshot: PersonSnapshot, window: WindowState, now
 
   // A / Apost: applied, never paid.
   const lead = snapshot.lead
-  if (lead && !hasPaid(snapshot) && lead.status !== 'paid' && lead.status !== 'lost') {
+  if (lead && !hasPaid(snapshot) && !extendedCourses.size && lead.status !== 'paid' && lead.status !== 'lost') {
     if (window.open && window.closesAt !== null) {
       const reopened = window.opensAt !== null && lead.createdAt < window.opensAt
       stages.push({

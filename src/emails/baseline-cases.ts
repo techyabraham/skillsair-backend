@@ -10,7 +10,7 @@ import { accessExtendedEmail, enrollmentConfirmationEmail, leadDailySummaryEmail
  * from src/lib/resend.ts called with fixed arguments. Keys are "<id>|<scenario>|ab<n>".
  * Rendered with no published overrides, so the output is what learners receive today.
  */
-export const ACCOUNT_EMAIL_IDS = ['account-welcome', 'account-enrolment', 'account-access-extended', 'lead-daily-summary'] as const
+export const ACCOUNT_EMAIL_IDS = ['account-welcome', 'account-enrolment', 'account-access-extended', 'account-admin-enrolment', 'lead-daily-summary'] as const
 
 export const LEAD_SUMMARY_SAMPLE: LeadSummaryInput = {
   dateLabel: '24 October 2026',
