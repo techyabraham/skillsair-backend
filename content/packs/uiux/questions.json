@@ -3818,5 +3818,2652 @@
     "pools": [
       "exam"
     ]
+  },
+  {
+    "key": "uiux-l1101-01",
+    "lessonDriveFileId": "174rj7KHB5IDfsKtGSLlE6Vy5geDTmJxQ",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "This course teaches Figma after Adobe XD. What carries over most directly from XD to Figma?",
+    "options": [
+      "Nothing at all, the tools share no ideas",
+      "Only the keyboard shortcuts, which are identical",
+      "Artboard-style screens, components and prototyping ideas",
+      "Only photo retouching skills"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Both are interface design tools, so the core ideas transfer even where the buttons differ.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1102-01",
+    "lessonDriveFileId": "1i5jMNcpuuLp-mQyHLDIAwGuGcq84dbtG",
+    "chapterOrder": 11,
+    "type": "single",
+    "prompt": "Why do so many product teams use Figma?",
+    "options": [
+      "It only works offline on one computer",
+      "It replaces the need for developers",
+      "It is a video editing tool",
+      "Several people can design in the same file at the same time"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Figma is browser-based and multiplayer, which suits teams.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1203-01",
+    "lessonDriveFileId": "1UhCjyd4HuZE8QPaQdOtilmTXQhfgnkAc",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Good interface design starts with:",
+    "options": [
+      "Understanding who the users are and what they need",
+      "Choosing the brightest colours available",
+      "Adding as many features as possible",
+      "Copying the newest design trend"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Design serves people, so needs come first.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1204-01",
+    "lessonDriveFileId": "11ihu4230QveHN2R827VKy0kbMK0TAwC1",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Visual hierarchy in a design means:",
+    "options": [
+      "Every element looks exactly the same",
+      "Size, weight and colour show what matters most first",
+      "Layers are sorted alphabetically",
+      "Text is always placed at the bottom"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Hierarchy guides the eye in order of importance.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1204-02",
+    "lessonDriveFileId": "11ihu4230QveHN2R827VKy0kbMK0TAwC1",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "The design principle of proximity says that:",
+    "options": [
+      "All items must be spaced equally far apart",
+      "Buttons must touch the screen edge",
+      "Related items should sit close together",
+      "Images should never sit near text"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Grouping by distance tells users what belongs together.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1204-03",
+    "lessonDriveFileId": "11ihu4230QveHN2R827VKy0kbMK0TAwC1",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Why is white space (negative space) valuable?",
+    "options": [
+      "It is wasted space that should be filled",
+      "It slows the page down",
+      "It only matters in print",
+      "It gives content room and makes it easier to scan"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Space reduces clutter and improves focus.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1204-04",
+    "lessonDriveFileId": "11ihu4230QveHN2R827VKy0kbMK0TAwC1",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Contrast between text and its background mainly affects:",
+    "options": [
+      "How easily people can read it",
+      "The file size of the design",
+      "How many pages the file has",
+      "The export format"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Low contrast is hard to read, especially for low-vision users.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1204-05",
+    "lessonDriveFileId": "11ihu4230QveHN2R827VKy0kbMK0TAwC1",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Lining elements up along shared edges is the principle of:",
+    "options": [
+      "Rotation",
+      "Alignment",
+      "Saturation",
+      "Compression"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Alignment creates order and a tidy layout.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1204-06",
+    "lessonDriveFileId": "11ihu4230QveHN2R827VKy0kbMK0TAwC1",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Repeating the same button style throughout an app supports:",
+    "options": [
+      "Confusion, so users explore more",
+      "Faster file uploads",
+      "Consistency, so users learn the pattern once",
+      "Random variety on every screen"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Consistent patterns reduce what users must relearn.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1205-01",
+    "lessonDriveFileId": "1_ArnrtZ6JSUhZAbWwpZTtOl-aBZAtwBf",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "A persona is:",
+    "options": [
+      "The designer's own personal profile",
+      "A Figma plugin for avatars",
+      "A type of font",
+      "A realistic profile of a typical user, based on research"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Personas keep design decisions focused on real users.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1205-02",
+    "lessonDriveFileId": "1_ArnrtZ6JSUhZAbWwpZTtOl-aBZAtwBf",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Focusing on user needs means designing around:",
+    "options": [
+      "The goals and problems of the people using the product",
+      "The designer's favourite colours",
+      "Whatever the competitor launched last",
+      "The largest possible screen only"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "User-centred design solves real problems.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1205-03",
+    "lessonDriveFileId": "1_ArnrtZ6JSUhZAbWwpZTtOl-aBZAtwBf",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "A simple way to learn what users need is to:",
+    "options": [
+      "Guess based on personal taste",
+      "Talk to them and watch them use the product",
+      "Only read design blogs",
+      "Skip research to save time"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Interviews and observation reveal real needs.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1205-04",
+    "lessonDriveFileId": "1_ArnrtZ6JSUhZAbWwpZTtOl-aBZAtwBf",
+    "chapterOrder": 12,
+    "type": "true_false",
+    "prompt": "True or false: users always describe exactly what they need without any research.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "People often struggle to express needs, so observation and testing matter.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1206-01",
+    "lessonDriveFileId": "1-_2nTAhmxQOlTrNLOmSjGJZgLdzHPJk2",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Iteration in design means:",
+    "options": [
+      "Designing once and never changing it",
+      "Duplicating the same frame many times",
+      "Improving a design in repeated rounds of feedback and changes",
+      "Exporting every screen at 3x"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Each round gets the design closer to what users need.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1206-02",
+    "lessonDriveFileId": "1-_2nTAhmxQOlTrNLOmSjGJZgLdzHPJk2",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "After testing a first version and finding problems, a designer should:",
+    "options": [
+      "Ship it unchanged",
+      "Delete the whole project",
+      "Blame the users",
+      "Refine the design and test again"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Test, learn and refine is the iteration loop.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1206-03",
+    "lessonDriveFileId": "1-_2nTAhmxQOlTrNLOmSjGJZgLdzHPJk2",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "Why make quick low-detail versions early on?",
+    "options": [
+      "They are cheap to change while ideas are still forming",
+      "They look best in a portfolio",
+      "Developers can build them directly",
+      "They never need feedback"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Low-fidelity work invites fast change.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1308-01",
+    "lessonDriveFileId": "1hwdwbgYrbgJLQoKv_YgVkGkdmNuPs-Rg",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Figma runs:",
+    "options": [
+      "Only on a single offline Windows PC",
+      "In a web browser and in a desktop app",
+      "Only on Android phones",
+      "Only inside Photoshop"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Figma is cloud-based, with a desktop app as an option.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1308-02",
+    "lessonDriveFileId": "1hwdwbgYrbgJLQoKv_YgVkGkdmNuPs-Rg",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Where are Figma files saved by default?",
+    "options": [
+      "Only on a USB drive",
+      "On a printed sheet",
+      "In the cloud, so they sync automatically",
+      "Nowhere until you email them"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Cloud saving means no manual Save button is needed.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1308-03",
+    "lessonDriveFileId": "1hwdwbgYrbgJLQoKv_YgVkGkdmNuPs-Rg",
+    "chapterOrder": 13,
+    "type": "true_false",
+    "prompt": "True or false: Figma files update for everyone with access as changes are made.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Changes sync in real time to collaborators.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1309-01",
+    "lessonDriveFileId": "1MlavqUqXXo84-jHCJ28mVVOiXXnAHl4m",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "To start using Figma you first need to:",
+    "options": [
+      "Buy a special graphics card",
+      "Install Adobe XD",
+      "Write HTML code",
+      "Create a free Figma account"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "A free account gives access to the editor.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1309-02",
+    "lessonDriveFileId": "1MlavqUqXXo84-jHCJ28mVVOiXXnAHl4m",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Figma's free plan is a good starting point because it:",
+    "options": [
+      "Lets you learn the full editor without paying",
+      "Removes every design tool",
+      "Works only for one day",
+      "Blocks exporting entirely"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Beginners can practise on the free plan.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1310-01",
+    "lessonDriveFileId": "18mRMZWHYFX91f3h6BAFqHFw5rYnG7kgq",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "The Figma file browser (starter screen) is where you:",
+    "options": [
+      "Edit vector paths and anchor points",
+      "See recent files, drafts and projects, and start new ones",
+      "Apply drop shadows",
+      "Write CSS by hand"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "It is the home screen before opening a file.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1310-02",
+    "lessonDriveFileId": "18mRMZWHYFX91f3h6BAFqHFw5rYnG7kgq",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "Files you create before putting them in a team project usually sit in:",
+    "options": [
+      "Trash",
+      "Exports",
+      "Drafts",
+      "Plugins"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Drafts hold your personal files.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1311-01",
+    "lessonDriveFileId": "1f-GKiXYfbDCNb-vm0NMdepPM9GMh8Dzj",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "In the Figma editor, the left sidebar mainly shows:",
+    "options": [
+      "Only the export settings",
+      "Your browser history",
+      "The colour picker only",
+      "Pages, layers and assets"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Layers and pages live on the left.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1311-02",
+    "lessonDriveFileId": "1f-GKiXYfbDCNb-vm0NMdepPM9GMh8Dzj",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "The right sidebar in Figma shows:",
+    "options": [
+      "Design, Prototype and inspect properties for the selection",
+      "A list of every Figma user",
+      "A list of everyone who uses Figma worldwide",
+      "The plugin store only"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Properties change with what is selected.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1311-03",
+    "lessonDriveFileId": "1f-GKiXYfbDCNb-vm0NMdepPM9GMh8Dzj",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "The large open area in the middle of the Figma editor is called the:",
+    "options": [
+      "Timeline",
+      "Canvas",
+      "Console",
+      "Spreadsheet"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "You design on the infinite canvas.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1311-04",
+    "lessonDriveFileId": "1f-GKiXYfbDCNb-vm0NMdepPM9GMh8Dzj",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "A Figma file can hold several:",
+    "options": [
+      "Video timelines with keyframes",
+      "Databases",
+      "Pages, each with its own canvas",
+      "Audio tracks"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Pages help organise large files.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1312-01",
+    "lessonDriveFileId": "185M-nUu4gBiGhzCIn1NqRz6geUP0oINK",
+    "chapterOrder": 13,
+    "type": "single",
+    "prompt": "A downloaded .fig project file is opened in Figma by:",
+    "options": [
+      "Renaming it to .psd",
+      "Opening it in Notepad",
+      "Pasting it into a comment",
+      "Importing it into the file browser"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Import or drag the .fig file into Figma.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1313-01",
+    "lessonDriveFileId": "1jPlNf68Ba-tHk8j0o8__URHn57WzWk95",
+    "chapterOrder": 13,
+    "type": "true_false",
+    "prompt": "True or false: you can drag a .fig file onto the Figma file browser to import it.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Drag and drop is one way to import project files.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1414-01",
+    "lessonDriveFileId": "1LwPF8ztICBm0HfQZfalwYGOuAl0c0xBk",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Which shortcut temporarily lets you pan around the Figma canvas?",
+    "options": [
+      "Hold the Space bar and drag",
+      "Press Delete",
+      "Press Ctrl and P",
+      "Double-click any text"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Space-drag moves the view without moving objects.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1414-02",
+    "lessonDriveFileId": "1LwPF8ztICBm0HfQZfalwYGOuAl0c0xBk",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "In Figma, Shift + 1 is used to:",
+    "options": [
+      "Delete all layers",
+      "Zoom to fit everything on the canvas",
+      "Create a new page",
+      "Export the whole file as a PDF"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Shift+1 fits all content in view.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1414-03",
+    "lessonDriveFileId": "1LwPF8ztICBm0HfQZfalwYGOuAl0c0xBk",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "In Figma, Shift + 2 zooms to:",
+    "options": [
+      "The whole page",
+      "100% only",
+      "The current selection",
+      "The comments panel"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Shift+2 zooms to what you have selected.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1415-01",
+    "lessonDriveFileId": "1VEGBXUCzw-xbTHQqLzeHGyTrk6Oaf64V",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "The Move tool in Figma uses the shortcut:",
+    "options": [
+      "M",
+      "O",
+      "Z",
+      "V"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "V is the Move tool, as in many design apps.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1415-02",
+    "lessonDriveFileId": "1VEGBXUCzw-xbTHQqLzeHGyTrk6Oaf64V",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "What does Figma's Scale tool (K) do differently from a normal resize?",
+    "options": [
+      "It scales strokes, effects and text in proportion",
+      "It only changes the colour",
+      "It deletes the layer",
+      "It rotates the object 90 degrees"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Scale keeps everything in proportion, not just the box.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1416-01",
+    "lessonDriveFileId": "1ueH51hnUJ-gEzgspwMZJnSyqINzA8E88",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "What can a frame do that a group cannot?",
+    "options": [
+      "Be selected on the canvas",
+      "Have its own fill, clip content and use auto layout",
+      "Hold more than one layer",
+      "Be renamed in the layers panel"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Frames are containers with their own properties; groups just wrap layers.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1416-02",
+    "lessonDriveFileId": "1ueH51hnUJ-gEzgspwMZJnSyqINzA8E88",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "In Figma, the Frame tool shortcut is:",
+    "options": [
+      "G (or H)",
+      "Q (or W)",
+      "F (or A)",
+      "J (or U)"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "F or A draws a frame.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1416-03",
+    "lessonDriveFileId": "1ueH51hnUJ-gEzgspwMZJnSyqINzA8E88",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Constraints such as left, right or scale apply to layers inside a:",
+    "options": [
+      "Group with no frame",
+      "Comment",
+      "Plugin",
+      "Frame"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Constraints are set relative to the parent frame.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1416-04",
+    "lessonDriveFileId": "1ueH51hnUJ-gEzgspwMZJnSyqINzA8E88",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Ctrl/Cmd + G in Figma:",
+    "options": [
+      "Groups the selected layers",
+      "Opens Google Fonts",
+      "Exports a GIF",
+      "Adds a grid"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "G groups; Ctrl/Cmd+Alt+G frames the selection.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1417-01",
+    "lessonDriveFileId": "1ZOsFYz86rwPmjuVVViCHwor80AUg9KBF",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "The slice tool (S) in Figma is used to:",
+    "options": [
+      "Cut a shape into pieces permanently",
+      "Mark an exact area of the canvas to export",
+      "Split text into letters",
+      "Delete a page"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Slices define export regions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1418-01",
+    "lessonDriveFileId": "1dV89wRKMxjsjslHeQNl9oSjwQfaL1YA5",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Sections (Shift + S) in Figma help you:",
+    "options": [
+      "Add sound to prototypes",
+      "Turn designs into working code",
+      "Group frames on the canvas into labelled areas",
+      "Reduce file size to zero"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Sections organise the canvas, such as by flow or status.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1419-01",
+    "lessonDriveFileId": "10GHwIz33T7ttORNIya6dVEfMMIjwIlNa",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Which shortcut draws a rectangle in Figma?",
+    "options": [
+      "E",
+      "C",
+      "X",
+      "R"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "R is the Rectangle tool.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1419-02",
+    "lessonDriveFileId": "10GHwIz33T7ttORNIya6dVEfMMIjwIlNa",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "To give only the top two corners of a rectangle rounded corners, you:",
+    "options": [
+      "Use the independent corner radius setting",
+      "Draw an ellipse instead",
+      "Add a drop shadow",
+      "Apply a layer blur"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Each corner can have its own radius.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1419-03",
+    "lessonDriveFileId": "10GHwIz33T7ttORNIya6dVEfMMIjwIlNa",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Holding Shift while drawing a rectangle gives you:",
+    "options": [
+      "A circle",
+      "A perfect square",
+      "A triangle",
+      "A line"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Shift locks the proportions.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1420-01",
+    "lessonDriveFileId": "1H6TWkPP2kz_ZeG54r0-V6p8TlsslHS55",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "In Figma, L draws a line and Shift + L draws:",
+    "options": [
+      "A star",
+      "A frame",
+      "An arrow",
+      "A text box"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Shift+L is the Arrow tool.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1421-01",
+    "lessonDriveFileId": "15tqb3MPRgBTc_cuQIu9yxtZoJkEw7yHj",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "The Ellipse tool in Figma uses the shortcut:",
+    "options": [
+      "E",
+      "L",
+      "I",
+      "O"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "O draws ellipses and circles.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1421-02",
+    "lessonDriveFileId": "15tqb3MPRgBTc_cuQIu9yxtZoJkEw7yHj",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "Figma's ellipse arc settings make it easy to draw:",
+    "options": [
+      "Donut and pie chart shapes",
+      "Paragraph text",
+      "Data tables",
+      "Video timelines"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Sweep and ratio settings turn circles into arcs and rings.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1422-01",
+    "lessonDriveFileId": "1zWcPerJJvDzFK-hq-I1uDFg6PEABAEf9",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "A new polygon in Figma starts with how many sides by default?",
+    "options": [
+      "Five",
+      "Three",
+      "Eight",
+      "Twelve"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "The default polygon is a triangle; you can change the count.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1423-01",
+    "lessonDriveFileId": "1Kf1aDx4BLlwH5PEN_L2au5LwMbe5pXgp",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "With the Star tool you can adjust the number of points and the:",
+    "options": [
+      "Font size of any text inside it",
+      "Export format",
+      "Ratio, which controls how deep the points go",
+      "Page name"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Ratio changes how spiky the star is.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1525-01",
+    "lessonDriveFileId": "1mUTQhQjY3KCCjv_pGfByU-3DT1oijYat",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Clicking an image fill in Figma lets you change its mode to:",
+    "options": [
+      "Bold, Italic or Underline",
+      "Linear or Radial only",
+      "PNG or SVG",
+      "Fill, Fit, Crop or Tile"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Image fills have scaling modes.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1525-02",
+    "lessonDriveFileId": "1mUTQhQjY3KCCjv_pGfByU-3DT1oijYat",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Figma's image fill settings let you adjust:",
+    "options": [
+      "Exposure, contrast and saturation",
+      "Line height",
+      "Letter spacing",
+      "Auto layout padding"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Basic image adjustments are built in.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1526-01",
+    "lessonDriveFileId": "1m2u49KwKQuA_AqAFj89RdHJ0hU1jpB4r",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "The Multiply blend mode in Figma generally makes the result:",
+    "options": [
+      "Lighter",
+      "Darker",
+      "Fully transparent",
+      "Black and white"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Multiply darkens; Screen lightens.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1526-02",
+    "lessonDriveFileId": "1m2u49KwKQuA_AqAFj89RdHJ0hU1jpB4r",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "The Screen blend mode generally makes the result:",
+    "options": [
+      "Darker",
+      "Invisible",
+      "Lighter",
+      "Larger"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Screen is the opposite of Multiply.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1526-03",
+    "lessonDriveFileId": "1m2u49KwKQuA_AqAFj89RdHJ0hU1jpB4r",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Saving a colour as a style in Figma means:",
+    "options": [
+      "It can never be changed",
+      "It is deleted after export",
+      "It only works on text layers, never shapes",
+      "You can reuse it and update it everywhere at once"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Styles keep colours consistent.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1527-01",
+    "lessonDriveFileId": "1e8t9D0pknz_IwVsu3Askk-D6Lt7Ty1wd",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Which is NOT a gradient type in Figma?",
+    "options": [
+      "Spiral",
+      "Linear",
+      "Radial",
+      "Angular"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Figma offers linear, radial, angular and diamond.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1527-02",
+    "lessonDriveFileId": "1e8t9D0pknz_IwVsu3Askk-D6Lt7Ty1wd",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "A linear gradient blends colours:",
+    "options": [
+      "Outward from the centre in a circle",
+      "Along a straight line from one point to another",
+      "Around a centre point like a clock",
+      "Randomly across the shape"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Radial goes outward; angular goes around.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1528-01",
+    "lessonDriveFileId": "1lz3kuzw4q8N3YK2rRY0zgpBn1yNZgRwC",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "When you use a layer as a mask in Figma, the mask layer must be:",
+    "options": [
+      "Above the layers it clips",
+      "On a different page",
+      "Below the layers it should clip",
+      "Set to 0% opacity first"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "The bottom layer of the group becomes the mask.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1528-02",
+    "lessonDriveFileId": "1lz3kuzw4q8N3YK2rRY0zgpBn1yNZgRwC",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "A common use of a mask in Figma is to:",
+    "options": [
+      "Change the font",
+      "Add a comment",
+      "Export every layer at 2x",
+      "Show a photo only inside a circle shape"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Masks crop content to a shape.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1529-01",
+    "lessonDriveFileId": "1UbIashBJSKLpowQvr1D8plwMvN0ixhQc",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Boolean Subtract in Figma:",
+    "options": [
+      "Removes the top shape from the bottom shape",
+      "Joins all shapes together",
+      "Keeps only where shapes overlap",
+      "Duplicates the shapes"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Subtract cuts away using the top shape.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1529-02",
+    "lessonDriveFileId": "1UbIashBJSKLpowQvr1D8plwMvN0ixhQc",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Which boolean operation keeps only the area where shapes overlap?",
+    "options": [
+      "Union",
+      "Intersect",
+      "Subtract",
+      "Exclude"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Intersect leaves the shared area.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1529-03",
+    "lessonDriveFileId": "1UbIashBJSKLpowQvr1D8plwMvN0ixhQc",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Boolean Union in Figma:",
+    "options": [
+      "Cuts a hole in a shape",
+      "Keeps only the overlap",
+      "Combines shapes into one outline",
+      "Hides all shapes"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Union merges shapes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1530-01",
+    "lessonDriveFileId": "19mhXDGrGf_Dj6dgCH87ux1Z07FZcrQBi",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "The Pen tool shortcut in Figma is:",
+    "options": [
+      "N",
+      "B",
+      "Y",
+      "P"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "P is the Pen tool.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1530-02",
+    "lessonDriveFileId": "19mhXDGrGf_Dj6dgCH87ux1Z07FZcrQBi",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Figma's vector networks let a single point:",
+    "options": [
+      "Connect to more than two lines",
+      "Store a password",
+      "Play a sound on click",
+      "Hold an image"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Unlike classic paths, Figma points can branch.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1530-03",
+    "lessonDriveFileId": "19mhXDGrGf_Dj6dgCH87ux1Z07FZcrQBi",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Clicking and dragging while placing a pen point creates:",
+    "options": [
+      "A straight line only",
+      "A curved line with handles",
+      "A new page",
+      "A text layer"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Dragging pulls out Bézier handles.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1531-01",
+    "lessonDriveFileId": "13EJ44PdqrltYLySw4pkaXa4MsrwDbCYX",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "The Pencil tool (Shift + P) is best for:",
+    "options": [
+      "Exact geometric icons",
+      "Typing paragraphs",
+      "Freehand drawing and quick sketches",
+      "Setting up grids"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Pencil draws freeform strokes.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1532-01",
+    "lessonDriveFileId": "1X3PUYKWzuo1gwYYZhoB2z8F1TzvMvWun",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Figma's alignment buttons let you:",
+    "options": [
+      "Translate text into French",
+      "Compress images",
+      "Share the file",
+      "Line up selected layers by edges or centres"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Align left, centre, right, top, middle and bottom.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1532-02",
+    "lessonDriveFileId": "1X3PUYKWzuo1gwYYZhoB2z8F1TzvMvWun",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Tidy up in Figma is used to:",
+    "options": [
+      "Space selected items evenly in a neat grid",
+      "Delete hidden layers",
+      "Rename all layers",
+      "Clear the version history"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Tidy up distributes items evenly.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1532-03",
+    "lessonDriveFileId": "1X3PUYKWzuo1gwYYZhoB2z8F1TzvMvWun",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Holding Alt/Option while hovering over another layer shows:",
+    "options": [
+      "The total file size in megabytes",
+      "The distance between the selected layer and that layer",
+      "The layer's colour code",
+      "A list of comments"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "This is a quick way to measure spacing.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1533-01",
+    "lessonDriveFileId": "1vapqhH62KmixQlQKJB45XaAL5kcDPggL",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Line height in Figma's text settings controls:",
+    "options": [
+      "The width of each letter",
+      "The colour of the text",
+      "The vertical space between lines of text",
+      "The number of pages"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Line height affects readability.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1533-02",
+    "lessonDriveFileId": "1vapqhH62KmixQlQKJB45XaAL5kcDPggL",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Letter spacing adjusts:",
+    "options": [
+      "The gap between paragraphs",
+      "The size of the frame",
+      "The corner radius",
+      "The horizontal space between characters"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Tight or loose tracking changes the feel of text.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1533-03",
+    "lessonDriveFileId": "1vapqhH62KmixQlQKJB45XaAL5kcDPggL",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "A text box set to Auto width will:",
+    "options": [
+      "Grow wider as you type on one line",
+      "Wrap at a fixed width",
+      "Shrink to zero",
+      "Turn into a shape"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Auto height wraps at a fixed width; auto width keeps growing sideways.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1534-01",
+    "lessonDriveFileId": "1Z-lWCVWTTdeSDxqZeATVToNTwrZxl1uw",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Figma lets you place a stroke inside, centre or:",
+    "options": [
+      "Behind the canvas",
+      "Outside the shape's edge",
+      "On another page",
+      "Inside the text only"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Stroke position changes the shape's visual size.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1534-02",
+    "lessonDriveFileId": "1Z-lWCVWTTdeSDxqZeATVToNTwrZxl1uw",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "To make a dashed border in Figma, you change the stroke's:",
+    "options": [
+      "Blend mode to Multiply",
+      "Fill to a gradient",
+      "Style to dashed in the stroke settings",
+      "Font to bold"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Stroke settings include dash and gap.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1535-01",
+    "lessonDriveFileId": "1Dza_ERZs_1IG-bO-qYbd4p1mBeCHn3zj",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "A subtle drop shadow on a card mainly helps to:",
+    "options": [
+      "Make the text larger",
+      "Reduce the file size",
+      "Change the font on the card",
+      "Make it look raised above the background"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Shadows suggest depth and elevation.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1535-02",
+    "lessonDriveFileId": "1Dza_ERZs_1IG-bO-qYbd4p1mBeCHn3zj",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "In a drop shadow, the blur value controls:",
+    "options": [
+      "How soft the shadow's edge is",
+      "The shadow's colour name",
+      "How many shadows exist",
+      "The layer name"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "More blur means a softer shadow.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1536-01",
+    "lessonDriveFileId": "1tlCvaUv0XMjqlP-fC1nnC8HzT4W9NrY0",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "An inner shadow makes an element look:",
+    "options": [
+      "Floating high above",
+      "Pressed in or cut into the surface",
+      "Fully transparent",
+      "Rotated"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Inner shadows sit inside the shape.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1537-01",
+    "lessonDriveFileId": "1fxhj9XAjUv79pPsBU_cFLpZKSe7flEaQ",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Layer blur in Figma blurs:",
+    "options": [
+      "Only what is behind the layer",
+      "Only the stroke",
+      "The layer itself",
+      "Nothing until export"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Layer blur softens the layer's own content.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1538-01",
+    "lessonDriveFileId": "1T26zpTY6j75jxZPf9KQbbKEZBfvy9uTX",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "For background blur to show in Figma, the layer's fill must be:",
+    "options": [
+      "Fully solid at 100%",
+      "A gradient only",
+      "Removed entirely",
+      "Partly transparent"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "You see the blur through a semi-transparent fill, like frosted glass.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1539-01",
+    "lessonDriveFileId": "11a2fZlALFIGThiYLEpNDJhosFnw0kgj7",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "Copy properties (Ctrl/Cmd + Alt + C) lets you:",
+    "options": [
+      "Copy a layer's styling and paste it onto another",
+      "Copy the whole file",
+      "Copy a share link",
+      "Copy the text only, without any styling"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Paste properties with Ctrl/Cmd+Alt+V.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1641-01",
+    "lessonDriveFileId": "1QBhCuc203vcP2iecj5zgtABpiQF5ZaIa",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Auto layout in Figma is mainly used to:",
+    "options": [
+      "Pick colours at random",
+      "Let frames resize and space their contents automatically",
+      "Write code from scratch",
+      "Blur the background behind a frame"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Auto layout behaves like flexible boxes.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1641-02",
+    "lessonDriveFileId": "1QBhCuc203vcP2iecj5zgtABpiQF5ZaIa",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "The shortcut to add auto layout to a selection is:",
+    "options": [
+      "Shift + L",
+      "Ctrl + B",
+      "Shift + A",
+      "Alt + Z"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Shift+A wraps the selection in an auto layout frame.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1641-03",
+    "lessonDriveFileId": "1QBhCuc203vcP2iecj5zgtABpiQF5ZaIa",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "In auto layout, Hug contents means the frame:",
+    "options": [
+      "Stays at one fixed size",
+      "Fills the whole screen",
+      "Hides its contents",
+      "Shrinks or grows to fit what is inside it"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Hug follows the content; Fill follows the parent.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1641-04",
+    "lessonDriveFileId": "1QBhCuc203vcP2iecj5zgtABpiQF5ZaIa",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "An auto layout button grows when its label gets longer because:",
+    "options": [
+      "The frame is set to hug its text contents",
+      "The text has a drop shadow",
+      "The button is masked",
+      "The font is bold"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "This is why buttons are often built with auto layout.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1641-05",
+    "lessonDriveFileId": "1QBhCuc203vcP2iecj5zgtABpiQF5ZaIa",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Auto layout settings include direction, spacing between items and:",
+    "options": [
+      "Blend mode",
+      "Padding",
+      "Export scale",
+      "Star ratio"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Padding is the space inside the frame's edges.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1642-01",
+    "lessonDriveFileId": "1XFRGrUouOiq4LGCw3UeFNViNtHSdiaZP",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "A layout grid with columns helps you:",
+    "options": [
+      "Animate screens",
+      "Write comments for teammates",
+      "Place content consistently across a screen",
+      "Compress images"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Column grids give structure and alignment.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1642-02",
+    "lessonDriveFileId": "1XFRGrUouOiq4LGCw3UeFNViNtHSdiaZP",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "In a column layout grid, the gutter is:",
+    "options": [
+      "The outer frame border",
+      "The total number of pages",
+      "A type of shadow",
+      "The space between columns"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Margins are on the outside; gutters are between columns.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1643-01",
+    "lessonDriveFileId": "1fIc5nTY9FPObJ1aJkhQljtC9fSYtlSmp",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Turning a design into a component in Figma uses:",
+    "options": [
+      "Ctrl/Cmd + Alt + K",
+      "Ctrl/Cmd + Alt + M",
+      "Shift + R",
+      "Ctrl/Cmd + E"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "This creates a main component.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1643-02",
+    "lessonDriveFileId": "1fIc5nTY9FPObJ1aJkhQljtC9fSYtlSmp",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "When you edit a main component, its instances:",
+    "options": [
+      "Are deleted",
+      "Update to match the change",
+      "Stay exactly as they were",
+      "Turn into images"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "This is the main benefit of components.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1643-03",
+    "lessonDriveFileId": "1fIc5nTY9FPObJ1aJkhQljtC9fSYtlSmp",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Changing the text on one instance without changing the main component is called:",
+    "options": [
+      "A boolean",
+      "A mask",
+      "An override",
+      "A slice"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Instances can override content while keeping the link.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1643-04",
+    "lessonDriveFileId": "1fIc5nTY9FPObJ1aJkhQljtC9fSYtlSmp",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Variants in Figma let you:",
+    "options": [
+      "Translate a design",
+      "Measure distances",
+      "Record a video walkthrough of the file",
+      "Group related versions of a component, such as button states"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Variants hold states like default, hover and disabled.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1644-01",
+    "lessonDriveFileId": "1D7epf-Vst8C1vVhA08GsqsFPnI4OY2IA",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "Responsive design means a layout:",
+    "options": [
+      "Adapts to different screen sizes",
+      "Only works on one phone",
+      "Looks the same size everywhere",
+      "Has no images"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Layouts must work on phones, tablets and desktops.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1644-02",
+    "lessonDriveFileId": "1D7epf-Vst8C1vVhA08GsqsFPnI4OY2IA",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "In Figma, which settings help a layout adapt when a frame is resized?",
+    "options": [
+      "Blend modes and gradients",
+      "Constraints, auto layout and Fill container",
+      "Comments and plugins",
+      "Slices and exports"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "These control how layers react to resizing.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1746-01",
+    "lessonDriveFileId": "1UaOCVoys0tG-Yh3lql8DnJOR7qDPlGUA",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Seeing teammates' named cursors in a Figma file is known as:",
+    "options": [
+      "Single-user mode",
+      "Offline sync",
+      "Multiplayer editing",
+      "Batch export"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Several people can work in one file at once.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1746-02",
+    "lessonDriveFileId": "1UaOCVoys0tG-Yh3lql8DnJOR7qDPlGUA",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Pressing C in Figma lets you:",
+    "options": [
+      "Copy the file",
+      "Change the colour",
+      "Create a component",
+      "Add a comment to the canvas"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Comments keep feedback in context.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1746-03",
+    "lessonDriveFileId": "1UaOCVoys0tG-Yh3lql8DnJOR7qDPlGUA",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Clicking a collaborator's avatar at the top of the file lets you:",
+    "options": [
+      "Follow their view as they work",
+      "Delete their account",
+      "Remove their edits",
+      "Change their password"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "This is called observation or spotlight.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1746-04",
+    "lessonDriveFileId": "1UaOCVoys0tG-Yh3lql8DnJOR7qDPlGUA",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Figma's version history is useful because you can:",
+    "options": [
+      "Make the file private forever",
+      "Restore an earlier state of the file",
+      "Remove all comments",
+      "Increase the font size"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Versions are saved automatically, and you can name them.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1747-01",
+    "lessonDriveFileId": "1u3orwm_iLsNE5ee9y5joCOl6c-jGNRBc",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Dev Mode in Figma is mainly for:",
+    "options": [
+      "Recording voice notes",
+      "Editing photos and retouching skin",
+      "Developers inspecting sizes, spacing and code values",
+      "Designing logos"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "It surfaces measurements and CSS for handoff.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1747-02",
+    "lessonDriveFileId": "1u3orwm_iLsNE5ee9y5joCOl6c-jGNRBc",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "In inspect or Dev Mode, a developer can copy:",
+    "options": [
+      "The designer's password",
+      "Another team's files",
+      "Unpublished plugins",
+      "Code snippets such as CSS for a layer"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Code values speed up building.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1748-01",
+    "lessonDriveFileId": "19kQEPWGifybnhf2iiceMDaFP2mO5bz3F",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "When sharing a Figma file, you can give people access to:",
+    "options": [
+      "View only or edit",
+      "Delete your account",
+      "Change your billing",
+      "Read your email"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Permissions control what others can do.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1748-02",
+    "lessonDriveFileId": "19kQEPWGifybnhf2iiceMDaFP2mO5bz3F",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Why share a view-only link with a client?",
+    "options": [
+      "They can edit everything freely",
+      "They can see and comment without changing the design",
+      "It deletes the file afterwards",
+      "It hides all comments"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "View access protects the work while inviting feedback.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1749-01",
+    "lessonDriveFileId": "1tw43BTWG9HizSaOtptaV9iKih9Qz0dkZ",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Which formats can Figma export?",
+    "options": [
+      "MP4, MP3 and WAV",
+      "DOCX and XLSX only",
+      "PNG, JPG, SVG and PDF",
+      "EXE and ZIP only"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Export settings are in the right sidebar.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1749-02",
+    "lessonDriveFileId": "1tw43BTWG9HizSaOtptaV9iKih9Qz0dkZ",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Exporting an icon at 2x or 3x is done so it:",
+    "options": [
+      "Has a smaller file than 1x",
+      "Changes colour",
+      "Turns into text",
+      "Stays sharp on high-density screens"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Retina screens need larger pixel versions.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1749-03",
+    "lessonDriveFileId": "1tw43BTWG9HizSaOtptaV9iKih9Qz0dkZ",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "For simple icons and logos that must scale without blur, the best export is:",
+    "options": [
+      "SVG",
+      "JPG",
+      "GIF",
+      "BMP"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "SVG is a vector format.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1750-01",
+    "lessonDriveFileId": "1SK6uNLseVSJ1Q1ZxapnoTwVPzON-XFWO",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Figma plugins are used to:",
+    "options": [
+      "Pay for the file",
+      "Add extra features, such as stock photos or placeholder text",
+      "Replace the canvas",
+      "Turn off automatic saving for the file"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Plugins extend what Figma can do.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1750-02",
+    "lessonDriveFileId": "1SK6uNLseVSJ1Q1ZxapnoTwVPzON-XFWO",
+    "chapterOrder": 17,
+    "type": "true_false",
+    "prompt": "True or false: you can run a plugin without leaving the Figma file.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Plugins run inside the editor.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1751-01",
+    "lessonDriveFileId": "1RrghtPR3ZGfpY3uzjOzAPFaF9Gya0fk2",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "The Figma Community is a place to:",
+    "options": [
+      "Pay your Figma bill",
+      "Store passwords for your team accounts",
+      "Find shared files, plugins and UI kits made by others",
+      "Write server code"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Community resources can be duplicated into your drafts.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1751-02",
+    "lessonDriveFileId": "1RrghtPR3ZGfpY3uzjOzAPFaF9Gya0fk2",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Using a file from the Figma Community usually starts with:",
+    "options": [
+      "Emailing the author for a code",
+      "Printing it out",
+      "Exporting it as MP4",
+      "Duplicating it into your own drafts"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Duplicating gives you your own editable copy.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1752-01",
+    "lessonDriveFileId": "1CIEvc8dCrJRCo0vWIaUx2kwR7d8eWz3A",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "Publishing a team library lets your team:",
+    "options": [
+      "Reuse the same components and styles across files",
+      "Edit any file on the internet",
+      "Remove version history",
+      "Turn designs into video"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Libraries keep design systems consistent.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1752-02",
+    "lessonDriveFileId": "1CIEvc8dCrJRCo0vWIaUx2kwR7d8eWz3A",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "When a library component is updated and published, files using it:",
+    "options": [
+      "Change without any record",
+      "Get a notice to review and accept the update",
+      "Lose the component",
+      "Are deleted"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Teams choose when to pull updates in.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1854-01",
+    "lessonDriveFileId": "13kcBbmQytzCE8NIqXRIoRO2IcmPOfdY0",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Before designing the final project screens, a good first step is to:",
+    "options": [
+      "Pick random colours and start",
+      "Export empty frames",
+      "Understand the brief and plan the sections",
+      "Install every plugin"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Planning keeps the project focused.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1855-01",
+    "lessonDriveFileId": "1XGF7VN8wkPdpBjfv5Hp0mXpeO8qK09Ty",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "The first screen area of a landing page, seen without scrolling, is usually called the:",
+    "options": [
+      "Footer",
+      "Sidebar",
+      "Gutter",
+      "Hero section"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "The hero carries the main message and call to action.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1855-02",
+    "lessonDriveFileId": "1XGF7VN8wkPdpBjfv5Hp0mXpeO8qK09Ty",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "A landing page's main call-to-action button should be:",
+    "options": [
+      "Easy to spot and clearly worded",
+      "Hidden in the footer",
+      "Written in tiny grey text",
+      "The same colour as the background"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "A clear CTA drives the action you want.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1855-03",
+    "lessonDriveFileId": "1XGF7VN8wkPdpBjfv5Hp0mXpeO8qK09Ty",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Using a column layout grid while building the landing page helps:",
+    "options": [
+      "Speed up the internet",
+      "Keep sections aligned and evenly spaced",
+      "Add animation",
+      "Reduce colour contrast"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Grids bring order to long pages.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1856-01",
+    "lessonDriveFileId": "18Q3-LJKrf3oV4DSGLAvt1YC-f2hykL6d",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Reusing components for repeated cards on the landing page means:",
+    "options": [
+      "Every card must be redrawn",
+      "The page cannot be exported",
+      "A change to one card style updates them all",
+      "The text becomes locked"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Components save time and stay consistent.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1856-02",
+    "lessonDriveFileId": "18Q3-LJKrf3oV4DSGLAvt1YC-f2hykL6d",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Why keep consistent spacing values across landing page sections?",
+    "options": [
+      "It hides mistakes in the code",
+      "It doubles the page speed",
+      "It is required to save the file",
+      "The page feels tidy and professional"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Rhythm in spacing improves quality.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1857-01",
+    "lessonDriveFileId": "15-l0wkELGkf0hl4wrccKk1nDLdo2sfyb",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Turning a desktop design into a mobile design usually means:",
+    "options": [
+      "Stacking content into one column with larger tap targets",
+      "Shrinking everything to tiny text",
+      "Removing all images and text",
+      "Keeping the exact desktop layout"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Mobile layouts stack and prioritise.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1857-02",
+    "lessonDriveFileId": "15-l0wkELGkf0hl4wrccKk1nDLdo2sfyb",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Tap targets on mobile should be:",
+    "options": [
+      "As small as possible to save room",
+      "Big enough to press easily with a finger",
+      "Placed only in corners",
+      "Hidden until scrolled"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Small targets cause mis-taps.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1857-03",
+    "lessonDriveFileId": "15-l0wkELGkf0hl4wrccKk1nDLdo2sfyb",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Which frame preset suits a mobile design in Figma?",
+    "options": [
+      "An A4 paper page for printing",
+      "A wide desktop frame at 1440",
+      "A phone frame such as iPhone or Android",
+      "A presentation slide frame"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Start with the target device size.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1858-01",
+    "lessonDriveFileId": "1T1fafDDU1uWs_iGIzIHRDqmIHzQnig-T",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Design handoff is the step where:",
+    "options": [
+      "The design file is deleted for good",
+      "Users pay for the product",
+      "Fonts are uninstalled",
+      "Developers get everything they need to build the design"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Handoff covers specs, assets and behaviour.",
+    "pools": [
+      "chapter",
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1858-02",
+    "lessonDriveFileId": "1T1fafDDU1uWs_iGIzIHRDqmIHzQnig-T",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "A good handoff includes:",
+    "options": [
+      "Named layers, exported assets and clear specs",
+      "Unnamed layers and no notes",
+      "Only a screenshot",
+      "A password-protected PDF only"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Organised files make building easier.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1858-03",
+    "lessonDriveFileId": "1T1fafDDU1uWs_iGIzIHRDqmIHzQnig-T",
+    "chapterOrder": 18,
+    "type": "single",
+    "prompt": "Why name layers clearly before handoff?",
+    "options": [
+      "It makes the file smaller",
+      "Developers can find and understand each element",
+      "It changes the colours automatically",
+      "It is needed to open Figma"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Messy layer names slow developers down.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1853-01",
+    "lessonDriveFileId": "1B8uwNK-ZhU63g9tlgTixgkWYPAslfViL",
+    "chapterOrder": 18,
+    "type": "true_false",
+    "prompt": "True or false: the final assignment combines skills from the earlier Figma chapters.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "The project brings tools, layout and handoff together.",
+    "pools": [
+      "chapter"
+    ]
+  },
+  {
+    "key": "uiux-l1959-01",
+    "lessonDriveFileId": "1NBJp7BTa7qqY5quNEc-AfNVVFqUGPMGt",
+    "chapterOrder": 19,
+    "type": "single",
+    "prompt": "In Figma prototyping, the line you drag from one frame to another sets up:",
+    "options": [
+      "A mask between two layers",
+      "A layout grid across the frame",
+      "A connection that defines what happens on interaction",
+      "A new page in the file"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Connections link a trigger to an action.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1959-02",
+    "lessonDriveFileId": "1NBJp7BTa7qqY5quNEc-AfNVVFqUGPMGt",
+    "chapterOrder": 19,
+    "type": "single",
+    "prompt": "Which is a Figma prototype trigger?",
+    "options": [
+      "Multiply",
+      "Union",
+      "Hug contents",
+      "On click"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Triggers include On click, While hovering and After delay.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1959-03",
+    "lessonDriveFileId": "1NBJp7BTa7qqY5quNEc-AfNVVFqUGPMGt",
+    "chapterOrder": 19,
+    "type": "single",
+    "prompt": "Smart animate in Figma animates:",
+    "options": [
+      "Matching layers between two frames",
+      "Only text colour",
+      "Exported PNG files",
+      "Comments on the canvas"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Layers with the same name move smoothly between frames.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1959-04",
+    "lessonDriveFileId": "1NBJp7BTa7qqY5quNEc-AfNVVFqUGPMGt",
+    "chapterOrder": 19,
+    "type": "single",
+    "prompt": "To show a pop-up on top of the current screen in a Figma prototype, use:",
+    "options": [
+      "Navigate to",
+      "Open overlay",
+      "Scroll to",
+      "Subtract"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "Overlays appear above the current frame.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l2068-01",
+    "lessonDriveFileId": "1e1fR4l-EMzlKZQygxAKwz2qQgSjxxwSX",
+    "chapterOrder": 20,
+    "type": "single",
+    "prompt": "After finishing the Figma chapters, the best way to grow your skills is to:",
+    "options": [
+      "Stop practising once you finish",
+      "Only watch more videos",
+      "Keep designing real projects and build a portfolio",
+      "Delete your practice files"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Practice and a portfolio turn skills into work.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1204-07",
+    "lessonDriveFileId": "11ihu4230QveHN2R827VKy0kbMK0TAwC1",
+    "chapterOrder": 12,
+    "type": "single",
+    "prompt": "In Figma, which design principle is about making the most important element stand out?",
+    "options": [
+      "Proximity",
+      "Repetition",
+      "Tidy up",
+      "Visual hierarchy"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Hierarchy directs attention.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1416-05",
+    "lessonDriveFileId": "1ueH51hnUJ-gEzgspwMZJnSyqINzA8E88",
+    "chapterOrder": 14,
+    "type": "single",
+    "prompt": "In Figma, which container clips its contents and can use auto layout?",
+    "options": [
+      "A frame",
+      "A group",
+      "A slice",
+      "A comment"
+    ],
+    "correct": [
+      0
+    ],
+    "explanation": "Frames clip content; groups do not.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1530-04",
+    "lessonDriveFileId": "19mhXDGrGf_Dj6dgCH87ux1Z07FZcrQBi",
+    "chapterOrder": 15,
+    "type": "single",
+    "prompt": "In Figma, which tool creates precise custom vector shapes point by point?",
+    "options": [
+      "The Pencil tool",
+      "The Pen tool",
+      "The Scale tool",
+      "The Hand tool"
+    ],
+    "correct": [
+      1
+    ],
+    "explanation": "The Pen places points with handles.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1643-05",
+    "lessonDriveFileId": "1fIc5nTY9FPObJ1aJkhQljtC9fSYtlSmp",
+    "chapterOrder": 16,
+    "type": "single",
+    "prompt": "In Figma, the copies of a main component placed in a design are called:",
+    "options": [
+      "Variants",
+      "Slices",
+      "Instances",
+      "Sections"
+    ],
+    "correct": [
+      2
+    ],
+    "explanation": "Instances stay linked to the main component.",
+    "pools": [
+      "exam"
+    ]
+  },
+  {
+    "key": "uiux-l1749-04",
+    "lessonDriveFileId": "1tw43BTWG9HizSaOtptaV9iKih9Qz0dkZ",
+    "chapterOrder": 17,
+    "type": "single",
+    "prompt": "In Figma, where do you set up export formats for a selected layer?",
+    "options": [
+      "The layers panel on the left",
+      "The file browser",
+      "The comments panel",
+      "The Export section of the right sidebar"
+    ],
+    "correct": [
+      3
+    ],
+    "explanation": "Add an export setting and choose a format.",
+    "pools": [
+      "exam"
+    ]
   }
 ]
