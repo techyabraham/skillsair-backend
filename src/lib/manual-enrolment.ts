@@ -35,6 +35,7 @@ const SET_PASSWORD_TTL_SECONDS = 14 * 24 * 60 * 60
 
 const FRONTEND_URL = process.env.FRONTEND_URL ?? 'https://skillsair.com'
 
+/** Per request: at most this many learners, and this many learner-programme pairs in all. */
 export const MANUAL_ENROL_BATCH_MAX = 50
 
 export interface Duration {
@@ -46,15 +47,22 @@ export type ManualEnrolmentStatus = 'created' | 'enrolled' | 'extended' | 'skipp
 
 export interface ManualEnrolmentResult {
   email: string
+  /** The programme's title; absent when the email itself was the problem. */
+  programme?: string
   status: ManualEnrolmentStatus
   message: string
   accessEndsAt?: string
   emailQueued?: boolean
 }
 
+/** One learner and the programmes they get. A learner can be listed with any number of programmes. */
+export interface ManualEnrolmentEntry {
+  email: string
+  courseIds: number[]
+}
+
 export interface ManualEnrolmentInput {
-  emails: string[]
-  courseId: number
+  entries: ManualEnrolmentEntry[]
   duration: Duration
   note?: string
   notify: boolean
@@ -164,10 +172,13 @@ async function enrolOne(payload: Payload, email: string, course: CourseRow, inpu
   }
 
   // New time starts when current access ends, so nobody loses days they already have.
+  // Old extensions only count while the enrolment is live: after a refund, or after the learner
+  // moved to another programme, their time on this one is over and new time starts today.
+  const live = Boolean(enrollment) && !refunded
   const runningPlan = await payload.find({ collection: 'subscriptions', where: { and: [{ user: { equals: user.id } }, { course: { equals: course.id } }, { status: { equals: 'cancelled' } }] }, sort: '-currentPeriodEnd', limit: 1, depth: 0, overrideAccess: true })
   const now = Date.now()
   const currentEnd = Math.max(
-    ...extensions.docs.map((doc) => ms(doc.newExpiryDate)),
+    ...(live ? extensions.docs.map((doc) => ms(doc.newExpiryDate)) : []),
     ms(runningPlan.docs[0]?.currentPeriodEnd),
     enrollment && !enrollment.subscription ? ms(user.accessExpiresAt) : 0,
     0,
@@ -205,38 +216,70 @@ async function enrolOne(payload: Payload, email: string, course: CourseRow, inpu
   return { email, status, message: `${verb} until ${lagosDate(accessEndsAt.getTime())}.`, accessEndsAt: accessEndsAt.toISOString(), emailQueued }
 }
 
-/** Each email stands alone: one that fails is reported and the rest carry on. */
+/**
+ * Each learner-programme pair stands alone: one that fails is reported and the rest carry on.
+ * Results come back in the order given, one per pair (one per entry when the email is invalid).
+ */
 export async function manualEnrol(payload: Payload, input: ManualEnrolmentInput): Promise<ManualEnrolmentResult[]> {
-  const course = (await payload.findByID({ collection: 'courses', id: input.courseId, depth: 0, overrideAccess: true }).catch(() => null)) as unknown as CourseRow | null
-  if (!course || course.status !== 'published') throw new AppError('NOT_FOUND', 'Programme not found')
-  if (course.isBonus) throw new AppError('VALIDATION_ERROR', 'Bonus courses open with a programme; choose the programme instead')
+  const ids = [...new Set(input.entries.flatMap((entry) => entry.courseIds))]
+  const found = ids.length
+    ? ((await payload.find({ collection: 'courses', where: { id: { in: ids } }, limit: ids.length, depth: 0, overrideAccess: true })).docs as unknown as CourseRow[])
+    : []
+  const courses = new Map(found.map((course) => [Number(course.id), course]))
 
-  const results: ManualEnrolmentResult[] = new Array(input.emails.length)
+  const slots: ManualEnrolmentResult[][] = input.entries.map(() => [])
   const seen = new Set<string>()
-  const work: Array<{ index: number; email: string }> = []
-  input.emails.forEach((raw, index) => {
-    const email = raw.trim().toLowerCase()
-    if (!emailShape.safeParse(email).success) results[index] = { email: raw.trim() || '(empty)', status: 'failed', message: 'Not a valid email address.' }
-    else if (seen.has(email)) results[index] = { email, status: 'skipped', message: 'Listed more than once; handled above.' }
-    else {
-      seen.add(email)
-      work.push({ index, email })
+  const byEmail = new Map<string, Array<{ slot: number; position: number; course: CourseRow }>>()
+  input.entries.forEach((entry, slot) => {
+    const email = entry.email.trim().toLowerCase()
+    if (!emailShape.safeParse(email).success) {
+      slots[slot]!.push({ email: entry.email.trim() || '(empty)', status: 'failed', message: 'Not a valid email address.' })
+      return
+    }
+    if (!entry.courseIds.length) {
+      slots[slot]!.push({ email, status: 'failed', message: 'No programme chosen for this person.' })
+      return
+    }
+    for (const courseId of entry.courseIds) {
+      const course = courses.get(courseId)
+      const position = slots[slot]!.length
+      if (!course || course.status !== 'published') slots[slot]!.push({ email, status: 'failed', message: 'Programme not found.' })
+      else if (course.isBonus) slots[slot]!.push({ email, programme: course.title, status: 'failed', message: 'Bonus courses open with a programme; choose the programme instead.' })
+      else if (seen.has(`${email}|${courseId}`)) slots[slot]!.push({ email, programme: course.title, status: 'skipped', message: 'Listed more than once; handled above.' })
+      else {
+        seen.add(`${email}|${courseId}`)
+        slots[slot]!.push({ email, programme: course.title, status: 'failed', message: 'Not processed.' })
+        byEmail.set(email, [...(byEmail.get(email) ?? []), { slot, position, course }])
+      }
     }
   })
 
+  // One worker per learner at a time, so their programmes run in turn and a new account is created once.
+  const work = [...byEmail.entries()]
   let next = 0
   await Promise.all(Array.from({ length: CONCURRENCY }, async () => {
     while (next < work.length) {
-      const { index, email } = work[next++]!
-      try {
-        results[index] = (await withLock(`manual-enrol:${email}`, 60, () => enrolOne(payload, email, course, input))) ?? { email, status: 'failed', message: 'Already being processed. Try this one again.' }
-      } catch (err) {
-        logger.error({ err, courseId: course.id }, 'manual_enrolment_failed')
-        results[index] = { email, status: 'failed', message: err instanceof AppError ? err.message : 'Couldn’t be saved. Try this one again.' }
+      const [email, items] = work[next++]!
+      const done = await withLock(`manual-enrol:${email}`, 60, async () => {
+        for (const { slot, position, course } of items) {
+          try {
+            slots[slot]![position] = { ...(await enrolOne(payload, email, course, input)), programme: course.title }
+          } catch (err) {
+            logger.error({ err, courseId: course.id }, 'manual_enrolment_failed')
+            slots[slot]![position] = { email, programme: course.title, status: 'failed', message: err instanceof AppError ? err.message : 'Couldn’t be saved. Try this one again.' }
+          }
+        }
+        return true
+      }).catch((err: unknown) => {
+        logger.error({ err }, 'manual_enrolment_lock_failed')
+        return false
+      })
+      if (!done) {
+        for (const { slot, position, course } of items) slots[slot]![position] = { email, programme: course.title, status: 'failed', message: 'Already being processed. Try this one again.' }
       }
     }
   }))
-  return results
+  return slots.flat()
 }
 
 /** Runs from the work queue, on the API service, so the batch never waits on the email provider. */

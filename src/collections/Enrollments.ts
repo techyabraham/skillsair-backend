@@ -35,7 +35,14 @@ export const Enrollments: CollectionConfig = {
   fields: [
     DISPLAY_TITLES.enrollments,
     { name: 'student', type: 'relationship', relationTo: 'users', required: true },
-    { name: 'course', type: 'relationship', relationTo: 'courses', required: true },
+    {
+      name: 'course',
+      type: 'relationship',
+      relationTo: 'courses',
+      required: true,
+      // Editing this alone would leave the learner's subscription and access on the old programme.
+      admin: { readOnly: true, description: 'To move a learner to another programme, use Enrol learners → Change programme. Their plan and remaining access move with them.' },
+    },
     {
       name: 'status',
       type: 'select',

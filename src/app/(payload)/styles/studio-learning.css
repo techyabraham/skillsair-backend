@@ -342,3 +342,28 @@
 .sa-enrol__error {
   color: var(--sa-critical-ink);
 }
+
+.sa-enrol__programmes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+  gap: 0 12px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.sa-enrol__programmes legend {
+  margin-bottom: 4px;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.sa-enrol__row-actions {
+  white-space: nowrap;
+  text-align: right;
+}
+
+.sa-enrol__rows tr[aria-invalid='true'] th {
+  color: var(--sa-critical-ink);
+}

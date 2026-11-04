@@ -94,6 +94,7 @@ import { affiliateDashboardEndpoint } from './src/endpoints/affiliates/dashboard
 import { trackAffiliateEndpoint } from './src/endpoints/affiliates/track.js'
 import { extendAccessEndpoint } from './src/endpoints/admin/extend-access.js'
 import { manualEnrolEndpoint } from './src/endpoints/admin/manual-enrol.js'
+import { programmeChangeEndpoint } from './src/endpoints/admin/programme-change.js'
 import { graphqlGetEndpoint, graphqlPostEndpoint } from './src/endpoints/graphql/handler.js'
 import { updateProfileEndpoint } from './src/endpoints/profile/update.js'
 import { getPreferencesEndpoint, updatePreferencesEndpoint } from './src/endpoints/profile/preferences.js'
@@ -326,6 +327,7 @@ export default buildConfig(mountPrefixedEndpoints({
     trackAffiliateEndpoint,
     extendAccessEndpoint,
     manualEnrolEndpoint,
+    programmeChangeEndpoint,
     graphqlGetEndpoint,
     graphqlPostEndpoint,
     updateProfileEndpoint,

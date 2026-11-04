@@ -26,7 +26,7 @@ describeWithDb('manual enrolment from Studio', () => {
   let planId: number
   let serial = 0
 
-  const input = (emails: string[], over: Partial<ManualEnrolmentInput> = {}): ManualEnrolmentInput => ({ emails, courseId, duration: { unit: 'months', amount: 3 }, notify: true, adminId, ...over })
+  const input = (emails: string[], over: Partial<ManualEnrolmentInput> = {}): ManualEnrolmentInput => ({ entries: emails.map((email) => ({ email, courseIds: [courseId] })), duration: { unit: 'months', amount: 3 }, notify: true, adminId, ...over })
   const addr = (name: string) => `${name}-${++serial}@example.com`
   const userByEmail = async (email: string) => (await payload.find({ collection: 'users', where: { email: { equals: email } }, limit: 5, depth: 0, overrideAccess: true })).docs
   const enrolments = async (student: number) => (await payload.find({ collection: 'enrollments', where: { and: [{ student: { equals: student } }, { course: { equals: courseId } }] }, depth: 0, overrideAccess: true })).docs
