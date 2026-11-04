@@ -330,7 +330,8 @@ async function importCourse(payload: Payload, slug: string, folderId: string, op
         const data: Record<string, unknown> = {}
         if (match.driveFileId !== lesson.driveFileId) data.driveFileId = lesson.driveFileId
         if (match.order !== position) data.order = position
-        if (duration && !match.duration) data.duration = duration
+        // Drive's length is the real one: it replaces a missing or out-of-date length (often from WordPress).
+        if (duration && Math.abs(duration - Number(match.duration ?? 0)) > 1) data.duration = duration
         const tidyTitle = tidyName(match.title, false)
         if (tidyTitle !== match.title) { data.title = tidyTitle; renamed.push(`lesson "${match.title}" -> "${tidyTitle}"`) }
         const stripped = stripLegacyLink(match.content)

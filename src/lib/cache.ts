@@ -9,6 +9,7 @@ export const CACHE_KEYS = {
   captions: (lessonId: number | string, lang: string) => `cache:captions:${lessonId}:${lang}`,
   transcript: (lessonId: number | string) => `cache:transcript:${lessonId}`,
   driveMeta: (fileId: string) => `cache:drive-meta:${fileId}`,
+  videoLength: (fileId: string) => `cache:video-length:${fileId}`,
   curriculum: (courseId: number | string) => `cache:curriculum:${courseId}`,
   quizPool: (courseId: number | string) => `cache:quiz-pool:${courseId}`,
 }

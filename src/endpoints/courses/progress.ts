@@ -5,9 +5,17 @@ import { requireAuth } from '../../middleware/authenticate.js'
 import { isValidPayloadId } from '../../utils/sanitize.js'
 import { AppError } from '../../types/index.js'
 import { getLessonCourse, refreshEnrollmentProgress, requireCourseAccess } from '../../lib/course-access.js'
+import { driveVideoSeconds, requiredWatchSeconds, roughLength } from '../../lib/lesson-viewing.js'
+import { logger } from '../../lib/logger.js'
 
+/**
+ * watchedDelta: seconds watched since the player last reported, added to what is stored, so time
+ * watched on another visit or device counts. watchedSeconds (a total for one visit) is the older
+ * form; the larger of it and the stored total is kept.
+ */
 const progressSchema = z.object({
-  watchedSeconds: z.number().min(0),
+  watchedSeconds: z.number().min(0).optional(),
+  watchedDelta: z.number().min(0).max(6 * 60 * 60).optional(),
   isCompleted: z.boolean().optional(),
 })
 
@@ -54,30 +62,47 @@ async function handler(req: PayloadRequest): Promise<Response> {
   })
 
   const now = new Date().toISOString()
-  const previousSeconds = Number(existingProgress.docs[0]?.watchedSeconds ?? 0)
-  const watchedSeconds = Math.max(previousSeconds, body.watchedSeconds)
-  const duration = Number(lesson.duration ?? 0)
-  if (body.isCompleted && duration > 0 && watchedSeconds < Math.max(0, duration - 5)) {
-    throw new AppError('VALIDATION_ERROR', 'Lesson viewing requirement has not been met')
+  const existing = existingProgress.docs[0]
+  const previousSeconds = Number(existing?.watchedSeconds ?? 0)
+  let duration = Number(lesson.duration ?? 0)
+  const added = body.watchedDelta !== undefined ? previousSeconds + body.watchedDelta : Math.max(previousSeconds, body.watchedSeconds ?? 0)
+  // Never more than the video's length (rewatching doesn't pile up), unless the length is unknown.
+  let watchedSeconds = Math.max(previousSeconds, duration > 0 ? Math.min(added, Math.max(duration, previousSeconds)) : added)
+
+  // A stored length can be wrong (lessons imported from WordPress kept Tutor's): before refusing a
+  // completion, check the video's real length on Drive and correct the lesson if it differs.
+  const driveFileId = (lesson as { driveFileId?: string | null }).driveFileId
+  if (body.isCompleted && !existing?.isCompleted && duration > 0 && watchedSeconds < requiredWatchSeconds(duration) && driveFileId) {
+    const real = await driveVideoSeconds(driveFileId).catch(() => null)
+    if (real && Math.abs(real - duration) > 1) {
+      logger.info({ lessonId: Number(lessonId), from: duration, to: real }, 'lesson_duration_corrected')
+      await payload.update({ collection: 'lessons', id: lesson.id, data: { duration: real }, overrideAccess: true })
+        .catch((err: unknown) => logger.warn({ err, lessonId: Number(lessonId) }, 'lesson_duration_correct_failed'))
+      duration = real
+      watchedSeconds = Math.max(previousSeconds, Math.min(added, Math.max(duration, previousSeconds)))
+    }
   }
+  const required = requiredWatchSeconds(duration)
+  const unmet = Boolean(body.isCompleted) && !existing?.isCompleted && watchedSeconds < required
+
   // Player heartbeats (every 30 s while a video plays, isCompleted false) only move watchedSeconds
   // forward: no write when nothing changed and no enrolment recalculation, which completions do.
-  const heartbeat = !body.isCompleted
-  if (heartbeat && existingProgress.docs[0] && (existingProgress.docs[0].isCompleted || watchedSeconds <= previousSeconds)) {
-    return sendSuccess({ progress: existingProgress.docs[0], enrollment: null })
+  const heartbeat = !body.isCompleted || unmet
+  if (heartbeat && existing && (existing.isCompleted || watchedSeconds <= previousSeconds)) {
+    if (unmet) throw notWatched(required - watchedSeconds)
+    return sendSuccess({ progress: existing, enrollment: null })
   }
   const progressData = {
     watchedSeconds,
     lastWatchedAt: now,
-    ...(body.isCompleted ? { isCompleted: true, completedAt: now } : {}),
+    ...(body.isCompleted && !unmet ? { isCompleted: true, completedAt: existing?.completedAt ?? now } : {}),
   }
 
   let progressDoc
-  if (existingProgress.totalDocs > 0) {
-    const existingId = existingProgress.docs[0]?.id as number
+  if (existing) {
     progressDoc = await payload.update({
       collection: 'lesson-progress',
-      id: existingId,
+      id: existing.id as number,
       data: progressData,
       overrideAccess: true,
     })
@@ -93,10 +118,17 @@ async function handler(req: PayloadRequest): Promise<Response> {
       overrideAccess: true,
     })
   }
+  // The time just watched is saved above, so it counts next time; then say how much is left.
+  if (unmet) throw notWatched(required - watchedSeconds)
 
   const updatedEnrollment = heartbeat ? null : await refreshEnrollmentProgress(payload, enrollment.id, user.id, courseId)
 
   return sendSuccess({ progress: progressDoc, enrollment: updatedEnrollment })
+}
+
+function notWatched(remainingSeconds: number): AppError {
+  const left = Math.max(1, Math.ceil(remainingSeconds))
+  return new AppError('VALIDATION_ERROR', `Watch the rest of this video first (${roughLength(left)} left), then mark it complete.`, { remainingSeconds: String(left) })
 }
 
 export const progressEndpoint: Endpoint = {
