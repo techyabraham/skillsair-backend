@@ -96,6 +96,13 @@ export async function StudioNav(props: NavProps) {
     )
   }
 
+  // Export applicants (a custom view) sits after Applicants in Admissions, for admins.
+  if (role === 'admin') {
+    const admissions = entityGroups.find((group) => group.label === STUDIO_GROUP.admissions)
+    const exportItem = { id: 'nav-applicant-export', href: `${ADMIN_ROUTE}/applicants/export`, label: 'Export applicants', icon: <EntityIcon slug="leads" size={18} /> }
+    if (admissions) admissions.items.splice(admissions.items.findIndex((item) => item.id === 'nav-leads') + 1, 0, exportItem)
+  }
+
   // Emails (the Studio email editor, a custom view) sits first in Messaging, for admins.
   if (role === 'admin') {
     const emails = { id: 'nav-emails', href: `${ADMIN_ROUTE}/emails`, label: 'Emails', icon: <EntityIcon slug="emails" size={18} /> }

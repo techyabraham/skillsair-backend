@@ -85,6 +85,8 @@ export const planWriteRateLimiter = createPayloadRateLimiter('plan-write', 20, 6
 export const adminRateLimiter = createPayloadRateLimiter('admin', 60, 15 * 60)
 /** One call per 50 emails: a 1,000-email run from Studio is 20 calls. */
 export const manualEnrolRateLimiter = createPayloadRateLimiter('manual-enrol', 60, 15 * 60)
+/** Studio applicant exports and their previews (the preview updates as filters change): 120 per admin in 15 minutes. */
+export const applicantExportRateLimiter = createPayloadRateLimiter('applicant-export', 120, 15 * 60)
 export const ambassadorWithdrawRateLimiter = createPayloadRateLimiter('ambassador-withdraw', 5, 60 * 60)
 export const leadRateLimiter = createPayloadRateLimiter('lead', 10, 15 * 60)
 export const leadResumeRateLimiter = createPayloadRateLimiter('lead-resume', 30, 15 * 60)

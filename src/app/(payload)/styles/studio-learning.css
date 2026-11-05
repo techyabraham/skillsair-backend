@@ -367,3 +367,11 @@
 .sa-enrol__rows tr[aria-invalid='true'] th {
   color: var(--sa-critical-ink);
 }
+
+/* Export applicants (src/admin/views/applicants). */
+
+.sa-export__hints {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+}

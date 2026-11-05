@@ -70,6 +70,7 @@ export async function LeadsStrip({ payload, user }: StripProps) {
         { label: 'Waitlist', href: listUrl('leads', [['waitlist', 'equals', true]], '-createdAt') },
         { label: 'Paid', href: listUrl('leads', [['status', 'equals', 'paid']], '-updatedAt') },
         { label: 'Opted out', href: listUrl('leads', [['optedOutAt', 'exists', true]], '-optedOutAt') },
+        { label: 'Export phone numbers', href: '/admin/applicants/export' },
       ]}
     />
   )
