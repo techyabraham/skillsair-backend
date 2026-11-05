@@ -6,9 +6,9 @@ import { applicantExportEndpoint, parseExportQuery } from './applicant-export.js
 
 describe('GET /api/studio/applicants/export query', () => {
   it('reads the filters, defaulting to a preview of everyone who hasn’t paid', () => {
-    expect(parseExportQuery(new URLSearchParams(''))).toEqual({ format: 'preview', payment: 'unpaid', courseIds: [], statuses: [], from: undefined, to: undefined, includeOptedOut: false, includeSignups: false })
-    expect(parseExportQuery(new URLSearchParams('format=xlsx&payment=all&course=3,4&status=new,lost&from=2026-11-01&to=2026-11-30&optedOut=1&signups=1'))).toMatchObject({
-      format: 'xlsx', payment: 'all', courseIds: [3, 4], statuses: ['new', 'lost'], from: '2026-11-01', to: '2026-11-30', includeOptedOut: true, includeSignups: true,
+    expect(parseExportQuery(new URLSearchParams(''))).toEqual({ format: 'preview', payment: 'unpaid', courseIds: [], statuses: [], from: undefined, to: undefined })
+    expect(parseExportQuery(new URLSearchParams('format=xlsx&payment=all&course=3,4&status=new,lost&from=2026-11-01&to=2026-11-30'))).toMatchObject({
+      format: 'xlsx', payment: 'all', courseIds: [3, 4], statuses: ['new', 'lost'], from: '2026-11-01', to: '2026-11-30',
     })
     expect(() => parseExportQuery(new URLSearchParams('format=pdf'))).toThrow()
     expect(() => parseExportQuery(new URLSearchParams('status=vip'))).toThrow()

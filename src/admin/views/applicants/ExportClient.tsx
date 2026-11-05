@@ -52,8 +52,6 @@ export function ExportClient({ programmes }: { programmes: Array<{ id: number; t
   const [statuses, setStatuses] = useState<string[]>([])
   const [from, setFrom] = useState('')
   const [to, setTo] = useState('')
-  const [includeOptedOut, setIncludeOptedOut] = useState(false)
-  const [includeSignups, setIncludeSignups] = useState(false)
   const [preview, setPreview] = useState<Preview | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
@@ -64,10 +62,8 @@ export function ExportClient({ programmes }: { programmes: Array<{ id: number; t
     if (statuses.length) params.set('status', statuses.join(','))
     if (from) params.set('from', from)
     if (to) params.set('to', to)
-    if (includeOptedOut) params.set('optedOut', '1')
-    if (includeSignups) params.set('signups', '1')
     return params.toString()
-  }, [payment, courseIds, statuses, from, to, includeOptedOut, includeSignups])
+  }, [payment, courseIds, statuses, from, to])
 
   // The count follows the filters, half a second after the last change.
   useEffect(() => {
@@ -144,14 +140,11 @@ export function ExportClient({ programmes }: { programmes: Array<{ id: number; t
           </label>
         </div>
 
-        <label className="sa-enrol__check">
-          <input type="checkbox" checked={includeSignups} onChange={(event) => setIncludeSignups(event.target.checked)} />
-          <span>Also include people who created an account with a phone number but never applied or paid{signupsApply ? '' : ' (only with “Not paid yet” or “Everyone”, and no programme or status ticked)'}</span>
-        </label>
-        <label className="sa-enrol__check">
-          <input type="checkbox" checked={includeOptedOut} onChange={(event) => setIncludeOptedOut(event.target.checked)} />
-          <span>Include people who unsubscribed (they asked not to be contacted with offers)</span>
-        </label>
+        <p className="sa-muted">
+          {signupsApply
+            ? 'Includes everyone: applicants, people who unsubscribed from emails, and people who created an account with a phone number but never applied or paid.'
+            : 'Includes applicants who unsubscribed from emails too. People who only created an account aren’t in this list: they have no programme or applicant status to match.'}
+        </p>
       </section>
 
       <section className="sa-card sa-enrol__section">

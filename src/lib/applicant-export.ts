@@ -1,9 +1,11 @@
 /**
  * Applicant contact lists for follow-up calls (Studio → Admissions → Export applicants).
  *
- * Who: applicants (the Applicants collection: Apply, quiz, curriculum requests, contact forms),
- * and optionally people who signed up on the site but never applied or paid. By default only the
- * ones who haven't paid, and never anyone who unsubscribed unless asked.
+ * Who: everyone. Applicants (the Applicants collection: Apply, quiz, curriculum requests, contact
+ * forms), people who unsubscribed from emails included, since they are still leads to follow up;
+ * and people who created an account with a phone number but never applied or paid (left out only
+ * when a programme or applicant status is chosen, as they have neither). By default only the ones
+ * who haven't paid.
  *
  * "Paid" means the applicant is marked paid, or their account has a successful programme or plan
  * order. Sign-ups also count as paying (and are left out) when they already have an enrolment, as
@@ -35,9 +37,6 @@ export interface ApplicantExportFilters {
   from?: string
   /** Applied on or before this Lagos day (YYYY-MM-DD). */
   to?: string
-  includeOptedOut: boolean
-  /** Also people with an account and a phone number who never applied and never paid. */
-  includeSignups: boolean
 }
 
 export interface ApplicantRow {
@@ -157,7 +156,6 @@ export async function collectApplicants(payload: Payload, filters: ApplicantExpo
   if (filters.courseIds.length) where.push({ course: { in: filters.courseIds } })
   if (filters.statuses.length) where.push({ status: { in: filters.statuses } })
   if (filters.payment === 'unpaid') where.push({ status: { not_equals: 'paid' } })
-  if (!filters.includeOptedOut) where.push({ optedOutAt: { exists: false } })
 
   const rows: ApplicantRow[] = []
   let truncated = false
@@ -211,8 +209,8 @@ export async function collectApplicants(payload: Payload, filters: ApplicantExpo
     if (truncated || !result.hasNextPage) break
   }
 
-  // Sign-ups only fit an unpaid list with no programme or applicant-status filter (they have neither).
-  if (filters.includeSignups && filters.payment !== 'paid' && !filters.courseIds.length && !filters.statuses.length && !truncated) {
+  // Sign-ups are in every unpaid or everyone list, unless a programme or applicant status is chosen (they have neither).
+  if (filters.payment !== 'paid' && !filters.courseIds.length && !filters.statuses.length && !truncated) {
     for (let page = 1; ; page++) {
       const result = await payload.find({
         collection: 'users',

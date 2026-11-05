@@ -68,7 +68,7 @@ describeWithDb('collecting applicants to call', () => {
   let designId: number
   let serial = 0
 
-  const filters = (over: Partial<ApplicantExportFilters> = {}): ApplicantExportFilters => ({ payment: 'unpaid', courseIds: [], statuses: [], includeOptedOut: false, includeSignups: false, ...over })
+  const filters = (over: Partial<ApplicantExportFilters> = {}): ApplicantExportFilters => ({ payment: 'unpaid', courseIds: [], statuses: [], ...over })
   const lead = (data: Record<string, unknown>) =>
     payload.create({ collection: 'leads', data: { firstName: 'Applicant', email: `lead-${++serial}@example.com`, phone: `+23480312345${String(serial).padStart(2, '0')}`, source: 'apply', ...data } as never, overrideAccess: true })
   const names = (rows: ApplicantRow[]) => rows.map((item) => item.name).sort()
@@ -81,7 +81,7 @@ describeWithDb('collecting applicants to call', () => {
     designId = Number((await payload.create({ collection: 'courses', data: { title: 'UI/UX', slug: `uiux-${++serial}`, status: 'published', price: 50000 } as never, overrideAccess: true, context: { skipCache: true } })).id)
   })
 
-  it('lists who hasn’t paid, with their decrypted phone and programme, and leaves out payers and opt-outs', async () => {
+  it('lists everyone who hasn’t paid, people who unsubscribed too, with their decrypted phone and programme', async () => {
     await lead({ firstName: 'Ada', course: dataId, status: 'new' })
     await lead({ firstName: 'Bola', course: designId, status: 'contacted' })
     await lead({ firstName: 'Chidi', course: dataId, status: 'paid' })
@@ -91,28 +91,30 @@ describeWithDb('collecting applicants to call', () => {
     await payload.create({ collection: 'orders', data: { user: buyer.id, type: 'course', course: designId, amount: 50000, currency: 'NGN', reference: `ref-${++serial}`, status: 'success', paidAt: new Date().toISOString() } as never, overrideAccess: true })
 
     const { rows } = await collectApplicants(payload, filters())
-    expect(names(rows)).toEqual(['Ada', 'Bola'])
+    expect(names(rows)).toEqual(['Ada', 'Bola', 'Dami'])
     const ada = rows.find((item) => item.name === 'Ada')!
     expect(ada).toMatchObject({ programme: 'Data Analysis', status: 'New', paid: false })
     expect(ada.phone).toMatch(/^\+234803123\d{4}$/)
 
     expect(names((await collectApplicants(payload, filters({ payment: 'paid' }))).rows)).toEqual(['Chidi', 'Efe User'])
     expect(names((await collectApplicants(payload, filters({ courseIds: [designId] }))).rows)).toEqual(['Bola'])
-    expect(names((await collectApplicants(payload, filters({ statuses: ['new'] }))).rows)).toEqual(['Ada'])
-    expect(names((await collectApplicants(payload, filters({ includeOptedOut: true }))).rows)).toEqual(['Ada', 'Bola', 'Dami'])
+    expect(names((await collectApplicants(payload, filters({ statuses: ['new'] }))).rows)).toEqual(['Ada', 'Dami'])
   })
 
-  it('can add sign-ups who never applied or paid, and caps a file', async () => {
+  it('adds sign-ups who never applied or paid, and caps a file', async () => {
     await lead({ firstName: 'Ada', course: dataId })
     const signup = await payload.create({ collection: 'users', data: { email: 'fola@example.com', password: 'Test-password-1!', firstName: 'Fola', lastName: 'Ade', role: 'student', phone: '+2348099999999' } as never, overrideAccess: true, context: { skipWelcomeEmail: true } })
     const learner = await payload.create({ collection: 'users', data: { email: 'gbenga@example.com', password: 'Test-password-1!', firstName: 'Gbenga', lastName: 'Ola', role: 'student', phone: '+2348088888888' } as never, overrideAccess: true, context: { skipWelcomeEmail: true } })
     await payload.create({ collection: 'enrollments', data: { student: learner.id, course: dataId, status: 'active', orderId: 'admin-grant' }, overrideAccess: true })
 
-    const { rows } = await collectApplicants(payload, filters({ includeSignups: true }))
+    const { rows } = await collectApplicants(payload, filters())
     expect(rows.map((item) => [item.kind, item.name])).toEqual([['Applicant', 'Ada'], ['Sign-up', 'Fola Ade']])
     expect(rows[1]).toMatchObject({ id: Number(signup.id), phone: '+2348099999999', status: 'Signed up, not applied' })
 
-    const capped = await collectApplicants(payload, filters({ includeSignups: true }), 1)
+    expect((await collectApplicants(payload, filters({ courseIds: [dataId] }))).rows.map((item) => item.name)).toEqual(['Ada'])
+    expect((await collectApplicants(payload, filters({ payment: 'paid' }))).rows).toHaveLength(0)
+
+    const capped = await collectApplicants(payload, filters(), 1)
     expect(capped).toMatchObject({ truncated: true })
     expect(capped.rows).toHaveLength(1)
   })
