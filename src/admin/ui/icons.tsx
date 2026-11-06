@@ -13,7 +13,6 @@ import {
   ClipboardCheck,
   FileText,
   GraduationCap,
-  Handshake,
   HelpCircle,
   Image,
   Inbox,
@@ -30,7 +29,6 @@ import {
   Receipt,
   Repeat,
   School,
-  Share2,
   Star,
   Tags,
   Timer,
@@ -73,8 +71,6 @@ export const ENTITY_ICONS: Record<string, LucideIcon> = {
   posts: Newspaper,
   media: Image,
   categories: School,
-  affiliates: Handshake,
-  referrals: Share2,
   'access-extensions': CalendarPlus,
 }
 

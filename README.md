@@ -39,6 +39,10 @@ Phase 3 adds the ambassador application and portal API (`/api/ambassadors/config
 
 Generating a migration: the committed snapshots used to stop at `20261010_224035_initial_schema.json`, so `migrate:create` would have repeated every hand-written migration since. `20261028_045139_ambassadors_foundation.json` is now the current snapshot; the next generated migration diffs against it. Review the generated SQL by hand, keep it registered in `src/payload-migrations/index.ts`, and check it with `migrate:fallback -- --test` on a disposable local database.
 
+## Old affiliate code removed
+
+The old `affiliates` and `referrals` collections, `/api/affiliates/*`, `referralCode` on registration and `Users.referralCode` / `Users.referredBy` are gone; Ambassadors replaces them. Nothing is imported from the WordPress ambassadors plugin, and old `?ref=<WordPress user id>` links no longer resolve. Migration `20261106_131412_ambassadors_remove_legacy` drops the old tables and columns without keeping their rows (it stops if any ambassador or attribution still uses a WordPress source value).
+
 ## Tests
 
 `npm test` runs the Vitest specs (`src/**/*.spec.ts`) and then the older node:test files (`npm run test:legacy`). Integration specs boot Payload's local API against a disposable local Postgres named by `TEST_DATABASE_URI`, apply every registered migration the way `npm run migrate:fallback` does, and empty tables between tests. Without `TEST_DATABASE_URI` they are skipped with a message. Never point it at staging or production: the harness refuses any host other than localhost. Redis is replaced by an in-memory fake in specs (`src/test/fake-redis.ts`).

@@ -4,7 +4,6 @@ import { sanitizeText } from '../../utils/sanitize.js'
 interface UserChangeData {
   firstName?: string
   lastName?: string
-  referralCode?: string
   [key: string]: unknown
 }
 

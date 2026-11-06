@@ -21,7 +21,7 @@ export type StudioGroup = (typeof STUDIO_GROUP)[keyof typeof STUDIO_GROUP]
 /** Group order and, inside each group, entity order (collection or global slugs). */
 export const STUDIO_NAV_ORDER: Array<{ group: StudioGroup; slugs: string[] }> = [
   { group: STUDIO_GROUP.admissions, slugs: ['leads', 'scholarship-window', 'laptop-applications'] },
-  { group: STUDIO_GROUP.revenue, slugs: ['orders', 'subscriptions', 'plans', 'affiliates', 'referrals'] },
+  { group: STUDIO_GROUP.revenue, slugs: ['orders', 'subscriptions', 'plans'] },
   {
     group: STUDIO_GROUP.ambassadors,
     slugs: [

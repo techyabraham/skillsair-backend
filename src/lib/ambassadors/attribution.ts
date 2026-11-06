@@ -10,7 +10,7 @@ import type { AmbassadorDoc } from './types.js'
 export async function resolveReferral(payload: Payload, ref: string): Promise<AmbassadorDoc | null> {
   if (!/^[A-Za-z0-9]{1,16}$/.test(ref)) return null
   const found = await payload.find({ collection: 'ambassadors', where: { and: [
-    { status: { equals: 'active' } }, /^\d+$/.test(ref) ? { legacyWpRef: { equals: ref } } : { code: { equals: ref.toUpperCase() } },
+    { status: { equals: 'active' } }, { code: { equals: ref.toUpperCase() } },
   ] }, limit: 1, depth: 0, overrideAccess: true })
   const ambassador = found.docs[0] as unknown as AmbassadorDoc | undefined
   return ambassador && (ambassador.source !== 'self' || ambassador.emailVerifiedAt) ? ambassador : null

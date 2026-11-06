@@ -163,19 +163,6 @@ export const Users: CollectionConfig = {
               access: { create: isAdmin, update: isAdmin },
             },
             {
-              name: 'referralCode',
-              type: 'text',
-              unique: true,
-              admin: { readOnly: true },
-              access: { create: isAdmin, update: isAdmin },
-            },
-            {
-              name: 'referredBy',
-              type: 'relationship',
-              relationTo: 'users',
-              access: { update: isAdmin },
-            },
-            {
               name: 'accessExpiresAt',
               type: 'date',
               access: { create: isAdmin, update: isAdmin },

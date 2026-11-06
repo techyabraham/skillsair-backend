@@ -48,7 +48,7 @@ describeWithDb('ambassador ledger', () => {
     const { entry } = await insertLedgerEntry(payload, {
       ambassadorId: opts.ambassadorId ?? ambassador.id,
       type: 'commission',
-      status: opts.status ?? 'pending',
+      status: 'pending',
       amountKobo,
       saleKobo: amountKobo * 2,
       rateBps: 5000,
@@ -56,7 +56,8 @@ describeWithDb('ambassador ledger', () => {
       availableAt: opts.availableAt ?? new Date(Date.now() + 7 * DAY),
       idempotencyKey: `commission:order:${orderSeq}`,
     })
-    return entry
+    // Commissions are always created pending (M5); "approved" ones are approved straight after.
+    return opts.status === 'approved' ? transitionLedgerEntry(payload, entry.id, 'approved') : entry
   }
 
   describe('insertLedgerEntry', () => {
@@ -94,6 +95,9 @@ describeWithDb('ambassador ledger', () => {
       ['payout with a positive amount', { type: 'payout', status: 'reserved', amountKobo: 100, idempotencyKey: 'payout:1' }],
       ['adjustment of zero', { type: 'adjustment', status: 'approved', amountKobo: 0, note: 'A long enough note', idempotencyKey: 'adjustment:3b241101-e2bb-4255-8caf-4136c566a962' }],
       ['commission created as void', { type: 'commission', status: 'void', amountKobo: 1, idempotencyKey: 'commission:order:1' }],
+      ['commission created as approved', { type: 'commission', status: 'approved', amountKobo: 1, idempotencyKey: 'commission:order:1' }],
+      ['payout created as paid', { type: 'payout', status: 'paid', amountKobo: -1, idempotencyKey: 'payout:1' }],
+      ['WordPress import key', { type: 'commission', status: 'pending', amountKobo: 1, idempotencyKey: 'import:wp-commission:1' }],
       ['reversal created as pending', { type: 'reversal', status: 'pending', amountKobo: -1, idempotencyKey: 'reversal:order:1:rf_1' }],
       ['fractional kobo', { type: 'commission', status: 'pending', amountKobo: 1.5, idempotencyKey: 'commission:order:1' }],
       ['a key in the wrong format', { type: 'commission', status: 'pending', amountKobo: 1, idempotencyKey: 'order-1' }],

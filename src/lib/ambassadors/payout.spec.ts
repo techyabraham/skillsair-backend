@@ -4,7 +4,7 @@ import { createTestAmbassador } from '../../test/ambassador-fixtures.js'
 import { AMBASSADOR_TABLES, describeWithDb, getTestPayload, truncate } from '../../test/payload-harness.js'
 import { resetFakeRedis } from '../../test/fake-redis.js'
 import { sendEmail } from '../resend.js'
-import { getWallet, insertLedgerEntry } from './ledger.js'
+import { getWallet, insertLedgerEntry, transitionLedgerEntry } from './ledger.js'
 import { applyPayoutTransferEvent, processPayout, reconcilePayout, requestPayout, type PayoutDoc } from './payouts.js'
 import { clearAmbassadorSettingsCache } from './settings.js'
 import type { AmbassadorDoc } from './types.js'
@@ -38,7 +38,9 @@ describeWithDb('ambassador payout requests', () => {
     expect(bank.accountNumber).toBe('0123456789')
   })
   async function credit(amountKobo: number) {
-    await insertLedgerEntry(payload, { ambassadorId: ambassador.id, type: 'commission', status: 'approved', amountKobo, saleKobo: amountKobo * 2, rateBps: 5000, idempotencyKey: `commission:order:${1000 + amountKobo}`, productType: 'course' })
+    // Commissions are always created pending (M5), then approved.
+    const { entry } = await insertLedgerEntry(payload, { ambassadorId: ambassador.id, type: 'commission', status: 'pending', amountKobo, saleKobo: amountKobo * 2, rateBps: 5000, idempotencyKey: `commission:order:${1000 + amountKobo}`, productType: 'course' })
+    await transitionLedgerEntry(payload, entry.id, 'approved')
   }
 
   it('reserves once for an idempotent request and enforces the minimum', async () => {

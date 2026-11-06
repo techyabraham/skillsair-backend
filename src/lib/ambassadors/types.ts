@@ -6,7 +6,7 @@
  */
 
 export type AmbassadorStatus = 'pending' | 'active' | 'blocked'
-export type AmbassadorSource = 'self' | 'admin' | 'wp_import'
+export type AmbassadorSource = 'self' | 'admin'
 export type CommissionableType = 'course' | 'subscription' | 'renewal' | 'certificate'
 
 export type LedgerType = 'commission' | 'reversal' | 'adjustment' | 'payout' | 'payout_reversal'
@@ -30,7 +30,6 @@ export interface AmbassadorDoc {
   user: number | { id: number; email: string; firstName?: string; lastName?: string }
   code: string
   username: string
-  legacyWpRef?: string | null
   status: AmbassadorStatus
   source: AmbassadorSource
   emailVerifiedAt?: string | null

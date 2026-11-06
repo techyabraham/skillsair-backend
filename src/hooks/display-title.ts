@@ -140,11 +140,4 @@ export const DISPLAY_TITLES = {
   quizAttempts: displayTitleField(['student', 'quiz', 'score'], async (doc, l) =>
     joinTitle([await l.personName('users', doc.student), await l.title('quizzes', doc.quiz), typeof doc.score === 'number' ? `${doc.score}%` : null]),
   ),
-  referrals: displayTitleField(['referrer', 'referredUser'], async (doc, l) => {
-    const [from, to] = await Promise.all([l.personName('users', doc.referrer), l.personName('users', doc.referredUser)])
-    return joinTitle([from && to ? `${from} → ${to}` : from ?? to])
-  }),
-  affiliates: displayTitleField(['user', 'affiliateCode'], async (doc, l) =>
-    joinTitle([await l.personName('users', doc.user), typeof doc.affiliateCode === 'string' ? doc.affiliateCode : null]),
-  ),
 }

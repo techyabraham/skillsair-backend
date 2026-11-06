@@ -31,12 +31,12 @@ export class LedgerError extends Error {
   }
 }
 
-/** Statuses a row may be inserted with. Commissions start pending (approved only for imports); payouts start reserved (paid only for imports). */
+/** Statuses a row may be inserted with (M5): commissions start pending, payouts start reserved. */
 const INSERT_STATUSES: Record<LedgerType, readonly LedgerStatus[]> = {
-  commission: ['pending', 'approved'],
+  commission: ['pending'],
   reversal: ['approved'],
   adjustment: ['approved'],
-  payout: ['reserved', 'paid'],
+  payout: ['reserved'],
   payout_reversal: ['approved'],
 }
 
@@ -53,10 +53,10 @@ const UUID_V4 = '[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]
 
 /** M7 key formats, by type. */
 const KEY_FORMATS: Record<LedgerType, RegExp> = {
-  commission: /^(commission:order:\d+(?::partial:[A-Za-z0-9_:.-]+)?|commission:invoice:[A-Za-z0-9_-]+(?::partial:[A-Za-z0-9_:.-]+)?|import:wp-commission:[A-Za-z0-9_-]+)$/,
+  commission: /^(commission:order:\d+(?::partial:[A-Za-z0-9_:.-]+)?|commission:invoice:[A-Za-z0-9_-]+(?::partial:[A-Za-z0-9_:.-]+)?)$/,
   reversal: /^(reversal:order:\d+:[A-Za-z0-9_:.-]+|reversal:invoice:[A-Za-z0-9_-]+:[A-Za-z0-9_:.-]+)$/,
   adjustment: new RegExp(`^adjustment:${UUID_V4}$`),
-  payout: /^(payout:\d+|import:wp-withdrawal:[A-Za-z0-9_-]+)$/,
+  payout: /^payout:\d+$/,
   payout_reversal: /^payout-reversal:\d+$/,
 }
 

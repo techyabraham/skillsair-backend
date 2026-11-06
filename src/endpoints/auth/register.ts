@@ -17,7 +17,6 @@ const registerSchema = z.object({
   firstName: z.string().min(1).max(100),
   lastName: z.string().min(1).max(100),
   phone: z.string().min(7).max(25),
-  referralCode: z.string().max(16).optional(),
   attribution: z.string().max(1000).optional(),
   marketingConsent: z.boolean().optional(),
   marketingConsentText: z.string().max(1000).optional(),
@@ -97,7 +96,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
   })) as unknown as UserDoc
 
   try {
-    await attributeUser(payload, { userId: created.id, value: body.attribution ?? (body.referralCode ? 'code:' + body.referralCode : undefined), source: 'cookie_register' })
+    await attributeUser(payload, { userId: created.id, value: body.attribution, source: 'cookie_register' })
   } catch {
     logger.error({ userId: created.id }, 'ambassador_registration_attribution_failed')
   }

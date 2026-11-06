@@ -73,11 +73,11 @@ describeWithDb('ambassador earning engine', () => {
     await payload.update({ collection: 'ambassadors', id: ambassador.id, data: { status: 'blocked' }, overrideAccess: true })
     expect(await attribute()).toMatchObject({ reason: 'inactive_or_missing' })
   })
-  it('resolves legacy numeric links and flags shared phones without rejecting attribution', async () => {
-    await payload.update({ collection: 'ambassadors', id: ambassador.id, data: { legacyWpRef: '125' }, overrideAccess: true })
-    expect((await resolveReferral(payload, '125'))?.id).toBe(ambassador.id)
+  it('resolves codes only (no numeric WordPress ids) and flags shared phones without rejecting attribution', async () => {
+    expect((await resolveReferral(payload, ambassador.code.toLowerCase()))?.id).toBe(ambassador.id)
+    expect(await resolveReferral(payload, '125')).toBeNull()
     for (const id of [Number(relationId(ambassador.user)), buyerId]) await payload.update({ collection: 'users', id, data: { phone: '+2348012345678' }, overrideAccess: true })
-    expect(await attribute('code:125')).toEqual({ attributed: true })
+    expect(await attribute(`code:${ambassador.code}`)).toEqual({ attributed: true })
     const fresh = await payload.findByID({ collection: 'ambassadors', id: ambassador.id, overrideAccess: true })
     expect(fresh.riskFlags).toEqual(expect.arrayContaining([expect.objectContaining({ kind: 'self_referral_suspected' })]))
   })

@@ -21,9 +21,7 @@ export const ReferralAttributions: CollectionConfig = {
       options: [
         { label: 'Referral cookie at sign-up', value: 'cookie_register' },
         { label: 'Referral cookie at checkout', value: 'cookie_checkout' },
-        { label: 'Legacy WordPress link', value: 'legacy_wp' },
         { label: 'Admin', value: 'admin' },
-        { label: 'WordPress import', value: 'wp_import' },
       ],
     },
     { name: 'lockedUntil', type: 'date', admin: { description: 'Empty means the attribution is permanent.' } },

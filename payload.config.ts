@@ -21,8 +21,6 @@ import { Orders } from './src/collections/Orders.js'
 import { Certificates } from './src/collections/Certificates.js'
 import { CertificateEntitlements } from './src/collections/CertificateEntitlements.js'
 import { Subscriptions } from './src/collections/Subscriptions.js'
-import { Affiliates } from './src/collections/Affiliates.js'
-import { Referrals } from './src/collections/Referrals.js'
 import { AccessExtensions } from './src/collections/AccessExtensions.js'
 import { Pages } from './src/collections/Pages.js'
 import { Posts } from './src/collections/Posts.js'
@@ -90,8 +88,6 @@ import { purchaseCertificateEndpoint } from './src/endpoints/certificates/purcha
 import { subscribeEndpoint } from './src/endpoints/subscriptions/subscribe.js'
 import { cancelSubscriptionEndpoint } from './src/endpoints/subscriptions/cancel.js'
 import { subscriptionWebhookEndpoint } from './src/endpoints/subscriptions/webhook.js'
-import { affiliateDashboardEndpoint } from './src/endpoints/affiliates/dashboard.js'
-import { trackAffiliateEndpoint } from './src/endpoints/affiliates/track.js'
 import { extendAccessEndpoint } from './src/endpoints/admin/extend-access.js'
 import { manualEnrolEndpoint } from './src/endpoints/admin/manual-enrol.js'
 import { programmeChangeEndpoint } from './src/endpoints/admin/programme-change.js'
@@ -261,8 +257,6 @@ export default buildConfig(mountPrefixedEndpoints({
     Certificates,
     CertificateEntitlements,
     Subscriptions,
-    Affiliates,
-    Referrals,
     AccessExtensions,
     Pages,
     Posts,
@@ -329,8 +323,6 @@ export default buildConfig(mountPrefixedEndpoints({
     subscribeEndpoint,
     cancelSubscriptionEndpoint,
     subscriptionWebhookEndpoint,
-    affiliateDashboardEndpoint,
-    trackAffiliateEndpoint,
     extendAccessEndpoint,
     manualEnrolEndpoint,
     programmeChangeEndpoint,

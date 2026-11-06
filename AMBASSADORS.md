@@ -25,12 +25,12 @@ C. techyabraham/skillsair-ambassadors  (NEW, ambassador.skillsair.com)
 2. PRODUCT RULES (NON-NEGOTIABLE)
 ====================================================================
 
-R1  Not every user is an ambassador. A user is an ambassador only when an `ambassadors` record exists for them. Ways in: self-application on the portal, admin creates a new user as ambassador, admin converts an existing user, WordPress import.
+R1  Not every user is an ambassador. A user is an ambassador only when an `ambassadors` record exists for them. Ways in: self-application on the portal, admin creates a new user as ambassador, admin converts an existing user. Nothing is imported from the old WordPress ambassadors plugin: its engineering is rebuilt here, none of its data (owner decision, 2026-11-06).
 R2  One login system. An ambassador is a normal `users` record (role "student"). A student may also be an ambassador with the same email and password. Never create a second account for the same email.
 R3  Status: pending | active | blocked. Only ACTIVE ambassadors can: be attributed new customers, earn new commissions, use dashboard endpoints, withdraw. A pending or blocked ambassador can log in to the portal and sees a status screen only. Blocking keeps all history; approved money stays in the wallet but cannot be withdrawn while blocked.
-R4  Self-applicants must verify their email (one email containing a 6-digit OTP AND a verification link) before status can become active. Admin-created, admin-converted and imported ambassadors count as verified.
+R4  Self-applicants must verify their email (one email containing a 6-digit OTP AND a verification link) before status can become active. Admin-created and admin-converted ambassadors count as verified.
 R5  Applications land as `pending` and an admin approves them (setting defaultApplicationStatus, default "pending"; if set to "active", verification alone activates).
-R6  Referral link: https://skillsair.com/?skr=<CODE>. CODE = 8 uppercase characters from generateReferralCode() in src/utils/generate-code.ts, unique across ambassadors. `?skr=` works on ANY skillsair.com URL (home, a course page, pricing). Legacy WordPress links `?ref=<numeric WordPress user id>` MUST keep working: they resolve through ambassadors.legacyWpRef.
+R6  Referral link: https://skillsair.com/?skr=<CODE>. CODE = 8 uppercase characters from generateReferralCode() in src/utils/generate-code.ts, unique across ambassadors. `?skr=` works on ANY skillsair.com URL (home, a course page, pricing). Old WordPress links (`?ref=<WordPress user id>`) are not supported.
 R7  Attribution: first click wins (setting attributionModel, default "first_click"). The browser keeps the referral for cookieDays (default 30). Once a user account is attributed, the attribution is permanent (setting attributionLifetimeDays, default null = forever). A user can never be attributed to their own ambassador profile.
 R8  Commission: rate from settings (commissionRateBps, default 5000 = 50%) applied to the amount the customer actually paid, for: course purchases, the first subscription payment, every subscription renewal. Certificate purchases are excluded by default (setting commissionableTypes). The rate and the amount are copied onto every ledger row when it is created; changing the setting NEVER changes existing rows.
 R9  Commission lifecycle: created `pending` with availableAt = paidAt + approvalDelayDays (default 7). A job approves it once availableAt has passed. Refund before approval -> commission becomes `void`. Refund after approval (whether or not it was paid out) -> a new negative `reversal` row, which can make the available balance negative; future earnings pay it back.
@@ -74,8 +74,6 @@ M7  Every ledger row has a unique idempotencyKey. Formats (exact):
       payout:<payoutId>
       payout-reversal:<payoutId>
       adjustment:<uuid v4>
-      import:wp-commission:<wpCommissionId>
-      import:wp-withdrawal:<wpWithdrawalId>
     Insert with the key. A unique-violation on the key means "already done": return the existing row as success. That is how webhooks, retries and jobs stay safe to run twice. Each partial refund has its own stable provider refund ID in the replacement key; successive replacements void the prior pending remainder and create one new current remainder.
 M8  Display: whole naira as "₦12,500" using Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN', maximumFractionDigits: 0 }); balances with 2 decimals. One formatter, src/lib/money.ts in each repo.
 
@@ -89,9 +87,8 @@ ambassadors
   user               relationship users, required, unique, indexed
   code               text, required, unique, indexed, /^[A-Z0-9]{8}$/
   username           text, required, unique, lowercase, /^[a-z0-9._]{3,30}$/  (public handle shown in the portal; login stays email)
-  legacyWpRef        text, unique, optional, digits only
   status             select pending|active|blocked, default pending, indexed
-  source             select self|admin|wp_import, required
+  source             select self|admin, required
   emailVerifiedAt    date
   promotionPlan      textarea, max 2000
   about              textarea, max 2000
@@ -118,7 +115,7 @@ referral-attributions
   ambassador         relationship ambassadors, required, indexed
   firstClickAt       date
   attributedAt       date, required
-  source             select cookie_register|cookie_checkout|legacy_wp|admin|wp_import
+  source             select cookie_register|cookie_checkout|admin
   lockedUntil        date (null = permanent)
 
 ambassador-ledger

@@ -32,14 +32,6 @@ export const Ambassadors: CollectionConfig = {
       admin: { description: 'Public handle shown in the portal. Sign-in stays the email address.' },
     },
     {
-      name: 'legacyWpRef',
-      type: 'text',
-      unique: true,
-      label: 'Legacy WordPress ref',
-      validate: matches(/^\d+$/, 'Digits only (the WordPress user id)', false),
-      admin: { description: 'Old links ?ref=<WordPress user id> resolve to this ambassador.' },
-    },
-    {
       name: 'status',
       type: 'select',
       required: true,
@@ -58,7 +50,6 @@ export const Ambassadors: CollectionConfig = {
       options: [
         { label: 'Applied', value: 'self' },
         { label: 'Added by an admin', value: 'admin' },
-        { label: 'WordPress import', value: 'wp_import' },
       ],
     },
     { name: 'emailVerifiedAt', type: 'date' },

@@ -19,15 +19,9 @@ describeWithDb('generateUniqueAmbassadorCode', () => {
     expect(await generateUniqueAmbassadorCode(payload)).toMatch(/^[A-Z0-9]{8}$/)
   })
 
-  it('skips codes held by an ambassador or by a user (legacy users.referralCode)', async () => {
+  it('skips codes another ambassador holds', async () => {
     await createTestAmbassador(payload, { code: 'AAAAAAAA' })
-    await payload.create({
-      collection: 'users',
-      data: { email: 'legacy@example.test', password: 'Test-password-1!', firstName: 'L', lastName: 'U', referralCode: 'BBBBBBBB' },
-      overrideAccess: true,
-      context: { skipWelcomeEmail: true },
-    })
-    const candidates = ['AAAAAAAA', 'BBBBBBBB', 'CCCCCCCC']
+    const candidates = ['AAAAAAAA', 'CCCCCCCC']
     const code = await generateUniqueAmbassadorCode(payload, () => candidates.shift() ?? 'ZZZZZZZZ')
     expect(code).toBe('CCCCCCCC')
   })
