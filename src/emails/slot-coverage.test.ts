@@ -7,6 +7,7 @@ import { SHARED_COPY } from './lifecycle/shared.js'
 import { LIFECYCLE_TEMPLATES, SAMPLE } from './lifecycle/index.js'
 import { lifecycleVars } from './copy-vars.js'
 import { SAMPLE_FOOTER_LINKS, SCENARIOS } from './scenarios.js'
+import { quizResult } from './quiz-result.js'
 import { leadDailySummary } from './account-lead-summary.js'
 import { accountAdminEnrolment } from './account-admin-enrolment.js'
 import { senderAddress } from '../lib/resend.js'
@@ -46,6 +47,7 @@ function coverageRenders(id: string): string[] {
   if (lifecycle) for (const data of COVERAGE_DATA) for (let ab = 0; ab < lifecycle.variantCount; ab++) out.push(lifecycle.render({ ...SAMPLE, ...data }, SAMPLE_FOOTER_LINKS, ab))
   if (id === leadDailySummary.id) out.push(leadDailySummary.render({ ...leadDailySummary.sample, bySchool: [], bySource: [], topLeads: [] }))
   if (id === accountAdminEnrolment.id) out.push(accountAdminEnrolment.render({ ...accountAdminEnrolment.sample, extended: true, setPasswordUrl: '' }))
+  if (id === quizResult.id) out.push(quizResult.render({ ...quizResult.sample, comingSoon: true }))
   return out.map((rendered) => `${rendered.subject}\n${rendered.preheader}\n${rendered.html}\n${rendered.text}`)
 }
 

@@ -31,6 +31,8 @@ import { Reviews } from './src/collections/Reviews.js'
 import { Discussions } from './src/collections/Discussions.js'
 import { NewsletterSubscribers } from './src/collections/NewsletterSubscribers.js'
 import { Leads } from './src/collections/Leads.js'
+import { QuizResults } from './src/collections/QuizResults.js'
+import { CareerWaitlist } from './src/collections/CareerWaitlist.js'
 import { LaptopApplications } from './src/collections/LaptopApplications.js'
 import { Messages } from './src/collections/Messages.js'
 import { EmailOverrideHistory, EmailOverrides } from './src/collections/EmailOverrides.js'
@@ -267,6 +269,8 @@ export default buildConfig(mountPrefixedEndpoints({
     Discussions,
     NewsletterSubscribers,
     Leads,
+    QuizResults,
+    CareerWaitlist,
     LaptopApplications,
     Messages,
     EmailOverrides,

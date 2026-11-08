@@ -7,6 +7,7 @@ import { findLeadByEmail, findLeadByPhone, hashPhone, LEAD_SOURCES, normalizePho
 import { queueOfferMessages } from '../../lib/lead-messaging.js'
 import { sanitizeText } from '../../utils/sanitize.js'
 import { AppError } from '../../types/index.js'
+import { evaluateQuiz, publishedProgrammes, queueQuizMessages, quizLeadData, quizSubmissionSchema, resolveTopOpen, saveQuizResult, type EvaluatedQuiz } from '../../lib/career-quiz.js'
 
 const optionalText = (max: number) => z.string().trim().max(max).optional()
 
@@ -32,6 +33,8 @@ const leadSchema = z.object({
   marketingConsent: z.boolean().optional(),
   marketingConsentText: optionalText(1000),
   message: optionalText(2000),
+  // Career Match quiz (source "quiz"): answer ids only; scores are recomputed here.
+  quiz: quizSubmissionSchema.optional(),
   // Honeypot: real people never see or fill this field.
   website: z.string().optional(),
 })
@@ -83,7 +86,13 @@ async function handler(req: PayloadRequest): Promise<Response> {
   // Without an email, the WhatsApp number identifies the lead (reserved .invalid placeholder, never emailed).
   const existingByPhone = body.email ? null : await findLeadByPhone(payload, phone)
   const email = body.email?.toLowerCase() ?? existingByPhone?.email ?? `wa-${hashPhone(phone).slice(0, 16)}@whatsapp.invalid`
-  const course = body.programme ? await findIdBySlug(req, 'courses', body.programme) : null
+  // Validate and score the quiz before saving anything, so bad answers never create a lead.
+  if (body.quiz && body.source !== 'quiz') throw new AppError('VALIDATION_ERROR', 'Quiz answers can only be sent from the quiz.')
+  const quiz: EvaluatedQuiz | null = body.quiz ? evaluateQuiz(body.quiz) : null
+  const topOpen = quiz ? resolveTopOpen(quiz.result, await publishedProgrammes(payload)) : null
+  // A quiz applicant's programme is their best open match (the offer and WhatsApp are about it).
+  const programmeSlug = quiz ? topOpen?.slug : body.programme
+  const course = programmeSlug ? await findIdBySlug(req, 'courses', programmeSlug) : null
   const school = body.school ? await findIdBySlug(req, 'categories', body.school) : null
   const schoolId = school?.id ?? relationId(course?.categories?.[0])
   // A school the backend doesn't have yet is kept on the lead so Imisi can follow up.
@@ -114,7 +123,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
     }
     lead = (await payload.update({ collection: 'leads', id: existing.id, data, depth: 0, overrideAccess: true })) as unknown as LeadDoc
     // A returning applicant who now picked a programme gets their offer once (sends are de-duplicated).
-    if (course) queueOfferMessages(payload, lead.id)
+    if (course && !quiz) queueOfferMessages(payload, lead.id)
   } else {
     lead = (await payload.create({
       collection: 'leads',
@@ -140,7 +149,7 @@ async function handler(req: PayloadRequest): Promise<Response> {
       depth: 0,
       overrideAccess: true,
     })) as unknown as LeadDoc
-    queueOfferMessages(payload, lead.id)
+    if (!quiz) queueOfferMessages(payload, lead.id)
   }
 
   const accounts = await payload.find({
@@ -151,8 +160,24 @@ async function handler(req: PayloadRequest): Promise<Response> {
     overrideAccess: true,
   })
 
+  let resultId: string | undefined
+  if (quiz) {
+    // Profile and context answers go on the applicant (Apply won't ask them again); the result
+    // gets its own unguessable id for /quiz/result/<id>, linked to the account if there is one.
+    const accountId = (accounts.docs[0] as unknown as { id: number } | undefined)?.id ?? null
+    lead = (await payload.update({
+      collection: 'leads',
+      id: lead.id,
+      data: { ...quizLeadData(quiz, topOpen?.courseId ?? null), ...(accountId && !lead.user ? { user: accountId } : {}) },
+      depth: 0,
+      overrideAccess: true,
+    })) as unknown as LeadDoc
+    resultId = await saveQuizResult(payload, lead, quiz, topOpen, accountId)
+    queueQuizMessages(payload, lead.id, resultId, quiz, topOpen)
+  }
+
   return sendSuccess(
-    { leadId: lead.id, leadToken: signLeadToken(lead.id), hasAccount: accounts.totalDocs > 0 },
+    { leadId: lead.id, leadToken: signLeadToken(lead.id), hasAccount: accounts.totalDocs > 0, ...(resultId ? { resultId } : {}) },
     undefined,
     existing ? 200 : 201,
   )

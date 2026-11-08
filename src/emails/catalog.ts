@@ -47,7 +47,7 @@ export const SETTINGS_COPY: Record<string, CopySlot> = {
 
 const NAMES: Record<string, string> = {
   'password-reset': 'Password reset', 'email-verification': 'Confirm your email', 'account-welcome': 'Welcome (account created)',
-  'account-enrolment': 'Enrolment confirmation', 'account-access-extended': 'Access extended', 'account-admin-enrolment': 'Enrolled by an admin', 'lead-daily-summary': 'Daily lead summary (internal)',
+  'account-enrolment': 'Enrolment confirmation', 'account-access-extended': 'Access extended', 'account-admin-enrolment': 'Enrolled by an admin', 'lead-daily-summary': 'Daily lead summary (internal)', 'quiz-result': 'Career Match quiz result', 'waitlist-open': 'Waitlisted career is open',
   A0: 'Scholarship offer', A1: 'Two questions everyone asks', A2: 'Why it’s ₦2,000 a month', A3: 'What the job is like', A4: '5 things in your offer',
   A5: 'Your seat is still open', A6: 'Scholarship closes in 2 days', A7: 'Closes tonight', W1: 'Scholarship open again',
   P1: 'The scholarship closed', P2: 'A free exercise', P3: 'No laptop?', P4: 'How to spot a fake course', P5: 'Still thinking about it?', P6: 'A day in the life',
@@ -113,6 +113,8 @@ const ACCOUNT_WHEN: Record<string, string> = {
   'account-access-extended': 'When an admin extends someone’s access.',
   'account-admin-enrolment': 'When an admin enrols someone from Studio, or adds time to their access. New accounts get a set-password button.',
   'lead-daily-summary': 'Every morning, to the team (internal).',
+  'quiz-result': 'Straight after someone finishes the Career Match quiz (instead of the scholarship offer email).',
+  'waitlist-open': 'When an admin presses Notify on the Career waitlist (consenting applicants only).',
 }
 
 function groupOf(track: string, id: string): EditorGroup {

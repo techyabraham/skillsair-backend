@@ -8,6 +8,8 @@ import { accountEnrolment } from './account-enrolment.js'
 import { accountAccessExtended } from './account-access-extended.js'
 import { accountAdminEnrolment } from './account-admin-enrolment.js'
 import { leadDailySummary } from './account-lead-summary.js'
+import { quizResult } from './quiz-result.js'
+import { waitlistOpen } from './waitlist-open.js'
 
 export { defineEmail, firstNameOf, type EmailTemplate, type RenderedEmail } from './define.js'
 
@@ -28,7 +30,9 @@ export const emailTemplates: Record<string, PreviewableTemplate> = {
   [accountAccessExtended.id]: accountAccessExtended,
   [accountAdminEnrolment.id]: accountAdminEnrolment,
   [leadDailySummary.id]: leadDailySummary,
+  [quizResult.id]: quizResult,
+  [waitlistOpen.id]: waitlistOpen,
   ...LIFECYCLE_TEMPLATES,
 }
 
-export { emailVerification, passwordReset, accountWelcome, accountEnrolment, accountAccessExtended, accountAdminEnrolment, leadDailySummary }
+export { emailVerification, passwordReset, accountWelcome, accountEnrolment, accountAccessExtended, accountAdminEnrolment, leadDailySummary, quizResult, waitlistOpen }

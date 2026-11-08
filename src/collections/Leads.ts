@@ -65,6 +65,7 @@ export const Leads: CollectionConfig = {
           label: 'Overview',
           fields: [
             { name: 'summary', type: 'ui', admin: { disableListColumn: true, components: { Field: '/src/admin/edit/lead#LeadSummary' } } },
+            { name: 'quizProfile', type: 'ui', admin: { disableListColumn: true, components: { Field: '/src/admin/edit/lead-quiz#LeadQuizProfile' } } },
             { name: 'notes', type: 'textarea' },
           ],
         },
@@ -134,6 +135,19 @@ export const Leads: CollectionConfig = {
                 ],
               },
               { name: 'message', type: 'textarea', maxLength: 2000 },
+            ],
+          },
+          {
+            type: 'collapsible',
+            label: 'Career Match quiz',
+            admin: { initCollapsed: true, description: 'Set by the quiz (scores recomputed on the server). Read-only.' },
+            fields: [
+              { name: 'quizVersion', type: 'text', admin: { readOnly: true } },
+              { name: 'topMatch', type: 'text', admin: { readOnly: true, description: 'Career id of the top match (may be a waitlist career).' } },
+              { name: 'topOpenMatch', type: 'relationship', relationTo: 'courses', admin: { readOnly: true, description: 'Best open programme from the quiz.' } },
+              { name: 'quizScores', type: 'json', admin: { readOnly: true } },
+              { name: 'traits', type: 'json', admin: { readOnly: true } },
+              { name: 'quizAnswers', type: 'json', admin: { readOnly: true } },
             ],
           },
           {

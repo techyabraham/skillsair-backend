@@ -1,19 +1,21 @@
 /**
  * The plain, letter-like layout every SkillsAir email uses: single column, 600px max,
  * system fonts, 16px body, one orange button (also repeated as a plain link), a small text
- * logo and no images, so it reads like a note from Imisi and stays dark-mode safe.
+ * logo and no images (except the Career Match result card), so it reads like a note from Imisi.
  * Every email has a hidden preheader and a plain-text part.
  */
 import { getSettings } from './override-store.js'
 
 export type EmailKind = 'transactional' | 'service' | 'marketing'
 
-/** A paragraph (plain text; **bold** allowed), a list, a table of label/value rows, or small print. */
+/** A paragraph (plain text; **bold** allowed), a list, a table of label/value rows, small print or an image. */
 export type Block =
   | string
   | { list: string[]; ordered?: boolean }
   | { rows: Array<{ label: string; value: string; struck?: boolean; strong?: boolean }>; caption?: string }
   | { small: string }
+  /** One image (only the Career Match result card uses it); its alt text is the plain-text part. */
+  | { image: { src: string; alt: string; width: number; height: number } }
 
 export interface EmailButton {
   label: string
@@ -105,6 +107,10 @@ function blockHtml(block: Block): string {
     const caption = block.caption ? `<p style="margin:8px 0 16px;font-size:13px;line-height:1.5;color:${MUTED};">${inline(block.caption)}</p>` : ''
     return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 16px;border-collapse:collapse;">${rows}</table>${caption}`
   }
+  if ('image' in block) {
+    const { src, alt, width, height } = block.image
+    return `<p style="margin:0 0 16px;"><img src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" width="${width}" height="${height}" style="display:block;width:100%;max-width:${width}px;height:auto;border:0;border-radius:12px;" /></p>`
+  }
   return `<p style="margin:0 0 16px;font-size:13px;line-height:1.5;color:${MUTED};">${inline(block.small)}</p>`
 }
 
@@ -115,6 +121,7 @@ function blockText(block: Block): string {
     const rows = block.rows.map((row) => `${plain(row.label)}: ${plain(row.value)}${row.struck ? ' (no longer applies)' : ''}`).join('\n')
     return block.caption ? `${rows}\n${plain(block.caption)}` : rows
   }
+  if ('image' in block) return plain(block.image.alt)
   return plain(block.small)
 }
 

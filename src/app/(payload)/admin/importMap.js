@@ -66,6 +66,7 @@ import { QuizAverageCell as QuizAverageCell_f40fc5d0ba3cc363cd851ece4d6c26dd } f
 import { QuestionPromptCell as QuestionPromptCell_f40fc5d0ba3cc363cd851ece4d6c26dd } from '../../../../src/admin/cells/cells'
 import { LeadProfile as LeadProfile_3fcde47856dbed7118e084c6c6957569 } from '../../../../src/admin/edit/lead'
 import { LeadSummary as LeadSummary_3fcde47856dbed7118e084c6c6957569 } from '../../../../src/admin/edit/lead'
+import { LeadQuizProfile as LeadQuizProfile_7ab328d3722c021dd2bdda21570af6e0 } from '../../../../src/admin/edit/lead-quiz'
 import { LeadConversation as LeadConversation_3fcde47856dbed7118e084c6c6957569 } from '../../../../src/admin/edit/lead'
 import { LeadMessages as LeadMessages_3fcde47856dbed7118e084c6c6957569 } from '../../../../src/admin/edit/lead'
 import { LeadNameCell as LeadNameCell_f40fc5d0ba3cc363cd851ece4d6c26dd } from '../../../../src/admin/cells/cells'
@@ -76,6 +77,7 @@ import { ScoreCell as ScoreCell_f40fc5d0ba3cc363cd851ece4d6c26dd } from '../../.
 import { NeedsHumanCell as NeedsHumanCell_f40fc5d0ba3cc363cd851ece4d6c26dd } from '../../../../src/admin/cells/cells'
 import { LeadsStrip as LeadsStrip_83ee6b7913fb20ba4a0a0ed59ec2014d } from '../../../../src/admin/lists/strips'
 import { LeadDocActions as LeadDocActions_07daf1630657efe39f3f5dbf38278fb5 } from '../../../../src/admin/edit/LeadDocActions'
+import { CareerWaitlistStrip as CareerWaitlistStrip_e319e38e0251e7cf8498aa05794873f4 } from '../../../../src/admin/lists/career-waitlist'
 import { LaptopStoryCard as LaptopStoryCard_0bfbe00fbd74c218cfbadf6c1e828e7a } from '../../../../src/admin/edit/misc'
 import { CertificateTickCell as CertificateTickCell_f40fc5d0ba3cc363cd851ece4d6c26dd } from '../../../../src/admin/cells/cells'
 import { StoryPreviewCell as StoryPreviewCell_f40fc5d0ba3cc363cd851ece4d6c26dd } from '../../../../src/admin/cells/cells'
@@ -176,6 +178,7 @@ export const importMap = {
   "/src/admin/cells/cells#QuestionPromptCell": QuestionPromptCell_f40fc5d0ba3cc363cd851ece4d6c26dd,
   "/src/admin/edit/lead#LeadProfile": LeadProfile_3fcde47856dbed7118e084c6c6957569,
   "/src/admin/edit/lead#LeadSummary": LeadSummary_3fcde47856dbed7118e084c6c6957569,
+  "/src/admin/edit/lead-quiz#LeadQuizProfile": LeadQuizProfile_7ab328d3722c021dd2bdda21570af6e0,
   "/src/admin/edit/lead#LeadConversation": LeadConversation_3fcde47856dbed7118e084c6c6957569,
   "/src/admin/edit/lead#LeadMessages": LeadMessages_3fcde47856dbed7118e084c6c6957569,
   "/src/admin/cells/cells#LeadNameCell": LeadNameCell_f40fc5d0ba3cc363cd851ece4d6c26dd,
@@ -186,6 +189,7 @@ export const importMap = {
   "/src/admin/cells/cells#NeedsHumanCell": NeedsHumanCell_f40fc5d0ba3cc363cd851ece4d6c26dd,
   "/src/admin/lists/strips#LeadsStrip": LeadsStrip_83ee6b7913fb20ba4a0a0ed59ec2014d,
   "/src/admin/edit/LeadDocActions#LeadDocActions": LeadDocActions_07daf1630657efe39f3f5dbf38278fb5,
+  "/src/admin/lists/career-waitlist#CareerWaitlistStrip": CareerWaitlistStrip_e319e38e0251e7cf8498aa05794873f4,
   "/src/admin/edit/misc#LaptopStoryCard": LaptopStoryCard_0bfbe00fbd74c218cfbadf6c1e828e7a,
   "/src/admin/cells/cells#CertificateTickCell": CertificateTickCell_f40fc5d0ba3cc363cd851ece4d6c26dd,
   "/src/admin/cells/cells#StoryPreviewCell": StoryPreviewCell_f40fc5d0ba3cc363cd851ece4d6c26dd,
