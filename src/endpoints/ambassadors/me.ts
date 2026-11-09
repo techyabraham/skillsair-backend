@@ -114,11 +114,12 @@ export const ambassadorSummaryEndpoint: Endpoint = {
           SELECT ra."referred_user_id", COUNT(o."id") FILTER (WHERE o."status" = 'success')::bigint AS "paid_orders"
           FROM "referral_attributions" ra
           LEFT JOIN "orders" o ON o."user_id" = ra."referred_user_id"
-          WHERE ra."ambassador_id" = ${ambassador.id}
+          WHERE ra."ambassador_id" = ${ambassador.id} AND ra."referred_user_id" IS NOT NULL
           GROUP BY ra."referred_user_id"
         )
         SELECT COUNT(*) FILTER (WHERE "paid_orders" = 0)::bigint AS "prospects",
           COUNT(*) FILTER (WHERE "paid_orders" > 0)::bigint AS "customers",
+          (SELECT COUNT(*)::bigint FROM "referral_attributions" x WHERE x."ambassador_id" = ${ambassador.id} AND x."referred_user_id" IS NULL) AS "applicants",
           (SELECT COUNT(*)::bigint FROM "ambassador_ledger" l WHERE l."ambassador_id" = ${ambassador.id} AND l."type" = 'commission' AND l."product_type" = 'renewal' AND l."status" <> 'void') AS "renewals"
         FROM "customers"`)
       const clickTotals = clickRows.reduce<{ clicks: number; uniqueVisitors: number }>((total, row) => ({
@@ -134,7 +135,8 @@ export const ambassadorSummaryEndpoint: Endpoint = {
           earningsKobo: earningRows.reduce((sum, row) => sum + numberFrom(row.kobo), 0),
           series: dayMap(days, earningRows, 'kobo').map(({ date, value }) => ({ date, kobo: value })),
         },
-        totals: { prospects: numberFrom(total.prospects), customers: numberFrom(total.customers), renewals: numberFrom(total.renewals) },
+        // applicants: applied, no account yet; prospects: account, nothing paid; customers: paid at least once.
+        totals: { applicants: numberFrom(total.applicants), prospects: numberFrom(total.prospects), customers: numberFrom(total.customers), renewals: numberFrom(total.renewals) },
       }
     })
     return sendSuccess(data)
@@ -184,7 +186,7 @@ export const ambassadorEarningsEndpoint: Endpoint = {
   }),
 }
 
-const referralSegmentSchema = z.enum(['customers', 'prospects'])
+const referralSegmentSchema = z.enum(['applicants', 'prospects', 'customers'])
 
 export const ambassadorReferralsEndpoint: Endpoint = {
   path: '/ambassadors/me/referrals',
@@ -193,12 +195,43 @@ export const ambassadorReferralsEndpoint: Endpoint = {
     const { ambassador } = await requireAmbassador(req)
     const url = requestUrl(req)
     const segment = referralSegmentSchema.safeParse(url.searchParams.get('segment') ?? 'customers')
-    if (!segment.success) throw new AppError('VALIDATION_ERROR', 'Choose customers or prospects.', { segment: 'Choose customers or prospects.' })
+    if (!segment.success) throw new AppError('VALIDATION_ERROR', 'Choose applicants, prospects or customers.', { segment: 'Choose applicants, prospects or customers.' })
     const page = Math.max(1, Number.parseInt(url.searchParams.get('page') ?? '1', 10) || 1)
     const limit = Math.min(50, Math.max(1, Number.parseInt(url.searchParams.get('limit') ?? '20', 10) || 20))
     const offset = (page - 1) * limit
     const settings = await getAmbassadorSettings(req.payload)
     const data = await withTransaction(req.payload, async (txReq) => {
+      if (segment.data === 'applicants') {
+        // Applied through the link but have not created an account yet. First name only (applications
+        // have no last name); WhatsApp-only applications have no real email to show.
+        const applicants = await ambassadorSQL(req.payload, txReq, sql`
+          SELECT l."id", l."first_name", l."email", l."created_at" AS "applied_at", c."title" AS "programme"
+          FROM "referral_attributions" ra
+          JOIN "leads" l ON l."id" = ra."lead_id"
+          LEFT JOIN "courses" c ON c."id" = l."course_id"
+          WHERE ra."ambassador_id" = ${ambassador.id} AND ra."referred_user_id" IS NULL
+          ORDER BY ra."attributed_at" DESC, ra."id" DESC
+          LIMIT ${limit} OFFSET ${offset}`)
+        const [count] = await ambassadorSQL(req.payload, txReq, sql`
+          SELECT COUNT(*)::bigint AS "total" FROM "referral_attributions"
+          WHERE "ambassador_id" = ${ambassador.id} AND "referred_user_id" IS NULL`)
+        return {
+          rows: applicants.map((row) => {
+            const email = typeof row.email === 'string' && !row.email.endsWith('@whatsapp.invalid') ? row.email : null
+            return {
+              stage: 'applied' as const,
+              name: String(row.first_name ?? '').trim(),
+              ...(settings.showReferredEmails && email ? { email } : {}),
+              programme: typeof row.programme === 'string' ? row.programme : null,
+              appliedAt: row.applied_at,
+              joinedAt: null,
+              paidOrders: 0,
+              lastPurchaseAt: null,
+            }
+          }),
+          total: numberFrom(count?.total),
+        }
+      }
       const rows = await ambassadorSQL(req.payload, txReq, sql`
         WITH "referral_summary" AS (
           SELECT u."id" AS "user_id", u."first_name", u."last_name",
@@ -221,7 +254,7 @@ export const ambassadorReferralsEndpoint: Endpoint = {
           SELECT ra."referred_user_id", COUNT(o."id") FILTER (WHERE o."status" = 'success')::bigint AS "paid_orders"
           FROM "referral_attributions" ra
           LEFT JOIN "orders" o ON o."user_id" = ra."referred_user_id"
-          WHERE ra."ambassador_id" = ${ambassador.id}
+          WHERE ra."ambassador_id" = ${ambassador.id} AND ra."referred_user_id" IS NOT NULL
           GROUP BY ra."referred_user_id"
         )
         SELECT COUNT(*)::bigint AS "total" FROM "referral_summary"
@@ -229,6 +262,7 @@ export const ambassadorReferralsEndpoint: Endpoint = {
       const total = numberFrom(totals[0]?.total)
       return {
         rows: rows.map((row) => ({
+          stage: numberFrom(row.paid_orders) > 0 ? 'paid' as const : 'signed_up' as const,
           name: safeUserName({ firstName: String(row.first_name ?? ''), lastName: String(row.last_name ?? '') }),
           ...(settings.showReferredEmails && typeof row.email === 'string' ? { email: row.email } : {}),
           joinedAt: row.joined_at,

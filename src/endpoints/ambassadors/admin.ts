@@ -536,6 +536,14 @@ export const ambassadorAdminWalletEndpoint: Endpoint = {
       req.payload.find({ collection: 'ambassador-payouts', where: { ambassador: { equals: id } }, page: 1, limit: 20, sort: '-createdAt', depth: 0, overrideAccess: true }),
       req.payload.find({ collection: 'referral-attributions', where: { ambassador: { equals: id } }, page: 1, limit: 20, sort: '-attributedAt', depth: 1, overrideAccess: true }),
     ])
+    // Which referred accounts have paid at least once (for the applied / signed up / paid stage).
+    const referredIds = referrals.docs
+      .map((row) => relationId((row as { referredUser?: unknown }).referredUser))
+      .filter((value): value is number => value !== undefined)
+    const paidOrders = referredIds.length
+      ? await req.payload.find({ collection: 'orders', where: { and: [{ user: { in: referredIds } }, { status: { equals: 'success' } }] }, pagination: false, depth: 0, overrideAccess: true })
+      : { docs: [] }
+    const paidUsers = new Set(paidOrders.docs.map((order) => relationId((order as { user?: unknown }).user)))
     return sendSuccess({
       ambassador: {
         id, code: ambassador.code, username: ambassador.username, status: ambassador.status,
@@ -556,9 +564,23 @@ export const ambassadorAdminWalletEndpoint: Endpoint = {
         return { id: payout.id, amountKobo: payout.amountKobo, status: payout.status, bankName: payout.bankName ?? '', accountLast4: payout.accountLast4 ?? '', createdAt: payout.createdAt, processedAt: payout.processedAt ?? null, failureReason: payout.failureReason ?? null }
       }),
       referrals: referrals.docs.map((row) => {
-        const attribution = row as { id: number; attributedAt: string; referredUser?: number | { firstName?: string; lastName?: string; email?: string } }
-        const referred = typeof attribution.referredUser === 'object' ? attribution.referredUser : null
-        return { id: attribution.id, attributedAt: attribution.attributedAt, name: referred ? `${referred.firstName ?? ''} ${referred.lastName?.slice(0, 1) ?? ''}.`.trim() : '', email: referred?.email ?? '' }
+        const attribution = row as {
+          id: number
+          attributedAt: string
+          referredUser?: number | { id: number; firstName?: string; lastName?: string; email?: string } | null
+          lead?: number | { firstName?: string; email?: string } | null
+        }
+        const referred = typeof attribution.referredUser === 'object' && attribution.referredUser ? attribution.referredUser : null
+        const lead = typeof attribution.lead === 'object' && attribution.lead ? attribution.lead : null
+        const paid = referred ? paidUsers.has(Number(referred.id)) : false
+        return {
+          id: attribution.id,
+          attributedAt: attribution.attributedAt,
+          // applied: application only, no account yet; signed_up: account, nothing paid; paid: at least one paid order.
+          stage: referred ? (paid ? 'paid' : 'signed_up') : 'applied',
+          name: referred ? `${referred.firstName ?? ''} ${referred.lastName?.slice(0, 1) ?? ''}.`.trim() : lead?.firstName ?? '',
+          email: referred?.email ?? (lead?.email && !lead.email.endsWith('@whatsapp.invalid') ? lead.email : ''),
+        }
       }),
     })
   }),

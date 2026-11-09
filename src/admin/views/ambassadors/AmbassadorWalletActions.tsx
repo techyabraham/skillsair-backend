@@ -10,7 +10,7 @@ interface WalletData {
   wallet: { pendingKobo: number; availableKobo: number; inFlightKobo: number; paidOutKobo: number; totalEarnedKobo: number }
   ledger: Array<{ id: number; type: string; status: string; amountKobo: number; productTitle: string; createdAt: string; availableAt: string | null; note: string; customer: string }>
   payouts: Array<{ id: number; amountKobo: number; status: string; bankName: string; accountLast4: string; createdAt: string; failureReason: string | null }>
-  referrals: Array<{ id: number; attributedAt: string; name: string; email: string }>
+  referrals: Array<{ id: number; attributedAt: string; stage: 'applied' | 'signed_up' | 'paid'; name: string; email: string }>
 }
 async function api(path: string, body?: Record<string, unknown>, headers?: Record<string, string>) {
   const response = await fetch(path, { method: body ? 'POST' : 'GET', credentials: 'include', headers: { ...(body ? { 'Content-Type': 'application/json' } : {}), ...headers }, ...(body ? { body: JSON.stringify(body) } : {}) })
@@ -18,6 +18,8 @@ async function api(path: string, body?: Record<string, unknown>, headers?: Recor
   if (!response.ok || !json?.success) throw new Error(json?.error?.message ?? 'The action could not be completed.')
   return json.data
 }
+
+const STAGE_LABEL = { applied: 'Applied', signed_up: 'Signed up', paid: 'Paid' } as const
 
 export function AmbassadorWalletActions({ ambassadorId, initialStatus, initialReason, initialFlags }: { ambassadorId: number; initialStatus: 'pending' | 'active' | 'blocked'; initialReason: string; initialFlags: Array<{ index: number; kind: string; note?: string; openedAt?: string; resolvedAt?: string | null }> }) {
   const router = useRouter()
@@ -78,6 +80,6 @@ export function AmbassadorWalletActions({ ambassadorId, initialStatus, initialRe
     <Card><h2 className="sa-card__title">Risk flags</h2>{flags.length ? <div className="mt-3 space-y-3">{flags.map((flag) => <div key={flag.index} className="flex flex-wrap items-start justify-between gap-3 border-t border-line py-3"><p><AlertTriangle size={15} className="mr-2 inline text-amber-700" aria-hidden /><strong>{flag.kind}</strong> · {flag.note ?? 'No note'} {flag.resolvedAt ? <span className="sa-muted">· Resolved</span> : null}</p>{!flag.resolvedAt ? <button className="sa-button sa-button--secondary sa-button--sm" disabled={busy} type="button" onClick={() => void resolveFlag(flag.index)}>Resolve flag</button> : null}</div>)}</div> : <p className="mt-3 sa-muted">No risk flags.</p>}</Card>
     <Card><h2 className="sa-card__title">Ledger</h2>{data?.ledger.length ? <div className="sa-table-wrap mt-3"><table className="sa-table"><thead><tr><th>Created</th><th>Type</th><th>Product / customer</th><th>Amount</th><th>Status</th><th>Available</th><th>Note</th></tr></thead><tbody>{data.ledger.map((row) => <tr key={row.id}><td>{new Date(row.createdAt).toLocaleDateString('en-NG')}</td><td>{row.type}</td><td>{row.productTitle || row.customer}</td><td><Money amount={row.amountKobo} /></td><td>{row.status}</td><td>{row.availableAt ? new Date(row.availableAt).toLocaleDateString('en-NG') : '—'}</td><td>{row.note}</td></tr>)}</tbody></table></div> : <p className="mt-3 sa-muted">No ledger entries.</p>}</Card>
     <Card><h2 className="sa-card__title">Payouts</h2>{data?.payouts.length ? <div className="sa-table-wrap mt-3"><table className="sa-table"><thead><tr><th>Date</th><th>Amount</th><th>Bank</th><th>Status</th><th>Failure reason</th></tr></thead><tbody>{data.payouts.map((row) => <tr key={row.id}><td>{new Date(row.createdAt).toLocaleDateString('en-NG')}</td><td><Money amount={row.amountKobo} /></td><td>{row.bankName} · •••• {row.accountLast4}</td><td>{row.status}</td><td>{row.failureReason ?? '—'}</td></tr>)}</tbody></table></div> : <p className="mt-3 sa-muted">No payouts.</p>}</Card>
-    <Card><h2 className="sa-card__title">Referred users</h2>{data?.referrals.length ? <div className="sa-table-wrap mt-3"><table className="sa-table"><thead><tr><th>Name</th><th>Email</th><th>Joined</th></tr></thead><tbody>{data.referrals.map((row) => <tr key={row.id}><td>{row.name}</td><td>{row.email}</td><td>{new Date(row.attributedAt).toLocaleDateString('en-NG')}</td></tr>)}</tbody></table></div> : <p className="mt-3 sa-muted">No referred users.</p>}</Card>
+    <Card><h2 className="sa-card__title">Referred people</h2>{data?.referrals.length ? <div className="sa-table-wrap mt-3"><table className="sa-table"><thead><tr><th>Name</th><th>Email</th><th>Stage</th><th>Referred</th></tr></thead><tbody>{data.referrals.map((row) => <tr key={row.id}><td>{row.name}</td><td>{row.email}</td><td>{STAGE_LABEL[row.stage]}</td><td>{new Date(row.attributedAt).toLocaleDateString('en-NG')}</td></tr>)}</tbody></table></div> : <p className="mt-3 sa-muted">No referred people.</p>}</Card>
   </div>
 }

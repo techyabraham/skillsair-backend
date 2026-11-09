@@ -7,6 +7,8 @@ import { findLeadByEmail, findLeadByPhone, hashPhone, LEAD_SOURCES, normalizePho
 import { queueOfferMessages } from '../../lib/lead-messaging.js'
 import { sanitizeText } from '../../utils/sanitize.js'
 import { AppError } from '../../types/index.js'
+import { attributeLead } from '../../lib/ambassadors/attribution.js'
+import { logger } from '../../lib/logger.js'
 import { evaluateQuiz, publishedProgrammes, queueQuizMessages, quizLeadData, quizSubmissionSchema, resolveTopOpen, saveQuizResult, type EvaluatedQuiz } from '../../lib/career-quiz.js'
 
 const optionalText = (max: number) => z.string().trim().max(max).optional()
@@ -35,6 +37,8 @@ const leadSchema = z.object({
   message: optionalText(2000),
   // Career Match quiz (source "quiz"): answer ids only; scores are recomputed here.
   quiz: quizSubmissionSchema.optional(),
+  // Ambassador referral (the site's sa_ref cookie), attributed to this application.
+  attribution: z.string().max(1000).optional(),
   // Honeypot: real people never see or fill this field.
   website: z.string().optional(),
 })
@@ -150,6 +154,15 @@ async function handler(req: PayloadRequest): Promise<Response> {
       overrideAccess: true,
     })) as unknown as LeadDoc
     if (!quiz) queueOfferMessages(payload, lead.id)
+  }
+
+  if (body.attribution) {
+    // Never fails the application: a bad or unknown referral just isn't recorded.
+    try {
+      await attributeLead(payload, { leadId: Number(lead.id), value: body.attribution })
+    } catch (err) {
+      logger.error({ err, leadId: lead.id }, 'ambassador_lead_attribution_failed')
+    }
   }
 
   const accounts = await payload.find({

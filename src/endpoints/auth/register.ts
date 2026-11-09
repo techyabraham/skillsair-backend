@@ -1,4 +1,4 @@
-import { attributeUser } from '../../lib/ambassadors/attribution.js'
+import { attributeUser, claimLeadAttribution } from '../../lib/ambassadors/attribution.js'
 import type { Endpoint, PayloadRequest } from 'payload'
 import { z } from 'zod'
 import { parseBody, sendSuccess, asyncHandler, readJsonBody } from '../../middleware/validate.js'
@@ -96,6 +96,8 @@ async function handler(req: PayloadRequest): Promise<Response> {
   })) as unknown as UserDoc
 
   try {
+    // Applied through a referral link first? That attribution comes to the new account (first touch wins).
+    await claimLeadAttribution(payload, created.id)
     await attributeUser(payload, { userId: created.id, value: body.attribution, source: 'cookie_register' })
   } catch {
     logger.error({ userId: created.id }, 'ambassador_registration_attribution_failed')

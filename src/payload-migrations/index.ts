@@ -22,6 +22,7 @@ import * as migration_20261028_045139_ambassadors_foundation from './20261028_04
 import * as migration_20261028_120000_ambassadors_payout_reversal from './20261028_120000_ambassadors_payout_reversal.js';
 import * as migration_20261106_131412_ambassadors_remove_legacy from './20261106_131412_ambassadors_remove_legacy.js';
 import * as migration_20261107_090000_career_quiz_v2 from './20261107_090000_career_quiz_v2.js';
+import * as migration_20261109_155246_ambassadors_lead_attributions from './20261109_155246_ambassadors_lead_attributions.js';
 
 export const migrations = [
   {
@@ -143,5 +144,10 @@ export const migrations = [
     up: migration_20261107_090000_career_quiz_v2.up,
     down: migration_20261107_090000_career_quiz_v2.down,
     name: '20261107_090000_career_quiz_v2'
+  },
+  {
+    up: migration_20261109_155246_ambassadors_lead_attributions.up,
+    down: migration_20261109_155246_ambassadors_lead_attributions.down,
+    name: '20261109_155246_ambassadors_lead_attributions'
   },
 ];
